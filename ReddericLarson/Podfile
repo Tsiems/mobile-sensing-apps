@@ -1,0 +1,14 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'ReddericLarson' do
+  pod 'FlickrKit'
+end
+
+target 'ReddericLarsonTests' do
+
+end
+
+target 'ReddericLarsonUITests' do
+
+end
