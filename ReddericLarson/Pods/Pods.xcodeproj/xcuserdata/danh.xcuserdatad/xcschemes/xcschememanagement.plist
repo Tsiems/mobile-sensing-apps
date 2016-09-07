@@ -8,21 +8,49 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 		<key>Pods-ReddericLarson.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Pods-ReddericLarsonTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-ReddericLarsonUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3EF2233BBC6669E10F9C86D255D3044A</key>
+		<key>373EAA51049355BE5FE80C53B351E65C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A085881BDA437FC3200AEB620E22214E</key>
+		<key>4BD7F7875DA44DD807CCB42AEB32F91A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94928A45D6798F4539E2763B8DD801A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>99035D35BE313F6442E74275D481AA8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
