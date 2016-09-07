@@ -8,12 +8,23 @@
 
 #import "ViewController.h"
 #import "FlickrKit/FlickrKit.h"
+#import "ImageModel.h"
 
 @interface ViewController ()
+
+
+@property (strong, nonatomic) ImageModel* imageModel;
 
 @end
 
 @implementation ViewController
+
+-(ImageModel*)imageModel {
+    if (!_imageModel) {
+        _imageModel = [ImageModel sharedInstance];
+    }
+    return _imageModel;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +40,7 @@
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
                 NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
                 [photoURLs addObject:url];
-                NSLog(@"url = %@",url);
+//                NSLog(@"url = %@",url);
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 // Any GUI related operations here
@@ -37,29 +48,31 @@
         }   
     }];
     
-    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"text": @"cat", @"per_page": @"15"} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
-        NSMutableArray *photoURLs = [NSMutableArray array];
-        if (response) {
-            for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
-                NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
-                [photoURLs addObject:url];
-                NSLog(@"cat_url = %@",url);
-            }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (response) {
-                    // extract images from the response dictionary
-                    
-                } else {
-                    // show the error
-                }
-            });
-        }
-        else {
-            NSLog(@"Failed");
-        }
-    }];
+//    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"text": @"cat", @"per_page": @"15"} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+//        NSMutableArray *photoURLs = [NSMutableArray array];
+//        if (response) {
+//            for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
+//                NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
+//                [photoURLs addObject:url];
+////                NSLog(@"cat_url = %@",url);
+//            }
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                if (response) {
+//                    // extract images from the response dictionary
+//                    
+//                } else {
+//                    // show the error
+//                }
+//            });
+//        }
+//        else {
+//            NSLog(@"Failed");
+//        }
+//    }];
     
-
+    [self.imageModel setTag:@"donald"];
+    NSArray* links = [self.imageModel getLinks]; //returns null :(
+    NSLog(@"Links: %@",links);
 }
 
 - (void)didReceiveMemoryWarning {
