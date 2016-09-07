@@ -8,6 +8,7 @@
 
 #import "CategoryCollectionViewController.h"
 #import "CategoryCollectionViewCell.h"
+#import "FlickrKit/FlickrKit.h"
 
 @interface CategoryCollectionViewController ()
 
@@ -24,15 +25,55 @@ static NSString * const reuseIdentifier = @"cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[CategoryCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
-
+    
+    
+    [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
+    FlickrKit *fk = [FlickrKit sharedFlickrKit];
+    
+    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"tags": self.tag, @"per_page": @"15"} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+        NSMutableArray *photoURLs = [NSMutableArray array];
+        if (response) {
+            for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
+                NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
+                [photoURLs addObject:url];
+                NSLog(@"url = %@",url);
+            }
+            
+            // copy the photo urls into the links backing variable
+            _links = [photoURLs copy];
+            
+            //reload view
+            [self.collectionView reloadData];
+        }
+        else {
+            NSLog(@"Failed: %@",error);
+        }
+    }];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSString*)tag{
+    if(!_tag) {
+        _tag = @"cat";
+    }
+    
+    return _tag;
+}
+
+-(NSArray*)links{
+    if(!_links) {
+        _links = @[];
+    }
+    
+    return _links;
 }
 
 /*
@@ -54,14 +95,15 @@ static NSString * const reuseIdentifier = @"cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 1;
+    return _links.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CategoryCollectionViewCell *cell = (CategoryCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
+    
+    [cell.pictureView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@",self.links[indexPath.row]]]]]];
     
     return cell;
 }

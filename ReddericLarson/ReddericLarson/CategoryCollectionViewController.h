@@ -10,4 +10,6 @@
 
 @interface CategoryCollectionViewController : UICollectionViewController
 
+@property (strong,nonatomic) NSString* tag;
+@property (strong,nonatomic) NSArray* links;
 @end
