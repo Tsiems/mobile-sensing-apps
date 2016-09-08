@@ -78,13 +78,10 @@
         // Note this is not the main thread!
         NSURL *url = nil;
         if (response) {
-            for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
-                url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
-            }
+            NSDictionary *photoData = [response valueForKeyPath:@"photos.photo"][0];
+            url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
             NSData *data = [[NSData alloc] initWithContentsOfURL:url];
 
-            
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 // Any GUI related operations here
                 UIImage *tmpImage = [[UIImage alloc] initWithData:data];
