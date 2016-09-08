@@ -28,7 +28,7 @@
     [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
     
     FlickrKit *fk = [FlickrKit sharedFlickrKit];
-    [fk call:@"flickr.tags.getHotList" args: @{@"count": @"5", @"period": @"day"} completion:^(NSDictionary *response, NSError *error) {
+    [fk call:@"flickr.tags.getHotList" args: @{@"count": @"20", @"period": @"week"} completion:^(NSDictionary *response, NSError *error) {
         // Note this is not the main thread!
         if (response) {
             NSMutableArray* tempTags = [NSMutableArray array];
@@ -72,6 +72,30 @@
     // Configure the cell text
     cell.titleLabel.text = [NSString stringWithFormat:@"#%@", self.tags[indexPath.row]];
     // Configure the cell image
+    
+    FlickrKit *fk = [FlickrKit sharedFlickrKit];
+    [fk call:@"flickr.photos.search" args:@{@"tags": self.tags[indexPath.row], @"per_page": @"1"} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+        // Note this is not the main thread!
+        NSURL *url = nil;
+        if (response) {
+            for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
+                url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
+            }
+            NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+
+            
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Any GUI related operations here
+                UIImage *tmpImage = [[UIImage alloc] initWithData:data];
+                cell.imageVIew.image = tmpImage;
+
+            });
+        }
+        else {
+            NSLog(@"Failed: %@", error);
+        }
+    }];
     return cell;
 }
 
