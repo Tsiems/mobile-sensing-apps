@@ -1,19 +1,22 @@
 //
-//  CategoriesTableViewController.m
+//  SettingsTableViewController.m
 //  ReddericLarson
 //
 //  Created by Erik Gabrielsen on 9/7/16.
 //  Copyright © 2016 MobileSensing. All rights reserved.
 //
 
-#import "CategoriesTableViewController.h"
+#import "SettingsTableViewController.h"
 
-@interface CategoriesTableViewController ()
+@interface SettingsTableViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
 
-@implementation CategoriesTableViewController
+@implementation SettingsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,36 +33,41 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)openSettings:(id)sender {
-    [self performSegueWithIdentifier:@"showSettings" sender:self];
-}
-
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 1;
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete implementation, return the number of rows
+//    return 1;
+//}
+- (IBAction)sliderView:(id)sender {
+    if (sender == _slider) {
+        _sliderLabel.text = [NSString stringWithFormat:@"Number of results: %0.0f", _slider.value];
+    }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 4;
+- (IBAction)save:(id)sender {
+    
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
+- (IBAction)close:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
     
     return cell;
 }
-
-
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self performSegueWithIdentifier:@"showCategory" sender:self];
-}
+*/
 
 /*
 // Override to support conditional editing of the table view.
