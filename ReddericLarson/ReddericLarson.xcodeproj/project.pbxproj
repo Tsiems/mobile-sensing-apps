@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1620E7CB1D80C80500CEAD65 /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620E7CA1D80C80500CEAD65 /* ImageModel.m */; };
 		16E0F5101D779C80009DC31B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F50F1D779C80009DC31B /* main.m */; };
 		16E0F5131D779C80009DC31B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F5121D779C80009DC31B /* AppDelegate.m */; };
 		16E0F5161D779C80009DC31B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F5151D779C80009DC31B /* ViewController.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1620E7C91D80C80500CEAD65 /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
+		1620E7CA1D80C80500CEAD65 /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
 		16E0F50B1D779C7F009DC31B /* ReddericLarson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReddericLarson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E0F50F1D779C80009DC31B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		16E0F5111D779C80009DC31B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };

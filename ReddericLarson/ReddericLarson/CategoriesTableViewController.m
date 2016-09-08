@@ -7,14 +7,15 @@
 //
 
 #import "CategoriesTableViewController.h"
+#import "CategoryTableViewCell.h"
+#import <FlickrKit/FlickrKit.h>
 
 @interface CategoriesTableViewController ()
-
-
+@property (strong, nonatomic) NSArray* categoryPhotos;
 @end
 
 @implementation CategoriesTableViewController
-
+@synthesize categoryPhotos = _categoryPhotos;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -23,6 +24,31 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
+    
+    FlickrKit *fk = [FlickrKit sharedFlickrKit];
+    [fk call:@"flickr.interestingness.getList" args: @{@"per_page": @"5", @"page": @"1"} completion:^(NSDictionary *response, NSError *error) {
+        // Note this is not the main thread!
+        if (response) {
+            NSMutableArray* tempPhotos = [NSMutableArray array];
+            for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
+                [tempPhotos addObject:photoData];
+            }
+            
+            self.categoryPhotos = [tempPhotos copy];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Any GUI related operations here
+                [self.tableView reloadData];
+            });
+        }
+        else {
+            NSLog(@"Failed: %@", error);
+        }
+    }];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,21 +63,40 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 4;
+    return [self categoryPhotos].count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
+    CategoryTableViewCell *cell = (CategoryTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
+    
+    FlickrKit *fk = [FlickrKit sharedFlickrKit];
+    NSDictionary *cellPhoto = self.categoryPhotos[indexPath.row];
     
     // Configure the cell...
-    
+    [fk call:@"flickr.photos.getInfo" args: @{@"photo_id": [cellPhoto valueForKeyPath:@"id"]} completion:^(NSDictionary *response, NSError *error) {
+        // Note this is not the main thread!
+        if (response) {
+            NSDictionary *tag = [response valueForKeyPath:@"photo.tags.tag"][0];
+            NSString* tagName = [tag valueForKeyPath:@"raw"];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Any GUI related operations here
+                cell.titleLabel.text = [NSString stringWithFormat:@"%@", tagName];
+                NSURL *url = [fk photoURLForSize:FKPhotoSizeMedium640 fromPhotoDictionary:cellPhoto];
+                NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+                UIImage *tmpImage = [[UIImage alloc] initWithData:data];
+                cell.imageVIew.image = tmpImage;
+
+            });
+        }
+        else {
+            NSLog(@"Failed: %@", error);
+        }
+    }];
     return cell;
 }
 
