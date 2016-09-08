@@ -7,14 +7,15 @@
 //
 
 #import "CategoriesTableViewController.h"
+#import "CategoryTableViewCell.h"
+#import <FlickrKit/FlickrKit.h>
 
 @interface CategoriesTableViewController ()
-
-
+@property (strong, nonatomic) NSArray* tags;
 @end
 
 @implementation CategoriesTableViewController
-
+@synthesize tags = _tags;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -23,6 +24,30 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
+    
+    FlickrKit *fk = [FlickrKit sharedFlickrKit];
+    [fk call:@"flickr.tags.getHotList" args: @{@"count": @"5", @"period": @"day"} completion:^(NSDictionary *response, NSError *error) {
+        // Note this is not the main thread!
+        if (response) {
+            NSMutableArray* tempTags = [NSMutableArray array];
+            for (NSString *tag in [response valueForKeyPath:@"hottags.tag._content"]) {
+                [tempTags addObject:tag];
+            }
+            
+            self.tags = [tempTags copy];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Any GUI related operations here
+                [self.tableView reloadData];
+            });
+        }
+        else {
+            NSLog(@"Failed: %@", error);
+        }
+    }];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,21 +58,20 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 4;
+    return [self tags].count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
+    CategoryTableViewCell *cell = (CategoryTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    // Configure the cell text
+    cell.titleLabel.text = [NSString stringWithFormat:@"#%@", self.tags[indexPath.row]];
+    // Configure the cell image
     return cell;
 }
 
