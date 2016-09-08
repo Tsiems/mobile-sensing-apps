@@ -11,11 +11,11 @@
 #import <FlickrKit/FlickrKit.h>
 
 @interface CategoriesTableViewController ()
-@property (strong, nonatomic) NSArray* tags;
+@property (strong, nonatomic) NSArray* categoryPhotos;
 @end
 
 @implementation CategoriesTableViewController
-@synthesize tags = _tags;
+@synthesize categoryPhotos = _categoryPhotos;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -28,15 +28,16 @@
     [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
     
     FlickrKit *fk = [FlickrKit sharedFlickrKit];
-    [fk call:@"flickr.tags.getHotList" args: @{@"count": @"20", @"period": @"week"} completion:^(NSDictionary *response, NSError *error) {
+    [fk call:@"flickr.interestingness.getList" args: @{@"per_page": @"5", @"page": @"1"} completion:^(NSDictionary *response, NSError *error) {
         // Note this is not the main thread!
         if (response) {
-            NSMutableArray* tempTags = [NSMutableArray array];
-            for (NSString *tag in [response valueForKeyPath:@"hottags.tag._content"]) {
-                [tempTags addObject:tag];
+            NSMutableArray* tempPhotos = [NSMutableArray array];
+            for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
+                [tempPhotos addObject:photoData];
             }
             
-            self.tags = [tempTags copy];
+            self.categoryPhotos = [tempPhotos copy];
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 // Any GUI related operations here
                 [self.tableView reloadData];
@@ -62,28 +63,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self tags].count;
+    return [self categoryPhotos].count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CategoryTableViewCell *cell = (CategoryTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
     
-    // Configure the cell text
-    cell.titleLabel.text = [NSString stringWithFormat:@"#%@", self.tags[indexPath.row]];
-    // Configure the cell image
-    
     FlickrKit *fk = [FlickrKit sharedFlickrKit];
-    [fk call:@"flickr.photos.search" args:@{@"tags": self.tags[indexPath.row], @"per_page": @"1"} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+    NSDictionary *cellPhoto = self.categoryPhotos[indexPath.row];
+    
+    // Configure the cell...
+    [fk call:@"flickr.photos.getInfo" args: @{@"photo_id": [cellPhoto valueForKeyPath:@"id"]} completion:^(NSDictionary *response, NSError *error) {
         // Note this is not the main thread!
-        NSURL *url = nil;
         if (response) {
-            NSDictionary *photoData = [response valueForKeyPath:@"photos.photo"][0];
-            url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
-            NSData *data = [[NSData alloc] initWithContentsOfURL:url];
-
+            NSDictionary *tag = [response valueForKeyPath:@"photo.tags.tag"][0];
+            NSString* tagName = [tag valueForKeyPath:@"raw"];
             dispatch_async(dispatch_get_main_queue(), ^{
                 // Any GUI related operations here
+                cell.titleLabel.text = [NSString stringWithFormat:@"%@", tagName];
+                NSURL *url = [fk photoURLForSize:FKPhotoSizeMedium640 fromPhotoDictionary:cellPhoto];
+                NSData *data = [[NSData alloc] initWithContentsOfURL:url];
                 UIImage *tmpImage = [[UIImage alloc] initWithData:data];
                 cell.imageVIew.image = tmpImage;
 
