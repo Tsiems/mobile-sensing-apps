@@ -56,7 +56,7 @@
     
     id<RefreshDelegate> strongDelegate = self.delegate;
     
-    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"tags": self.tag, @"per_page": [num_results stringValue]} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"text": self.tag, @"per_page": [num_results stringValue]} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
         NSMutableArray *photos = [NSMutableArray array];
         if (response) {
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
@@ -67,7 +67,7 @@
                 thisPhoto.title = [photoData valueForKey:@"title"];
                 
                 [photos addObject:thisPhoto];
-//                NSLog(@"url = %@",url);
+                NSLog(@"url = %@",url);
             }
             
             // copy the photo objects into the photos backing variable
