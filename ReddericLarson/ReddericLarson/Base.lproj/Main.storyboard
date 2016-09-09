@@ -208,10 +208,10 @@
             </objects>
             <point key="canvasLocation" x="1743" y="1638"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Scroll View Controller-->
         <scene sceneID="WRS-C3-a8C">
             <objects>
-                <viewController id="xkX-pn-38Z" sceneMemberID="viewController">
+                <viewController id="xkX-pn-38Z" customClass="ImageScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uZo-HT-bk6"/>
                         <viewControllerLayoutGuide type="bottom" id="1HW-2Q-8ha"/>
