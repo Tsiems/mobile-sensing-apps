@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageModel.h"
 
-@interface CategoryCollectionViewController : UICollectionViewController
+@interface CategoryCollectionViewController : UICollectionViewController <RefreshDelegate>
 
 @property (strong,nonatomic) NSString* tag;
 @property (strong,nonatomic) NSArray* photos;
