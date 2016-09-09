@@ -7,12 +7,14 @@
 //
 
 #import "SettingsTableViewController.h"
+#import "SettingsModel.h"
 
 @interface SettingsTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong,nonatomic) SettingsModel* settingsModel;
 
 @end
 
@@ -20,6 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.slider setValue:[self.settingsModel.numberOfResults floatValue] animated:YES];
+    _sliderLabel.text = [NSString stringWithFormat:@"Number of results: %0.0f", self.slider.value];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -31,6 +36,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(SettingsModel*)settingsModel{
+    if(!_settingsModel) {
+        _settingsModel = [SettingsModel sharedInstance];
+    }
+    return _settingsModel;
 }
 
 #pragma mark - Table view data source
@@ -52,6 +64,7 @@
 
 - (IBAction)save:(id)sender {
     
+    [self.settingsModel setNumberOfResults: @(self.slider.value)];
     [self dismissViewControllerAnimated:true completion:nil];
 }
 

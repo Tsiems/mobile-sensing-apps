@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1620E7CB1D80C80500CEAD65 /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620E7CA1D80C80500CEAD65 /* ImageModel.m */; };
+		16B2A0D61D8304B4004A8838 /* SettingsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B2A0D51D8304B4004A8838 /* SettingsModel.m */; };
 		16E0F5101D779C80009DC31B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F50F1D779C80009DC31B /* main.m */; };
 		16E0F5131D779C80009DC31B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F5121D779C80009DC31B /* AppDelegate.m */; };
 		16E0F5161D779C80009DC31B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F5151D779C80009DC31B /* ViewController.m */; };
@@ -45,8 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1620E7C91D80C80500CEAD65 /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
-		1620E7CA1D80C80500CEAD65 /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
+		16B2A0D41D8304B4004A8838 /* SettingsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsModel.h; sourceTree = "<group>"; };
+		16B2A0D51D8304B4004A8838 /* SettingsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsModel.m; sourceTree = "<group>"; };
 		16E0F50B1D779C7F009DC31B /* ReddericLarson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReddericLarson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E0F50F1D779C80009DC31B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		16E0F5111D779C80009DC31B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -148,6 +148,8 @@
 				16E0F5171D779C80009DC31B /* Main.storyboard */,
 				BA72F88D1D80CEB000C1D8CE /* SettingsTableViewController.h */,
 				BA72F88E1D80CEB000C1D8CE /* SettingsTableViewController.m */,
+				16B2A0D41D8304B4004A8838 /* SettingsModel.h */,
+				16B2A0D51D8304B4004A8838 /* SettingsModel.m */,
 				BAF98E401D80A13100B7836F /* CategoryCollectionViewCell.h */,
 				BAF98E411D80A13100B7836F /* CategoryCollectionViewCell.m */,
 				BAF98E3D1D80A0F300B7836F /* CategoryCollectionViewController.h */,
@@ -478,6 +480,7 @@
 				BAF98E3C1D809CDA00B7836F /* CategoryTableViewCell.m in Sources */,
 				16E0F5131D779C80009DC31B /* AppDelegate.m in Sources */,
 				BA72F88F1D80CEB000C1D8CE /* SettingsTableViewController.m in Sources */,
+				16B2A0D61D8304B4004A8838 /* SettingsModel.m in Sources */,
 				BA72F88C1D80CE3900C1D8CE /* ImageModel.m in Sources */,
 				16E0F5101D779C80009DC31B /* main.m in Sources */,
 				BAF98E421D80A13100B7836F /* CategoryCollectionViewCell.m in Sources */,
