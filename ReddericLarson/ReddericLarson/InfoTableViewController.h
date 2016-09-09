@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoTableViewController : UITableViewController
+@property (strong,nonatomic) NSString* id;
 
 @end
