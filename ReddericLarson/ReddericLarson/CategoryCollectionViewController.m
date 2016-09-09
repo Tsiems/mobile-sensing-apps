@@ -8,6 +8,7 @@
 
 #import "CategoryCollectionViewController.h"
 #import "CategoryCollectionViewCell.h"
+#import "ImageScrollViewController.h"
 #import "FlickrKit/FlickrKit.h"
 #import "SettingsModel.h"
 #import "Photo.h"
@@ -101,15 +102,23 @@ static NSString * const reuseIdentifier = @"cell";
     return _imageModel;
 }
 
-/*
-#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"showImage"])
+    {
+        ImageScrollViewController *vc = [segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.collectionView indexPathForCell:(UICollectionViewCell*)sender];
+        Photo *photo = self.photos[selectedIndexPath.row];
+        vc.photo = photo;
+        //vc.tag = tag;
+    }
+
 }
-*/
+
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -165,7 +174,7 @@ static NSString * const reuseIdentifier = @"cell";
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
     
-    [self performSegueWithIdentifier:@"showImage" sender:self];
+    [self performSegueWithIdentifier:@"showImage" sender:[self.collectionView cellForItemAtIndexPath:indexPath]];
 }
 
 

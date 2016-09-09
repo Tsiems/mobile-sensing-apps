@@ -8,15 +8,16 @@
 
 #import "ImageScrollViewController.h"
 @interface ImageScrollViewController () <UIScrollViewDelegate>
-@property (strong, nonatomic) NSDictionary* photoData;
+
 @end
 
 @implementation ImageScrollViewController
--(NSDictionary*)photoData{
-    if(!_photoData) {
-        _photoData = [[NSDictionary alloc] init];
+
+-(Photo*)photo {
+    if (!_photo) {
+        _photo = [[Photo alloc]init];
     }
-    return _photoData;
+    return _photo;
 }
 
 -(UIImageView*)imageView{
@@ -35,6 +36,7 @@
     self.scrollView.contentSize = self.imageView.image.size;
     self.scrollView.minimumZoomScale = 0.1;
     self.scrollView.delegate = self;
+    self.imageView.image = self.photo.image;
 }
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
