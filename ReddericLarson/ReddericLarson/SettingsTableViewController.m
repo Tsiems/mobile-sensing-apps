@@ -26,6 +26,11 @@
     [self.slider setValue:[self.settingsModel.numberOfResults floatValue] animated:YES];
     _sliderLabel.text = [NSString stringWithFormat:@"Number of results: %0.0f", self.slider.value];
     
+    UINavigationBar *navBar = [self.navigationController navigationBar];
+    
+    [navBar setBarTintColor:[UIColor lightGrayColor]];
+
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
