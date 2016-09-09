@@ -257,7 +257,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="JeX-JP-5vV" id="jjG-dO-A2c"/>
-                        <segue destination="4g5-rl-LSa" kind="presentation" identifier="openInfo" id="aG1-E6-4EM"/>
+                        <segue destination="4g5-rl-LSa" kind="presentation" identifier="openInfo" modalTransitionStyle="flipHorizontal" id="aG1-E6-4EM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDc-Qu-fO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
