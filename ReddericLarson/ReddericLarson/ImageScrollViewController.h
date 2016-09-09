@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FlickrKit/FlickrKit.h>
+#import "ImageModel.h"
 
 @interface ImageScrollViewController : UIViewController
-
+//@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) UIImageView* imageView;
 @end
