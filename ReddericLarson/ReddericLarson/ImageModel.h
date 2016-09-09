@@ -19,6 +19,8 @@
 
 +(ImageModel*) sharedInstance;
 
+
+
 -(NSArray*)getImages;
 
 -(NSInteger*)getImageCount;
@@ -32,6 +34,8 @@
 -(void)loadPopularTags;
 
 @property (nonatomic, weak) id < RefreshDelegate > delegate;
+@property (strong,nonatomic) NSArray* metadata;
+@property (strong, nonatomic) NSString* selectedId;
 
 @end
 
