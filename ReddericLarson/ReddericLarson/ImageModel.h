@@ -8,18 +8,35 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Photo.h"
+
+@protocol RefreshDelegate <NSObject>
+@optional
+- (void)refreshImages;
+- (void)refreshImagesWithData: (NSArray*)data;
+@end
 
 @interface ImageModel : NSObject
 
 +(ImageModel*) sharedInstance;
 
-//-(NSArray*)getImage:(NSInteger*)index;
 
--(NSArray*)getLinks;
-//-(NSArray*)getImages;
+
+-(NSArray*)getImages;
 
 -(NSInteger*)getImageCount;
 
+-(void)loadImages:(NSNumber*)num_results sortBy:(NSString*)sort_val;
+
+-(void)getImageMetadata:(NSString*)photo_id;
+
 -(void)setTag:(NSString*)name;
 
+-(void)loadPopularTags;
+
+@property (nonatomic, weak) id < RefreshDelegate > delegate;
+@property (strong,nonatomic) NSArray* metadata;
+@property (strong, nonatomic) Photo* selectedPhoto;
+
 @end
+

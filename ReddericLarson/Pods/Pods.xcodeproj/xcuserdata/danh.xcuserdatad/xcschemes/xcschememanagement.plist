@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ReddericLarson.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,6 +37,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3EDC386D07DA555A8D6570E485E2AEB4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4BD7F7875DA44DD807CCB42AEB32F91A</key>
 		<dict>
 			<key>primary</key>
@@ -42,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>99035D35BE313F6442E74275D481AA8E</key>
+		<key>C80D461DDF02CF09D4AC30FAE6924710</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageModel.h"
 
-@interface CategoriesTableViewController : UITableViewController
-
+@interface CategoriesTableViewController : UITableViewController <RefreshDelegate>
+@property (strong, nonatomic) NSArray* categoryPhotoData;
 @end

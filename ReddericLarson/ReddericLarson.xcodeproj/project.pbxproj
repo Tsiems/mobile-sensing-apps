@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1620E7CB1D80C80500CEAD65 /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1620E7CA1D80C80500CEAD65 /* ImageModel.m */; };
+		16B2A0D61D8304B4004A8838 /* SettingsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B2A0D51D8304B4004A8838 /* SettingsModel.m */; };
+		16B2A0D91D8314D9004A8838 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B2A0D81D8314D9004A8838 /* Photo.m */; };
 		16E0F5101D779C80009DC31B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F50F1D779C80009DC31B /* main.m */; };
 		16E0F5131D779C80009DC31B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F5121D779C80009DC31B /* AppDelegate.m */; };
 		16E0F5161D779C80009DC31B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F5151D779C80009DC31B /* ViewController.m */; };
@@ -18,11 +19,17 @@
 		16E0F5341D779C80009DC31B /* ReddericLarsonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F5331D779C80009DC31B /* ReddericLarsonUITests.m */; };
 		5A687B26F6BB93A97D6954F2 /* libPods-ReddericLarsonUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C8C8E46CB43FC6D854829D /* libPods-ReddericLarsonUITests.a */; };
 		AA1658D9F8BC619250A2AE58 /* libPods-ReddericLarsonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECB97121934CB85E3D85647 /* libPods-ReddericLarsonTests.a */; };
+		B43163351D831EA9008E0B78 /* ImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43163341D831EA9008E0B78 /* ImageScrollViewController.m */; };
+		BA6036AF1D833AD400C86BF1 /* SlideShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6036AE1D833AD400C86BF1 /* SlideShowViewController.m */; };
+		BA72F88C1D80CE3900C1D8CE /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA72F88B1D80CE3900C1D8CE /* ImageModel.m */; };
+		BA72F88F1D80CEB000C1D8CE /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA72F88E1D80CEB000C1D8CE /* SettingsTableViewController.m */; };
 		BAF98E391D809C9B00B7836F /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF98E381D809C9B00B7836F /* CategoriesTableViewController.m */; };
 		BAF98E3C1D809CDA00B7836F /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF98E3B1D809CDA00B7836F /* CategoryTableViewCell.m */; };
 		BAF98E3F1D80A0F300B7836F /* CategoryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF98E3E1D80A0F300B7836F /* CategoryCollectionViewController.m */; };
 		BAF98E421D80A13100B7836F /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF98E411D80A13100B7836F /* CategoryCollectionViewCell.m */; };
 		D22573D97AFA9CBA67FD6350 /* libPods-ReddericLarson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCE825EBDD558D7550258A1 /* libPods-ReddericLarson.a */; };
+		F69D5B211D833A6500C1500E /* InfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69D5B201D833A6500C1500E /* InfoTableViewController.m */; };
+		F69D5B241D8350A700C1500E /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F69D5B231D8350A700C1500E /* InfoTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1620E7C91D80C80500CEAD65 /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
-		1620E7CA1D80C80500CEAD65 /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
+		16B2A0D41D8304B4004A8838 /* SettingsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsModel.h; sourceTree = "<group>"; };
+		16B2A0D51D8304B4004A8838 /* SettingsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsModel.m; sourceTree = "<group>"; };
+		16B2A0D71D8314D9004A8838 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		16B2A0D81D8314D9004A8838 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		16E0F50B1D779C7F009DC31B /* ReddericLarson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReddericLarson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E0F50F1D779C80009DC31B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		16E0F5111D779C80009DC31B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +76,14 @@
 		848C0C520DF4BEE2B9A36C2C /* Pods-ReddericLarson.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReddericLarson.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReddericLarson/Pods-ReddericLarson.release.xcconfig"; sourceTree = "<group>"; };
 		89416FAB04392D36CAAB4520 /* Pods-ReddericLarsonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReddericLarsonUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReddericLarsonUITests/Pods-ReddericLarsonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ACCE825EBDD558D7550258A1 /* libPods-ReddericLarson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReddericLarson.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B43163331D831EA9008E0B78 /* ImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollViewController.h; sourceTree = "<group>"; };
+		B43163341D831EA9008E0B78 /* ImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollViewController.m; sourceTree = "<group>"; };
+		BA6036AD1D833AD400C86BF1 /* SlideShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideShowViewController.h; sourceTree = "<group>"; };
+		BA6036AE1D833AD400C86BF1 /* SlideShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideShowViewController.m; sourceTree = "<group>"; };
+		BA72F88A1D80CE3900C1D8CE /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
+		BA72F88B1D80CE3900C1D8CE /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
+		BA72F88D1D80CEB000C1D8CE /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		BA72F88E1D80CEB000C1D8CE /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		BAE4A1500ADD96DDCAB2ECB4 /* Pods-ReddericLarsonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReddericLarsonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReddericLarsonTests/Pods-ReddericLarsonTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAF98E371D809C9B00B7836F /* CategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesTableViewController.h; sourceTree = "<group>"; };
 		BAF98E381D809C9B00B7836F /* CategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesTableViewController.m; sourceTree = "<group>"; };
@@ -78,6 +95,10 @@
 		BAF98E411D80A13100B7836F /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
 		D5C8C8E46CB43FC6D854829D /* libPods-ReddericLarsonUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReddericLarsonUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96C619838825768892284BA /* Pods-ReddericLarsonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReddericLarsonUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReddericLarsonUITests/Pods-ReddericLarsonUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F69D5B1F1D833A6500C1500E /* InfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoTableViewController.h; sourceTree = "<group>"; };
+		F69D5B201D833A6500C1500E /* InfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewController.m; sourceTree = "<group>"; };
+		F69D5B221D8350A700C1500E /* InfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
+		F69D5B231D8350A700C1500E /* InfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,17 +154,31 @@
 		16E0F50D1D779C80009DC31B /* ReddericLarson */ = {
 			isa = PBXGroup;
 			children = (
+				B43163331D831EA9008E0B78 /* ImageScrollViewController.h */,
+				B43163341D831EA9008E0B78 /* ImageScrollViewController.m */,
+				F69D5B1F1D833A6500C1500E /* InfoTableViewController.h */,
+				F69D5B201D833A6500C1500E /* InfoTableViewController.m */,
+				F69D5B221D8350A700C1500E /* InfoTableViewCell.h */,
+				F69D5B231D8350A700C1500E /* InfoTableViewCell.m */,
 				16E0F5111D779C80009DC31B /* AppDelegate.h */,
 				16E0F5121D779C80009DC31B /* AppDelegate.m */,
 				16E0F5141D779C80009DC31B /* ViewController.h */,
 				16E0F5151D779C80009DC31B /* ViewController.m */,
+				BA72F88A1D80CE3900C1D8CE /* ImageModel.h */,
+				BA72F88B1D80CE3900C1D8CE /* ImageModel.m */,
 				16E0F5171D779C80009DC31B /* Main.storyboard */,
-				1620E7C91D80C80500CEAD65 /* ImageModel.h */,
-				1620E7CA1D80C80500CEAD65 /* ImageModel.m */,
+				BA6036AD1D833AD400C86BF1 /* SlideShowViewController.h */,
+				BA6036AE1D833AD400C86BF1 /* SlideShowViewController.m */,
+				BA72F88D1D80CEB000C1D8CE /* SettingsTableViewController.h */,
+				BA72F88E1D80CEB000C1D8CE /* SettingsTableViewController.m */,
+				16B2A0D41D8304B4004A8838 /* SettingsModel.h */,
+				16B2A0D51D8304B4004A8838 /* SettingsModel.m */,
 				BAF98E401D80A13100B7836F /* CategoryCollectionViewCell.h */,
 				BAF98E411D80A13100B7836F /* CategoryCollectionViewCell.m */,
 				BAF98E3D1D80A0F300B7836F /* CategoryCollectionViewController.h */,
 				BAF98E3E1D80A0F300B7836F /* CategoryCollectionViewController.m */,
+				16B2A0D71D8314D9004A8838 /* Photo.h */,
+				16B2A0D81D8314D9004A8838 /* Photo.m */,
 				BAF98E3A1D809CDA00B7836F /* CategoryTableViewCell.h */,
 				BAF98E3B1D809CDA00B7836F /* CategoryTableViewCell.m */,
 				BAF98E371D809C9B00B7836F /* CategoriesTableViewController.h */,
@@ -466,12 +501,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F69D5B211D833A6500C1500E /* InfoTableViewController.m in Sources */,
 				16E0F5161D779C80009DC31B /* ViewController.m in Sources */,
 				BAF98E3C1D809CDA00B7836F /* CategoryTableViewCell.m in Sources */,
 				16E0F5131D779C80009DC31B /* AppDelegate.m in Sources */,
-				1620E7CB1D80C80500CEAD65 /* ImageModel.m in Sources */,
+				BA72F88F1D80CEB000C1D8CE /* SettingsTableViewController.m in Sources */,
+				16B2A0D61D8304B4004A8838 /* SettingsModel.m in Sources */,
+				BA72F88C1D80CE3900C1D8CE /* ImageModel.m in Sources */,
 				16E0F5101D779C80009DC31B /* main.m in Sources */,
+				BA6036AF1D833AD400C86BF1 /* SlideShowViewController.m in Sources */,
+				F69D5B241D8350A700C1500E /* InfoTableViewCell.m in Sources */,
+				B43163351D831EA9008E0B78 /* ImageScrollViewController.m in Sources */,
 				BAF98E421D80A13100B7836F /* CategoryCollectionViewCell.m in Sources */,
+				16B2A0D91D8314D9004A8838 /* Photo.m in Sources */,
 				BAF98E3F1D80A0F300B7836F /* CategoryCollectionViewController.m in Sources */,
 				BAF98E391D809C9B00B7836F /* CategoriesTableViewController.m in Sources */,
 			);
