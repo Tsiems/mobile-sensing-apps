@@ -10,7 +10,6 @@
 #import "ImageModel.h"
 
 @interface InfoTableViewController();
-@property (strong,nonatomic) NSString* id;
 @property (strong, nonatomic) ImageModel* imageModel;
 @end
 @implementation InfoTableViewController
