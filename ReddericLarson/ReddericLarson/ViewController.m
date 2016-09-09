@@ -9,11 +9,13 @@
 #import "ViewController.h"
 #import "FlickrKit/FlickrKit.h"
 #import "ImageModel.h"
+#import "JHUD.h"
 
 @interface ViewController ()
 
 
 @property (strong, nonatomic) ImageModel* imageModel;
+@property (nonatomic) JHUD *hudView;
 
 @end
 
@@ -28,7 +30,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.hudView = [[JHUD alloc]initWithFrame:self.view.bounds];
+    
+    self.hudView.messageLabel.text = @"hello ,this is a circle animation";
+    
+    //show
+    [self.hudView showAtView:self.view hudType:JHUDLoadingTypeCircle];
+    
+    //hide
+    
     [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
     
     FlickrKit *fk = [FlickrKit sharedFlickrKit];
@@ -44,6 +55,7 @@
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 // Any GUI related operations here
+                [self.hudView hide];
             });
         }   
     }];

@@ -11,13 +11,13 @@
 #import "FlickrKit/FlickrKit.h"
 #import "SettingsModel.h"
 #import "Photo.h"
+#import "JHUD.h"
 
 @interface CategoryCollectionViewController ()
 
 @property (strong, nonatomic) SettingsModel* settingsModel;
-
+@property (nonatomic) JHUD *hudView;
 @property (strong, nonatomic) ImageModel* imageModel;
-
 @end
 
 @implementation CategoryCollectionViewController
@@ -28,9 +28,8 @@ static NSString * const reuseIdentifier = @"cell";
 - (void)refreshImages {
     self.photos = [self.imageModel getImages];
     [self.collectionView reloadData];
+    [self.hudView hide];
 }
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,14 +39,27 @@ static NSString * const reuseIdentifier = @"cell";
     
     // set title
     self.title = self.tag;
+    self.hudView = [[JHUD alloc]initWithFrame:self.view.bounds];
+    
+    self.hudView.messageLabel.text = @"Loading Images!";
+    
+    //show
+    [self.hudView showAtView:self.view hudType:JHUDLoadingTypeCircleJoin];
     
     // round desired number of results to int
     int per_page = (int)([self.settingsModel.numberOfResults floatValue] + 0.5);
     self.settingsModel.numberOfResults = [NSNumber numberWithInteger:per_page];
     
     // load images
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     [self.imageModel setTag:self.tag];
     [self.imageModel loadImages: self.settingsModel.numberOfResults];
+    
+    
 }
 
 
