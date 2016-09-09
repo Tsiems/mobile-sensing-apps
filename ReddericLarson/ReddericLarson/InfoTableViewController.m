@@ -7,6 +7,7 @@
 //
 
 #import "InfoTableViewController.h"
+#import "InfoTableViewCell.h"
 #import "ImageModel.h"
 
 @interface InfoTableViewController();
@@ -26,6 +27,7 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.imageModel.delegate = self;
+    self.id = self.imageModel.selectedId;
     [self.imageModel getImageMetadata:_id];
     
     
@@ -55,8 +57,10 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"categoryCell" forIndexPath:indexPath];
+    InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"infoCell" forIndexPath:indexPath];
     
+    cell.titleLabel.text = [self.imageModel.metadata[indexPath.row] valueForKey:@"label"];
+    cell.subcontent.text = [[self.imageModel.metadata[indexPath.row] valueForKey:@"raw"] valueForKey:@"_content"];
 
     
     return cell;
