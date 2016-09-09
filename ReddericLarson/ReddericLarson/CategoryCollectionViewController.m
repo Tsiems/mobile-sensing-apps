@@ -128,7 +128,7 @@ static NSString * const reuseIdentifier = @"cell";
     
     // Configure the cell
     
-    [cell.pictureView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@",[(Photo*)self.photos[indexPath.row] url]]]]]];
+    [cell.pictureView setImage:[(Photo*)self.photos[indexPath.row] image]];
     
     return cell;
 }
