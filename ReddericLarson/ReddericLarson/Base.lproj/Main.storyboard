@@ -23,7 +23,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mountains" translatesAutoresizingMaskIntoConstraints="NO" id="bFH-Uc-VUx">
-                                            <rect key="frame" x="0.0" y="-1" width="600" height="265.5"/>
+                                            <rect key="frame" x="0.0" y="-1" width="600" height="266"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOUNTAINS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qln-vt-a1c">
                                             <rect key="frame" x="-12" y="108" width="624" height="50"/>
@@ -113,10 +113,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5EW-Do-FFj">
-                                                    <rect key="frame" x="58" y="14" width="484" height="29"/>
+                                                    <rect key="frame" x="8" y="14" width="584" height="29"/>
                                                     <segments>
-                                                        <segment title="Today"/>
-                                                        <segment title="Week"/>
+                                                        <segment title="Ascending"/>
+                                                        <segment title="Descending"/>
                                                     </segments>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </segmentedControl>
@@ -124,11 +124,11 @@
                                             <constraints>
                                                 <constraint firstItem="dBR-MM-UlF" firstAttribute="leading" secondItem="RTe-HH-avG" secondAttribute="leadingMargin" constant="20" id="5Hr-yH-C04"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="5EW-Do-FFj" secondAttribute="trailing" constant="175" id="B4G-an-peX"/>
-                                                <constraint firstItem="5EW-Do-FFj" firstAttribute="leading" secondItem="RTe-HH-avG" secondAttribute="leadingMargin" constant="50" id="Dvt-YK-glP"/>
+                                                <constraint firstItem="5EW-Do-FFj" firstAttribute="leading" secondItem="RTe-HH-avG" secondAttribute="leadingMargin" id="Dvt-YK-glP"/>
                                                 <constraint firstItem="dBR-MM-UlF" firstAttribute="top" secondItem="H7G-9Z-aTf" secondAttribute="bottom" constant="11" id="JMO-dU-RJg"/>
                                                 <constraint firstItem="dBR-MM-UlF" firstAttribute="top" secondItem="RTe-HH-avG" secondAttribute="topMargin" constant="116" id="Lj4-YA-qRN"/>
                                                 <constraint firstItem="H7G-9Z-aTf" firstAttribute="leading" secondItem="RTe-HH-avG" secondAttribute="leadingMargin" constant="20" id="UAn-cV-IJw"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5EW-Do-FFj" secondAttribute="trailing" constant="50" id="a3x-uE-5ym"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5EW-Do-FFj" secondAttribute="trailing" id="a3x-uE-5ym"/>
                                                 <constraint firstItem="5EW-Do-FFj" firstAttribute="top" secondItem="RTe-HH-avG" secondAttribute="topMargin" constant="6" id="cfr-Bi-RIC"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dBR-MM-UlF" secondAttribute="trailing" constant="20" id="mgT-bV-UJA"/>
                                             </constraints>
@@ -161,7 +161,7 @@
                                                 </label>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueq-sZ-yng">
                                                     <rect key="frame" x="0.0" y="70" width="600" height="216"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
@@ -217,7 +217,7 @@
             </objects>
             <point key="canvasLocation" x="1743" y="1638"/>
         </scene>
-        <!--Image Scroll View Controller-->
+        <!--Title-->
         <scene sceneID="WRS-C3-a8C">
             <objects>
                 <viewController id="xkX-pn-38Z" customClass="ImageScrollViewController" sceneMemberID="viewController">
@@ -235,13 +235,56 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="7rk-Cf-5Z2">
+                        <barButtonItem key="rightBarButtonItem" title="More Info" id="6va-5t-3qx">
+                            <connections>
+                                <action selector="infoButton:" destination="xkX-pn-38Z" id="oiy-qF-huT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="JeX-JP-5vV" id="jjG-dO-A2c"/>
+                        <segue destination="4g5-rl-LSa" kind="presentation" identifier="showInfo" id="aG1-E6-4EM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDc-Qu-fO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2474" y="810"/>
+        </scene>
+        <!--Info Table View Controller-->
+        <scene sceneID="GXq-14-rqz">
+            <objects>
+                <tableViewController id="ChC-xu-Xr8" customClass="InfoTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DTw-xx-tVe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eau-2Y-ojU">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eau-2Y-ojU" id="Scm-sR-WC2">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ChC-xu-Xr8" id="DLJ-wM-RfT"/>
+                            <outlet property="delegate" destination="ChC-xu-Xr8" id="dng-oq-8fG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="dCX-hc-McK">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="6ux-NE-w9y">
+                            <connections>
+                                <action selector="closeButton:" destination="ChC-xu-Xr8" id="1tK-hD-kMN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yR6-cF-UuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3267" y="1526"/>
         </scene>
         <!--Slide Show View Controller-->
         <scene sceneID="gZj-z1-zll">
@@ -307,9 +350,7 @@
                             <outlet property="delegate" destination="uZe-eh-09h" id="fZ4-Kc-X7s"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Category Name" id="ACO-bu-4aa">
-                        <barButtonItem key="rightBarButtonItem" title="SlideShow" id="o73-0j-nE7"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Category Name" id="ACO-bu-4aa"/>
                     <connections>
                         <segue destination="xkX-pn-38Z" kind="show" identifier="showImage" id="ieg-Sa-of2"/>
                     </connections>
@@ -353,6 +394,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZuL-PM-PhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="931" y="1638"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E9R-4O-a0G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4g5-rl-LSa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Wj-Vb-Jxr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ChC-xu-Xr8" kind="relationship" relationship="rootViewController" id="Qxi-aq-ZTn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZZq-iV-fBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2574" y="1526"/>
         </scene>
     </scenes>
     <resources>
