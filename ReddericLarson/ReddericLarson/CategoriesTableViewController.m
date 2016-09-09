@@ -34,7 +34,6 @@
     self.categoryPhotoData = data;
     
     [self.tableView reloadData];
-    NSLog(@"Reloaded!");
 }
 
 
@@ -68,7 +67,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"%lu",(unsigned long)[self categoryPhotoData].count);
     return [self categoryPhotoData].count;
 }
 

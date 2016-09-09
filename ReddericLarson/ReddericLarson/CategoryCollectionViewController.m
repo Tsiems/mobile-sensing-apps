@@ -31,7 +31,6 @@ static NSString * const reuseIdentifier = @"cell";
     [self.collectionView reloadData];
     [self.hudView hide];
     
-    NSLog(@"%lu refreshed",(unsigned long)self.photos.count);
 }
 
 - (void)viewDidLoad {
