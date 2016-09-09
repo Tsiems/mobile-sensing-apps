@@ -102,7 +102,9 @@
             }
             self.metadata = [tempEXIF copy];
             
-            [strongDelegate refreshImages];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [strongDelegate refreshImages];
+            });
         }
         else {
             NSLog(@"Failed: %@",error);

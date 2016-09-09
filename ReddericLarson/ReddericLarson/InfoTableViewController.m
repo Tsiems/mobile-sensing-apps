@@ -26,6 +26,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
     self.imageModel.delegate = self;
     self.id = self.imageModel.selectedPhoto.id;
     [self.imageModel getImageMetadata:_id];
@@ -65,7 +66,7 @@
         InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"noInfoCell" forIndexPath:indexPath];
         
         cell.titleLabel.text = [NSString stringWithFormat:@"No metadata for %@", self.imageModel.selectedPhoto.title];
-        
+        cell.textLabel.numberOfLines = 0;
         return cell;
     }
     else {
@@ -73,7 +74,6 @@
         
         cell.titleLabel.text = [self.imageModel.metadata[indexPath.row] valueForKey:@"label"];
         cell.subcontent.text = [[self.imageModel.metadata[indexPath.row] valueForKey:@"raw"] valueForKey:@"_content"];
-
         
         return cell;
     }

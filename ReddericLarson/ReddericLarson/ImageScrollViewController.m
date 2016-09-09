@@ -56,7 +56,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    self.title = self.photo.title;
     [self.scrollView addSubview:self.imageView];
     self.scrollView.contentSize = self.imageView.image.size;
     self.scrollView.minimumZoomScale = 0.1;
