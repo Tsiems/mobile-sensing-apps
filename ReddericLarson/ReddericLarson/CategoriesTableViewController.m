@@ -99,7 +99,6 @@
     NSString *tag = [self.categoryTags objectForKey: photoID];
     cell.imageVIew.image = [self.photoImages objectForKey:photoID];
     cell.titleLabel.text = [NSString stringWithFormat:@"%@", tag];
-    NSLog(@"tag at this cell = %@", tag);
 
     return cell;
 }
