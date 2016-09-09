@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16B2A0D61D8304B4004A8838 /* SettingsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B2A0D51D8304B4004A8838 /* SettingsModel.m */; };
+		16B2A0D91D8314D9004A8838 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B2A0D81D8314D9004A8838 /* Photo.m */; };
 		16E0F5101D779C80009DC31B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F50F1D779C80009DC31B /* main.m */; };
 		16E0F5131D779C80009DC31B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F5121D779C80009DC31B /* AppDelegate.m */; };
 		16E0F5161D779C80009DC31B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E0F5151D779C80009DC31B /* ViewController.m */; };
@@ -47,6 +48,8 @@
 /* Begin PBXFileReference section */
 		16B2A0D41D8304B4004A8838 /* SettingsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsModel.h; sourceTree = "<group>"; };
 		16B2A0D51D8304B4004A8838 /* SettingsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsModel.m; sourceTree = "<group>"; };
+		16B2A0D71D8314D9004A8838 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		16B2A0D81D8314D9004A8838 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		16E0F50B1D779C7F009DC31B /* ReddericLarson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReddericLarson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E0F50F1D779C80009DC31B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		16E0F5111D779C80009DC31B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				BAF98E411D80A13100B7836F /* CategoryCollectionViewCell.m */,
 				BAF98E3D1D80A0F300B7836F /* CategoryCollectionViewController.h */,
 				BAF98E3E1D80A0F300B7836F /* CategoryCollectionViewController.m */,
+				16B2A0D71D8314D9004A8838 /* Photo.h */,
+				16B2A0D81D8314D9004A8838 /* Photo.m */,
 				BAF98E3A1D809CDA00B7836F /* CategoryTableViewCell.h */,
 				BAF98E3B1D809CDA00B7836F /* CategoryTableViewCell.m */,
 				BAF98E371D809C9B00B7836F /* CategoriesTableViewController.h */,
@@ -484,6 +489,7 @@
 				BA72F88C1D80CE3900C1D8CE /* ImageModel.m in Sources */,
 				16E0F5101D779C80009DC31B /* main.m in Sources */,
 				BAF98E421D80A13100B7836F /* CategoryCollectionViewCell.m in Sources */,
+				16B2A0D91D8314D9004A8838 /* Photo.m in Sources */,
 				BAF98E3F1D80A0F300B7836F /* CategoryCollectionViewController.m in Sources */,
 				BAF98E391D809C9B00B7836F /* CategoriesTableViewController.m in Sources */,
 			);

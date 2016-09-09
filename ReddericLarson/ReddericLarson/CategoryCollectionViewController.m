@@ -10,6 +10,7 @@
 #import "CategoryCollectionViewCell.h"
 #import "FlickrKit/FlickrKit.h"
 #import "SettingsModel.h"
+#import "Photo.h"
 
 @interface CategoryCollectionViewController ()
 
@@ -32,26 +33,35 @@ static NSString * const reuseIdentifier = @"cell";
     
     // Do any additional setup after loading the view.
     
+    self.title = self.tag;
+    
     
     [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
     FlickrKit *fk = [FlickrKit sharedFlickrKit];
     
     // round to int
-    int per_page = [self.settingsModel.numberOfResults intValue];
+    int per_page = (int)([self.settingsModel.numberOfResults floatValue] + 0.5);
     self.settingsModel.numberOfResults = [NSNumber numberWithInteger:per_page];
     NSLog(@"%@",self.settingsModel.numberOfResults);
     
     [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"tags": self.tag, @"per_page": [self.settingsModel.numberOfResults stringValue]} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
-        NSMutableArray *photoURLs = [NSMutableArray array];
+        NSMutableArray *photos = [NSMutableArray array];
         if (response) {
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
                 NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
-                [photoURLs addObject:url];
+                Photo *thisPhoto = [[Photo alloc] init];
+                thisPhoto.url = url;
+                thisPhoto.id = [photoData valueForKey:@"id"];
+                thisPhoto.title = [photoData valueForKey:@"title"];
+                
+                
+                [photos addObject:thisPhoto];
+                
                 NSLog(@"url = %@",url);
             }
             
-            // copy the photo urls into the links backing variable
-            _links = [photoURLs copy];
+            // copy the photo objects into the photos backing variable
+            _photos = [photos copy];
             
             //reload view
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -74,18 +84,16 @@ static NSString * const reuseIdentifier = @"cell";
 
 -(NSString*)tag{
     if(!_tag) {
-        _tag = @"cat";
+        _tag = @"London";
     }
-    
     return _tag;
 }
 
--(NSArray*)links{
-    if(!_links) {
-        _links = @[];
+-(NSArray*)photos{
+    if(!_photos) {
+        _photos = @[];
     }
-    
-    return _links;
+    return _photos;
 }
 
 -(SettingsModel*)settingsModel{
@@ -114,7 +122,7 @@ static NSString * const reuseIdentifier = @"cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _links.count;
+    return self.photos.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -122,7 +130,7 @@ static NSString * const reuseIdentifier = @"cell";
     
     // Configure the cell
     
-    [cell.pictureView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@",self.links[indexPath.row]]]]]];
+    [cell.pictureView setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@",[(Photo*)self.photos[indexPath.row] url]]]]]];
     
     return cell;
 }

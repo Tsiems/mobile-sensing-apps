@@ -11,5 +11,5 @@
 @interface CategoryCollectionViewController : UICollectionViewController
 
 @property (strong,nonatomic) NSString* tag;
-@property (strong,nonatomic) NSArray* links;
+@property (strong,nonatomic) NSArray* photos;
 @end

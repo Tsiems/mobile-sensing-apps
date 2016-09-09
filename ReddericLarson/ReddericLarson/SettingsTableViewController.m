@@ -65,6 +65,7 @@
 - (IBAction)save:(id)sender {
     
     [self.settingsModel setNumberOfResults: @(self.slider.value)];
+    NSLog(@"%f",self.slider.value);
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
