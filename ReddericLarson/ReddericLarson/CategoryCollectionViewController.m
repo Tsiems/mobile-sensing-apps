@@ -60,7 +60,7 @@ static NSString * const reuseIdentifier = @"cell";
     [super viewDidAppear:animated];
     
     [self.imageModel setTag:self.tag];
-    [self.imageModel loadImages: self.settingsModel.numberOfResults];
+    [self.imageModel loadImages: self.settingsModel.numberOfResults sortBy:self.settingsModel.sortValue];
     
     
 }
