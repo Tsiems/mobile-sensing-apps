@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong,nonatomic) SettingsModel* settingsModel;
+@property (weak, nonatomic) IBOutlet UISwitch* ourSwitch;
+
+@property (assign, nonatomic) NSInteger timerVal;
+@property (assign, nonatomic) NSTimer* timer;
 
 @end
 
@@ -28,13 +32,22 @@ NSString *pickerValue;
         self.picker.userInteractionEnabled = YES;
         self.slider.enabled = true;
         self.segmentedControl.enabled = true;
+        [self createTimer];
 
     }
     else {
         self.picker.userInteractionEnabled = NO;
         self.slider.enabled = false;
         self.segmentedControl.enabled = false;
+        [self actionStop];
     }
+}
+
+- (void)actionStop {
+    
+    // stop the timer
+    [self.timer invalidate];
+    [self.ourSwitch setOn:YES animated:YES];
 }
 
 - (void)viewDidLoad {
@@ -45,6 +58,7 @@ NSString *pickerValue;
     self.picker.userInteractionEnabled = NO;
     self.slider.enabled = false;
     self.segmentedControl.enabled = false;
+    self.timerVal = 1;
     
     
     
@@ -89,6 +103,33 @@ NSString *pickerValue;
         _settingsModel = [SettingsModel sharedInstance];
     }
     return _settingsModel;
+}
+
+-(void)createTimer {
+    
+    // create timer on run loop
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTicked:) userInfo:nil repeats:YES];
+}
+
+
+- (void)timerTicked:(NSTimer*)timer {
+    
+    // decrement timer 1 … this is your UI, tick down and redraw
+    self.timerVal += 1;
+    
+//    [myStopwatch tickDown];
+//    [myStopwatch.view setNeedsDisplay];
+    
+    // increment timer 2 … bump time and redraw in UI
+    NSLog(@"timer = %d", (int)self.timerVal);
+    
+    if (self.timerVal > 5) {
+        self.picker.userInteractionEnabled = NO;
+        self.slider.enabled = false;
+        self.segmentedControl.enabled = false;
+        [self actionStop];
+    }
+
 }
 
 #pragma mark - Table view data source
