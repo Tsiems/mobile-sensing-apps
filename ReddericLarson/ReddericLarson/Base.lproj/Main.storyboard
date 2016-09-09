@@ -23,8 +23,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mountains" translatesAutoresizingMaskIntoConstraints="NO" id="bFH-Uc-VUx">
-                                            <rect key="frame" x="8" y="0.0" width="592" height="265"/>
+                                            <rect key="frame" x="0.0" y="-1" width="600" height="265.5"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds3-YX-Pkl">
+                                            <rect key="frame" x="561" y="122" width="31" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.15040608702650787" green="0.021727013267910565" blue="0.59317496827411165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOUNTAINS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qln-vt-a1c">
                                             <rect key="frame" x="-12" y="108" width="624" height="50"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,22 +40,19 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds3-YX-Pkl">
-                                            <rect key="frame" x="561" y="122" width="31" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" red="0.15040608702650787" green="0.021727013267910565" blue="0.59317496827411165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="bFH-Uc-VUx" secondAttribute="trailing" constant="-8" id="5j9-f2-Pw4"/>
+                                        <constraint firstItem="bFH-Uc-VUx" firstAttribute="top" secondItem="HfP-vq-CHd" secondAttribute="topMargin" constant="-9" id="8g0-kN-Gu6"/>
                                         <constraint firstItem="ds3-YX-Pkl" firstAttribute="centerY" secondItem="qln-vt-a1c" secondAttribute="centerY" id="CSN-iQ-wMU"/>
-                                        <constraint firstItem="bFH-Uc-VUx" firstAttribute="top" secondItem="HfP-vq-CHd" secondAttribute="topMargin" constant="-8" id="DUh-dh-O3i"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bFH-Uc-VUx" secondAttribute="bottom" constant="-8" id="NfN-dK-qTl"/>
+                                        <constraint firstItem="bFH-Uc-VUx" firstAttribute="top" secondItem="HfP-vq-CHd" secondAttribute="topMargin" constant="-9" id="DUh-dh-O3i"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bFH-Uc-VUx" secondAttribute="bottom" constant="-7" id="NfN-dK-qTl"/>
                                         <constraint firstItem="qln-vt-a1c" firstAttribute="leading" secondItem="HfP-vq-CHd" secondAttribute="leadingMargin" constant="-20" id="ahm-y1-8s4"/>
-                                        <constraint firstItem="bFH-Uc-VUx" firstAttribute="leading" secondItem="HfP-vq-CHd" secondAttribute="leadingMargin" id="fgc-ms-mpX"/>
+                                        <constraint firstItem="bFH-Uc-VUx" firstAttribute="leading" secondItem="HfP-vq-CHd" secondAttribute="leadingMargin" constant="-8" id="fgc-ms-mpX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bFH-Uc-VUx" secondAttribute="bottom" constant="-7" id="iwF-ER-oGf"/>
                                         <constraint firstItem="ds3-YX-Pkl" firstAttribute="trailing" secondItem="HfP-vq-CHd" secondAttribute="trailingMargin" id="nqZ-A4-vfE"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="qln-vt-a1c" secondAttribute="trailing" constant="-20" id="qEI-Bw-9qw"/>
+                                        <constraint firstItem="bFH-Uc-VUx" firstAttribute="top" secondItem="HfP-vq-CHd" secondAttribute="topMargin" constant="-9" id="uh3-zq-97C"/>
                                         <constraint firstItem="qln-vt-a1c" firstAttribute="centerY" secondItem="HfP-vq-CHd" secondAttribute="centerY" id="vvK-Ev-3za"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -96,7 +99,7 @@
                                         <rect key="frame" x="0.0" y="64" width="600" height="207"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="soM-sP-Xvx" id="RTe-HH-avG">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="206"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="206.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="13" minValue="1" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="dBR-MM-UlF">
@@ -146,7 +149,7 @@
                                         <rect key="frame" x="0.0" y="271" width="600" height="301"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8DW-2y-UaJ" id="GN6-rc-nMq">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="300.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-nR-YJo">

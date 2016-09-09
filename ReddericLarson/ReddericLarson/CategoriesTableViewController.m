@@ -12,10 +12,12 @@
 
 @interface CategoriesTableViewController ()
 @property (strong, nonatomic) NSArray* categoryPhotos;
+@property (strong, nonatomic) NSDictionary* categoryTags;
 @end
 
 @implementation CategoriesTableViewController
 @synthesize categoryPhotos = _categoryPhotos;
+@synthesize categoryTags = _categoryTags;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,10 +34,20 @@
         // Note this is not the main thread!
         if (response) {
             NSMutableArray* tempPhotos = [NSMutableArray array];
+            __block NSMutableDictionary* tempTags = [NSMutableDictionary dictionary];
+            // yay callback hell to get tags
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
                 [tempPhotos addObject:photoData];
+                NSString *photoID = [photoData valueForKeyPath:@"id"];
+                [fk call:@"flickr.photos.getInfo" args: @{@"photo_id": photoID} completion:^(NSDictionary *response, NSError *error) {
+                    // Note this is not the main thread!
+                    if (response) {
+                        NSDictionary *tag = [response valueForKeyPath:@"photo.tags.tag"][0];
+                        [tempTags setObject:[tag valueForKeyPath:@"raw"] forKey:photoID];
+                    }
+                    self.categoryTags = [tempTags copy];
+                }];
             }
-            
             self.categoryPhotos = [tempPhotos copy];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -78,25 +90,14 @@
     NSDictionary *cellPhoto = self.categoryPhotos[indexPath.row];
     
     // Configure the cell...
-    [fk call:@"flickr.photos.getInfo" args: @{@"photo_id": [cellPhoto valueForKeyPath:@"id"]} completion:^(NSDictionary *response, NSError *error) {
-        // Note this is not the main thread!
-        if (response) {
-            NSDictionary *tag = [response valueForKeyPath:@"photo.tags.tag"][0];
-            NSString* tagName = [tag valueForKeyPath:@"raw"];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // Any GUI related operations here
-                cell.titleLabel.text = [NSString stringWithFormat:@"%@", tagName];
-                NSURL *url = [fk photoURLForSize:FKPhotoSizeMedium640 fromPhotoDictionary:cellPhoto];
-                NSData *data = [[NSData alloc] initWithContentsOfURL:url];
-                UIImage *tmpImage = [[UIImage alloc] initWithData:data];
-                cell.imageVIew.image = tmpImage;
+    NSURL *url = [fk photoURLForSize:FKPhotoSizeMedium640 fromPhotoDictionary:cellPhoto];
+    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+    UIImage *tmpImage = [[UIImage alloc] initWithData:data];
+    cell.imageVIew.image = tmpImage;
+    NSString *photoID = [self.categoryPhotos[indexPath.row] valueForKeyPath:@"id"];
+    NSString *tag = [self.categoryTags objectForKey: photoID];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@", tag];
 
-            });
-        }
-        else {
-            NSLog(@"Failed: %@", error);
-        }
-    }];
     return cell;
 }
 
