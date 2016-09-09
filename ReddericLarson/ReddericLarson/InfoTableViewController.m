@@ -71,7 +71,7 @@
     }
     else {
         InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"infoCell" forIndexPath:indexPath];
-        
+        cell.subcontent.numberOfLines = 0;
         cell.titleLabel.text = [self.imageModel.metadata[indexPath.row] valueForKey:@"label"];
         cell.subcontent.text = [[self.imageModel.metadata[indexPath.row] valueForKey:@"raw"] valueForKey:@"_content"];
         
