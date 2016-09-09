@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--CATEGORIES-->
+        <!--TRENDING-->
         <scene sceneID="sbB-qP-hPt">
             <objects>
                 <tableViewController id="lRa-Bc-ZCZ" customClass="CategoriesTableViewController" sceneMemberID="viewController">
@@ -68,7 +68,7 @@
                             <outlet property="delegate" destination="lRa-Bc-ZCZ" id="hAN-Dd-wbF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="CATEGORIES" id="kyG-QE-wId">
+                    <navigationItem key="navigationItem" title="TRENDING" id="kyG-QE-wId">
                         <barButtonItem key="rightBarButtonItem" title="SETTINGS" id="a0B-gO-B9a">
                             <connections>
                                 <action selector="openSettings:" destination="lRa-Bc-ZCZ" id="rnV-i5-weg"/>
