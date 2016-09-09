@@ -74,7 +74,6 @@
                 thisPhoto.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@", url]]]];
                 
                 [photos addObject:thisPhoto];
-                NSLog(@"url = %@",url);
             }
             
             // copy the photo objects into the photos backing variable
@@ -139,7 +138,6 @@
 
             
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
-                NSLog(@"%@",photoData);
                 
                 //make a mutable copy
                 NSMutableDictionary* photoDataCopy = [photoData mutableCopy];
