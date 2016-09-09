@@ -62,10 +62,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (self.imageModel.metadata.count == 0) {
-        InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"infoCell" forIndexPath:indexPath];
+        InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"noInfoCell" forIndexPath:indexPath];
         
         cell.titleLabel.text = [NSString stringWithFormat:@"No metadata for %@", self.imageModel.selectedPhoto.title];
-        
         
         return cell;
     }
