@@ -32,6 +32,7 @@
 -(void)loadPopularTags;
 
 @property (nonatomic, weak) id < RefreshDelegate > delegate;
+@property (strong,nonatomic) NSArray* metadata;
 
 @end
 
