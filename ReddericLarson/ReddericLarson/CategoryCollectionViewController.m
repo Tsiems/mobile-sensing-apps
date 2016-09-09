@@ -9,8 +9,11 @@
 #import "CategoryCollectionViewController.h"
 #import "CategoryCollectionViewCell.h"
 #import "FlickrKit/FlickrKit.h"
+#import "SettingsModel.h"
 
 @interface CategoryCollectionViewController ()
+
+@property (strong, nonatomic) SettingsModel* settingsModel;
 
 @end
 
@@ -33,7 +36,12 @@ static NSString * const reuseIdentifier = @"cell";
     [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
     FlickrKit *fk = [FlickrKit sharedFlickrKit];
     
-    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"tags": self.tag, @"per_page": @"15"} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+    // round to int
+    int per_page = [self.settingsModel.numberOfResults intValue];
+    self.settingsModel.numberOfResults = [NSNumber numberWithInteger:per_page];
+    NSLog(@"%@",self.settingsModel.numberOfResults);
+    
+    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"tags": self.tag, @"per_page": [self.settingsModel.numberOfResults stringValue]} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
         NSMutableArray *photoURLs = [NSMutableArray array];
         if (response) {
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
@@ -46,7 +54,11 @@ static NSString * const reuseIdentifier = @"cell";
             _links = [photoURLs copy];
             
             //reload view
-            [self.collectionView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Any GUI related operations here
+                [self.collectionView reloadData];
+            });
+            
         }
         else {
             NSLog(@"Failed: %@",error);
@@ -74,6 +86,13 @@ static NSString * const reuseIdentifier = @"cell";
     }
     
     return _links;
+}
+
+-(SettingsModel*)settingsModel{
+    if(!_settingsModel) {
+        _settingsModel = [SettingsModel sharedInstance];
+    }
+    return _settingsModel;
 }
 
 /*
