@@ -20,6 +20,8 @@
 
 @property (assign, nonatomic) NSInteger timerVal;
 @property (assign, nonatomic) NSTimer* timer;
+@property (assign, nonatomic) NSInteger endTimeValue;
+@property (weak, nonatomic) IBOutlet UIStepper *stepper;
 
 @end
 
@@ -32,6 +34,7 @@ NSString *pickerValue;
         self.picker.userInteractionEnabled = YES;
         self.slider.enabled = true;
         self.segmentedControl.enabled = true;
+        self.stepper.enabled = true;
         [self createTimer];
 
     }
@@ -39,6 +42,7 @@ NSString *pickerValue;
         self.picker.userInteractionEnabled = NO;
         self.slider.enabled = false;
         self.segmentedControl.enabled = false;
+        self.stepper.enabled = false;
         [self actionStop];
     }
 }
@@ -47,18 +51,20 @@ NSString *pickerValue;
     
     // stop the timer
     [self.timer invalidate];
-    [self.ourSwitch setOn:YES animated:YES];
+    [self.ourSwitch setOn:NO animated:YES];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _pickerData = @[@"5", @"30", @"60", @"100"];
+    _pickerData = @[@"5", @"10", @"15", @"20"];
 
     self.picker.userInteractionEnabled = NO;
     self.slider.enabled = false;
     self.segmentedControl.enabled = false;
+    self.stepper.enabled = false;
     self.timerVal = 1;
+    self.endTimeValue = 5;
     
     
     
@@ -111,6 +117,16 @@ NSString *pickerValue;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTicked:) userInfo:nil repeats:YES];
 }
 
+- (IBAction)changeValue:(id)sender {
+    UIStepper *stepper = (UIStepper *) sender;
+    
+    stepper.maximumValue = 25;
+    stepper.minimumValue = 0;
+    self.slider.value = stepper.value;
+    _sliderLabel.text = [NSString stringWithFormat:@"Number of results: %0.0f", stepper.value];
+    
+}
+
 
 - (void)timerTicked:(NSTimer*)timer {
     
@@ -123,7 +139,7 @@ NSString *pickerValue;
     // increment timer 2 … bump time and redraw in UI
     NSLog(@"timer = %d", (int)self.timerVal);
     
-    if (self.timerVal > 5) {
+    if (self.timerVal > self.endTimeValue) {
         self.picker.userInteractionEnabled = NO;
         self.slider.enabled = false;
         self.segmentedControl.enabled = false;
@@ -188,7 +204,21 @@ NSString *pickerValue;
 {
     // This method is triggered whenever the user makes a change to the picker selection.
     // The parameter named row and component represents what was selected
-    pickerValue = _pickerData[row];
+    if ([_pickerData[row]  isEqual: @"5"]) {
+        self.endTimeValue = 5;
+    } else if ([_pickerData[row]  isEqual: @"10"]) {
+        self.endTimeValue = 10;
+
+    } else if ([_pickerData[row]  isEqual: @"15"]) {
+        self.endTimeValue = 15;
+
+    } else if ([_pickerData[row]  isEqual: @"20"]) {
+        self.endTimeValue = 20;
+
+    } else {
+        self.endTimeValue = 5;
+
+    }
 }
 
 /*
