@@ -152,6 +152,9 @@
                                                     <rect key="frame" x="519" y="21" width="51" height="31"/>
                                                     <color key="onTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="thumbTintColor" red="0.68627450980000004" green="0.90588235289999997" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="switchOnOff:" destination="Wos-DD-kyG" eventType="valueChanged" id="xwe-SK-CGg"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enable Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="es8-bH-jh6">
                                                     <rect key="frame" x="19" y="26" width="100" height="21"/>
