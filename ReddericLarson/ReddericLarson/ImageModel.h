@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Photo.h"
 
 @protocol RefreshDelegate <NSObject>
 @optional
@@ -35,7 +36,7 @@
 
 @property (nonatomic, weak) id < RefreshDelegate > delegate;
 @property (strong,nonatomic) NSArray* metadata;
-@property (strong, nonatomic) NSString* selectedId;
+@property (strong, nonatomic) Photo* selectedPhoto;
 
 @end
 
