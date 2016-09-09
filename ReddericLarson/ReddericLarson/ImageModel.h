@@ -23,7 +23,7 @@
 
 -(NSInteger*)getImageCount;
 
--(void)loadImages:(NSNumber*)num_results;
+-(void)loadImages:(NSNumber*)num_results sortBy:(NSString*)sort_val;
 
 -(void)getImageMetadata:(NSString*)photo_id;
 

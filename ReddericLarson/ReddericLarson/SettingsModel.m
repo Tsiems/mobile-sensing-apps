@@ -17,6 +17,13 @@
     return _numberOfResults;
 }
 
+-(NSString*)sortValue {
+    if(!_sortValue) {
+        _sortValue = @"Descending";
+    }
+    return _sortValue;
+}
+
 
 +(SettingsModel*)sharedInstance{
     static SettingsModel * _sharedInstance = nil;

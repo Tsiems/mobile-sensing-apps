@@ -51,13 +51,18 @@
     return _sharedInstance;
 }
 
--(void)loadImages: (NSNumber*)num_results {
+-(void)loadImages: (NSNumber*)num_results sortBy:(NSString*)sort_val {
     [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
     FlickrKit *fk = [FlickrKit sharedFlickrKit];
     
     id<RefreshDelegate> strongDelegate = self.delegate;
     
-    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"text": self.tag, @"per_page": [num_results stringValue]} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+    NSString* sort = @"interestingness-asc";
+    if ([sort_val  isEqual: @"Descending"]) {
+        sort = @"interestingness-desc";
+    }
+    
+    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"text": self.tag, @"sort": sort, @"per_page": [num_results stringValue]} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
         NSMutableArray *photos = [NSMutableArray array];
         if (response) {
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
