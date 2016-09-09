@@ -160,7 +160,12 @@ static NSString * const reuseIdentifier = @"cell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+    
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
+    
+    [self performSegueWithIdentifier:@"showImage" sender:self];
 }
 
 

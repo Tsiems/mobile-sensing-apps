@@ -28,6 +28,8 @@ NSString *pickerValue;
     
     _pickerData = @[@"5", @"30", @"60", @"100"];
     
+    
+    
     // Connect data
     self.picker.dataSource = self;
     self.picker.delegate = self;
@@ -38,6 +40,9 @@ NSString *pickerValue;
     _sliderLabel.text = [NSString stringWithFormat:@"Number of results: %0.0f", self.slider.value];
     
     UINavigationBar *navBar = [self.navigationController navigationBar];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     [navBar setBarTintColor:[UIColor lightGrayColor]];
 
