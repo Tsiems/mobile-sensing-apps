@@ -31,9 +31,6 @@
     if ([[segue identifier] isEqualToString:@"showCategory"])
     {
         InfoTableViewController *vc = [segue destinationViewController];
-//        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-//        NSString *tag = [self.categoryPhotoData[selectedIndexPath.row] valueForKey:@"tags"];
-//        vc.tag = tag;
     }
 }
 
