@@ -133,12 +133,6 @@ NSString *pickerValue;
     // decrement timer 1 … this is your UI, tick down and redraw
     self.timerVal += 1;
     
-//    [myStopwatch tickDown];
-//    [myStopwatch.view setNeedsDisplay];
-    
-    // increment timer 2 … bump time and redraw in UI
-    NSLog(@"timer = %d", (int)self.timerVal);
-    
     if (self.timerVal > self.endTimeValue) {
         self.picker.userInteractionEnabled = NO;
         self.slider.enabled = false;
@@ -175,7 +169,6 @@ NSString *pickerValue;
     [self.settingsModel setNumberOfResults: @(self.slider.value)];
     
     
-    NSLog(@"%@", pickerValue);
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
