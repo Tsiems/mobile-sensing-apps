@@ -16,64 +16,38 @@
 
 @property (strong, nonatomic) SettingsModel* settingsModel;
 
+@property (strong, nonatomic) ImageModel* imageModel;
+
 @end
 
 @implementation CategoryCollectionViewController
 
 static NSString * const reuseIdentifier = @"cell";
 
+// delegate function
+- (void)refreshImages {
+    self.photos = [self.imageModel getImages];
+    [self.collectionView reloadData];
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // set delegate
+    self.imageModel.delegate = self;
     
-    // Register cell classes
-//    [self.collectionView registerClass:[CategoryCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
-    
+    // set title
     self.title = self.tag;
     
-    
-    [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
-    FlickrKit *fk = [FlickrKit sharedFlickrKit];
-    
-    // round to int
+    // round desired number of results to int
     int per_page = (int)([self.settingsModel.numberOfResults floatValue] + 0.5);
     self.settingsModel.numberOfResults = [NSNumber numberWithInteger:per_page];
-    NSLog(@"%@",self.settingsModel.numberOfResults);
     
-    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"tags": self.tag, @"per_page": [self.settingsModel.numberOfResults stringValue]} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
-        NSMutableArray *photos = [NSMutableArray array];
-        if (response) {
-            for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
-                NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
-                Photo *thisPhoto = [[Photo alloc] init];
-                thisPhoto.url = url;
-                thisPhoto.id = [photoData valueForKey:@"id"];
-                thisPhoto.title = [photoData valueForKey:@"title"];
-                
-                
-                [photos addObject:thisPhoto];
-                
-                NSLog(@"url = %@",url);
-            }
-            
-            // copy the photo objects into the photos backing variable
-            _photos = [photos copy];
-            
-            //reload view
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // Any GUI related operations here
-                [self.collectionView reloadData];
-            });
-            
-        }
-        else {
-            NSLog(@"Failed: %@",error);
-        }
-    }];
+    // load images
+    [self.imageModel setTag:self.tag];
+    [self.imageModel loadImages: self.settingsModel.numberOfResults];
 }
 
 
@@ -82,6 +56,9 @@ static NSString * const reuseIdentifier = @"cell";
     // Dispose of any resources that can be recreated.
 }
 
+
+
+// Lazy instantiations
 -(NSString*)tag{
     if(!_tag) {
         _tag = @"London";
@@ -101,6 +78,13 @@ static NSString * const reuseIdentifier = @"cell";
         _settingsModel = [SettingsModel sharedInstance];
     }
     return _settingsModel;
+}
+
+-(ImageModel*)imageModel{
+    if(!_imageModel) {
+        _imageModel = [ImageModel sharedInstance];
+    }
+    return _imageModel;
 }
 
 /*

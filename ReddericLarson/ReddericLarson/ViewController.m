@@ -70,9 +70,9 @@
 //        }
 //    }];
     
-    [self.imageModel setTag:@"donald"];
-    NSArray* links = [self.imageModel getLinks]; //returns null :(
-    NSLog(@"Links: %@",links);
+//    [self.imageModel setTag:@"donald"];
+//    NSArray* links = [self.imageModel getImages]; //returns null :(
+//    NSLog(@"Links: %@",links);
 }
 
 - (void)didReceiveMemoryWarning {

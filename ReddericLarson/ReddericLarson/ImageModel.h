@@ -9,17 +9,24 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@protocol RefreshDelegate <NSObject>
+@required
+- (void)refreshImages;
+@end
+
 @interface ImageModel : NSObject
 
 +(ImageModel*) sharedInstance;
 
-//-(NSArray*)getImage:(NSInteger*)index;
-
--(NSArray*)getLinks;
-//-(NSArray*)getImages;
+-(NSArray*)getImages;
 
 -(NSInteger*)getImageCount;
 
+-(void)loadImages:(NSNumber*)num_results;
+
 -(void)setTag:(NSString*)name;
 
+@property (nonatomic, weak) id < RefreshDelegate > delegate;
+
 @end
+
