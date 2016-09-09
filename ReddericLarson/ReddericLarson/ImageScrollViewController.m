@@ -28,12 +28,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([[segue identifier] isEqualToString:@"showCategory"])
+    if ([[segue identifier] isEqualToString:@"openInfo"])
     {
         InfoTableViewController *vc = [segue destinationViewController];
-//        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-//        NSString *tag = [self.categoryPhotoData[selectedIndexPath.row] valueForKey:@"tags"];
-//        vc.tag = tag;
+        vc.id = self.photo.id;
     }
 }
 

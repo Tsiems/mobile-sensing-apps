@@ -12,6 +12,7 @@
 
 @property (strong,nonatomic) NSNumber* numberOfResults;
 //@property (strong,nonatomic) NSString* numberOfResults;
+@property (strong,nonatomic) NSString* sortValue;
 
 +(SettingsModel*) sharedInstance;
 
