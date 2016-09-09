@@ -23,6 +23,16 @@
 NSArray *_pickerData;
 NSString *pickerValue;
 
+- (IBAction)switchOnOff:(id)sender {
+    if ([sender isOn]) {
+        self.picker.userInteractionEnabled = YES;
+
+    }
+    else {
+        self.picker.userInteractionEnabled = NO;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

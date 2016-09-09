@@ -66,7 +66,7 @@
         NSMutableArray *photos = [NSMutableArray array];
         if (response) {
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
-                NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
+                NSURL *url = [fk photoURLForSize:FKPhotoSizeMedium640 fromPhotoDictionary:photoData];
                 Photo *thisPhoto = [[Photo alloc] init];
                 thisPhoto.url = url;
                 thisPhoto.id = [photoData valueForKey:@"id"];
