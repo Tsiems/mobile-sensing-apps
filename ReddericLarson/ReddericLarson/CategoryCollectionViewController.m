@@ -11,11 +11,12 @@
 #import "FlickrKit/FlickrKit.h"
 #import "SettingsModel.h"
 #import "Photo.h"
+#import "JHUD.h"
 
 @interface CategoryCollectionViewController ()
 
 @property (strong, nonatomic) SettingsModel* settingsModel;
-
+@property (nonatomic) JHUD *hudView;
 @end
 
 @implementation CategoryCollectionViewController
@@ -34,6 +35,12 @@ static NSString * const reuseIdentifier = @"cell";
     // Do any additional setup after loading the view.
     
     self.title = self.tag;
+    self.hudView = [[JHUD alloc]initWithFrame:self.view.bounds];
+    
+    self.hudView.messageLabel.text = @"hello ,this is a circle animation";
+    
+    //show
+    [self.hudView showAtView:self.view hudType:JHUDLoadingTypeCircle];
     
     
     [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
