@@ -27,8 +27,8 @@ NSString *pickerValue;
     [super viewDidLoad];
     
     _pickerData = @[@"5", @"30", @"60", @"100"];
-    
-    
+
+    self.picker.userInteractionEnabled = NO;
     
     // Connect data
     self.picker.dataSource = self;
