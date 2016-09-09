@@ -26,10 +26,14 @@ NSString *pickerValue;
 - (IBAction)switchOnOff:(id)sender {
     if ([sender isOn]) {
         self.picker.userInteractionEnabled = YES;
+        self.slider.enabled = true;
+        self.segmentedControl.enabled = true;
 
     }
     else {
         self.picker.userInteractionEnabled = NO;
+        self.slider.enabled = false;
+        self.segmentedControl.enabled = false;
     }
 }
 
@@ -39,6 +43,8 @@ NSString *pickerValue;
     _pickerData = @[@"5", @"30", @"60", @"100"];
 
     self.picker.userInteractionEnabled = NO;
+    self.slider.enabled = false;
+    self.segmentedControl.enabled = false;
     
     
     
