@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CategoriesTableViewController : UITableViewController
-
+@property (strong, nonatomic) NSArray* categoryPhotoData;
+@property (strong, nonatomic) NSDictionary* categoryTags;
+@property (strong, nonatomic) NSDictionary* photoImages;
 @end
