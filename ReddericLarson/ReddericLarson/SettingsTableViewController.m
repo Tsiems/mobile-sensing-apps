@@ -11,6 +11,7 @@
 
 @interface SettingsTableViewController ()
 
+@property (weak, nonatomic) IBOutlet UIPickerView *picker;
 @property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -19,9 +20,19 @@
 @end
 
 @implementation SettingsTableViewController
+NSArray *_pickerData;
+NSString *pickerValue;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _pickerData = @[@"5", @"30", @"60", @"100"];
+    
+    // Connect data
+    self.picker.dataSource = self;
+    self.picker.delegate = self;
+    pickerValue = @"";
+    
     
     [self.slider setValue:[self.settingsModel.numberOfResults floatValue] animated:YES];
     _sliderLabel.text = [NSString stringWithFormat:@"Number of results: %0.0f", self.slider.value];
@@ -70,12 +81,37 @@
 - (IBAction)save:(id)sender {
     
     [self.settingsModel setNumberOfResults: @(self.slider.value)];
-    NSLog(@"%f",self.slider.value);
+    NSLog(@"%@", pickerValue);
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (IBAction)close:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+
+// The number of columns of data
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+// The number of rows of data
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return _pickerData.count;
+}
+
+// The data to return for the row and component (column) that's being passed in
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return _pickerData[row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    // This method is triggered whenever the user makes a change to the picker selection.
+    // The parameter named row and component represents what was selected
+    pickerValue = _pickerData[row];
 }
 
 /*

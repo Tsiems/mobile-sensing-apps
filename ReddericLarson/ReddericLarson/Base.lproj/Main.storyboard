@@ -161,7 +161,7 @@
                                                 </label>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueq-sZ-yng">
                                                     <rect key="frame" x="0.0" y="70" width="600" height="216"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
@@ -207,6 +207,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="picker" destination="ueq-sZ-yng" id="dCH-3m-w6u"/>
                         <outlet property="segmentedControl" destination="5EW-Do-FFj" id="zVJ-EQ-BSw"/>
                         <outlet property="slider" destination="dBR-MM-UlF" id="K2s-HI-4j4"/>
                         <outlet property="sliderLabel" destination="H7G-9Z-aTf" id="4JC-1Y-PJA"/>
