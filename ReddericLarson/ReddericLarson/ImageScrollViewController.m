@@ -40,7 +40,7 @@
     if ([[segue identifier] isEqualToString:@"openInfo"])
     {
         InfoTableViewController *vc = [segue destinationViewController];
-        self.imageModel.selectedId = self.photo.id;
+        self.imageModel.selectedPhoto = self.photo;
     }
 }
 

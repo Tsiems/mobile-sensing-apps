@@ -27,7 +27,7 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.imageModel.delegate = self;
-    self.id = self.imageModel.selectedId;
+    self.id = self.imageModel.selectedPhoto.id;
     [self.imageModel getImageMetadata:_id];
     
     
@@ -52,18 +52,31 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.imageModel.metadata.count == 0) {
+        return 1; // we need a cell to tell the user that there is no info
+    }
     return self.imageModel.metadata.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"infoCell" forIndexPath:indexPath];
     
-    cell.titleLabel.text = [self.imageModel.metadata[indexPath.row] valueForKey:@"label"];
-    cell.subcontent.text = [[self.imageModel.metadata[indexPath.row] valueForKey:@"raw"] valueForKey:@"_content"];
+    if (self.imageModel.metadata.count == 0) {
+        InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"noInfoCell" forIndexPath:indexPath];
+        
+        cell.titleLabel.text = [NSString stringWithFormat:@"No metadata for %@", self.imageModel.selectedPhoto.title];
+        
+        return cell;
+    }
+    else {
+        InfoTableViewCell *cell = (InfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"infoCell" forIndexPath:indexPath];
+        
+        cell.titleLabel.text = [self.imageModel.metadata[indexPath.row] valueForKey:@"label"];
+        cell.subcontent.text = [[self.imageModel.metadata[indexPath.row] valueForKey:@"raw"] valueForKey:@"_content"];
 
-    
-    return cell;
+        
+        return cell;
+    }
 }
 
 
