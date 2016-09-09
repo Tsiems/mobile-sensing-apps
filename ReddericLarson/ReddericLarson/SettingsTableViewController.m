@@ -161,6 +161,7 @@ NSString *pickerValue;
 //}
 - (IBAction)sliderView:(id)sender {
     if (sender == _slider) {
+        self.stepper.value = _slider.value;
         _sliderLabel.text = [NSString stringWithFormat:@"Number of results: %0.0f", _slider.value];
     }
 }
