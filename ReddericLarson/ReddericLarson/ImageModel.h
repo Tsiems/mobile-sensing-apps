@@ -24,6 +24,8 @@
 
 -(void)loadImages:(NSNumber*)num_results;
 
+-(void)getImageMetadata:(NSString*)photo_id;
+
 -(void)setTag:(NSString*)name;
 
 @property (nonatomic, weak) id < RefreshDelegate > delegate;

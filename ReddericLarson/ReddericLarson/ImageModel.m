@@ -15,6 +15,7 @@
 
 @property (strong,nonatomic) NSArray* images;
 @property (strong,nonatomic) NSString* tag;
+@property (strong,nonatomic) NSArray* metadata;
 
 @end
 
@@ -83,6 +84,23 @@
         }
     }];
 
+}
+
+-(void)getImageMetadata:(NSString*)photo_id{
+    //[[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
+    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.getExif" args:@{@"photo_id": photo_id} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+        if (response) {
+            NSMutableArray* tempEXIF = [NSMutableArray array];
+            for (NSDictionary *photoData in [response valueForKeyPath:@"photo.exif"]) {
+                [tempEXIF addObject:(photoData)];
+            }
+            self.metadata = [tempEXIF copy];
+        }
+        else {
+            NSLog(@"Failed: %@",error);
+        }
+    }];
+    
 }
 
 -(NSArray*)getImages {

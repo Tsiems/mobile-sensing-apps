@@ -10,4 +10,9 @@
 
 @implementation ImageScrollViewController
 
+- (IBAction)infoButton:(id)sender {
+    [self performSegueWithIdentifier:@"openInfo" sender:self];
+}
+
+
 @end
