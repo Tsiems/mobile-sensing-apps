@@ -29,6 +29,7 @@
 		BAF98E421D80A13100B7836F /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF98E411D80A13100B7836F /* CategoryCollectionViewCell.m */; };
 		D22573D97AFA9CBA67FD6350 /* libPods-ReddericLarson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCE825EBDD558D7550258A1 /* libPods-ReddericLarson.a */; };
 		F69D5B211D833A6500C1500E /* InfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69D5B201D833A6500C1500E /* InfoTableViewController.m */; };
+		F69D5B241D8350A700C1500E /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F69D5B231D8350A700C1500E /* InfoTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		D96C619838825768892284BA /* Pods-ReddericLarsonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReddericLarsonUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReddericLarsonUITests/Pods-ReddericLarsonUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F69D5B1F1D833A6500C1500E /* InfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoTableViewController.h; sourceTree = "<group>"; };
 		F69D5B201D833A6500C1500E /* InfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewController.m; sourceTree = "<group>"; };
+		F69D5B221D8350A700C1500E /* InfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
+		F69D5B231D8350A700C1500E /* InfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				B43163341D831EA9008E0B78 /* ImageScrollViewController.m */,
 				F69D5B1F1D833A6500C1500E /* InfoTableViewController.h */,
 				F69D5B201D833A6500C1500E /* InfoTableViewController.m */,
+				F69D5B221D8350A700C1500E /* InfoTableViewCell.h */,
+				F69D5B231D8350A700C1500E /* InfoTableViewCell.m */,
 				16E0F5111D779C80009DC31B /* AppDelegate.h */,
 				16E0F5121D779C80009DC31B /* AppDelegate.m */,
 				16E0F5141D779C80009DC31B /* ViewController.h */,
@@ -505,6 +510,7 @@
 				BA72F88C1D80CE3900C1D8CE /* ImageModel.m in Sources */,
 				16E0F5101D779C80009DC31B /* main.m in Sources */,
 				BA6036AF1D833AD400C86BF1 /* SlideShowViewController.m in Sources */,
+				F69D5B241D8350A700C1500E /* InfoTableViewCell.m in Sources */,
 				B43163351D831EA9008E0B78 /* ImageScrollViewController.m in Sources */,
 				BAF98E421D80A13100B7836F /* CategoryCollectionViewCell.m in Sources */,
 				16B2A0D91D8314D9004A8838 /* Photo.m in Sources */,
