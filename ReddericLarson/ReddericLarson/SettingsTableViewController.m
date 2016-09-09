@@ -30,28 +30,34 @@ NSString *pickerValue;
     
     
     
-    // Connect data
+    // Connect dataSource to picker
     self.picker.dataSource = self;
     self.picker.delegate = self;
     pickerValue = @"";
     
     
+    // set initial slider values
     [self.slider setValue:[self.settingsModel.numberOfResults floatValue] animated:YES];
     _sliderLabel.text = [NSString stringWithFormat:@"Number of results: %0.0f", self.slider.value];
     
+    // set initial segmented control values
+    int selectedIndex = 0;
+    if ([self.settingsModel.sortValue  isEqual: @"Ascending"]) {
+        selectedIndex = 0;
+    } else {
+        selectedIndex = 1;
+    }
+    
+    [self.segmentedControl setSelectedSegmentIndex:selectedIndex];
+    
+    
+    // set colors
     UINavigationBar *navBar = [self.navigationController navigationBar];
     
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     [navBar setBarTintColor:[UIColor lightGrayColor]];
-
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,8 +90,14 @@ NSString *pickerValue;
 }
 
 - (IBAction)save:(id)sender {
+    //save segmented control
+    NSString * selectedTitle = [self.segmentedControl titleForSegmentAtIndex:self.segmentedControl.selectedSegmentIndex];
+    [self.settingsModel setSortValue:selectedTitle];
     
+    //save slider
     [self.settingsModel setNumberOfResults: @(self.slider.value)];
+    
+    
     NSLog(@"%@", pickerValue);
     [self dismissViewControllerAnimated:true completion:nil];
 }
