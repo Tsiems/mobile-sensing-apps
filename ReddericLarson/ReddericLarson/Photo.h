@@ -14,6 +14,7 @@
 @property (strong,nonatomic) NSString* id;
 @property (strong,nonatomic) NSURL* url;
 @property (strong,nonatomic) NSString* title;
+@property (strong,nonatomic) UIImage* image;
 @property (strong,nonatomic) NSArray* metadata;
 
 @end
