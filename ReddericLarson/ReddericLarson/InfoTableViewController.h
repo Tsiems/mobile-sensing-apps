@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageModel.h"
 
-@interface InfoTableViewController : UITableViewController
+@interface InfoTableViewController : UITableViewController <RefreshDelegate>
 @property (strong,nonatomic) NSString* id;
 
 @end

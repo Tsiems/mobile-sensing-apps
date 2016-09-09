@@ -8,8 +8,10 @@
 
 #import "ImageScrollViewController.h"
 #import "InfoTableViewController.h"
-@interface ImageScrollViewController () <UIScrollViewDelegate>
+#import "ImageModel.h"
 
+@interface ImageScrollViewController () <UIScrollViewDelegate>
+@property (strong,nonatomic) ImageModel* imageModel;
 @end
 
 @implementation ImageScrollViewController
@@ -19,6 +21,13 @@
         _photo = [[Photo alloc]init];
     }
     return _photo;
+}
+
+-(ImageModel*)imageModel{
+    if(!_imageModel) {
+        _imageModel = [ImageModel sharedInstance];
+    }
+    return _imageModel;
 }
 
 - (IBAction)infoButton:(id)sender {
@@ -31,7 +40,7 @@
     if ([[segue identifier] isEqualToString:@"openInfo"])
     {
         InfoTableViewController *vc = [segue destinationViewController];
-        vc.id = self.photo.id;
+        self.imageModel.selectedId = self.photo.id;
     }
 }
 

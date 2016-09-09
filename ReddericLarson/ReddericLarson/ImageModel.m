@@ -15,7 +15,7 @@
 
 @property (strong,nonatomic) NSArray* images;
 @property (strong,nonatomic) NSString* tag;
-@property (strong,nonatomic) NSArray* metadata;
+
 
 @end
 
@@ -92,6 +92,7 @@
 }
 
 -(void)getImageMetadata:(NSString*)photo_id{
+    id<RefreshDelegate> strongDelegate = self.delegate;
     //[[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
     [[FlickrKit sharedFlickrKit] call:@"flickr.photos.getExif" args:@{@"photo_id": photo_id} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
         if (response) {
@@ -100,6 +101,8 @@
                 [tempEXIF addObject:(photoData)];
             }
             self.metadata = [tempEXIF copy];
+            
+            [strongDelegate refreshImages];
         }
         else {
             NSLog(@"Failed: %@",error);
