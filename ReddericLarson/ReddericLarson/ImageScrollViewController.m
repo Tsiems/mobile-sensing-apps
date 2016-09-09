@@ -31,6 +31,7 @@
     if ([[segue identifier] isEqualToString:@"showCategory"])
     {
         InfoTableViewController *vc = [segue destinationViewController];
+        vc.id = self.photo.id;
     }
 }
 

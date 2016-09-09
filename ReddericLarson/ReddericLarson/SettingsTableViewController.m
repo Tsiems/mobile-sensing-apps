@@ -30,7 +30,10 @@ NSString *pickerValue;
 
     self.picker.userInteractionEnabled = NO;
     
+    
+    
     // Connect dataSource to picker
+    // Connect data
     self.picker.dataSource = self;
     self.picker.delegate = self;
     pickerValue = @"";
