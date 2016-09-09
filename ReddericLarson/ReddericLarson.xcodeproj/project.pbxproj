@@ -20,6 +20,7 @@
 		5A687B26F6BB93A97D6954F2 /* libPods-ReddericLarsonUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C8C8E46CB43FC6D854829D /* libPods-ReddericLarsonUITests.a */; };
 		AA1658D9F8BC619250A2AE58 /* libPods-ReddericLarsonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECB97121934CB85E3D85647 /* libPods-ReddericLarsonTests.a */; };
 		B43163351D831EA9008E0B78 /* ImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43163341D831EA9008E0B78 /* ImageScrollViewController.m */; };
+		BA6036AF1D833AD400C86BF1 /* SlideShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6036AE1D833AD400C86BF1 /* SlideShowViewController.m */; };
 		BA72F88C1D80CE3900C1D8CE /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA72F88B1D80CE3900C1D8CE /* ImageModel.m */; };
 		BA72F88F1D80CEB000C1D8CE /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA72F88E1D80CEB000C1D8CE /* SettingsTableViewController.m */; };
 		BAF98E391D809C9B00B7836F /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF98E381D809C9B00B7836F /* CategoriesTableViewController.m */; };
@@ -76,6 +77,8 @@
 		ACCE825EBDD558D7550258A1 /* libPods-ReddericLarson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReddericLarson.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B43163331D831EA9008E0B78 /* ImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollViewController.h; sourceTree = "<group>"; };
 		B43163341D831EA9008E0B78 /* ImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollViewController.m; sourceTree = "<group>"; };
+		BA6036AD1D833AD400C86BF1 /* SlideShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideShowViewController.h; sourceTree = "<group>"; };
+		BA6036AE1D833AD400C86BF1 /* SlideShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideShowViewController.m; sourceTree = "<group>"; };
 		BA72F88A1D80CE3900C1D8CE /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
 		BA72F88B1D80CE3900C1D8CE /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
 		BA72F88D1D80CEB000C1D8CE /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				BA72F88A1D80CE3900C1D8CE /* ImageModel.h */,
 				BA72F88B1D80CE3900C1D8CE /* ImageModel.m */,
 				16E0F5171D779C80009DC31B /* Main.storyboard */,
+				BA6036AD1D833AD400C86BF1 /* SlideShowViewController.h */,
+				BA6036AE1D833AD400C86BF1 /* SlideShowViewController.m */,
 				BA72F88D1D80CEB000C1D8CE /* SettingsTableViewController.h */,
 				BA72F88E1D80CEB000C1D8CE /* SettingsTableViewController.m */,
 				16B2A0D41D8304B4004A8838 /* SettingsModel.h */,
@@ -499,6 +504,7 @@
 				16B2A0D61D8304B4004A8838 /* SettingsModel.m in Sources */,
 				BA72F88C1D80CE3900C1D8CE /* ImageModel.m in Sources */,
 				16E0F5101D779C80009DC31B /* main.m in Sources */,
+				BA6036AF1D833AD400C86BF1 /* SlideShowViewController.m in Sources */,
 				B43163351D831EA9008E0B78 /* ImageScrollViewController.m in Sources */,
 				BAF98E421D80A13100B7836F /* CategoryCollectionViewCell.m in Sources */,
 				16B2A0D91D8314D9004A8838 /* Photo.m in Sources */,

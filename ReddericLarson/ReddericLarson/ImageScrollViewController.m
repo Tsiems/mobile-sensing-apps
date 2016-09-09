@@ -7,6 +7,9 @@
 //
 
 #import "ImageScrollViewController.h"
+@interface ImageScrollViewController () <UIScrollViewDelegate>
+
+@end
 
 @implementation ImageScrollViewController
 
@@ -16,3 +19,6 @@
 
 
 @end
+
+
+

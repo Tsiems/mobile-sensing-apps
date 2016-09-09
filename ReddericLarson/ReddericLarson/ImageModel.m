@@ -57,7 +57,7 @@
     
     id<RefreshDelegate> strongDelegate = self.delegate;
     
-    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"tags": self.tag, @"per_page": [num_results stringValue]} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"text": self.tag, @"per_page": [num_results stringValue]} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
         NSMutableArray *photos = [NSMutableArray array];
         if (response) {
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
@@ -66,9 +66,10 @@
                 thisPhoto.url = url;
                 thisPhoto.id = [photoData valueForKey:@"id"];
                 thisPhoto.title = [photoData valueForKey:@"title"];
+                thisPhoto.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@", url]]]];
                 
                 [photos addObject:thisPhoto];
-//                NSLog(@"url = %@",url);
+                NSLog(@"url = %@",url);
             }
             
             // copy the photo objects into the photos backing variable
@@ -83,7 +84,6 @@
             NSLog(@"Failed: %@",error);
         }
     }];
-
 }
 
 -(void)getImageMetadata:(NSString*)photo_id{
@@ -114,6 +114,44 @@
 
 -(void)setTag:(NSString *)name {
     _tag = name;
+}
+
+-(void)loadPopularTags {
+    id<RefreshDelegate> strongDelegate = self.delegate;
+    
+    [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"9e4dfb22612734eb30eefba263607c44" sharedSecret:@"df674246cac5a293"];
+    
+    FlickrKit *fk = [FlickrKit sharedFlickrKit];
+    [fk call:@"flickr.interestingness.getList" args: @{@"per_page": @"5", @"page": @"1", @"extras": @"tags"} completion:^(NSDictionary *response, NSError *error) {
+        // Note this is not the main thread!
+        if (response) {
+            NSMutableArray* tempPhotos = [NSMutableArray array];
+
+            
+            for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
+                NSLog(@"%@",photoData);
+                
+                //make a mutable copy
+                NSMutableDictionary* photoDataCopy = [photoData mutableCopy];
+                
+                [photoDataCopy setValue:([[photoData valueForKey:@"tags"] componentsSeparatedByString:@" "][0]) forKey:@"tags"];
+                
+                NSURL *url = [fk photoURLForSize:FKPhotoSizeMedium640 fromPhotoDictionary:photoDataCopy];
+                NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+                [photoDataCopy setObject:[[UIImage alloc] initWithData:data] forKey:@"image"];
+                [tempPhotos addObject:photoDataCopy];
+            }
+            
+            NSArray* data = [tempPhotos copy];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [strongDelegate refreshImagesWithData: data];
+            });
+        }
+        else {
+            NSLog(@"Failed: %@", error);
+        }
+    }];
 }
 
 @end

@@ -10,8 +10,9 @@
 #import <UIKit/UIKit.h>
 
 @protocol RefreshDelegate <NSObject>
-@required
+@optional
 - (void)refreshImages;
+- (void)refreshImagesWithData: (NSArray*)data;
 @end
 
 @interface ImageModel : NSObject
@@ -27,6 +28,8 @@
 -(void)getImageMetadata:(NSString*)photo_id;
 
 -(void)setTag:(NSString*)name;
+
+-(void)loadPopularTags;
 
 @property (nonatomic, weak) id < RefreshDelegate > delegate;
 

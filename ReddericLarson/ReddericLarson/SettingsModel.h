@@ -11,6 +11,7 @@
 @interface SettingsModel : NSObject
 
 @property (strong,nonatomic) NSNumber* numberOfResults;
+//@property (strong,nonatomic) NSString* numberOfResults;
 
 +(SettingsModel*) sharedInstance;
 
