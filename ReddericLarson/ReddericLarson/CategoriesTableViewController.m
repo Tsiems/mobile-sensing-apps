@@ -8,6 +8,7 @@
 
 #import "CategoriesTableViewController.h"
 #import "CategoryTableViewCell.h"
+#import "CategoryCollectionViewController.h"
 #import <FlickrKit/FlickrKit.h>
 
 @interface CategoriesTableViewController ()
@@ -97,6 +98,7 @@
     NSString *photoID = [self.categoryPhotos[indexPath.row] valueForKeyPath:@"id"];
     NSString *tag = [self.categoryTags objectForKey: photoID];
     cell.titleLabel.text = [NSString stringWithFormat:@"%@", tag];
+    NSLog(@"tag at this cell = %@", tag);
 
     return cell;
 }
@@ -142,13 +144,21 @@
 */
 
 /*
-#pragma mark - Navigation
+#pragma mark - Navigation*/
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"showCategory"])
+    {
+        CategoryCollectionViewController *vc = [segue destinationViewController];
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        NSString *photoID = [self.categoryPhotos[selectedIndexPath.row] valueForKeyPath:@"id"];
+        NSString *tag = [self.categoryTags objectForKey: photoID];
+        vc.tag = tag;
+    }
 }
-*/
+
 
 @end
