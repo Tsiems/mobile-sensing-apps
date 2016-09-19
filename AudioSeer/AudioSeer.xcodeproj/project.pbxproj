@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5CC29EE81D90387800DE300E /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC29EE71D90387800DE300E /* Novocaine.m */; };
+		5CC29EFA1D9038C600DE300E /* AudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC29EE91D9038C600DE300E /* AudioFileReader.m */; };
+		5CC29EFB1D9038C600DE300E /* CircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC29EEA1D9038C600DE300E /* CircularBuffer.m */; };
+		5CC29EFC1D9038C600DE300E /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC29EEB1D9038C600DE300E /* AudioFileWriter.m */; };
+		5CC29EFD1D9038C600DE300E /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC29EEC1D9038C600DE300E /* FFTHelper.m */; };
+		5CC29EFE1D9038C600DE300E /* BufferedOverlapQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC29EED1D9038C600DE300E /* BufferedOverlapQueue.m */; };
+		5CC29EFF1D9038C600DE300E /* PeakFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC29EEE1D9038C600DE300E /* PeakFinder.m */; };
+		5CC29F001D9038C600DE300E /* CubicSpline.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC29EF11D9038C600DE300E /* CubicSpline.m */; };
+		5CC29F011D9038C600DE300E /* DataBufferBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC29EF21D9038C600DE300E /* DataBufferBlock.m */; };
+		5CC29F041D9039C500DE300E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC29F031D9039C500DE300E /* Foundation.framework */; };
 		B4D942B01D8DC74500DA350B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942AF1D8DC74500DA350B /* main.m */; };
 		B4D942B31D8DC74500DA350B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942B21D8DC74500DA350B /* AppDelegate.m */; };
 		B4D942B61D8DC74500DA350B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942B51D8DC74500DA350B /* ViewController.m */; };
@@ -16,15 +26,6 @@
 		B4D942C11D8DC74600DA350B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4D942BF1D8DC74600DA350B /* LaunchScreen.storyboard */; };
 		B4D942CC1D8DC74600DA350B /* AudioSeerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942CB1D8DC74600DA350B /* AudioSeerTests.m */; };
 		B4D942D71D8DC74600DA350B /* AudioSeerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942D61D8DC74600DA350B /* AudioSeerUITests.m */; };
-		B4D942F91D8DC7B900DA350B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B4D942E51D8DC7B900DA350B /* .gitignore */; };
-		B4D942FC1D8DC7B900DA350B /* BufferedOverlapQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942EB1D8DC7B900DA350B /* BufferedOverlapQueue.m */; };
-		B4D942FD1D8DC7B900DA350B /* CircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942ED1D8DC7B900DA350B /* CircularBuffer.m */; };
-		B4D942FE1D8DC7B900DA350B /* CubicSpline.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942EF1D8DC7B900DA350B /* CubicSpline.m */; };
-		B4D942FF1D8DC7B900DA350B /* DataBufferBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942F11D8DC7B900DA350B /* DataBufferBlock.m */; };
-		B4D943001D8DC7B900DA350B /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942F31D8DC7B900DA350B /* FFTHelper.m */; };
-		B4D943011D8DC7B900DA350B /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942F51D8DC7B900DA350B /* Novocaine.m */; };
-		B4D943021D8DC7B900DA350B /* PeakFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D942F71D8DC7B900DA350B /* PeakFinder.m */; };
-		B4D943031D8DC7B900DA350B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B4D942F81D8DC7B900DA350B /* README.md */; };
 		B4D943091D8DCDCB00DA350B /* SMUGraphHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D943081D8DCDCB00DA350B /* SMUGraphHelper.m */; };
 		B4D9430C1D8DCE1E00DA350B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D9430B1D8DCE1E00DA350B /* TableViewController.m */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5CC29EE71D90387800DE300E /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
+		5CC29EE91D9038C600DE300E /* AudioFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileReader.m; sourceTree = "<group>"; };
+		5CC29EEA1D9038C600DE300E /* CircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularBuffer.m; sourceTree = "<group>"; };
+		5CC29EEB1D9038C600DE300E /* AudioFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileWriter.m; sourceTree = "<group>"; };
+		5CC29EEC1D9038C600DE300E /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
+		5CC29EED1D9038C600DE300E /* BufferedOverlapQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BufferedOverlapQueue.m; sourceTree = "<group>"; };
+		5CC29EEE1D9038C600DE300E /* PeakFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeakFinder.m; sourceTree = "<group>"; };
+		5CC29EEF1D9038C600DE300E /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
+		5CC29EF01D9038C600DE300E /* CircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularBuffer.h; sourceTree = "<group>"; };
+		5CC29EF11D9038C600DE300E /* CubicSpline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubicSpline.m; sourceTree = "<group>"; };
+		5CC29EF21D9038C600DE300E /* DataBufferBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBufferBlock.m; sourceTree = "<group>"; };
+		5CC29EF31D9038C600DE300E /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
+		5CC29EF41D9038C600DE300E /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
+		5CC29EF51D9038C600DE300E /* BufferedOverlapQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferedOverlapQueue.h; sourceTree = "<group>"; };
+		5CC29EF61D9038C600DE300E /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
+		5CC29EF71D9038C600DE300E /* PeakFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeakFinder.h; sourceTree = "<group>"; };
+		5CC29EF81D9038C600DE300E /* DataBufferBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBufferBlock.h; sourceTree = "<group>"; };
+		5CC29EF91D9038C600DE300E /* CubicSpline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubicSpline.h; sourceTree = "<group>"; };
+		5CC29F031D9039C500DE300E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B4D942AB1D8DC74500DA350B /* AudioSeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioSeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D942AF1D8DC74500DA350B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4D942B11D8DC74500DA350B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,22 +84,6 @@
 		B4D942D21D8DC74600DA350B /* AudioSeerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioSeerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D942D61D8DC74600DA350B /* AudioSeerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioSeerUITests.m; sourceTree = "<group>"; };
 		B4D942D81D8DC74600DA350B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B4D942E51D8DC7B900DA350B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		B4D942EA1D8DC7B900DA350B /* BufferedOverlapQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferedOverlapQueue.h; sourceTree = "<group>"; };
-		B4D942EB1D8DC7B900DA350B /* BufferedOverlapQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BufferedOverlapQueue.m; sourceTree = "<group>"; };
-		B4D942EC1D8DC7B900DA350B /* CircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularBuffer.h; sourceTree = "<group>"; };
-		B4D942ED1D8DC7B900DA350B /* CircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularBuffer.m; sourceTree = "<group>"; };
-		B4D942EE1D8DC7B900DA350B /* CubicSpline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubicSpline.h; sourceTree = "<group>"; };
-		B4D942EF1D8DC7B900DA350B /* CubicSpline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubicSpline.m; sourceTree = "<group>"; };
-		B4D942F01D8DC7B900DA350B /* DataBufferBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBufferBlock.h; sourceTree = "<group>"; };
-		B4D942F11D8DC7B900DA350B /* DataBufferBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBufferBlock.m; sourceTree = "<group>"; };
-		B4D942F21D8DC7B900DA350B /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
-		B4D942F31D8DC7B900DA350B /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
-		B4D942F41D8DC7B900DA350B /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
-		B4D942F51D8DC7B900DA350B /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
-		B4D942F61D8DC7B900DA350B /* PeakFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeakFinder.h; sourceTree = "<group>"; };
-		B4D942F71D8DC7B900DA350B /* PeakFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeakFinder.m; sourceTree = "<group>"; };
-		B4D942F81D8DC7B900DA350B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B4D943041D8DCC6100DA350B /* SMUGraphHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUGraphHelper.h; sourceTree = "<group>"; };
 		B4D943081D8DCDCB00DA350B /* SMUGraphHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMUGraphHelper.m; sourceTree = "<group>"; };
 		B4D9430A1D8DCE1E00DA350B /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC29F041D9039C500DE300E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,14 +116,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CC29F021D9039C500DE300E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CC29F031D9039C500DE300E /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B4D942A21D8DC74500DA350B = {
 			isa = PBXGroup;
 			children = (
-				B4D942E41D8DC7B900DA350B /* AudioDSPUtils */,
 				B4D942AD1D8DC74500DA350B /* AudioSeer */,
 				B4D942CA1D8DC74600DA350B /* AudioSeerTests */,
 				B4D942D51D8DC74600DA350B /* AudioSeerUITests */,
 				B4D942AC1D8DC74500DA350B /* Products */,
+				5CC29F021D9039C500DE300E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,10 +149,28 @@
 			isa = PBXGroup;
 			children = (
 				B4D942B11D8DC74500DA350B /* AppDelegate.h */,
+				5CC29EE71D90387800DE300E /* Novocaine.m */,
 				B4D943041D8DCC6100DA350B /* SMUGraphHelper.h */,
 				B4D943081D8DCDCB00DA350B /* SMUGraphHelper.m */,
 				B4D9430A1D8DCE1E00DA350B /* TableViewController.h */,
 				B4D9430B1D8DCE1E00DA350B /* TableViewController.m */,
+				5CC29EE91D9038C600DE300E /* AudioFileReader.m */,
+				5CC29EEA1D9038C600DE300E /* CircularBuffer.m */,
+				5CC29EEB1D9038C600DE300E /* AudioFileWriter.m */,
+				5CC29EEC1D9038C600DE300E /* FFTHelper.m */,
+				5CC29EED1D9038C600DE300E /* BufferedOverlapQueue.m */,
+				5CC29EEE1D9038C600DE300E /* PeakFinder.m */,
+				5CC29EEF1D9038C600DE300E /* Novocaine.h */,
+				5CC29EF01D9038C600DE300E /* CircularBuffer.h */,
+				5CC29EF11D9038C600DE300E /* CubicSpline.m */,
+				5CC29EF21D9038C600DE300E /* DataBufferBlock.m */,
+				5CC29EF31D9038C600DE300E /* AudioFileReader.h */,
+				5CC29EF41D9038C600DE300E /* AudioFileWriter.h */,
+				5CC29EF51D9038C600DE300E /* BufferedOverlapQueue.h */,
+				5CC29EF61D9038C600DE300E /* FFTHelper.h */,
+				5CC29EF71D9038C600DE300E /* PeakFinder.h */,
+				5CC29EF81D9038C600DE300E /* DataBufferBlock.h */,
+				5CC29EF91D9038C600DE300E /* CubicSpline.h */,
 				B4D942B21D8DC74500DA350B /* AppDelegate.m */,
 				B4D942B41D8DC74500DA350B /* ViewController.h */,
 				B4D942B51D8DC74500DA350B /* ViewController.m */,
@@ -177,29 +208,6 @@
 				B4D942D81D8DC74600DA350B /* Info.plist */,
 			);
 			path = AudioSeerUITests;
-			sourceTree = "<group>";
-		};
-		B4D942E41D8DC7B900DA350B /* AudioDSPUtils */ = {
-			isa = PBXGroup;
-			children = (
-				B4D942E51D8DC7B900DA350B /* .gitignore */,
-				B4D942EA1D8DC7B900DA350B /* BufferedOverlapQueue.h */,
-				B4D942EB1D8DC7B900DA350B /* BufferedOverlapQueue.m */,
-				B4D942EC1D8DC7B900DA350B /* CircularBuffer.h */,
-				B4D942ED1D8DC7B900DA350B /* CircularBuffer.m */,
-				B4D942EE1D8DC7B900DA350B /* CubicSpline.h */,
-				B4D942EF1D8DC7B900DA350B /* CubicSpline.m */,
-				B4D942F01D8DC7B900DA350B /* DataBufferBlock.h */,
-				B4D942F11D8DC7B900DA350B /* DataBufferBlock.m */,
-				B4D942F21D8DC7B900DA350B /* FFTHelper.h */,
-				B4D942F31D8DC7B900DA350B /* FFTHelper.m */,
-				B4D942F41D8DC7B900DA350B /* Novocaine.h */,
-				B4D942F51D8DC7B900DA350B /* Novocaine.m */,
-				B4D942F61D8DC7B900DA350B /* PeakFinder.h */,
-				B4D942F71D8DC7B900DA350B /* PeakFinder.m */,
-				B4D942F81D8DC7B900DA350B /* README.md */,
-			);
-			path = AudioDSPUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +277,7 @@
 				TargetAttributes = {
 					B4D942AA1D8DC74500DA350B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = F69WJ27LN4;
+						DevelopmentTeam = 26Y78VEH49;
 						ProvisioningStyle = Automatic;
 					};
 					B4D942C61D8DC74600DA350B = {
@@ -311,7 +319,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4D942F91D8DC7B900DA350B /* .gitignore in Resources */,
 				B4D942C11D8DC74600DA350B /* LaunchScreen.storyboard in Resources */,
 				B4D942BE1D8DC74500DA350B /* Assets.xcassets in Resources */,
 				B4D942B91D8DC74500DA350B /* Main.storyboard in Resources */,
@@ -339,20 +346,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4D943001D8DC7B900DA350B /* FFTHelper.m in Sources */,
-				B4D942FC1D8DC7B900DA350B /* BufferedOverlapQueue.m in Sources */,
-				B4D942FD1D8DC7B900DA350B /* CircularBuffer.m in Sources */,
-				B4D943021D8DC7B900DA350B /* PeakFinder.m in Sources */,
+				5CC29EFD1D9038C600DE300E /* FFTHelper.m in Sources */,
+				5CC29EFB1D9038C600DE300E /* CircularBuffer.m in Sources */,
 				B4D943091D8DCDCB00DA350B /* SMUGraphHelper.m in Sources */,
+				5CC29EFA1D9038C600DE300E /* AudioFileReader.m in Sources */,
+				5CC29EFF1D9038C600DE300E /* PeakFinder.m in Sources */,
 				B4D9430C1D8DCE1E00DA350B /* TableViewController.m in Sources */,
 				B4D942B61D8DC74500DA350B /* ViewController.m in Sources */,
+				5CC29EE81D90387800DE300E /* Novocaine.m in Sources */,
 				B4D942B31D8DC74500DA350B /* AppDelegate.m in Sources */,
+				5CC29EFC1D9038C600DE300E /* AudioFileWriter.m in Sources */,
 				B4D942B01D8DC74500DA350B /* main.m in Sources */,
+				5CC29EFE1D9038C600DE300E /* BufferedOverlapQueue.m in Sources */,
+				5CC29F011D9038C600DE300E /* DataBufferBlock.m in Sources */,
 				B4D942BC1D8DC74500DA350B /* AudioSeer.xcdatamodeld in Sources */,
-				B4D943011D8DC7B900DA350B /* Novocaine.m in Sources */,
-				B4D943031D8DC7B900DA350B /* README.md in Sources */,
-				B4D942FF1D8DC7B900DA350B /* DataBufferBlock.m in Sources */,
-				B4D942FE1D8DC7B900DA350B /* CubicSpline.m in Sources */,
+				5CC29F001D9038C600DE300E /* CubicSpline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AudioSeer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = danhn.AudioSeer;
@@ -513,7 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AudioSeer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = danhn.AudioSeer;
