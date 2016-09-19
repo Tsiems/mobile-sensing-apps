@@ -20,6 +20,9 @@
 @property (strong, nonatomic) SMUGraphHelper *graphHelper;
 @property (strong, nonatomic) FFTHelper *fftHelper;
 @property (strong, nonatomic) NSNumber* testNumber;
+
+@property (weak, nonatomic) IBOutlet UILabel *frequencyLabel;
+
 @end
 
 
@@ -92,6 +95,7 @@
     float* arrayData = malloc(sizeof(float)*BUFFER_SIZE);
     float* fftMagnitude = malloc(sizeof(float)*BUFFER_SIZE/2);
     float* equalizer = malloc(sizeof(float)*20);
+//    float* magnitude = malloc(sizeof(float)*BUFFER_SIZE/4);
     
     [self.buffer fetchFreshData:arrayData withNumSamples:BUFFER_SIZE];
     
@@ -118,6 +122,63 @@
         equalizer[i] = max;
     }
     
+    float max = -2000000;
+    float max2 = -2000000;
+    int max_index = 0;
+    int max2_index = 0;
+    for(int i = 0; i<BUFFER_SIZE/2; i++) {
+        if(fftMagnitude[i] > max){
+            if( i>max_index+15 || i<max_index-15) {
+                max2 = max;
+                max2_index = i;
+                NSLog(@"MAX2 moving down %i %i",max_index,max2_index);
+            }
+            max = fftMagnitude[i];
+            max_index = i;
+        } else if (fftMagnitude[i] > max2) {
+            if( (i>max_index+15 || i<max_index-15)) {
+                max2 = fftMagnitude[i];
+                max2_index = i;
+                NSLog(@"NEW MAX2 %i %i",max_index,max2_index);
+            }
+        }
+//        NSLog(@"MAXES   %i %i",max_index,max2_index);
+    }
+//    NSLog(@"Max FFT: %f  at index   %i",max,max_index);
+    
+    float max_freq = (max_index*self.audioManager.samplingRate/(BUFFER_SIZE));
+    float max2_freq = (max2_index*self.audioManager.samplingRate/(BUFFER_SIZE));
+    NSLog(@"Max Hz: %f   %i",max_freq,max_index);
+    NSLog(@"Max2 Hz: %f   %i",max2_freq,max2_index);
+    
+    
+    // SET THE FREQUENCY LABEL TEXT
+    self.frequencyLabel.text = [NSString stringWithFormat:@"%.2f Hz",max_freq];
+    
+    
+    
+    
+    
+//    // calculate power spectrum (magnitude) values from fft[]
+//    for (int i = 0; i < BUFFER_SIZE / 2 - 1; i++) {
+//        float re = fftMagnitude[2*i];
+//        float im = fftMagnitude[2*i+1];
+//        magnitude[i] = sqrt(re*re+im*im);
+//    }
+//
+//    max = -2000000;
+//    max_index = 0;
+//    for(int i = 0; i<BUFFER_SIZE/2; i++) {
+//        if(magnitude[i] > max){
+//            max = magnitude[i];
+//            max_index = i;
+//        }
+//    }
+//    NSLog(@"POWER: Max FFT: %f  at index   %i",max,max_index);
+//    NSLog(@"POWER: Max Hz: %f",(max_index*self.audioManager.samplingRate/(BUFFER_SIZE/2)));
+//    
+//        
+    
     
     // graph the FFT Data
     [self.graphHelper setGraphData:fftMagnitude
@@ -135,6 +196,8 @@
     [self.graphHelper update]; // update the graph
     free(arrayData);
     free(fftMagnitude);
+//    free(magnitude);
+    free(equalizer);
 }
 
 //  override the GLKView draw function, from OpenGLES
