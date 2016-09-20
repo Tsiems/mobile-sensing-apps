@@ -34,18 +34,18 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 1;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete implementation, return the number of rows
+//    return 1;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self presentViewController:self.graphViewController animated:true completion:nil];
+//    [self presentViewController:self.graphViewController animated:true completion:nil];
 }
 
 /*
@@ -98,10 +98,10 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([[segue identifier] isEqualToString:@"graphSegue"]) {
-        self.graphViewController = (ViewController*)[segue destinationViewController];
-        // Pass the selected object to the new view controller.
-    }
+//    if ([[segue identifier] isEqualToString:@"graphSegue"]) {
+//        self.graphViewController = (ViewController*)[segue destinationViewController];
+//        // Pass the selected object to the new view controller.
+//    }
 }
 
 

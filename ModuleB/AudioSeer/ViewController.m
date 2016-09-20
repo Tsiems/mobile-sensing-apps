@@ -80,6 +80,24 @@
         [weakSelf.buffer addNewFloatData:data withNumSamples:numFrames];
     }];
     
+    double frequency = 1500;
+    __block double phase = 0.0;
+    double phaseIncrement = 2*M_PI*frequency/self.audioManager.samplingRate;
+    double phaseMax = 2*M_PI;
+    [self.audioManager setOutputBlock:^(float* data, UInt32 numFrames, UInt32 numChannels){
+        for(int i=0; i<numFrames;++i){
+            for(int j=0;j<numChannels;++j){
+                data[2*i+j] = sin(phase);
+            }
+            phase+=phaseIncrement;
+            if (phase>phaseMax){
+                phase -= phaseMax;
+            }
+        }
+        
+    }];
+
+    
     [self.audioManager play];
 }
 
@@ -143,6 +161,7 @@
 }
 - (IBAction)dismiss:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+    [self.audioManager pause];
 }
 
 - (void) viewWillDisappear {
