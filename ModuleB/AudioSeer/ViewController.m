@@ -12,14 +12,15 @@
 #import "SMUGraphHelper.h"
 #import "FFTHelper.h"
 
-#define BUFFER_SIZE 2048*8
+#define BUFFER_SIZE 2048*2
 
 @interface ViewController ()
 @property (strong, nonatomic) Novocaine *audioManager;
 @property (strong, nonatomic) CircularBuffer *buffer;
 @property (strong, nonatomic) SMUGraphHelper *graphHelper;
 @property (strong, nonatomic) FFTHelper *fftHelper;
-@property (strong, nonatomic) NSNumber* testNumber;
+@property (weak, nonatomic) IBOutlet UISlider *frequencySlider;
+@property double frequency;
 @end
 
 
@@ -34,12 +35,12 @@
     return _audioManager;
 }
 
--(NSNumber*)testNumber{
-    if(!_testNumber){
-        _testNumber = (NSNumber*) 0;
-    }
-    return _testNumber;
-}
+//-(NSInteger*)frequency{
+//    if(!_frequency){
+//        _frequency = (NSInteger*) 18000;
+//    }
+//    return _frequency;
+//}
 
 -(CircularBuffer*)buffer{
     if(!_buffer){
@@ -52,7 +53,7 @@
     if(!_graphHelper){
         _graphHelper = [[SMUGraphHelper alloc]initWithController:self
                                         preferredFramesPerSecond:15
-                                                       numGraphs:3
+                                                       numGraphs:2
                                                        plotStyle:PlotStyleSeparated
                                                maxPointsPerGraph:BUFFER_SIZE];
     }
@@ -80,23 +81,8 @@
         [weakSelf.buffer addNewFloatData:data withNumSamples:numFrames];
     }];
     
-    double frequency = 1500;
-    __block double phase = 0.0;
-    double phaseIncrement = 2*M_PI*frequency/self.audioManager.samplingRate;
-    double phaseMax = 2*M_PI;
-    [self.audioManager setOutputBlock:^(float* data, UInt32 numFrames, UInt32 numChannels){
-        for(int i=0; i<numFrames;++i){
-            for(int j=0;j<numChannels;++j){
-                data[2*i+j] = sin(phase);
-            }
-            phase+=phaseIncrement;
-            if (phase>phaseMax){
-                phase -= phaseMax;
-            }
-        }
-        
-    }];
-
+    self.frequency = (double)self.frequencySlider.value;
+    self.frequencySlider.continuous = NO;
     
     [self.audioManager play];
 }
@@ -144,11 +130,6 @@
                  withNormalization:64.0
                      withZeroValue:-60];
     
-    [self.graphHelper setGraphData:equalizer
-                    withDataLength:20
-                     forGraphIndex:2
-                 withNormalization:48.0
-                     withZeroValue:0];
     
     [self.graphHelper update]; // update the graph
     free(arrayData);
@@ -159,13 +140,55 @@
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     [self.graphHelper draw]; // draw the graph
 }
+
+- (IBAction)changeFrequency:(id)sender {
+    if (sender == self.frequencySlider) {
+        self.frequency = self.frequencySlider.value;
+        
+        // if sound is playing ie output block exists
+        if(self.audioManager.outputBlock)
+            [self updateFrequency];
+    }
+}
+
 - (IBAction)dismiss:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
     [self.audioManager pause];
 }
 
-- (void) viewWillDisappear {
+- (IBAction)playSound:(id)sender {
+    [self updateFrequency];
+}
+
+- (void) updateFrequency {
+    __block double phase = 0.0;
+    double phaseIncrement = 2.0*M_PI*((double)self.frequency)/((double)self.audioManager.samplingRate);
+    double phaseMax = 2.0*M_PI;
+    [self.audioManager setOutputBlock:^(float* data, UInt32 numFrames, UInt32 numChannels){
+        for(int i=0; i<numFrames;++i){
+            for(int j=0;j<numChannels;++j){
+                data[numChannels*i+j] = sin(phase);
+            }
+            phase+=phaseIncrement;
+            if (phase>phaseMax){
+                phase -= phaseMax;
+            }
+        }
+        
+    }];
+    
+}
+
+- (IBAction)stopSound:(id)sender {
+    [self.audioManager setOutputBlock:nil];
+}
+
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    
     [self.audioManager pause];
+    [super viewWillDisappear:animated];
 }
 
 

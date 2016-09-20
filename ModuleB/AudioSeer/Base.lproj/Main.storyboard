@@ -10,7 +10,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="graphViewer" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -32,16 +31,52 @@
                                     <action selector="dismiss:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dw5-8c-eD7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d6-Nd-cuV">
+                                <frame key="frameInset" minX="164" minY="479" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgj-NY-EVG">
+                                <frame key="frameInset" minX="125" minY="545" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nl1-mb-vWO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZ5-T5-fse">
+                                <frame key="frameInset" minX="203" minY="545" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AbD-BU-Y7e"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17500" minValue="15000" maxValue="20000" translatesAutoresizingMaskIntoConstraints="NO" id="fxU-W3-tQr">
+                                <connections>
+                                    <action selector="changeFrequency:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EBm-eP-pte"/>
+                                    <action selector="changeFrequency:" destination="BYZ-38-t0r" eventType="valueChanged" id="obf-Ik-CvE"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="fxU-W3-tQr" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4HN-PQ-rAT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fxU-W3-tQr" secondAttribute="bottom" constant="120" id="7Sk-1F-2HL"/>
                             <constraint firstItem="SpO-iq-y3T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="C8M-0U-iy8"/>
+                            <constraint firstItem="fxU-W3-tQr" firstAttribute="top" secondItem="4d6-Nd-cuV" secondAttribute="bottom" constant="17" id="LRQ-s9-pok"/>
                             <constraint firstItem="SpO-iq-y3T" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="Q0j-f4-zD6"/>
+                            <constraint firstItem="fxU-W3-tQr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gCC-Vb-2Ja"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="frequencySlider" destination="fxU-W3-tQr" id="4eg-Mw-TI1"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="396"/>
+            <point key="canvasLocation" x="672.79999999999995" y="394.45277361319341"/>
         </scene>
         <!--Audio Graph Menu-->
         <scene sceneID="7VW-mQ-ezK">
@@ -58,7 +93,7 @@
                                         <rect key="frame" x="0.0" y="64" width="375" height="164"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i9V-ae-BZX" id="h0l-6t-dFT">
-                                            <frame key="frameInset" width="375" height="163.5"/>
+                                            <frame key="frameInset" width="375" height="163"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Graphs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-gi-X2r">
@@ -81,7 +116,7 @@
                                         <rect key="frame" x="0.0" y="228" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kHR-JA-oCD" id="Va8-Ta-F4O">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -89,7 +124,7 @@
                                         <rect key="frame" x="0.0" y="272" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0uT-la-nrz" id="Fde-c2-pwf">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
