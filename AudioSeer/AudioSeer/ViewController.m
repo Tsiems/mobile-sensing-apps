@@ -208,7 +208,8 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
-- (void) viewWillDisappear {
+
+- (void) viewWillDisappear:(BOOL)animated {
     [self.audioManager pause];
 }
 

@@ -1,31 +1,30 @@
 //
-//  ViewController.m
-//  AudioLab
+//  DopplerViewController.m
+//  AudioSeer
 //
-//  Created by Eric Larson
-//  Copyright © 2016 Eric Larson. All rights reserved.
+//  Created by Danh Nguyen on 9/20/16.
+//  Copyright © 2016 Danh Nguyen. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "DopplerViewController.h"
 #import "Novocaine.h"
 #import "CircularBuffer.h"
 #import "SMUGraphHelper.h"
 #import "FFTHelper.h"
 
-#define BUFFER_SIZE 2048*2
+#define BUFFER_SIZE 2048*4
 
-@interface ViewController ()
+@interface DopplerViewController ()
 @property (strong, nonatomic) Novocaine *audioManager;
 @property (strong, nonatomic) CircularBuffer *buffer;
 @property (strong, nonatomic) SMUGraphHelper *graphHelper;
 @property (strong, nonatomic) FFTHelper *fftHelper;
+@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
 @property (weak, nonatomic) IBOutlet UISlider *frequencySlider;
 @property double frequency;
 @end
 
-
-
-@implementation ViewController
+@implementation DopplerViewController
 
 #pragma mark Lazy Instantiation
 -(Novocaine*)audioManager{
@@ -68,14 +67,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //[self setPauseOnWillResignActive:false];
-    [self.graphHelper setFullScreenBounds];
+    [self.graphHelper setScreenBoundsBottomHalf];
     
-    __block ViewController * __weak  weakSelf = self;
+    __block DopplerViewController * __weak  weakSelf = self;
     [self.audioManager setInputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels){
         [weakSelf.buffer addNewFloatData:data withNumSamples:numFrames];
     }];
     
     self.frequency = (double)self.frequencySlider.value;
+    self.sliderLabel.text = [NSString stringWithFormat:@"%0.0f Hz", self.frequencySlider.value];
     self.frequencySlider.continuous = NO;
     
     [self.audioManager play];
@@ -88,28 +88,39 @@
     
     // get audio stream data
     float* arrayData = malloc(sizeof(float)*BUFFER_SIZE);
+    float* arrayData2 = malloc(sizeof(float)*BUFFER_SIZE);
     float* fftMagnitude = malloc(sizeof(float)*BUFFER_SIZE/2);
+    float* fftMagnitude2 = malloc(sizeof(float)*BUFFER_SIZE/2);
+    float* fftAverage = malloc(sizeof(float)*BUFFER_SIZE/2);
     float* equalizer = malloc(sizeof(float)*20);
     
     [self.buffer fetchFreshData:arrayData withNumSamples:BUFFER_SIZE];
+    [self.buffer fetchFreshData:arrayData2 withNumSamples:BUFFER_SIZE];
     
     //send off for graphing
     [self.graphHelper setGraphData:arrayData
                     withDataLength:BUFFER_SIZE
                      forGraphIndex:0];
     
+    
     // take forward FFT
     [self.fftHelper performForwardFFTWithData:arrayData
                    andCopydBMagnitudeToBuffer:fftMagnitude];
     
-    // break up fftmagnitude into chunks
+    [self.fftHelper performForwardFFTWithData:arrayData2
+                   andCopydBMagnitudeToBuffer:fftMagnitude2];
+    
+    for(int i = 0; i < BUFFER_SIZE/2; ++i) {
+        fftAverage[i] = (fftMagnitude[i]+fftMagnitude2[i])/2.0;
+    }
+    
+    // break up fftaverage into chunks
     for(int i = 0; i <  20; i+=1) {
-        // NSRange *range = &((NSRange){i, i+(sizeof fftMagnitude)/20});
         
         float max = -2000000;
         for(int j = i*BUFFER_SIZE/40; j < (i+1)*BUFFER_SIZE/40; j+=1) {
             if(fftMagnitude[j] > max){
-                max = fftMagnitude[j];
+                max = fftAverage[j];
                 
             }
         }
@@ -118,12 +129,11 @@
     
     
     // graph the FFT Data
-    [self.graphHelper setGraphData:fftMagnitude
+    [self.graphHelper setGraphData:fftAverage
                     withDataLength:BUFFER_SIZE/2
                      forGraphIndex:1
-                 withNormalization:64.0
+                 withNormalization:100.0
                      withZeroValue:-60];
-    
     
     [self.graphHelper update]; // update the graph
     free(arrayData);
@@ -137,7 +147,8 @@
 
 - (IBAction)changeFrequency:(id)sender {
     if (sender == self.frequencySlider) {
-        self.frequency = self.frequencySlider.value;
+        self.frequency = roundl(self.frequencySlider.value);
+        self.sliderLabel.text = [NSString stringWithFormat:@"%0.0f Hz", self.frequencySlider.value];
         
         // if sound is playing ie output block exists
         if(self.audioManager.outputBlock)
@@ -185,5 +196,14 @@
     [super viewWillDisappear:animated];
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
