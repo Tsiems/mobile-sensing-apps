@@ -141,6 +141,29 @@
     //when playing frequency
     if(self.audioManager.outputBlock) {
         int peakIndex = (int) (self.frequency/(self.audioManager.samplingRate/(BUFFER_SIZE/2)));
+        int bandwith = 600;
+        int finalRight = peakIndex + bandwith;
+        if (finalRight > BUFFER_SIZE/2) {
+            finalRight = BUFFER_SIZE/2;
+        }
+        
+        int finalLeft = peakIndex - bandwith;
+        if (finalLeft < 0) {
+            finalLeft = 0;
+        }
+        
+        // find right maximum
+        for (int i = peakIndex + 10; i < finalRight; ++i) {
+            NSLog(@"peak index val: %d", peakIndex);
+            if (fftAverage[i] - fftAverage[i-1] < 1 && fftAverage[i] - fftAverage[i-1] > -1) {
+                NSLog(@"Local Max: %d", i);
+                break;
+            }
+        }
+        
+        // find left maximum
+        
+        
         // NSLog(@"Peak: %d", peakIndex);
         
     }
