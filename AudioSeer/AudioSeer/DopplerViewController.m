@@ -140,6 +140,8 @@
     
     //when playing frequency
     if(self.audioManager.outputBlock) {
+        int peakIndex = (int) (self.frequency/(self.audioManager.samplingRate/(BUFFER_SIZE/2)));
+        // NSLog(@"Peak: %d", peakIndex);
         
     }
     
