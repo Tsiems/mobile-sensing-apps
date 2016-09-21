@@ -83,6 +83,9 @@
         [weakSelf.buffer addNewFloatData:data withNumSamples:numFrames];
     }];
     
+    if (self.audioManager.outputBlock) {
+        [self.audioManager setOutputBlock:nil];
+    }
     [self.audioManager play];
 }
 
