@@ -14,6 +14,8 @@
 
 #define BUFFER_SIZE 2048*8
 
+#define WINDOW_DIVISOR 300
+
 @interface ViewController ()
 @property (strong, nonatomic) Novocaine *audioManager;
 @property (strong, nonatomic) CircularBuffer *buffer;
@@ -97,7 +99,7 @@
     // get audio stream data
     float* arrayData = malloc(sizeof(float)*BUFFER_SIZE);
     float* fftMagnitude = malloc(sizeof(float)*BUFFER_SIZE/2);
-    float* equalizer = malloc(sizeof(float)*20);
+    float* equalizer = malloc(sizeof(float)*WINDOW_DIVISOR);
 //    float* magnitude = malloc(sizeof(float)*BUFFER_SIZE/4);
     
     [self.buffer fetchFreshData:arrayData withNumSamples:BUFFER_SIZE];
@@ -112,11 +114,11 @@
                    andCopydBMagnitudeToBuffer:fftMagnitude];
     
     // break up fftmagnitude into chunks
-    for(int i = 0; i <  20; i+=1) {
+    for(int i = 0; i <  WINDOW_DIVISOR; i++) {
         // NSRange *range = &((NSRange){i, i+(sizeof fftMagnitude)/20});
         
         float max = -2000000;
-        for(int j = i*BUFFER_SIZE/40; j < (i+1)*BUFFER_SIZE/40; j+=1) {
+        for(int j = i*BUFFER_SIZE/2/WINDOW_DIVISOR; j < (i+1)*BUFFER_SIZE/2/WINDOW_DIVISOR; j+=1) {
             if(fftMagnitude[j] > max){
                 max = fftMagnitude[j];
                 
@@ -125,62 +127,74 @@
         equalizer[i] = max;
     }
     
-    float max = -2000000;
-    float max2 = -2000000;
-    int max_index = 0;
-    int max2_index = 0;
-    for(int i = 0; i<BUFFER_SIZE/2; i++) {
-        if(fftMagnitude[i] > max){
-            if( i>max_index+15 || i<max_index-15) {
-                max2 = max;
-                max2_index = i;
-                NSLog(@"MAX2 moving down %i %i",max_index,max2_index);
-            }
-            max = fftMagnitude[i];
-            max_index = i;
-        } else if (fftMagnitude[i] > max2) {
-            if( (i>max_index+15 || i<max_index-15)) {
-                max2 = fftMagnitude[i];
-                max2_index = i;
-                NSLog(@"NEW MAX2 %i %i",max_index,max2_index);
-            }
+    
+    int max_window_index = 0;
+    float max_value = -2000000;
+    
+    int max2_window_index = -1;
+    float max2_value = -200000;
+    
+    for(int i = 0; i < WINDOW_DIVISOR; i++) {
+        if(equalizer[i] > max_value) {
+            
+            //move 2nd highest down
+            max2_window_index = max_window_index;
+            max2_value = max_value;
+            
+            //set highest
+            max_window_index = i;
+            max_value = equalizer[i];
+            
+            
+        } else if(equalizer[i] > max2_value) {
+            //set second highest
+            max2_window_index = i;
+            max2_value = equalizer[i];
         }
-//        NSLog(@"MAXES   %i %i",max_index,max2_index);
     }
-//    NSLog(@"Max FFT: %f  at index   %i",max,max_index);
-    
-    float max_freq = (max_index*self.audioManager.samplingRate/(BUFFER_SIZE));
-    float max2_freq = (max2_index*self.audioManager.samplingRate/(BUFFER_SIZE));
-    NSLog(@"Max Hz: %f   %i",max_freq,max_index);
-    NSLog(@"Max2 Hz: %f   %i",max2_freq,max2_index);
-    
-    
-    // SET THE FREQUENCY LABEL TEXT
-    self.frequencyLabel.text = [NSString stringWithFormat:@"%.2f Hz",max_freq];
     
     
     
+    float max = -2000000;
+//    float max2 = -2000000;
+    int max_index = 0;
+//    int max2_index = 0;
     
-    
-//    // calculate power spectrum (magnitude) values from fft[]
-//    for (int i = 0; i < BUFFER_SIZE / 2 - 1; i++) {
-//        float re = fftMagnitude[2*i];
-//        float im = fftMagnitude[2*i+1];
-//        magnitude[i] = sqrt(re*re+im*im);
-//    }
-//
-//    max = -2000000;
-//    max_index = 0;
-//    for(int i = 0; i<BUFFER_SIZE/2; i++) {
-//        if(magnitude[i] > max){
-//            max = magnitude[i];
+//    for(int i = (BUFFER_SIZE/2)/WINDOW_DIVISOR*(max_window_index-1); i<(BUFFER_SIZE/2)/WINDOW_DIVISOR*(max_window_index+2); i++) {
+//        if(fftMagnitude[i] > max){
+//            max = fftMagnitude[i];
 //            max_index = i;
 //        }
 //    }
-//    NSLog(@"POWER: Max FFT: %f  at index   %i",max,max_index);
-//    NSLog(@"POWER: Max Hz: %f",(max_index*self.audioManager.samplingRate/(BUFFER_SIZE/2)));
-//    
-//        
+    
+    for(int i = 0; i<BUFFER_SIZE/2; i++) {
+        if(fftMagnitude[i] > max){
+            max = fftMagnitude[i];
+            max_index = i;
+        }
+    }
+    
+    float max2 = -2000000;
+    int max2_index = WINDOW_DIVISOR*max2_window_index;
+    
+    for(int i = (BUFFER_SIZE/2)/WINDOW_DIVISOR*(max2_window_index); i<(BUFFER_SIZE/2)/WINDOW_DIVISOR*(max2_window_index+1); i++) {
+        if(fftMagnitude[i] > max2){
+            max2 = fftMagnitude[i];
+            max2_index = i;
+        }
+    }
+
+    float max_freq = (max_index*self.audioManager.samplingRate/(BUFFER_SIZE));
+//    float max2_freq = (max2_index*self.audioManager.samplingRate/(BUFFER_SIZE));
+    NSLog(@"Max Hz: %f   %i",max_freq,max_index);
+    
+    float second_max_freq = (max2_index *  self.audioManager.samplingRate/(BUFFER_SIZE));
+//    NSLog(@"Max2 Hz: %f   %i",max2_freq,max2_index);
+    
+    NSLog(@"Max2 Hz: %f   %i",second_max_freq,max2_window_index);
+    
+    // SET THE FREQUENCY LABEL TEXT
+    self.frequencyLabel.text = [NSString stringWithFormat:@"%.2f Hz",max_freq];
     
     
     // graph the FFT Data
@@ -191,7 +205,7 @@
                      withZeroValue:-60];
     
     [self.graphHelper setGraphData:equalizer
-                    withDataLength:20
+                    withDataLength:WINDOW_DIVISOR
                      forGraphIndex:2
                  withNormalization:48.0
                      withZeroValue:0];
