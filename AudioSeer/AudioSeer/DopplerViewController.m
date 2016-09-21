@@ -11,6 +11,7 @@
 #import "CircularBuffer.h"
 #import "SMUGraphHelper.h"
 #import "FFTHelper.h"
+#import "PeakFinder.h"
 
 #define BUFFER_SIZE 2048*4
 
@@ -125,6 +126,21 @@
             }
         }
         equalizer[i] = max;
+    }
+    
+    // calculate local/abs peaks
+    PeakFinder *peakFinder = [[PeakFinder alloc] initWithFrequencyResolution:self.audioManager.samplingRate/(BUFFER_SIZE/2)];
+//
+//    NSArray* peaks = [peakFinder getFundamentalPeaksFromBuffer:fftMagnitude withLength:BUFFER_SIZE/2 usingWindowSize:5 andPeakMagnitudeMinimum:10 aboveFrequency:200];
+//    
+//    for( int i = 0; i<peaks.count; i++) {
+//        NSLog(@"Peak Frequency: %f   magnitude: %f",[(Peak*)peaks[i] frequency]/2, [(Peak*)peaks[i] magnitude]);
+//    }
+//
+    
+    //when playing frequency
+    if(self.audioManager.outputBlock) {
+        
     }
     
     
