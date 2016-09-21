@@ -62,6 +62,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="GUn-g8-lGd">
+                            <rect key="frame" x="0.0" y="405" width="375" height="264"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <sections>
                             <tableViewSection id="GJr-Ae-n5E">
                                 <cells>
@@ -69,7 +74,7 @@
                                         <rect key="frame" x="0.0" y="64" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i9V-ae-BZX" id="h0l-6t-dFT">
-                                            <frame key="frameInset" width="375" height="139"/>
+                                            <frame key="frameInset" width="375" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Graphs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgt-gi-X2r">
@@ -77,11 +82,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand" translatesAutoresizingMaskIntoConstraints="NO" id="24O-Nf-geR"/>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="24O-Nf-geR" firstAttribute="leading" secondItem="h0l-6t-dFT" secondAttribute="leadingMargin" id="6DL-bx-QSN"/>
                                                 <constraint firstItem="bgt-gi-X2r" firstAttribute="centerY" secondItem="h0l-6t-dFT" secondAttribute="centerY" id="dBm-zY-9AX"/>
                                                 <constraint firstItem="bgt-gi-X2r" firstAttribute="centerX" secondItem="h0l-6t-dFT" secondAttribute="centerX" id="iYY-ku-XJq"/>
+                                                <constraint firstItem="24O-Nf-geR" firstAttribute="top" secondItem="h0l-6t-dFT" secondAttribute="topMargin" constant="15" id="jqA-lb-vwZ"/>
+                                                <constraint firstItem="bgt-gi-X2r" firstAttribute="leading" secondItem="24O-Nf-geR" secondAttribute="trailing" constant="4" id="p6o-E7-533"/>
                                                 <constraint firstItem="bgt-gi-X2r" firstAttribute="top" secondItem="h0l-6t-dFT" secondAttribute="topMargin" constant="31" id="qVQ-bX-Pyy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="24O-Nf-geR" secondAttribute="bottom" constant="15" id="zEr-b9-TXg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -92,7 +102,7 @@
                                         <rect key="frame" x="0.0" y="204" width="375" height="157"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kHR-JA-oCD" id="Va8-Ta-F4O">
-                                            <frame key="frameInset" width="375" height="156.5"/>
+                                            <frame key="frameInset" width="375" height="157"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gestures with Audio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNS-kk-chi">
@@ -114,7 +124,7 @@
                                         <rect key="frame" x="0.0" y="361" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0uT-la-nrz" id="Fde-c2-pwf">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -224,4 +234,7 @@
             <point key="canvasLocation" x="1557.5999999999999" y="386.35682158920542"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hand" width="263" height="300"/>
+    </resources>
 </document>
