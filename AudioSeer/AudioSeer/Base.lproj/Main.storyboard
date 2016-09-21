@@ -39,7 +39,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BNH-gD-pzq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29.5" id="KIK-eI-6Az"/>
                             <constraint firstItem="BNH-gD-pzq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-40" id="MS0-lm-Q2y"/>
@@ -215,7 +215,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Anl-fE-15K" firstAttribute="trailing" secondItem="WXm-l4-lmM" secondAttribute="trailingMargin" id="4mX-7l-Zfh"/>
                             <constraint firstItem="Anl-fE-15K" firstAttribute="top" secondItem="otq-N5-WP9" secondAttribute="bottom" constant="8" id="Cfl-WF-fXa"/>
