@@ -241,11 +241,11 @@
         double leftValue = [self calcLeftAverage:fftMagnitude];
         NSLog(@"Difference left = %f", self.baselineLeftAverage - leftValue);
 
-        if(self.baselineRightAverage != 0 && self.baselineRightAverage - rightValue < -10) {
+        if(self.baselineRightAverage != 0 && rightValue - self.baselineRightAverage > 10) {
             [self.gestureImages setImage:[UIImage imageNamed:@"towards"]];
             NSLog(@"towards");
         }
-        if (self.baselineLeftAverage != 0 && self.baselineLeftAverage - leftValue < -10) {
+        if (self.baselineLeftAverage != 0 && leftValue - self.baselineLeftAverage > 10) {
             [self.gestureImages setImage:[UIImage imageNamed:@"away"]];
             NSLog(@"away");
         }
