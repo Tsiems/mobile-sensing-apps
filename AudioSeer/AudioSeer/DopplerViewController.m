@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *gestureImages;
 @property double frequency;
 @property BOOL calibrateFlag;
+@property float *fftMagnitude;
 @property double baselineLeftAverage;
 @property double baselineRightAverage;
 @end
@@ -104,7 +105,7 @@
     
     // get audio stream data
     float* arrayData = malloc(sizeof(float)*BUFFER_SIZE);
-    float* fftMagnitude = malloc(sizeof(float)*BUFFER_SIZE/2);
+    _fftMagnitude = malloc(sizeof(float)*BUFFER_SIZE/2);
     
     [self.buffer fetchFreshData:arrayData withNumSamples:BUFFER_SIZE];
     
@@ -116,17 +117,17 @@
     
     // take forward FFT
     [self.fftHelper performForwardFFTWithData:arrayData
-                   andCopydBMagnitudeToBuffer:fftMagnitude];
+                   andCopydBMagnitudeToBuffer:_fftMagnitude];
     
     [self.gestureImages setImage:[UIImage imageNamed:@"still"]];
     
-    [self calibrate:fftMagnitude];
+    [self calibrate];
     
     // calculate doppler
-    [self calculateDoppler:fftMagnitude];
+    [self calculateDoppler];
     
     // graph the FFT Data
-    [self.graphHelper setGraphData:fftMagnitude
+    [self.graphHelper setGraphData:_fftMagnitude
                     withDataLength:BUFFER_SIZE/2
                      forGraphIndex:1
                  withNormalization:100.0
@@ -134,7 +135,7 @@
     
     [self.graphHelper update]; // update the graph
     free(arrayData);
-    free(fftMagnitude);
+    free(_fftMagnitude);
 }
 
 //  override the GLKView draw function, from OpenGLES
@@ -148,8 +149,9 @@
         self.sliderLabel.text = [NSString stringWithFormat:@"%0.0f Hz", self.frequencySlider.value];
         
         // if sound is playing ie output block exists
-        if(self.audioManager.outputBlock)
+        if(self.audioManager.outputBlock){
             [self updateFrequency];
+        }
     }
 }
 
@@ -179,7 +181,7 @@
         }
         
     }];
-    
+    self.calibrateFlag = YES;
 }
 
 - (IBAction)stopSound:(id)sender {
@@ -194,51 +196,42 @@
 }
 
 // Doppler Calcuations
--(void) calibrate:(float*) FFTMagnitude {
+-(void) calibrate{
     if (self.calibrateFlag) {
-        self.baselineLeftAverage = [self calcLeftAverage:FFTMagnitude];
-        self.baselineRightAverage = [self calcRightAverage:FFTMagnitude];
+        self.baselineLeftAverage = [self calcSideAverage:(NO)];
+        self.baselineRightAverage = [self calcSideAverage:(YES)];
         NSLog(@"calibrating");
         self.calibrateFlag = NO;
     }
 }
 
 // will only be called when frequency is playing
--(double) calcLeftAverage:(float*) fftMagnitude{
+-(double) calcSideAverage: (BOOL) right{
     int peakIndex = (int) (((float)self.frequency)/(((float)self.audioManager.samplingRate)/(((float)BUFFER_SIZE))));
-    double leftValue = 0;
+    double average = 0;
+    if(right){
+        peakIndex += RANGE_OF_AVERAGE;
+    }
     for (int i = peakIndex-RANGE_OF_AVERAGE; i <= peakIndex; ++i) {
-        leftValue += fftMagnitude[i];
+        average += _fftMagnitude[i];
     }
-    leftValue /= RANGE_OF_AVERAGE;
+    average /= RANGE_OF_AVERAGE;
     
-    return leftValue;
+    return average;
 }
 
-// will only be called when frequency is playing
--(double) calcRightAverage:(float*) fftMagnitude{
-    int peakIndex = (int) (((float)self.frequency)/(((float)self.audioManager.samplingRate)/(((float)BUFFER_SIZE))));
-    double rightValue = 0;
-    for (int i = peakIndex; i <= peakIndex + RANGE_OF_AVERAGE; ++i) {
-        rightValue += fftMagnitude[i];
-    }
-    rightValue /= RANGE_OF_AVERAGE;
-    
-    return rightValue;
-}
-
--(void) calculateDoppler:(float*) fftMagnitude {
+-(void) calculateDoppler{
     //when playing frequency
     if(self.audioManager.outputBlock) {
         int peakIndex = (int) (((float)self.frequency)/(((float)self.audioManager.samplingRate)/(((float)BUFFER_SIZE))));
         
-        [self.graphHelper setGraphData:&fftMagnitude[peakIndex-50] withDataLength:100 forGraphIndex:2 withNormalization:100 withZeroValue:-70];
+        [self.graphHelper setGraphData:&_fftMagnitude[peakIndex-50] withDataLength:100 forGraphIndex:2 withNormalization:100 withZeroValue:-70];
         
         //right
-        double rightValue = [self calcRightAverage:fftMagnitude];
+        double rightValue = [self calcSideAverage:(YES)];
         NSLog(@"Difference right = %f", self.baselineRightAverage - rightValue);
         //left
-        double leftValue = [self calcLeftAverage:fftMagnitude];
+        double leftValue = [self calcSideAverage:(NO)];
         NSLog(@"Difference left = %f", self.baselineLeftAverage - leftValue);
 
         if(self.baselineRightAverage != 0 && rightValue - self.baselineRightAverage > 10) {
