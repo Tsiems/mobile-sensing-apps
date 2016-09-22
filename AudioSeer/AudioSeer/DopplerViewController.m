@@ -98,6 +98,12 @@
     [self.audioManager play];
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    
+    [self.audioManager pause];
+    [super viewWillDisappear:animated];
+}
+
 #pragma mark GLK Inherited Functions
 //  override the GLKViewController update function, from OpenGLES
 - (void)update{
@@ -121,7 +127,7 @@
     
     [self.gestureImages setImage:[UIImage imageNamed:@"still"]];
     
-    [self calibrate];
+    [self calibrate]; // call every time, only actually do it when flag is set
     
     // calculate doppler
     [self calculateDoppler];
@@ -155,11 +161,7 @@
     }
 }
 
-- (IBAction)dismiss:(id)sender {
-    [self dismissViewControllerAnimated:true completion:nil];
-    [self.audioManager pause];
-}
-
+# pragma mark UI Interactions
 - (IBAction)playSound:(id)sender {
     [self updateFrequency];
 }
@@ -181,7 +183,7 @@
         }
         
     }];
-    self.calibrateFlag = YES;
+    self.calibrateFlag = YES; // calibrate when frequency plays or changes
 }
 
 - (IBAction)stopSound:(id)sender {
@@ -195,7 +197,8 @@
     }
 }
 
-// Doppler Calcuations
+#pragma mark Doppler Calculations
+// calibrate only when is playing
 -(void) calibrate{
     if (self.calibrateFlag) {
         self.baselineLeftAverage = [self calcSideAverage:(NO)];
@@ -205,11 +208,11 @@
     }
 }
 
-// will only be called when frequency is playing
--(double) calcSideAverage: (BOOL) right{
+
+-(double) calcSideAverage: (BOOL) isRight{
     int peakIndex = (int) (((float)self.frequency)/(((float)self.audioManager.samplingRate)/(((float)BUFFER_SIZE))));
     double average = 0;
-    if(right){
+    if(isRight){
         peakIndex += RANGE_OF_AVERAGE;
     }
     for (int i = peakIndex-RANGE_OF_AVERAGE; i <= peakIndex; ++i) {
@@ -220,6 +223,7 @@
     return average;
 }
 
+// will only be called when frequency is playing and baselines calculated (not 0)
 -(void) calculateDoppler{
     //when playing frequency
     if(self.audioManager.outputBlock) {
@@ -229,31 +233,23 @@
         
         //right
         double rightValue = [self calcSideAverage:(YES)];
-        NSLog(@"Difference right = %f", self.baselineRightAverage - rightValue);
+
         //left
         double leftValue = [self calcSideAverage:(NO)];
-        NSLog(@"Difference left = %f", self.baselineLeftAverage - leftValue);
 
-        if(self.baselineRightAverage != 0 && rightValue - self.baselineRightAverage > 10) {
+        double threshold = 10; //decibels;
+        
+        if(self.baselineRightAverage != 0 && rightValue - self.baselineRightAverage > threshold) {
             [self.gestureImages setImage:[UIImage imageNamed:@"towards"]];
             NSLog(@"towards");
         }
-        if (self.baselineLeftAverage != 0 && leftValue - self.baselineLeftAverage > 10) {
+        if (self.baselineLeftAverage != 0 && leftValue - self.baselineLeftAverage > threshold) {
             [self.gestureImages setImage:[UIImage imageNamed:@"away"]];
             NSLog(@"away");
         }
         
-//        NSLog(@"right average value = %f", rightValue);
-//        NSLog(@"left average value = %f", leftValue);
-        
     }
 
-}
-
--(void)viewDidDisappear:(BOOL)animated{
-    
-    [self.audioManager pause];
-    [super viewWillDisappear:animated];
 }
 
 /*
