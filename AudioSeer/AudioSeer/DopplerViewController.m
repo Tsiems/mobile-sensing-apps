@@ -203,7 +203,6 @@
     if (self.calibrateFlag) {
         self.baselineLeftAverage = [self calcSideAverage:(NO)];
         self.baselineRightAverage = [self calcSideAverage:(YES)];
-        NSLog(@"calibrating");
         self.calibrateFlag = NO;
     }
 }
@@ -241,11 +240,9 @@
         
         if(self.baselineRightAverage != 0 && rightValue - self.baselineRightAverage > threshold) {
             [self.gestureImages setImage:[UIImage imageNamed:@"towards"]];
-            NSLog(@"towards");
         }
         if (self.baselineLeftAverage != 0 && leftValue - self.baselineLeftAverage > threshold) {
             [self.gestureImages setImage:[UIImage imageNamed:@"away"]];
-            NSLog(@"away");
         }
         
     }
