@@ -24,6 +24,7 @@
 @property (strong, nonatomic) NSNumber* testNumber;
 
 @property (weak, nonatomic) IBOutlet UILabel *frequencyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *secondFrequencyLabel;
 
 @end
 
@@ -66,7 +67,7 @@
 
 -(FFTHelper*)fftHelper{
     if(!_fftHelper){
-        _fftHelper = [[FFTHelper alloc]initWithFFTSize:BUFFER_SIZE];
+        _fftHelper = [[FFTHelper alloc]initWithFFTSize:BUFFER_SIZE andWindow:WindowTypeRect];
     }
     
     return _fftHelper;
@@ -125,6 +126,7 @@
             }
         }
         equalizer[i] = max;
+//        NSLog(@"MAX: %f   %i",max, i);
     }
     
     
@@ -134,8 +136,8 @@
     int max2_window_index = -1;
     float max2_value = -200000;
     
-    for(int i = 0; i < WINDOW_DIVISOR; i++) {
-        if(equalizer[i] > max_value) {
+    for(int i = WINDOW_DIVISOR/30; i < WINDOW_DIVISOR; i++) {
+        if(equalizer[i] > max_value && i*self.audioManager.samplingRate/(BUFFER_SIZE)>10) {
             
             //move 2nd highest down
             max2_window_index = max_window_index;
@@ -146,7 +148,7 @@
             max_value = equalizer[i];
             
             
-        } else if(equalizer[i] > max2_value) {
+        } else if(equalizer[i] > max2_value && i*self.audioManager.samplingRate/(BUFFER_SIZE)>10) {
             //set second highest
             max2_window_index = i;
             max2_value = equalizer[i];
@@ -160,42 +162,52 @@
     int max_index = 0;
 //    int max2_index = 0;
     
-//    for(int i = (BUFFER_SIZE/2)/WINDOW_DIVISOR*(max_window_index-1); i<(BUFFER_SIZE/2)/WINDOW_DIVISOR*(max_window_index+2); i++) {
+    for(int i = (BUFFER_SIZE/2)/WINDOW_DIVISOR*(max_window_index); i<(BUFFER_SIZE/2)/WINDOW_DIVISOR*(max_window_index+1)-1; i++) {
+        
+        if(fftMagnitude[i] > max){
+            
+            max = fftMagnitude[i];
+            NSLog(@"max: %.1f   %i",max,i);
+            max_index = i;
+        }
+    }
+    
+//    for(int i = 0; i<BUFFER_SIZE/2; i++) {
 //        if(fftMagnitude[i] > max){
 //            max = fftMagnitude[i];
 //            max_index = i;
 //        }
 //    }
     
-    for(int i = 0; i<BUFFER_SIZE/2; i++) {
-        if(fftMagnitude[i] > max){
-            max = fftMagnitude[i];
-            max_index = i;
-        }
-    }
-    
     float max2 = -2000000;
-    int max2_index = WINDOW_DIVISOR*max2_window_index;
-    
-    for(int i = (BUFFER_SIZE/2)/WINDOW_DIVISOR*(max2_window_index); i<(BUFFER_SIZE/2)/WINDOW_DIVISOR*(max2_window_index+1); i++) {
+    int max2_index = 0;
+    for(int i = (BUFFER_SIZE/2)/WINDOW_DIVISOR*(max2_window_index); i<(BUFFER_SIZE/2)/WINDOW_DIVISOR*(max2_window_index+1)-1; i++) {
         if(fftMagnitude[i] > max2){
             max2 = fftMagnitude[i];
             max2_index = i;
         }
     }
 
+    
+    
+    
     float max_freq = (max_index*self.audioManager.samplingRate/(BUFFER_SIZE));
-//    float max2_freq = (max2_index*self.audioManager.samplingRate/(BUFFER_SIZE));
-    NSLog(@"Max Hz: %f   %i",max_freq,max_index);
     
-    float second_max_freq = (max2_index *  self.audioManager.samplingRate/(BUFFER_SIZE));
-//    NSLog(@"Max2 Hz: %f   %i",max2_freq,max2_index);
+    float second_max_freq = (max2_index*self.audioManager.samplingRate/(BUFFER_SIZE));
     
-    NSLog(@"Max2 Hz: %f   %i",second_max_freq,max2_window_index);
+    
+    NSLog(@"Max Hz: %f   %i   %f",max_freq,max_index,fftMagnitude[max_index]);
+    
+    NSLog(@"Max2 Hz: %f   %i   %f",second_max_freq,max2_index,fftMagnitude[max2_index]);
+    NSLog(@"Ratio: %f",fftMagnitude[max_index]/fftMagnitude[0]);
+    
     
     // SET THE FREQUENCY LABEL TEXT
-    self.frequencyLabel.text = [NSString stringWithFormat:@"%.2f Hz",max_freq];
-    
+    if( fftMagnitude[max_index]/fftMagnitude[0] < 0.1 || max_freq>6000.0 ) {
+        self.frequencyLabel.text = [NSString stringWithFormat:@"%.1f Hz   %.1f dB",max_freq,fftMagnitude[max_index]];
+        self.secondFrequencyLabel.text = [NSString stringWithFormat:@"%.1f Hz   %.1f dB",second_max_freq,fftMagnitude[max2_index]];
+    }
+
     
     // graph the FFT Data
     [self.graphHelper setGraphData:fftMagnitude
@@ -213,7 +225,6 @@
     [self.graphHelper update]; // update the graph
     free(arrayData);
     free(fftMagnitude);
-//    free(magnitude);
     free(equalizer);
 }
 
