@@ -375,7 +375,7 @@ typedef struct {
     }
     
     if(dataLength>kGraphMaxSize){
-        printf("Request to print more points than allocated for max array size, clipping array length from %d to %d\n",dataLength,kGraphMaxSize);
+        //printf("Request to print more points than allocated for max array size, clipping array length from %d to %d\n",dataLength,kGraphMaxSize);
         dataLength=kGraphMaxSize;
     }
     

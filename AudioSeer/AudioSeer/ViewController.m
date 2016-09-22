@@ -237,8 +237,9 @@
 }
 
 
-- (void) viewWillDisappear:(BOOL)animated {
+- (void) viewDidDisappear:(BOOL)animated {
     [self.audioManager pause];
+    [super viewWillDisappear:animated];
 }
 
 

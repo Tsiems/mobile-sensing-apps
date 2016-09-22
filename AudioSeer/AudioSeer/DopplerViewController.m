@@ -14,6 +14,7 @@
 #import "PeakFinder.h"
 
 #define BUFFER_SIZE 2048*4
+#define RANGE_OF_AVERAGE 25
 
 @interface DopplerViewController ()
 @property (strong, nonatomic) Novocaine *audioManager;
@@ -22,7 +23,11 @@
 @property (strong, nonatomic) FFTHelper *fftHelper;
 @property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
 @property (weak, nonatomic) IBOutlet UISlider *frequencySlider;
+@property (weak, nonatomic) IBOutlet UIImageView *gestureImages;
 @property double frequency;
+@property BOOL calibrateFlag;
+@property double baselineLeftAverage;
+@property double baselineRightAverage;
 @end
 
 @implementation DopplerViewController
@@ -79,6 +84,16 @@
     self.sliderLabel.text = [NSString stringWithFormat:@"%0.0f Hz", self.frequencySlider.value];
     self.frequencySlider.continuous = NO;
     
+    // register calibration tap
+    self.calibrateFlag = NO;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                     initWithTarget:self action:@selector(imageTap:)];
+    tap.delegate = self;
+    [self.gestureImages addGestureRecognizer:tap];
+    
+    self.baselineLeftAverage = 0;
+    self.baselineRightAverage = 0;
+    
     [self.audioManager play];
 }
 
@@ -90,7 +105,6 @@
     // get audio stream data
     float* arrayData = malloc(sizeof(float)*BUFFER_SIZE);
     float* fftMagnitude = malloc(sizeof(float)*BUFFER_SIZE/2);
-    float* equalizer = malloc(sizeof(float)*20);
     
     [self.buffer fetchFreshData:arrayData withNumSamples:BUFFER_SIZE];
     
@@ -104,18 +118,9 @@
     [self.fftHelper performForwardFFTWithData:arrayData
                    andCopydBMagnitudeToBuffer:fftMagnitude];
     
-    // break up fftmagnitude into chunks
-    for(int i = 0; i <  20; i+=1) {
-        
-        float max = -2000000;
-        for(int j = i*BUFFER_SIZE/40; j < (i+1)*BUFFER_SIZE/40; j+=1) {
-            if(fftMagnitude[j] > max){
-                max = fftMagnitude[j];
-                
-            }
-        }
-        equalizer[i] = max;
-    }
+    [self.gestureImages setImage:[UIImage imageNamed:@"still"]];
+    
+    [self calibrate:fftMagnitude];
     
     // calculate doppler
     [self calculateDoppler:fftMagnitude];
@@ -157,6 +162,7 @@
     [self updateFrequency];
 }
 
+
 - (void) updateFrequency {
     __block double phase = 0.0;
     double phaseIncrement = 2.0*M_PI*((double)self.frequency)/((double)self.audioManager.samplingRate);
@@ -180,41 +186,81 @@
     [self.audioManager setOutputBlock:nil];
 }
 
+- (void)imageTap:(UITapGestureRecognizer *)tapGestureRecognizer
+{
+    if (self.audioManager.outputBlock) {
+        self.calibrateFlag = YES;
+    }
+}
 
+// Doppler Calcuations
+-(void) calibrate:(float*) FFTMagnitude {
+    if (self.calibrateFlag) {
+        self.baselineLeftAverage = [self calcLeftAverage:FFTMagnitude];
+        self.baselineRightAverage = [self calcRightAverage:FFTMagnitude];
+        NSLog(@"calibrating");
+        self.calibrateFlag = NO;
+    }
+}
 
--(void)viewWillDisappear:(BOOL)animated{
+// will only be called when frequency is playing
+-(double) calcLeftAverage:(float*) fftMagnitude{
+    int peakIndex = (int) (((float)self.frequency)/(((float)self.audioManager.samplingRate)/(((float)BUFFER_SIZE))));
+    double leftValue = 0;
+    for (int i = peakIndex-RANGE_OF_AVERAGE; i <= peakIndex; ++i) {
+        leftValue += fftMagnitude[i];
+    }
+    leftValue /= RANGE_OF_AVERAGE;
     
-    [self.audioManager pause];
-    [super viewWillDisappear:animated];
+    return leftValue;
+}
+
+// will only be called when frequency is playing
+-(double) calcRightAverage:(float*) fftMagnitude{
+    int peakIndex = (int) (((float)self.frequency)/(((float)self.audioManager.samplingRate)/(((float)BUFFER_SIZE))));
+    double rightValue = 0;
+    for (int i = peakIndex; i <= peakIndex + RANGE_OF_AVERAGE; ++i) {
+        rightValue += fftMagnitude[i];
+    }
+    rightValue /= RANGE_OF_AVERAGE;
+    
+    return rightValue;
 }
 
 -(void) calculateDoppler:(float*) fftMagnitude {
     //when playing frequency
     if(self.audioManager.outputBlock) {
         int peakIndex = (int) (((float)self.frequency)/(((float)self.audioManager.samplingRate)/(((float)BUFFER_SIZE))));
-        NSLog(@"peak index: %d with frequency: %0.0f", peakIndex, self.frequency);
+        
         [self.graphHelper setGraphData:&fftMagnitude[peakIndex-50] withDataLength:100 forGraphIndex:2 withNormalization:100 withZeroValue:-70];
         
-        int windowRange = 15;
         //right
-        double rightValue = 0;
-        for (int i = peakIndex; i <= peakIndex + windowRange; ++i) {
-            rightValue += fftMagnitude[i];
-        }
-        rightValue /= windowRange;
-        
+        double rightValue = [self calcRightAverage:fftMagnitude];
+        NSLog(@"Difference right = %f", self.baselineRightAverage - rightValue);
         //left
-        double leftValue = 0;
-        for (int i = peakIndex-windowRange; i <= peakIndex; ++i) {
-            leftValue += fftMagnitude[i];
+        double leftValue = [self calcLeftAverage:fftMagnitude];
+        NSLog(@"Difference left = %f", self.baselineLeftAverage - leftValue);
+
+        if(self.baselineRightAverage != 0 && self.baselineRightAverage - rightValue < -10) {
+            [self.gestureImages setImage:[UIImage imageNamed:@"towards"]];
+            NSLog(@"towards");
         }
-        leftValue /= windowRange;
+        if (self.baselineLeftAverage != 0 && self.baselineLeftAverage - leftValue < -10) {
+            [self.gestureImages setImage:[UIImage imageNamed:@"away"]];
+            NSLog(@"away");
+        }
         
-        NSLog(@"right average value = %f", rightValue);
-        NSLog(@"left average value = %f", leftValue);
+//        NSLog(@"right average value = %f", rightValue);
+//        NSLog(@"left average value = %f", leftValue);
         
     }
 
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    
+    [self.audioManager pause];
+    [super viewWillDisappear:animated];
 }
 
 /*
