@@ -47,7 +47,7 @@
     if(!_graphHelper){
         _graphHelper = [[SMUGraphHelper alloc]initWithController:self
                                         preferredFramesPerSecond:15
-                                                       numGraphs:2
+                                                       numGraphs:3
                                                        plotStyle:PlotStyleSeparated
                                                maxPointsPerGraph:BUFFER_SIZE];
     }
@@ -89,14 +89,10 @@
     
     // get audio stream data
     float* arrayData = malloc(sizeof(float)*BUFFER_SIZE);
-    float* arrayData2 = malloc(sizeof(float)*BUFFER_SIZE);
     float* fftMagnitude = malloc(sizeof(float)*BUFFER_SIZE/2);
-    float* fftMagnitude2 = malloc(sizeof(float)*BUFFER_SIZE/2);
-    float* fftAverage = malloc(sizeof(float)*BUFFER_SIZE/2);
     float* equalizer = malloc(sizeof(float)*20);
     
     [self.buffer fetchFreshData:arrayData withNumSamples:BUFFER_SIZE];
-    [self.buffer fetchFreshData:arrayData2 withNumSamples:BUFFER_SIZE];
     
     //send off for graphing
     [self.graphHelper setGraphData:arrayData
@@ -108,69 +104,24 @@
     [self.fftHelper performForwardFFTWithData:arrayData
                    andCopydBMagnitudeToBuffer:fftMagnitude];
     
-    [self.fftHelper performForwardFFTWithData:arrayData2
-                   andCopydBMagnitudeToBuffer:fftMagnitude2];
-    
-    for(int i = 0; i < BUFFER_SIZE/2; ++i) {
-        fftAverage[i] = (fftMagnitude[i]+fftMagnitude2[i])/2.0;
-    }
-    
-    // break up fftaverage into chunks
+    // break up fftmagnitude into chunks
     for(int i = 0; i <  20; i+=1) {
         
         float max = -2000000;
         for(int j = i*BUFFER_SIZE/40; j < (i+1)*BUFFER_SIZE/40; j+=1) {
             if(fftMagnitude[j] > max){
-                max = fftAverage[j];
+                max = fftMagnitude[j];
                 
             }
         }
         equalizer[i] = max;
     }
     
-    // calculate local/abs peaks
-    PeakFinder *peakFinder = [[PeakFinder alloc] initWithFrequencyResolution:self.audioManager.samplingRate/(BUFFER_SIZE/2)];
-//
-//    NSArray* peaks = [peakFinder getFundamentalPeaksFromBuffer:fftMagnitude withLength:BUFFER_SIZE/2 usingWindowSize:5 andPeakMagnitudeMinimum:10 aboveFrequency:200];
-//    
-//    for( int i = 0; i<peaks.count; i++) {
-//        NSLog(@"Peak Frequency: %f   magnitude: %f",[(Peak*)peaks[i] frequency]/2, [(Peak*)peaks[i] magnitude]);
-//    }
-//
-    
-    //when playing frequency
-    if(self.audioManager.outputBlock) {
-        int peakIndex = (int) (self.frequency/(self.audioManager.samplingRate/(BUFFER_SIZE/2)));
-        int bandwith = 600;
-        int finalRight = peakIndex + bandwith;
-        if (finalRight > BUFFER_SIZE/2) {
-            finalRight = BUFFER_SIZE/2;
-        }
-        
-        int finalLeft = peakIndex - bandwith;
-        if (finalLeft < 0) {
-            finalLeft = 0;
-        }
-        
-        // find right maximum
-        for (int i = peakIndex + 10; i < finalRight; ++i) {
-            NSLog(@"peak index val: %d", peakIndex);
-            if (fftAverage[i] - fftAverage[i-1] < 1 && fftAverage[i] - fftAverage[i-1] > -1) {
-                NSLog(@"Local Max: %d", i);
-                break;
-            }
-        }
-        
-        // find left maximum
-        
-        
-        // NSLog(@"Peak: %d", peakIndex);
-        
-    }
-    
+    // calculate doppler
+    [self calculateDoppler:fftMagnitude];
     
     // graph the FFT Data
-    [self.graphHelper setGraphData:fftAverage
+    [self.graphHelper setGraphData:fftMagnitude
                     withDataLength:BUFFER_SIZE/2
                      forGraphIndex:1
                  withNormalization:100.0
@@ -235,6 +186,35 @@
     
     [self.audioManager pause];
     [super viewWillDisappear:animated];
+}
+
+-(void) calculateDoppler:(float*) fftMagnitude {
+    //when playing frequency
+    if(self.audioManager.outputBlock) {
+        int peakIndex = (int) (((float)self.frequency)/(((float)self.audioManager.samplingRate)/(((float)BUFFER_SIZE))));
+        NSLog(@"peak index: %d with frequency: %0.0f", peakIndex, self.frequency);
+        [self.graphHelper setGraphData:&fftMagnitude[peakIndex-50] withDataLength:100 forGraphIndex:2 withNormalization:100 withZeroValue:-70];
+        
+        int windowRange = 15;
+        //right
+        double rightValue = 0;
+        for (int i = peakIndex; i <= peakIndex + windowRange; ++i) {
+            rightValue += fftMagnitude[i];
+        }
+        rightValue /= windowRange;
+        
+        //left
+        double leftValue = 0;
+        for (int i = peakIndex-windowRange; i <= peakIndex; ++i) {
+            leftValue += fftMagnitude[i];
+        }
+        leftValue /= windowRange;
+        
+        NSLog(@"right average value = %f", rightValue);
+        NSLog(@"left average value = %f", leftValue);
+        
+    }
+
 }
 
 /*
