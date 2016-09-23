@@ -11,6 +11,8 @@
 #import "CircularBuffer.h"
 #import "SMUGraphHelper.h"
 #import "FFTHelper.h"
+#import "PeakFinder.h"
+#import <Accelerate/Accelerate.h>
 
 #define BUFFER_SIZE 2048*8
 
@@ -22,7 +24,7 @@
 @property (strong, nonatomic) SMUGraphHelper *graphHelper;
 @property (strong, nonatomic) FFTHelper *fftHelper;
 @property (strong, nonatomic) NSNumber* testNumber;
-
+@property (strong, nonatomic) PeakFinder *finder;
 @property (weak, nonatomic) IBOutlet UILabel *frequencyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondFrequencyLabel;
 
@@ -38,6 +40,13 @@
         _audioManager = [Novocaine audioManager];
     }
     return _audioManager;
+}
+
+-(PeakFinder*)finder{
+    if(!_finder){
+        _finder = [[PeakFinder alloc]initWithFrequencyResolution:(((float)self.audioManager.samplingRate) / ((float)(BUFFER_SIZE)))];
+    }
+    return _finder;
 }
 
 -(NSNumber*)testNumber{
@@ -90,6 +99,8 @@
         [self.audioManager setOutputBlock:nil];
     }
     [self.audioManager play];
+   
+        
 }
 
 #pragma mark GLK Inherited Functions
@@ -167,7 +178,7 @@
         if(fftMagnitude[i] > max){
             
             max = fftMagnitude[i];
-            NSLog(@"max: %.1f   %i",max,i);
+            //NSLog(@"max: %.1f   %i",max,i);
             max_index = i;
         }
     }
@@ -187,19 +198,22 @@
             max2_index = i;
         }
     }
+    
+    NSArray *peakArray = [self.finder getFundamentalPeaksFromBuffer:fftMagnitude withLength:BUFFER_SIZE/2 usingWindowSize:1000 andPeakMagnitudeMinimum:1 aboveFrequency:200];
 
+    Peak *peak1 = (Peak*)peakArray[0];
+    Peak *peak2 = (Peak*)peakArray[1];
+    float max_freq = peak1.frequency;
+    float second_max_freq = peak2.frequency;
+    //float max_freq = (max_index*self.audioManager.samplingRate/(BUFFER_SIZE));
     
-    
-    
-    float max_freq = (max_index*self.audioManager.samplingRate/(BUFFER_SIZE));
-    
-    float second_max_freq = (max2_index*self.audioManager.samplingRate/(BUFFER_SIZE));
-    
-    
+    //float second_max_freq = (max2_index*self.audioManager.samplingRate/(BUFFER_SIZE));
+    //float max_freq = [self.finder getFrequencyFromIndex:max_index usingData:fftMagnitude];
+    //float second_max_freq = [self.finder getFrequencyFromIndex:max2_index usingData:fftMagnitude];
     NSLog(@"Max Hz: %f   %i   %f",max_freq,max_index,fftMagnitude[max_index]);
     
-    NSLog(@"Max2 Hz: %f   %i   %f",second_max_freq,max2_index,fftMagnitude[max2_index]);
-    NSLog(@"Ratio: %f",fftMagnitude[max_index]/fftMagnitude[0]);
+    //NSLog(@"Max2 Hz: %f   %i   %f",second_max_freq,max2_index,fftMagnitude[max2_index]);
+    //NSLog(@"Ratio: %f",fftMagnitude[max_index]/fftMagnitude[0]);
     
     
     // SET THE FREQUENCY LABEL TEXT
@@ -227,6 +241,7 @@
     free(fftMagnitude);
     free(equalizer);
 }
+
 
 //  override the GLKView draw function, from OpenGLES
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
