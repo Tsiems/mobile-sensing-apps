@@ -96,12 +96,15 @@
     self.baselineRightAverage = 0;
     
     [self.audioManager play];
+    float* arrayData = malloc(sizeof(float)*BUFFER_SIZE);
+    
+    [self.buffer fetchFreshData:arrayData withNumSamples:BUFFER_SIZE];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
     
     [self.audioManager pause];
-    [super viewWillDisappear:animated];
+    [super viewDidDisappear:animated];
 }
 
 #pragma mark GLK Inherited Functions
@@ -124,6 +127,7 @@
     // take forward FFT
     [self.fftHelper performForwardFFTWithData:arrayData
                    andCopydBMagnitudeToBuffer:_fftMagnitude];
+    
     
     [self.gestureImages setImage:[UIImage imageNamed:@"still"]];
     
@@ -218,7 +222,6 @@
         average += _fftMagnitude[i];
     }
     average /= RANGE_OF_AVERAGE;
-    
     return average;
 }
 
