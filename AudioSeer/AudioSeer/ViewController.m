@@ -199,12 +199,15 @@
         }
     }
     
-    NSArray *peakArray = [self.finder getFundamentalPeaksFromBuffer:fftMagnitude withLength:BUFFER_SIZE/2 usingWindowSize:1000 andPeakMagnitudeMinimum:1 aboveFrequency:200];
-
-    Peak *peak1 = (Peak*)peakArray[0];
-    Peak *peak2 = (Peak*)peakArray[1];
-    float max_freq = peak1.frequency;
-    float second_max_freq = peak2.frequency;
+    NSArray *peakArray = [self.finder getFundamentalPeaksFromBuffer:fftMagnitude withLength:BUFFER_SIZE usingWindowSize:1000 andPeakMagnitudeMinimum:10 aboveFrequency:100];
+    float max_freq = 0.0;
+    float second_max_freq = 0.0;
+    if(peakArray){
+        Peak *peak1 = (Peak*)peakArray[0];
+        Peak *peak2 = (Peak*)peakArray[1];
+        max_freq = peak1.frequency;
+        second_max_freq = peak2.frequency;
+    }
     //float max_freq = (max_index*self.audioManager.samplingRate/(BUFFER_SIZE));
     
     //float second_max_freq = (max2_index*self.audioManager.samplingRate/(BUFFER_SIZE));
@@ -254,7 +257,7 @@
 
 - (void) viewDidDisappear:(BOOL)animated {
     [self.audioManager pause];
-    [super viewWillDisappear:animated];
+    [super viewDidDisappear:animated];
 }
 
 
