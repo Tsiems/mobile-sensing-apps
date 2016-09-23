@@ -11,6 +11,8 @@
 #import "CircularBuffer.h"
 #import "SMUGraphHelper.h"
 #import "FFTHelper.h"
+#import "PeakFinder.h"
+#import <Accelerate/Accelerate.h>
 
 #define BUFFER_SIZE 2048*8
 
@@ -22,7 +24,7 @@
 @property (strong, nonatomic) SMUGraphHelper *graphHelper;
 @property (strong, nonatomic) FFTHelper *fftHelper;
 @property (strong, nonatomic) NSNumber* testNumber;
-
+@property (strong, nonatomic) PeakFinder *finder;
 @property (weak, nonatomic) IBOutlet UILabel *frequencyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondFrequencyLabel;
 
@@ -38,6 +40,13 @@
         _audioManager = [Novocaine audioManager];
     }
     return _audioManager;
+}
+
+-(PeakFinder*)finder{
+    if(!_finder){
+        _finder = [[PeakFinder alloc]initWithFrequencyResolution:(((float)self.audioManager.samplingRate) / ((float)(BUFFER_SIZE)))];
+    }
+    return _finder;
 }
 
 -(NSNumber*)testNumber{
@@ -90,6 +99,8 @@
         [self.audioManager setOutputBlock:nil];
     }
     [self.audioManager play];
+   
+        
 }
 
 #pragma mark GLK Inherited Functions
@@ -101,8 +112,6 @@
     float* arrayData = malloc(sizeof(float)*BUFFER_SIZE);
     float* fftMagnitude = malloc(sizeof(float)*BUFFER_SIZE/2);
     float* equalizer = malloc(sizeof(float)*WINDOW_DIVISOR);
-//    float* magnitude = malloc(sizeof(float)*BUFFER_SIZE/4);
-    
     [self.buffer fetchFreshData:arrayData withNumSamples:BUFFER_SIZE];
     
     //send off for graphing
@@ -126,7 +135,6 @@
             }
         }
         equalizer[i] = max;
-//        NSLog(@"MAX: %f   %i",max, i);
     }
     
     
@@ -154,60 +162,24 @@
             max2_value = equalizer[i];
         }
     }
-    
-    
-    
-    float max = -2000000;
-//    float max2 = -2000000;
-    int max_index = 0;
-//    int max2_index = 0;
-    
-    for(int i = (BUFFER_SIZE/2)/WINDOW_DIVISOR*(max_window_index); i<(BUFFER_SIZE/2)/WINDOW_DIVISOR*(max_window_index+1)-1; i++) {
-        
-        if(fftMagnitude[i] > max){
-            
-            max = fftMagnitude[i];
-            NSLog(@"max: %.1f   %i",max,i);
-            max_index = i;
+    //get and display most significant peaks 
+    NSArray *peakArray = [self.finder getFundamentalPeaksFromBuffer:fftMagnitude withLength:BUFFER_SIZE/2 usingWindowSize:100 andPeakMagnitudeMinimum:5 aboveFrequency:100];
+    float max_freq = 0.0;
+    float max2_freq = 0.0;
+    float max_mag = 0.0;
+    float max2_mag = 0.0;
+    if(peakArray){
+        Peak *peak1 = (Peak*)peakArray[0];
+        if(peakArray.count>1){
+            Peak *peak2 = (Peak*)peakArray[1];
+            max2_freq = peak2.frequency;
+            max2_mag = peak2.magnitude;
+            self.secondFrequencyLabel.text = [NSString stringWithFormat:@"%.1f Hz   %.1f dB",max2_freq,max2_mag];
         }
+        max_freq = peak1.frequency;
+        max_mag = peak1.magnitude;
+        self.frequencyLabel.text = [NSString stringWithFormat:@"%.1f Hz   %.1f dB",max_freq,max_mag];
     }
-    
-//    for(int i = 0; i<BUFFER_SIZE/2; i++) {
-//        if(fftMagnitude[i] > max){
-//            max = fftMagnitude[i];
-//            max_index = i;
-//        }
-//    }
-    
-    float max2 = -2000000;
-    int max2_index = 0;
-    for(int i = (BUFFER_SIZE/2)/WINDOW_DIVISOR*(max2_window_index); i<(BUFFER_SIZE/2)/WINDOW_DIVISOR*(max2_window_index+1)-1; i++) {
-        if(fftMagnitude[i] > max2){
-            max2 = fftMagnitude[i];
-            max2_index = i;
-        }
-    }
-
-    
-    
-    
-    float max_freq = (max_index*self.audioManager.samplingRate/(BUFFER_SIZE));
-    
-    float second_max_freq = (max2_index*self.audioManager.samplingRate/(BUFFER_SIZE));
-    
-    
-    NSLog(@"Max Hz: %f   %i   %f",max_freq,max_index,fftMagnitude[max_index]);
-    
-    NSLog(@"Max2 Hz: %f   %i   %f",second_max_freq,max2_index,fftMagnitude[max2_index]);
-    NSLog(@"Ratio: %f",fftMagnitude[max_index]/fftMagnitude[0]);
-    
-    
-    // SET THE FREQUENCY LABEL TEXT
-    if( fftMagnitude[max_index]/fftMagnitude[0] < 0.1 || max_freq>6000.0 ) {
-        self.frequencyLabel.text = [NSString stringWithFormat:@"%.1f Hz   %.1f dB",max_freq,fftMagnitude[max_index]];
-        self.secondFrequencyLabel.text = [NSString stringWithFormat:@"%.1f Hz   %.1f dB",second_max_freq,fftMagnitude[max2_index]];
-    }
-
     
     // graph the FFT Data
     [self.graphHelper setGraphData:fftMagnitude
@@ -228,6 +200,7 @@
     free(equalizer);
 }
 
+
 //  override the GLKView draw function, from OpenGLES
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     [self.graphHelper draw]; // draw the graph
@@ -239,7 +212,7 @@
 
 - (void) viewDidDisappear:(BOOL)animated {
     [self.audioManager pause];
-    [super viewWillDisappear:animated];
+    [super viewDidDisappear:animated];
 }
 
 

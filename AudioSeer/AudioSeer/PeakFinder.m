@@ -11,7 +11,6 @@
 
 
 
-
 @implementation Peak
 
 -(id)initWithIndex:(NSUInteger)index andMagnitude:(float)mag andFreq:(float)freq{
@@ -148,7 +147,7 @@
     float m2 = data[index];
     float m3 = data[index + 1];
     
-    return f2 + ((m3 - m2) / (2.0 * m2 - m1 - m2)) * self.frequencyResolution / 2.0;
+    return f2 + ((m3 - m2) / (2.0 * m2 - m1 - m3)) * self.frequencyResolution / 2.0;
 }
 
 
