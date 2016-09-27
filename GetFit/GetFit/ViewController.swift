@@ -104,11 +104,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // TODO: should we be doing this from the MAIN queue? You will need to fix that!!!....
         if self.motion.isDeviceMotionAvailable{
-            self.motion.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: self.handleMotion as! CMDeviceMotionHandler)
+            self.motion.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: self.handleMotion)
         }
     }
     
-    func handleMotion(motionData:CMDeviceMotion?, error:NSError?){
+    func handleMotion(motionData:CMDeviceMotion?, error:Error?){
         if let gravity = motionData?.gravity {
             let rotation = atan2(gravity.x, gravity.y) - M_PI
             //UI element update
@@ -138,13 +138,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func startPedometerMonitoring(){
         //separate out the handler for better readability
         if CMPedometer.isStepCountingAvailable(){
-            pedometer.startUpdates(from: NSDate() as Date, withHandler: self.handlePedometer as! CMPedometerHandler)
+            pedometer.startUpdates(from: NSDate() as Date, withHandler: self.handlePedometer)
             //(NSDate() as Date, withHandler: self.handlePedometer)
         }
     }
     
     //ped handler
-    func handlePedometer(pedData:CMPedometerData?, error:NSError?){
+    func handlePedometer(pedData:CMPedometerData?, error:Error?){
         if let steps = pedData?.numberOfSteps {
             self.totalSteps = steps.floatValue
         }
