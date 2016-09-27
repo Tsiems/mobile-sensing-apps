@@ -205,7 +205,7 @@
 				TargetAttributes = {
 					B408EFE11D9AD0810014E216 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 26Y78VEH49;
+						DevelopmentTeam = F69WJ27LN4;
 						ProvisioningStyle = Automatic;
 					};
 					B408EFF81D9AD0810014E216 = {
@@ -431,7 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 26Y78VEH49;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = GetFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = danhn.GetFit;
@@ -444,7 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 26Y78VEH49;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = GetFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = danhn.GetFit;
