@@ -196,7 +196,7 @@
 				TargetAttributes = {
 					B408EFE11D9AD0810014E216 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = F69WJ27LN4;
+						DevelopmentTeam = 26Y78VEH49;
 						ProvisioningStyle = Automatic;
 					};
 					B408EFF81D9AD0810014E216 = {
@@ -419,7 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = GetFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = danhn.GetFit;
@@ -432,7 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = GetFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = danhn.GetFit;
@@ -518,6 +518,7 @@
 				B408F00F1D9AD0810014E216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B408F0101D9AD0810014E216 /* Build configuration list for PBXNativeTarget "GetFitTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +527,7 @@
 				B408F0121D9AD0810014E216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B408F0131D9AD0810014E216 /* Build configuration list for PBXNativeTarget "GetFitUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +536,7 @@
 				B408F0151D9AD0810014E216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
