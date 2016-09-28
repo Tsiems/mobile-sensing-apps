@@ -25,7 +25,7 @@ class GameScene: SKScene {
                 }
                 
                 if let gravity = data?.gravity {
-                    self.physicsWorld.gravity = CGVector(dx:CGFloat(9.8*gravity.x), dy:CGFloat(9.8*gravity.y))
+                    self.physicsWorld.gravity = CGVector(dx:CGFloat(1.1*9.8*gravity.x), dy:CGFloat(1.1*9.8*gravity.y))
                 }
             }
         }
@@ -55,6 +55,7 @@ class GameScene: SKScene {
 //        // add a spinning block
 //        self.addBlockAtPoint(CGPoint(x: size.width * 0.5, y: size.height * 0.35))
 //        
+        self.addStaticBlockAtPoint(point: CGPoint(x: size.width * 0.5, y: size.height * 0.55))
         self.addSprite()
     }
     
@@ -91,16 +92,35 @@ class GameScene: SKScene {
     func addSprite(){
         let spriteA = SKSpriteNode(imageNamed: "eric") // this is literally eric... 😎
         
-        spriteA.size = CGSize(width:size.width*0.1,height:size.height * 0.1)
+        spriteA.size = CGSize(width:size.width * 0.1,height:size.height * 0.075)
         
         spriteA.position = CGPoint(x: size.width * random(min: CGFloat(0.1), max: CGFloat(0.9)), y: size.height * 0.75)
         
         spriteA.physicsBody = SKPhysicsBody(rectangleOf:spriteA.size)
-        spriteA.physicsBody?.restitution = random(min: CGFloat(1.0), max: CGFloat(1.5))
+        // lose energy after a miss bounce
+        spriteA.physicsBody?.restitution = CGFloat(0.5)
+//        spriteA.physicsBody?.restitution = random(min: CGFloat(1.0), max: CGFloat(1.5))
         spriteA.physicsBody?.isDynamic = true
         
         self.addChild(spriteA)
     }
+    
+    func addStaticBlockAtPoint(point:CGPoint){
+        let 🔲 = SKSpriteNode()
+        
+        🔲.color = UIColor.blue
+        🔲.size = CGSize(width:size.width*0.1,height:size.height * 0.05)
+        🔲.position = point
+        
+        🔲.physicsBody = SKPhysicsBody(rectangleOf:🔲.size)
+        🔲.physicsBody?.isDynamic = true
+        🔲.physicsBody?.pinned = true
+        🔲.physicsBody?.allowsRotation = false
+        
+        self.addChild(🔲)
+        
+    }
+
     
     
     
