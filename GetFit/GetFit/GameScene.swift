@@ -11,6 +11,15 @@ import SpriteKit
 import CoreMotion
 
 class GameScene: SKScene {
+    
+    
+    
+    lazy var enemiesLeft = 5
+    
+    lazy var goalsMade = 0
+    
+    
+    
     // MARK: Raw Motion Functions
     let motion = CMMotionManager()
     func startMotionUpdates(){
@@ -42,6 +51,8 @@ class GameScene: SKScene {
         
         backgroundColor = SKColor.white
         
+         Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(GameScene.spawnEnemy), userInfo: nil, repeats: true)
+        
         // start motion for gravity
         self.startMotionUpdates()
         
@@ -62,8 +73,10 @@ class GameScene: SKScene {
     func addBorder(){
         let left = SKSpriteNode()
         let right = SKSpriteNode()
-        let top = SKSpriteNode()
         let bottom = SKSpriteNode()
+        
+        let top_left = SKSpriteNode()
+        let top_right = SKSpriteNode()
         
         left.size = CGSize(width:size.width*0.1,height:size.height)
         left.position = CGPoint(x:0, y:size.height*0.5)
@@ -71,14 +84,17 @@ class GameScene: SKScene {
         right.size = CGSize(width:size.width*0.1,height:size.height)
         right.position = CGPoint(x:size.width, y:size.height*0.5)
         
-        top.size = CGSize(width:size.width,height:size.height*0.1)
-        top.position = CGPoint(x:size.width*0.5, y:size.height)
-        
         bottom.size = CGSize(width:size.width,height:size.height*0.1)
         bottom.position = CGPoint(x:size.width*0.5, y:0)
+        
+        
+        top_left.size = CGSize(width:size.width/3,height:size.height*0.1)
+        top_left.position = CGPoint(x:size.width*0.165, y:size.height)
+        top_right.size = CGSize(width:size.width/3,height:size.height*0.1)
+        top_right.position = CGPoint(x:size.width*0.825, y:size.height)
 
         
-        for obj in [left,right,top, bottom]{
+        for obj in [left,right,top_left,top_right, bottom]{
             obj.color = UIColor.blue
             obj.physicsBody = SKPhysicsBody(rectangleOf:obj.size)
             obj.physicsBody?.isDynamic = true
@@ -101,6 +117,7 @@ class GameScene: SKScene {
         spriteA.physicsBody?.restitution = CGFloat(0.5)
 //        spriteA.physicsBody?.restitution = random(min: CGFloat(1.0), max: CGFloat(1.5))
         spriteA.physicsBody?.isDynamic = true
+        spriteA.name = "me"
         
         self.addChild(spriteA)
     }
@@ -119,6 +136,56 @@ class GameScene: SKScene {
         
         self.addChild(🔲)
         
+    }
+    
+    
+    
+    func spawnEnemy(){
+        
+        if enemiesLeft > 0 {
+            //supposed to pick random point within the screen width
+            let xPos = random(min:0, max: frame.width )
+            
+            let enemy = SKSpriteNode(imageNamed: "enemy") //create a new enemy each time
+            enemy.position = CGPoint(x:CGFloat(xPos), y:self.frame.size.height/4*3)
+            enemy.size = CGSize(width:size.width * 0.1,height:size.height * 0.075)
+    //        enemy.physicsBody = SKPhysicsBody(circleOfRadius: 7)
+            enemy.physicsBody = SKPhysicsBody(rectangleOf:enemy.size)
+            enemy.physicsBody?.affectedByGravity = false
+            enemy.physicsBody?.restitution = CGFloat(0.5)
+    //        enemy.physicsBody?.categoryBitMask = 0
+    //        enemy.physicsBody?.contactTestBitMask = 1
+            enemy.physicsBody?.isDynamic = true
+            enemy.name = "my_enemy"
+            addChild(enemy)
+            
+            
+            enemiesLeft -= 1
+        }
+    }
+    
+    
+    
+    
+    override func update(_ currentTime: CFTimeInterval) {
+        
+        // Loop over all nodes in the scene
+        self.enumerateChildNodes(withName: "*") {
+            node, stop in
+            if (node is SKSpriteNode) {
+                let sprite = node as! SKSpriteNode
+                // Check if the node is not in the scene
+                if (sprite.position.x < -sprite.size.width/2.0 || sprite.position.x > self.size.width+sprite.size.width/2.0
+                    || sprite.position.y < -sprite.size.height/2.0 || sprite.position.y > self.size.height+sprite.size.height/2.0) {
+                    if sprite.name == "me" {
+                        print("YOU LOSE!")
+                    }
+                    sprite.removeFromParent()
+                    print("Remove child!")
+                    self.goalsMade += 1
+                }
+            }
+        }
     }
 
     

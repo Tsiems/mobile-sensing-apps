@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let pedometer = CMPedometer()
     let motion = CMMotionManager()
     var totalSteps: Float = 0.0
-    
+    let motionQueue = OperationQueue()
     let numberToolbar: UIToolbar = UIToolbar()
     
     override func viewDidLoad() {
@@ -103,10 +103,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: Raw Motion Functions
     func startMotionUpdates(){
         // some internal inconsistency here: we need to ask the device manager for device
-        
-        // TODO: should we be doing this from the MAIN queue? You will need to fix that!!!....
         if self.motion.isDeviceMotionAvailable{
-            self.motion.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: self.handleMotion)
+            self.motion.startDeviceMotionUpdates(to: motionQueue, withHandler: self.handleMotion)
         }
     }
     
@@ -122,8 +120,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func startActivityMonitoring(){
         // is activity is available
         if CMMotionActivityManager.isActivityAvailable(){
-            // update from this queue (should we use the MAIN queue here??.... )
-            self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: self.handleActivity)
+            // update from this queue
+            self.activityManager.startActivityUpdates(to: motionQueue, withHandler: self.handleActivity)
         }
         
     }
@@ -131,8 +129,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handleActivity(activity:CMMotionActivity?)->Void{
         // unwrap the activity and disp
         if let unwrappedActivity = activity {
-            //DispatchQueue.main.async(){}
-            NSLog("Walking: \(unwrappedActivity.walking)\n Still: \(unwrappedActivity.stationary)")
+            //DispatchQueue.main.async(){} // for UI update, just use main queue
+            print("Walking: \(unwrappedActivity.walking)\n Still: \(unwrappedActivity.stationary)")
         }
     }
     
