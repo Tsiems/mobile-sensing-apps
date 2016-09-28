@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var newGoalField: UITextField!
+    @IBOutlet weak var stepCountLabel: UILabel!
+    @IBOutlet weak var stepCountProgress: UIProgressView!
     
     //MARK: class variables
     let activityManager = CMMotionActivityManager()
@@ -147,7 +149,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handlePedometer(pedData:CMPedometerData?, error:Error?){
         if let steps = pedData?.numberOfSteps {
             self.totalSteps = steps.floatValue
+            self.stepCountLabel.text = "\(self.totalSteps)"
         }
+        print(self.totalSteps)
+        let goal = UserDefaults.standard.integer(forKey: "stepGoal")
+        self.stepCountProgress.progress = self.totalSteps / Float(goal)
     }
 
 }
