@@ -93,7 +93,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let goalNumber = Int(goal)
         UserDefaults.standard.set(goalNumber!, forKey: "stepGoal")
         goalLabel.text = "Step Goal: \(goalNumber!)"
-        self.stepCountProgress.progress = self.liveSteps / Float(goalNumber!)
+        self.stepCountProgress.progress = (self.liveSteps + self.todaySteps) / Float(goalNumber!)
     }
     
     // MARK: Activity Functions
@@ -162,6 +162,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         DispatchQueue.main.async(){
             self.stepCountTodayLabel.text = "\(self.todaySteps)"
+            let goal = UserDefaults.standard.integer(forKey: "stepGoal")
+            self.stepCountProgress.progress = (self.todaySteps) / Float(goal)
         }
     }
 
