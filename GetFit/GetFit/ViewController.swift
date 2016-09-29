@@ -16,22 +16,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var newGoalField: UITextField!
-    @IBOutlet weak var stepCountLabel: UILabel!
+    @IBOutlet weak var stepCountYesterdayLabel: UILabel!
+    @IBOutlet weak var stepCountTodayLabel: UILabel!
     @IBOutlet weak var stepCountProgress: UIProgressView!
     
     //MARK: class variables
     let activityManager = CMMotionActivityManager()
     let pedometer = CMPedometer()
     let motion = CMMotionManager()
-    var totalSteps: Float = 0.0
     let motionQueue = OperationQueue()
     let numberToolbar: UIToolbar = UIToolbar()
-    var timer:Timer?
+    lazy var liveSteps: Float = {return 0.0}()
+    lazy var yesterdaySteps: Float = {return 0.0}()
+    lazy var todaySteps: Float = {return 0.0}()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.totalSteps = 0.0
+        
+        self.updateTodaySteps()
+        self.updateYesterdaySteps()
         self.startActivityMonitoring()
         self.startPedometerMonitoring()
         self.startMotionUpdates()
@@ -63,18 +66,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         numberToolbar.sizeToFit()
         
         self.newGoalField.inputAccessoryView = numberToolbar
-        
-//        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
     }
-    
-//    func update() {
-//        DispatchQueue.main.async(){
-//            self.stepCountLabel.text = "\(self.totalSteps)"
-//            let goal = UserDefaults.standard.integer(forKey: "stepGoal")
-//            self.stepCountProgress.progress = self.totalSteps / Float(goal)
-//        }
-//
-//    }
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -112,7 +104,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let goalNumber = Int(goal)
         UserDefaults.standard.set(goalNumber!, forKey: "stepGoal")
         goalLabel.text = "Step Goal: \(goalNumber!)"
-        self.stepCountProgress.progress = self.totalSteps / Float(goalNumber!)
+        self.stepCountProgress.progress = self.liveSteps / Float(goalNumber!)
 
     }
     
@@ -161,14 +153,47 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //ped handler
     func handlePedometer(pedData:CMPedometerData?, error:Error?){
         if let steps = pedData?.numberOfSteps {
-            self.totalSteps = steps.floatValue
+            self.liveSteps = steps.floatValue
         }
         DispatchQueue.main.async(){
-            self.stepCountLabel.text = "\(self.totalSteps)"
+            self.stepCountTodayLabel.text = "\(self.liveSteps + self.todaySteps)"
             let goal = UserDefaults.standard.integer(forKey: "stepGoal")
-            self.stepCountProgress.progress = self.totalSteps / Float(goal)
+            self.stepCountProgress.progress = (self.liveSteps + self.todaySteps) / Float(goal)
         }
 
+    }
+    
+    func updateYesterdaySteps(){
+        let calendar = Calendar.current
+        let yesterday = calendar.date(byAdding: .day, value: -1, to: calendar.startOfDay(for: Date()))
+        let today = calendar.startOfDay(for: Date())
+        self.pedometer.queryPedometerData(from: yesterday!, to: today, withHandler: self.handleYesterdayPedometer)
+    }
+    
+    func handleYesterdayPedometer(pedData:CMPedometerData?, error:Error?){
+        if let steps = pedData?.numberOfSteps {
+            self.yesterdaySteps = steps.floatValue
+            print("Yesterday's Steps: \(yesterdaySteps)")
+        }
+        DispatchQueue.main.async(){
+            self.stepCountYesterdayLabel.text = "\(self.yesterdaySteps)"
+        }
+    }
+    
+    func updateTodaySteps(){
+        let calendar = Calendar.current
+        let todayBeginning = calendar.startOfDay(for: Date())
+        self.pedometer.queryPedometerData(from: todayBeginning, to: Date(), withHandler: self.handleTodayPedometer)
+    }
+    
+    func handleTodayPedometer(pedData:CMPedometerData?, error:Error?){
+        if let steps = pedData?.numberOfSteps {
+            self.todaySteps = steps.floatValue
+            print("Today's Steps: \(todaySteps)")
+        }
+        DispatchQueue.main.async(){
+            self.stepCountTodayLabel.text = "\(self.todaySteps)"
+        }
     }
 
 }
