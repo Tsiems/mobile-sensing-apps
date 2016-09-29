@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var totalSteps: Float = 0.0
     let motionQueue = OperationQueue()
     let numberToolbar: UIToolbar = UIToolbar()
+    var timer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +60,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         numberToolbar.sizeToFit()
         
         self.newGoalField.inputAccessoryView = numberToolbar
+        
+//        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
     }
+    
+//    func update() {
+//        DispatchQueue.main.async(){
+//            self.stepCountLabel.text = "\(self.totalSteps)"
+//            let goal = UserDefaults.standard.integer(forKey: "stepGoal")
+//            self.stepCountProgress.progress = self.totalSteps / Float(goal)
+//        }
+//
+//    }
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -97,6 +109,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let goalNumber = Int(goal)
         UserDefaults.standard.set(goalNumber!, forKey: "stepGoal")
         goalLabel.text = "Step Goal: \(goalNumber!)"
+        self.stepCountProgress.progress = self.totalSteps / Float(goalNumber!)
 
     }
     
@@ -147,11 +160,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handlePedometer(pedData:CMPedometerData?, error:Error?){
         if let steps = pedData?.numberOfSteps {
             self.totalSteps = steps.floatValue
-            self.stepCountLabel.text = "\(self.totalSteps)"
         }
-        print(self.totalSteps)
-        let goal = UserDefaults.standard.integer(forKey: "stepGoal")
-        self.stepCountProgress.progress = self.totalSteps / Float(goal)
+        DispatchQueue.main.async(){
+            self.stepCountLabel.text = "\(self.totalSteps)"
+            let goal = UserDefaults.standard.integer(forKey: "stepGoal")
+            self.stepCountProgress.progress = self.totalSteps / Float(goal)
+        }
+
     }
 
 }
