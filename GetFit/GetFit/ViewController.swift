@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var newGoalField: UITextField!
+    @IBOutlet weak var stepCountLabel: UILabel!
+    @IBOutlet weak var stepCountProgress: UIProgressView!
     
     //MARK: class variables
     let activityManager = CMMotionActivityManager()
@@ -24,6 +26,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var totalSteps: Float = 0.0
     let motionQueue = OperationQueue()
     let numberToolbar: UIToolbar = UIToolbar()
+    var timer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +63,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         numberToolbar.sizeToFit()
         
         self.newGoalField.inputAccessoryView = numberToolbar
+        
+//        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
     }
+    
+//    func update() {
+//        DispatchQueue.main.async(){
+//            self.stepCountLabel.text = "\(self.totalSteps)"
+//            let goal = UserDefaults.standard.integer(forKey: "stepGoal")
+//            self.stepCountProgress.progress = self.totalSteps / Float(goal)
+//        }
+//
+//    }
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -98,6 +112,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let goalNumber = Int(goal)
         UserDefaults.standard.set(goalNumber!, forKey: "stepGoal")
         goalLabel.text = "Step Goal: \(goalNumber!)"
+        self.stepCountProgress.progress = self.totalSteps / Float(goalNumber!)
 
     }
     
@@ -148,6 +163,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let steps = pedData?.numberOfSteps {
             self.totalSteps = steps.floatValue
         }
+        DispatchQueue.main.async(){
+            self.stepCountLabel.text = "\(self.totalSteps)"
+            let goal = UserDefaults.standard.integer(forKey: "stepGoal")
+            self.stepCountProgress.progress = self.totalSteps / Float(goal)
+        }
+
     }
 
 }
