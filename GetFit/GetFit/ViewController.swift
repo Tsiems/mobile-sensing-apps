@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var stepCountYesterdayLabel: UILabel!
     @IBOutlet weak var stepCountTodayLabel: UILabel!
     @IBOutlet weak var stepCountProgress: UIProgressView!
+    @IBOutlet weak var activityStatusLabel: UILabel!
     
     //MARK: class variables
     let activityManager = CMMotionActivityManager()
@@ -109,8 +110,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handleActivity(activity:CMMotionActivity?)->Void{
         // unwrap the activity and disp
         if let unwrappedActivity = activity {
-            //DispatchQueue.main.async(){} // for UI update, use main queue
-            print("Walking: \(unwrappedActivity.walking)\n Still: \(unwrappedActivity.stationary)")
+            var activityString = "Status: "
+            switch true{
+            case unwrappedActivity.walking:
+                activityString.append("Walking")
+            case unwrappedActivity.running:
+                activityString.append("Running")
+            case unwrappedActivity.cycling:
+                activityString.append("Cycling")
+            case (unwrappedActivity.stationary && !(unwrappedActivity.automotive)):
+                activityString.append("Stationary")
+            case unwrappedActivity.automotive:
+                activityString.append("Driving")
+            default:
+                activityString.append("Unknown")
+            }
+            DispatchQueue.main.async(){
+                self.activityStatusLabel.text = activityString
+            }
         }
     }
     
