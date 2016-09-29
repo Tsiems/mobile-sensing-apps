@@ -6,9 +6,6 @@
 //  Copyright © 2016 Danh Nguyen. All rights reserved.
 //
 
-//TODO: total steps resets on app close, you want to change that to call today's steps and yesterdays steps using NSCalendar and then passing in NSDate with relevant parameters instead of just using from now
-//user goal should be in NSUserdefaults instead of a temp variable that gets thrown away on close
-
 import UIKit
 import CoreMotion
 
@@ -37,7 +34,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.updateYesterdaySteps()
         self.startActivityMonitoring()
         self.startPedometerMonitoring()
-        self.startMotionUpdates()
         
         if UserDefaults.standard.object(forKey: "stepGoal") == nil {
             UserDefaults.standard.set(100, forKey: "stepGoal")
@@ -60,11 +56,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil),
             UIBarButtonItem(title: "Apply", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.returnSetGoal))
         ]
-        
         numberToolbar.sizeToFit()
-        
         numberToolbar.sizeToFit()
-        
         self.newGoalField.inputAccessoryView = numberToolbar
     }
     
@@ -79,14 +72,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         if textField == self.newGoalField {
             setGoal(self)
             self.view.endEditing(true)
         }
-        
-        
-        
         return true
     }
 
@@ -105,23 +94,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(goalNumber!, forKey: "stepGoal")
         goalLabel.text = "Step Goal: \(goalNumber!)"
         self.stepCountProgress.progress = self.liveSteps / Float(goalNumber!)
-
-    }
-    
-    // MARK: Raw Motion Functions
-    func startMotionUpdates(){
-        // some internal inconsistency here: we need to ask the device manager for device
-        if self.motion.isDeviceMotionAvailable{
-            self.motion.startDeviceMotionUpdates(to: motionQueue, withHandler: self.handleMotion)
-        }
-    }
-    
-    func handleMotion(motionData:CMDeviceMotion?, error:Error?){
-        if let gravity = motionData?.gravity {
-            let rotation = atan2(gravity.x, gravity.y) - M_PI
-            //UI element update
-            //self.isWalking.transform = CGAffineTransformMakeRotation(CGFloat(rotation))
-        }
     }
     
     // MARK: Activity Functions
@@ -160,7 +132,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let goal = UserDefaults.standard.integer(forKey: "stepGoal")
             self.stepCountProgress.progress = (self.liveSteps + self.todaySteps) / Float(goal)
         }
-
     }
     
     func updateYesterdaySteps(){
@@ -173,7 +144,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handleYesterdayPedometer(pedData:CMPedometerData?, error:Error?){
         if let steps = pedData?.numberOfSteps {
             self.yesterdaySteps = steps.floatValue
-            print("Yesterday's Steps: \(yesterdaySteps)")
         }
         DispatchQueue.main.async(){
             self.stepCountYesterdayLabel.text = "\(self.yesterdaySteps)"
@@ -189,7 +159,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handleTodayPedometer(pedData:CMPedometerData?, error:Error?){
         if let steps = pedData?.numberOfSteps {
             self.todaySteps = steps.floatValue
-            print("Today's Steps: \(todaySteps)")
         }
         DispatchQueue.main.async(){
             self.stepCountTodayLabel.text = "\(self.todaySteps)"
