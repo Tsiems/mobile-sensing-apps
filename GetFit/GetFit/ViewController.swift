@@ -6,6 +6,9 @@
 //  Copyright © 2016 Danh Nguyen. All rights reserved.
 //
 
+//TODO: total steps resets on app close, you want to change that to call today's steps and yesterdays steps using NSCalendar and then passing in NSDate with relevant parameters instead of just using from now
+//user goal should be in NSUserdefaults instead of a temp variable that gets thrown away on close
+
 import UIKit
 import CoreMotion
 
@@ -127,7 +130,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handleActivity(activity:CMMotionActivity?)->Void{
         // unwrap the activity and disp
         if let unwrappedActivity = activity {
-            //DispatchQueue.main.async(){} // for UI update, just use main queue
+            //DispatchQueue.main.async(){} // for UI update, use main queue
             print("Walking: \(unwrappedActivity.walking)\n Still: \(unwrappedActivity.stationary)")
         }
     }
@@ -137,7 +140,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //separate out the handler for better readability
         if CMPedometer.isStepCountingAvailable(){
             pedometer.startUpdates(from: NSDate() as Date, withHandler: self.handlePedometer)
-            //(NSDate() as Date, withHandler: self.handlePedometer)
         }
     }
     
