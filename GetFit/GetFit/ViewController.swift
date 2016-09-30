@@ -189,9 +189,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "playGame") {
             let gameController = segue.destination as! GameViewController
-            
-            gameController.startingPucks = 4
-            gameController.enemiesLeft = 4
+            // enemies = steps/1000
+            if(self.todaySteps > 2000) {
+                gameController.startingPucks = Int(self.todaySteps/1000)
+                gameController.enemiesLeft = Int(self.todaySteps/1000)
+            }
+            // default enemies is 2
+            else {
+                gameController.startingPucks = 2
+                gameController.enemiesLeft = 2
+            }
         }
     }
 }

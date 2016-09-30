@@ -151,7 +151,7 @@ class GameScene: SKScene {
     
     func reducePucksLeft(){
         enemiesLeft = enemiesLeft! - 1
-        pucksLeftLabel.text = "Pucks Left: \(enemiesLeft)"
+        pucksLeftLabel.text = "Pucks Left: \(enemiesLeft!)"
         if enemiesLeft == 0 {
             pucksLeftLabel.fontColor = UIColor.black
         }
