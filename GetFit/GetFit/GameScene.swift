@@ -12,11 +12,12 @@ import CoreMotion
 
 class GameScene: SKScene {
     
-    
-    
-    lazy var enemiesLeft = 5
+    lazy var goalsLabel = SKLabelNode(text: "Goals: 0")
+    lazy var pucksLeftLabel = SKLabelNode(text: "Pucks Left: 0")
+    lazy var enemiesLeft = 3
     
     lazy var goalsMade = 0
+    lazy var startingPucks = 3
     
     
     
@@ -66,8 +67,23 @@ class GameScene: SKScene {
 //        // add a spinning block
 //        self.addBlockAtPoint(CGPoint(x: size.width * 0.5, y: size.height * 0.35))
 //        
-        self.addStaticBlockAtPoint(point: CGPoint(x: size.width * 0.5, y: size.height * 0.55))
+//        self.addStaticBlockAtPoint(point: CGPoint(x: size.width * 0.5, y: size.height * 0.55))
         self.addSprite()
+        
+        
+        
+        // add goals label
+        goalsLabel.position = CGPoint(x: 80, y: size.height-60)
+        goalsLabel.fontColor = UIColor.black
+        goalsLabel.fontName = "HelveticaNeue-Bold"
+        self.addChild(goalsLabel)
+        
+        // add pucks left label
+        pucksLeftLabel.position = CGPoint(x: 80, y: size.height-80)
+        pucksLeftLabel.fontColor = UIColor.green
+        pucksLeftLabel.fontSize = 20
+        pucksLeftLabel.fontName = "HelveticaNeue-Bold"
+        self.addChild(pucksLeftLabel)
     }
     
     func addBorder(){
@@ -108,7 +124,7 @@ class GameScene: SKScene {
     func addSprite(){
         let spriteA = SKSpriteNode(imageNamed: "eric") // this is literally eric... 😎
         
-        spriteA.size = CGSize(width:size.width * 0.1,height:size.height * 0.075)
+        spriteA.size = CGSize(width:size.width * 0.15,height:size.height * 0.11)
         
         spriteA.position = CGPoint(x: size.width * random(min: CGFloat(0.1), max: CGFloat(0.9)), y: size.height * 0.75)
         
@@ -120,6 +136,42 @@ class GameScene: SKScene {
         spriteA.name = "me"
         
         self.addChild(spriteA)
+    }
+    
+    func addGoal(){
+        goalsMade += 1
+        goalsLabel.text = "Goals: \(goalsMade)"
+        goalsLabel.fontColor = UIColor.green
+        
+        if goalsMade == startingPucks {
+            playerWins()
+        }
+    }
+    
+    func reducePucksLeft(){
+        enemiesLeft -= 1
+        pucksLeftLabel.text = "Pucks Left: \(enemiesLeft)"
+        if enemiesLeft == 0 {
+            pucksLeftLabel.fontColor = UIColor.black
+        }
+    }
+    
+    func playerLoses() {
+        let label = SKLabelNode(text: "YOU LOSE! 😢")
+        label.position = CGPoint(x: size.width*0.5, y: size.height*0.5)
+        label.fontColor = UIColor.red
+        label.fontName = "HelveticaNeue-Bold"
+        label.fontSize = 40
+        self.addChild(label)
+    }
+    
+    func playerWins() {
+        let label = SKLabelNode(text: "YOU WIN! 😄🎉")
+        label.position = CGPoint(x: size.width*0.5, y: size.height*0.5)
+        label.fontColor = UIColor.green
+        label.fontName = "HelveticaNeue-Bold"
+        label.fontSize = 40
+        self.addChild(label)
     }
     
     func addStaticBlockAtPoint(point:CGPoint){
@@ -146,11 +198,11 @@ class GameScene: SKScene {
             //supposed to pick random point within the screen width
             let xPos = random(min:0, max: frame.width )
             
-            let enemy = SKSpriteNode(imageNamed: "enemy") //create a new enemy each time
+            let enemy = SKSpriteNode(imageNamed: "enemy1") //create a new enemy each time
             enemy.position = CGPoint(x:CGFloat(xPos), y:self.frame.size.height/4*3)
-            enemy.size = CGSize(width:size.width * 0.1,height:size.height * 0.075)
+            enemy.size = CGSize(width:size.width * 0.15,height:size.width * 0.15)
     //        enemy.physicsBody = SKPhysicsBody(circleOfRadius: 7)
-            enemy.physicsBody = SKPhysicsBody(rectangleOf:enemy.size)
+            enemy.physicsBody = SKPhysicsBody(circleOfRadius: size.width * 0.075)
             enemy.physicsBody?.affectedByGravity = false
             enemy.physicsBody?.restitution = CGFloat(0.5)
     //        enemy.physicsBody?.categoryBitMask = 0
@@ -160,7 +212,7 @@ class GameScene: SKScene {
             addChild(enemy)
             
             
-            enemiesLeft -= 1
+            reducePucksLeft()
         }
     }
     
@@ -179,10 +231,15 @@ class GameScene: SKScene {
                     || sprite.position.y < -sprite.size.height/2.0 || sprite.position.y > self.size.height+sprite.size.height/2.0) {
                     if sprite.name == "me" {
                         print("YOU LOSE!")
+                        self.playerLoses()
+                    }
+                    else {
+                        self.addGoal()
                     }
                     sprite.removeFromParent()
                     print("Remove child!")
-                    self.goalsMade += 1
+                    
+                    
                 }
             }
         }
