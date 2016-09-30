@@ -38,7 +38,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if UserDefaults.standard.object(forKey: "stepGoal") == nil {
             UserDefaults.standard.set(100, forKey: "stepGoal")
-            print("set goal 100")
             goalLabel.text = "Step Goal: \(100)"
         } else {
             let number = UserDefaults.standard.integer(forKey: "stepGoal")
@@ -91,10 +90,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func setGoal(_ sender: AnyObject) {
         let goal = self.newGoalField.text!
-        let goalNumber = Int(goal)
-        UserDefaults.standard.set(goalNumber!, forKey: "stepGoal")
-        goalLabel.text = "Step Goal: \(goalNumber!)"
-        self.stepCountProgress.progress = (self.liveSteps + self.todaySteps) / Float(goalNumber!)
+        if (goal != ""){
+            let goalNumber = (Int(goal))!
+            UserDefaults.standard.set(goalNumber, forKey: "stepGoal")
+            goalLabel.text = "Step Goal: \(goalNumber)"
+            self.stepCountProgress.progress = (self.liveSteps + self.todaySteps) / Float(goalNumber)
+        }
     }
     
     // MARK: Activity Functions
