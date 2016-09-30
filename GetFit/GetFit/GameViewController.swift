@@ -10,7 +10,8 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-
+    var startingPucks: Int?
+    var enemiesLeft: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +19,8 @@ class GameViewController: UIViewController {
         let scene = GameScene(size: view.bounds.size)
         let skView = view as! SKView // the view in storyboard must be an SKView
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        scene.enemiesLeft = self.enemiesLeft
+        scene.startingPucks = self.startingPucks
         skView.showsFPS = true
         skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true

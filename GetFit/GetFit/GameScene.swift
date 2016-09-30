@@ -10,14 +10,15 @@ import UIKit
 import SpriteKit
 import CoreMotion
 
+
+
 class GameScene: SKScene {
     
     lazy var goalsLabel = SKLabelNode(text: "Goals: 0")
     lazy var pucksLeftLabel = SKLabelNode(text: "Pucks Left: 0")
-    lazy var enemiesLeft = 3
-    
     lazy var goalsMade = 0
-    lazy var startingPucks = 3
+    var enemiesLeft: Int?
+    var startingPucks: Int?
     
     
     
@@ -149,7 +150,7 @@ class GameScene: SKScene {
     }
     
     func reducePucksLeft(){
-        enemiesLeft -= 1
+        enemiesLeft = enemiesLeft! - 1
         pucksLeftLabel.text = "Pucks Left: \(enemiesLeft)"
         if enemiesLeft == 0 {
             pucksLeftLabel.fontColor = UIColor.black
@@ -157,12 +158,13 @@ class GameScene: SKScene {
     }
     
     func playerLoses() {
-        let label = SKLabelNode(text: "YOU LOSE! 😢")
+        let label = SKLabelNode(text: "YOU L😢SE!")
         label.position = CGPoint(x: size.width*0.5, y: size.height*0.5)
         label.fontColor = UIColor.init(red: 179.0/255, green: 67.0/255, blue: 45.0/255, alpha: 1.0)
         label.fontName = "HelveticaNeue-Bold"
         label.fontSize = 40
         self.addChild(label)
+        view?.isPaused = true
     }
     
     func playerWins() {
@@ -172,6 +174,7 @@ class GameScene: SKScene {
         label.fontName = "HelveticaNeue-Bold"
         label.fontSize = 40
         self.addChild(label)
+        view?.isPaused = true
     }
     
     func addStaticBlockAtPoint(point:CGPoint){
@@ -194,7 +197,7 @@ class GameScene: SKScene {
     
     func spawnEnemy(){
         
-        if enemiesLeft > 0 {
+        if enemiesLeft! > 0 {
             //supposed to pick random point within the screen width
             let xPos = random(min:0, max: frame.width )
             
@@ -256,6 +259,6 @@ class GameScene: SKScene {
     func random(min: CGFloat, max: CGFloat) -> CGFloat {
         return random() * (max - min) + min
     }
-
+    
 }
 

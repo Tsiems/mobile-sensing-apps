@@ -209,7 +209,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "playGame") {
-            let gameController = segue.destination
+            let gameController = segue.destination as! GameViewController
+            
+            gameController.startingPucks = 4
+            gameController.enemiesLeft = 4
         }
     }
 }
