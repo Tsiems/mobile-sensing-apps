@@ -15,7 +15,7 @@ import CoreMotion
 class GameScene: SKScene {
     
     lazy var goalsLabel = SKLabelNode(text: "Goals: 0")
-    lazy var pucksLeftLabel = SKLabelNode(text: "Pucks Left: 0")
+    lazy var pucksLeftLabel = SKLabelNode(text: "Demos Left: 0")
     lazy var goalsMade = 0
     var enemiesLeft: Int?
     var startingPucks: Int?
@@ -60,15 +60,6 @@ class GameScene: SKScene {
         
         // make sides to the screen
         self.addBorder()
-        
-//        // add some stationary blocks
-//        self.addStaticBlockAtPoint(CGPoint(x: size.width * 0.1, y: size.height * 0.25))
-//        self.addStaticBlockAtPoint(CGPoint(x: size.width * 0.9, y: size.height * 0.25))
-//        
-//        // add a spinning block
-//        self.addBlockAtPoint(CGPoint(x: size.width * 0.5, y: size.height * 0.35))
-//        
-//        self.addStaticBlockAtPoint(point: CGPoint(x: size.width * 0.5, y: size.height * 0.55))
         self.addSprite()
         
         
@@ -80,10 +71,11 @@ class GameScene: SKScene {
         self.addChild(goalsLabel)
         
         // add pucks left label
-        pucksLeftLabel.position = CGPoint(x: 80, y: size.height-80)
-        pucksLeftLabel.fontColor = UIColor.green
+        pucksLeftLabel.position = CGPoint(x: 84, y: size.height-80)
+        pucksLeftLabel.fontColor = UIColor.init(red: 179.0/255, green: 67.0/255, blue: 45.0/255, alpha: 1.0)
         pucksLeftLabel.fontSize = 20
         pucksLeftLabel.fontName = "HelveticaNeue-Bold"
+        pucksLeftLabel.text = "Demos Left: \(startingPucks! - goalsMade)"
         self.addChild(pucksLeftLabel)
     }
     
@@ -143,7 +135,11 @@ class GameScene: SKScene {
         goalsMade += 1
         goalsLabel.text = "Goals: \(goalsMade)"
         goalsLabel.fontColor = UIColor.init(red: 0, green: 65.0/255, blue: 112.0/255, alpha: 1.0)
-        
+        pucksLeftLabel.text = "Demos Left: \(startingPucks! - goalsMade)"
+        if enemiesLeft == 0 {
+            pucksLeftLabel.fontColor = UIColor.black
+        }
+
         if goalsMade == startingPucks {
             playerWins()
         }
@@ -151,10 +147,7 @@ class GameScene: SKScene {
     
     func reducePucksLeft(){
         enemiesLeft = enemiesLeft! - 1
-        pucksLeftLabel.text = "Pucks Left: \(enemiesLeft!)"
-        if enemiesLeft == 0 {
-            pucksLeftLabel.fontColor = UIColor.black
-        }
+
     }
     
     func playerLoses() {
