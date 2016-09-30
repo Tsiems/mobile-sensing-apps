@@ -430,7 +430,7 @@
 				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = GetFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = danhn.GetFit;
+				PRODUCT_BUNDLE_IDENTIFIER = danhn.FitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -443,7 +443,7 @@
 				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = GetFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = danhn.GetFit;
+				PRODUCT_BUNDLE_IDENTIFIER = danhn.FitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
