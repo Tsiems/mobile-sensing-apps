@@ -23,6 +23,8 @@ class GameViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         scene.scaleMode = .resizeFill
         skView.presentScene(scene)
+        NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.removeView), name: NSNotification.Name(rawValue: "dismissView"), object: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +36,13 @@ class GameViewController: UIViewController {
         return true
     }
     
+    func removeView() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func closeGame(_ sender: AnyObject) {
+        removeView()
+    }
 
     /*
     // MARK: - Navigation

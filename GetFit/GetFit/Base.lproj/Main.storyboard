@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AFN-iI-lXh">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AFN-iI-lXh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -59,12 +59,7 @@
                                 <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYP-8w-ij7" userLabel="Today Step Count Label">
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="74"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdi-9h-biA">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -81,33 +76,76 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XM6-an-9Lm">
-                                <state key="normal" title="Play Game"/>
-                                <connections>
-                                    <action selector="playGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UcR-bz-GxP"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vsi-Kq-Vo6">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XM6-an-9Lm">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5mW-Hd-Dzg"/>
+                                            <constraint firstAttribute="width" constant="100" id="9Ub-1e-4ys"/>
+                                        </constraints>
+                                        <state key="normal" title="Play Game"/>
+                                        <connections>
+                                            <action selector="playGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UcR-bz-GxP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONGRATS!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ch1-3N-dDj">
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have met your step goal for the day. Reward yourself with a little game!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V4-69-qKe">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.015686274510000001" green="0.18823529410000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7V4-69-qKe" secondAttribute="trailing" id="4fa-0T-wVs"/>
+                                    <constraint firstItem="7V4-69-qKe" firstAttribute="top" secondItem="Ch1-3N-dDj" secondAttribute="bottom" constant="8" id="DtG-VM-7pE"/>
+                                    <constraint firstItem="7V4-69-qKe" firstAttribute="leading" secondItem="Vsi-Kq-Vo6" secondAttribute="leading" id="HkZ-06-KX1"/>
+                                    <constraint firstItem="XM6-an-9Lm" firstAttribute="centerX" secondItem="Vsi-Kq-Vo6" secondAttribute="centerX" id="SaS-bb-cpM"/>
+                                    <constraint firstItem="Ch1-3N-dDj" firstAttribute="centerX" secondItem="Vsi-Kq-Vo6" secondAttribute="centerX" id="Xj5-wB-ulw"/>
+                                    <constraint firstAttribute="height" constant="150" id="ci3-Eh-Zjo"/>
+                                    <constraint firstItem="Ch1-3N-dDj" firstAttribute="top" secondItem="Vsi-Kq-Vo6" secondAttribute="top" constant="10" id="mFV-oW-GO1"/>
+                                    <constraint firstAttribute="bottom" secondItem="XM6-an-9Lm" secondAttribute="bottom" constant="10" id="zZz-z4-oOm"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterdays Step Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rq9-eI-0Y5">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdi-9h-biA">
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="46"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pZu-8r-XU6" firstAttribute="top" secondItem="pkv-jp-RXb" secondAttribute="bottom" constant="25" id="0R3-hy-OI1"/>
+                            <constraint firstItem="Vsi-Kq-Vo6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="3da-y5-CLO"/>
                             <constraint firstItem="pkv-jp-RXb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4E2-nY-6L3"/>
                             <constraint firstItem="LT9-2g-dxz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5uF-WL-3hq"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XM6-an-9Lm" secondAttribute="bottom" constant="128" id="7ug-el-tLD"/>
                             <constraint firstItem="qiC-SK-Ad3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="8Vh-vL-yNy"/>
                             <constraint firstItem="aYP-8w-ij7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AcR-qE-FF9"/>
                             <constraint firstItem="aYP-8w-ij7" firstAttribute="top" secondItem="qiC-SK-Ad3" secondAttribute="bottom" constant="3" id="JR3-CT-uPG"/>
                             <constraint firstItem="35s-gu-FKG" firstAttribute="trailing" secondItem="qiC-SK-Ad3" secondAttribute="trailing" id="KAF-oa-eNw"/>
                             <constraint firstItem="pkv-jp-RXb" firstAttribute="top" secondItem="LT9-2g-dxz" secondAttribute="bottom" constant="16" id="KDl-sb-sYl"/>
                             <constraint firstItem="Sdi-9h-biA" firstAttribute="centerX" secondItem="aYP-8w-ij7" secondAttribute="centerX" id="Ljz-QO-xcY"/>
-                            <constraint firstItem="Sdi-9h-biA" firstAttribute="top" secondItem="aYP-8w-ij7" secondAttribute="bottom" constant="8" symbolic="YES" id="MC1-QQ-7uQ"/>
                             <constraint firstAttribute="trailing" secondItem="qiC-SK-Ad3" secondAttribute="trailing" constant="8" id="Ni3-Dy-20f"/>
+                            <constraint firstItem="Rq9-eI-0Y5" firstAttribute="top" secondItem="Sdi-9h-biA" secondAttribute="bottom" constant="8" id="OAf-1U-EfC"/>
                             <constraint firstItem="pkv-jp-RXb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-80" id="VZm-Mf-vJ0"/>
                             <constraint firstItem="9A2-Lh-6qb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VpN-zq-idq"/>
                             <constraint firstItem="LT9-2g-dxz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="Xb2-eX-H0s"/>
-                            <constraint firstItem="XM6-an-9Lm" firstAttribute="centerX" secondItem="aYP-8w-ij7" secondAttribute="centerX" id="h1f-Oz-rc4"/>
+                            <constraint firstItem="Rq9-eI-0Y5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fGI-yB-08v"/>
                             <constraint firstItem="35s-gu-FKG" firstAttribute="baseline" secondItem="pZu-8r-XU6" secondAttribute="baseline" id="hea-oF-hqI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vsi-Kq-Vo6" secondAttribute="bottom" constant="20" id="jm0-v5-F5j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vsi-Kq-Vo6" secondAttribute="trailing" constant="20" id="mq6-rh-qbk"/>
                             <constraint firstItem="9A2-Lh-6qb" firstAttribute="leading" secondItem="pkv-jp-RXb" secondAttribute="trailing" constant="8" id="pZT-dp-JJX"/>
+                            <constraint firstItem="Vsi-Kq-Vo6" firstAttribute="top" secondItem="Rq9-eI-0Y5" secondAttribute="bottom" constant="14" id="qt5-qM-VQf"/>
                             <constraint firstItem="9A2-Lh-6qb" firstAttribute="centerY" secondItem="pkv-jp-RXb" secondAttribute="centerY" id="t4e-1Z-oo7"/>
                             <constraint firstItem="pZu-8r-XU6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="uQy-f3-9Nc"/>
                             <constraint firstItem="qiC-SK-Ad3" firstAttribute="top" secondItem="pZu-8r-XU6" secondAttribute="bottom" constant="8" id="wjK-Ov-LRL"/>
@@ -118,13 +156,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityStatusLabel" destination="35s-gu-FKG" id="Qkm-w2-492"/>
+                        <outlet property="congratsView" destination="Vsi-Kq-Vo6" id="28j-iS-gHY"/>
                         <outlet property="goalLabel" destination="LT9-2g-dxz" id="vyz-Zy-dFp"/>
                         <outlet property="newGoalField" destination="pkv-jp-RXb" id="bWy-kq-F4H"/>
                         <outlet property="playButton" destination="XM6-an-9Lm" id="bI1-V4-a5G"/>
                         <outlet property="stepCountProgress" destination="qiC-SK-Ad3" id="ctM-UV-D8n"/>
                         <outlet property="stepCountTodayLabel" destination="aYP-8w-ij7" id="PSX-oF-YYQ"/>
                         <outlet property="stepCountYesterdayLabel" destination="Sdi-9h-biA" id="jKZ-vS-xFa"/>
-                        <segue destination="2iF-2f-iLk" kind="show" identifier="playGame" id="F01-mQ-IKS"/>
+                        <segue destination="2iF-2f-iLk" kind="presentation" identifier="playGame" id="F01-mQ-IKS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -142,11 +181,20 @@
                     <view key="view" contentMode="scaleToFill" id="tZe-lJ-LU3" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HQ-0K-NUe">
+                                <state key="normal" title="End Game"/>
+                                <connections>
+                                    <action selector="closeGame:" destination="2iF-2f-iLk" eventType="touchUpInside" id="YyR-Vd-7et"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6HQ-0K-NUe" firstAttribute="centerX" secondItem="tZe-lJ-LU3" secondAttribute="centerX" id="7m0-h7-gQk"/>
+                            <constraint firstItem="Aiw-Kk-wCp" firstAttribute="top" secondItem="6HQ-0K-NUe" secondAttribute="bottom" constant="40" id="h8e-Hp-kuC"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="55P-sh-ou5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSa-4H-zNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,8 +223,5 @@
             <point key="canvasLocation" x="133.59999999999999" y="-543.77811094452773"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="55P-sh-ou5"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.70126873254776001" green="0.26423013210296631" blue="0.17676317691802979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

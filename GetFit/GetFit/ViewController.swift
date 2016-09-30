@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var stepCountProgress: UIProgressView!
     @IBOutlet weak var activityStatusLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var congratsView: UIView!
     
     //MARK: class variables
     let activityManager = CMMotionActivityManager()
@@ -31,7 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.playButton.isHidden = true
+        self.congratsView.isHidden = true
         
         self.updateTodaySteps()
         self.updateYesterdaySteps()
@@ -98,7 +99,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             goalLabel.text = "Step Goal: \(goalNumber)"
             self.stepCountProgress.progress = (self.liveSteps + self.todaySteps) / Float(goalNumber)
             if(Float(goalNumber) > self.todaySteps) {
-                self.playButton.isHidden = true
+                self.congratsView.isHidden = true
+            } else {
+                self.congratsView.isHidden = false
             }
         }
     }
@@ -149,11 +152,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handlePedometer(pedData:CMPedometerData?, error:Error?){
         if let steps = pedData?.numberOfSteps {
             self.liveSteps = steps.floatValue
-        }
-        DispatchQueue.main.async(){
-            self.stepCountTodayLabel.text = "\(self.liveSteps + self.todaySteps)"
-            let goal = UserDefaults.standard.integer(forKey: "stepGoal")
-            self.stepCountProgress.progress = (self.liveSteps + self.todaySteps) / Float(goal)
+            DispatchQueue.main.async(){
+                self.stepCountTodayLabel.text = "\(self.liveSteps + self.todaySteps)"
+                let goal = UserDefaults.standard.integer(forKey: "stepGoal")
+                self.stepCountProgress.progress = (self.liveSteps + self.todaySteps) / Float(goal)
+                print("\(self.todaySteps) - \(Float(goal))")
+                if ((self.todaySteps + self.liveSteps) >= Float(goal)) {
+                    self.congratsView.isHidden = false
+                }
+                
+            }
+
         }
     }
     
@@ -182,14 +191,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func handleTodayPedometer(pedData:CMPedometerData?, error:Error?){
         if let steps = pedData?.numberOfSteps {
             self.todaySteps = steps.floatValue
-        }
-        DispatchQueue.main.async(){
-            self.stepCountTodayLabel.text = "\(self.todaySteps)"
-            let goal = UserDefaults.standard.integer(forKey: "stepGoal")
-            self.stepCountProgress.progress = (self.todaySteps) / Float(goal)
-            if (self.todaySteps >= Float(goal)) {
-                self.playButton.isHidden = false
+            DispatchQueue.main.async(){
+                self.stepCountTodayLabel.text = "\(self.todaySteps)"
+                let goal = UserDefaults.standard.integer(forKey: "stepGoal")
+                self.stepCountProgress.progress = (self.todaySteps) / Float(goal)
+                if (self.todaySteps >= Float(goal)) {
+                    self.congratsView.isHidden = false
+                }
             }
+
         }
     }
 
