@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var stepCountTodayLabel: UILabel!
     @IBOutlet weak var stepCountProgress: UIProgressView!
     @IBOutlet weak var activityStatusLabel: UILabel!
+    @IBOutlet weak var playButton: UIButton!
     
     //MARK: class variables
     let activityManager = CMMotionActivityManager()
@@ -30,6 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.playButton.isHidden = true
         
         self.updateTodaySteps()
         self.updateYesterdaySteps()
@@ -95,6 +97,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             UserDefaults.standard.set(goalNumber, forKey: "stepGoal")
             goalLabel.text = "Step Goal: \(goalNumber)"
             self.stepCountProgress.progress = (self.liveSteps + self.todaySteps) / Float(goalNumber)
+            if(Float(goalNumber) > self.todaySteps) {
+                self.playButton.isHidden = true
+            }
         }
     }
     
@@ -182,8 +187,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.stepCountTodayLabel.text = "\(self.todaySteps)"
             let goal = UserDefaults.standard.integer(forKey: "stepGoal")
             self.stepCountProgress.progress = (self.todaySteps) / Float(goal)
+            if (self.todaySteps >= Float(goal)) {
+                self.playButton.isHidden = false
+            }
         }
     }
 
+    @IBAction func playGame(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "playGame", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "playGame") {
+            let gameController = segue.destination
+        }
+    }
 }
 

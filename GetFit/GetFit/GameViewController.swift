@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         let scene = GameScene(size: view.bounds.size)
         let skView = view as! SKView // the view in storyboard must be an SKView
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         skView.showsFPS = true
         skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true

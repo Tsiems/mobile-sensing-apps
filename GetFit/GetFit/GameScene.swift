@@ -111,7 +111,7 @@ class GameScene: SKScene {
 
         
         for obj in [left,right,top_left,top_right, bottom]{
-            obj.color = UIColor.blue
+            obj.color = UIColor.init(red: 30.0/255.0, green: 73.0/255.0, blue: 105.0/255.0, alpha: 1.0)
             obj.physicsBody = SKPhysicsBody(rectangleOf:obj.size)
             obj.physicsBody?.isDynamic = true
             obj.physicsBody?.pinned = true
@@ -141,7 +141,7 @@ class GameScene: SKScene {
     func addGoal(){
         goalsMade += 1
         goalsLabel.text = "Goals: \(goalsMade)"
-        goalsLabel.fontColor = UIColor.green
+        goalsLabel.fontColor = UIColor.init(red: 0, green: 65.0/255, blue: 112.0/255, alpha: 1.0)
         
         if goalsMade == startingPucks {
             playerWins()
@@ -159,7 +159,7 @@ class GameScene: SKScene {
     func playerLoses() {
         let label = SKLabelNode(text: "YOU LOSE! 😢")
         label.position = CGPoint(x: size.width*0.5, y: size.height*0.5)
-        label.fontColor = UIColor.red
+        label.fontColor = UIColor.init(red: 179.0/255, green: 67.0/255, blue: 45.0/255, alpha: 1.0)
         label.fontName = "HelveticaNeue-Bold"
         label.fontSize = 40
         self.addChild(label)
@@ -168,7 +168,7 @@ class GameScene: SKScene {
     func playerWins() {
         let label = SKLabelNode(text: "YOU WIN! 😄🎉")
         label.position = CGPoint(x: size.width*0.5, y: size.height*0.5)
-        label.fontColor = UIColor.green
+        label.fontColor = UIColor.init(red: 179.0/255, green: 67.0/255, blue: 45.0/255, alpha: 1.0)
         label.fontName = "HelveticaNeue-Bold"
         label.fontSize = 40
         self.addChild(label)
@@ -256,7 +256,6 @@ class GameScene: SKScene {
     func random(min: CGFloat, max: CGFloat) -> CGFloat {
         return random() * (max - min) + min
     }
-
 
 }
 

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AFN-iI-lXh">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AFN-iI-lXh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -81,12 +81,19 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XM6-an-9Lm">
+                                <state key="normal" title="Play Game"/>
+                                <connections>
+                                    <action selector="playGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UcR-bz-GxP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pZu-8r-XU6" firstAttribute="top" secondItem="pkv-jp-RXb" secondAttribute="bottom" constant="25" id="0R3-hy-OI1"/>
                             <constraint firstItem="pkv-jp-RXb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4E2-nY-6L3"/>
                             <constraint firstItem="LT9-2g-dxz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5uF-WL-3hq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XM6-an-9Lm" secondAttribute="bottom" constant="128" id="7ug-el-tLD"/>
                             <constraint firstItem="qiC-SK-Ad3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="8Vh-vL-yNy"/>
                             <constraint firstItem="aYP-8w-ij7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AcR-qE-FF9"/>
                             <constraint firstItem="aYP-8w-ij7" firstAttribute="top" secondItem="qiC-SK-Ad3" secondAttribute="bottom" constant="3" id="JR3-CT-uPG"/>
@@ -98,6 +105,7 @@
                             <constraint firstItem="pkv-jp-RXb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-80" id="VZm-Mf-vJ0"/>
                             <constraint firstItem="9A2-Lh-6qb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VpN-zq-idq"/>
                             <constraint firstItem="LT9-2g-dxz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="Xb2-eX-H0s"/>
+                            <constraint firstItem="XM6-an-9Lm" firstAttribute="centerX" secondItem="aYP-8w-ij7" secondAttribute="centerX" id="h1f-Oz-rc4"/>
                             <constraint firstItem="35s-gu-FKG" firstAttribute="baseline" secondItem="pZu-8r-XU6" secondAttribute="baseline" id="hea-oF-hqI"/>
                             <constraint firstItem="9A2-Lh-6qb" firstAttribute="leading" secondItem="pkv-jp-RXb" secondAttribute="trailing" constant="8" id="pZT-dp-JJX"/>
                             <constraint firstItem="9A2-Lh-6qb" firstAttribute="centerY" secondItem="pkv-jp-RXb" secondAttribute="centerY" id="t4e-1Z-oo7"/>
@@ -112,9 +120,11 @@
                         <outlet property="activityStatusLabel" destination="35s-gu-FKG" id="Qkm-w2-492"/>
                         <outlet property="goalLabel" destination="LT9-2g-dxz" id="vyz-Zy-dFp"/>
                         <outlet property="newGoalField" destination="pkv-jp-RXb" id="bWy-kq-F4H"/>
+                        <outlet property="playButton" destination="XM6-an-9Lm" id="bI1-V4-a5G"/>
                         <outlet property="stepCountProgress" destination="qiC-SK-Ad3" id="ctM-UV-D8n"/>
                         <outlet property="stepCountTodayLabel" destination="aYP-8w-ij7" id="PSX-oF-YYQ"/>
                         <outlet property="stepCountYesterdayLabel" destination="Sdi-9h-biA" id="jKZ-vS-xFa"/>
+                        <segue destination="2iF-2f-iLk" kind="show" identifier="playGame" id="F01-mQ-IKS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -134,6 +144,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="55P-sh-ou5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSa-4H-zNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,4 +175,8 @@
             <point key="canvasLocation" x="133.59999999999999" y="-543.77811094452773"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="55P-sh-ou5"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.70126873254776001" green="0.26423013210296631" blue="0.17676317691802979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
