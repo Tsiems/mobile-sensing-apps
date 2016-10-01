@@ -91,16 +91,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func setGoal(_ sender: AnyObject) {
         let goal = self.newGoalField.text!
-        if (goal != ""){
-            let goalNumber = (Int(goal))!
-            UserDefaults.standard.set(goalNumber, forKey: "stepGoal")
-            goalLabel.text = "Step Goal: \(goalNumber)"
-            self.stepCountProgress.progress = (self.todaySteps) / Float(goalNumber)
-            if(Float(goalNumber) > self.todaySteps) {
+        let goalNumber = (Int(goal))
+        if (goalNumber != nil){
+            UserDefaults.standard.set(goalNumber!, forKey: "stepGoal")
+            goalLabel.text = "Step Goal: \(goalNumber!)"
+            self.newGoalField.placeholder = "New Goal"
+            self.stepCountProgress.progress = (self.todaySteps) / Float(goalNumber!)
+            if(Float(goalNumber!) > self.todaySteps) {
                 self.congratsView.isHidden = true
             } else {
                 self.congratsView.isHidden = false
             }
+        }
+        else{
+            self.newGoalField.text = nil
+            self.newGoalField.placeholder = "Please input a valid goal"
         }
     }
     
