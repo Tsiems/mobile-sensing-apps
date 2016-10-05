@@ -16,13 +16,13 @@ class ViewController: UIViewController   {
     var videoManager:VideoAnalgesic! = nil
     let pinchFilterIndex = 2
     var detector:CIDetector! = nil
-    let bridge = OpenCVBridge()
+    let bridge = OpenCVBridgeSub()
     
     //MARK: Outlets in view
-    @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var button: UIButton!
     @IBOutlet weak var flashSlider: UISlider!
     @IBOutlet weak var stageLabel: UILabel!
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var flashButton: UIButton!
     
     //MARK: ViewController Hierarchy
     override func viewDidLoad() {
@@ -32,53 +32,52 @@ class ViewController: UIViewController   {
         self.setupFilters()
         
         self.videoManager = VideoAnalgesic.sharedInstance
-        self.videoManager.setCameraPosition(AVCaptureDevicePosition.Front)
+        self.videoManager.setCameraPosition(AVCaptureDevicePosition.front)
+        self.videoManager.setPreset("AVCaptureSessionPresetMedium")
         
         // create dictionary for face detection
         // HINT: you need to manipulate these proerties for better face detection efficiency
-        let optsDetector = [CIDetectorAccuracy:CIDetectorAccuracyLow,CIDetectorTracking:true]
+        let optsDetector = [CIDetectorAccuracy:CIDetectorAccuracyLow,CIDetectorTracking:true] as [String : Any]
         
         // setup a face detector in swift
         self.detector = CIDetector(ofType: CIDetectorTypeFace,
                                   context: self.videoManager.getCIContext(), // perform on the GPU is possible
-                                  options: (optsDetector as! [String : AnyObject]))
+                                  options: (optsDetector as [String : AnyObject]))
         
         self.videoManager.setProcessingBlock(self.processImage)
         
         if !videoManager.isRunning{
             videoManager.start()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.toggleButton(notification:)), name: NSNotification.Name(rawValue: "toggleOn"), object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.toggleButton(_:)), name: "toggleOn", object: nil)
-    
     }
     
     func toggleButton(notification: NSNotification) {
-        let userInfo:Dictionary<String, AnyObject!> = notification.userInfo as! Dictionary<String,AnyObject!>
+        let userInfo:Dictionary<String, AnyObject> = notification.userInfo as! Dictionary<String,AnyObject>
         let toggleOn = userInfo["toggleOn"]! as! String
         if toggleOn == "On" {
-            dispatch_async(dispatch_get_main_queue()){
-            self.button.enabled = false
-            self.cameraButton.enabled = false
-        }
+            DispatchQueue.main.async{
+                self.flashButton.isEnabled = false
+                self.cameraButton.isEnabled = false
+            }
             
         } else {
-            dispatch_async(dispatch_get_main_queue()){
-            self.button.enabled = true
-            self.cameraButton.enabled = true
-        }
+            DispatchQueue.main.async{
+                self.flashButton.isEnabled = true
+                self.cameraButton.isEnabled = true
+            }
         }
     }
     
     //MARK: Process image output
-    func processImage(inputImage:CIImage) -> CIImage{
-        
+    func processImage(_ inputImage:CIImage) -> CIImage{
         
         // detect faces
-        // let f = getFaces(inputImage)
+        //let f = getFaces(inputImage)
         
         // if no faces, just return original image
-//        if f.count == 0 { return inputImage }
+        // if f.count == 0 { return inputImage }
         
         var retImage = inputImage
         
@@ -100,7 +99,7 @@ class ViewController: UIViewController   {
         // or any bounds to only process a certain bounding region in OpenCV
         self.bridge.setTransforms(self.videoManager.transform)
         self.bridge.setImage(retImage,
-                             withBounds: retImage.extent, // the first face bounds
+                             withBounds: retImage.extent,
                              andContext: self.videoManager.getCIContext())
         
         self.bridge.processImage()
@@ -121,7 +120,7 @@ class ViewController: UIViewController   {
     }
     
     //MARK: Apply filters and apply feature detectors
-    func applyFiltersToFaces(inputImage:CIImage,features:[CIFaceFeature])->CIImage{
+    func applyFiltersToFaces(_ inputImage:CIImage,features:[CIFaceFeature])->CIImage{
         var retImage = inputImage
         var filterCenter = CGPoint()
         
@@ -133,7 +132,7 @@ class ViewController: UIViewController   {
             //do for each filter (assumes all filters have property, "inputCenter")
             for filt in filters{
                 filt.setValue(retImage, forKey: kCIInputImageKey)
-                filt.setValue(CIVector(CGPoint: filterCenter), forKey: "inputCenter")
+                filt.setValue(CIVector(cgPoint: filterCenter), forKey: "inputCenter")
                 // could also manipualte the radius of the filter based on face size!
                 retImage = filt.outputImage!
             }
@@ -141,22 +140,22 @@ class ViewController: UIViewController   {
         return retImage
     }
     
-    func getFaces(img:CIImage) -> [CIFaceFeature]{
+    func getFaces(_ img:CIImage) -> [CIFaceFeature]{
         // this ungodly mess makes sure the image is the correct orientation
         //let optsFace = [CIDetectorImageOrientation:self.videoManager.getImageOrientationFromUIOrientation(UIApplication.sharedApplication().statusBarOrientation)]
         let optsFace = [CIDetectorImageOrientation:self.videoManager.ciOrientation]
         // get Face Features
-        return self.detector.featuresInImage(img, options: optsFace) as! [CIFaceFeature]
+        return self.detector.features(in: img, options: optsFace) as! [CIFaceFeature]
         
     }
     
     
     
-    @IBAction func swipeRecognized(sender: UISwipeGestureRecognizer) {
+    @IBAction func swipeRecognized(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
-        case UISwipeGestureRecognizerDirection.Left:
+        case UISwipeGestureRecognizerDirection.left:
             self.bridge.processType += 1
-        case UISwipeGestureRecognizerDirection.Right:
+        case UISwipeGestureRecognizerDirection.right:
             self.bridge.processType -= 1
         default:
             break
@@ -168,7 +167,7 @@ class ViewController: UIViewController   {
     }
     
     //MARK: Convenience Methods for UI Flash and Camera Toggle
-    @IBAction func flash(sender: AnyObject) {
+    @IBAction func flash(_ sender: AnyObject) {
         if(self.videoManager.toggleFlash()){
             self.flashSlider.value = 1.0
         }
@@ -177,11 +176,11 @@ class ViewController: UIViewController   {
         }
     }
     
-    @IBAction func switchCamera(sender: AnyObject) {
+    @IBAction func switchCamera(_ sender: AnyObject) {
         self.videoManager.toggleCameraPosition()
     }
     
-    @IBAction func setFlashLevel(sender: UISlider) {
+    @IBAction func setFlashLevel(_ sender: UISlider) {
         if(sender.value>0.0){
             self.videoManager.turnOnFlashwithLevel(sender.value)
         }

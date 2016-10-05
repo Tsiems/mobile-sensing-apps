@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B650B3161D8340F0000114A1"
-               BuildableName = "ImageLab.app"
-               BlueprintName = "ImageLab"
-               ReferencedContainer = "container:ImageLab.xcodeproj">
+               BlueprintIdentifier = "B408EFE11D9AD0810014E216"
+               BuildableName = "GetFit.app"
+               BlueprintName = "GetFit"
+               ReferencedContainer = "container:GetFit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B650B32A1D8340F0000114A1"
-               BuildableName = "ImageLabTests.xctest"
-               BlueprintName = "ImageLabTests"
-               ReferencedContainer = "container:ImageLab.xcodeproj">
+               BlueprintIdentifier = "B408EFF81D9AD0810014E216"
+               BuildableName = "GetFitTests.xctest"
+               BlueprintName = "GetFitTests"
+               ReferencedContainer = "container:GetFit.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B650B3351D8340F0000114A1"
-               BuildableName = "ImageLabUITests.xctest"
-               BlueprintName = "ImageLabUITests"
-               ReferencedContainer = "container:ImageLab.xcodeproj">
+               BlueprintIdentifier = "B408F0031D9AD0810014E216"
+               BuildableName = "GetFitUITests.xctest"
+               BlueprintName = "GetFitUITests"
+               ReferencedContainer = "container:GetFit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B650B3161D8340F0000114A1"
-            BuildableName = "ImageLab.app"
-            BlueprintName = "ImageLab"
-            ReferencedContainer = "container:ImageLab.xcodeproj">
+            BlueprintIdentifier = "B408EFE11D9AD0810014E216"
+            BuildableName = "GetFit.app"
+            BlueprintName = "GetFit"
+            ReferencedContainer = "container:GetFit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B650B3161D8340F0000114A1"
-            BuildableName = "ImageLab.app"
-            BlueprintName = "ImageLab"
-            ReferencedContainer = "container:ImageLab.xcodeproj">
+            BlueprintIdentifier = "B408EFE11D9AD0810014E216"
+            BuildableName = "GetFit.app"
+            BlueprintName = "GetFit"
+            ReferencedContainer = "container:GetFit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B650B3161D8340F0000114A1"
-            BuildableName = "ImageLab.app"
-            BlueprintName = "ImageLab"
-            ReferencedContainer = "container:ImageLab.xcodeproj">
+            BlueprintIdentifier = "B408EFE11D9AD0810014E216"
+            BuildableName = "GetFit.app"
+            BlueprintName = "GetFit"
+            ReferencedContainer = "container:GetFit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

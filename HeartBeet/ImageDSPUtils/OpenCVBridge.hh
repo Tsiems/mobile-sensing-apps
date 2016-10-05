@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreImage/CoreImage.h>
+#import "AVFoundation/AVFoundation.h"
+
+#import "PrefixHeader.pch"
 
 @interface OpenCVBridge : NSObject
 

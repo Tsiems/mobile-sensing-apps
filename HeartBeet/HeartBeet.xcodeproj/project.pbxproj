@@ -15,6 +15,7 @@
 		B67B72B71D996AB2008EDDE1 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67B72B61D996AB2008EDDE1 /* opencv2.framework */; };
 		B67B72BB1D996ADE008EDDE1 /* OpenCVBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = B67B72BA1D996ADE008EDDE1 /* OpenCVBridge.mm */; };
 		B6E657991D95AA4500E75C60 /* VideoAnalgesic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E657981D95AA4500E75C60 /* VideoAnalgesic.swift */; };
+		F35D3BD11DA5B916003FBB1A /* OpenCVBridgeSub.mm in Sources */ = {isa = PBXBuildFile; fileRef = F35D3BCF1DA5B916003FBB1A /* OpenCVBridgeSub.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +36,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B650B3171D8340F0000114A1 /* HeartBeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HeartBeet.app; path = "/Users/thinkpad/Desktop/temp/ImageLab/build/Debug-iphoneos/HeartBeet.app"; sourceTree = "<absolute>"; };
 		B650B31A1D8340F0000114A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B650B31C1D8340F0000114A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B650B31F1D8340F0000114A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B650B3211D8340F0000114A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B650B3241D8340F0000114A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B650B3261D8340F0000114A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B650B32B1D8340F0000114A1 /* HeartBeetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HeartBeetTests.xctest; path = "/Users/thinkpad/Desktop/temp/ImageLab/build/Debug-iphoneos/HeartBeetTests.xctest"; sourceTree = "<absolute>"; };
+		B650B3361D8340F0000114A1 /* HeartBeetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HeartBeetUITests.xctest; path = "/Users/thinkpad/Desktop/temp/ImageLab/build/Debug-iphoneos/HeartBeetUITests.xctest"; sourceTree = "<absolute>"; };
 		B67B72B61D996AB2008EDDE1 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ImageDSPUtils/opencv2.framework; sourceTree = "<group>"; };
-		B67B72B91D996ADE008EDDE1 /* OpenCVBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCVBridge.h; path = ImageDSPUtils/OpenCVBridge.h; sourceTree = SOURCE_ROOT; };
+		B67B72B91D996ADE008EDDE1 /* OpenCVBridge.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OpenCVBridge.hh; path = ImageDSPUtils/OpenCVBridge.hh; sourceTree = SOURCE_ROOT; };
 		B67B72BA1D996ADE008EDDE1 /* OpenCVBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OpenCVBridge.mm; path = ImageDSPUtils/OpenCVBridge.mm; sourceTree = SOURCE_ROOT; };
 		B6E657981D95AA4500E75C60 /* VideoAnalgesic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoAnalgesic.swift; path = ImageDSPUtils/VideoAnalgesic.swift; sourceTree = SOURCE_ROOT; };
-		F36040151DA4677000BD02EA /* HeartBeet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HeartBeet-Bridging-Header.h"; path = "../HeartBeet/HeartBeet-Bridging-Header.h"; sourceTree = "<group>"; };
-		F3A811461DA46500000269E8 /* HeartBeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartBeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3D9580D1DA46B1F00BB1B90 /* HeartBeetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HeartBeetTests.xctest; path = "/Users/thinkpad/Desktop/HeartBeet/build/Debug-iphoneos/HeartBeetTests.xctest"; sourceTree = "<absolute>"; };
-		F3D9580E1DA46B1F00BB1B90 /* HeartBeetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HeartBeetUITests.xctest; path = "/Users/thinkpad/Desktop/HeartBeet/build/Debug-iphoneos/HeartBeetUITests.xctest"; sourceTree = "<absolute>"; };
+		F35D3BCE1DA5B916003FBB1A /* OpenCVBridgeSub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCVBridgeSub.h; path = HeartBeet/OpenCVBridgeSub.h; sourceTree = SOURCE_ROOT; };
+		F35D3BCF1DA5B916003FBB1A /* OpenCVBridgeSub.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OpenCVBridgeSub.mm; path = HeartBeet/OpenCVBridgeSub.mm; sourceTree = SOURCE_ROOT; };
+		F35D3BD01DA5B916003FBB1A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = HeartBeet/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		F35D3BD21DA5B9D9003FBB1A /* HeartBeet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HeartBeet-Bridging-Header.h"; path = "HeartBeet/HeartBeet-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +87,6 @@
 				B67B72B61D996AB2008EDDE1 /* opencv2.framework */,
 				B650B34A1D83435A000114A1 /* ImageDSPUtils */,
 				B650B3191D8340F0000114A1 /* HeartBeet */,
-				F3A811461DA46500000269E8 /* HeartBeet.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,12 +106,16 @@
 		B650B34A1D83435A000114A1 /* ImageDSPUtils */ = {
 			isa = PBXGroup;
 			children = (
-				F36040151DA4677000BD02EA /* HeartBeet-Bridging-Header.h */,
+				F35D3BD21DA5B9D9003FBB1A /* HeartBeet-Bridging-Header.h */,
+				F35D3BCE1DA5B916003FBB1A /* OpenCVBridgeSub.h */,
+				F35D3BCF1DA5B916003FBB1A /* OpenCVBridgeSub.mm */,
+				F35D3BD01DA5B916003FBB1A /* PrefixHeader.pch */,
 				B6E657981D95AA4500E75C60 /* VideoAnalgesic.swift */,
-				B67B72B91D996ADE008EDDE1 /* OpenCVBridge.h */,
+				B67B72B91D996ADE008EDDE1 /* OpenCVBridge.hh */,
 				B67B72BA1D996ADE008EDDE1 /* OpenCVBridge.mm */,
 			);
-			path = ImageDSPUtils;
+			name = ImageDSPUtils;
+			path = ImageLab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +135,7 @@
 			);
 			name = HeartBeet;
 			productName = ImageLab;
-			productReference = F3A811461DA46500000269E8 /* HeartBeet.app */;
+			productReference = B650B3171D8340F0000114A1 /* HeartBeet.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B650B32A1D8340F0000114A1 /* HeartBeetTests */ = {
@@ -146,7 +153,7 @@
 			);
 			name = HeartBeetTests;
 			productName = ImageLabTests;
-			productReference = F3D9580D1DA46B1F00BB1B90 /* HeartBeetTests.xctest */;
+			productReference = B650B32B1D8340F0000114A1 /* HeartBeetTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B650B3351D8340F0000114A1 /* HeartBeetUITests */ = {
@@ -164,7 +171,7 @@
 			);
 			name = HeartBeetUITests;
 			productName = ImageLabUITests;
-			productReference = F3D9580E1DA46B1F00BB1B90 /* HeartBeetUITests.xctest */;
+			productReference = B650B3361D8340F0000114A1 /* HeartBeetUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -174,22 +181,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Eric Larson";
 				TargetAttributes = {
 					B650B3161D8340F0000114A1 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = F69WJ27LN4;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					B650B32A1D8340F0000114A1 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 						TestTargetID = B650B3161D8340F0000114A1;
 					};
 					B650B3351D8340F0000114A1 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 						TestTargetID = B650B3161D8340F0000114A1;
 					};
 				};
@@ -247,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6E657991D95AA4500E75C60 /* VideoAnalgesic.swift in Sources */,
+				F35D3BD11DA5B916003FBB1A /* OpenCVBridgeSub.mm in Sources */,
 				B650B31D1D8340F0000114A1 /* ViewController.swift in Sources */,
 				B650B31B1D8340F0000114A1 /* AppDelegate.swift in Sources */,
 				B67B72BB1D996ADE008EDDE1 /* OpenCVBridge.mm in Sources */,
@@ -402,13 +410,13 @@
 					"$(PROJECT_DIR)/ImageDSPUtils",
 				);
 				INFOPLIST_FILE = HeartBeet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SMU.HeartBeet;
+				PRODUCT_BUNDLE_IDENTIFIER = SMU.ImageLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HeartBeet/HeartBeet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -424,12 +432,12 @@
 					"$(PROJECT_DIR)/ImageDSPUtils",
 				);
 				INFOPLIST_FILE = HeartBeet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SMU.HeartBeet;
+				PRODUCT_BUNDLE_IDENTIFIER = SMU.ImageLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "HeartBeet/HeartBeet-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -441,7 +449,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.ImageLabTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeartBeet.app/HeartBeet";
 			};
 			name = Debug;
@@ -454,7 +462,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.ImageLabTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeartBeet.app/HeartBeet";
 			};
 			name = Release;
@@ -466,7 +474,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.ImageLabUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ImageLab;
 			};
 			name = Debug;
@@ -478,7 +486,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SMU.ImageLabUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ImageLab;
 			};
 			name = Release;
