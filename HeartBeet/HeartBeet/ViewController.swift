@@ -13,6 +13,7 @@ class ViewController: UIViewController   {
 
     //MARK: Class Properties
     var filters : [CIFilter]! = nil
+    var eyeFilters : [CIFilter]! = nil
     var videoManager:VideoAnalgesic! = nil
     let pinchFilterIndex = 2
     var detector:CIDetector! = nil
@@ -30,6 +31,7 @@ class ViewController: UIViewController   {
         
         self.view.backgroundColor = nil
         self.setupFilters()
+        self.setupEyeFilters()
         
         self.videoManager = VideoAnalgesic.sharedInstance
         self.videoManager.setCameraPosition(AVCaptureDevicePosition.front)
@@ -74,7 +76,8 @@ class ViewController: UIViewController   {
     func processImage(_ inputImage:CIImage) -> CIImage{
         
         // detect faces
-        //let f = getFaces(inputImage)
+        let f = getFaces(inputImage)
+        
         
         // if no faces, just return original image
         // if f.count == 0 { return inputImage }
@@ -105,6 +108,12 @@ class ViewController: UIViewController   {
         self.bridge.processImage()
         retImage = self.bridge.getImageComposite() // get back opencv processed part of the image (overlayed on original)
         
+        
+        
+        retImage = applyFiltersToFaces(retImage, features: f)
+        
+        
+        
         return retImage
     }
     
@@ -117,6 +126,25 @@ class ViewController: UIViewController   {
         filterPinch.setValue(75, forKey: "inputRadius")
         filters.append(filterPinch)
         
+//        let filterPosterize = CIFilter(name:"CIColorPosterize")!
+//        filters.append(filterPosterize)
+    }
+    
+    //MARK: Setup Eye filtering
+    func setupEyeFilters(){
+        eyeFilters = []
+        
+//        let filterLens = CIFilter(name:"CITorusLensDistortion")!
+//        filterLens.setValue(30, forKey: "inputRadius")
+//        filterLens.setValue(1.4, forKey: "inputRefraction")
+//        filterLens.setValue(15, forKey: "inputWidth")
+//        eyeFilters.append(filterLens)
+        
+        
+        let filterTwirl = CIFilter(name:"CITwirlDistortion")!
+        filterTwirl.setValue(30, forKey: "inputRadius")
+        filterTwirl.setValue(2.0, forKey: "inputAngle")
+        eyeFilters.append(filterTwirl)
     }
     
     //MARK: Apply filters and apply feature detectors
@@ -131,11 +159,48 @@ class ViewController: UIViewController   {
             
             //do for each filter (assumes all filters have property, "inputCenter")
             for filt in filters{
+                
+                let inputKeys = filt.inputKeys
+                
                 filt.setValue(retImage, forKey: kCIInputImageKey)
-                filt.setValue(CIVector(cgPoint: filterCenter), forKey: "inputCenter")
+                
+                if inputKeys.contains("inputCenter") {
+                    filt.setValue(CIVector(cgPoint: filterCenter), forKey: "inputCenter")
+                }
                 // could also manipualte the radius of the filter based on face size!
                 retImage = filt.outputImage!
             }
+            
+            //apply eye filters to left eye
+            if f.hasLeftEyePosition {
+                for filt in eyeFilters {
+                    let inputKeys = filt.inputKeys
+                    
+                    filt.setValue(retImage, forKey: kCIInputImageKey)
+                    
+                    if inputKeys.contains("inputCenter") {
+                        filt.setValue(CIVector(cgPoint: f.leftEyePosition), forKey: "inputCenter")
+                    }
+                    // could also manipualte the radius of the filter based on face size!
+                    retImage = filt.outputImage!
+                }
+            }
+            
+            //apply eye filters to right eye
+            if f.hasRightEyePosition {
+                for filt in eyeFilters {
+                    let inputKeys = filt.inputKeys
+                    
+                    filt.setValue(retImage, forKey: kCIInputImageKey)
+                    
+                    if inputKeys.contains("inputCenter") {
+                        filt.setValue(CIVector(cgPoint: f.rightEyePosition), forKey: "inputCenter")
+                    }
+                    // could also manipualte the radius of the filter based on face size!
+                    retImage = filt.outputImage!
+                }
+            }
+            
         }
         return retImage
     }
@@ -144,6 +209,7 @@ class ViewController: UIViewController   {
         // this ungodly mess makes sure the image is the correct orientation
         //let optsFace = [CIDetectorImageOrientation:self.videoManager.getImageOrientationFromUIOrientation(UIApplication.sharedApplication().statusBarOrientation)]
         let optsFace = [CIDetectorImageOrientation:self.videoManager.ciOrientation]
+        
         // get Face Features
         return self.detector.features(in: img, options: optsFace) as! [CIFaceFeature]
         
