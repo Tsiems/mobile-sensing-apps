@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import GLKit
 
-class HeartViewController: UIViewController {
+class HeartViewController: GLKViewController {
 
     //MARK: Class Properties
     var filters : [CIFilter]! = nil
     var videoManager:VideoAnalgesic! = nil
+    var BUFFER_SIZE = 200
+    lazy var graphHelper:SMUGraphHelper = SMUGraphHelper(controller: self,
+                                                    preferredFramesPerSecond: 10,
+                                                    numGraphs: 1,
+                                                    plotStyle: PlotStyleSeparated,
+                                                    maxPointsPerGraph: 200)
     let pinchFilterIndex = 2
     var detector:CIDetector! = nil
     let bridge = OpenCVBridgeSub()
@@ -30,7 +37,7 @@ class HeartViewController: UIViewController {
         self.setupFilters()
         
         self.videoManager = VideoAnalgesic.sharedInstance
-        self.videoManager.setCameraPosition(AVCaptureDevicePosition.front)
+        self.videoManager.setCameraPosition(AVCaptureDevicePosition.back)
         self.videoManager.setPreset("AVCaptureSessionPresetMedium")
         
         // create dictionary for face detection
@@ -48,6 +55,9 @@ class HeartViewController: UIViewController {
             videoManager.start()
         }
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.toggleButton(notification:)), name: NSNotification.Name(rawValue: "toggleOn"), object: nil)
+        
+        // setup graphHelper
+        self.graphHelper.setScreenBoundsBottomHalf()
         
     }
     
@@ -86,6 +96,15 @@ class HeartViewController: UIViewController {
         
         
         return retImage
+    }
+    
+    func update() {
+        let data = self.bridge.getRed()
+        self.graphHelper.setGraphData(data, withDataLength: 200, forGraphIndex: 0, withNormalization: 1500, withZeroValue: 0)
+    }
+    
+    override func glkView(_ view: GLKView, drawIn rect: CGRect) {
+        self.graphHelper.draw()
     }
     
     //MARK: Setup filtering

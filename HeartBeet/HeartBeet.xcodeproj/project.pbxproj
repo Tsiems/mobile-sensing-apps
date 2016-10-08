@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B41EBFCB1DA96441003FB9F2 /* SMUGraphHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = B41EBFCA1DA96441003FB9F2 /* SMUGraphHelper.mm */; };
 		B4725F521DA82D73001FA899 /* HeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4725F511DA82D73001FA899 /* HeartViewController.swift */; };
 		B650B31B1D8340F0000114A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650B31A1D8340F0000114A1 /* AppDelegate.swift */; };
 		B650B31D1D8340F0000114A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650B31C1D8340F0000114A1 /* ViewController.swift */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B41EBFC91DA96441003FB9F2 /* SMUGraphHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMUGraphHelper.h; path = HeartBeet/SMUGraphHelper.h; sourceTree = SOURCE_ROOT; };
+		B41EBFCA1DA96441003FB9F2 /* SMUGraphHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SMUGraphHelper.mm; path = HeartBeet/SMUGraphHelper.mm; sourceTree = SOURCE_ROOT; };
 		B4725F4B1DA81AA7001FA899 /* HeartBeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartBeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4725F4C1DA81AA7001FA899 /* HeartBeetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartBeetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4725F4D1DA81AA7001FA899 /* HeartBeetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeartBeetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +119,8 @@
 				F35D3BCE1DA5B916003FBB1A /* OpenCVBridgeSub.h */,
 				F35D3BCF1DA5B916003FBB1A /* OpenCVBridgeSub.mm */,
 				F35D3BD01DA5B916003FBB1A /* PrefixHeader.pch */,
+				B41EBFC91DA96441003FB9F2 /* SMUGraphHelper.h */,
+				B41EBFCA1DA96441003FB9F2 /* SMUGraphHelper.mm */,
 				B6E657981D95AA4500E75C60 /* VideoAnalgesic.swift */,
 				B67B72B91D996ADE008EDDE1 /* OpenCVBridge.hh */,
 				B67B72BA1D996ADE008EDDE1 /* OpenCVBridge.mm */,
@@ -263,6 +268,7 @@
 				F35D3BD11DA5B916003FBB1A /* OpenCVBridgeSub.mm in Sources */,
 				B650B31D1D8340F0000114A1 /* ViewController.swift in Sources */,
 				B4725F521DA82D73001FA899 /* HeartViewController.swift in Sources */,
+				B41EBFCB1DA96441003FB9F2 /* SMUGraphHelper.mm in Sources */,
 				B650B31B1D8340F0000114A1 /* AppDelegate.swift in Sources */,
 				B67B72BB1D996ADE008EDDE1 /* OpenCVBridge.mm in Sources */,
 			);

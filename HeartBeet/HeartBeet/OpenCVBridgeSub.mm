@@ -57,6 +57,8 @@ using namespace cv;
     float avgGreen = avgPixelIntensity.val[1];
     float avgRed = avgPixelIntensity.val[2];
     
+    
+    
     if ((avgRed >= 160 && avgBlue < 40) && avgGreen < 40) {
         cv::putText(image, "FINGER!", cv::Point(50, 100), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"toggleOn" object:nil userInfo: @{@"toggleOn": @"On"}];
@@ -80,6 +82,10 @@ using namespace cv;
     cv::putText(image, text, cv::Point(50, 75), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
     self.image = image;
     
+}
+
+-(float*) getRed {
+    return self.averageReds;
 }
 
 @end

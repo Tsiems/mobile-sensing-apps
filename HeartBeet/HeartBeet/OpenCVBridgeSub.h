@@ -9,5 +9,5 @@
 #import "OpenCVBridge.hh"
 
 @interface OpenCVBridgeSub : OpenCVBridge
-
+-(float*) getRed;
 @end
