@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="upj-g4-Dpt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,10 +7,103 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Heart Beet-->
+        <scene sceneID="QKB-V9-lHc">
+            <objects>
+                <tableViewController id="0K8-DD-X9Y" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yAH-7N-CjU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="VzB-Mf-Pix">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="k7m-Ih-yUl">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k7m-Ih-yUl" id="AJg-dh-anx">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="FyF-0v-ivJ">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="83"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FyF-0v-ivJ" id="ANt-z6-Rpq">
+                                            <frame key="frameInset" width="375" height="82.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzx-Nk-D8g">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="centerY" secondItem="ANt-z6-Rpq" secondAttribute="centerY" id="0fW-ce-wma"/>
+                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="centerX" secondItem="ANt-z6-Rpq" secondAttribute="centerX" id="lR3-Yk-gKc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="SJT-J7-BDf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="InJ-4z-BG8">
+                                        <rect key="frame" x="0.0" y="191" width="375" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="InJ-4z-BG8" id="etg-X6-yX1">
+                                            <frame key="frameInset" width="375" height="84.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="928-lh-bEp">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="928-lh-bEp" firstAttribute="centerY" secondItem="etg-X6-yX1" secondAttribute="centerY" id="H0g-jy-MID"/>
+                                                <constraint firstItem="928-lh-bEp" firstAttribute="centerX" secondItem="etg-X6-yX1" secondAttribute="centerX" id="ONJ-RU-aMm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="eso-I9-5qY" kind="show" id="xmy-ku-s6y"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="0K8-DD-X9Y" id="kQK-Su-Dxw"/>
+                            <outlet property="delegate" destination="0K8-DD-X9Y" id="9Cw-eX-0He"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Heart Beet" id="NaA-Hf-iLd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fOF-Tt-B80" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330.39999999999998" y="393.55322338830587"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yvY-IM-EHd">
+            <objects>
+                <navigationController id="upj-g4-Dpt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QPs-fJ-UDZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0K8-DD-X9Y" kind="relationship" relationship="rootViewController" id="jqD-uz-oMS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zC0-ug-t20" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1284" y="394"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HeartBeet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -79,7 +172,58 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="606" y="430"/>
+            <point key="canvasLocation" x="636" y="-27"/>
+        </scene>
+        <!--Heart View Controller-->
+        <scene sceneID="RFz-61-edX">
+            <objects>
+                <viewController id="eso-I9-5qY" customClass="HeartViewController" customModule="HeartBeet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yGa-I8-utc"/>
+                        <viewControllerLayoutGuide type="bottom" id="fd9-oj-I6n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gta-DZ-8Zg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eQO-TO-zY3">
+                                <connections>
+                                    <action selector="setFlashLevel:" destination="eso-I9-5qY" eventType="valueChanged" id="Y6g-Zr-vRP"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJk-aL-XLJ">
+                                <state key="normal" title="Toggle Flash"/>
+                                <connections>
+                                    <action selector="flash:" destination="eso-I9-5qY" eventType="touchUpInside" id="c3m-JO-r1r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIq-df-XX2">
+                                <state key="normal" title="Toggle Camera"/>
+                                <connections>
+                                    <action selector="switchCamera:" destination="eso-I9-5qY" eventType="touchUpInside" id="o2n-rV-4bg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eQO-TO-zY3" secondAttribute="bottom" constant="20" symbolic="YES" id="9kD-DL-Wlr"/>
+                            <constraint firstItem="eQO-TO-zY3" firstAttribute="leading" secondItem="gta-DZ-8Zg" secondAttribute="leadingMargin" id="IEf-Zw-PEu"/>
+                            <constraint firstItem="LJk-aL-XLJ" firstAttribute="leading" secondItem="eQO-TO-zY3" secondAttribute="leading" id="L5B-FJ-MW2"/>
+                            <constraint firstItem="eQO-TO-zY3" firstAttribute="top" secondItem="mIq-df-XX2" secondAttribute="bottom" constant="8" symbolic="YES" id="PYO-nj-kwu"/>
+                            <constraint firstItem="mIq-df-XX2" firstAttribute="baseline" secondItem="LJk-aL-XLJ" secondAttribute="baseline" id="T0t-64-Nc9"/>
+                            <constraint firstItem="mIq-df-XX2" firstAttribute="trailing" secondItem="gta-DZ-8Zg" secondAttribute="trailingMargin" id="vfj-CM-IAb"/>
+                            <constraint firstItem="mIq-df-XX2" firstAttribute="trailing" secondItem="eQO-TO-zY3" secondAttribute="trailing" id="zse-CS-5DP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="mIq-df-XX2" id="dXf-x6-oiL"/>
+                        <outlet property="flashButton" destination="LJk-aL-XLJ" id="L2X-Oe-FUk"/>
+                        <outlet property="flashSlider" destination="eQO-TO-zY3" id="pyS-3u-F7a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ED-vi-EVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="680.5097451274363"/>
         </scene>
     </scenes>
 </document>

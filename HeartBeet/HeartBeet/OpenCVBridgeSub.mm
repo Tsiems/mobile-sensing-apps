@@ -12,6 +12,7 @@
 
 
 using namespace cv;
+#define SAMPLE_SIZE 200
 
 @interface OpenCVBridgeSub()
 @property (nonatomic) cv::Mat image;
@@ -28,9 +29,9 @@ using namespace cv;
     self = [super init];
     
     if(self != nil){
-        self.averageReds = new float[100];
-        self.averageBlues = new float[100];
-        self.averageGreens = new float[100];
+        self.averageReds = new float[SAMPLE_SIZE];
+        self.averageBlues = new float[SAMPLE_SIZE];
+        self.averageGreens = new float[SAMPLE_SIZE];
         self.arrayLoc = 0;
         
     }
@@ -60,13 +61,13 @@ using namespace cv;
         cv::putText(image, "FINGER!", cv::Point(50, 100), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"toggleOn" object:nil userInfo: @{@"toggleOn": @"On"}];
         
-        if (self.arrayLoc < 100) {
+        if (self.arrayLoc < SAMPLE_SIZE) {
             self.averageReds[self.arrayLoc] = avgRed;
             self.averageBlues[self.arrayLoc] = avgBlue;
             self.averageGreens[self.arrayLoc] = avgGreen;
             
             self.arrayLoc += 1;
-            if (self.arrayLoc >= 100) {
+            if (self.arrayLoc >= SAMPLE_SIZE) {
                 NSLog(@"Arrays Full");
             }
         }
@@ -76,7 +77,7 @@ using namespace cv;
     }
     
     sprintf(text,"Avg. B: %.0f, G: %.0f, R: %.0f", avgPixelIntensity.val[0],avgPixelIntensity.val[1],avgPixelIntensity.val[2]);
-    cv::putText(image, text, cv::Point(50, 50), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
+    cv::putText(image, text, cv::Point(50, 75), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
     self.image = image;
     
 }
