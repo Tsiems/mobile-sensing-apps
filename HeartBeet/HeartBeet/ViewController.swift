@@ -8,12 +8,14 @@
 
 import UIKit
 import AVFoundation
+import QuartzCore
 
 class ViewController: UIViewController   {
 
     //MARK: Class Properties
     var filters : [CIFilter]! = nil
     var eyeFilters : [CIFilter]! = nil
+    var mouthFilters : [CIFilter]! = nil
     var videoManager:VideoAnalgesic! = nil
     let pinchFilterIndex = 2
     var detector:CIDetector! = nil
@@ -33,6 +35,8 @@ class ViewController: UIViewController   {
         self.view.backgroundColor = nil
         self.setupFilters()
         self.setupEyeFilters()
+        self.setupMouthFilters()
+        
         
         self.videoManager = VideoAnalgesic.sharedInstance
         self.videoManager.setCameraPosition(AVCaptureDevicePosition.front)
@@ -135,25 +139,80 @@ class ViewController: UIViewController   {
     func setupEyeFilters(){
         eyeFilters = []
         
-//        let filterLens = CIFilter(name:"CITorusLensDistortion")!
-//        filterLens.setValue(30, forKey: "inputRadius")
-//        filterLens.setValue(1.4, forKey: "inputRefraction")
-//        filterLens.setValue(15, forKey: "inputWidth")
-//        eyeFilters.append(filterLens)
-        
         
         let filterTwirl = CIFilter(name:"CITwirlDistortion")!
         filterTwirl.setValue(30, forKey: "inputRadius")
         filterTwirl.setValue(2.0, forKey: "inputAngle")
+        
         eyeFilters.append(filterTwirl)
     }
+    
+    func setupMouthFilters(){
+        mouthFilters = []
+        
+        let filterPinch = CIFilter(name:"CIBumpDistortion")!
+        filterPinch.setValue(0.5, forKey: "inputScale")
+        filterPinch.setValue(60, forKey: "inputRadius")
+        mouthFilters.append(filterPinch)
+        
+    }
+    
+    
     
     //MARK: Apply filters and apply feature detectors
     func applyFiltersToFaces(_ inputImage:CIImage,features:[CIFaceFeature])->CIImage{
         var retImage = inputImage
         var filterCenter = CGPoint()
         
+        
+        
+        
+//        let ciImageSize = retImage.extent.size
+//        var transform = CGAffineTransform(scaleX: 1, y: -1)
+//        transform = transform.translatedBy(x: 0, y: -ciImageSize.height)
+        
         for f in features {
+            
+            
+            if f.hasSmile {
+                let filt = CIFilter(name:"CIBloom")!
+                filt.setValue(0.7, forKey: "inputIntensity")
+                filt.setValue(retImage, forKey: kCIInputImageKey)
+                retImage = filt.outputImage!
+            }
+            
+            // Apply the transform to convert the coordinates
+//            var faceViewBounds = f.bounds.applying(transform)
+//            
+//            let faceView = UIView(frame:faceViewBounds)
+//            
+//            faceView.backgroundColor = UIColor.blue
+//            self.view.addSubview(faceView)
+//
+//            let context = CIContext()
+//            let cgImg = context.createCGImage(retImage, from: retImage.extent)
+        
+            
+            
+            // Calculate the actual position and size of the rectangle in the image view
+//            let viewSize = self.view.bounds.size
+//            let scale = min(viewSize.width / ciImageSize.width,
+//                            viewSize.height / ciImageSize.height)
+//            let offsetX = (viewSize.width - ciImageSize.width * scale) / 2
+//            let offsetY = (viewSize.height - ciImageSize.height * scale) / 2
+//            
+//            faceViewBounds = faceViewBounds.applying(CGAffineTransform(scaleX: scale, y: scale))
+//            faceViewBounds.origin.x += offsetX
+//            faceViewBounds.origin.y += offsetY
+//            
+//            let faceBox = UIView(frame: faceViewBounds)
+//            
+//            faceBox.layer.borderWidth = 3
+//            faceBox.layer.borderColor = UIColor.red.cgColor
+//            faceBox.backgroundColor = UIColor.clear
+//            self.view.addSubview(faceBox)
+//
+//            retImage.
             //set where to apply filter
             filterCenter.x = f.bounds.midX
             filterCenter.y = f.bounds.midY
@@ -165,6 +224,8 @@ class ViewController: UIViewController   {
                 
                 filt.setValue(retImage, forKey: kCIInputImageKey)
                 
+                
+                
                 if inputKeys.contains("inputCenter") {
                     filt.setValue(CIVector(cgPoint: filterCenter), forKey: "inputCenter")
                 }
@@ -172,32 +233,101 @@ class ViewController: UIViewController   {
                 retImage = filt.outputImage!
             }
             
+            
             //apply eye filters to left eye
             if f.hasLeftEyePosition {
-                for filt in eyeFilters {
-                    let inputKeys = filt.inputKeys
-                    
-                    filt.setValue(retImage, forKey: kCIInputImageKey)
-                    
-                    if inputKeys.contains("inputCenter") {
-                        filt.setValue(CIVector(cgPoint: f.leftEyePosition), forKey: "inputCenter")
-                    }
-                    // could also manipualte the radius of the filter based on face size!
-                    retImage = filt.outputImage!
+                
+                //circle left eye if it's closed
+                if f.leftEyeClosed {
+                    let filterLens = CIFilter(name:"CITorusLensDistortion")!
+                    filterLens.setValue(f.bounds.width/8, forKey: "inputRadius")
+                    filterLens.setValue(0.5, forKey: "inputRefraction")
+                    filterLens.setValue(f.bounds.width/16, forKey: "inputWidth")
+                    filterLens.setValue(CIVector(cgPoint: f.leftEyePosition), forKey: "inputCenter")
+                    filterLens.setValue(retImage, forKey: kCIInputImageKey)
+                    retImage = filterLens.outputImage!
                 }
+                else if f.hasSmile {
+                    // do nothing
+                }
+                else {
+                    for filt in eyeFilters {
+                        let inputKeys = filt.inputKeys
+                        
+                        filt.setValue(retImage, forKey: kCIInputImageKey)
+                        
+                        
+                        if inputKeys.contains("inputCenter") {
+                            filt.setValue(CIVector(cgPoint: f.leftEyePosition), forKey: "inputCenter")
+                        }
+                        
+                        // could also manipualte the radius of the filter based on face size!
+                        if inputKeys.contains("inputRadius") {
+                            if f.hasRightEyePosition {
+                                filt.setValue(f.bounds.width/8, forKey: "inputRadius")
+                            }
+                        }
+                        
+                        retImage = filt.outputImage!
+                    }
+                }
+                
             }
             
             //apply eye filters to right eye
             if f.hasRightEyePosition {
-                for filt in eyeFilters {
+                
+                //circle right eye if it's closed
+                if f.rightEyeClosed {
+                    let filterLens = CIFilter(name:"CITorusLensDistortion")!
+                    filterLens.setValue(f.bounds.width/8, forKey: "inputRadius")
+                    filterLens.setValue(0.5, forKey: "inputRefraction")
+                    filterLens.setValue(f.bounds.width/16, forKey: "inputWidth")
+                    filterLens.setValue(CIVector(cgPoint: f.rightEyePosition), forKey: "inputCenter")
+                    filterLens.setValue(retImage, forKey: kCIInputImageKey)
+                    retImage = filterLens.outputImage!
+                }
+                else if f.hasSmile {
+                    // do nothing
+                }
+                else {
+                    for filt in eyeFilters {
+                        let inputKeys = filt.inputKeys
+                        
+                        filt.setValue(retImage, forKey: kCIInputImageKey)
+                        
+                        if inputKeys.contains("inputCenter") {
+                            filt.setValue(CIVector(cgPoint: f.rightEyePosition), forKey: "inputCenter")
+                        }
+                        // could also manipualte the radius of the filter based on face size!
+                        if inputKeys.contains("inputRadius") {
+                            if f.hasLeftEyePosition {
+                                filt.setValue(f.bounds.width/8, forKey: "inputRadius")
+                            }
+                        }
+                        retImage = filt.outputImage!
+                    }
+                }
+                
+                
+            }
+            
+            //apply mouth filters
+            if f.hasMouthPosition {
+                for filt in mouthFilters {
                     let inputKeys = filt.inputKeys
                     
                     filt.setValue(retImage, forKey: kCIInputImageKey)
                     
                     if inputKeys.contains("inputCenter") {
-                        filt.setValue(CIVector(cgPoint: f.rightEyePosition), forKey: "inputCenter")
+                        filt.setValue(CIVector(cgPoint: f.mouthPosition), forKey: "inputCenter")
                     }
                     // could also manipualte the radius of the filter based on face size!
+                    if inputKeys.contains("inputRadius") {
+                        if f.hasLeftEyePosition {
+                            filt.setValue(f.bounds.width/4, forKey: "inputRadius")
+                        }
+                    }
                     retImage = filt.outputImage!
                 }
             }
@@ -209,7 +339,7 @@ class ViewController: UIViewController   {
     func getFaces(_ img:CIImage) -> [CIFaceFeature]{
         // this ungodly mess makes sure the image is the correct orientation
         //let optsFace = [CIDetectorImageOrientation:self.videoManager.getImageOrientationFromUIOrientation(UIApplication.sharedApplication().statusBarOrientation)]
-        let optsFace = [CIDetectorImageOrientation:self.videoManager.ciOrientation]
+        let optsFace = [CIDetectorImageOrientation:self.videoManager.ciOrientation, CIDetectorSmile:true,CIDetectorEyeBlink:true] as [String : Any]
         
         // get Face Features
         return self.detector.features(in: img, options: optsFace) as! [CIFaceFeature]
