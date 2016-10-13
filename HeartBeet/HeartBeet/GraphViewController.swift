@@ -21,6 +21,7 @@ class GraphViewController: GLKViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         
         self.graphHelper.setScreenBoundsBottomHalf()
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateBridge(notification:)), name: NSNotification.Name(rawValue: "bridge"), object: nil)
@@ -37,6 +38,7 @@ class GraphViewController: GLKViewController {
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
         self.graphHelper.draw()
+        glClearColor(0, 0, 0, 0);
     }
 
     override func didReceiveMemoryWarning() {
