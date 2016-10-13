@@ -17,6 +17,9 @@
 @property (nonatomic) NSInteger processType;
 
 
+// set face features
+-(void) setFeatures:(CIFaceFeature *)features;
+
 // set the image for processing later
 -(void) setImage:(CIImage*)ciFrameImage
       withBounds:(CGRect)rect

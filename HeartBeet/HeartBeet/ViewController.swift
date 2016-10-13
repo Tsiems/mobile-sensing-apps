@@ -85,7 +85,7 @@ class ViewController: UIViewController   {
         
         
         // if no faces, just return original image
-        // if f.count == 0 { return inputImage }
+        if f.count == 0 { return inputImage }
         
         var retImage = inputImage
         
@@ -105,17 +105,24 @@ class ViewController: UIViewController   {
         
         //HINT: you can also send in the bounds of the face to ONLY process the face in OpenCV
         // or any bounds to only process a certain bounding region in OpenCV
-        self.bridge.setTransforms(self.videoManager.transform)
-        self.bridge.setImage(retImage,
-                             withBounds: retImage.extent,
-                             andContext: self.videoManager.getCIContext())
-        
-        self.bridge.processImage()
-        retImage = self.bridge.getImageComposite() // get back opencv processed part of the image (overlayed on original)
         
         
         
-        retImage = applyFiltersToFaces(retImage, features: f)
+        if self.bridge.processType == 0 {
+            retImage = applyFiltersToFaces(retImage, features: f)
+        }
+        else {
+            self.bridge.setTransforms(self.videoManager.transform)
+            
+            for face in f {
+                self.bridge.setImage(retImage,
+                                     withBounds: face.bounds,
+                                     andContext: self.videoManager.getCIContext())
+                self.bridge.setFeatures(face)
+                self.bridge.processImage()
+                retImage = self.bridge.getImageComposite() // get back opencv processed part of the image (overlayed on original)
+            }
+        }
         
         
         
@@ -238,7 +245,10 @@ class ViewController: UIViewController   {
             if f.hasLeftEyePosition {
                 
                 //circle left eye if it's closed
-                if f.leftEyeClosed {
+                if f.hasSmile {
+                    // do nothing
+                }
+                else if f.leftEyeClosed {
                     let filterLens = CIFilter(name:"CITorusLensDistortion")!
                     filterLens.setValue(f.bounds.width/8, forKey: "inputRadius")
                     filterLens.setValue(0.5, forKey: "inputRefraction")
@@ -246,9 +256,6 @@ class ViewController: UIViewController   {
                     filterLens.setValue(CIVector(cgPoint: f.leftEyePosition), forKey: "inputCenter")
                     filterLens.setValue(retImage, forKey: kCIInputImageKey)
                     retImage = filterLens.outputImage!
-                }
-                else if f.hasSmile {
-                    // do nothing
                 }
                 else {
                     for filt in eyeFilters {
@@ -277,8 +284,11 @@ class ViewController: UIViewController   {
             //apply eye filters to right eye
             if f.hasRightEyePosition {
                 
+                if f.hasSmile {
+                    // do nothing
+                }
                 //circle right eye if it's closed
-                if f.rightEyeClosed {
+                else if f.rightEyeClosed {
                     let filterLens = CIFilter(name:"CITorusLensDistortion")!
                     filterLens.setValue(f.bounds.width/8, forKey: "inputRadius")
                     filterLens.setValue(0.5, forKey: "inputRefraction")
@@ -286,9 +296,6 @@ class ViewController: UIViewController   {
                     filterLens.setValue(CIVector(cgPoint: f.rightEyePosition), forKey: "inputCenter")
                     filterLens.setValue(retImage, forKey: kCIInputImageKey)
                     retImage = filterLens.outputImage!
-                }
-                else if f.hasSmile {
-                    // do nothing
                 }
                 else {
                     for filt in eyeFilters {
