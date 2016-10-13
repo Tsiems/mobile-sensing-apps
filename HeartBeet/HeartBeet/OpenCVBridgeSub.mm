@@ -19,6 +19,7 @@ using namespace cv;
 @property float* averageReds;
 @property float* averageBlues;
 @property float* averageGreens;
+@property (strong, nonatomic) CircularBuffer *averageRedBuffer;
 @property int arrayLoc;
 @end
 
@@ -37,6 +38,14 @@ using namespace cv;
     }
     return self;
 }
+
+-(CircularBuffer*)averageRedBuffer{
+    if(!_averageRedBuffer){
+        _averageRedBuffer = [[CircularBuffer alloc]initWithNumChannels:1 andBufferSize:SAMPLE_SIZE];
+    }
+    return _averageRedBuffer;
+}
+
 
 -(void) processImage {
 //    framerate logging
@@ -68,9 +77,12 @@ using namespace cv;
             self.averageBlues[self.arrayLoc] = avgBlue;
             self.averageGreens[self.arrayLoc] = avgGreen;
             
+            [self.averageRedBuffer addNewFloatData:&avgRed withNumSamples:SAMPLE_SIZE];
+
             self.arrayLoc += 1;
             if (self.arrayLoc >= SAMPLE_SIZE) {
                 NSLog(@"Arrays Full");
+                self.arrayLoc = 0;
             }
         }
         
@@ -82,6 +94,10 @@ using namespace cv;
     cv::putText(image, text, cv::Point(50, 75), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
     self.image = image;
     
+}
+
+-(CircularBuffer*) getRedBuffer {
+    return self.averageRedBuffer;
 }
 
 -(float*) getRed {

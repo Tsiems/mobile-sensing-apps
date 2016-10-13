@@ -7,7 +7,9 @@
 //
 
 #import "OpenCVBridge.hh"
+#import "CircularBuffer.h"
 
 @interface OpenCVBridgeSub : OpenCVBridge
+-(CircularBuffer*) getRedBuffer;
 -(float*) getRed;
 @end

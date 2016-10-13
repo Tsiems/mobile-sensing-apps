@@ -11,18 +11,20 @@ import GLKit
 
 class HeartViewController: GLKViewController {
 
+    @IBOutlet weak var graph: UIView!
     //MARK: Class Properties
     var filters : [CIFilter]! = nil
     var videoManager:VideoAnalgesic! = nil
     var BUFFER_SIZE = 200
-    lazy var graphHelper:SMUGraphHelper = SMUGraphHelper(controller: self,
-                                                    preferredFramesPerSecond: 10,
-                                                    numGraphs: 1,
-                                                    plotStyle: PlotStyleSeparated,
-                                                    maxPointsPerGraph: 200)
+//    lazy var graphHelper:SMUGraphHelper = SMUGraphHelper(controller: self,
+//                                                    preferredFramesPerSecond: 10,
+//                                                    numGraphs: 1,
+//                                                    plotStyle: PlotStyleSeparated,
+//                                                    maxPointsPerGraph: 200)
     let pinchFilterIndex = 2
     var detector:CIDetector! = nil
     let bridge = OpenCVBridgeSub()
+    var displayGraph = false
     
     //MARK: Outlets in view
     @IBOutlet weak var flashSlider: UISlider!
@@ -56,8 +58,7 @@ class HeartViewController: GLKViewController {
         }
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.toggleButton(notification:)), name: NSNotification.Name(rawValue: "toggleOn"), object: nil)
         
-        // setup graphHelper
-        self.graphHelper.setScreenBoundsBottomHalf()
+        self.graph.isHidden = true
         
     }
     
@@ -78,6 +79,20 @@ class HeartViewController: GLKViewController {
         }
     }
     
+    @IBAction func displayGraphButtonAction(_ sender: AnyObject) {
+        toggleGraphDisplay()
+    }
+    func toggleGraphDisplay() {
+        if self.displayGraph == false {
+            self.graph.isHidden = false
+            self.displayGraph = true
+        } else {
+            self.graph.isHidden = true
+            self.displayGraph = false
+        }
+    }
+    
+    
     //MARK: Process image output
     func processImage(_ inputImage:CIImage) -> CIImage{
         
@@ -94,17 +109,8 @@ class HeartViewController: GLKViewController {
         self.bridge.processImage()
         retImage = self.bridge.getImageComposite() // get back opencv processed part of the image (overlayed on original)
         
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "bridge"), object: nil, userInfo: ["bridge": self.bridge])
         return retImage
-    }
-    
-    func update() {
-        let data = self.bridge.getRed()
-        self.graphHelper.setGraphData(data, withDataLength: 200, forGraphIndex: 0, withNormalization: 1500, withZeroValue: 0)
-    }
-    
-    override func glkView(_ view: GLKView, drawIn rect: CGRect) {
-        self.graphHelper.draw()
     }
     
     //MARK: Setup filtering
