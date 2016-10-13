@@ -22,14 +22,17 @@ class GraphViewController: GLKViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.graphHelper.setScreenBoundsTopHalf()
+        self.graphHelper.setScreenBoundsBottomHalf()
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateBridge(notification:)), name: NSNotification.Name(rawValue: "bridge"), object: nil)
         // Do any additional setup after loading the view.
     }
     
     func update() {
-        let data = self.bridge.getRed()
-        self.graphHelper.setGraphData(data, withDataLength: 200, forGraphIndex: 0, withNormalization: 1500, withZeroValue: 0)
+        let buffer = self.bridge.getRed()
+//        let data = UnsafeMutablePointer<Float>.allocate(capacity: MemoryLayout<Float>.size*200)
+//        buffer?.fetchFreshData(data, withNumSamples: 200)
+        self.graphHelper.setGraphData(buffer, withDataLength: 200, forGraphIndex: 0, withNormalization: 50, withZeroValue: 250)
+//        data.deallocate(capacity: MemoryLayout<Float>.size*200)
     }
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
