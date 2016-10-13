@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="upj-g4-Dpt">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="upj-g4-Dpt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -203,15 +203,35 @@
                                     <action selector="switchCamera:" destination="eso-I9-5qY" eventType="touchUpInside" id="o2n-rV-4bg"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9u-TX-ZR2">
+                                <connections>
+                                    <segue destination="Lug-pe-U0p" kind="embed" id="V9Z-6K-Yqr"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZ6-5P-jQJ">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Display Graph">
+                                    <color key="titleColor" red="0.8541227669" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="displayGraphButtonAction:" destination="eso-I9-5qY" eventType="touchUpInside" id="JOL-0w-IQb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="eQO-TO-zY3" secondAttribute="bottom" constant="20" symbolic="YES" id="9kD-DL-Wlr"/>
                             <constraint firstItem="eQO-TO-zY3" firstAttribute="leading" secondItem="gta-DZ-8Zg" secondAttribute="leadingMargin" id="IEf-Zw-PEu"/>
+                            <constraint firstItem="Y9u-TX-ZR2" firstAttribute="top" secondItem="yGa-I8-utc" secondAttribute="bottom" constant="34" id="KgR-7L-HOp"/>
+                            <constraint firstItem="MZ6-5P-jQJ" firstAttribute="centerX" secondItem="gta-DZ-8Zg" secondAttribute="centerX" id="KrK-7V-Vyd"/>
                             <constraint firstItem="LJk-aL-XLJ" firstAttribute="leading" secondItem="eQO-TO-zY3" secondAttribute="leading" id="L5B-FJ-MW2"/>
                             <constraint firstItem="eQO-TO-zY3" firstAttribute="top" secondItem="mIq-df-XX2" secondAttribute="bottom" constant="8" symbolic="YES" id="PYO-nj-kwu"/>
                             <constraint firstItem="mIq-df-XX2" firstAttribute="baseline" secondItem="LJk-aL-XLJ" secondAttribute="baseline" id="T0t-64-Nc9"/>
+                            <constraint firstItem="MZ6-5P-jQJ" firstAttribute="centerY" secondItem="gta-DZ-8Zg" secondAttribute="centerY" id="U8A-De-1xF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y9u-TX-ZR2" secondAttribute="trailing" constant="10" id="VD6-3r-C09"/>
                             <constraint firstItem="mIq-df-XX2" firstAttribute="trailing" secondItem="gta-DZ-8Zg" secondAttribute="trailingMargin" id="vfj-CM-IAb"/>
+                            <constraint firstItem="mIq-df-XX2" firstAttribute="top" secondItem="Y9u-TX-ZR2" secondAttribute="bottom" constant="50" id="zd7-YX-r0n"/>
+                            <constraint firstItem="Y9u-TX-ZR2" firstAttribute="leading" secondItem="gta-DZ-8Zg" secondAttribute="leadingMargin" constant="10" id="zfQ-TK-Nss"/>
                             <constraint firstItem="mIq-df-XX2" firstAttribute="trailing" secondItem="eQO-TO-zY3" secondAttribute="trailing" id="zse-CS-5DP"/>
                         </constraints>
                     </view>
@@ -219,11 +239,26 @@
                         <outlet property="cameraButton" destination="mIq-df-XX2" id="dXf-x6-oiL"/>
                         <outlet property="flashButton" destination="LJk-aL-XLJ" id="L2X-Oe-FUk"/>
                         <outlet property="flashSlider" destination="eQO-TO-zY3" id="pyS-3u-F7a"/>
+                        <outlet property="graph" destination="Y9u-TX-ZR2" id="9EX-Ah-T76"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ED-vi-EVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="636" y="680.5097451274363"/>
+        </scene>
+        <!--Graph View Controller-->
+        <scene sceneID="LSW-em-cAw">
+            <objects>
+                <viewController id="Lug-pe-U0p" customClass="GraphViewController" customModule="HeartBeet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hcg-mu-uth" customClass="GLKView">
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="431"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4I5-hW-N60" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1388" y="688"/>
         </scene>
     </scenes>
 </document>

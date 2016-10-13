@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5CAEC87F1DAEFBB5008D4889 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAEC87E1DAEFBB5008D4889 /* GraphViewController.swift */; };
 		B41EBFCB1DA96441003FB9F2 /* SMUGraphHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = B41EBFCA1DA96441003FB9F2 /* SMUGraphHelper.mm */; };
 		B4725F521DA82D73001FA899 /* HeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4725F511DA82D73001FA899 /* HeartViewController.swift */; };
 		B650B31B1D8340F0000114A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650B31A1D8340F0000114A1 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5CAEC87E1DAEFBB5008D4889 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		B41EBFC91DA96441003FB9F2 /* SMUGraphHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMUGraphHelper.h; path = HeartBeet/SMUGraphHelper.h; sourceTree = SOURCE_ROOT; };
 		B41EBFCA1DA96441003FB9F2 /* SMUGraphHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SMUGraphHelper.mm; path = HeartBeet/SMUGraphHelper.mm; sourceTree = SOURCE_ROOT; };
 		B4725F4B1DA81AA7001FA899 /* HeartBeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeartBeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 				B650B31A1D8340F0000114A1 /* AppDelegate.swift */,
 				B650B31C1D8340F0000114A1 /* ViewController.swift */,
 				B650B31E1D8340F0000114A1 /* Main.storyboard */,
+				5CAEC87E1DAEFBB5008D4889 /* GraphViewController.swift */,
 				B650B3211D8340F0000114A1 /* Assets.xcassets */,
 				B650B3231D8340F0000114A1 /* LaunchScreen.storyboard */,
 				B650B3261D8340F0000114A1 /* Info.plist */,
@@ -197,7 +200,7 @@
 				TargetAttributes = {
 					B650B3161D8340F0000114A1 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = F69WJ27LN4;
+						DevelopmentTeam = 26Y78VEH49;
 						LastSwiftMigration = 0810;
 					};
 					B650B32A1D8340F0000114A1 = {
@@ -269,6 +272,7 @@
 				B650B31D1D8340F0000114A1 /* ViewController.swift in Sources */,
 				B4725F521DA82D73001FA899 /* HeartViewController.swift in Sources */,
 				B41EBFCB1DA96441003FB9F2 /* SMUGraphHelper.mm in Sources */,
+				5CAEC87F1DAEFBB5008D4889 /* GraphViewController.swift in Sources */,
 				B650B31B1D8340F0000114A1 /* AppDelegate.swift in Sources */,
 				B67B72BB1D996ADE008EDDE1 /* OpenCVBridge.mm in Sources */,
 			);
@@ -416,7 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,7 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
