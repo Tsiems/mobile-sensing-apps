@@ -10,6 +10,21 @@ import UIKit
 import AVFoundation
 import QuartzCore
 
+extension String {
+    func image(withWidth w: CGFloat) -> UIImage {
+        let size = CGSize(width: w+10, height: w+10)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0);
+//        UIColor.white.set()
+        let rect = CGRect(origin: CGPoint.zero, size: size)
+//        UIRectFill(CGRect(origin: CGPoint.zero, size: size))
+        (self as NSString).draw(in: rect, withAttributes: [NSFontAttributeName: UIFont.systemFont(ofSize: w)])
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+}
+
+
 class ViewController: UIViewController   {
 
     //MARK: Class Properties
@@ -107,11 +122,44 @@ class ViewController: UIViewController   {
         // or any bounds to only process a certain bounding region in OpenCV
         
         
-        
-        if self.bridge.processType == 0 {
+        switch self.bridge.processType {
+        case 2:
             retImage = applyFiltersToFaces(retImage, features: f)
-        }
-        else {
+            break
+        case 1:
+            for face in f {
+                
+                //determine which emoji to display based on facial expression (eyes closed/smile)
+                var emoji = "😐"
+                
+                if face.hasSmile && face.leftEyeClosed && face.rightEyeClosed {
+                    emoji = "😆"
+                }
+                else if face.leftEyeClosed && face.rightEyeClosed {
+                    emoji = "😣"
+                }
+                else if face.hasSmile {
+                    emoji = "😁"
+                }
+                
+                
+                
+                //create the emoji image and rotate it to form correctly
+                var emojiImage = CIImage(image: emoji.image(withWidth: face.bounds.size.width/2))!
+                let rotateFilt = CIFilter(name: "CIStraightenFilter", withInputParameters: ["inputImage":emojiImage,"inputAngle":1.57])!
+                emojiImage = rotateFilt.outputImage!
+                
+                //make a composite filter to overlay the emoji over the original image
+                let compositeFilt = CIFilter(name:"CISourceAtopCompositing")!
+                let faceLocTransform = CGAffineTransform(translationX: face.bounds.origin.x-20, y: face.bounds.origin.y-5);
+                compositeFilt.setValue(emojiImage.applying(faceLocTransform),forKey: "inputImage")
+                compositeFilt.setValue(retImage, forKey: "inputBackgroundImage")
+                
+                //set the image the composite
+                retImage = compositeFilt.outputImage!
+            }
+            break
+        default:
             self.bridge.setTransforms(self.videoManager.transform)
             
             for face in f {
@@ -122,6 +170,7 @@ class ViewController: UIViewController   {
                 self.bridge.processImage()
                 retImage = self.bridge.getImageComposite() // get back opencv processed part of the image (overlayed on original)
             }
+            break
         }
         
         
