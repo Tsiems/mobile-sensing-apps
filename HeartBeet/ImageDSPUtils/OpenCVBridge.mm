@@ -13,6 +13,7 @@ using namespace cv;
 
 @interface OpenCVBridge()
 @property (nonatomic) cv::Mat image;
+@property (nonatomic) CIFaceFeature * features;
 @property (strong,nonatomic) CIImage* frameInput;
 @property (nonatomic) CGRect bounds;
 @property (nonatomic) CGAffineTransform transform;
@@ -41,12 +42,45 @@ using namespace cv;
     switch (self.processType) {
         case 1:
         {
+            if(_features.hasLeftEyePosition) {
+//                NSLog(@"BOUNDS (%f,%f)  size: (%f,%f) ",_bounds.origin.x,_bounds.origin.y,_bounds.size.height,_bounds.size.width);
+//                NSLog(@"BEFORE (%f,%f)",_features.leftEyePosition.x,_features.leftEyePosition.y);
+////                CGPoint pnt = CGPointApplyAffineTransform(_features.leftEyePosition, _transform);
+//                
+////                CGPoint pnt = CGPoint(_features.leftEyePosition.x,_features.leftEyePosition.y);
+                
+                float x = _features.leftEyePosition.y-_bounds.origin.x;
+                float y = _features.leftEyePosition.x+_bounds.origin.y+_bounds.size.height;
+                
+
+                cv::circle(_image, cv::Point(x,y), _bounds.size.height/8, Scalar(255,255,255,150),-1);
+                cv::circle(_image, cv::Point(x+_bounds.size.height/16,y-_bounds.size.height/16), _bounds.size.height/16, Scalar(0,0,0,150),-1);
+            }
+            if(_features.hasRightEyePosition) {
+                float x = _features.rightEyePosition.y-_bounds.origin.x;
+                float y = _features.rightEyePosition.x+_bounds.origin.y+_bounds.size.height;
+                
+                cv::circle(_image, cv::Point(x,y), _bounds.size.height/8, Scalar(255,255,255,150),-1);
+                cv::circle(_image, cv::Point(x+_bounds.size.height/16,y-_bounds.size.height/16), _bounds.size.height/16, Scalar(0,0,0,150),-1);
+            }
+            if(_features.hasMouthPosition) {
+                float x = _features.mouthPosition.y-_bounds.origin.x;
+                float y = _features.mouthPosition.x+_bounds.origin.y+_bounds.size.height;
+                
+                cv::circle(_image, cv::Point(x,y), _bounds.size.height/5, Scalar(100,200,200,150));
+            }
+            
+            
+            break;
+        }
+        case 2:
+        {
             cvtColor( _image, frame_gray, CV_BGR2GRAY );
             bitwise_not(frame_gray, _image);
             return;
             break;
         }
-        case 2:
+        case 3:
         {
             static uint counter = 0;
             cvtColor(_image, image_copy, CV_BGRA2BGR);
@@ -68,7 +102,7 @@ using namespace cv;
             counter = counter>50 ? 0 : counter;
             break;
         }
-        case 3:
+        case 4:
         { // fine, adding scoping to case statements to get rid of jump errors
             char text[50];
             Scalar avgPixelIntensity;
@@ -79,7 +113,7 @@ using namespace cv;
             cv::putText(_image, text, cv::Point(0, 10), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
             break;
         }
-        case 4:
+        case 5:
         {
             vector<Mat> layers;
             cvtColor(_image, image_copy, CV_BGRA2BGR);
@@ -98,7 +132,7 @@ using namespace cv;
             cvtColor(image_copy, _image, CV_BGR2BGRA);
             break;
         }
-        case 5:
+        case 6:
         {
             //============================================
             //threshold the image using the utsu method (optimal histogram point)
@@ -107,7 +141,7 @@ using namespace cv;
             cvtColor(image_copy, _image, CV_GRAY2BGRA); //add back for display
             break;
         }
-        case 6:
+        case 7:
         {
             //============================================
             //do some blurring (filtering)
@@ -117,7 +151,7 @@ using namespace cv;
             cvtColor(image_copy, _image, CV_BGR2BGRA);
             break;
         }
-        case 7:
+        case 8:
         {
             //============================================
             // canny edge detector
@@ -134,7 +168,7 @@ using namespace cv;
             cvtColor(_image, _image, CV_GRAY2BGRA); //add back for display
             break;
         }
-        case 8:
+        case 9:
         {
             //============================================
             // contour detector with rectangle bounding
@@ -162,7 +196,7 @@ using namespace cv;
             break;
             
         }
-        case 9:
+        case 10:
         {
             //============================================
             // contour detector with full bounds drawing
@@ -194,7 +228,7 @@ using namespace cv;
             }
             break;
         }
-        case 10:
+        case 11:
         {
             /// Convert it to gray
             cvtColor( _image, image_copy, CV_BGRA2GRAY );
@@ -225,7 +259,7 @@ using namespace cv;
             }
             break;
         }
-        case 11:
+        case 12:
         {
             // example for running Haar cascades
             //============================================
@@ -284,7 +318,9 @@ using namespace cv;
 // code manipulated from
 // http://stackoverflow.com/questions/30867351/best-way-to-create-a-mat-from-a-ciimage
 // http://stackoverflow.com/questions/10254141/how-to-convert-from-cvmat-to-uiimage-in-objective-c
-
+-(void) setFeatures:(CIFaceFeature  *)features {
+    _features = features;
+}
 
 -(void) setImage:(CIImage*)ciFrameImage
       withBounds:(CGRect)faceRectIn
