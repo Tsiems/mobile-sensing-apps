@@ -20,6 +20,7 @@
 		B67B72BB1D996ADE008EDDE1 /* OpenCVBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = B67B72BA1D996ADE008EDDE1 /* OpenCVBridge.mm */; };
 		B6E657991D95AA4500E75C60 /* VideoAnalgesic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E657981D95AA4500E75C60 /* VideoAnalgesic.swift */; };
 		F35D3BD11DA5B916003FBB1A /* OpenCVBridgeSub.mm in Sources */ = {isa = PBXBuildFile; fileRef = F35D3BCF1DA5B916003FBB1A /* OpenCVBridgeSub.mm */; };
+		F37364251DB06371005EDDB3 /* PeakFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = F37364241DB06371005EDDB3 /* PeakFinder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		F35D3BCF1DA5B916003FBB1A /* OpenCVBridgeSub.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OpenCVBridgeSub.mm; path = HeartBeet/OpenCVBridgeSub.mm; sourceTree = SOURCE_ROOT; };
 		F35D3BD01DA5B916003FBB1A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = HeartBeet/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		F35D3BD21DA5B9D9003FBB1A /* HeartBeet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HeartBeet-Bridging-Header.h"; path = "HeartBeet/HeartBeet-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		F37364231DB06371005EDDB3 /* PeakFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeakFinder.h; path = HeartBeet/PeakFinder.h; sourceTree = SOURCE_ROOT; };
+		F37364241DB06371005EDDB3 /* PeakFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PeakFinder.m; path = HeartBeet/PeakFinder.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				B6E657981D95AA4500E75C60 /* VideoAnalgesic.swift */,
 				B67B72B91D996ADE008EDDE1 /* OpenCVBridge.hh */,
 				B67B72BA1D996ADE008EDDE1 /* OpenCVBridge.mm */,
+				F37364231DB06371005EDDB3 /* PeakFinder.h */,
+				F37364241DB06371005EDDB3 /* PeakFinder.m */,
 			);
 			name = ImageDSPUtils;
 			path = ImageLab;
@@ -278,6 +283,7 @@
 				B4725F521DA82D73001FA899 /* HeartViewController.swift in Sources */,
 				B4FBCB7E1DAF4B62003591F4 /* CircularBuffer.mm in Sources */,
 				B41EBFCB1DA96441003FB9F2 /* SMUGraphHelper.mm in Sources */,
+				F37364251DB06371005EDDB3 /* PeakFinder.m in Sources */,
 				5CAEC87F1DAEFBB5008D4889 /* GraphViewController.swift in Sources */,
 				B650B31B1D8340F0000114A1 /* AppDelegate.swift in Sources */,
 				B67B72BB1D996ADE008EDDE1 /* OpenCVBridge.mm in Sources */,
