@@ -40,7 +40,7 @@ using namespace cv;
     
     
     switch (self.processType) {
-        case 1:
+        case 0:
         {
             if(_features.hasLeftEyePosition) {
 //                NSLog(@"BOUNDS (%f,%f)  size: (%f,%f) ",_bounds.origin.x,_bounds.origin.y,_bounds.size.height,_bounds.size.width);
@@ -54,33 +54,37 @@ using namespace cv;
                 
 
                 cv::circle(_image, cv::Point(x,y), _bounds.size.height/8, Scalar(255,255,255,150),-1);
-                cv::circle(_image, cv::Point(x+_bounds.size.height/16,y-_bounds.size.height/16), _bounds.size.height/16, Scalar(0,0,0,150),-1);
+                cv::circle(_image, cv::Point(x+_bounds.size.height/16,y-_bounds.size.height/16), _bounds.size.height/16, Scalar(0,0,0),-1);
             }
             if(_features.hasRightEyePosition) {
                 float x = _features.rightEyePosition.y-_bounds.origin.x;
                 float y = _features.rightEyePosition.x+_bounds.origin.y+_bounds.size.height;
                 
                 cv::circle(_image, cv::Point(x,y), _bounds.size.height/8, Scalar(255,255,255,150),-1);
-                cv::circle(_image, cv::Point(x+_bounds.size.height/16,y-_bounds.size.height/16), _bounds.size.height/16, Scalar(0,0,0,150),-1);
+                cv::circle(_image, cv::Point(x+_bounds.size.height/16,y-_bounds.size.height/16), _bounds.size.height/16, Scalar(0,0,0),-1);
             }
-            if(_features.hasMouthPosition) {
+            if(_features.hasMouthPosition && _features.hasSmile) {
                 float x = _features.mouthPosition.y-_bounds.origin.x;
-                float y = _features.mouthPosition.x+_bounds.origin.y+_bounds.size.height;
+                float y = _features.mouthPosition.x+_bounds.origin.y+_bounds.size.height-_bounds.size.height/10;
                 
-                cv::circle(_image, cv::Point(x,y), _bounds.size.height/5, Scalar(100,200,200,150));
+//                cv::circle(_image, cv::Point(x,y), _bounds.size.height/5, Scalar(100,200,200,150));
+                
+                
+                
+                cv::ellipse(_image, cv::Point(x,y), cv::Point(_bounds.size.width/4,_bounds.size.height/6 ), 0, 0, 180, Scalar(85,0,10), -1);
             }
             
             
             break;
         }
-        case 2:
+        case 3:
         {
             cvtColor( _image, frame_gray, CV_BGR2GRAY );
             bitwise_not(frame_gray, _image);
             return;
             break;
         }
-        case 3:
+        case 4:
         {
             static uint counter = 0;
             cvtColor(_image, image_copy, CV_BGRA2BGR);
@@ -102,7 +106,7 @@ using namespace cv;
             counter = counter>50 ? 0 : counter;
             break;
         }
-        case 4:
+        case 5:
         { // fine, adding scoping to case statements to get rid of jump errors
             char text[50];
             Scalar avgPixelIntensity;
@@ -113,7 +117,7 @@ using namespace cv;
             cv::putText(_image, text, cv::Point(0, 10), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
             break;
         }
-        case 5:
+        case 6:
         {
             vector<Mat> layers;
             cvtColor(_image, image_copy, CV_BGRA2BGR);
@@ -132,7 +136,7 @@ using namespace cv;
             cvtColor(image_copy, _image, CV_BGR2BGRA);
             break;
         }
-        case 6:
+        case 7:
         {
             //============================================
             //threshold the image using the utsu method (optimal histogram point)
@@ -141,7 +145,7 @@ using namespace cv;
             cvtColor(image_copy, _image, CV_GRAY2BGRA); //add back for display
             break;
         }
-        case 7:
+        case 8:
         {
             //============================================
             //do some blurring (filtering)
@@ -151,7 +155,7 @@ using namespace cv;
             cvtColor(image_copy, _image, CV_BGR2BGRA);
             break;
         }
-        case 8:
+        case 9:
         {
             //============================================
             // canny edge detector
@@ -168,7 +172,7 @@ using namespace cv;
             cvtColor(_image, _image, CV_GRAY2BGRA); //add back for display
             break;
         }
-        case 9:
+        case 10:
         {
             //============================================
             // contour detector with rectangle bounding
@@ -196,7 +200,7 @@ using namespace cv;
             break;
             
         }
-        case 10:
+        case 11:
         {
             //============================================
             // contour detector with full bounds drawing
@@ -228,7 +232,7 @@ using namespace cv;
             }
             break;
         }
-        case 11:
+        case 12:
         {
             /// Convert it to gray
             cvtColor( _image, image_copy, CV_BGRA2GRAY );
@@ -259,7 +263,7 @@ using namespace cv;
             }
             break;
         }
-        case 12:
+        case 13:
         {
             // example for running Haar cascades
             //============================================
