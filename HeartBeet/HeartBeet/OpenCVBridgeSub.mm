@@ -17,8 +17,6 @@ using namespace cv;
 @interface OpenCVBridgeSub()
 @property (nonatomic) cv::Mat image;
 @property float* averageReds;
-@property float* averageBlues;
-@property float* averageGreens;
 @property (strong, nonatomic) CircularBuffer *averageRedBuffer;
 @property int arrayLoc;
 @end
@@ -31,8 +29,6 @@ using namespace cv;
     
     if(self != nil){
         self.averageReds = new float[SAMPLE_SIZE];
-        self.averageBlues = new float[SAMPLE_SIZE];
-        self.averageGreens = new float[SAMPLE_SIZE];
         self.arrayLoc = 0;
         
         for (int i = 0; i < SAMPLE_SIZE; i++) {
@@ -72,16 +68,14 @@ using namespace cv;
     
     
     
-    if ((avgRed >= 160 && avgBlue < 40) && avgGreen < 40) {
+    if ((avgRed >= 160 && avgBlue < 50) && avgGreen < 50) {
         cv::putText(image, "FINGER!", cv::Point(50, 100), FONT_HERSHEY_PLAIN, 0.75, Scalar::all(255), 1, 2);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"toggleOn" object:nil userInfo: @{@"toggleOn": @"On"}];
         
         if (self.arrayLoc < SAMPLE_SIZE) {
             self.averageReds[self.arrayLoc] = avgRed;
-            self.averageBlues[self.arrayLoc] = avgBlue;
-            self.averageGreens[self.arrayLoc] = avgGreen;
-            
-            [self.averageRedBuffer addNewFloatData:&avgRed withNumSamples:SAMPLE_SIZE];
+    
+            [self.averageRedBuffer addNewFloatData:_averageReds withNumSamples:SAMPLE_SIZE];
 
             self.arrayLoc += 1;
             if (self.arrayLoc >= SAMPLE_SIZE) {

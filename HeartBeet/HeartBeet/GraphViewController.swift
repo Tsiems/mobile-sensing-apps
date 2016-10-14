@@ -21,6 +21,7 @@ class GraphViewController: GLKViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         
         self.graphHelper.setScreenBoundsBottomHalf()
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateBridge(notification:)), name: NSNotification.Name(rawValue: "bridge"), object: nil)
@@ -28,16 +29,17 @@ class GraphViewController: GLKViewController {
     }
     
     func update() {
-        let data = self.bridge.getRed()
-//        let buffer = self.bridge.getRedBuffer()
-//        let data = UnsafeMutablePointer<Float>.allocate(capacity: MemoryLayout<Float>.size*200)
-//        buffer?.fetchFreshData(data, withNumSamples: 200)
-        self.graphHelper.setGraphData(data, withDataLength: 200, forGraphIndex: 0, withNormalization: 50, withZeroValue: 250)
-//        data.deallocate(capacity:  MemoryLayout<Float>.size*200)
+//        let data = self.bridge.getRed()
+        let buffer = self.bridge.getRedBuffer()
+        let data = UnsafeMutablePointer<Float>.allocate(capacity: MemoryLayout<Float>.size*200)
+        buffer?.fetchFreshData(data, withNumSamples: 200)
+        self.graphHelper.setGraphData(data, withDataLength: 200, forGraphIndex: 0, withNormalization: 300, withZeroValue: 240)
+        data.deallocate(capacity:  MemoryLayout<Float>.size*200)
     }
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
         self.graphHelper.draw()
+        glClearColor(0, 0, 0, 0);
     }
 
     override func didReceiveMemoryWarning() {
