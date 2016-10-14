@@ -35,6 +35,10 @@ using namespace cv;
         self.averageGreens = new float[SAMPLE_SIZE];
         self.arrayLoc = 0;
         
+        for (int i = 0; i < SAMPLE_SIZE; i++) {
+            self.averageReds[i] = 0;
+        }
+        
     }
     return self;
 }
