@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="upj-g4-Dpt">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="upj-g4-Dpt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -26,11 +26,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="FyF-0v-ivJ">
-                                        <rect key="frame" x="0.0" y="108" width="375" height="83"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="FyF-0v-ivJ">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="107"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FyF-0v-ivJ" id="ANt-z6-Rpq">
-                                            <frame key="frameInset" width="375" height="82"/>
+                                            <frame key="frameInset" width="375" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzx-Nk-D8g">
@@ -38,21 +38,33 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile" translatesAutoresizingMaskIntoConstraints="NO" id="LUx-0w-qf8"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun with filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-Ea-gzk">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="centerY" secondItem="ANt-z6-Rpq" secondAttribute="centerY" id="0fW-ce-wma"/>
-                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="centerX" secondItem="ANt-z6-Rpq" secondAttribute="centerX" id="lR3-Yk-gKc"/>
+                                                <constraint firstItem="hwu-Ea-gzk" firstAttribute="top" secondItem="nzx-Nk-D8g" secondAttribute="bottom" constant="8" symbolic="YES" id="1hC-8K-vWD"/>
+                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="centerX" secondItem="hwu-Ea-gzk" secondAttribute="centerX" id="89p-k7-wjd"/>
+                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="centerX" secondItem="ANt-z6-Rpq" secondAttribute="centerX" constant="37" id="CKf-sL-LXe"/>
+                                                <constraint firstItem="LUx-0w-qf8" firstAttribute="leading" secondItem="ANt-z6-Rpq" secondAttribute="leadingMargin" constant="10" id="FBo-O7-SBV"/>
+                                                <constraint firstItem="LUx-0w-qf8" firstAttribute="bottom" secondItem="ANt-z6-Rpq" secondAttribute="bottomMargin" id="X25-sF-Fi1"/>
+                                                <constraint firstItem="LUx-0w-qf8" firstAttribute="top" secondItem="ANt-z6-Rpq" secondAttribute="topMargin" id="dU6-5Z-BhO"/>
+                                                <constraint firstItem="hwu-Ea-gzk" firstAttribute="leading" secondItem="LUx-0w-qf8" secondAttribute="trailing" constant="57" id="fNT-Gu-iDI"/>
+                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="top" secondItem="ANt-z6-Rpq" secondAttribute="topMargin" constant="22" id="mOJ-AT-VYF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="SJT-J7-BDf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="InJ-4z-BG8">
-                                        <rect key="frame" x="0.0" y="191" width="375" height="85"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="109" id="InJ-4z-BG8">
+                                        <rect key="frame" x="0.0" y="215" width="375" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="InJ-4z-BG8" id="etg-X6-yX1">
-                                            <frame key="frameInset" width="375" height="84"/>
+                                            <frame key="frameInset" width="375" height="108"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="928-lh-bEp">
@@ -60,10 +72,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="ze5-kz-ped"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate Sensor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktp-It-CfO">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="928-lh-bEp" firstAttribute="centerY" secondItem="etg-X6-yX1" secondAttribute="centerY" id="H0g-jy-MID"/>
-                                                <constraint firstItem="928-lh-bEp" firstAttribute="centerX" secondItem="etg-X6-yX1" secondAttribute="centerX" id="ONJ-RU-aMm"/>
+                                                <constraint firstItem="ze5-kz-ped" firstAttribute="top" secondItem="etg-X6-yX1" secondAttribute="topMargin" id="2ja-qU-fBh"/>
+                                                <constraint firstItem="ktp-It-CfO" firstAttribute="leading" secondItem="ze5-kz-ped" secondAttribute="trailing" constant="41" id="6sS-uY-6BO"/>
+                                                <constraint firstItem="ktp-It-CfO" firstAttribute="centerX" secondItem="928-lh-bEp" secondAttribute="centerX" id="Foq-CI-zUY"/>
+                                                <constraint firstItem="ze5-kz-ped" firstAttribute="bottom" secondItem="etg-X6-yX1" secondAttribute="bottomMargin" id="G2i-oY-Hpn"/>
+                                                <constraint firstItem="928-lh-bEp" firstAttribute="centerY" secondItem="etg-X6-yX1" secondAttribute="centerY" constant="-15" id="H0g-jy-MID"/>
+                                                <constraint firstItem="928-lh-bEp" firstAttribute="centerX" secondItem="etg-X6-yX1" secondAttribute="centerX" constant="33" id="ONJ-RU-aMm"/>
+                                                <constraint firstItem="ze5-kz-ped" firstAttribute="leading" secondItem="etg-X6-yX1" secondAttribute="leadingMargin" constant="8" id="X64-eD-u1D"/>
+                                                <constraint firstItem="ktp-It-CfO" firstAttribute="top" secondItem="928-lh-bEp" secondAttribute="bottom" constant="8" symbolic="YES" id="ZLS-8y-7Bn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -250,6 +274,10 @@
         <scene sceneID="LSW-em-cAw">
             <objects>
                 <viewController id="Lug-pe-U0p" customClass="GraphViewController" customModule="HeartBeet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7gE-pi-5h2"/>
+                        <viewControllerLayoutGuide type="bottom" id="aG6-m5-A8Z"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hcg-mu-uth" customClass="GLKView">
                         <rect key="frame" x="0.0" y="0.0" width="323" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,4 +289,8 @@
             <point key="canvasLocation" x="1388" y="688"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" width="128" height="128"/>
+        <image name="smile" width="512" height="512"/>
+    </resources>
 </document>
