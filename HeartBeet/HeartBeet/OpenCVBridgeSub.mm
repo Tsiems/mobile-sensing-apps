@@ -31,8 +31,9 @@ using namespace cv;
         self.averageReds = new float[SAMPLE_SIZE];
         self.arrayLoc = 0;
         
+        //initialize with 240
         for (int i = 0; i < SAMPLE_SIZE; i++) {
-            self.averageReds[i] = 0;
+            self.averageReds[i] = 240;
         }
         
     }
@@ -100,6 +101,30 @@ using namespace cv;
 
 -(float*) getRed {
     return self.averageReds;
+}
+
+-(float*) getScaledRedArray {
+    float* returnArray = new float[SAMPLE_SIZE];
+    [self.averageRedBuffer fetchFreshData:returnArray withNumSamples:SAMPLE_SIZE];
+    
+    // find absolute min max
+    float max = returnArray[0];
+    float min = returnArray[0];
+    
+    for (int i = 0; i < SAMPLE_SIZE; i++) {
+        if (returnArray[i] > max) max = returnArray[i];
+        else if (returnArray[i] < min) min = returnArray[i];
+    }
+    
+//    NSLog(@"%f, %f", max, min);
+
+    // subtract min and divide by (max-min)
+    for (int i = 0; i < SAMPLE_SIZE; i++) {
+        returnArray[i] = (float)(returnArray[i]-min)/((float)max-(float)min);
+        NSLog(@"%f", returnArray[i]);
+    }
+    
+    return returnArray;
 }
 
 @end

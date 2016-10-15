@@ -30,6 +30,7 @@ class HeartViewController: GLKViewController {
     @IBOutlet weak var flashSlider: UISlider!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
+    @IBOutlet weak var displayGraphButton: UIButton!
     
     //MARK: ViewController Hierarchy
     override func viewDidLoad() {
@@ -86,9 +87,11 @@ class HeartViewController: GLKViewController {
         if self.displayGraph == false {
             self.graph.isHidden = false
             self.displayGraph = true
+            self.displayGraphButton.setTitle("Hide Graph", for: .normal)
         } else {
             self.graph.isHidden = true
             self.displayGraph = false
+            self.displayGraphButton.setTitle("Display Graph", for: .normal)
         }
     }
     
