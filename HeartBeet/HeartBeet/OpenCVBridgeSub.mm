@@ -17,6 +17,7 @@ using namespace cv;
 @interface OpenCVBridgeSub()
 @property (nonatomic) cv::Mat image;
 @property float* averageReds;
+@property float* scaledAverageReds;
 @property (strong, nonatomic) CircularBuffer *averageRedBuffer;
 @property int arrayLoc;
 @end
@@ -29,11 +30,13 @@ using namespace cv;
     
     if(self != nil){
         self.averageReds = new float[SAMPLE_SIZE];
+        self.scaledAverageReds = new float[SAMPLE_SIZE];
         self.arrayLoc = 0;
         
-        //initialize with 240
+        //initialize with 0
         for (int i = 0; i < SAMPLE_SIZE; i++) {
-            self.averageReds[i] = 240;
+            self.averageReds[i] = 0;
+            self.scaledAverageReds[i] = 0;
         }
         
     }
@@ -75,13 +78,11 @@ using namespace cv;
         
         if (self.arrayLoc < SAMPLE_SIZE) {
             self.averageReds[self.arrayLoc] = avgRed;
-    
-            [self.averageRedBuffer addNewFloatData:_averageReds withNumSamples:SAMPLE_SIZE];
 
             self.arrayLoc += 1;
             if (self.arrayLoc >= SAMPLE_SIZE) {
                 NSLog(@"Arrays Full");
-                self.arrayLoc = 0;
+//                [self.averageRedBuffer addNewFloatData:_averageReds withNumSamples:SAMPLE_SIZE];
             }
         }
         
@@ -104,27 +105,28 @@ using namespace cv;
 }
 
 -(float*) getScaledRedArray {
-    float* returnArray = new float[SAMPLE_SIZE];
-    [self.averageRedBuffer fetchFreshData:returnArray withNumSamples:SAMPLE_SIZE];
     
     // find absolute min max
-    float max = returnArray[0];
-    float min = returnArray[0];
+    float max = self.averageReds[0];
+    float min = self.averageReds[0];
     
-    for (int i = 0; i < SAMPLE_SIZE; i++) {
-        if (returnArray[i] > max) max = returnArray[i];
-        else if (returnArray[i] < min) min = returnArray[i];
-    }
-    
-//    NSLog(@"%f, %f", max, min);
+    if (self.arrayLoc >= SAMPLE_SIZE) {
+        for (int i = 0; i < SAMPLE_SIZE; i++) {
+            if (self.averageReds[i] > max) max = self.averageReds[i];
+            else if (self.averageReds[i] < min) min = self.averageReds[i];
+        }
+        
+        // subtract min and divide by (max-min)
+        for (int i = 0; i < SAMPLE_SIZE; i++) {
+            self.scaledAverageReds[i] = (float)(self.averageReds[i]-min)/((float)max-(float)min);
+            NSLog(@"%f", self.scaledAverageReds[i]);
+        }
 
-    // subtract min and divide by (max-min)
-    for (int i = 0; i < SAMPLE_SIZE; i++) {
-        returnArray[i] = (float)(returnArray[i]-min)/((float)max-(float)min);
-        NSLog(@"%f", returnArray[i]);
+        self.arrayLoc = 0;
     }
     
-    return returnArray;
+    
+    return self.scaledAverageReds;
 }
 
 @end

@@ -30,11 +30,8 @@ class GraphViewController: GLKViewController {
     
     func update() {
         let data = self.bridge.getScaledRedArray()
-//        let buffer = self.bridge.getRedBuffer()
-//        let data = UnsafeMutablePointer<Float>.allocate(capacity: MemoryLayout<Float>.size*200)
-//        buffer?.fetchFreshData(data, withNumSamples: 200)
-        self.graphHelper.setGraphData(data, withDataLength: 200, forGraphIndex: 0)
-//        data.deallocate(capacity:  MemoryLayout<Float>.size*200)
+//        self.graphHelper.setGraphData(data, withDataLength: 200, forGraphIndex: 0)
+        self.graphHelper.setGraphData(data, withDataLength: 200, forGraphIndex: 0, withNormalization: 1.5, withZeroValue: 0)
     }
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
