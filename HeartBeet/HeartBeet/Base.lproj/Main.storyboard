@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="upj-g4-Dpt">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="upj-g4-Dpt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -14,58 +14,79 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yAH-7N-CjU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.001360667986" green="0.25478717680000001" blue="0.43749839070000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
                             <tableViewSection id="VzB-Mf-Pix">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="k7m-Ih-yUl">
-                                        <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k7m-Ih-yUl" id="AJg-dh-anx">
-                                            <frame key="frameInset" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="FyF-0v-ivJ">
-                                        <rect key="frame" x="0.0" y="108" width="375" height="83"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="112" id="FyF-0v-ivJ">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FyF-0v-ivJ" id="ANt-z6-Rpq">
-                                            <frame key="frameInset" width="375" height="82"/>
+                                            <frame key="frameInset" width="342" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzx-Nk-D8g">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.63185781240000005" green="0.88372212650000004" blue="0.98448193070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fun with filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-Ea-gzk">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.63185781240000005" green="0.88372212650000004" blue="0.98448193070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile" translatesAutoresizingMaskIntoConstraints="NO" id="LUx-0w-qf8"/>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="centerY" secondItem="ANt-z6-Rpq" secondAttribute="centerY" id="0fW-ce-wma"/>
-                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="centerX" secondItem="ANt-z6-Rpq" secondAttribute="centerX" id="lR3-Yk-gKc"/>
+                                                <constraint firstItem="hwu-Ea-gzk" firstAttribute="top" secondItem="nzx-Nk-D8g" secondAttribute="bottom" constant="8" symbolic="YES" id="1hC-8K-vWD"/>
+                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="centerX" secondItem="hwu-Ea-gzk" secondAttribute="centerX" id="89p-k7-wjd"/>
+                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="centerX" secondItem="ANt-z6-Rpq" secondAttribute="centerX" constant="37" id="CKf-sL-LXe"/>
+                                                <constraint firstItem="LUx-0w-qf8" firstAttribute="leading" secondItem="ANt-z6-Rpq" secondAttribute="leadingMargin" constant="21" id="FBo-O7-SBV"/>
+                                                <constraint firstItem="LUx-0w-qf8" firstAttribute="bottom" secondItem="ANt-z6-Rpq" secondAttribute="bottomMargin" constant="-9" id="X25-sF-Fi1"/>
+                                                <constraint firstItem="LUx-0w-qf8" firstAttribute="top" secondItem="ANt-z6-Rpq" secondAttribute="topMargin" constant="9" id="dU6-5Z-BhO"/>
+                                                <constraint firstItem="hwu-Ea-gzk" firstAttribute="leading" secondItem="LUx-0w-qf8" secondAttribute="trailing" constant="59" id="fNT-Gu-iDI"/>
+                                                <constraint firstItem="nzx-Nk-D8g" firstAttribute="top" secondItem="ANt-z6-Rpq" secondAttribute="topMargin" constant="22" id="mOJ-AT-VYF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="SJT-J7-BDf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="InJ-4z-BG8">
-                                        <rect key="frame" x="0.0" y="191" width="375" height="85"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="112" id="InJ-4z-BG8">
+                                        <rect key="frame" x="0.0" y="176" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="InJ-4z-BG8" id="etg-X6-yX1">
-                                            <frame key="frameInset" width="375" height="84"/>
+                                            <frame key="frameInset" width="342" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="928-lh-bEp">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.63185781240000005" green="0.88372212650000004" blue="0.98448193070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart Rate Sensor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktp-It-CfO">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.63185781240000005" green="0.88372212650000004" blue="0.98448193070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="ze5-kz-ped"/>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="928-lh-bEp" firstAttribute="centerY" secondItem="etg-X6-yX1" secondAttribute="centerY" id="H0g-jy-MID"/>
-                                                <constraint firstItem="928-lh-bEp" firstAttribute="centerX" secondItem="etg-X6-yX1" secondAttribute="centerX" id="ONJ-RU-aMm"/>
+                                                <constraint firstItem="ze5-kz-ped" firstAttribute="top" secondItem="etg-X6-yX1" secondAttribute="topMargin" constant="6" id="2ja-qU-fBh"/>
+                                                <constraint firstItem="ktp-It-CfO" firstAttribute="leading" secondItem="ze5-kz-ped" secondAttribute="trailing" constant="46" id="6sS-uY-6BO"/>
+                                                <constraint firstItem="ktp-It-CfO" firstAttribute="centerX" secondItem="928-lh-bEp" secondAttribute="centerX" id="Foq-CI-zUY"/>
+                                                <constraint firstItem="ze5-kz-ped" firstAttribute="bottom" secondItem="etg-X6-yX1" secondAttribute="bottomMargin" constant="-5" id="G2i-oY-Hpn"/>
+                                                <constraint firstItem="928-lh-bEp" firstAttribute="centerY" secondItem="etg-X6-yX1" secondAttribute="centerY" constant="-15" id="H0g-jy-MID"/>
+                                                <constraint firstItem="928-lh-bEp" firstAttribute="centerX" secondItem="etg-X6-yX1" secondAttribute="centerX" constant="33" id="ONJ-RU-aMm"/>
+                                                <constraint firstItem="ze5-kz-ped" firstAttribute="leading" secondItem="etg-X6-yX1" secondAttribute="leadingMargin" constant="21" id="X64-eD-u1D"/>
+                                                <constraint firstItem="ktp-It-CfO" firstAttribute="top" secondItem="928-lh-bEp" secondAttribute="bottom" constant="8" symbolic="YES" id="ZLS-8y-7Bn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="eso-I9-5qY" kind="show" id="xmy-ku-s6y"/>
                                         </connections>
@@ -113,25 +134,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-I9-zyC">
+                                <color key="tintColor" red="0.001360667986" green="0.25478717680000001" blue="0.43749839070000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="setFlashLevel:" destination="BYZ-38-t0r" eventType="valueChanged" id="lU7-s8-q3p"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqB-mz-Xht">
-                                <state key="normal" title="Toggle Camera"/>
+                                <state key="normal" title="Toggle Camera">
+                                    <color key="titleColor" red="0.001360667986" green="0.25478717680000001" blue="0.43749839070000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="switchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8o5-A8-Yvy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsl-XI-9ND">
-                                <state key="normal" title="Toggle Flash"/>
+                                <state key="normal" title="Toggle Flash">
+                                    <color key="titleColor" red="0.001360667986" green="0.25478717680000001" blue="0.43749839070000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="flash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p39-Fo-nAF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stage: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17Z-Pc-DCH">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.70126873249999999" green="0.26423013210000001" blue="0.17676317690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -192,13 +218,17 @@
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJk-aL-XLJ">
-                                <state key="normal" title="Toggle Flash"/>
+                                <state key="normal" title="Toggle Flash">
+                                    <color key="titleColor" red="0.001360667986" green="0.25478717680000001" blue="0.43749839070000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="flash:" destination="eso-I9-5qY" eventType="touchUpInside" id="c3m-JO-r1r"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIq-df-XX2">
-                                <state key="normal" title="Toggle Camera"/>
+                                <state key="normal" title="Toggle Camera">
+                                    <color key="titleColor" red="0.001360667986" green="0.25478717680000001" blue="0.43749839070000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="switchCamera:" destination="eso-I9-5qY" eventType="touchUpInside" id="o2n-rV-4bg"/>
                                 </connections>
@@ -237,6 +267,7 @@
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="mIq-df-XX2" id="dXf-x6-oiL"/>
+                        <outlet property="displayGraphButton" destination="MZ6-5P-jQJ" id="289-ow-4X5"/>
                         <outlet property="flashButton" destination="LJk-aL-XLJ" id="L2X-Oe-FUk"/>
                         <outlet property="flashSlider" destination="eQO-TO-zY3" id="pyS-3u-F7a"/>
                         <outlet property="graph" destination="Y9u-TX-ZR2" id="9EX-Ah-T76"/>
@@ -250,6 +281,10 @@
         <scene sceneID="LSW-em-cAw">
             <objects>
                 <viewController id="Lug-pe-U0p" customClass="GraphViewController" customModule="HeartBeet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7gE-pi-5h2"/>
+                        <viewControllerLayoutGuide type="bottom" id="aG6-m5-A8Z"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hcg-mu-uth" customClass="GLKView">
                         <rect key="frame" x="0.0" y="0.0" width="323" height="431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,4 +296,8 @@
             <point key="canvasLocation" x="1388" y="688"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" width="128" height="128"/>
+        <image name="smile" width="512" height="512"/>
+    </resources>
 </document>

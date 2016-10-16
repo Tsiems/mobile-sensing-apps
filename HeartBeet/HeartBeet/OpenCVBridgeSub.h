@@ -12,4 +12,5 @@
 @interface OpenCVBridgeSub : OpenCVBridge
 -(CircularBuffer*) getRedBuffer;
 -(float*) getRed;
+-(float*) getScaledRedArray;
 @end
