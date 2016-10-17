@@ -124,12 +124,12 @@
             }
         }
         
-        NSArray* returnArraySortedByMagnitude = [peaks sortedArrayUsingComparator:
+        NSArray* returnArraySortedByIndex = [peaks sortedArrayUsingComparator:
                                                  ^NSComparisonResult(Peak* a, Peak* b) {
-                                                     return a.magnitude<b.magnitude;
+                                                     return a.index<b.index;
                                                  }];
         
-        return returnArraySortedByMagnitude; // largest magnitude first
+        return returnArraySortedByIndex; // largest magnitude first
     }
 }
 
