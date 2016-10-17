@@ -42,13 +42,8 @@ using namespace cv;
     switch (self.processType) {
         case 0:
         {
+            //make "googly" eyes for left and right eyes
             if(_features.hasLeftEyePosition) {
-//                NSLog(@"BOUNDS (%f,%f)  size: (%f,%f) ",_bounds.origin.x,_bounds.origin.y,_bounds.size.height,_bounds.size.width);
-//                NSLog(@"BEFORE (%f,%f)",_features.leftEyePosition.x,_features.leftEyePosition.y);
-////                CGPoint pnt = CGPointApplyAffineTransform(_features.leftEyePosition, _transform);
-//                
-////                CGPoint pnt = CGPoint(_features.leftEyePosition.x,_features.leftEyePosition.y);
-                
                 float x = _features.leftEyePosition.y-_bounds.origin.x;
                 float y = _features.leftEyePosition.x+_bounds.origin.y+_bounds.size.height;
                 
@@ -63,15 +58,13 @@ using namespace cv;
                 cv::circle(_image, cv::Point(x,y), _bounds.size.height/8, Scalar(255,255,255,150),-1);
                 cv::circle(_image, cv::Point(x+_bounds.size.height/16,y-_bounds.size.height/16), _bounds.size.height/16, Scalar(0,0,0),-1);
             }
+            
+            //give the person a mustache if they smile
             if(_features.hasMouthPosition && _features.hasSmile) {
                 float x = _features.mouthPosition.y-_bounds.origin.x;
                 float y = _features.mouthPosition.x+_bounds.origin.y+_bounds.size.height-_bounds.size.height/10;
                 
-//                cv::circle(_image, cv::Point(x,y), _bounds.size.height/5, Scalar(100,200,200,150));
-                
-                
-                
-                cv::ellipse(_image, cv::Point(x,y), cv::Point(_bounds.size.width/4,_bounds.size.height/6 ), 0, 0, 180, Scalar(85,0,10), -1);
+                cv::ellipse(_image, cv::Point(x,y), cv::Point(_bounds.size.width/4,_bounds.size.height/8 ), 0, 180, 360, Scalar(0,0,0), -1);
             }
             
             
