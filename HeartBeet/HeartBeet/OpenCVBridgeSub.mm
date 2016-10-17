@@ -111,11 +111,15 @@ using namespace cv;
 
 -(float*) getScaledRedArray {
     
-    // find absolute min max
+    // get current absolute min max
     float max = self.absMax;
     float min = self.absMin;
     
+    // find new abs when buffer is full
     if (self.arrayLoc >= SAMPLE_SIZE) {
+        // reset max and min values
+        max = 0;
+        min = 255;
         for (int i = 0; i < SAMPLE_SIZE; i++) {
             if (self.averageReds[i] > max) max = self.averageReds[i];
             else if (self.averageReds[i] < min) min = self.averageReds[i];
@@ -125,6 +129,7 @@ using namespace cv;
     }
     
     // subtract min and divide by (max-min) if they're not initial values
+    // do this even when buffer size isn't full
     if (max > 0 && min < 255) {
         for (int i = 0; i < SAMPLE_SIZE; i++) {
             self.scaledAverageReds[i] = (float)(self.averageReds[i]-min)/((float)max-(float)min);
