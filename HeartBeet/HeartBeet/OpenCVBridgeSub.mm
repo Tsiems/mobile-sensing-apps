@@ -24,6 +24,7 @@ using namespace cv;
 @property int arrayLoc;
 @property (strong, nonatomic) PeakFinder *finder;
 @property (nonatomic) float bpm;
+@property (nonatomic) double frametime;
 @end
 
 @implementation OpenCVBridgeSub
@@ -41,6 +42,13 @@ using namespace cv;
         _bpm = 0.0;
     }
     return _bpm;
+}
+
+-(double)frametime{
+    if(!_frametime){
+        _frametime = 0.0;
+    }
+    return _frametime;
 }
 
 -(instancetype)init{
@@ -74,10 +82,15 @@ using namespace cv;
 
 -(void) processImage {
 //    framerate logging
-//    static NSDate *start = [NSDate date];
-//    NSTimeInterval timeInterval = [start timeIntervalSinceNow];
-//    start = [NSDate date];
-//    NSLog(@"time:  %f", timeInterval);
+    static NSDate *start = [NSDate date];
+    static double framesum = 0.0;
+    NSTimeInterval timeInterval = [start timeIntervalSinceNow];
+    start = [NSDate date];
+    framesum += -timeInterval;
+    if(self.arrayLoc == SAMPLE_SIZE - 1){
+        self.frametime = framesum/((double)SAMPLE_SIZE);
+        framesum = 0.0;
+    }
     
     cv::Mat image = self.image;
     cv::Mat frame_gray,image_copy;
@@ -180,7 +193,7 @@ using namespace cv;
     float lastPeak = [peakArray[numPeaks-1] floatValue];
     float firstPeak = [peakArray[0] floatValue];
     float effectiveBuffer = lastPeak - firstPeak;
-    self.bpm = (((float)numPeaks) / ((effectiveBuffer/28.57)/60.0))/2.0;
+    self.bpm = (((float)numPeaks) / ((effectiveBuffer * self.frametime)/60.0))/2.0;
 }
 
 
