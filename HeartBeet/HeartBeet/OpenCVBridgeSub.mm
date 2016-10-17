@@ -18,6 +18,8 @@ using namespace cv;
 @property (nonatomic) cv::Mat image;
 @property float* averageReds;
 @property float* scaledAverageReds;
+@property float absMax;
+@property float absMin;
 @property (strong, nonatomic) CircularBuffer *averageRedBuffer;
 @property int arrayLoc;
 @end
@@ -38,6 +40,9 @@ using namespace cv;
             self.averageReds[i] = 0;
             self.scaledAverageReds[i] = 0;
         }
+        
+        self.absMax = 0;
+        self.absMin = 255;
         
     }
     return self;
@@ -107,22 +112,25 @@ using namespace cv;
 -(float*) getScaledRedArray {
     
     // find absolute min max
-    float max = self.averageReds[0];
-    float min = self.averageReds[0];
+    float max = self.absMax;
+    float min = self.absMin;
     
     if (self.arrayLoc >= SAMPLE_SIZE) {
         for (int i = 0; i < SAMPLE_SIZE; i++) {
             if (self.averageReds[i] > max) max = self.averageReds[i];
             else if (self.averageReds[i] < min) min = self.averageReds[i];
         }
-        
-        // subtract min and divide by (max-min)
+    
+        self.arrayLoc = 0;
+    }
+    
+    // subtract min and divide by (max-min) if they're not initial values
+    if (max > 0 && min < 255) {
         for (int i = 0; i < SAMPLE_SIZE; i++) {
             self.scaledAverageReds[i] = (float)(self.averageReds[i]-min)/((float)max-(float)min);
-            NSLog(@"%f", self.scaledAverageReds[i]);
         }
-
-        self.arrayLoc = 0;
+        self.absMax = max;
+        self.absMin = min;
     }
     
     
