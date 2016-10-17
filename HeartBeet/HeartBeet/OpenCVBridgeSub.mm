@@ -42,7 +42,7 @@ using namespace cv;
         }
         
         self.absMax = 0;
-        self.absMin = 0;
+        self.absMin = 255;
         
     }
     return self;
@@ -124,16 +124,15 @@ using namespace cv;
         self.arrayLoc = 0;
     }
     
-    // subtract min and divide by (max-min) if not 0
-    if (max+min != 0) {
+    // subtract min and divide by (max-min) if they're not initial values
+    if (max > 0 && min < 255) {
         for (int i = 0; i < SAMPLE_SIZE; i++) {
             self.scaledAverageReds[i] = (float)(self.averageReds[i]-min)/((float)max-(float)min);
-            NSLog(@"%f", self.scaledAverageReds[i]);
         }
-        
         self.absMax = max;
         self.absMin = min;
     }
+    
     
     return self.scaledAverageReds;
 }
