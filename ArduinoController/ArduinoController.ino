@@ -26,7 +26,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #include <RBL_nRF8001.h>
 
 const int BTN_PIN = 4;
-const int LED_PIN = 2;
+const int LED_PIN = 3;
+const int SERVO_PIN = 6; 
+const int POT_PIN = A0;
 
 void setup()
 {  
@@ -40,13 +42,14 @@ void setup()
   
 
   pinMode(BTN_PIN,INPUT);
-
   pinMode(LED_PIN,OUTPUT);
+  pinMode(SERVO_PIN, OUTPUT);
+  pinMode(POT_PIN, INPUT);
   digitalWrite( LED_PIN, LOW );
   
   // Init. and start BLE library.
   ble_begin();
-  
+    
   // Enable serial debug
   Serial.begin(57600);
 }
@@ -55,6 +58,7 @@ unsigned char buf[16] = {0};
 unsigned char len = 0;
 String command;
 int buttonState = 0;
+int potVal = 0;
 
 void loop()
 {
@@ -73,6 +77,10 @@ void loop()
     }
     else if ( command.substring(0,10) == "Light OFF;" ) {
       digitalWrite( LED_PIN, LOW );
+    }
+    else if ( command.substring(0,5) == "Servo" ) {
+        String servoSpeed = command.substring(6,command.indexOf(';'));
+        analogWrite(SERVO_PIN, servoSpeed.toInt());
     }
 
     
@@ -95,6 +103,19 @@ void loop()
     
     buttonState = newBtnState;
     String sendCommand = "BTN " + String(buttonState);
+    for( int i = 0; i < sendCommand.length(); i++ ) {
+      ble_write( sendCommand[i] );
+    }
+  }
+
+  //read from pot
+  int newPotVal = analogRead(POT_PIN);
+  if( newPotVal != potVal ) {
+    
+    potVal = newPotVal;
+    int newBrightness = potVal/4;
+    analogWrite(LED_PIN, newBrightness);
+    String sendCommand = "POT " + String(potVal);
     for( int i = 0; i < sendCommand.length(); i++ ) {
       ble_write( sendCommand[i] );
     }
