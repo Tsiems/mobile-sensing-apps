@@ -23,7 +23,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #include <SPI.h>
 #include <EEPROM.h>
 #include <boards.h>
+#include <Servo.h>
 #include <RBL_nRF8001.h>
+
+Servo myservo;
 
 const int BTN_PIN = 4;
 const int LED_PIN = 3;
@@ -43,9 +46,10 @@ void setup()
 
   pinMode(BTN_PIN,INPUT);
   pinMode(LED_PIN,OUTPUT);
-  pinMode(SERVO_PIN, OUTPUT);
   pinMode(POT_PIN, INPUT);
   digitalWrite( LED_PIN, LOW );
+
+  myservo.attach(SERVO_PIN);
   
   // Init. and start BLE library.
   ble_begin();
@@ -59,6 +63,10 @@ unsigned char len = 0;
 String command;
 int buttonState = 0;
 int potVal = 0;
+bool lightOn = LOW;
+int strobeMode = 0;
+
+int delayVals[4] = {0,100,70,30};
 
 void loop()
 {
@@ -73,14 +81,16 @@ void loop()
     Serial.println(command);
 
     if( command.substring(0,9) == "Light ON;" ) {
+      lightOn = HIGH;
       digitalWrite( LED_PIN, HIGH );
     }
     else if ( command.substring(0,10) == "Light OFF;" ) {
+      lightOn = LOW;
       digitalWrite( LED_PIN, LOW );
     }
     else if ( command.substring(0,5) == "Servo" ) {
-        String servoSpeed = command.substring(6,command.indexOf(';'));
-        analogWrite(SERVO_PIN, servoSpeed.toInt());
+        String servoPos = command.substring(6,command.indexOf(';'));
+        myservo.write(servoPos.toInt());
     }
 
     
@@ -100,25 +110,54 @@ void loop()
   //read from button
   int newBtnState = digitalRead(BTN_PIN);
   if( newBtnState != buttonState ) {
-    
+
+    //send button state along BLE
     buttonState = newBtnState;
     String sendCommand = "BTN " + String(buttonState);
     for( int i = 0; i < sendCommand.length(); i++ ) {
       ble_write( sendCommand[i] );
+    }
+
+    // update button state when button is pressed
+    if(buttonState==1) {
+      strobeMode += 1;
+
+      //reset strobeMode if it's greater than 3
+      if(strobeMode > 3) {
+        strobeMode = 0;
+      }
     }
   }
 
   //read from pot
   int newPotVal = analogRead(POT_PIN);
   if( newPotVal != potVal ) {
-    
+
+    //update potentiometer value
     potVal = newPotVal;
-    int newBrightness = potVal/4;
-    analogWrite(LED_PIN, newBrightness);
+
+    //send the potentiometer value along BLE
     String sendCommand = "POT " + String(potVal);
     for( int i = 0; i < sendCommand.length(); i++ ) {
       ble_write( sendCommand[i] );
     }
+  }
+
+
+  // determine strobe mode
+  if(lightOn) {
+    //turn LED off
+    digitalWrite(LED_PIN,LOW);
+    analogWrite(LED_PIN, 0);
+
+    //wait a certain amount of time
+    delay( delayVals[strobeMode] );
+    
+
+    //turn LED back on
+    digitalWrite(LED_PIN,HIGH);
+    int newBrightness = potVal/4;
+    analogWrite(LED_PIN, newBrightness);
   }
 
   delay(10);
