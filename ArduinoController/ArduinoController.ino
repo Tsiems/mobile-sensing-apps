@@ -28,26 +28,25 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Servo myservo;
 
-const int BTN_PIN = 4;
+const int BTN_PIN = 2;
 const int LED_PIN = 3;
 const int SERVO_PIN = 6; 
 const int POT_PIN = A0;
 
 void setup()
 {  
-  // Default pins set to 9 and 8 for REQN and RDYN
-  // Set your REQN and RDYN here before ble_begin() if you need
-  //ble_set_pins(3, 2);
-  
   // Set your BLE Shield name here, max. length 10
   ble_set_name("The Dopest");
-
-  
 
   pinMode(BTN_PIN,INPUT);
   pinMode(LED_PIN,OUTPUT);
   pinMode(POT_PIN, INPUT);
   digitalWrite( LED_PIN, LOW );
+
+  
+  attachInterrupt(digitalPinToInterrupt(BTN_PIN), strobeTheLight, CHANGE);
+//  attachInterrupt(digitalPinToInterrupt(BTN_PIN), buttonRelease, FALLING);
+
 
   myservo.attach(SERVO_PIN);
   
@@ -61,15 +60,64 @@ void setup()
 unsigned char buf[16] = {0};
 unsigned char len = 0;
 String command;
-int buttonState = 0;
+volatile int buttonState = 0;
 int potVal = 0;
 bool lightOn = LOW;
-int strobeMode = 0;
+volatile int strobeMode = 0;
+int buttonHold = 0;
 
-int delayVals[4] = {0,100,70,30};
+int delayVals[4] = {0,300,200,100};
+
+
+
+
+void strobeTheLight() {
+
+  //send button state along BLE
+  buttonState = digitalRead(BTN_PIN);
+  String sendCommand = "BTN " + String(buttonState);
+  for( int i = 0; i < sendCommand.length(); i++ ) {
+    ble_write( sendCommand[i] );
+  }
+
+  // update button state when button is pressed
+  if(buttonState==1) {
+    strobeMode += 1;
+
+    //reset strobeMode if it's greater than 3
+    if(strobeMode > 3) {
+      strobeMode = 0;
+    }
+  }
+  else {
+    // buttonState = 0
+  }
+ 
+}
+
+
+bool waiting = false;
+unsigned long TimerA;
 
 void loop()
 {
+  noInterrupts();
+  if(buttonState==1) {
+    buttonHold += 1;
+
+    if(buttonHold > 60) {
+      String songCommand = "BTN HOLD ";
+      for( int i = 0; i < songCommand.length(); i++ ) {
+        ble_write( songCommand[i] );
+      }
+
+      buttonHold = 0;
+    }
+  }
+  else {
+    buttonHold = 0;
+  }
+
   //read from bluetooth low energy
   if ( ble_available() )
   {
@@ -97,6 +145,10 @@ void loop()
     Serial.println();
   }
 
+
+
+
+  interrupts();
   //read from serial port
   if ( Serial.available() )
   {
@@ -104,29 +156,6 @@ void loop()
     
     while ( Serial.available() )
       ble_write(Serial.read());
-  }
-
-
-  //read from button
-  int newBtnState = digitalRead(BTN_PIN);
-  if( newBtnState != buttonState ) {
-
-    //send button state along BLE
-    buttonState = newBtnState;
-    String sendCommand = "BTN " + String(buttonState);
-    for( int i = 0; i < sendCommand.length(); i++ ) {
-      ble_write( sendCommand[i] );
-    }
-
-    // update button state when button is pressed
-    if(buttonState==1) {
-      strobeMode += 1;
-
-      //reset strobeMode if it's greater than 3
-      if(strobeMode > 3) {
-        strobeMode = 0;
-      }
-    }
   }
 
   //read from pot
@@ -146,25 +175,30 @@ void loop()
 
   // determine strobe mode
   if(lightOn) {
-    //turn LED off
-    digitalWrite(LED_PIN,LOW);
-    analogWrite(LED_PIN, 0);
-
-    //wait a certain amount of time
-    delay( delayVals[strobeMode] );
-    
-
-    //turn LED back on
-    digitalWrite(LED_PIN,HIGH);
-    int newBrightness = potVal/4;
-    analogWrite(LED_PIN, newBrightness);
+    if( !waiting ) {
+      //turn LED off
+      digitalWrite(LED_PIN,LOW);
+      analogWrite(LED_PIN, 0);
+      waiting = true;
+      TimerA = millis();
+    }
+    else if(millis()-TimerA > delayVals[strobeMode]){
+      //wait a certain amount of time
+      waiting = false;
+      
+      //turn LED back on
+      digitalWrite(LED_PIN,HIGH);
+      int newBrightness = potVal/4;
+      analogWrite(LED_PIN, newBrightness);
+    }
   }
 
   delay(10);
   
-
-  
   
   ble_do_events();
+
+//  interrupts();
+  
 }
 
