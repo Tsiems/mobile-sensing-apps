@@ -120,7 +120,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="08F-fj-0Su">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="08F-fj-0Su">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -190,6 +190,7 @@
                             <constraint firstItem="l8g-Jq-IZK" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="10" id="79G-7w-1ON"/>
                             <constraint firstItem="Rfh-MU-4ew" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="10" id="8DM-iI-aFJ"/>
                             <constraint firstItem="yna-rh-JOc" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="10" id="8e2-cC-Iim"/>
+                            <constraint firstItem="08F-fj-0Su" firstAttribute="top" secondItem="oPb-Om-fte" secondAttribute="bottom" constant="20" id="AtM-x6-0ed"/>
                             <constraint firstItem="hW9-Kf-X5z" firstAttribute="top" secondItem="1Yu-ry-D5b" secondAttribute="bottom" constant="2" id="BhR-Sp-iCr"/>
                             <constraint firstItem="hW9-Kf-X5z" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="CEp-3u-Tu0"/>
                             <constraint firstItem="QAb-ry-Nof" firstAttribute="centerY" secondItem="yna-rh-JOc" secondAttribute="centerY" id="CNC-fT-eK2"/>
@@ -210,7 +211,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="1Ep-GT-MGn" secondAttribute="trailing" constant="10" id="ewd-hx-1Nm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ar9-D5-Od9" secondAttribute="trailing" constant="10" id="gbu-CG-VZ6"/>
                             <constraint firstItem="1Yu-ry-D5b" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="icY-9c-fya"/>
-                            <constraint firstItem="08F-fj-0Su" firstAttribute="top" secondItem="TOC-23-fgT" secondAttribute="bottom" constant="8" id="jIr-M6-SFK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="08F-fj-0Su" secondAttribute="trailing" constant="18" id="nuB-2x-YsO"/>
                             <constraint firstItem="QAb-ry-Nof" firstAttribute="trailing" secondItem="3" secondAttribute="trailingMargin" id="pkC-zx-oHv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oPb-Om-fte" secondAttribute="trailing" constant="10" id="uDF-83-Rmj"/>

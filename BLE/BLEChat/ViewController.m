@@ -69,8 +69,10 @@
 -(void) playMP3 {
     if ([audioPlayer isPlaying]) {
         [audioPlayer pause];
+        self.label.text = @"PAUSE";
     } else {
         [audioPlayer play];
+        self.label.text = @"PLAY";
     }
 }
 
@@ -99,7 +101,7 @@ NSTimer *rssiTimer;
 {
     NSData *d = [NSData dataWithBytes:data length:length];
     NSString *s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
-    self.label.text = s;
+//    self.label.text = s;
 }
 
 // NEW FUNCTION EXAMPLE: parse the received data from NSNotification
@@ -109,7 +111,7 @@ NSTimer *rssiTimer;
     NSString *s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
     NSArray *array = [s componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if ([array[0]  isEqual: @"BTN"]) {
-        self.label.text = s;
+//        self.label.text = s;
         if ([array[1] isEqual:@"HOLD"]) {
             NSLog(@"play!");
             [self playMP3];
