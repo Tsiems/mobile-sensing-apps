@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface TableViewController : UITableViewController
+@interface TableViewController : UITableViewController {
+     AVAudioPlayer* audioPlayer;   
+}
+
 
 @end

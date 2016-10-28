@@ -39,6 +39,14 @@
 //    [bleShield controlSetup];
 //    bleShield.delegate = self;
     
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"startmeup" ofType:@"mp3"];
+    NSURL* file = [NSURL fileURLWithPath:path];
+    // thanks @gebirgsbaerbel
+    
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:file error:nil];
+    [audioPlayer setVolume:0.5];
+    [audioPlayer prepareToPlay];
+    
     //CHANGE 4: add subscription to notifications from the app delegate
     //These selector functions should be created from the old BLEDelegate functions
     // One example has already been completed for you on the receiving of data function
@@ -49,6 +57,21 @@
     // this example function "onBLEDidReceiveData:" is done for you, see below
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (onBLEDidReceiveData:) name:kBleReceivedDataNotification object:nil];
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [audioPlayer pause];
+    audioPlayer = nil;
+}
+
+-(void) playMP3 {
+    if ([audioPlayer isPlaying]) {
+        [audioPlayer pause];
+    } else {
+        [audioPlayer play];
+    }
 }
 
 //setup auto rotation in code
@@ -87,9 +110,17 @@ NSTimer *rssiTimer;
     NSArray *array = [s componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if ([array[0]  isEqual: @"BTN"]) {
         self.label.text = s;
+        if ([array[1] isEqual:@"HOLD"]) {
+            NSLog(@"play!");
+            [self playMP3];
+        }
     } else if ([array[0]  isEqual: @"POT"]) {
         NSLog(@"%@", array[1]);
-        NSString *ds = [NSString stringWithFormat: @"%d", (int)([array[1] integerValue]/4)];
+        float volume = (float)([array[1] integerValue]/4) / 255.0;
+        NSLog(@"VOLUME: %.f", volume);
+        [audioPlayer setVolume:volume];
+        [self.volumeView setProgress:volume];
+        NSString *ds = [NSString stringWithFormat: @"%.f", (float)([array[1] integerValue]/4)];
         self.label2.text = ds;
     }
     

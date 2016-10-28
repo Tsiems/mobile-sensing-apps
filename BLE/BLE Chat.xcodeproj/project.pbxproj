@@ -15,6 +15,9 @@
 		2941611C15DB55E5003210B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2941611B15DB55E5003210B3 /* ViewController.m */; };
 		2941613515DBCCE5003210B3 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2941613415DBCCE5003210B3 /* CoreBluetooth.framework */; };
 		29FD69DD17B9D5C30015E258 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29FD69DC17B9D5C30015E258 /* Default-568h@2x.png */; };
+		5C92F5A51DC38881000D6CE5 /* airhorn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C92F5A41DC38881000D6CE5 /* airhorn.mp3 */; };
+		5C92F5A71DC3895A000D6CE5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C92F5A61DC38959000D6CE5 /* AVFoundation.framework */; };
+		5CC693B61DC3959C00CF5F0B /* startmeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5CC693B51DC3959C00CF5F0B /* startmeup.mp3 */; };
 		B659BE0C1DAFFEBE00E9791C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B659BE0B1DAFFEBE00E9791C /* UIKit.framework */; };
 		B6A98B951ABCF7CE0033F220 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A98B941ABCF7CE0033F220 /* TableViewController.m */; };
 /* End PBXBuildFile section */
@@ -35,6 +38,9 @@
 		2941611B15DB55E5003210B3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2941613415DBCCE5003210B3 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		29FD69DC17B9D5C30015E258 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5C92F5A41DC38881000D6CE5 /* airhorn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = airhorn.mp3; sourceTree = "<group>"; };
+		5C92F5A61DC38959000D6CE5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5CC693B51DC3959C00CF5F0B /* startmeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startmeup.mp3; sourceTree = "<group>"; };
 		B659BE0B1DAFFEBE00E9791C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B6A98B931ABCF7CE0033F220 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		B6A98B941ABCF7CE0033F220 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C92F5A71DC3895A000D6CE5 /* AVFoundation.framework in Frameworks */,
 				B659BE0C1DAFFEBE00E9791C /* UIKit.framework in Frameworks */,
 				2941613515DBCCE5003210B3 /* CoreBluetooth.framework in Frameworks */,
 			);
@@ -75,6 +82,7 @@
 		2941610415DB55E5003210B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5C92F5A61DC38959000D6CE5 /* AVFoundation.framework */,
 				B659BE0B1DAFFEBE00E9791C /* UIKit.framework */,
 				2941613415DBCCE5003210B3 /* CoreBluetooth.framework */,
 			);
@@ -89,6 +97,8 @@
 				2941611715DB55E5003210B3 /* MainStoryboard.storyboard */,
 				B6A98B931ABCF7CE0033F220 /* TableViewController.h */,
 				B6A98B941ABCF7CE0033F220 /* TableViewController.m */,
+				5CC693B51DC3959C00CF5F0B /* startmeup.mp3 */,
+				5C92F5A41DC38881000D6CE5 /* airhorn.mp3 */,
 				2941611A15DB55E5003210B3 /* ViewController.h */,
 				2941611B15DB55E5003210B3 /* ViewController.m */,
 				2941610C15DB55E5003210B3 /* Supporting Files */,
@@ -174,9 +184,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C92F5A51DC38881000D6CE5 /* airhorn.mp3 in Resources */,
 				2941611015DB55E5003210B3 /* InfoPlist.strings in Resources */,
 				2941611915DB55E5003210B3 /* MainStoryboard.storyboard in Resources */,
 				29FD69DD17B9D5C30015E258 /* Default-568h@2x.png in Resources */,
+				5CC693B61DC3959C00CF5F0B /* startmeup.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
