@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716B81DD1160B00999160 /* AppDelegate.swift */; };
+		B41716BB1DD1160B00999160 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716BA1DD1160B00999160 /* ViewController.swift */; };
+		B41716BE1DD1160B00999160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41716BC1DD1160B00999160 /* Main.storyboard */; };
+		B41716C11DD1160B00999160 /* AirDrummer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B41716BF1DD1160B00999160 /* AirDrummer.xcdatamodeld */; };
+		B41716C31DD1160B00999160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41716C21DD1160B00999160 /* Assets.xcassets */; };
+		B41716C61DD1160B00999160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41716C41DD1160B00999160 /* LaunchScreen.storyboard */; };
+		B41716D11DD1160C00999160 /* AirDrummerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716D01DD1160C00999160 /* AirDrummerTests.swift */; };
+		B41716DC1DD1160C00999160 /* AirDrummerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716DB1DD1160C00999160 /* AirDrummerUITests.swift */; };
+		B41716F21DD116BE00999160 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716EB1DD116BE00999160 /* main.m */; };
+		B41716F31DD116BE00999160 /* RingBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716ED1DD116BE00999160 /* RingBuffer.m */; };
+		B41716F41DD116BE00999160 /* SMUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716EF1DD116BE00999160 /* SMUAppDelegate.m */; };
+		B41716F51DD116BE00999160 /* SMUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716F11DD116BE00999160 /* SMUViewController.m */; };
+		B41716F91DD116D400999160 /* HttpCommHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716F71DD116D400999160 /* HttpCommHandler.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B41716CD1DD1160C00999160 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B41716AD1DD1160B00999160 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B41716B41DD1160B00999160;
+			remoteInfo = AirDrummer;
+		};
+		B41716D81DD1160C00999160 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B41716AD1DD1160B00999160 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B41716B41DD1160B00999160;
+			remoteInfo = AirDrummer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B41716B51DD1160B00999160 /* AirDrummer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirDrummer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41716B81DD1160B00999160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B41716BA1DD1160B00999160 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B41716BD1DD1160B00999160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B41716C01DD1160B00999160 /* AirDrummer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AirDrummer.xcdatamodel; sourceTree = "<group>"; };
+		B41716C21DD1160B00999160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B41716C51DD1160B00999160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B41716C71DD1160B00999160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B41716CC1DD1160C00999160 /* AirDrummerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirDrummerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41716D01DD1160C00999160 /* AirDrummerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDrummerTests.swift; sourceTree = "<group>"; };
+		B41716D21DD1160C00999160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B41716D71DD1160C00999160 /* AirDrummerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirDrummerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41716DB1DD1160C00999160 /* AirDrummerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDrummerUITests.swift; sourceTree = "<group>"; };
+		B41716DD1DD1160C00999160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B41716EA1DD116BE00999160 /* AirDrummer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirDrummer-Bridging-Header.h"; sourceTree = "<group>"; };
+		B41716EB1DD116BE00999160 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B41716EC1DD116BE00999160 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
+		B41716ED1DD116BE00999160 /* RingBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RingBuffer.m; sourceTree = "<group>"; };
+		B41716EE1DD116BE00999160 /* SMUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUAppDelegate.h; sourceTree = "<group>"; };
+		B41716EF1DD116BE00999160 /* SMUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMUAppDelegate.m; sourceTree = "<group>"; };
+		B41716F01DD116BE00999160 /* SMUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUViewController.h; sourceTree = "<group>"; };
+		B41716F11DD116BE00999160 /* SMUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMUViewController.m; sourceTree = "<group>"; };
+		B41716F61DD116D400999160 /* HttpCommHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpCommHandler.h; sourceTree = "<group>"; };
+		B41716F71DD116D400999160 /* HttpCommHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpCommHandler.m; sourceTree = "<group>"; };
+		B41716F81DD116D400999160 /* HTTPExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPExample-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B41716B21DD1160B00999160 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41716C91DD1160C00999160 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41716D41DD1160C00999160 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B41716AC1DD1160B00999160 = {
+			isa = PBXGroup;
+			children = (
+				B41716E91DD116AB00999160 /* HTTPExample */,
+				B41716B71DD1160B00999160 /* AirDrummer */,
+				B41716CF1DD1160C00999160 /* AirDrummerTests */,
+				B41716DA1DD1160C00999160 /* AirDrummerUITests */,
+				B41716B61DD1160B00999160 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B41716B61DD1160B00999160 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B41716B51DD1160B00999160 /* AirDrummer.app */,
+				B41716CC1DD1160C00999160 /* AirDrummerTests.xctest */,
+				B41716D71DD1160C00999160 /* AirDrummerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B41716B71DD1160B00999160 /* AirDrummer */ = {
+			isa = PBXGroup;
+			children = (
+				B41716B81DD1160B00999160 /* AppDelegate.swift */,
+				B41716BA1DD1160B00999160 /* ViewController.swift */,
+				B41716BC1DD1160B00999160 /* Main.storyboard */,
+				B41716C21DD1160B00999160 /* Assets.xcassets */,
+				B41716C41DD1160B00999160 /* LaunchScreen.storyboard */,
+				B41716C71DD1160B00999160 /* Info.plist */,
+				B41716BF1DD1160B00999160 /* AirDrummer.xcdatamodeld */,
+			);
+			path = AirDrummer;
+			sourceTree = "<group>";
+		};
+		B41716CF1DD1160C00999160 /* AirDrummerTests */ = {
+			isa = PBXGroup;
+			children = (
+				B41716D01DD1160C00999160 /* AirDrummerTests.swift */,
+				B41716D21DD1160C00999160 /* Info.plist */,
+			);
+			path = AirDrummerTests;
+			sourceTree = "<group>";
+		};
+		B41716DA1DD1160C00999160 /* AirDrummerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B41716DB1DD1160C00999160 /* AirDrummerUITests.swift */,
+				B41716DD1DD1160C00999160 /* Info.plist */,
+			);
+			path = AirDrummerUITests;
+			sourceTree = "<group>";
+		};
+		B41716E91DD116AB00999160 /* HTTPExample */ = {
+			isa = PBXGroup;
+			children = (
+				B41716EB1DD116BE00999160 /* main.m */,
+				B41716EC1DD116BE00999160 /* RingBuffer.h */,
+				B41716ED1DD116BE00999160 /* RingBuffer.m */,
+				B41716EE1DD116BE00999160 /* SMUAppDelegate.h */,
+				B41716F61DD116D400999160 /* HttpCommHandler.h */,
+				B41716F71DD116D400999160 /* HttpCommHandler.m */,
+				B41716F81DD116D400999160 /* HTTPExample-Prefix.pch */,
+				B41716EF1DD116BE00999160 /* SMUAppDelegate.m */,
+				B41716F01DD116BE00999160 /* SMUViewController.h */,
+				B41716F11DD116BE00999160 /* SMUViewController.m */,
+				B41716EA1DD116BE00999160 /* AirDrummer-Bridging-Header.h */,
+			);
+			name = HTTPExample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B41716B41DD1160B00999160 /* AirDrummer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B41716E01DD1160C00999160 /* Build configuration list for PBXNativeTarget "AirDrummer" */;
+			buildPhases = (
+				B41716B11DD1160B00999160 /* Sources */,
+				B41716B21DD1160B00999160 /* Frameworks */,
+				B41716B31DD1160B00999160 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirDrummer;
+			productName = AirDrummer;
+			productReference = B41716B51DD1160B00999160 /* AirDrummer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B41716CB1DD1160C00999160 /* AirDrummerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B41716E31DD1160C00999160 /* Build configuration list for PBXNativeTarget "AirDrummerTests" */;
+			buildPhases = (
+				B41716C81DD1160C00999160 /* Sources */,
+				B41716C91DD1160C00999160 /* Frameworks */,
+				B41716CA1DD1160C00999160 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B41716CE1DD1160C00999160 /* PBXTargetDependency */,
+			);
+			name = AirDrummerTests;
+			productName = AirDrummerTests;
+			productReference = B41716CC1DD1160C00999160 /* AirDrummerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B41716D61DD1160C00999160 /* AirDrummerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B41716E61DD1160C00999160 /* Build configuration list for PBXNativeTarget "AirDrummerUITests" */;
+			buildPhases = (
+				B41716D31DD1160C00999160 /* Sources */,
+				B41716D41DD1160C00999160 /* Frameworks */,
+				B41716D51DD1160C00999160 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B41716D91DD1160C00999160 /* PBXTargetDependency */,
+			);
+			name = AirDrummerUITests;
+			productName = AirDrummerUITests;
+			productReference = B41716D71DD1160C00999160 /* AirDrummerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B41716AD1DD1160B00999160 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Danh Nguyen";
+				TargetAttributes = {
+					B41716B41DD1160B00999160 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = F69WJ27LN4;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+					B41716CB1DD1160C00999160 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = F69WJ27LN4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B41716B41DD1160B00999160;
+					};
+					B41716D61DD1160C00999160 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = F69WJ27LN4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B41716B41DD1160B00999160;
+					};
+				};
+			};
+			buildConfigurationList = B41716B01DD1160B00999160 /* Build configuration list for PBXProject "AirDrummer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B41716AC1DD1160B00999160;
+			productRefGroup = B41716B61DD1160B00999160 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B41716B41DD1160B00999160 /* AirDrummer */,
+				B41716CB1DD1160C00999160 /* AirDrummerTests */,
+				B41716D61DD1160C00999160 /* AirDrummerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B41716B31DD1160B00999160 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B41716C61DD1160B00999160 /* LaunchScreen.storyboard in Resources */,
+				B41716C31DD1160B00999160 /* Assets.xcassets in Resources */,
+				B41716BE1DD1160B00999160 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41716CA1DD1160C00999160 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41716D51DD1160C00999160 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B41716B11DD1160B00999160 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B41716BB1DD1160B00999160 /* ViewController.swift in Sources */,
+				B41716C11DD1160B00999160 /* AirDrummer.xcdatamodeld in Sources */,
+				B41716F41DD116BE00999160 /* SMUAppDelegate.m in Sources */,
+				B41716F21DD116BE00999160 /* main.m in Sources */,
+				B41716F51DD116BE00999160 /* SMUViewController.m in Sources */,
+				B41716F31DD116BE00999160 /* RingBuffer.m in Sources */,
+				B41716F91DD116D400999160 /* HttpCommHandler.m in Sources */,
+				B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41716C81DD1160C00999160 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B41716D11DD1160C00999160 /* AirDrummerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41716D31DD1160C00999160 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B41716DC1DD1160C00999160 /* AirDrummerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B41716CE1DD1160C00999160 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B41716B41DD1160B00999160 /* AirDrummer */;
+			targetProxy = B41716CD1DD1160C00999160 /* PBXContainerItemProxy */;
+		};
+		B41716D91DD1160C00999160 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B41716B41DD1160B00999160 /* AirDrummer */;
+			targetProxy = B41716D81DD1160C00999160 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B41716BC1DD1160B00999160 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B41716BD1DD1160B00999160 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B41716C41DD1160B00999160 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B41716C51DD1160B00999160 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B41716DE1DD1160C00999160 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B41716DF1DD1160C00999160 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B41716E11DD1160C00999160 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
+				INFOPLIST_FILE = AirDrummer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danhn.AirDrummer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AirDrummer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B41716E21DD1160C00999160 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
+				INFOPLIST_FILE = AirDrummer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danhn.AirDrummer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AirDrummer-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B41716E41DD1160C00999160 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = F69WJ27LN4;
+				INFOPLIST_FILE = AirDrummerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danhn.AirDrummerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirDrummer.app/AirDrummer";
+			};
+			name = Debug;
+		};
+		B41716E51DD1160C00999160 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = F69WJ27LN4;
+				INFOPLIST_FILE = AirDrummerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danhn.AirDrummerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirDrummer.app/AirDrummer";
+			};
+			name = Release;
+		};
+		B41716E71DD1160C00999160 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
+				INFOPLIST_FILE = AirDrummerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danhn.AirDrummerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = AirDrummer;
+			};
+			name = Debug;
+		};
+		B41716E81DD1160C00999160 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
+				INFOPLIST_FILE = AirDrummerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danhn.AirDrummerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = AirDrummer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B41716B01DD1160B00999160 /* Build configuration list for PBXProject "AirDrummer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B41716DE1DD1160C00999160 /* Debug */,
+				B41716DF1DD1160C00999160 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B41716E01DD1160C00999160 /* Build configuration list for PBXNativeTarget "AirDrummer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B41716E11DD1160C00999160 /* Debug */,
+				B41716E21DD1160C00999160 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B41716E31DD1160C00999160 /* Build configuration list for PBXNativeTarget "AirDrummerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B41716E41DD1160C00999160 /* Debug */,
+				B41716E51DD1160C00999160 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B41716E61DD1160C00999160 /* Build configuration list for PBXNativeTarget "AirDrummerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B41716E71DD1160C00999160 /* Debug */,
+				B41716E81DD1160C00999160 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B41716BF1DD1160B00999160 /* AirDrummer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B41716C01DD1160B00999160 /* AirDrummer.xcdatamodel */,
+			);
+			currentVersion = B41716C01DD1160B00999160 /* AirDrummer.xcdatamodel */;
+			path = AirDrummer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B41716AD1DD1160B00999160 /* Project object */;
+}
