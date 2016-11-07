@@ -15,10 +15,7 @@
 		B41716C61DD1160B00999160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41716C41DD1160B00999160 /* LaunchScreen.storyboard */; };
 		B41716D11DD1160C00999160 /* AirDrummerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716D01DD1160C00999160 /* AirDrummerTests.swift */; };
 		B41716DC1DD1160C00999160 /* AirDrummerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716DB1DD1160C00999160 /* AirDrummerUITests.swift */; };
-		B41716F21DD116BE00999160 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716EB1DD116BE00999160 /* main.m */; };
 		B41716F31DD116BE00999160 /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = B41716ED1DD116BE00999160 /* RingBuffer.mm */; };
-		B41716F41DD116BE00999160 /* SMUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716EF1DD116BE00999160 /* SMUAppDelegate.m */; };
-		B41716F51DD116BE00999160 /* SMUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716F11DD116BE00999160 /* SMUViewController.m */; };
 		B41716F91DD116D400999160 /* HttpCommHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = B41716F71DD116D400999160 /* HttpCommHandler.mm */; };
 /* End PBXBuildFile section */
 
@@ -55,13 +52,8 @@
 		B41716DB1DD1160C00999160 /* AirDrummerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDrummerUITests.swift; sourceTree = "<group>"; };
 		B41716DD1DD1160C00999160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B41716EA1DD116BE00999160 /* AirDrummer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirDrummer-Bridging-Header.h"; sourceTree = "<group>"; };
-		B41716EB1DD116BE00999160 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B41716EC1DD116BE00999160 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
 		B41716ED1DD116BE00999160 /* RingBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RingBuffer.mm; sourceTree = "<group>"; };
-		B41716EE1DD116BE00999160 /* SMUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUAppDelegate.h; sourceTree = "<group>"; };
-		B41716EF1DD116BE00999160 /* SMUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMUAppDelegate.m; sourceTree = "<group>"; };
-		B41716F01DD116BE00999160 /* SMUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUViewController.h; sourceTree = "<group>"; };
-		B41716F11DD116BE00999160 /* SMUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMUViewController.m; sourceTree = "<group>"; };
 		B41716F61DD116D400999160 /* HttpCommHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpCommHandler.h; sourceTree = "<group>"; };
 		B41716F71DD116D400999160 /* HttpCommHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HttpCommHandler.mm; sourceTree = "<group>"; };
 		B41716F81DD116D400999160 /* HTTPExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPExample-Prefix.pch"; sourceTree = "<group>"; };
@@ -148,16 +140,11 @@
 		B41716E91DD116AB00999160 /* HTTPExample */ = {
 			isa = PBXGroup;
 			children = (
-				B41716EB1DD116BE00999160 /* main.m */,
 				B41716EC1DD116BE00999160 /* RingBuffer.h */,
 				B41716ED1DD116BE00999160 /* RingBuffer.mm */,
-				B41716EE1DD116BE00999160 /* SMUAppDelegate.h */,
 				B41716F61DD116D400999160 /* HttpCommHandler.h */,
 				B41716F71DD116D400999160 /* HttpCommHandler.mm */,
 				B41716F81DD116D400999160 /* HTTPExample-Prefix.pch */,
-				B41716EF1DD116BE00999160 /* SMUAppDelegate.m */,
-				B41716F01DD116BE00999160 /* SMUViewController.h */,
-				B41716F11DD116BE00999160 /* SMUViewController.m */,
 				B41716EA1DD116BE00999160 /* AirDrummer-Bridging-Header.h */,
 			);
 			name = HTTPExample;
@@ -303,9 +290,6 @@
 			files = (
 				B41716BB1DD1160B00999160 /* ViewController.swift in Sources */,
 				B41716C11DD1160B00999160 /* AirDrummer.xcdatamodeld in Sources */,
-				B41716F41DD116BE00999160 /* SMUAppDelegate.m in Sources */,
-				B41716F21DD116BE00999160 /* main.m in Sources */,
-				B41716F51DD116BE00999160 /* SMUViewController.m in Sources */,
 				B41716F31DD116BE00999160 /* RingBuffer.mm in Sources */,
 				B41716F91DD116D400999160 /* HttpCommHandler.mm in Sources */,
 				B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */,
@@ -564,6 +548,7 @@
 				B41716E21DD1160C00999160 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B41716E31DD1160C00999160 /* Build configuration list for PBXNativeTarget "AirDrummerTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +557,7 @@
 				B41716E51DD1160C00999160 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B41716E61DD1160C00999160 /* Build configuration list for PBXNativeTarget "AirDrummerUITests" */ = {
 			isa = XCConfigurationList;
@@ -580,6 +566,7 @@
 				B41716E81DD1160C00999160 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
