@@ -45,14 +45,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drum Training" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkY-1J-nRi">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drum Training" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkY-1J-nRi">
                                                     <rect key="frame" x="133" y="27" width="108" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WkY-1J-nRi" firstAttribute="centerY" secondItem="g43-ml-Mcq" secondAttribute="centerY" id="vLI-yK-SZ3"/>
+                                                <constraint firstItem="WkY-1J-nRi" firstAttribute="centerX" secondItem="g43-ml-Mcq" secondAttribute="centerX" id="yuN-5Q-zOq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="0u0-hQ-Xmi"/>
@@ -65,14 +68,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play the Drums" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmA-7D-VDT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play the Drums" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmA-7D-VDT">
                                                     <rect key="frame" x="129" y="27" width="116" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RmA-7D-VDT" firstAttribute="centerY" secondItem="I3o-E8-VQu" secondAttribute="centerY" id="P4k-5F-thl"/>
+                                                <constraint firstItem="RmA-7D-VDT" firstAttribute="centerX" secondItem="I3o-E8-VQu" secondAttribute="centerX" id="ZRY-ex-NQK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="mpb-tF-Vxa" kind="show" id="ium-du-Kex"/>
@@ -92,15 +98,15 @@
             </objects>
             <point key="canvasLocation" x="789.60000000000002" y="394.45277361319341"/>
         </scene>
-        <!--View Controller-->
+        <!--Sprite View Controller-->
         <scene sceneID="9El-SW-Fr5">
             <objects>
-                <viewController id="mpb-tF-Vxa" customClass="ViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mpb-tF-Vxa" customClass="SpriteViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gCh-7O-KL3"/>
                         <viewControllerLayoutGuide type="bottom" id="H23-Jp-rz5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NYV-0u-Z0x">
+                    <view key="view" contentMode="scaleToFill" id="NYV-0u-Z0x" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

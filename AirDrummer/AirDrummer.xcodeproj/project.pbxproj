@@ -18,6 +18,7 @@
 		B41716F31DD116BE00999160 /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = B41716ED1DD116BE00999160 /* RingBuffer.mm */; };
 		B41716F91DD116D400999160 /* HttpCommHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = B41716F71DD116D400999160 /* HttpCommHandler.mm */; };
 		B41716FB1DD178FC00999160 /* SpriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716FA1DD178FC00999160 /* SpriteViewController.swift */; };
+		B41716FD1DD1808E00999160 /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716FC1DD1808E00999160 /* SpriteScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B41716F71DD116D400999160 /* HttpCommHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HttpCommHandler.mm; sourceTree = "<group>"; };
 		B41716F81DD116D400999160 /* HTTPExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPExample-Prefix.pch"; sourceTree = "<group>"; };
 		B41716FA1DD178FC00999160 /* SpriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteViewController.swift; sourceTree = "<group>"; };
+		B41716FC1DD1808E00999160 /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				B41716C71DD1160B00999160 /* Info.plist */,
 				B41716BF1DD1160B00999160 /* AirDrummer.xcdatamodeld */,
 				B41716FA1DD178FC00999160 /* SpriteViewController.swift */,
+				B41716FC1DD1808E00999160 /* SpriteScene.swift */,
 			);
 			path = AirDrummer;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				B41716BB1DD1160B00999160 /* ViewController.swift in Sources */,
 				B41716C11DD1160B00999160 /* AirDrummer.xcdatamodeld in Sources */,
 				B41716F31DD116BE00999160 /* RingBuffer.mm in Sources */,
+				B41716FD1DD1808E00999160 /* SpriteScene.swift in Sources */,
 				B41716F91DD116D400999160 /* HttpCommHandler.mm in Sources */,
 				B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */,
 				B41716FB1DD178FC00999160 /* SpriteViewController.swift in Sources */,
