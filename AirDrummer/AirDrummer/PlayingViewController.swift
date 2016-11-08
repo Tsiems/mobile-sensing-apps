@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import SpriteKit
+import CoreMotion
 
-class SpriteViewController: UIViewController {
+class PlayingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

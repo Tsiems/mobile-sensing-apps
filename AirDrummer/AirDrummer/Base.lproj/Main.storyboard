@@ -20,14 +20,29 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Hi Hats " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpI-0V-lVd">
+                                <rect key="frame" x="125" y="321" width="124" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="6Xs-g9-tHg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HpI-0V-lVd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CsN-Hc-QgV"/>
+                            <constraint firstItem="HpI-0V-lVd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="n8p-jY-b74"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="150"/>
+            <point key="canvasLocation" x="1616.8" y="149.77511244377811"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Avatar the Last Air Drummer-->
         <scene sceneID="Jaw-Pv-V9Z">
             <objects>
                 <tableViewController id="vG2-qd-Zs9" sceneMemberID="viewController">
@@ -42,7 +57,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c4q-rv-YrP" id="g43-ml-Mcq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drum Training" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkY-1J-nRi">
@@ -65,7 +80,7 @@
                                         <rect key="frame" x="0.0" y="75" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DQR-Sm-GEB" id="I3o-E8-VQu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play the Drums" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmA-7D-VDT">
@@ -92,21 +107,21 @@
                             <outlet property="delegate" destination="vG2-qd-Zs9" id="JA9-wj-5Y5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="N2I-Go-uAI"/>
+                    <navigationItem key="navigationItem" title="Avatar the Last Air Drummer" id="N2I-Go-uAI"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmh-77-RnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="789.60000000000002" y="394.45277361319341"/>
         </scene>
-        <!--Sprite View Controller-->
+        <!--Playing View Controller-->
         <scene sceneID="9El-SW-Fr5">
             <objects>
-                <viewController id="mpb-tF-Vxa" customClass="SpriteViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mpb-tF-Vxa" customClass="PlayingViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gCh-7O-KL3"/>
                         <viewControllerLayoutGuide type="bottom" id="H23-Jp-rz5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NYV-0u-Z0x" customClass="SKView">
+                    <view key="view" contentMode="scaleToFill" id="NYV-0u-Z0x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
