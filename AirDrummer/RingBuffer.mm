@@ -6,7 +6,7 @@
 //
 
 #import "RingBuffer.h"
-#define BUFFER_SIZE 10
+#define BUFFER_SIZE 15
 
 @interface RingBuffer()
 {
