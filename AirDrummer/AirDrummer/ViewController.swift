@@ -52,6 +52,7 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         let mag = fabs((motion?.userAcceleration.x)!)+fabs((motion?.userAcceleration.y)!)+fabs((motion?.userAcceleration.z)!)
         if(mag > self.magValue) {
             print(mag)
+            self.backQueue.addOperation({() -> Void in self.motionEventOccurred()})
         }
     }
     
@@ -62,6 +63,41 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
             self.cmMotionManager.startDeviceMotionUpdates(to: backQueue, withHandler:self.handleMotion)
         }
     }
+    
+    func motionEventOccurred() {
+        self.sendFeatureArray(data: self.ringBuffer.getDataAsVector() as NSArray, label: self.instrumentLabel.text!)
+    }
+    
+    func postFeatureHandler(data:Data?, urlResponse:URLResponse?, error:Error?) -> Void{
+        if(!(error != nil)){
+            print(urlResponse!)
+            let responseData = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+            print(responseData)
+            
+        } else{
+            print(error!)
+        }
+
+    }
+    
+    func sendFeatureArray(data:NSArray, label:String) {
+        let baseUrl = "\(SERVER_URL)/AddDataPoint"
+        let postUrl = NSURL(string: baseUrl)
+        
+        let jsonUpload:NSDictionary = ["feature": data, "label": label]
+        
+        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
+        var request = URLRequest(url: postUrl as! URL)
+        request.httpBody = requestBody
+        request.httpMethod = "POST"
+        
+        
+        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
+        
+        postTask.resume()
+    }
+    
+    
     
 
     
