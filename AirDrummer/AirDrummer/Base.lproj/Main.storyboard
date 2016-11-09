@@ -37,6 +37,9 @@
                             <constraint firstItem="HpI-0V-lVd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="n8p-jY-b74"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="InstrumentLabel" destination="HpI-0V-lVd" id="1Nk-uh-Dc1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
