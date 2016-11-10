@@ -9,9 +9,6 @@
 import UIKit
 import CoreMotion
 
-let SERVER_URL = "http://10.8.114.151:8000"
-let UPDATE_INTERVAL = 1/10.0
-
 class ViewController: UIViewController, URLSessionTaskDelegate {
 
     @IBOutlet weak var instrumentLabel: UILabel!
@@ -23,7 +20,6 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     let magValue = 1.0
     var numDataPoints = 0
     var timer = Timer()
-    var oldRingBuffer = RingBuffer()
     var bufferChanged:Bool = false
     var counterVal = 0
     let instruments = ["Hi-Hat", "Snare"]
@@ -51,6 +47,8 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         /// stop timer when leave screen
         self.timer.invalidate()
+        self.cmMotionManager.stopDeviceMotionUpdates()
+        super.viewWillDisappear(animated)
     }
     
     func updateTime() {
@@ -127,7 +125,7 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         self.numDataPoints = self.numDataPoints + 1
         
         
-        let jsonUpload:NSDictionary = ["feature": data, "label": label, "dsid": 1]
+        let jsonUpload:NSDictionary = ["feature": data, "label": label, "dsid": DSID]
         
         let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
         var request = URLRequest(url: postUrl as! URL)
@@ -143,6 +141,26 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         print(self.numDataPoints)
     }
     
+    @IBAction func sendUpdate(_ sender: Any) {
+        let baseUrl = "\(SERVER_URL)/UpdateModel"
+        let postUrl = NSURL(string: baseUrl)
+        self.numDataPoints = self.numDataPoints + 1
+        
+        
+        let jsonUpload:NSDictionary = ["dsid": DSID]
+        
+        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
+        var request = URLRequest(url: postUrl as! URL)
+        request.httpBody = requestBody
+        request.httpMethod = "POST"
+        
+        
+        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
+        
+        
+        
+        postTask.resume()
+    }
     
     
 
