@@ -19,6 +19,9 @@
 		B41716F91DD116D400999160 /* HttpCommHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = B41716F71DD116D400999160 /* HttpCommHandler.mm */; };
 		B41716FB1DD178FC00999160 /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716FA1DD178FC00999160 /* PlayingViewController.swift */; };
 		B41716FD1DD1808E00999160 /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716FC1DD1808E00999160 /* SpriteScene.swift */; };
+		B4D529801DD3F3A200A62BF0 /* hihat.wav in Resources */ = {isa = PBXBuildFile; fileRef = B4D5297D1DD3F3A200A62BF0 /* hihat.wav */; };
+		B4D529811DD3F3A200A62BF0 /* kickdrum.wav in Resources */ = {isa = PBXBuildFile; fileRef = B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */; };
+		B4D529821DD3F3A200A62BF0 /* snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = B4D5297F1DD3F3A200A62BF0 /* snare.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		B41716F81DD116D400999160 /* HTTPExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPExample-Prefix.pch"; sourceTree = "<group>"; };
 		B41716FA1DD178FC00999160 /* PlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
 		B41716FC1DD1808E00999160 /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
+		B4D5297D1DD3F3A200A62BF0 /* hihat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hihat.wav; path = Assets.xcassets/hihat.wav; sourceTree = "<group>"; };
+		B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = kickdrum.wav; path = Assets.xcassets/kickdrum.wav; sourceTree = "<group>"; };
+		B4D5297F1DD3F3A200A62BF0 /* snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = snare.wav; path = Assets.xcassets/snare.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,9 @@
 				B41716BA1DD1160B00999160 /* ViewController.swift */,
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
 				B41716C21DD1160B00999160 /* Assets.xcassets */,
+				B4D5297D1DD3F3A200A62BF0 /* hihat.wav */,
+				B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */,
+				B4D5297F1DD3F3A200A62BF0 /* snare.wav */,
 				B41716C41DD1160B00999160 /* LaunchScreen.storyboard */,
 				B41716C71DD1160B00999160 /* Info.plist */,
 				B41716BF1DD1160B00999160 /* AirDrummer.xcdatamodeld */,
@@ -270,6 +279,9 @@
 				B41716C61DD1160B00999160 /* LaunchScreen.storyboard in Resources */,
 				B41716C31DD1160B00999160 /* Assets.xcassets in Resources */,
 				B41716BE1DD1160B00999160 /* Main.storyboard in Resources */,
+				B4D529801DD3F3A200A62BF0 /* hihat.wav in Resources */,
+				B4D529821DD3F3A200A62BF0 /* snare.wav in Resources */,
+				B4D529811DD3F3A200A62BF0 /* kickdrum.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

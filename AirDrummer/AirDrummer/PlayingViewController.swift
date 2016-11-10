@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreMotion
-
+import AVFoundation
 
 class PlayingViewController: UIViewController, URLSessionTaskDelegate {
     
@@ -18,6 +18,10 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
     var ringBuffer = RingBuffer()
     let magValue = 1.0
     var numDataPoints = 0
+    
+    var hihatPlayer = AVAudioPlayer()
+    var snarePlayer = AVAudioPlayer()
+    var kickdrumPlayer = AVAudioPlayer()
 
 
     override func viewDidLoad() {
@@ -29,6 +33,43 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
         sessionConfig.timeoutIntervalForRequest = 5.0
         sessionConfig.timeoutIntervalForResource = 8.0
         sessionConfig.httpMaximumConnectionsPerHost = 1
+        
+        // set up sound
+        let hihatSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "hihat", ofType: "wav")!)
+        
+        do {
+            self.hihatPlayer = try AVAudioPlayer(contentsOf: hihatSound as URL)
+            self.hihatPlayer.prepareToPlay()
+        }
+        catch {
+            //
+        }
+        
+        let kickdrumSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "kickdrum", ofType: "wav")!)
+        
+        do {
+            self.kickdrumPlayer = try AVAudioPlayer(contentsOf: kickdrumSound as URL)
+            self.kickdrumPlayer.prepareToPlay()
+        }
+        catch {
+            //
+        }
+
+        
+        let snareSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "snare", ofType: "wav")!)
+        
+        do {
+            self.snarePlayer = try AVAudioPlayer(contentsOf: snareSound as URL)
+            self.snarePlayer.prepareToPlay()
+        }
+        catch {
+            //
+        }
+
+        
+        self.hihatPlayer.play()
+        self.snarePlayer.play()
+        self.kickdrumPlayer.play()
         
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         self.startCMMonitoring()
