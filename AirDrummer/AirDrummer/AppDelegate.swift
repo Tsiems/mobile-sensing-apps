@@ -8,15 +8,36 @@
 
 import UIKit
 import CoreData
+import CoreMotion
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, URLSessionTaskDelegate {
 
     var window: UIWindow?
+    
+    // adding motion and url session vars 
+    var session = URLSession()
+    let cmMotionManager = CMMotionManager()
+    let backQueue = OperationQueue()
+    let ringBuffer = RingBuffer()
+    let magValue = 0.1
+    var instrument = "Hi Hats"
+    
+    var playingMode = false
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // setup URLSession
+        let sessionConfig = URLSessionConfiguration.ephemeral
+        sessionConfig.timeoutIntervalForRequest = 5.0
+        sessionConfig.timeoutIntervalForResource = 8.0
+        sessionConfig.httpMaximumConnectionsPerHost = 1
+        
+        self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
+        self.startCMMonitoring()
         return true
     }
 
@@ -88,6 +109,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    // MARK: - Getting and sending motion data to web server
+    
+    func handleMotion(motion:CMDeviceMotion?, error:Error?)->Void{
+        self.ringBuffer.addNewData(Float((motion?.userAcceleration.x)!), withY: Float((motion?.userAcceleration.y)!), withZ: Float((motion?.userAcceleration.z)!))
+        let mag = fabs((motion?.userAcceleration.x)!)+fabs((motion?.userAcceleration.y)!)+fabs((motion?.userAcceleration.z)!)
+        if(mag > self.magValue) {
+            print(mag)
+            self.backQueue.addOperation({() -> Void in self.motionEventOccurred()})
+        }
+    }
+    
+    func startCMMonitoring(){
+        if self.cmMotionManager.isDeviceMotionAvailable {
+            // update from this queue
+            self.cmMotionManager.deviceMotionUpdateInterval = UPDATE_INTERVAL
+            self.cmMotionManager.startDeviceMotionUpdates(to: backQueue, withHandler:self.handleMotion)
+        }
+    }
+    
+    func motionEventOccurred() {
+        // if we are in training mode, send data with labels
+        if (!self.playingMode) {
+            self.sendFeatureArray(data: self.ringBuffer.getDataAsVector() as NSArray, label: self.instrument)
+        }
+        // if we are in playing mode, send data for predictions
+    }
+    
+    func postFeatureHandler(data:Data?, urlResponse:URLResponse?, error:Error?) -> Void{
+        if(!(error != nil)){
+            print(urlResponse!)
+            let responseData = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+            print(responseData)
+            
+        } else{
+            print(error!)
+        }
+        
+    }
+    
+    func sendFeatureArray(data:NSArray, label:String) {
+        let baseUrl = "\(SERVER_URL)/AddDataPoint"
+        let postUrl = NSURL(string: baseUrl)
+        
+        let jsonUpload:NSDictionary = ["feature": data, "label": label]
+        
+        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
+        var request = URLRequest(url: postUrl as! URL)
+        request.httpBody = requestBody
+        request.httpMethod = "POST"
+        
+        
+        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
+        
+        postTask.resume()
+    }
+
 
 }
 
