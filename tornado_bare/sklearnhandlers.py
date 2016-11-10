@@ -49,19 +49,21 @@ class RequestNewDatasetId(BaseHandler):
         self.write_json({"dsid":newSessionId})
 
 class UpdateModelForDatasetId(BaseHandler):
-    def get(self):
+    def post(self):
         '''Train a new model (or update) for given dataset ID
         '''
-        dsid = self.get_int_arg("dsid",default=0)
+        data = json.loads(self.request.body.decode("utf-8"))
+        dsid = data['dsid']
+
 
         # create feature vectors from database
         f=[];
-        for a in self.db.labeledinstances.find({"dsid":dsid}): 
+        for a in self.db.labeledinstances.find({"dsid":dsid}):
             f.append([float(val) for val in a['feature']])
 
         # create label vector from database
         l=[];
-        for a in self.db.labeledinstances.find({"dsid":dsid}): 
+        for a in self.db.labeledinstances.find({"dsid":dsid}):
             l.append(a['label'])
 
         # fit the model to the data
@@ -85,14 +87,14 @@ class PredictOneFromDatasetId(BaseHandler):
     def post(self):
         '''Predict the class of a sent feature vector
         '''
-        data = json.loads(self.request.body.decode("utf-8"))    
+        data = json.loads(self.request.body.decode("utf-8"))
 
         vals = data['feature'];
         fvals = [float(val) for val in vals];
         fvals = np.array(fvals).reshape(1, -1)
         dsid  = data['dsid']
 
-        
+
         # load the model from the database (using pickle)
         # we are blocking tornado!! no!!
         if(dsid not in self.clf.keys()):
