@@ -10,5 +10,6 @@
 @interface RingBuffer : NSObject
 
 -(NSArray*)getDataAsVector;
+-(RingBuffer*)getFFT;
 -(void) addNewData:(float)xData withY:(float)yData withZ:(float)zData;
 @end

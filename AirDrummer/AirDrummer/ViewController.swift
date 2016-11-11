@@ -99,11 +99,14 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     
     func motionEventOccurred() {
         let data = self.ringBuffer.getDataAsVector() as NSArray
+        
         if data[0] as! Double == 0.0 {
             print("not full full")
         } else {
-            self.sendFeatureArray(data: data, label: self.instrumentLabel.text!)
-            
+            let fftBuffer:RingBuffer = self.ringBuffer.getFFT()
+            let fftVector = fftBuffer.getDataAsVector() as NSArray
+            self.sendFeatureArray(data: fftVector, label: self.instrumentLabel.text!)
+            //self.sendFeatureArray(data: data, label: self.instrumentLabel.text!)
         }
     }
     

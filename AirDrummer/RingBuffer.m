@@ -72,7 +72,7 @@
         self.head = 0;
 }
 
--(RingBuffer*)getFFT:(RingBuffer*)arrayData{
+-(RingBuffer*)getFFT{
     RingBuffer *threeAxisFFT = [RingBuffer init];
     [self.fftHelper performForwardFFTWithData:self->x andCopydBMagnitudeToBuffer:threeAxisFFT->x];
     [self.fftHelper performForwardFFTWithData:self->y andCopydBMagnitudeToBuffer:threeAxisFFT->y];
