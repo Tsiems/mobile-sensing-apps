@@ -6,6 +6,7 @@
 //
 
 #import "RingBuffer.h"
+#import "FFTHelper.h"
 #define BUFFER_SIZE 15
 
 @interface RingBuffer()
@@ -16,10 +17,13 @@
 }
 
 @property int head;
+@property (strong, nonatomic) FFTHelper *fftHelper;
 
 @end
 
 @implementation RingBuffer
+
+
 
 -(id)init{
     self = [super init];
@@ -27,6 +31,14 @@
         self.head = 0;
     }
     return self;
+}
+
+-(FFTHelper*)fftHelper{
+    if(!_fftHelper){
+        _fftHelper = [[FFTHelper alloc]initWithFFTSize:BUFFER_SIZE];
+    }
+    
+    return _fftHelper;
 }
 
 -(void) addNewData:(float)xData
@@ -58,6 +70,14 @@
     self.head++;
     if(self.head >= BUFFER_SIZE)
         self.head = 0;
+}
+
+-(RingBuffer*)getFFT:(RingBuffer*)arrayData{
+    RingBuffer *threeAxisFFT = [RingBuffer init];
+    [self.fftHelper performForwardFFTWithData:self->x andCopydBMagnitudeToBuffer:threeAxisFFT->x];
+    [self.fftHelper performForwardFFTWithData:self->y andCopydBMagnitudeToBuffer:threeAxisFFT->y];
+    [self.fftHelper performForwardFFTWithData:self->z andCopydBMagnitudeToBuffer:threeAxisFFT->z];
+    return threeAxisFFT;
 }
 
 @end
