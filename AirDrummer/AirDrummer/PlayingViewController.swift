@@ -119,8 +119,28 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
     func postFeatureHandler(data:Data?, urlResponse:URLResponse?, error:Error?) -> Void{
         if(!(error != nil)){
             print(urlResponse!)
-            let responseData = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
-            print(responseData ?? "No data")
+            if let responseData = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, Any> {
+                print(responseData)
+                
+                if let prediction = responseData["prediction"] as? String {
+                    switch prediction {
+                    case "['Play Hi-Hat']":
+                        self.hihatPlayer.play()
+                    case "['Play Snare']":
+                        self.snarePlayer.play()
+                    case "['Play Kick Drum']":
+                        self.kickdrumPlayer.play()
+                    default:
+                        print("UNKNOWN")
+                    }
+                }
+                else {
+                    print("could not convert prediction to string")
+                }
+            }
+            else {
+                print("Could not convert to dict")
+            }
             
         } else{
             print(error!)
