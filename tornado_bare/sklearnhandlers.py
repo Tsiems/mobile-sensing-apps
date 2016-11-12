@@ -68,8 +68,8 @@ class UpdateModelForDatasetId(BaseHandler):
             l.append(a['label'])
 
         # fit the model to the data
-        # c1 = KNeighborsClassifier(n_neighbors=3);
-        c1 = RandomForestClassifier(n_estimators=25);
+        c1 = KNeighborsClassifier(n_neighbors=10);
+        # c1 = RandomForestClassifier(n_estimators=25);
         acc = -1;
         if l:
             c1.fit(f,l) # training

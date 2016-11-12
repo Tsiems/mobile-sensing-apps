@@ -7,7 +7,7 @@
 
 #import "RingBuffer.h"
 #import "FFTHelper.h"
-#define BUFFER_SIZE 15
+#define BUFFER_SIZE 16
 
 @interface RingBuffer()
 {
@@ -77,6 +77,8 @@
     [self.fftHelper performForwardFFTWithData:self->x andCopydBMagnitudeToBuffer:threeAxisFFT->x];
     [self.fftHelper performForwardFFTWithData:self->y andCopydBMagnitudeToBuffer:threeAxisFFT->y];
     [self.fftHelper performForwardFFTWithData:self->z andCopydBMagnitudeToBuffer:threeAxisFFT->z];
+    
+//    NSLog(@"%@",threeAxisFFT->x);
     return threeAxisFFT;
 }
 

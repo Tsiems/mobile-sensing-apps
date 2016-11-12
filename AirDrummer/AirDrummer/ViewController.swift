@@ -17,6 +17,7 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     let cmMotionManager = CMMotionManager()
     let backQueue = OperationQueue()
     var ringBuffer = RingBuffer()
+    var orientationBuffer = RingBuffer()
     let magValue = 1.0
     var numDataPoints = 0
     var timer = Timer()
@@ -61,6 +62,7 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
             self.counterVal += 1
             if counterVal >= 2 {
                 self.ringBuffer = RingBuffer()
+                self.orientationBuffer = RingBuffer()
                 print("emptied ring buffer")
                 self.counterVal = 0
                 let random = Int(arc4random_uniform(UInt32(self.instruments.count)))
@@ -81,7 +83,11 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     
     func handleMotion(motion:CMDeviceMotion?, error:Error?)->Void{
         self.ringBuffer.addNewData(Float((motion?.userAcceleration.x)!), withY: Float((motion?.userAcceleration.y)!), withZ: Float((motion?.userAcceleration.z)!))
+        
+        self.orientationBuffer.addNewData(Float((motion?.attitude.pitch)!), withY: Float((motion?.attitude.roll)!), withZ: Float((motion?.attitude.yaw)!))
+        
         let mag = fabs((motion?.userAcceleration.x)!)+fabs((motion?.userAcceleration.y)!)+fabs((motion?.userAcceleration.z)!)
+        
         if(mag > self.magValue) {
             print(mag)
             bufferChanged = true
@@ -103,8 +109,10 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         if data[0] as! Double == 0.0 {
             print("not full full")
         } else {
-            let fftBuffer:RingBuffer = self.ringBuffer.getFFT()
-            let fftVector = fftBuffer.getDataAsVector() as NSArray
+            
+            //get the FFT of both buffers and add them up for feature data
+            let fftVector = (self.ringBuffer.getFFT().getDataAsVector()+self.orientationBuffer.getFFT().getDataAsVector()) as NSArray
+            
             self.sendFeatureArray(data: fftVector, label: self.instrumentLabel.text!)
             //self.sendFeatureArray(data: data, label: self.instrumentLabel.text!)
         }

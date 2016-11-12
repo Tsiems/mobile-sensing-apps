@@ -16,6 +16,7 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
     let cmMotionManager = CMMotionManager()
     let backQueue = OperationQueue()
     var ringBuffer = RingBuffer()
+    var orientationBuffer = RingBuffer()
     let magValue = 1.0
     var numDataPoints = 0
     
@@ -91,7 +92,11 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
 
     func handleMotion(motion:CMDeviceMotion?, error:Error?)->Void{
         self.ringBuffer.addNewData(Float((motion?.userAcceleration.x)!), withY: Float((motion?.userAcceleration.y)!), withZ: Float((motion?.userAcceleration.z)!))
+        
+        self.orientationBuffer.addNewData(Float((motion?.attitude.pitch)!), withY: Float((motion?.attitude.roll)!), withZ: Float((motion?.attitude.yaw)!))
+        
         let mag = fabs((motion?.userAcceleration.x)!)+fabs((motion?.userAcceleration.y)!)+fabs((motion?.userAcceleration.z)!)
+        
         if(mag > self.magValue) {
             print(mag)
             self.backQueue.addOperation({() -> Void in self.motionEventOccurred()})
@@ -111,7 +116,13 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
         if data[0] as! Double == 0.0 {
             print("not full full")
         } else {
-            self.getPredictionData(data: data)
+            
+            //get the FFT of both buffers and add them up for prediction data
+            self.getPredictionData(data: (self.ringBuffer.getFFT().getDataAsVector()+self.orientationBuffer.getFFT().getDataAsVector()) as NSArray )
+            
+            print(self.orientationBuffer.getFFT().getDataAsVector())
+            print(self.orientationBuffer.getDataAsVector())
+//            self.getPredictionData(data: data)
             
         }
     }
