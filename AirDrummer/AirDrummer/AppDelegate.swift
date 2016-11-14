@@ -8,15 +8,21 @@
 
 import UIKit
 import CoreData
+import CoreMotion
+
+let SERVER_URL = "http://10.8.108.88:8000"
+let UPDATE_INTERVAL = 1/10.0
+var DSID = 9
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, URLSessionTaskDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         return true
     }
 
@@ -88,6 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    
 }
 

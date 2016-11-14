@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91516AF71DD683230019FC06 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91516AF61DD683230019FC06 /* FFTHelper.m */; };
 		B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716B81DD1160B00999160 /* AppDelegate.swift */; };
 		B41716BB1DD1160B00999160 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716BA1DD1160B00999160 /* ViewController.swift */; };
 		B41716BE1DD1160B00999160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41716BC1DD1160B00999160 /* Main.storyboard */; };
@@ -15,11 +16,13 @@
 		B41716C61DD1160B00999160 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41716C41DD1160B00999160 /* LaunchScreen.storyboard */; };
 		B41716D11DD1160C00999160 /* AirDrummerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716D01DD1160C00999160 /* AirDrummerTests.swift */; };
 		B41716DC1DD1160C00999160 /* AirDrummerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716DB1DD1160C00999160 /* AirDrummerUITests.swift */; };
-		B41716F21DD116BE00999160 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716EB1DD116BE00999160 /* main.m */; };
 		B41716F31DD116BE00999160 /* RingBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716ED1DD116BE00999160 /* RingBuffer.m */; };
-		B41716F41DD116BE00999160 /* SMUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716EF1DD116BE00999160 /* SMUAppDelegate.m */; };
-		B41716F51DD116BE00999160 /* SMUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716F11DD116BE00999160 /* SMUViewController.m */; };
 		B41716F91DD116D400999160 /* HttpCommHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716F71DD116D400999160 /* HttpCommHandler.m */; };
+		B41716FB1DD178FC00999160 /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716FA1DD178FC00999160 /* PlayingViewController.swift */; };
+		B41716FD1DD1808E00999160 /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716FC1DD1808E00999160 /* SpriteScene.swift */; };
+		B4D529801DD3F3A200A62BF0 /* hihat.wav in Resources */ = {isa = PBXBuildFile; fileRef = B4D5297D1DD3F3A200A62BF0 /* hihat.wav */; };
+		B4D529811DD3F3A200A62BF0 /* kickdrum.wav in Resources */ = {isa = PBXBuildFile; fileRef = B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */; };
+		B4D529821DD3F3A200A62BF0 /* snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = B4D5297F1DD3F3A200A62BF0 /* snare.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91516AF51DD683230019FC06 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
+		91516AF61DD683230019FC06 /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
 		B41716B51DD1160B00999160 /* AirDrummer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirDrummer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41716B81DD1160B00999160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B41716BA1DD1160B00999160 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,16 +60,16 @@
 		B41716DB1DD1160C00999160 /* AirDrummerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDrummerUITests.swift; sourceTree = "<group>"; };
 		B41716DD1DD1160C00999160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B41716EA1DD116BE00999160 /* AirDrummer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirDrummer-Bridging-Header.h"; sourceTree = "<group>"; };
-		B41716EB1DD116BE00999160 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B41716EC1DD116BE00999160 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
 		B41716ED1DD116BE00999160 /* RingBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RingBuffer.m; sourceTree = "<group>"; };
-		B41716EE1DD116BE00999160 /* SMUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUAppDelegate.h; sourceTree = "<group>"; };
-		B41716EF1DD116BE00999160 /* SMUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMUAppDelegate.m; sourceTree = "<group>"; };
-		B41716F01DD116BE00999160 /* SMUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMUViewController.h; sourceTree = "<group>"; };
-		B41716F11DD116BE00999160 /* SMUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMUViewController.m; sourceTree = "<group>"; };
 		B41716F61DD116D400999160 /* HttpCommHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpCommHandler.h; sourceTree = "<group>"; };
 		B41716F71DD116D400999160 /* HttpCommHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpCommHandler.m; sourceTree = "<group>"; };
 		B41716F81DD116D400999160 /* HTTPExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPExample-Prefix.pch"; sourceTree = "<group>"; };
+		B41716FA1DD178FC00999160 /* PlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
+		B41716FC1DD1808E00999160 /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
+		B4D5297D1DD3F3A200A62BF0 /* hihat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hihat.wav; path = Assets.xcassets/hihat.wav; sourceTree = "<group>"; };
+		B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = kickdrum.wav; path = Assets.xcassets/kickdrum.wav; sourceTree = "<group>"; };
+		B4D5297F1DD3F3A200A62BF0 /* snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = snare.wav; path = Assets.xcassets/snare.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +125,14 @@
 				B41716BA1DD1160B00999160 /* ViewController.swift */,
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
 				B41716C21DD1160B00999160 /* Assets.xcassets */,
+				B4D5297D1DD3F3A200A62BF0 /* hihat.wav */,
+				B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */,
+				B4D5297F1DD3F3A200A62BF0 /* snare.wav */,
 				B41716C41DD1160B00999160 /* LaunchScreen.storyboard */,
 				B41716C71DD1160B00999160 /* Info.plist */,
 				B41716BF1DD1160B00999160 /* AirDrummer.xcdatamodeld */,
+				B41716FA1DD178FC00999160 /* PlayingViewController.swift */,
+				B41716FC1DD1808E00999160 /* SpriteScene.swift */,
 			);
 			path = AirDrummer;
 			sourceTree = "<group>";
@@ -148,16 +158,13 @@
 		B41716E91DD116AB00999160 /* HTTPExample */ = {
 			isa = PBXGroup;
 			children = (
-				B41716EB1DD116BE00999160 /* main.m */,
+				91516AF51DD683230019FC06 /* FFTHelper.h */,
+				91516AF61DD683230019FC06 /* FFTHelper.m */,
 				B41716EC1DD116BE00999160 /* RingBuffer.h */,
 				B41716ED1DD116BE00999160 /* RingBuffer.m */,
-				B41716EE1DD116BE00999160 /* SMUAppDelegate.h */,
 				B41716F61DD116D400999160 /* HttpCommHandler.h */,
 				B41716F71DD116D400999160 /* HttpCommHandler.m */,
 				B41716F81DD116D400999160 /* HTTPExample-Prefix.pch */,
-				B41716EF1DD116BE00999160 /* SMUAppDelegate.m */,
-				B41716F01DD116BE00999160 /* SMUViewController.h */,
-				B41716F11DD116BE00999160 /* SMUViewController.m */,
 				B41716EA1DD116BE00999160 /* AirDrummer-Bridging-Header.h */,
 			);
 			name = HTTPExample;
@@ -231,7 +238,7 @@
 				TargetAttributes = {
 					B41716B41DD1160B00999160 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = F69WJ27LN4;
+						DevelopmentTeam = 26Y78VEH49;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -277,6 +284,9 @@
 				B41716C61DD1160B00999160 /* LaunchScreen.storyboard in Resources */,
 				B41716C31DD1160B00999160 /* Assets.xcassets in Resources */,
 				B41716BE1DD1160B00999160 /* Main.storyboard in Resources */,
+				B4D529801DD3F3A200A62BF0 /* hihat.wav in Resources */,
+				B4D529821DD3F3A200A62BF0 /* snare.wav in Resources */,
+				B4D529811DD3F3A200A62BF0 /* kickdrum.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,12 +313,12 @@
 			files = (
 				B41716BB1DD1160B00999160 /* ViewController.swift in Sources */,
 				B41716C11DD1160B00999160 /* AirDrummer.xcdatamodeld in Sources */,
-				B41716F41DD116BE00999160 /* SMUAppDelegate.m in Sources */,
-				B41716F21DD116BE00999160 /* main.m in Sources */,
-				B41716F51DD116BE00999160 /* SMUViewController.m in Sources */,
 				B41716F31DD116BE00999160 /* RingBuffer.m in Sources */,
+				B41716FD1DD1808E00999160 /* SpriteScene.swift in Sources */,
 				B41716F91DD116D400999160 /* HttpCommHandler.m in Sources */,
 				B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */,
+				91516AF71DD683230019FC06 /* FFTHelper.m in Sources */,
+				B41716FB1DD178FC00999160 /* PlayingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,8 +471,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = danhn.AirDrummer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,8 +488,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = danhn.AirDrummer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -564,6 +576,7 @@
 				B41716E21DD1160C00999160 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B41716E31DD1160C00999160 /* Build configuration list for PBXNativeTarget "AirDrummerTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +585,7 @@
 				B41716E51DD1160C00999160 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B41716E61DD1160C00999160 /* Build configuration list for PBXNativeTarget "AirDrummerUITests" */ = {
 			isa = XCConfigurationList;
@@ -580,6 +594,7 @@
 				B41716E81DD1160C00999160 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
