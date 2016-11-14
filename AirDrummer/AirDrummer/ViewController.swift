@@ -12,6 +12,9 @@ import CoreMotion
 class ViewController: UIViewController, URLSessionTaskDelegate {
 
     @IBOutlet weak var instrumentLabel: UILabel!
+    @IBOutlet weak var snareButton: UIButton!
+    @IBOutlet weak var hihatbutton: UIButton!
+    @IBOutlet weak var dsidLabel: UITextField!
     
     var session = URLSession()
     let cmMotionManager = CMMotionManager()
@@ -38,11 +41,18 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         self.startCMMonitoring()
         
-        self.timer = Timer.scheduledTimer(timeInterval: 1,
-                             target: self,
-                             selector: #selector(self.updateTime),
-                             userInfo: nil,
-                             repeats: true)
+//        self.timer = Timer.scheduledTimer(timeInterval: 1,
+//                             target: self,
+//                             selector: #selector(self.updateTime),
+//                             userInfo: nil,
+//                             repeats: true)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,23 +63,24 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     }
     
     func updateTime() {
-        print("Sup")
-        if self.bufferChanged {
-            self.counterVal = 0
-            self.bufferChanged = false
-            print("buffer changed")
-        } else {
-            self.counterVal += 1
-            if counterVal >= 2 {
-                self.ringBuffer = RingBuffer()
-                self.orientationBuffer = RingBuffer()
-                print("emptied ring buffer")
-                self.counterVal = 0
-                let random = Int(arc4random_uniform(UInt32(self.instruments.count)))
-                prepareForSample(instrumentName: instruments[random])
-            }
-        }
+//        print("Sup")
+//        if self.bufferChanged {
+//            self.counterVal = 0
+//            self.bufferChanged = false
+//            print("buffer changed")
+//        } else {
+//            self.counterVal += 1
+//            if counterVal >= 2 {
+//                self.ringBuffer = RingBuffer()
+//                self.orientationBuffer = RingBuffer()
+//                print("emptied ring buffer")
+//                self.counterVal = 0
+//                prepareForSample(instrumentName: instruments[self.currentInstrument])
+//            }
+//        }
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -111,7 +122,7 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         } else {
             
             //get the FFT of both buffers and add them up for feature data
-            let fftVector = (self.ringBuffer.getFFT().getDataAsVector()+self.orientationBuffer.getFFT().getDataAsVector()) as NSArray
+            let fftVector = (self.ringBuffer.getDataAsVector()+self.orientationBuffer.getDataAsVector()) as NSArray
             
             self.sendFeatureArray(data: fftVector, label: self.instrumentLabel.text!)
             //self.sendFeatureArray(data: data, label: self.instrumentLabel.text!)
@@ -171,6 +182,28 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         
         
         postTask.resume()
+    }
+    
+    @IBAction func trainSnare(_ sender: Any) {
+        self.hihatbutton.isEnabled = true
+        self.snareButton.isEnabled = false
+        prepareForSample(instrumentName: "Snare")
+    }
+    
+    @IBAction func trainHiHat(_ sender: Any) {
+        self.hihatbutton.isEnabled = false
+        self.snareButton.isEnabled = true
+        prepareForSample(instrumentName: "Hi-Hat")
+    }
+    
+    @IBAction func updateDSID(_ sender: Any) {
+        DSID = Int(self.dsidLabel.text!)!
+        view.endEditing(true)
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     

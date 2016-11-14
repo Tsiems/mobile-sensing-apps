@@ -68,9 +68,9 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
         }
 
         
-        self.hihatPlayer.play()
-        self.snarePlayer.play()
-        self.kickdrumPlayer.play()
+//        self.hihatPlayer.play()
+//        self.snarePlayer.play()
+//        self.kickdrumPlayer.play()
         
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         self.startCMMonitoring()
@@ -118,11 +118,7 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
         } else {
             
             //get the FFT of both buffers and add them up for prediction data
-            self.getPredictionData(data: (self.ringBuffer.getFFT().getDataAsVector()+self.orientationBuffer.getFFT().getDataAsVector()) as NSArray )
-            
-            print(self.orientationBuffer.getFFT().getDataAsVector())
-            print(self.orientationBuffer.getDataAsVector())
-//            self.getPredictionData(data: data)
+            self.getPredictionData(data: (self.ringBuffer.getDataAsVector()+self.orientationBuffer.getDataAsVector()) as NSArray )
             
         }
     }

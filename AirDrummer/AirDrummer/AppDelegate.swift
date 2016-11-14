@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 import CoreMotion
 
-let SERVER_URL = "http://192.168.1.15:8000"
+let SERVER_URL = "http://10.8.108.88:8000"
 let UPDATE_INTERVAL = 1/10.0
-let DSID = 8
+var DSID = 9
 
 
 @UIApplicationMain
