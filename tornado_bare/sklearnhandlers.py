@@ -12,6 +12,7 @@ from basehandler import BaseHandler
 
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
 import pickle
 from bson.binary import Binary
 import json
@@ -70,6 +71,7 @@ class UpdateModelForDatasetId(BaseHandler):
         # fit the model to the data
         # c1 = KNeighborsClassifier(n_neighbors=10);
         c1 = RandomForestClassifier(n_estimators=25);
+        # c1 = SVC(gamma=0.001)
         acc = -1;
         if l:
             c1.fit(f,l) # training
