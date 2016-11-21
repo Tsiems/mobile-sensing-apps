@@ -5,11 +5,17 @@ Projects for CSE 5/7323 Mobile Sensing and Learning with Professor Eric Larson
 
 ###Sound samples:
 YEAH HO
+
 Bass drum
+
 Floor tom
+
 Snare drum
+
 Hanging toms
+
 Hi-hat
+
 Crash cymbal/Ride cymbal
 
 ###Recording capabilities:
@@ -20,6 +26,7 @@ Have a UI picture element that is a drumset silhouette that has selectable "zone
 
 ###ML Stuff:
 Keeping Random Forest and existing web stack as a stop gap measure
+
 Logistic Regression has relatively poor correlation - "we'll see if it's ass" - but this should allow us to get local calc to get rid of the web dependency for training
 
 ###Core Motion:
