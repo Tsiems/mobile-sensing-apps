@@ -35,7 +35,7 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
         
         let drums: [String] = [
             "Hi-Hat",
-            "Symbol",
+            "Symbal",
             "Base",
             "Snare",
             "Toms"
@@ -162,7 +162,16 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            //continue to playing
+            self.performSegue(withIdentifier: "playSegue", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "playSegue" {
+            
+            print("Play!")
+            
         }
     }
     

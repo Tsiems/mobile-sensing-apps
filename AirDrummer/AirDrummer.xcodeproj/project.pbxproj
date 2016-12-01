@@ -163,6 +163,7 @@
 		5C4814121DF0C2B500473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813781DF0C2B400473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift */; };
 		5C4814131DF0C2B500473AA4 /* ActivityIndicatorAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813791DF0C2B400473AA4 /* ActivityIndicatorAnimating.swift */; };
 		5C4814141DF0C2B500473AA4 /* ActivityIndicatorAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48137A1DF0C2B400473AA4 /* ActivityIndicatorAnimatable.swift */; };
+		5CA78A021DF0C81900198113 /* AssignTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA78A011DF0C81900198113 /* AssignTableViewController.swift */; };
 		5CC9B8191DE36BBB001B21DD /* SelectInstrumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */; };
 		5CC9BA971DE3A963001B21DD /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */; };
 		5CC9BA991DE3A975001B21DD /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */; };
@@ -368,6 +369,7 @@
 		5C4813781DF0C2B400473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationAudioEqualizer.swift; path = IBAnimatable2/ActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = SOURCE_ROOT; };
 		5C4813791DF0C2B400473AA4 /* ActivityIndicatorAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimating.swift; path = IBAnimatable2/ActivityIndicatorAnimating.swift; sourceTree = SOURCE_ROOT; };
 		5C48137A1DF0C2B400473AA4 /* ActivityIndicatorAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimatable.swift; path = IBAnimatable2/ActivityIndicatorAnimatable.swift; sourceTree = SOURCE_ROOT; };
+		5CA78A011DF0C81900198113 /* AssignTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignTableViewController.swift; sourceTree = "<group>"; };
 		5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInstrumentsViewController.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMBounceAnimation.swift; path = RAMAnimatedTabBarController/Animations/BounceAnimation/RAMBounceAnimation.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMFrameItemAnimation.swift; path = RAMAnimatedTabBarController/Animations/FrameAnimation/RAMFrameItemAnimation.swift; sourceTree = SOURCE_ROOT; };
@@ -639,6 +641,7 @@
 				B41716B81DD1160B00999160 /* AppDelegate.swift */,
 				B41716BA1DD1160B00999160 /* ViewController.swift */,
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
+				5CA78A011DF0C81900198113 /* AssignTableViewController.swift */,
 				5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */,
 				5CC9BBDE1DE8D38E001B21DD /* DataItem.swift */,
 				5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */,
@@ -906,6 +909,7 @@
 				5C4813FC1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				5C48138B1DF0C2B400473AA4 /* SystemRotateAnimator.swift in Sources */,
 				5CC9BAA51DE3A9BB001B21DD /* RAMAnimatedTabBarController.swift in Sources */,
+				5CA78A021DF0C81900198113 /* AssignTableViewController.swift in Sources */,
 				5C48137F1DF0C2B400473AA4 /* UIViewControllerExtension.swift in Sources */,
 				5C4812DF1DE930E000473AA4 /* HomeTableViewController.swift in Sources */,
 				5C4813DC1DF0C2B500473AA4 /* AnimatedPresenting.swift in Sources */,
