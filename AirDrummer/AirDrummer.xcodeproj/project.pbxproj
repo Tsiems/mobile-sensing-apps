@@ -9,6 +9,160 @@
 /* Begin PBXBuildFile section */
 		5C136E5D1DE3511500EE9B30 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C136E5C1DE3511500EE9B30 /* 10.jpg */; };
 		5C4812DF1DE930E000473AA4 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */; };
+		5C48137B1DF0C2B400473AA4 /* ZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812E11DF0C2B400473AA4 /* ZoomAnimator.swift */; };
+		5C48137C1DF0C2B400473AA4 /* ViewControllerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812E21DF0C2B400473AA4 /* ViewControllerDesignable.swift */; };
+		5C48137D1DF0C2B400473AA4 /* ViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812E31DF0C2B400473AA4 /* ViewControllerAnimatedTransitioning.swift */; };
+		5C48137E1DF0C2B400473AA4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812E41DF0C2B400473AA4 /* Utils.swift */; };
+		5C48137F1DF0C2B400473AA4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812E51DF0C2B400473AA4 /* UIViewControllerExtension.swift */; };
+		5C4813801DF0C2B400473AA4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812E61DF0C2B400473AA4 /* UIColorExtension.swift */; };
+		5C4813811DF0C2B400473AA4 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812E71DF0C2B400473AA4 /* Typealias.swift */; };
+		5C4813821DF0C2B400473AA4 /* TurnAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812E81DF0C2B400473AA4 /* TurnAnimator.swift */; };
+		5C4813831DF0C2B400473AA4 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812E91DF0C2B400473AA4 /* TransitionType.swift */; };
+		5C4813841DF0C2B400473AA4 /* TransitionPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812EA1DF0C2B400473AA4 /* TransitionPresenterManager.swift */; };
+		5C4813851DF0C2B400473AA4 /* TransitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812EB1DF0C2B400473AA4 /* TransitionPresenter.swift */; };
+		5C4813861DF0C2B400473AA4 /* TransitionAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812EC1DF0C2B400473AA4 /* TransitionAnimationType.swift */; };
+		5C4813871DF0C2B400473AA4 /* TransitionAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812ED1DF0C2B400473AA4 /* TransitionAnimatable.swift */; };
+		5C4813881DF0C2B400473AA4 /* TintDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812EE1DF0C2B400473AA4 /* TintDesignable.swift */; };
+		5C4813891DF0C2B400473AA4 /* TableViewCellDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812EF1DF0C2B400473AA4 /* TableViewCellDesignable.swift */; };
+		5C48138A1DF0C2B400473AA4 /* SystemSuckEffectAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812F01DF0C2B400473AA4 /* SystemSuckEffectAnimator.swift */; };
+		5C48138B1DF0C2B400473AA4 /* SystemRotateAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812F11DF0C2B400473AA4 /* SystemRotateAnimator.swift */; };
+		5C48138C1DF0C2B400473AA4 /* SystemRippleEffectAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812F21DF0C2B400473AA4 /* SystemRippleEffectAnimator.swift */; };
+		5C48138D1DF0C2B400473AA4 /* SystemRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812F31DF0C2B400473AA4 /* SystemRevealAnimator.swift */; };
+		5C48138E1DF0C2B400473AA4 /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812F41DF0C2B400473AA4 /* SystemPushAnimator.swift */; };
+		5C48138F1DF0C2B400473AA4 /* SystemPageAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812F51DF0C2B400473AA4 /* SystemPageAnimator.swift */; };
+		5C4813901DF0C2B400473AA4 /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812F61DF0C2B400473AA4 /* SystemMoveInAnimator.swift */; };
+		5C4813911DF0C2B400473AA4 /* SystemFlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812F71DF0C2B400473AA4 /* SystemFlipAnimator.swift */; };
+		5C4813921DF0C2B400473AA4 /* SystemCubeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812F81DF0C2B400473AA4 /* SystemCubeAnimator.swift */; };
+		5C4813931DF0C2B400473AA4 /* SystemCameraIrisAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812F91DF0C2B400473AA4 /* SystemCameraIrisAnimator.swift */; };
+		5C4813941DF0C2B400473AA4 /* StatusBarDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812FA1DF0C2B400473AA4 /* StatusBarDesignable.swift */; };
+		5C4813951DF0C2B400473AA4 /* SlideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812FB1DF0C2B400473AA4 /* SlideAnimator.swift */; };
+		5C4813961DF0C2B400473AA4 /* SideImageDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812FC1DF0C2B400473AA4 /* SideImageDesignable.swift */; };
+		5C4813971DF0C2B400473AA4 /* ShadowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812FD1DF0C2B400473AA4 /* ShadowDesignable.swift */; };
+		5C4813981DF0C2B400473AA4 /* ScreenEdgePanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812FE1DF0C2B400473AA4 /* ScreenEdgePanInteractiveAnimator.swift */; };
+		5C4813991DF0C2B400473AA4 /* RotationDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812FF1DF0C2B400473AA4 /* RotationDesignable.swift */; };
+		5C48139A1DF0C2B400473AA4 /* RootWindowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813001DF0C2B400473AA4 /* RootWindowDesignable.swift */; };
+		5C48139B1DF0C2B400473AA4 /* PresentTurnWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813011DF0C2B400473AA4 /* PresentTurnWithDismissInteractionSegue.swift */; };
+		5C48139C1DF0C2B400473AA4 /* PresentTurnSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813021DF0C2B400473AA4 /* PresentTurnSegue.swift */; };
+		5C48139D1DF0C2B400473AA4 /* PresentSlideWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813031DF0C2B400473AA4 /* PresentSlideWithDismissInteractionSegue.swift */; };
+		5C48139E1DF0C2B400473AA4 /* PresentSlideSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813041DF0C2B400473AA4 /* PresentSlideSegue.swift */; };
+		5C48139F1DF0C2B500473AA4 /* PresentPortalWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813051DF0C2B400473AA4 /* PresentPortalWithDismissInteractionSegue.swift */; };
+		5C4813A01DF0C2B500473AA4 /* PresentPortalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813061DF0C2B400473AA4 /* PresentPortalSegue.swift */; };
+		5C4813A11DF0C2B500473AA4 /* PresentNatGeoSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813071DF0C2B400473AA4 /* PresentNatGeoSegue.swift */; };
+		5C4813A21DF0C2B500473AA4 /* PresentFoldWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813081DF0C2B400473AA4 /* PresentFoldWithDismissInteractionSegue.swift */; };
+		5C4813A31DF0C2B500473AA4 /* PresentFoldSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813091DF0C2B400473AA4 /* PresentFoldSegue.swift */; };
+		5C4813A41DF0C2B500473AA4 /* PresentFlipWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48130A1DF0C2B400473AA4 /* PresentFlipWithDismissInteractionSegue.swift */; };
+		5C4813A51DF0C2B500473AA4 /* PresentFlipSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48130B1DF0C2B400473AA4 /* PresentFlipSegue.swift */; };
+		5C4813A61DF0C2B500473AA4 /* PresentFadeWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48130C1DF0C2B400473AA4 /* PresentFadeWithDismissInteractionSegue.swift */; };
+		5C4813A71DF0C2B500473AA4 /* PresentFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48130D1DF0C2B400473AA4 /* PresentFadeSegue.swift */; };
+		5C4813A81DF0C2B500473AA4 /* PresentExplodeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48130E1DF0C2B400473AA4 /* PresentExplodeSegue.swift */; };
+		5C4813A91DF0C2B500473AA4 /* PresentCardsSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48130F1DF0C2B400473AA4 /* PresentCardsSegue.swift */; };
+		5C4813AA1DF0C2B500473AA4 /* PresentationPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813101DF0C2B400473AA4 /* PresentationPresenterManager.swift */; };
+		5C4813AB1DF0C2B500473AA4 /* PresentationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813111DF0C2B400473AA4 /* PresentationPresenter.swift */; };
+		5C4813AC1DF0C2B500473AA4 /* PresentationModalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813121DF0C2B400473AA4 /* PresentationModalSize.swift */; };
+		5C4813AD1DF0C2B500473AA4 /* PresentationModalPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813131DF0C2B400473AA4 /* PresentationModalPosition.swift */; };
+		5C4813AE1DF0C2B500473AA4 /* PresentationKeyboardTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813141DF0C2B400473AA4 /* PresentationKeyboardTranslation.swift */; };
+		5C4813AF1DF0C2B500473AA4 /* PresentationDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813151DF0C2B400473AA4 /* PresentationDesignable.swift */; };
+		5C4813B01DF0C2B500473AA4 /* PresentationAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813161DF0C2B400473AA4 /* PresentationAnimationType.swift */; };
+		5C4813B11DF0C2B500473AA4 /* PortalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813171DF0C2B400473AA4 /* PortalAnimator.swift */; };
+		5C4813B21DF0C2B500473AA4 /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813181DF0C2B400473AA4 /* PlaceholderDesignable.swift */; };
+		5C4813B31DF0C2B500473AA4 /* PinchInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813191DF0C2B400473AA4 /* PinchInteractiveAnimator.swift */; };
+		5C4813B41DF0C2B500473AA4 /* PanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48131A1DF0C2B400473AA4 /* PanInteractiveAnimator.swift */; };
+		5C4813B51DF0C2B500473AA4 /* PaddingDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48131B1DF0C2B400473AA4 /* PaddingDesignable.swift */; };
+		5C4813B61DF0C2B500473AA4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48131C1DF0C2B400473AA4 /* Navigator.swift */; };
+		5C4813B71DF0C2B500473AA4 /* NavigationBarDesginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48131D1DF0C2B400473AA4 /* NavigationBarDesginable.swift */; };
+		5C4813B81DF0C2B500473AA4 /* NatGeoAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48131E1DF0C2B400473AA4 /* NatGeoAnimator.swift */; };
+		5C4813B91DF0C2B500473AA4 /* MaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48131F1DF0C2B400473AA4 /* MaskType.swift */; };
+		5C4813BA1DF0C2B500473AA4 /* MaskDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813201DF0C2B400473AA4 /* MaskDesignable.swift */; };
+		5C4813BB1DF0C2B500473AA4 /* InteractiveGestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813211DF0C2B400473AA4 /* InteractiveGestureType.swift */; };
+		5C4813BC1DF0C2B500473AA4 /* InteractiveAnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813221DF0C2B400473AA4 /* InteractiveAnimatorFactory.swift */; };
+		5C4813BD1DF0C2B500473AA4 /* InteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813231DF0C2B400473AA4 /* InteractiveAnimator.swift */; };
+		5C4813BE1DF0C2B500473AA4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C4813241DF0C2B400473AA4 /* Info.plist */; };
+		5C4813BF1DF0C2B500473AA4 /* IBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813251DF0C2B400473AA4 /* IBEnum.swift */; };
+		5C4813C01DF0C2B500473AA4 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813261DF0C2B400473AA4 /* GradientType.swift */; };
+		5C4813C11DF0C2B500473AA4 /* GradientStartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813271DF0C2B400473AA4 /* GradientStartPoint.swift */; };
+		5C4813C21DF0C2B500473AA4 /* GradientDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813281DF0C2B400473AA4 /* GradientDesignable.swift */; };
+		5C4813C31DF0C2B500473AA4 /* FoldAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813291DF0C2B400473AA4 /* FoldAnimator.swift */; };
+		5C4813C41DF0C2B500473AA4 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48132A1DF0C2B400473AA4 /* FlipAnimator.swift */; };
+		5C4813C51DF0C2B500473AA4 /* FillDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48132B1DF0C2B400473AA4 /* FillDesignable.swift */; };
+		5C4813C61DF0C2B500473AA4 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48132C1DF0C2B400473AA4 /* FadeAnimator.swift */; };
+		5C4813C71DF0C2B500473AA4 /* ExplodeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48132D1DF0C2B400473AA4 /* ExplodeAnimator.swift */; };
+		5C4813C81DF0C2B500473AA4 /* DropDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48132E1DF0C2B400473AA4 /* DropDownAnimator.swift */; };
+		5C4813C91DF0C2B500473AA4 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48132F1DF0C2B400473AA4 /* DismissSegue.swift */; };
+		5C4813CA1DF0C2B500473AA4 /* DesignableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813301DF0C2B400473AA4 /* DesignableNavigationBar.swift */; };
+		5C4813CB1DF0C2B500473AA4 /* CoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813311DF0C2B400473AA4 /* CoverAnimator.swift */; };
+		5C4813CC1DF0C2B500473AA4 /* CornerSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813321DF0C2B400473AA4 /* CornerSide.swift */; };
+		5C4813CD1DF0C2B500473AA4 /* CornerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813331DF0C2B400473AA4 /* CornerDesignable.swift */; };
+		5C4813CE1DF0C2B500473AA4 /* ContainerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813341DF0C2B400473AA4 /* ContainerTransition.swift */; };
+		5C4813CF1DF0C2B500473AA4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813351DF0C2B400473AA4 /* Constants.swift */; };
+		5C4813D01DF0C2B500473AA4 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813361DF0C2B400473AA4 /* ColorType.swift */; };
+		5C4813D11DF0C2B500473AA4 /* CheckBoxDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813371DF0C2B400473AA4 /* CheckBoxDesignable.swift */; };
+		5C4813D21DF0C2B500473AA4 /* CardsAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813381DF0C2B400473AA4 /* CardsAnimator.swift */; };
+		5C4813D31DF0C2B500473AA4 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813391DF0C2B400473AA4 /* CALayerExtension.swift */; };
+		5C4813D41DF0C2B500473AA4 /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48133A1DF0C2B400473AA4 /* BorderSide.swift */; };
+		5C4813D51DF0C2B500473AA4 /* BorderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48133B1DF0C2B400473AA4 /* BorderDesignable.swift */; };
+		5C4813D61DF0C2B500473AA4 /* BlurEffectStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48133C1DF0C2B400473AA4 /* BlurEffectStyle.swift */; };
+		5C4813D71DF0C2B500473AA4 /* BlurDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48133D1DF0C2B400473AA4 /* BlurDesignable.swift */; };
+		5C4813D81DF0C2B500473AA4 /* BarButtonItemDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48133E1DF0C2B400473AA4 /* BarButtonItemDesignable.swift */; };
+		5C4813D91DF0C2B500473AA4 /* AnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48133F1DF0C2B400473AA4 /* AnimatorFactory.swift */; };
+		5C4813DA1DF0C2B500473AA4 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813401DF0C2B400473AA4 /* AnimationType.swift */; };
+		5C4813DB1DF0C2B500473AA4 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813411DF0C2B400473AA4 /* AnimatedTransitioning.swift */; };
+		5C4813DC1DF0C2B500473AA4 /* AnimatedPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813421DF0C2B400473AA4 /* AnimatedPresenting.swift */; };
+		5C4813DD1DF0C2B500473AA4 /* AnimatableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813431DF0C2B400473AA4 /* AnimatableViewController.swift */; };
+		5C4813DE1DF0C2B500473AA4 /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813441DF0C2B400473AA4 /* AnimatableView.swift */; };
+		5C4813DF1DF0C2B500473AA4 /* AnimatableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813451DF0C2B400473AA4 /* AnimatableTextView.swift */; };
+		5C4813E01DF0C2B500473AA4 /* AnimatableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813461DF0C2B400473AA4 /* AnimatableTextField.swift */; };
+		5C4813E11DF0C2B500473AA4 /* AnimatableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813471DF0C2B400473AA4 /* AnimatableTableViewCell.swift */; };
+		5C4813E21DF0C2B500473AA4 /* AnimatableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813481DF0C2B400473AA4 /* AnimatableTableView.swift */; };
+		5C4813E31DF0C2B500473AA4 /* AnimatableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813491DF0C2B400473AA4 /* AnimatableStackView.swift */; };
+		5C4813E41DF0C2B500473AA4 /* AnimatableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48134A1DF0C2B400473AA4 /* AnimatableSlider.swift */; };
+		5C4813E51DF0C2B500473AA4 /* AnimatableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48134B1DF0C2B400473AA4 /* AnimatableScrollView.swift */; };
+		5C4813E61DF0C2B500473AA4 /* AnimatablePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48134C1DF0C2B400473AA4 /* AnimatablePresentationController.swift */; };
+		5C4813E71DF0C2B500473AA4 /* AnimatableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48134D1DF0C2B400473AA4 /* AnimatableNavigationController.swift */; };
+		5C4813E81DF0C2B500473AA4 /* AnimatableModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48134E1DF0C2B400473AA4 /* AnimatableModalViewController.swift */; };
+		5C4813E91DF0C2B500473AA4 /* AnimatableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48134F1DF0C2B400473AA4 /* AnimatableLabel.swift */; };
+		5C4813EA1DF0C2B500473AA4 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813501DF0C2B400473AA4 /* AnimatableImageView.swift */; };
+		5C4813EB1DF0C2B500473AA4 /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813511DF0C2B400473AA4 /* AnimatableCollectionViewCell.swift */; };
+		5C4813EC1DF0C2B500473AA4 /* AnimatableCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813521DF0C2B400473AA4 /* AnimatableCheckBox.swift */; };
+		5C4813ED1DF0C2B500473AA4 /* AnimatableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813531DF0C2B400473AA4 /* AnimatableButton.swift */; };
+		5C4813EE1DF0C2B500473AA4 /* AnimatableBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813541DF0C2B400473AA4 /* AnimatableBarButtonItem.swift */; };
+		5C4813EF1DF0C2B500473AA4 /* AnimatableActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813551DF0C2B400473AA4 /* AnimatableActivityIndicatorView.swift */; };
+		5C4813F01DF0C2B500473AA4 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813561DF0C2B400473AA4 /* Animatable.swift */; };
+		5C4813F11DF0C2B500473AA4 /* ActivityIndicatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813571DF0C2B400473AA4 /* ActivityIndicatorType.swift */; };
+		5C4813F21DF0C2B500473AA4 /* ActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813581DF0C2B400473AA4 /* ActivityIndicatorShape.swift */; };
+		5C4813F31DF0C2B500473AA4 /* ActivityIndicatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813591DF0C2B400473AA4 /* ActivityIndicatorFactory.swift */; };
+		5C4813F41DF0C2B500473AA4 /* ActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48135A1DF0C2B400473AA4 /* ActivityIndicatorAnimationTriangleSkewSpin.swift */; };
+		5C4813F51DF0C2B500473AA4 /* ActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48135B1DF0C2B400473AA4 /* ActivityIndicatorAnimationSquareSpin.swift */; };
+		5C4813F61DF0C2B500473AA4 /* ActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48135C1DF0C2B400473AA4 /* ActivityIndicatorAnimationSemiCircleSpin.swift */; };
+		5C4813F71DF0C2B500473AA4 /* ActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48135D1DF0C2B400473AA4 /* ActivityIndicatorAnimationPacman.swift */; };
+		5C4813F81DF0C2B500473AA4 /* ActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48135E1DF0C2B400473AA4 /* ActivityIndicatorAnimationOrbit.swift */; };
+		5C4813F91DF0C2B500473AA4 /* ActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48135F1DF0C2B400473AA4 /* ActivityIndicatorAnimationLineSpinFadeLoader.swift */; };
+		5C4813FA1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813601DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift */; };
+		5C4813FB1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813611DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScalePulseOut.swift */; };
+		5C4813FC1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813621DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScaleParty.swift */; };
+		5C4813FD1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813631DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScale.swift */; };
+		5C4813FE1DF0C2B500473AA4 /* ActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813641DF0C2B400473AA4 /* ActivityIndicatorAnimationCubeTransition.swift */; };
+		5C4813FF1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813651DF0C2B400473AA4 /* ActivityIndicatorAnimationBallZigZagDeflect.swift */; };
+		5C4814001DF0C2B500473AA4 /* ActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813661DF0C2B400473AA4 /* ActivityIndicatorAnimationBallZigZag.swift */; };
+		5C4814011DF0C2B500473AA4 /* ActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813671DF0C2B400473AA4 /* ActivityIndicatorAnimationBallTrianglePath.swift */; };
+		5C4814021DF0C2B500473AA4 /* ActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813681DF0C2B400473AA4 /* ActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
+		5C4814031DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813691DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift */; };
+		5C4814041DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48136A1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScaleRipple.swift */; };
+		5C4814051DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48136B1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScaleMultiple.swift */; };
+		5C4814061DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48136C1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScale.swift */; };
+		5C4814071DF0C2B500473AA4 /* ActivityIndicatorAnimationBallRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48136D1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallRotateChase.swift */; };
+		5C4814081DF0C2B500473AA4 /* ActivityIndicatorAnimationBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48136E1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallRotate.swift */; };
+		5C4814091DF0C2B500473AA4 /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48136F1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallPulseSync.swift */; };
+		5C48140A1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813701DF0C2B400473AA4 /* ActivityIndicatorAnimationBallPulseRise.swift */; };
+		5C48140B1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813711DF0C2B400473AA4 /* ActivityIndicatorAnimationBallPulse.swift */; };
+		5C48140C1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813721DF0C2B400473AA4 /* ActivityIndicatorAnimationBallGridPulse.swift */; };
+		5C48140D1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813731DF0C2B400473AA4 /* ActivityIndicatorAnimationBallGridBeat.swift */; };
+		5C48140E1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813741DF0C2B400473AA4 /* ActivityIndicatorAnimationBallClipRotatePulse.swift */; };
+		5C48140F1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813751DF0C2B400473AA4 /* ActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
+		5C4814101DF0C2B500473AA4 /* ActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813761DF0C2B400473AA4 /* ActivityIndicatorAnimationBallClipRotate.swift */; };
+		5C4814111DF0C2B500473AA4 /* ActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813771DF0C2B400473AA4 /* ActivityIndicatorAnimationBallBeat.swift */; };
+		5C4814121DF0C2B500473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813781DF0C2B400473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift */; };
+		5C4814131DF0C2B500473AA4 /* ActivityIndicatorAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813791DF0C2B400473AA4 /* ActivityIndicatorAnimating.swift */; };
+		5C4814141DF0C2B500473AA4 /* ActivityIndicatorAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48137A1DF0C2B400473AA4 /* ActivityIndicatorAnimatable.swift */; };
 		5CC9B8191DE36BBB001B21DD /* SelectInstrumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */; };
 		5CC9BA971DE3A963001B21DD /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */; };
 		5CC9BA991DE3A975001B21DD /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */; };
@@ -18,159 +172,6 @@
 		5CC9BAA11DE3A9AD001B21DD /* RAMBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAA01DE3A9AD001B21DD /* RAMBadge.swift */; };
 		5CC9BAA41DE3A9BB001B21DD /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAA21DE3A9BB001B21DD /* RAMItemAnimationProtocol.swift */; };
 		5CC9BAA51DE3A9BB001B21DD /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAA31DE3A9BB001B21DD /* RAMAnimatedTabBarController.swift */; };
-		5CC9BB441DE3AD75001B21DD /* ZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAAA1DE3AD74001B21DD /* ZoomAnimator.swift */; };
-		5CC9BB451DE3AD75001B21DD /* ViewControllerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAAB1DE3AD74001B21DD /* ViewControllerDesignable.swift */; };
-		5CC9BB461DE3AD75001B21DD /* ViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAAC1DE3AD74001B21DD /* ViewControllerAnimatedTransitioning.swift */; };
-		5CC9BB471DE3AD75001B21DD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAAD1DE3AD74001B21DD /* Utils.swift */; };
-		5CC9BB481DE3AD75001B21DD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAAE1DE3AD74001B21DD /* UIViewControllerExtension.swift */; };
-		5CC9BB491DE3AD75001B21DD /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAAF1DE3AD74001B21DD /* UIColorExtension.swift */; };
-		5CC9BB4A1DE3AD75001B21DD /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAB01DE3AD74001B21DD /* Typealias.swift */; };
-		5CC9BB4B1DE3AD75001B21DD /* TurnAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAB11DE3AD74001B21DD /* TurnAnimator.swift */; };
-		5CC9BB4C1DE3AD75001B21DD /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAB21DE3AD74001B21DD /* TransitionType.swift */; };
-		5CC9BB4D1DE3AD75001B21DD /* TransitionPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAB31DE3AD74001B21DD /* TransitionPresenterManager.swift */; };
-		5CC9BB4E1DE3AD75001B21DD /* TransitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAB41DE3AD74001B21DD /* TransitionPresenter.swift */; };
-		5CC9BB4F1DE3AD75001B21DD /* TransitionAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAB51DE3AD74001B21DD /* TransitionAnimationType.swift */; };
-		5CC9BB501DE3AD75001B21DD /* TransitionAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAB61DE3AD74001B21DD /* TransitionAnimatable.swift */; };
-		5CC9BB511DE3AD75001B21DD /* TintDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAB71DE3AD74001B21DD /* TintDesignable.swift */; };
-		5CC9BB521DE3AD75001B21DD /* TableViewCellDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAB81DE3AD74001B21DD /* TableViewCellDesignable.swift */; };
-		5CC9BB531DE3AD75001B21DD /* SystemSuckEffectAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAB91DE3AD74001B21DD /* SystemSuckEffectAnimator.swift */; };
-		5CC9BB541DE3AD75001B21DD /* SystemRotateAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BABA1DE3AD74001B21DD /* SystemRotateAnimator.swift */; };
-		5CC9BB551DE3AD75001B21DD /* SystemRippleEffectAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BABB1DE3AD74001B21DD /* SystemRippleEffectAnimator.swift */; };
-		5CC9BB561DE3AD75001B21DD /* SystemRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BABC1DE3AD74001B21DD /* SystemRevealAnimator.swift */; };
-		5CC9BB571DE3AD75001B21DD /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BABD1DE3AD74001B21DD /* SystemPushAnimator.swift */; };
-		5CC9BB581DE3AD75001B21DD /* SystemPageAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BABE1DE3AD74001B21DD /* SystemPageAnimator.swift */; };
-		5CC9BB591DE3AD75001B21DD /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BABF1DE3AD74001B21DD /* SystemMoveInAnimator.swift */; };
-		5CC9BB5A1DE3AD75001B21DD /* SystemFlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAC01DE3AD74001B21DD /* SystemFlipAnimator.swift */; };
-		5CC9BB5B1DE3AD75001B21DD /* SystemCubeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAC11DE3AD74001B21DD /* SystemCubeAnimator.swift */; };
-		5CC9BB5C1DE3AD75001B21DD /* SystemCameraIrisAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAC21DE3AD74001B21DD /* SystemCameraIrisAnimator.swift */; };
-		5CC9BB5D1DE3AD75001B21DD /* StatusBarDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAC31DE3AD74001B21DD /* StatusBarDesignable.swift */; };
-		5CC9BB5E1DE3AD75001B21DD /* SlideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAC41DE3AD74001B21DD /* SlideAnimator.swift */; };
-		5CC9BB5F1DE3AD75001B21DD /* SideImageDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAC51DE3AD74001B21DD /* SideImageDesignable.swift */; };
-		5CC9BB601DE3AD75001B21DD /* ShadowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAC61DE3AD74001B21DD /* ShadowDesignable.swift */; };
-		5CC9BB611DE3AD75001B21DD /* ScreenEdgePanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAC71DE3AD74001B21DD /* ScreenEdgePanInteractiveAnimator.swift */; };
-		5CC9BB621DE3AD75001B21DD /* RotationDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAC81DE3AD74001B21DD /* RotationDesignable.swift */; };
-		5CC9BB631DE3AD75001B21DD /* RootWindowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAC91DE3AD74001B21DD /* RootWindowDesignable.swift */; };
-		5CC9BB641DE3AD75001B21DD /* PresentTurnWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BACA1DE3AD74001B21DD /* PresentTurnWithDismissInteractionSegue.swift */; };
-		5CC9BB651DE3AD75001B21DD /* PresentTurnSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BACB1DE3AD74001B21DD /* PresentTurnSegue.swift */; };
-		5CC9BB661DE3AD75001B21DD /* PresentSlideWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BACC1DE3AD74001B21DD /* PresentSlideWithDismissInteractionSegue.swift */; };
-		5CC9BB671DE3AD75001B21DD /* PresentSlideSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BACD1DE3AD74001B21DD /* PresentSlideSegue.swift */; };
-		5CC9BB681DE3AD75001B21DD /* PresentPortalWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BACE1DE3AD74001B21DD /* PresentPortalWithDismissInteractionSegue.swift */; };
-		5CC9BB691DE3AD75001B21DD /* PresentPortalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BACF1DE3AD74001B21DD /* PresentPortalSegue.swift */; };
-		5CC9BB6A1DE3AD75001B21DD /* PresentNatGeoSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAD01DE3AD74001B21DD /* PresentNatGeoSegue.swift */; };
-		5CC9BB6B1DE3AD75001B21DD /* PresentFoldWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAD11DE3AD74001B21DD /* PresentFoldWithDismissInteractionSegue.swift */; };
-		5CC9BB6C1DE3AD75001B21DD /* PresentFoldSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAD21DE3AD74001B21DD /* PresentFoldSegue.swift */; };
-		5CC9BB6D1DE3AD75001B21DD /* PresentFlipWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAD31DE3AD74001B21DD /* PresentFlipWithDismissInteractionSegue.swift */; };
-		5CC9BB6E1DE3AD75001B21DD /* PresentFlipSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAD41DE3AD74001B21DD /* PresentFlipSegue.swift */; };
-		5CC9BB6F1DE3AD75001B21DD /* PresentFadeWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAD51DE3AD74001B21DD /* PresentFadeWithDismissInteractionSegue.swift */; };
-		5CC9BB701DE3AD75001B21DD /* PresentFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAD61DE3AD74001B21DD /* PresentFadeSegue.swift */; };
-		5CC9BB711DE3AD75001B21DD /* PresentExplodeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAD71DE3AD74001B21DD /* PresentExplodeSegue.swift */; };
-		5CC9BB721DE3AD75001B21DD /* PresentCardsSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAD81DE3AD74001B21DD /* PresentCardsSegue.swift */; };
-		5CC9BB731DE3AD75001B21DD /* PresentationPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAD91DE3AD74001B21DD /* PresentationPresenterManager.swift */; };
-		5CC9BB741DE3AD75001B21DD /* PresentationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BADA1DE3AD74001B21DD /* PresentationPresenter.swift */; };
-		5CC9BB751DE3AD75001B21DD /* PresentationModalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BADB1DE3AD74001B21DD /* PresentationModalSize.swift */; };
-		5CC9BB761DE3AD75001B21DD /* PresentationModalPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BADC1DE3AD74001B21DD /* PresentationModalPosition.swift */; };
-		5CC9BB771DE3AD75001B21DD /* PresentationKeyboardTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BADD1DE3AD74001B21DD /* PresentationKeyboardTranslation.swift */; };
-		5CC9BB781DE3AD75001B21DD /* PresentationDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BADE1DE3AD74001B21DD /* PresentationDesignable.swift */; };
-		5CC9BB791DE3AD75001B21DD /* PresentationAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BADF1DE3AD74001B21DD /* PresentationAnimationType.swift */; };
-		5CC9BB7A1DE3AD75001B21DD /* PortalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAE01DE3AD74001B21DD /* PortalAnimator.swift */; };
-		5CC9BB7B1DE3AD75001B21DD /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAE11DE3AD74001B21DD /* PlaceholderDesignable.swift */; };
-		5CC9BB7C1DE3AD75001B21DD /* PinchInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAE21DE3AD74001B21DD /* PinchInteractiveAnimator.swift */; };
-		5CC9BB7D1DE3AD75001B21DD /* PanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAE31DE3AD74001B21DD /* PanInteractiveAnimator.swift */; };
-		5CC9BB7E1DE3AD75001B21DD /* PaddingDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAE41DE3AD74001B21DD /* PaddingDesignable.swift */; };
-		5CC9BB7F1DE3AD75001B21DD /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAE51DE3AD74001B21DD /* Navigator.swift */; };
-		5CC9BB801DE3AD75001B21DD /* NavigationBarDesginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAE61DE3AD74001B21DD /* NavigationBarDesginable.swift */; };
-		5CC9BB811DE3AD75001B21DD /* NatGeoAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAE71DE3AD74001B21DD /* NatGeoAnimator.swift */; };
-		5CC9BB821DE3AD75001B21DD /* MaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAE81DE3AD74001B21DD /* MaskType.swift */; };
-		5CC9BB831DE3AD75001B21DD /* MaskDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAE91DE3AD74001B21DD /* MaskDesignable.swift */; };
-		5CC9BB841DE3AD75001B21DD /* InteractiveGestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAEA1DE3AD74001B21DD /* InteractiveGestureType.swift */; };
-		5CC9BB851DE3AD75001B21DD /* InteractiveAnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAEB1DE3AD74001B21DD /* InteractiveAnimatorFactory.swift */; };
-		5CC9BB861DE3AD75001B21DD /* InteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAEC1DE3AD74001B21DD /* InteractiveAnimator.swift */; };
-		5CC9BB881DE3AD75001B21DD /* IBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAEE1DE3AD74001B21DD /* IBEnum.swift */; };
-		5CC9BB891DE3AD75001B21DD /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAEF1DE3AD74001B21DD /* GradientType.swift */; };
-		5CC9BB8A1DE3AD75001B21DD /* GradientStartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAF01DE3AD74001B21DD /* GradientStartPoint.swift */; };
-		5CC9BB8B1DE3AD75001B21DD /* GradientDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAF11DE3AD74001B21DD /* GradientDesignable.swift */; };
-		5CC9BB8C1DE3AD75001B21DD /* FoldAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAF21DE3AD74001B21DD /* FoldAnimator.swift */; };
-		5CC9BB8D1DE3AD75001B21DD /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAF31DE3AD74001B21DD /* FlipAnimator.swift */; };
-		5CC9BB8E1DE3AD75001B21DD /* FillDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAF41DE3AD74001B21DD /* FillDesignable.swift */; };
-		5CC9BB8F1DE3AD75001B21DD /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAF51DE3AD74001B21DD /* FadeAnimator.swift */; };
-		5CC9BB901DE3AD75001B21DD /* ExplodeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAF61DE3AD74001B21DD /* ExplodeAnimator.swift */; };
-		5CC9BB911DE3AD75001B21DD /* DropDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAF71DE3AD74001B21DD /* DropDownAnimator.swift */; };
-		5CC9BB921DE3AD75001B21DD /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAF81DE3AD74001B21DD /* DismissSegue.swift */; };
-		5CC9BB931DE3AD75001B21DD /* DesignableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAF91DE3AD74001B21DD /* DesignableNavigationBar.swift */; };
-		5CC9BB941DE3AD75001B21DD /* CoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAFA1DE3AD74001B21DD /* CoverAnimator.swift */; };
-		5CC9BB951DE3AD75001B21DD /* CornerSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAFB1DE3AD74001B21DD /* CornerSide.swift */; };
-		5CC9BB961DE3AD75001B21DD /* CornerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAFC1DE3AD74001B21DD /* CornerDesignable.swift */; };
-		5CC9BB971DE3AD75001B21DD /* ContainerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAFD1DE3AD74001B21DD /* ContainerTransition.swift */; };
-		5CC9BB981DE3AD75001B21DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAFE1DE3AD74001B21DD /* Constants.swift */; };
-		5CC9BB991DE3AD75001B21DD /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BAFF1DE3AD74001B21DD /* ColorType.swift */; };
-		5CC9BB9A1DE3AD75001B21DD /* CheckBoxDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB001DE3AD74001B21DD /* CheckBoxDesignable.swift */; };
-		5CC9BB9B1DE3AD75001B21DD /* CardsAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB011DE3AD74001B21DD /* CardsAnimator.swift */; };
-		5CC9BB9C1DE3AD75001B21DD /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB021DE3AD74001B21DD /* CALayerExtension.swift */; };
-		5CC9BB9D1DE3AD75001B21DD /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB031DE3AD75001B21DD /* BorderSide.swift */; };
-		5CC9BB9E1DE3AD75001B21DD /* BorderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB041DE3AD75001B21DD /* BorderDesignable.swift */; };
-		5CC9BB9F1DE3AD75001B21DD /* BlurEffectStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB051DE3AD75001B21DD /* BlurEffectStyle.swift */; };
-		5CC9BBA01DE3AD75001B21DD /* BlurDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB061DE3AD75001B21DD /* BlurDesignable.swift */; };
-		5CC9BBA11DE3AD75001B21DD /* BarButtonItemDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB071DE3AD75001B21DD /* BarButtonItemDesignable.swift */; };
-		5CC9BBA21DE3AD75001B21DD /* AnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB081DE3AD75001B21DD /* AnimatorFactory.swift */; };
-		5CC9BBA31DE3AD75001B21DD /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB091DE3AD75001B21DD /* AnimationType.swift */; };
-		5CC9BBA41DE3AD75001B21DD /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB0A1DE3AD75001B21DD /* AnimatedTransitioning.swift */; };
-		5CC9BBA51DE3AD75001B21DD /* AnimatedPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB0B1DE3AD75001B21DD /* AnimatedPresenting.swift */; };
-		5CC9BBA61DE3AD75001B21DD /* AnimatableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB0C1DE3AD75001B21DD /* AnimatableViewController.swift */; };
-		5CC9BBA71DE3AD75001B21DD /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB0D1DE3AD75001B21DD /* AnimatableView.swift */; };
-		5CC9BBA81DE3AD75001B21DD /* AnimatableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB0E1DE3AD75001B21DD /* AnimatableTextView.swift */; };
-		5CC9BBA91DE3AD75001B21DD /* AnimatableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB0F1DE3AD75001B21DD /* AnimatableTextField.swift */; };
-		5CC9BBAA1DE3AD75001B21DD /* AnimatableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB101DE3AD75001B21DD /* AnimatableTableViewCell.swift */; };
-		5CC9BBAB1DE3AD75001B21DD /* AnimatableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB111DE3AD75001B21DD /* AnimatableTableView.swift */; };
-		5CC9BBAC1DE3AD75001B21DD /* AnimatableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB121DE3AD75001B21DD /* AnimatableStackView.swift */; };
-		5CC9BBAD1DE3AD75001B21DD /* AnimatableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB131DE3AD75001B21DD /* AnimatableSlider.swift */; };
-		5CC9BBAE1DE3AD75001B21DD /* AnimatableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB141DE3AD75001B21DD /* AnimatableScrollView.swift */; };
-		5CC9BBAF1DE3AD75001B21DD /* AnimatablePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB151DE3AD75001B21DD /* AnimatablePresentationController.swift */; };
-		5CC9BBB01DE3AD75001B21DD /* AnimatableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB161DE3AD75001B21DD /* AnimatableNavigationController.swift */; };
-		5CC9BBB11DE3AD75001B21DD /* AnimatableModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB171DE3AD75001B21DD /* AnimatableModalViewController.swift */; };
-		5CC9BBB21DE3AD75001B21DD /* AnimatableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB181DE3AD75001B21DD /* AnimatableLabel.swift */; };
-		5CC9BBB31DE3AD75001B21DD /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB191DE3AD75001B21DD /* AnimatableImageView.swift */; };
-		5CC9BBB41DE3AD75001B21DD /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB1A1DE3AD75001B21DD /* AnimatableCollectionViewCell.swift */; };
-		5CC9BBB51DE3AD75001B21DD /* AnimatableCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB1B1DE3AD75001B21DD /* AnimatableCheckBox.swift */; };
-		5CC9BBB61DE3AD75001B21DD /* AnimatableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB1C1DE3AD75001B21DD /* AnimatableButton.swift */; };
-		5CC9BBB71DE3AD75001B21DD /* AnimatableBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB1D1DE3AD75001B21DD /* AnimatableBarButtonItem.swift */; };
-		5CC9BBB81DE3AD75001B21DD /* AnimatableActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB1E1DE3AD75001B21DD /* AnimatableActivityIndicatorView.swift */; };
-		5CC9BBB91DE3AD75001B21DD /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB1F1DE3AD75001B21DD /* Animatable.swift */; };
-		5CC9BBBA1DE3AD75001B21DD /* ActivityIndicatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB201DE3AD75001B21DD /* ActivityIndicatorType.swift */; };
-		5CC9BBBB1DE3AD75001B21DD /* ActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB211DE3AD75001B21DD /* ActivityIndicatorShape.swift */; };
-		5CC9BBBC1DE3AD75001B21DD /* ActivityIndicatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB221DE3AD75001B21DD /* ActivityIndicatorFactory.swift */; };
-		5CC9BBBD1DE3AD75001B21DD /* ActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB231DE3AD75001B21DD /* ActivityIndicatorAnimationTriangleSkewSpin.swift */; };
-		5CC9BBBE1DE3AD75001B21DD /* ActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB241DE3AD75001B21DD /* ActivityIndicatorAnimationSquareSpin.swift */; };
-		5CC9BBBF1DE3AD75001B21DD /* ActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB251DE3AD75001B21DD /* ActivityIndicatorAnimationSemiCircleSpin.swift */; };
-		5CC9BBC01DE3AD75001B21DD /* ActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB261DE3AD75001B21DD /* ActivityIndicatorAnimationPacman.swift */; };
-		5CC9BBC11DE3AD75001B21DD /* ActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB271DE3AD75001B21DD /* ActivityIndicatorAnimationOrbit.swift */; };
-		5CC9BBC21DE3AD75001B21DD /* ActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB281DE3AD75001B21DD /* ActivityIndicatorAnimationLineSpinFadeLoader.swift */; };
-		5CC9BBC31DE3AD75001B21DD /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB291DE3AD75001B21DD /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift */; };
-		5CC9BBC41DE3AD75001B21DD /* ActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB2A1DE3AD75001B21DD /* ActivityIndicatorAnimationLineScalePulseOut.swift */; };
-		5CC9BBC51DE3AD75001B21DD /* ActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB2B1DE3AD75001B21DD /* ActivityIndicatorAnimationLineScaleParty.swift */; };
-		5CC9BBC61DE3AD75001B21DD /* ActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB2C1DE3AD75001B21DD /* ActivityIndicatorAnimationLineScale.swift */; };
-		5CC9BBC71DE3AD75001B21DD /* ActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB2D1DE3AD75001B21DD /* ActivityIndicatorAnimationCubeTransition.swift */; };
-		5CC9BBC81DE3AD75001B21DD /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB2E1DE3AD75001B21DD /* ActivityIndicatorAnimationBallZigZagDeflect.swift */; };
-		5CC9BBC91DE3AD75001B21DD /* ActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB2F1DE3AD75001B21DD /* ActivityIndicatorAnimationBallZigZag.swift */; };
-		5CC9BBCA1DE3AD75001B21DD /* ActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB301DE3AD75001B21DD /* ActivityIndicatorAnimationBallTrianglePath.swift */; };
-		5CC9BBCB1DE3AD75001B21DD /* ActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB311DE3AD75001B21DD /* ActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
-		5CC9BBCC1DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB321DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift */; };
-		5CC9BBCD1DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB331DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleRipple.swift */; };
-		5CC9BBCE1DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB341DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleMultiple.swift */; };
-		5CC9BBCF1DE3AD75001B21DD /* ActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB351DE3AD75001B21DD /* ActivityIndicatorAnimationBallScale.swift */; };
-		5CC9BBD01DE3AD75001B21DD /* ActivityIndicatorAnimationBallRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB361DE3AD75001B21DD /* ActivityIndicatorAnimationBallRotateChase.swift */; };
-		5CC9BBD11DE3AD75001B21DD /* ActivityIndicatorAnimationBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB371DE3AD75001B21DD /* ActivityIndicatorAnimationBallRotate.swift */; };
-		5CC9BBD21DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB381DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulseSync.swift */; };
-		5CC9BBD31DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB391DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulseRise.swift */; };
-		5CC9BBD41DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB3A1DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulse.swift */; };
-		5CC9BBD51DE3AD75001B21DD /* ActivityIndicatorAnimationBallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB3B1DE3AD75001B21DD /* ActivityIndicatorAnimationBallGridPulse.swift */; };
-		5CC9BBD61DE3AD75001B21DD /* ActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB3C1DE3AD75001B21DD /* ActivityIndicatorAnimationBallGridBeat.swift */; };
-		5CC9BBD71DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB3D1DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotatePulse.swift */; };
-		5CC9BBD81DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB3E1DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
-		5CC9BBD91DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB3F1DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotate.swift */; };
-		5CC9BBDA1DE3AD75001B21DD /* ActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB401DE3AD75001B21DD /* ActivityIndicatorAnimationBallBeat.swift */; };
-		5CC9BBDB1DE3AD75001B21DD /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB411DE3AD75001B21DD /* ActivityIndicatorAnimationAudioEqualizer.swift */; };
-		5CC9BBDC1DE3AD75001B21DD /* ActivityIndicatorAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB421DE3AD75001B21DD /* ActivityIndicatorAnimating.swift */; };
-		5CC9BBDD1DE3AD75001B21DD /* ActivityIndicatorAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BB431DE3AD75001B21DD /* ActivityIndicatorAnimatable.swift */; };
 		5CC9BBDF1DE8D38E001B21DD /* DataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBDE1DE8D38E001B21DD /* DataItem.swift */; };
 		5CC9BBE31DE8D639001B21DD /* KDDragAndDropManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE21DE8D639001B21DD /* KDDragAndDropManager.swift */; };
 		5CC9BBE51DE8DD8E001B21DD /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE41DE8DD8E001B21DD /* ItemCollectionViewCell.swift */; };
@@ -213,6 +214,160 @@
 /* Begin PBXFileReference section */
 		5C136E5C1DE3511500EE9B30 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		5C4812E11DF0C2B400473AA4 /* ZoomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomAnimator.swift; path = IBAnimatable2/ZoomAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812E21DF0C2B400473AA4 /* ViewControllerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerDesignable.swift; path = IBAnimatable2/ViewControllerDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4812E31DF0C2B400473AA4 /* ViewControllerAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerAnimatedTransitioning.swift; path = IBAnimatable2/ViewControllerAnimatedTransitioning.swift; sourceTree = SOURCE_ROOT; };
+		5C4812E41DF0C2B400473AA4 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = IBAnimatable2/Utils.swift; sourceTree = SOURCE_ROOT; };
+		5C4812E51DF0C2B400473AA4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = IBAnimatable2/UIViewControllerExtension.swift; sourceTree = SOURCE_ROOT; };
+		5C4812E61DF0C2B400473AA4 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = IBAnimatable2/UIColorExtension.swift; sourceTree = SOURCE_ROOT; };
+		5C4812E71DF0C2B400473AA4 /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Typealias.swift; path = IBAnimatable2/Typealias.swift; sourceTree = SOURCE_ROOT; };
+		5C4812E81DF0C2B400473AA4 /* TurnAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TurnAnimator.swift; path = IBAnimatable2/TurnAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812E91DF0C2B400473AA4 /* TransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionType.swift; path = IBAnimatable2/TransitionType.swift; sourceTree = SOURCE_ROOT; };
+		5C4812EA1DF0C2B400473AA4 /* TransitionPresenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionPresenterManager.swift; path = IBAnimatable2/TransitionPresenterManager.swift; sourceTree = SOURCE_ROOT; };
+		5C4812EB1DF0C2B400473AA4 /* TransitionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionPresenter.swift; path = IBAnimatable2/TransitionPresenter.swift; sourceTree = SOURCE_ROOT; };
+		5C4812EC1DF0C2B400473AA4 /* TransitionAnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionAnimationType.swift; path = IBAnimatable2/TransitionAnimationType.swift; sourceTree = SOURCE_ROOT; };
+		5C4812ED1DF0C2B400473AA4 /* TransitionAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionAnimatable.swift; path = IBAnimatable2/TransitionAnimatable.swift; sourceTree = SOURCE_ROOT; };
+		5C4812EE1DF0C2B400473AA4 /* TintDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintDesignable.swift; path = IBAnimatable2/TintDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4812EF1DF0C2B400473AA4 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCellDesignable.swift; path = IBAnimatable2/TableViewCellDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4812F01DF0C2B400473AA4 /* SystemSuckEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemSuckEffectAnimator.swift; path = IBAnimatable2/SystemSuckEffectAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812F11DF0C2B400473AA4 /* SystemRotateAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemRotateAnimator.swift; path = IBAnimatable2/SystemRotateAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812F21DF0C2B400473AA4 /* SystemRippleEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemRippleEffectAnimator.swift; path = IBAnimatable2/SystemRippleEffectAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812F31DF0C2B400473AA4 /* SystemRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemRevealAnimator.swift; path = IBAnimatable2/SystemRevealAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812F41DF0C2B400473AA4 /* SystemPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemPushAnimator.swift; path = IBAnimatable2/SystemPushAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812F51DF0C2B400473AA4 /* SystemPageAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemPageAnimator.swift; path = IBAnimatable2/SystemPageAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812F61DF0C2B400473AA4 /* SystemMoveInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemMoveInAnimator.swift; path = IBAnimatable2/SystemMoveInAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812F71DF0C2B400473AA4 /* SystemFlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemFlipAnimator.swift; path = IBAnimatable2/SystemFlipAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812F81DF0C2B400473AA4 /* SystemCubeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemCubeAnimator.swift; path = IBAnimatable2/SystemCubeAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812F91DF0C2B400473AA4 /* SystemCameraIrisAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemCameraIrisAnimator.swift; path = IBAnimatable2/SystemCameraIrisAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812FA1DF0C2B400473AA4 /* StatusBarDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusBarDesignable.swift; path = IBAnimatable2/StatusBarDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4812FB1DF0C2B400473AA4 /* SlideAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideAnimator.swift; path = IBAnimatable2/SlideAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812FC1DF0C2B400473AA4 /* SideImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideImageDesignable.swift; path = IBAnimatable2/SideImageDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4812FD1DF0C2B400473AA4 /* ShadowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShadowDesignable.swift; path = IBAnimatable2/ShadowDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4812FE1DF0C2B400473AA4 /* ScreenEdgePanInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenEdgePanInteractiveAnimator.swift; path = IBAnimatable2/ScreenEdgePanInteractiveAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4812FF1DF0C2B400473AA4 /* RotationDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotationDesignable.swift; path = IBAnimatable2/RotationDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4813001DF0C2B400473AA4 /* RootWindowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWindowDesignable.swift; path = IBAnimatable2/RootWindowDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4813011DF0C2B400473AA4 /* PresentTurnWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentTurnWithDismissInteractionSegue.swift; path = IBAnimatable2/PresentTurnWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C4813021DF0C2B400473AA4 /* PresentTurnSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentTurnSegue.swift; path = IBAnimatable2/PresentTurnSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C4813031DF0C2B400473AA4 /* PresentSlideWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentSlideWithDismissInteractionSegue.swift; path = IBAnimatable2/PresentSlideWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C4813041DF0C2B400473AA4 /* PresentSlideSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentSlideSegue.swift; path = IBAnimatable2/PresentSlideSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C4813051DF0C2B400473AA4 /* PresentPortalWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentPortalWithDismissInteractionSegue.swift; path = IBAnimatable2/PresentPortalWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C4813061DF0C2B400473AA4 /* PresentPortalSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentPortalSegue.swift; path = IBAnimatable2/PresentPortalSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C4813071DF0C2B400473AA4 /* PresentNatGeoSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentNatGeoSegue.swift; path = IBAnimatable2/PresentNatGeoSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C4813081DF0C2B400473AA4 /* PresentFoldWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFoldWithDismissInteractionSegue.swift; path = IBAnimatable2/PresentFoldWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C4813091DF0C2B400473AA4 /* PresentFoldSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFoldSegue.swift; path = IBAnimatable2/PresentFoldSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C48130A1DF0C2B400473AA4 /* PresentFlipWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFlipWithDismissInteractionSegue.swift; path = IBAnimatable2/PresentFlipWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C48130B1DF0C2B400473AA4 /* PresentFlipSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFlipSegue.swift; path = IBAnimatable2/PresentFlipSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C48130C1DF0C2B400473AA4 /* PresentFadeWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFadeWithDismissInteractionSegue.swift; path = IBAnimatable2/PresentFadeWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C48130D1DF0C2B400473AA4 /* PresentFadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFadeSegue.swift; path = IBAnimatable2/PresentFadeSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C48130E1DF0C2B400473AA4 /* PresentExplodeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentExplodeSegue.swift; path = IBAnimatable2/PresentExplodeSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C48130F1DF0C2B400473AA4 /* PresentCardsSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentCardsSegue.swift; path = IBAnimatable2/PresentCardsSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C4813101DF0C2B400473AA4 /* PresentationPresenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationPresenterManager.swift; path = IBAnimatable2/PresentationPresenterManager.swift; sourceTree = SOURCE_ROOT; };
+		5C4813111DF0C2B400473AA4 /* PresentationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationPresenter.swift; path = IBAnimatable2/PresentationPresenter.swift; sourceTree = SOURCE_ROOT; };
+		5C4813121DF0C2B400473AA4 /* PresentationModalSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationModalSize.swift; path = IBAnimatable2/PresentationModalSize.swift; sourceTree = SOURCE_ROOT; };
+		5C4813131DF0C2B400473AA4 /* PresentationModalPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationModalPosition.swift; path = IBAnimatable2/PresentationModalPosition.swift; sourceTree = SOURCE_ROOT; };
+		5C4813141DF0C2B400473AA4 /* PresentationKeyboardTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationKeyboardTranslation.swift; path = IBAnimatable2/PresentationKeyboardTranslation.swift; sourceTree = SOURCE_ROOT; };
+		5C4813151DF0C2B400473AA4 /* PresentationDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationDesignable.swift; path = IBAnimatable2/PresentationDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4813161DF0C2B400473AA4 /* PresentationAnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationAnimationType.swift; path = IBAnimatable2/PresentationAnimationType.swift; sourceTree = SOURCE_ROOT; };
+		5C4813171DF0C2B400473AA4 /* PortalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PortalAnimator.swift; path = IBAnimatable2/PortalAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4813181DF0C2B400473AA4 /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable2/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4813191DF0C2B400473AA4 /* PinchInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinchInteractiveAnimator.swift; path = IBAnimatable2/PinchInteractiveAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C48131A1DF0C2B400473AA4 /* PanInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanInteractiveAnimator.swift; path = IBAnimatable2/PanInteractiveAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C48131B1DF0C2B400473AA4 /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingDesignable.swift; path = IBAnimatable2/PaddingDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C48131C1DF0C2B400473AA4 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Navigator.swift; path = IBAnimatable2/Navigator.swift; sourceTree = SOURCE_ROOT; };
+		5C48131D1DF0C2B400473AA4 /* NavigationBarDesginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarDesginable.swift; path = IBAnimatable2/NavigationBarDesginable.swift; sourceTree = SOURCE_ROOT; };
+		5C48131E1DF0C2B400473AA4 /* NatGeoAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NatGeoAnimator.swift; path = IBAnimatable2/NatGeoAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C48131F1DF0C2B400473AA4 /* MaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaskType.swift; path = IBAnimatable2/MaskType.swift; sourceTree = SOURCE_ROOT; };
+		5C4813201DF0C2B400473AA4 /* MaskDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaskDesignable.swift; path = IBAnimatable2/MaskDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4813211DF0C2B400473AA4 /* InteractiveGestureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveGestureType.swift; path = IBAnimatable2/InteractiveGestureType.swift; sourceTree = SOURCE_ROOT; };
+		5C4813221DF0C2B400473AA4 /* InteractiveAnimatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveAnimatorFactory.swift; path = IBAnimatable2/InteractiveAnimatorFactory.swift; sourceTree = SOURCE_ROOT; };
+		5C4813231DF0C2B400473AA4 /* InteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveAnimator.swift; path = IBAnimatable2/InteractiveAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4813241DF0C2B400473AA4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = IBAnimatable2/Info.plist; sourceTree = SOURCE_ROOT; };
+		5C4813251DF0C2B400473AA4 /* IBEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBEnum.swift; path = IBAnimatable2/IBEnum.swift; sourceTree = SOURCE_ROOT; };
+		5C4813261DF0C2B400473AA4 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientType.swift; path = IBAnimatable2/GradientType.swift; sourceTree = SOURCE_ROOT; };
+		5C4813271DF0C2B400473AA4 /* GradientStartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientStartPoint.swift; path = IBAnimatable2/GradientStartPoint.swift; sourceTree = SOURCE_ROOT; };
+		5C4813281DF0C2B400473AA4 /* GradientDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientDesignable.swift; path = IBAnimatable2/GradientDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4813291DF0C2B400473AA4 /* FoldAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoldAnimator.swift; path = IBAnimatable2/FoldAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C48132A1DF0C2B400473AA4 /* FlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlipAnimator.swift; path = IBAnimatable2/FlipAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C48132B1DF0C2B400473AA4 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FillDesignable.swift; path = IBAnimatable2/FillDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C48132C1DF0C2B400473AA4 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeAnimator.swift; path = IBAnimatable2/FadeAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C48132D1DF0C2B400473AA4 /* ExplodeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExplodeAnimator.swift; path = IBAnimatable2/ExplodeAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C48132E1DF0C2B400473AA4 /* DropDownAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropDownAnimator.swift; path = IBAnimatable2/DropDownAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C48132F1DF0C2B400473AA4 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DismissSegue.swift; path = IBAnimatable2/DismissSegue.swift; sourceTree = SOURCE_ROOT; };
+		5C4813301DF0C2B400473AA4 /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignableNavigationBar.swift; path = IBAnimatable2/DesignableNavigationBar.swift; sourceTree = SOURCE_ROOT; };
+		5C4813311DF0C2B400473AA4 /* CoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverAnimator.swift; path = IBAnimatable2/CoverAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4813321DF0C2B400473AA4 /* CornerSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CornerSide.swift; path = IBAnimatable2/CornerSide.swift; sourceTree = SOURCE_ROOT; };
+		5C4813331DF0C2B400473AA4 /* CornerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CornerDesignable.swift; path = IBAnimatable2/CornerDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4813341DF0C2B400473AA4 /* ContainerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerTransition.swift; path = IBAnimatable2/ContainerTransition.swift; sourceTree = SOURCE_ROOT; };
+		5C4813351DF0C2B400473AA4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = IBAnimatable2/Constants.swift; sourceTree = SOURCE_ROOT; };
+		5C4813361DF0C2B400473AA4 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorType.swift; path = IBAnimatable2/ColorType.swift; sourceTree = SOURCE_ROOT; };
+		5C4813371DF0C2B400473AA4 /* CheckBoxDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckBoxDesignable.swift; path = IBAnimatable2/CheckBoxDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C4813381DF0C2B400473AA4 /* CardsAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardsAnimator.swift; path = IBAnimatable2/CardsAnimator.swift; sourceTree = SOURCE_ROOT; };
+		5C4813391DF0C2B400473AA4 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CALayerExtension.swift; path = IBAnimatable2/CALayerExtension.swift; sourceTree = SOURCE_ROOT; };
+		5C48133A1DF0C2B400473AA4 /* BorderSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderSide.swift; path = IBAnimatable2/BorderSide.swift; sourceTree = SOURCE_ROOT; };
+		5C48133B1DF0C2B400473AA4 /* BorderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderDesignable.swift; path = IBAnimatable2/BorderDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C48133C1DF0C2B400473AA4 /* BlurEffectStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurEffectStyle.swift; path = IBAnimatable2/BlurEffectStyle.swift; sourceTree = SOURCE_ROOT; };
+		5C48133D1DF0C2B400473AA4 /* BlurDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurDesignable.swift; path = IBAnimatable2/BlurDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C48133E1DF0C2B400473AA4 /* BarButtonItemDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarButtonItemDesignable.swift; path = IBAnimatable2/BarButtonItemDesignable.swift; sourceTree = SOURCE_ROOT; };
+		5C48133F1DF0C2B400473AA4 /* AnimatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatorFactory.swift; path = IBAnimatable2/AnimatorFactory.swift; sourceTree = SOURCE_ROOT; };
+		5C4813401DF0C2B400473AA4 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = IBAnimatable2/AnimationType.swift; sourceTree = SOURCE_ROOT; };
+		5C4813411DF0C2B400473AA4 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedTransitioning.swift; path = IBAnimatable2/AnimatedTransitioning.swift; sourceTree = SOURCE_ROOT; };
+		5C4813421DF0C2B400473AA4 /* AnimatedPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedPresenting.swift; path = IBAnimatable2/AnimatedPresenting.swift; sourceTree = SOURCE_ROOT; };
+		5C4813431DF0C2B400473AA4 /* AnimatableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableViewController.swift; path = IBAnimatable2/AnimatableViewController.swift; sourceTree = SOURCE_ROOT; };
+		5C4813441DF0C2B400473AA4 /* AnimatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableView.swift; path = IBAnimatable2/AnimatableView.swift; sourceTree = SOURCE_ROOT; };
+		5C4813451DF0C2B400473AA4 /* AnimatableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTextView.swift; path = IBAnimatable2/AnimatableTextView.swift; sourceTree = SOURCE_ROOT; };
+		5C4813461DF0C2B400473AA4 /* AnimatableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTextField.swift; path = IBAnimatable2/AnimatableTextField.swift; sourceTree = SOURCE_ROOT; };
+		5C4813471DF0C2B400473AA4 /* AnimatableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTableViewCell.swift; path = IBAnimatable2/AnimatableTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		5C4813481DF0C2B400473AA4 /* AnimatableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTableView.swift; path = IBAnimatable2/AnimatableTableView.swift; sourceTree = SOURCE_ROOT; };
+		5C4813491DF0C2B400473AA4 /* AnimatableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableStackView.swift; path = IBAnimatable2/AnimatableStackView.swift; sourceTree = SOURCE_ROOT; };
+		5C48134A1DF0C2B400473AA4 /* AnimatableSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableSlider.swift; path = IBAnimatable2/AnimatableSlider.swift; sourceTree = SOURCE_ROOT; };
+		5C48134B1DF0C2B400473AA4 /* AnimatableScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableScrollView.swift; path = IBAnimatable2/AnimatableScrollView.swift; sourceTree = SOURCE_ROOT; };
+		5C48134C1DF0C2B400473AA4 /* AnimatablePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatablePresentationController.swift; path = IBAnimatable2/AnimatablePresentationController.swift; sourceTree = SOURCE_ROOT; };
+		5C48134D1DF0C2B400473AA4 /* AnimatableNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableNavigationController.swift; path = IBAnimatable2/AnimatableNavigationController.swift; sourceTree = SOURCE_ROOT; };
+		5C48134E1DF0C2B400473AA4 /* AnimatableModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableModalViewController.swift; path = IBAnimatable2/AnimatableModalViewController.swift; sourceTree = SOURCE_ROOT; };
+		5C48134F1DF0C2B400473AA4 /* AnimatableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableLabel.swift; path = IBAnimatable2/AnimatableLabel.swift; sourceTree = SOURCE_ROOT; };
+		5C4813501DF0C2B400473AA4 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = IBAnimatable2/AnimatableImageView.swift; sourceTree = SOURCE_ROOT; };
+		5C4813511DF0C2B400473AA4 /* AnimatableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableCollectionViewCell.swift; path = IBAnimatable2/AnimatableCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		5C4813521DF0C2B400473AA4 /* AnimatableCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableCheckBox.swift; path = IBAnimatable2/AnimatableCheckBox.swift; sourceTree = SOURCE_ROOT; };
+		5C4813531DF0C2B400473AA4 /* AnimatableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableButton.swift; path = IBAnimatable2/AnimatableButton.swift; sourceTree = SOURCE_ROOT; };
+		5C4813541DF0C2B400473AA4 /* AnimatableBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableBarButtonItem.swift; path = IBAnimatable2/AnimatableBarButtonItem.swift; sourceTree = SOURCE_ROOT; };
+		5C4813551DF0C2B400473AA4 /* AnimatableActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableActivityIndicatorView.swift; path = IBAnimatable2/AnimatableActivityIndicatorView.swift; sourceTree = SOURCE_ROOT; };
+		5C4813561DF0C2B400473AA4 /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animatable.swift; path = IBAnimatable2/Animatable.swift; sourceTree = SOURCE_ROOT; };
+		5C4813571DF0C2B400473AA4 /* ActivityIndicatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorType.swift; path = IBAnimatable2/ActivityIndicatorType.swift; sourceTree = SOURCE_ROOT; };
+		5C4813581DF0C2B400473AA4 /* ActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorShape.swift; path = IBAnimatable2/ActivityIndicatorShape.swift; sourceTree = SOURCE_ROOT; };
+		5C4813591DF0C2B400473AA4 /* ActivityIndicatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorFactory.swift; path = IBAnimatable2/ActivityIndicatorFactory.swift; sourceTree = SOURCE_ROOT; };
+		5C48135A1DF0C2B400473AA4 /* ActivityIndicatorAnimationTriangleSkewSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationTriangleSkewSpin.swift; path = IBAnimatable2/ActivityIndicatorAnimationTriangleSkewSpin.swift; sourceTree = SOURCE_ROOT; };
+		5C48135B1DF0C2B400473AA4 /* ActivityIndicatorAnimationSquareSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationSquareSpin.swift; path = IBAnimatable2/ActivityIndicatorAnimationSquareSpin.swift; sourceTree = SOURCE_ROOT; };
+		5C48135C1DF0C2B400473AA4 /* ActivityIndicatorAnimationSemiCircleSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationSemiCircleSpin.swift; path = IBAnimatable2/ActivityIndicatorAnimationSemiCircleSpin.swift; sourceTree = SOURCE_ROOT; };
+		5C48135D1DF0C2B400473AA4 /* ActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationPacman.swift; path = IBAnimatable2/ActivityIndicatorAnimationPacman.swift; sourceTree = SOURCE_ROOT; };
+		5C48135E1DF0C2B400473AA4 /* ActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationOrbit.swift; path = IBAnimatable2/ActivityIndicatorAnimationOrbit.swift; sourceTree = SOURCE_ROOT; };
+		5C48135F1DF0C2B400473AA4 /* ActivityIndicatorAnimationLineSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationLineSpinFadeLoader.swift; path = IBAnimatable2/ActivityIndicatorAnimationLineSpinFadeLoader.swift; sourceTree = SOURCE_ROOT; };
+		5C4813601DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationLineScalePulseOutRapid.swift; path = IBAnimatable2/ActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = SOURCE_ROOT; };
+		5C4813611DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationLineScalePulseOut.swift; path = IBAnimatable2/ActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = SOURCE_ROOT; };
+		5C4813621DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScaleParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationLineScaleParty.swift; path = IBAnimatable2/ActivityIndicatorAnimationLineScaleParty.swift; sourceTree = SOURCE_ROOT; };
+		5C4813631DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationLineScale.swift; path = IBAnimatable2/ActivityIndicatorAnimationLineScale.swift; sourceTree = SOURCE_ROOT; };
+		5C4813641DF0C2B400473AA4 /* ActivityIndicatorAnimationCubeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationCubeTransition.swift; path = IBAnimatable2/ActivityIndicatorAnimationCubeTransition.swift; sourceTree = SOURCE_ROOT; };
+		5C4813651DF0C2B400473AA4 /* ActivityIndicatorAnimationBallZigZagDeflect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallZigZagDeflect.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallZigZagDeflect.swift; sourceTree = SOURCE_ROOT; };
+		5C4813661DF0C2B400473AA4 /* ActivityIndicatorAnimationBallZigZag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallZigZag.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallZigZag.swift; sourceTree = SOURCE_ROOT; };
+		5C4813671DF0C2B400473AA4 /* ActivityIndicatorAnimationBallTrianglePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallTrianglePath.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallTrianglePath.swift; sourceTree = SOURCE_ROOT; };
+		5C4813681DF0C2B400473AA4 /* ActivityIndicatorAnimationBallSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallSpinFadeLoader.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallSpinFadeLoader.swift; sourceTree = SOURCE_ROOT; };
+		5C4813691DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallScaleRippleMultiple.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallScaleRippleMultiple.swift; sourceTree = SOURCE_ROOT; };
+		5C48136A1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScaleRipple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallScaleRipple.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallScaleRipple.swift; sourceTree = SOURCE_ROOT; };
+		5C48136B1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScaleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallScaleMultiple.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallScaleMultiple.swift; sourceTree = SOURCE_ROOT; };
+		5C48136C1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallScale.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallScale.swift; sourceTree = SOURCE_ROOT; };
+		5C48136D1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallRotateChase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallRotateChase.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallRotateChase.swift; sourceTree = SOURCE_ROOT; };
+		5C48136E1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallRotate.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallRotate.swift; sourceTree = SOURCE_ROOT; };
+		5C48136F1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallPulseSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallPulseSync.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallPulseSync.swift; sourceTree = SOURCE_ROOT; };
+		5C4813701DF0C2B400473AA4 /* ActivityIndicatorAnimationBallPulseRise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallPulseRise.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallPulseRise.swift; sourceTree = SOURCE_ROOT; };
+		5C4813711DF0C2B400473AA4 /* ActivityIndicatorAnimationBallPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallPulse.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallPulse.swift; sourceTree = SOURCE_ROOT; };
+		5C4813721DF0C2B400473AA4 /* ActivityIndicatorAnimationBallGridPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallGridPulse.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallGridPulse.swift; sourceTree = SOURCE_ROOT; };
+		5C4813731DF0C2B400473AA4 /* ActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallGridBeat.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallGridBeat.swift; sourceTree = SOURCE_ROOT; };
+		5C4813741DF0C2B400473AA4 /* ActivityIndicatorAnimationBallClipRotatePulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallClipRotatePulse.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallClipRotatePulse.swift; sourceTree = SOURCE_ROOT; };
+		5C4813751DF0C2B400473AA4 /* ActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallClipRotateMultiple.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = SOURCE_ROOT; };
+		5C4813761DF0C2B400473AA4 /* ActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallClipRotate.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallClipRotate.swift; sourceTree = SOURCE_ROOT; };
+		5C4813771DF0C2B400473AA4 /* ActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallBeat.swift; path = IBAnimatable2/ActivityIndicatorAnimationBallBeat.swift; sourceTree = SOURCE_ROOT; };
+		5C4813781DF0C2B400473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationAudioEqualizer.swift; path = IBAnimatable2/ActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = SOURCE_ROOT; };
+		5C4813791DF0C2B400473AA4 /* ActivityIndicatorAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimating.swift; path = IBAnimatable2/ActivityIndicatorAnimating.swift; sourceTree = SOURCE_ROOT; };
+		5C48137A1DF0C2B400473AA4 /* ActivityIndicatorAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimatable.swift; path = IBAnimatable2/ActivityIndicatorAnimatable.swift; sourceTree = SOURCE_ROOT; };
 		5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInstrumentsViewController.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMBounceAnimation.swift; path = RAMAnimatedTabBarController/Animations/BounceAnimation/RAMBounceAnimation.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMFrameItemAnimation.swift; path = RAMAnimatedTabBarController/Animations/FrameAnimation/RAMFrameItemAnimation.swift; sourceTree = SOURCE_ROOT; };
@@ -222,159 +377,6 @@
 		5CC9BAA01DE3A9AD001B21DD /* RAMBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMBadge.swift; path = RAMAnimatedTabBarController/RAMBadge/RAMBadge.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BAA21DE3A9BB001B21DD /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMItemAnimationProtocol.swift; path = RAMAnimatedTabBarController/RAMItemAnimationProtocol.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BAA31DE3A9BB001B21DD /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMAnimatedTabBarController.swift; path = RAMAnimatedTabBarController/RAMAnimatedTabBarController.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAAA1DE3AD74001B21DD /* ZoomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomAnimator.swift; path = IBAnimatable/ZoomAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAAB1DE3AD74001B21DD /* ViewControllerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerDesignable.swift; path = IBAnimatable/ViewControllerDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAAC1DE3AD74001B21DD /* ViewControllerAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerAnimatedTransitioning.swift; path = IBAnimatable/ViewControllerAnimatedTransitioning.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAAD1DE3AD74001B21DD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = IBAnimatable/Utils.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAAE1DE3AD74001B21DD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = IBAnimatable/UIViewControllerExtension.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAAF1DE3AD74001B21DD /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = IBAnimatable/UIColorExtension.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAB01DE3AD74001B21DD /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Typealias.swift; path = IBAnimatable/Typealias.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAB11DE3AD74001B21DD /* TurnAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TurnAnimator.swift; path = IBAnimatable/TurnAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAB21DE3AD74001B21DD /* TransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionType.swift; path = IBAnimatable/TransitionType.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAB31DE3AD74001B21DD /* TransitionPresenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionPresenterManager.swift; path = IBAnimatable/TransitionPresenterManager.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAB41DE3AD74001B21DD /* TransitionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionPresenter.swift; path = IBAnimatable/TransitionPresenter.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAB51DE3AD74001B21DD /* TransitionAnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionAnimationType.swift; path = IBAnimatable/TransitionAnimationType.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAB61DE3AD74001B21DD /* TransitionAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransitionAnimatable.swift; path = IBAnimatable/TransitionAnimatable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAB71DE3AD74001B21DD /* TintDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintDesignable.swift; path = IBAnimatable/TintDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAB81DE3AD74001B21DD /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCellDesignable.swift; path = IBAnimatable/TableViewCellDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAB91DE3AD74001B21DD /* SystemSuckEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemSuckEffectAnimator.swift; path = IBAnimatable/SystemSuckEffectAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BABA1DE3AD74001B21DD /* SystemRotateAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemRotateAnimator.swift; path = IBAnimatable/SystemRotateAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BABB1DE3AD74001B21DD /* SystemRippleEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemRippleEffectAnimator.swift; path = IBAnimatable/SystemRippleEffectAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BABC1DE3AD74001B21DD /* SystemRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemRevealAnimator.swift; path = IBAnimatable/SystemRevealAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BABD1DE3AD74001B21DD /* SystemPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemPushAnimator.swift; path = IBAnimatable/SystemPushAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BABE1DE3AD74001B21DD /* SystemPageAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemPageAnimator.swift; path = IBAnimatable/SystemPageAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BABF1DE3AD74001B21DD /* SystemMoveInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemMoveInAnimator.swift; path = IBAnimatable/SystemMoveInAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAC01DE3AD74001B21DD /* SystemFlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemFlipAnimator.swift; path = IBAnimatable/SystemFlipAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAC11DE3AD74001B21DD /* SystemCubeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemCubeAnimator.swift; path = IBAnimatable/SystemCubeAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAC21DE3AD74001B21DD /* SystemCameraIrisAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemCameraIrisAnimator.swift; path = IBAnimatable/SystemCameraIrisAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAC31DE3AD74001B21DD /* StatusBarDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusBarDesignable.swift; path = IBAnimatable/StatusBarDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAC41DE3AD74001B21DD /* SlideAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideAnimator.swift; path = IBAnimatable/SlideAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAC51DE3AD74001B21DD /* SideImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideImageDesignable.swift; path = IBAnimatable/SideImageDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAC61DE3AD74001B21DD /* ShadowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShadowDesignable.swift; path = IBAnimatable/ShadowDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAC71DE3AD74001B21DD /* ScreenEdgePanInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenEdgePanInteractiveAnimator.swift; path = IBAnimatable/ScreenEdgePanInteractiveAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAC81DE3AD74001B21DD /* RotationDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotationDesignable.swift; path = IBAnimatable/RotationDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAC91DE3AD74001B21DD /* RootWindowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWindowDesignable.swift; path = IBAnimatable/RootWindowDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BACA1DE3AD74001B21DD /* PresentTurnWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentTurnWithDismissInteractionSegue.swift; path = IBAnimatable/PresentTurnWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BACB1DE3AD74001B21DD /* PresentTurnSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentTurnSegue.swift; path = IBAnimatable/PresentTurnSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BACC1DE3AD74001B21DD /* PresentSlideWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentSlideWithDismissInteractionSegue.swift; path = IBAnimatable/PresentSlideWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BACD1DE3AD74001B21DD /* PresentSlideSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentSlideSegue.swift; path = IBAnimatable/PresentSlideSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BACE1DE3AD74001B21DD /* PresentPortalWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentPortalWithDismissInteractionSegue.swift; path = IBAnimatable/PresentPortalWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BACF1DE3AD74001B21DD /* PresentPortalSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentPortalSegue.swift; path = IBAnimatable/PresentPortalSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAD01DE3AD74001B21DD /* PresentNatGeoSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentNatGeoSegue.swift; path = IBAnimatable/PresentNatGeoSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAD11DE3AD74001B21DD /* PresentFoldWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFoldWithDismissInteractionSegue.swift; path = IBAnimatable/PresentFoldWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAD21DE3AD74001B21DD /* PresentFoldSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFoldSegue.swift; path = IBAnimatable/PresentFoldSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAD31DE3AD74001B21DD /* PresentFlipWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFlipWithDismissInteractionSegue.swift; path = IBAnimatable/PresentFlipWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAD41DE3AD74001B21DD /* PresentFlipSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFlipSegue.swift; path = IBAnimatable/PresentFlipSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAD51DE3AD74001B21DD /* PresentFadeWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFadeWithDismissInteractionSegue.swift; path = IBAnimatable/PresentFadeWithDismissInteractionSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAD61DE3AD74001B21DD /* PresentFadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentFadeSegue.swift; path = IBAnimatable/PresentFadeSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAD71DE3AD74001B21DD /* PresentExplodeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentExplodeSegue.swift; path = IBAnimatable/PresentExplodeSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAD81DE3AD74001B21DD /* PresentCardsSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentCardsSegue.swift; path = IBAnimatable/PresentCardsSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAD91DE3AD74001B21DD /* PresentationPresenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationPresenterManager.swift; path = IBAnimatable/PresentationPresenterManager.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BADA1DE3AD74001B21DD /* PresentationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationPresenter.swift; path = IBAnimatable/PresentationPresenter.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BADB1DE3AD74001B21DD /* PresentationModalSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationModalSize.swift; path = IBAnimatable/PresentationModalSize.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BADC1DE3AD74001B21DD /* PresentationModalPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationModalPosition.swift; path = IBAnimatable/PresentationModalPosition.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BADD1DE3AD74001B21DD /* PresentationKeyboardTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationKeyboardTranslation.swift; path = IBAnimatable/PresentationKeyboardTranslation.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BADE1DE3AD74001B21DD /* PresentationDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationDesignable.swift; path = IBAnimatable/PresentationDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BADF1DE3AD74001B21DD /* PresentationAnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PresentationAnimationType.swift; path = IBAnimatable/PresentationAnimationType.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAE01DE3AD74001B21DD /* PortalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PortalAnimator.swift; path = IBAnimatable/PortalAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAE11DE3AD74001B21DD /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAE21DE3AD74001B21DD /* PinchInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinchInteractiveAnimator.swift; path = IBAnimatable/PinchInteractiveAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAE31DE3AD74001B21DD /* PanInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanInteractiveAnimator.swift; path = IBAnimatable/PanInteractiveAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAE41DE3AD74001B21DD /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingDesignable.swift; path = IBAnimatable/PaddingDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAE51DE3AD74001B21DD /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Navigator.swift; path = IBAnimatable/Navigator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAE61DE3AD74001B21DD /* NavigationBarDesginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarDesginable.swift; path = IBAnimatable/NavigationBarDesginable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAE71DE3AD74001B21DD /* NatGeoAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NatGeoAnimator.swift; path = IBAnimatable/NatGeoAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAE81DE3AD74001B21DD /* MaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaskType.swift; path = IBAnimatable/MaskType.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAE91DE3AD74001B21DD /* MaskDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaskDesignable.swift; path = IBAnimatable/MaskDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAEA1DE3AD74001B21DD /* InteractiveGestureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveGestureType.swift; path = IBAnimatable/InteractiveGestureType.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAEB1DE3AD74001B21DD /* InteractiveAnimatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveAnimatorFactory.swift; path = IBAnimatable/InteractiveAnimatorFactory.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAEC1DE3AD74001B21DD /* InteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractiveAnimator.swift; path = IBAnimatable/InteractiveAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAEE1DE3AD74001B21DD /* IBEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBEnum.swift; path = IBAnimatable/IBEnum.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAEF1DE3AD74001B21DD /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientType.swift; path = IBAnimatable/GradientType.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAF01DE3AD74001B21DD /* GradientStartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientStartPoint.swift; path = IBAnimatable/GradientStartPoint.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAF11DE3AD74001B21DD /* GradientDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientDesignable.swift; path = IBAnimatable/GradientDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAF21DE3AD74001B21DD /* FoldAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoldAnimator.swift; path = IBAnimatable/FoldAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAF31DE3AD74001B21DD /* FlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlipAnimator.swift; path = IBAnimatable/FlipAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAF41DE3AD74001B21DD /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FillDesignable.swift; path = IBAnimatable/FillDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAF51DE3AD74001B21DD /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeAnimator.swift; path = IBAnimatable/FadeAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAF61DE3AD74001B21DD /* ExplodeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExplodeAnimator.swift; path = IBAnimatable/ExplodeAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAF71DE3AD74001B21DD /* DropDownAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropDownAnimator.swift; path = IBAnimatable/DropDownAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAF81DE3AD74001B21DD /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DismissSegue.swift; path = IBAnimatable/DismissSegue.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAF91DE3AD74001B21DD /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignableNavigationBar.swift; path = IBAnimatable/DesignableNavigationBar.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAFA1DE3AD74001B21DD /* CoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverAnimator.swift; path = IBAnimatable/CoverAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAFB1DE3AD74001B21DD /* CornerSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CornerSide.swift; path = IBAnimatable/CornerSide.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAFC1DE3AD74001B21DD /* CornerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CornerDesignable.swift; path = IBAnimatable/CornerDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAFD1DE3AD74001B21DD /* ContainerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerTransition.swift; path = IBAnimatable/ContainerTransition.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAFE1DE3AD74001B21DD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = IBAnimatable/Constants.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BAFF1DE3AD74001B21DD /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorType.swift; path = IBAnimatable/ColorType.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB001DE3AD74001B21DD /* CheckBoxDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckBoxDesignable.swift; path = IBAnimatable/CheckBoxDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB011DE3AD74001B21DD /* CardsAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardsAnimator.swift; path = IBAnimatable/CardsAnimator.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB021DE3AD74001B21DD /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CALayerExtension.swift; path = IBAnimatable/CALayerExtension.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB031DE3AD75001B21DD /* BorderSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderSide.swift; path = IBAnimatable/BorderSide.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB041DE3AD75001B21DD /* BorderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderDesignable.swift; path = IBAnimatable/BorderDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB051DE3AD75001B21DD /* BlurEffectStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurEffectStyle.swift; path = IBAnimatable/BlurEffectStyle.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB061DE3AD75001B21DD /* BlurDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurDesignable.swift; path = IBAnimatable/BlurDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB071DE3AD75001B21DD /* BarButtonItemDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarButtonItemDesignable.swift; path = IBAnimatable/BarButtonItemDesignable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB081DE3AD75001B21DD /* AnimatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatorFactory.swift; path = IBAnimatable/AnimatorFactory.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB091DE3AD75001B21DD /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = IBAnimatable/AnimationType.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB0A1DE3AD75001B21DD /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedTransitioning.swift; path = IBAnimatable/AnimatedTransitioning.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB0B1DE3AD75001B21DD /* AnimatedPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedPresenting.swift; path = IBAnimatable/AnimatedPresenting.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB0C1DE3AD75001B21DD /* AnimatableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableViewController.swift; path = IBAnimatable/AnimatableViewController.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB0D1DE3AD75001B21DD /* AnimatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableView.swift; path = IBAnimatable/AnimatableView.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB0E1DE3AD75001B21DD /* AnimatableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTextView.swift; path = IBAnimatable/AnimatableTextView.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB0F1DE3AD75001B21DD /* AnimatableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTextField.swift; path = IBAnimatable/AnimatableTextField.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB101DE3AD75001B21DD /* AnimatableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTableViewCell.swift; path = IBAnimatable/AnimatableTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB111DE3AD75001B21DD /* AnimatableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTableView.swift; path = IBAnimatable/AnimatableTableView.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB121DE3AD75001B21DD /* AnimatableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableStackView.swift; path = IBAnimatable/AnimatableStackView.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB131DE3AD75001B21DD /* AnimatableSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableSlider.swift; path = IBAnimatable/AnimatableSlider.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB141DE3AD75001B21DD /* AnimatableScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableScrollView.swift; path = IBAnimatable/AnimatableScrollView.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB151DE3AD75001B21DD /* AnimatablePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatablePresentationController.swift; path = IBAnimatable/AnimatablePresentationController.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB161DE3AD75001B21DD /* AnimatableNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableNavigationController.swift; path = IBAnimatable/AnimatableNavigationController.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB171DE3AD75001B21DD /* AnimatableModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableModalViewController.swift; path = IBAnimatable/AnimatableModalViewController.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB181DE3AD75001B21DD /* AnimatableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableLabel.swift; path = IBAnimatable/AnimatableLabel.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB191DE3AD75001B21DD /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = IBAnimatable/AnimatableImageView.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB1A1DE3AD75001B21DD /* AnimatableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableCollectionViewCell.swift; path = IBAnimatable/AnimatableCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB1B1DE3AD75001B21DD /* AnimatableCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableCheckBox.swift; path = IBAnimatable/AnimatableCheckBox.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB1C1DE3AD75001B21DD /* AnimatableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableButton.swift; path = IBAnimatable/AnimatableButton.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB1D1DE3AD75001B21DD /* AnimatableBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableBarButtonItem.swift; path = IBAnimatable/AnimatableBarButtonItem.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB1E1DE3AD75001B21DD /* AnimatableActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableActivityIndicatorView.swift; path = IBAnimatable/AnimatableActivityIndicatorView.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB1F1DE3AD75001B21DD /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animatable.swift; path = IBAnimatable/Animatable.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB201DE3AD75001B21DD /* ActivityIndicatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorType.swift; path = IBAnimatable/ActivityIndicatorType.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB211DE3AD75001B21DD /* ActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorShape.swift; path = IBAnimatable/ActivityIndicatorShape.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB221DE3AD75001B21DD /* ActivityIndicatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorFactory.swift; path = IBAnimatable/ActivityIndicatorFactory.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB231DE3AD75001B21DD /* ActivityIndicatorAnimationTriangleSkewSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationTriangleSkewSpin.swift; path = IBAnimatable/ActivityIndicatorAnimationTriangleSkewSpin.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB241DE3AD75001B21DD /* ActivityIndicatorAnimationSquareSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationSquareSpin.swift; path = IBAnimatable/ActivityIndicatorAnimationSquareSpin.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB251DE3AD75001B21DD /* ActivityIndicatorAnimationSemiCircleSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationSemiCircleSpin.swift; path = IBAnimatable/ActivityIndicatorAnimationSemiCircleSpin.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB261DE3AD75001B21DD /* ActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationPacman.swift; path = IBAnimatable/ActivityIndicatorAnimationPacman.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB271DE3AD75001B21DD /* ActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationOrbit.swift; path = IBAnimatable/ActivityIndicatorAnimationOrbit.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB281DE3AD75001B21DD /* ActivityIndicatorAnimationLineSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationLineSpinFadeLoader.swift; path = IBAnimatable/ActivityIndicatorAnimationLineSpinFadeLoader.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB291DE3AD75001B21DD /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationLineScalePulseOutRapid.swift; path = IBAnimatable/ActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB2A1DE3AD75001B21DD /* ActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationLineScalePulseOut.swift; path = IBAnimatable/ActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB2B1DE3AD75001B21DD /* ActivityIndicatorAnimationLineScaleParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationLineScaleParty.swift; path = IBAnimatable/ActivityIndicatorAnimationLineScaleParty.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB2C1DE3AD75001B21DD /* ActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationLineScale.swift; path = IBAnimatable/ActivityIndicatorAnimationLineScale.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB2D1DE3AD75001B21DD /* ActivityIndicatorAnimationCubeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationCubeTransition.swift; path = IBAnimatable/ActivityIndicatorAnimationCubeTransition.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB2E1DE3AD75001B21DD /* ActivityIndicatorAnimationBallZigZagDeflect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallZigZagDeflect.swift; path = IBAnimatable/ActivityIndicatorAnimationBallZigZagDeflect.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB2F1DE3AD75001B21DD /* ActivityIndicatorAnimationBallZigZag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallZigZag.swift; path = IBAnimatable/ActivityIndicatorAnimationBallZigZag.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB301DE3AD75001B21DD /* ActivityIndicatorAnimationBallTrianglePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallTrianglePath.swift; path = IBAnimatable/ActivityIndicatorAnimationBallTrianglePath.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB311DE3AD75001B21DD /* ActivityIndicatorAnimationBallSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallSpinFadeLoader.swift; path = IBAnimatable/ActivityIndicatorAnimationBallSpinFadeLoader.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB321DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallScaleRippleMultiple.swift; path = IBAnimatable/ActivityIndicatorAnimationBallScaleRippleMultiple.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB331DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleRipple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallScaleRipple.swift; path = IBAnimatable/ActivityIndicatorAnimationBallScaleRipple.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB341DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallScaleMultiple.swift; path = IBAnimatable/ActivityIndicatorAnimationBallScaleMultiple.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB351DE3AD75001B21DD /* ActivityIndicatorAnimationBallScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallScale.swift; path = IBAnimatable/ActivityIndicatorAnimationBallScale.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB361DE3AD75001B21DD /* ActivityIndicatorAnimationBallRotateChase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallRotateChase.swift; path = IBAnimatable/ActivityIndicatorAnimationBallRotateChase.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB371DE3AD75001B21DD /* ActivityIndicatorAnimationBallRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallRotate.swift; path = IBAnimatable/ActivityIndicatorAnimationBallRotate.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB381DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulseSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallPulseSync.swift; path = IBAnimatable/ActivityIndicatorAnimationBallPulseSync.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB391DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulseRise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallPulseRise.swift; path = IBAnimatable/ActivityIndicatorAnimationBallPulseRise.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB3A1DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallPulse.swift; path = IBAnimatable/ActivityIndicatorAnimationBallPulse.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB3B1DE3AD75001B21DD /* ActivityIndicatorAnimationBallGridPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallGridPulse.swift; path = IBAnimatable/ActivityIndicatorAnimationBallGridPulse.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB3C1DE3AD75001B21DD /* ActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallGridBeat.swift; path = IBAnimatable/ActivityIndicatorAnimationBallGridBeat.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB3D1DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotatePulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallClipRotatePulse.swift; path = IBAnimatable/ActivityIndicatorAnimationBallClipRotatePulse.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB3E1DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallClipRotateMultiple.swift; path = IBAnimatable/ActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB3F1DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallClipRotate.swift; path = IBAnimatable/ActivityIndicatorAnimationBallClipRotate.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB401DE3AD75001B21DD /* ActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationBallBeat.swift; path = IBAnimatable/ActivityIndicatorAnimationBallBeat.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB411DE3AD75001B21DD /* ActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationAudioEqualizer.swift; path = IBAnimatable/ActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB421DE3AD75001B21DD /* ActivityIndicatorAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimating.swift; path = IBAnimatable/ActivityIndicatorAnimating.swift; sourceTree = SOURCE_ROOT; };
-		5CC9BB431DE3AD75001B21DD /* ActivityIndicatorAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimatable.swift; path = IBAnimatable/ActivityIndicatorAnimatable.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BBDE1DE8D38E001B21DD /* DataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataItem.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BBE21DE8D639001B21DD /* KDDragAndDropManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDDragAndDropManager.swift; sourceTree = "<group>"; };
 		5CC9BBE41DE8DD8E001B21DD /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -433,6 +435,167 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C4812E01DF0C29900473AA4 /* IBAnimatable */ = {
+			isa = PBXGroup;
+			children = (
+				5C4812E11DF0C2B400473AA4 /* ZoomAnimator.swift */,
+				5C4812E21DF0C2B400473AA4 /* ViewControllerDesignable.swift */,
+				5C4812E31DF0C2B400473AA4 /* ViewControllerAnimatedTransitioning.swift */,
+				5C4812E41DF0C2B400473AA4 /* Utils.swift */,
+				5C4812E51DF0C2B400473AA4 /* UIViewControllerExtension.swift */,
+				5C4812E61DF0C2B400473AA4 /* UIColorExtension.swift */,
+				5C4812E71DF0C2B400473AA4 /* Typealias.swift */,
+				5C4812E81DF0C2B400473AA4 /* TurnAnimator.swift */,
+				5C4812E91DF0C2B400473AA4 /* TransitionType.swift */,
+				5C4812EA1DF0C2B400473AA4 /* TransitionPresenterManager.swift */,
+				5C4812EB1DF0C2B400473AA4 /* TransitionPresenter.swift */,
+				5C4812EC1DF0C2B400473AA4 /* TransitionAnimationType.swift */,
+				5C4812ED1DF0C2B400473AA4 /* TransitionAnimatable.swift */,
+				5C4812EE1DF0C2B400473AA4 /* TintDesignable.swift */,
+				5C4812EF1DF0C2B400473AA4 /* TableViewCellDesignable.swift */,
+				5C4812F01DF0C2B400473AA4 /* SystemSuckEffectAnimator.swift */,
+				5C4812F11DF0C2B400473AA4 /* SystemRotateAnimator.swift */,
+				5C4812F21DF0C2B400473AA4 /* SystemRippleEffectAnimator.swift */,
+				5C4812F31DF0C2B400473AA4 /* SystemRevealAnimator.swift */,
+				5C4812F41DF0C2B400473AA4 /* SystemPushAnimator.swift */,
+				5C4812F51DF0C2B400473AA4 /* SystemPageAnimator.swift */,
+				5C4812F61DF0C2B400473AA4 /* SystemMoveInAnimator.swift */,
+				5C4812F71DF0C2B400473AA4 /* SystemFlipAnimator.swift */,
+				5C4812F81DF0C2B400473AA4 /* SystemCubeAnimator.swift */,
+				5C4812F91DF0C2B400473AA4 /* SystemCameraIrisAnimator.swift */,
+				5C4812FA1DF0C2B400473AA4 /* StatusBarDesignable.swift */,
+				5C4812FB1DF0C2B400473AA4 /* SlideAnimator.swift */,
+				5C4812FC1DF0C2B400473AA4 /* SideImageDesignable.swift */,
+				5C4812FD1DF0C2B400473AA4 /* ShadowDesignable.swift */,
+				5C4812FE1DF0C2B400473AA4 /* ScreenEdgePanInteractiveAnimator.swift */,
+				5C4812FF1DF0C2B400473AA4 /* RotationDesignable.swift */,
+				5C4813001DF0C2B400473AA4 /* RootWindowDesignable.swift */,
+				5C4813011DF0C2B400473AA4 /* PresentTurnWithDismissInteractionSegue.swift */,
+				5C4813021DF0C2B400473AA4 /* PresentTurnSegue.swift */,
+				5C4813031DF0C2B400473AA4 /* PresentSlideWithDismissInteractionSegue.swift */,
+				5C4813041DF0C2B400473AA4 /* PresentSlideSegue.swift */,
+				5C4813051DF0C2B400473AA4 /* PresentPortalWithDismissInteractionSegue.swift */,
+				5C4813061DF0C2B400473AA4 /* PresentPortalSegue.swift */,
+				5C4813071DF0C2B400473AA4 /* PresentNatGeoSegue.swift */,
+				5C4813081DF0C2B400473AA4 /* PresentFoldWithDismissInteractionSegue.swift */,
+				5C4813091DF0C2B400473AA4 /* PresentFoldSegue.swift */,
+				5C48130A1DF0C2B400473AA4 /* PresentFlipWithDismissInteractionSegue.swift */,
+				5C48130B1DF0C2B400473AA4 /* PresentFlipSegue.swift */,
+				5C48130C1DF0C2B400473AA4 /* PresentFadeWithDismissInteractionSegue.swift */,
+				5C48130D1DF0C2B400473AA4 /* PresentFadeSegue.swift */,
+				5C48130E1DF0C2B400473AA4 /* PresentExplodeSegue.swift */,
+				5C48130F1DF0C2B400473AA4 /* PresentCardsSegue.swift */,
+				5C4813101DF0C2B400473AA4 /* PresentationPresenterManager.swift */,
+				5C4813111DF0C2B400473AA4 /* PresentationPresenter.swift */,
+				5C4813121DF0C2B400473AA4 /* PresentationModalSize.swift */,
+				5C4813131DF0C2B400473AA4 /* PresentationModalPosition.swift */,
+				5C4813141DF0C2B400473AA4 /* PresentationKeyboardTranslation.swift */,
+				5C4813151DF0C2B400473AA4 /* PresentationDesignable.swift */,
+				5C4813161DF0C2B400473AA4 /* PresentationAnimationType.swift */,
+				5C4813171DF0C2B400473AA4 /* PortalAnimator.swift */,
+				5C4813181DF0C2B400473AA4 /* PlaceholderDesignable.swift */,
+				5C4813191DF0C2B400473AA4 /* PinchInteractiveAnimator.swift */,
+				5C48131A1DF0C2B400473AA4 /* PanInteractiveAnimator.swift */,
+				5C48131B1DF0C2B400473AA4 /* PaddingDesignable.swift */,
+				5C48131C1DF0C2B400473AA4 /* Navigator.swift */,
+				5C48131D1DF0C2B400473AA4 /* NavigationBarDesginable.swift */,
+				5C48131E1DF0C2B400473AA4 /* NatGeoAnimator.swift */,
+				5C48131F1DF0C2B400473AA4 /* MaskType.swift */,
+				5C4813201DF0C2B400473AA4 /* MaskDesignable.swift */,
+				5C4813211DF0C2B400473AA4 /* InteractiveGestureType.swift */,
+				5C4813221DF0C2B400473AA4 /* InteractiveAnimatorFactory.swift */,
+				5C4813231DF0C2B400473AA4 /* InteractiveAnimator.swift */,
+				5C4813241DF0C2B400473AA4 /* Info.plist */,
+				5C4813251DF0C2B400473AA4 /* IBEnum.swift */,
+				5C4813261DF0C2B400473AA4 /* GradientType.swift */,
+				5C4813271DF0C2B400473AA4 /* GradientStartPoint.swift */,
+				5C4813281DF0C2B400473AA4 /* GradientDesignable.swift */,
+				5C4813291DF0C2B400473AA4 /* FoldAnimator.swift */,
+				5C48132A1DF0C2B400473AA4 /* FlipAnimator.swift */,
+				5C48132B1DF0C2B400473AA4 /* FillDesignable.swift */,
+				5C48132C1DF0C2B400473AA4 /* FadeAnimator.swift */,
+				5C48132D1DF0C2B400473AA4 /* ExplodeAnimator.swift */,
+				5C48132E1DF0C2B400473AA4 /* DropDownAnimator.swift */,
+				5C48132F1DF0C2B400473AA4 /* DismissSegue.swift */,
+				5C4813301DF0C2B400473AA4 /* DesignableNavigationBar.swift */,
+				5C4813311DF0C2B400473AA4 /* CoverAnimator.swift */,
+				5C4813321DF0C2B400473AA4 /* CornerSide.swift */,
+				5C4813331DF0C2B400473AA4 /* CornerDesignable.swift */,
+				5C4813341DF0C2B400473AA4 /* ContainerTransition.swift */,
+				5C4813351DF0C2B400473AA4 /* Constants.swift */,
+				5C4813361DF0C2B400473AA4 /* ColorType.swift */,
+				5C4813371DF0C2B400473AA4 /* CheckBoxDesignable.swift */,
+				5C4813381DF0C2B400473AA4 /* CardsAnimator.swift */,
+				5C4813391DF0C2B400473AA4 /* CALayerExtension.swift */,
+				5C48133A1DF0C2B400473AA4 /* BorderSide.swift */,
+				5C48133B1DF0C2B400473AA4 /* BorderDesignable.swift */,
+				5C48133C1DF0C2B400473AA4 /* BlurEffectStyle.swift */,
+				5C48133D1DF0C2B400473AA4 /* BlurDesignable.swift */,
+				5C48133E1DF0C2B400473AA4 /* BarButtonItemDesignable.swift */,
+				5C48133F1DF0C2B400473AA4 /* AnimatorFactory.swift */,
+				5C4813401DF0C2B400473AA4 /* AnimationType.swift */,
+				5C4813411DF0C2B400473AA4 /* AnimatedTransitioning.swift */,
+				5C4813421DF0C2B400473AA4 /* AnimatedPresenting.swift */,
+				5C4813431DF0C2B400473AA4 /* AnimatableViewController.swift */,
+				5C4813441DF0C2B400473AA4 /* AnimatableView.swift */,
+				5C4813451DF0C2B400473AA4 /* AnimatableTextView.swift */,
+				5C4813461DF0C2B400473AA4 /* AnimatableTextField.swift */,
+				5C4813471DF0C2B400473AA4 /* AnimatableTableViewCell.swift */,
+				5C4813481DF0C2B400473AA4 /* AnimatableTableView.swift */,
+				5C4813491DF0C2B400473AA4 /* AnimatableStackView.swift */,
+				5C48134A1DF0C2B400473AA4 /* AnimatableSlider.swift */,
+				5C48134B1DF0C2B400473AA4 /* AnimatableScrollView.swift */,
+				5C48134C1DF0C2B400473AA4 /* AnimatablePresentationController.swift */,
+				5C48134D1DF0C2B400473AA4 /* AnimatableNavigationController.swift */,
+				5C48134E1DF0C2B400473AA4 /* AnimatableModalViewController.swift */,
+				5C48134F1DF0C2B400473AA4 /* AnimatableLabel.swift */,
+				5C4813501DF0C2B400473AA4 /* AnimatableImageView.swift */,
+				5C4813511DF0C2B400473AA4 /* AnimatableCollectionViewCell.swift */,
+				5C4813521DF0C2B400473AA4 /* AnimatableCheckBox.swift */,
+				5C4813531DF0C2B400473AA4 /* AnimatableButton.swift */,
+				5C4813541DF0C2B400473AA4 /* AnimatableBarButtonItem.swift */,
+				5C4813551DF0C2B400473AA4 /* AnimatableActivityIndicatorView.swift */,
+				5C4813561DF0C2B400473AA4 /* Animatable.swift */,
+				5C4813571DF0C2B400473AA4 /* ActivityIndicatorType.swift */,
+				5C4813581DF0C2B400473AA4 /* ActivityIndicatorShape.swift */,
+				5C4813591DF0C2B400473AA4 /* ActivityIndicatorFactory.swift */,
+				5C48135A1DF0C2B400473AA4 /* ActivityIndicatorAnimationTriangleSkewSpin.swift */,
+				5C48135B1DF0C2B400473AA4 /* ActivityIndicatorAnimationSquareSpin.swift */,
+				5C48135C1DF0C2B400473AA4 /* ActivityIndicatorAnimationSemiCircleSpin.swift */,
+				5C48135D1DF0C2B400473AA4 /* ActivityIndicatorAnimationPacman.swift */,
+				5C48135E1DF0C2B400473AA4 /* ActivityIndicatorAnimationOrbit.swift */,
+				5C48135F1DF0C2B400473AA4 /* ActivityIndicatorAnimationLineSpinFadeLoader.swift */,
+				5C4813601DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift */,
+				5C4813611DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScalePulseOut.swift */,
+				5C4813621DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScaleParty.swift */,
+				5C4813631DF0C2B400473AA4 /* ActivityIndicatorAnimationLineScale.swift */,
+				5C4813641DF0C2B400473AA4 /* ActivityIndicatorAnimationCubeTransition.swift */,
+				5C4813651DF0C2B400473AA4 /* ActivityIndicatorAnimationBallZigZagDeflect.swift */,
+				5C4813661DF0C2B400473AA4 /* ActivityIndicatorAnimationBallZigZag.swift */,
+				5C4813671DF0C2B400473AA4 /* ActivityIndicatorAnimationBallTrianglePath.swift */,
+				5C4813681DF0C2B400473AA4 /* ActivityIndicatorAnimationBallSpinFadeLoader.swift */,
+				5C4813691DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift */,
+				5C48136A1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScaleRipple.swift */,
+				5C48136B1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScaleMultiple.swift */,
+				5C48136C1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallScale.swift */,
+				5C48136D1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallRotateChase.swift */,
+				5C48136E1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallRotate.swift */,
+				5C48136F1DF0C2B400473AA4 /* ActivityIndicatorAnimationBallPulseSync.swift */,
+				5C4813701DF0C2B400473AA4 /* ActivityIndicatorAnimationBallPulseRise.swift */,
+				5C4813711DF0C2B400473AA4 /* ActivityIndicatorAnimationBallPulse.swift */,
+				5C4813721DF0C2B400473AA4 /* ActivityIndicatorAnimationBallGridPulse.swift */,
+				5C4813731DF0C2B400473AA4 /* ActivityIndicatorAnimationBallGridBeat.swift */,
+				5C4813741DF0C2B400473AA4 /* ActivityIndicatorAnimationBallClipRotatePulse.swift */,
+				5C4813751DF0C2B400473AA4 /* ActivityIndicatorAnimationBallClipRotateMultiple.swift */,
+				5C4813761DF0C2B400473AA4 /* ActivityIndicatorAnimationBallClipRotate.swift */,
+				5C4813771DF0C2B400473AA4 /* ActivityIndicatorAnimationBallBeat.swift */,
+				5C4813781DF0C2B400473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift */,
+				5C4813791DF0C2B400473AA4 /* ActivityIndicatorAnimating.swift */,
+				5C48137A1DF0C2B400473AA4 /* ActivityIndicatorAnimatable.swift */,
+			);
+			name = IBAnimatable;
+			sourceTree = "<group>";
+		};
 		5CC9BAA61DE3A9CF001B21DD /* RAMAnimatedTabController */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,166 +608,6 @@
 				5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */,
 			);
 			name = RAMAnimatedTabController;
-			sourceTree = "<group>";
-		};
-		5CC9BAA71DE3AD4A001B21DD /* IBAnimatable */ = {
-			isa = PBXGroup;
-			children = (
-				5CC9BAAA1DE3AD74001B21DD /* ZoomAnimator.swift */,
-				5CC9BAAB1DE3AD74001B21DD /* ViewControllerDesignable.swift */,
-				5CC9BAAC1DE3AD74001B21DD /* ViewControllerAnimatedTransitioning.swift */,
-				5CC9BAAD1DE3AD74001B21DD /* Utils.swift */,
-				5CC9BAAE1DE3AD74001B21DD /* UIViewControllerExtension.swift */,
-				5CC9BAAF1DE3AD74001B21DD /* UIColorExtension.swift */,
-				5CC9BAB01DE3AD74001B21DD /* Typealias.swift */,
-				5CC9BAB11DE3AD74001B21DD /* TurnAnimator.swift */,
-				5CC9BAB21DE3AD74001B21DD /* TransitionType.swift */,
-				5CC9BAB31DE3AD74001B21DD /* TransitionPresenterManager.swift */,
-				5CC9BAB41DE3AD74001B21DD /* TransitionPresenter.swift */,
-				5CC9BAB51DE3AD74001B21DD /* TransitionAnimationType.swift */,
-				5CC9BAB61DE3AD74001B21DD /* TransitionAnimatable.swift */,
-				5CC9BAB71DE3AD74001B21DD /* TintDesignable.swift */,
-				5CC9BAB81DE3AD74001B21DD /* TableViewCellDesignable.swift */,
-				5CC9BAB91DE3AD74001B21DD /* SystemSuckEffectAnimator.swift */,
-				5CC9BABA1DE3AD74001B21DD /* SystemRotateAnimator.swift */,
-				5CC9BABB1DE3AD74001B21DD /* SystemRippleEffectAnimator.swift */,
-				5CC9BABC1DE3AD74001B21DD /* SystemRevealAnimator.swift */,
-				5CC9BABD1DE3AD74001B21DD /* SystemPushAnimator.swift */,
-				5CC9BABE1DE3AD74001B21DD /* SystemPageAnimator.swift */,
-				5CC9BABF1DE3AD74001B21DD /* SystemMoveInAnimator.swift */,
-				5CC9BAC01DE3AD74001B21DD /* SystemFlipAnimator.swift */,
-				5CC9BAC11DE3AD74001B21DD /* SystemCubeAnimator.swift */,
-				5CC9BAC21DE3AD74001B21DD /* SystemCameraIrisAnimator.swift */,
-				5CC9BAC31DE3AD74001B21DD /* StatusBarDesignable.swift */,
-				5CC9BAC41DE3AD74001B21DD /* SlideAnimator.swift */,
-				5CC9BAC51DE3AD74001B21DD /* SideImageDesignable.swift */,
-				5CC9BAC61DE3AD74001B21DD /* ShadowDesignable.swift */,
-				5CC9BAC71DE3AD74001B21DD /* ScreenEdgePanInteractiveAnimator.swift */,
-				5CC9BAC81DE3AD74001B21DD /* RotationDesignable.swift */,
-				5CC9BAC91DE3AD74001B21DD /* RootWindowDesignable.swift */,
-				5CC9BACA1DE3AD74001B21DD /* PresentTurnWithDismissInteractionSegue.swift */,
-				5CC9BACB1DE3AD74001B21DD /* PresentTurnSegue.swift */,
-				5CC9BACC1DE3AD74001B21DD /* PresentSlideWithDismissInteractionSegue.swift */,
-				5CC9BACD1DE3AD74001B21DD /* PresentSlideSegue.swift */,
-				5CC9BACE1DE3AD74001B21DD /* PresentPortalWithDismissInteractionSegue.swift */,
-				5CC9BACF1DE3AD74001B21DD /* PresentPortalSegue.swift */,
-				5CC9BAD01DE3AD74001B21DD /* PresentNatGeoSegue.swift */,
-				5CC9BAD11DE3AD74001B21DD /* PresentFoldWithDismissInteractionSegue.swift */,
-				5CC9BAD21DE3AD74001B21DD /* PresentFoldSegue.swift */,
-				5CC9BAD31DE3AD74001B21DD /* PresentFlipWithDismissInteractionSegue.swift */,
-				5CC9BAD41DE3AD74001B21DD /* PresentFlipSegue.swift */,
-				5CC9BAD51DE3AD74001B21DD /* PresentFadeWithDismissInteractionSegue.swift */,
-				5CC9BAD61DE3AD74001B21DD /* PresentFadeSegue.swift */,
-				5CC9BAD71DE3AD74001B21DD /* PresentExplodeSegue.swift */,
-				5CC9BAD81DE3AD74001B21DD /* PresentCardsSegue.swift */,
-				5CC9BAD91DE3AD74001B21DD /* PresentationPresenterManager.swift */,
-				5CC9BADA1DE3AD74001B21DD /* PresentationPresenter.swift */,
-				5CC9BADB1DE3AD74001B21DD /* PresentationModalSize.swift */,
-				5CC9BADC1DE3AD74001B21DD /* PresentationModalPosition.swift */,
-				5CC9BADD1DE3AD74001B21DD /* PresentationKeyboardTranslation.swift */,
-				5CC9BADE1DE3AD74001B21DD /* PresentationDesignable.swift */,
-				5CC9BADF1DE3AD74001B21DD /* PresentationAnimationType.swift */,
-				5CC9BAE01DE3AD74001B21DD /* PortalAnimator.swift */,
-				5CC9BAE11DE3AD74001B21DD /* PlaceholderDesignable.swift */,
-				5CC9BAE21DE3AD74001B21DD /* PinchInteractiveAnimator.swift */,
-				5CC9BAE31DE3AD74001B21DD /* PanInteractiveAnimator.swift */,
-				5CC9BAE41DE3AD74001B21DD /* PaddingDesignable.swift */,
-				5CC9BAE51DE3AD74001B21DD /* Navigator.swift */,
-				5CC9BAE61DE3AD74001B21DD /* NavigationBarDesginable.swift */,
-				5CC9BAE71DE3AD74001B21DD /* NatGeoAnimator.swift */,
-				5CC9BAE81DE3AD74001B21DD /* MaskType.swift */,
-				5CC9BAE91DE3AD74001B21DD /* MaskDesignable.swift */,
-				5CC9BAEA1DE3AD74001B21DD /* InteractiveGestureType.swift */,
-				5CC9BAEB1DE3AD74001B21DD /* InteractiveAnimatorFactory.swift */,
-				5CC9BAEC1DE3AD74001B21DD /* InteractiveAnimator.swift */,
-				5CC9BAEE1DE3AD74001B21DD /* IBEnum.swift */,
-				5CC9BAEF1DE3AD74001B21DD /* GradientType.swift */,
-				5CC9BAF01DE3AD74001B21DD /* GradientStartPoint.swift */,
-				5CC9BAF11DE3AD74001B21DD /* GradientDesignable.swift */,
-				5CC9BAF21DE3AD74001B21DD /* FoldAnimator.swift */,
-				5CC9BAF31DE3AD74001B21DD /* FlipAnimator.swift */,
-				5CC9BAF41DE3AD74001B21DD /* FillDesignable.swift */,
-				5CC9BAF51DE3AD74001B21DD /* FadeAnimator.swift */,
-				5CC9BAF61DE3AD74001B21DD /* ExplodeAnimator.swift */,
-				5CC9BAF71DE3AD74001B21DD /* DropDownAnimator.swift */,
-				5CC9BAF81DE3AD74001B21DD /* DismissSegue.swift */,
-				5CC9BAF91DE3AD74001B21DD /* DesignableNavigationBar.swift */,
-				5CC9BAFA1DE3AD74001B21DD /* CoverAnimator.swift */,
-				5CC9BAFB1DE3AD74001B21DD /* CornerSide.swift */,
-				5CC9BAFC1DE3AD74001B21DD /* CornerDesignable.swift */,
-				5CC9BAFD1DE3AD74001B21DD /* ContainerTransition.swift */,
-				5CC9BAFE1DE3AD74001B21DD /* Constants.swift */,
-				5CC9BAFF1DE3AD74001B21DD /* ColorType.swift */,
-				5CC9BB001DE3AD74001B21DD /* CheckBoxDesignable.swift */,
-				5CC9BB011DE3AD74001B21DD /* CardsAnimator.swift */,
-				5CC9BB021DE3AD74001B21DD /* CALayerExtension.swift */,
-				5CC9BB031DE3AD75001B21DD /* BorderSide.swift */,
-				5CC9BB041DE3AD75001B21DD /* BorderDesignable.swift */,
-				5CC9BB051DE3AD75001B21DD /* BlurEffectStyle.swift */,
-				5CC9BB061DE3AD75001B21DD /* BlurDesignable.swift */,
-				5CC9BB071DE3AD75001B21DD /* BarButtonItemDesignable.swift */,
-				5CC9BB081DE3AD75001B21DD /* AnimatorFactory.swift */,
-				5CC9BB091DE3AD75001B21DD /* AnimationType.swift */,
-				5CC9BB0A1DE3AD75001B21DD /* AnimatedTransitioning.swift */,
-				5CC9BB0B1DE3AD75001B21DD /* AnimatedPresenting.swift */,
-				5CC9BB0C1DE3AD75001B21DD /* AnimatableViewController.swift */,
-				5CC9BB0D1DE3AD75001B21DD /* AnimatableView.swift */,
-				5CC9BB0E1DE3AD75001B21DD /* AnimatableTextView.swift */,
-				5CC9BB0F1DE3AD75001B21DD /* AnimatableTextField.swift */,
-				5CC9BB101DE3AD75001B21DD /* AnimatableTableViewCell.swift */,
-				5CC9BB111DE3AD75001B21DD /* AnimatableTableView.swift */,
-				5CC9BB121DE3AD75001B21DD /* AnimatableStackView.swift */,
-				5CC9BB131DE3AD75001B21DD /* AnimatableSlider.swift */,
-				5CC9BB141DE3AD75001B21DD /* AnimatableScrollView.swift */,
-				5CC9BB151DE3AD75001B21DD /* AnimatablePresentationController.swift */,
-				5CC9BB161DE3AD75001B21DD /* AnimatableNavigationController.swift */,
-				5CC9BB171DE3AD75001B21DD /* AnimatableModalViewController.swift */,
-				5CC9BB181DE3AD75001B21DD /* AnimatableLabel.swift */,
-				5CC9BB191DE3AD75001B21DD /* AnimatableImageView.swift */,
-				5CC9BB1A1DE3AD75001B21DD /* AnimatableCollectionViewCell.swift */,
-				5CC9BB1B1DE3AD75001B21DD /* AnimatableCheckBox.swift */,
-				5CC9BB1C1DE3AD75001B21DD /* AnimatableButton.swift */,
-				5CC9BB1D1DE3AD75001B21DD /* AnimatableBarButtonItem.swift */,
-				5CC9BB1E1DE3AD75001B21DD /* AnimatableActivityIndicatorView.swift */,
-				5CC9BB1F1DE3AD75001B21DD /* Animatable.swift */,
-				5CC9BB201DE3AD75001B21DD /* ActivityIndicatorType.swift */,
-				5CC9BB211DE3AD75001B21DD /* ActivityIndicatorShape.swift */,
-				5CC9BB221DE3AD75001B21DD /* ActivityIndicatorFactory.swift */,
-				5CC9BB231DE3AD75001B21DD /* ActivityIndicatorAnimationTriangleSkewSpin.swift */,
-				5CC9BB241DE3AD75001B21DD /* ActivityIndicatorAnimationSquareSpin.swift */,
-				5CC9BB251DE3AD75001B21DD /* ActivityIndicatorAnimationSemiCircleSpin.swift */,
-				5CC9BB261DE3AD75001B21DD /* ActivityIndicatorAnimationPacman.swift */,
-				5CC9BB271DE3AD75001B21DD /* ActivityIndicatorAnimationOrbit.swift */,
-				5CC9BB281DE3AD75001B21DD /* ActivityIndicatorAnimationLineSpinFadeLoader.swift */,
-				5CC9BB291DE3AD75001B21DD /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift */,
-				5CC9BB2A1DE3AD75001B21DD /* ActivityIndicatorAnimationLineScalePulseOut.swift */,
-				5CC9BB2B1DE3AD75001B21DD /* ActivityIndicatorAnimationLineScaleParty.swift */,
-				5CC9BB2C1DE3AD75001B21DD /* ActivityIndicatorAnimationLineScale.swift */,
-				5CC9BB2D1DE3AD75001B21DD /* ActivityIndicatorAnimationCubeTransition.swift */,
-				5CC9BB2E1DE3AD75001B21DD /* ActivityIndicatorAnimationBallZigZagDeflect.swift */,
-				5CC9BB2F1DE3AD75001B21DD /* ActivityIndicatorAnimationBallZigZag.swift */,
-				5CC9BB301DE3AD75001B21DD /* ActivityIndicatorAnimationBallTrianglePath.swift */,
-				5CC9BB311DE3AD75001B21DD /* ActivityIndicatorAnimationBallSpinFadeLoader.swift */,
-				5CC9BB321DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift */,
-				5CC9BB331DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleRipple.swift */,
-				5CC9BB341DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleMultiple.swift */,
-				5CC9BB351DE3AD75001B21DD /* ActivityIndicatorAnimationBallScale.swift */,
-				5CC9BB361DE3AD75001B21DD /* ActivityIndicatorAnimationBallRotateChase.swift */,
-				5CC9BB371DE3AD75001B21DD /* ActivityIndicatorAnimationBallRotate.swift */,
-				5CC9BB381DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulseSync.swift */,
-				5CC9BB391DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulseRise.swift */,
-				5CC9BB3A1DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulse.swift */,
-				5CC9BB3B1DE3AD75001B21DD /* ActivityIndicatorAnimationBallGridPulse.swift */,
-				5CC9BB3C1DE3AD75001B21DD /* ActivityIndicatorAnimationBallGridBeat.swift */,
-				5CC9BB3D1DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotatePulse.swift */,
-				5CC9BB3E1DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotateMultiple.swift */,
-				5CC9BB3F1DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotate.swift */,
-				5CC9BB401DE3AD75001B21DD /* ActivityIndicatorAnimationBallBeat.swift */,
-				5CC9BB411DE3AD75001B21DD /* ActivityIndicatorAnimationAudioEqualizer.swift */,
-				5CC9BB421DE3AD75001B21DD /* ActivityIndicatorAnimating.swift */,
-				5CC9BB431DE3AD75001B21DD /* ActivityIndicatorAnimatable.swift */,
-			);
-			name = IBAnimatable;
 			sourceTree = "<group>";
 		};
 		B41716AC1DD1160B00999160 = {
@@ -645,8 +648,8 @@
 				5CC9BAA61DE3A9CF001B21DD /* RAMAnimatedTabController */,
 				B4D5297D1DD3F3A200A62BF0 /* hihat.wav */,
 				B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */,
-				5CC9BAA71DE3AD4A001B21DD /* IBAnimatable */,
 				B4D5297F1DD3F3A200A62BF0 /* snare.wav */,
+				5C4812E01DF0C29900473AA4 /* IBAnimatable */,
 				B41716C41DD1160B00999160 /* LaunchScreen.storyboard */,
 				B41716C71DD1160B00999160 /* Info.plist */,
 				5C136E5C1DE3511500EE9B30 /* 10.jpg */,
@@ -801,6 +804,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4813BE1DF0C2B500473AA4 /* Info.plist in Resources */,
 				B41716C61DD1160B00999160 /* LaunchScreen.storyboard in Resources */,
 				5C136E5D1DE3511500EE9B30 /* 10.jpg in Resources */,
 				B41716C31DD1160B00999160 /* Assets.xcassets in Resources */,
@@ -832,181 +836,181 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CC9BB7C1DE3AD75001B21DD /* PinchInteractiveAnimator.swift in Sources */,
-				5CC9BB761DE3AD75001B21DD /* PresentationModalPosition.swift in Sources */,
-				5CC9BB581DE3AD75001B21DD /* SystemPageAnimator.swift in Sources */,
-				5CC9BBD71DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
-				5CC9BB5C1DE3AD75001B21DD /* SystemCameraIrisAnimator.swift in Sources */,
-				5CC9BB9D1DE3AD75001B21DD /* BorderSide.swift in Sources */,
-				5CC9BBCC1DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
-				5CC9BBB41DE3AD75001B21DD /* AnimatableCollectionViewCell.swift in Sources */,
-				5CC9BBDA1DE3AD75001B21DD /* ActivityIndicatorAnimationBallBeat.swift in Sources */,
-				5CC9BB8F1DE3AD75001B21DD /* FadeAnimator.swift in Sources */,
-				5CC9BB561DE3AD75001B21DD /* SystemRevealAnimator.swift in Sources */,
-				5CC9BBD31DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulseRise.swift in Sources */,
-				5CC9BBA41DE3AD75001B21DD /* AnimatedTransitioning.swift in Sources */,
+				5C4813E01DF0C2B500473AA4 /* AnimatableTextField.swift in Sources */,
+				5C4813BB1DF0C2B500473AA4 /* InteractiveGestureType.swift in Sources */,
+				5C4814081DF0C2B500473AA4 /* ActivityIndicatorAnimationBallRotate.swift in Sources */,
 				5CC9BBDF1DE8D38E001B21DD /* DataItem.swift in Sources */,
-				5CC9BB9B1DE3AD75001B21DD /* CardsAnimator.swift in Sources */,
+				5C4813EF1DF0C2B500473AA4 /* AnimatableActivityIndicatorView.swift in Sources */,
+				5C4814071DF0C2B500473AA4 /* ActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				5CC9BA991DE3A975001B21DD /* RAMFrameItemAnimation.swift in Sources */,
-				5CC9BBB11DE3AD75001B21DD /* AnimatableModalViewController.swift in Sources */,
-				5CC9BBB61DE3AD75001B21DD /* AnimatableButton.swift in Sources */,
-				5CC9BB7D1DE3AD75001B21DD /* PanInteractiveAnimator.swift in Sources */,
-				5CC9BB591DE3AD75001B21DD /* SystemMoveInAnimator.swift in Sources */,
-				5CC9BBC41DE3AD75001B21DD /* ActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
-				5CC9BBB81DE3AD75001B21DD /* AnimatableActivityIndicatorView.swift in Sources */,
-				5CC9BB4F1DE3AD75001B21DD /* TransitionAnimationType.swift in Sources */,
+				5C4813831DF0C2B400473AA4 /* TransitionType.swift in Sources */,
+				5C4813FD1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScale.swift in Sources */,
+				5C4813E81DF0C2B500473AA4 /* AnimatableModalViewController.swift in Sources */,
+				5C4813F21DF0C2B500473AA4 /* ActivityIndicatorShape.swift in Sources */,
+				5C4813A11DF0C2B500473AA4 /* PresentNatGeoSegue.swift in Sources */,
+				5C4813C11DF0C2B500473AA4 /* GradientStartPoint.swift in Sources */,
+				5C4813A91DF0C2B500473AA4 /* PresentCardsSegue.swift in Sources */,
+				5C4813B61DF0C2B500473AA4 /* Navigator.swift in Sources */,
+				5C4813B31DF0C2B500473AA4 /* PinchInteractiveAnimator.swift in Sources */,
+				5C4813901DF0C2B400473AA4 /* SystemMoveInAnimator.swift in Sources */,
+				5C4813D41DF0C2B500473AA4 /* BorderSide.swift in Sources */,
+				5C48139C1DF0C2B400473AA4 /* PresentTurnSegue.swift in Sources */,
+				5C4813CA1DF0C2B500473AA4 /* DesignableNavigationBar.swift in Sources */,
+				5C4813A21DF0C2B500473AA4 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
+				5C4813851DF0C2B400473AA4 /* TransitionPresenter.swift in Sources */,
+				5C48138A1DF0C2B400473AA4 /* SystemSuckEffectAnimator.swift in Sources */,
+				5C48140C1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				5C4813A01DF0C2B500473AA4 /* PresentPortalSegue.swift in Sources */,
+				5C4813EE1DF0C2B500473AA4 /* AnimatableBarButtonItem.swift in Sources */,
+				5C4813A71DF0C2B500473AA4 /* PresentFadeSegue.swift in Sources */,
 				5CC9BAA11DE3A9AD001B21DD /* RAMBadge.swift in Sources */,
-				5CC9BBBC1DE3AD75001B21DD /* ActivityIndicatorFactory.swift in Sources */,
-				5CC9BBC81DE3AD75001B21DD /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				5C4813821DF0C2B400473AA4 /* TurnAnimator.swift in Sources */,
+				5C4813F71DF0C2B500473AA4 /* ActivityIndicatorAnimationPacman.swift in Sources */,
 				5CC9BA9F1DE3A99B001B21DD /* RAMTransitionItemAnimations.swift in Sources */,
-				5CC9BBB71DE3AD75001B21DD /* AnimatableBarButtonItem.swift in Sources */,
-				5CC9BB8A1DE3AD75001B21DD /* GradientStartPoint.swift in Sources */,
-				5CC9BB571DE3AD75001B21DD /* SystemPushAnimator.swift in Sources */,
-				5CC9BBCA1DE3AD75001B21DD /* ActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
-				5CC9BB651DE3AD75001B21DD /* PresentTurnSegue.swift in Sources */,
+				5C4813DF1DF0C2B500473AA4 /* AnimatableTextView.swift in Sources */,
 				B41716BB1DD1160B00999160 /* ViewController.swift in Sources */,
-				5CC9BBCF1DE3AD75001B21DD /* ActivityIndicatorAnimationBallScale.swift in Sources */,
-				5CC9BB841DE3AD75001B21DD /* InteractiveGestureType.swift in Sources */,
-				5CC9BBAD1DE3AD75001B21DD /* AnimatableSlider.swift in Sources */,
-				5CC9BBA71DE3AD75001B21DD /* AnimatableView.swift in Sources */,
-				5CC9BBAB1DE3AD75001B21DD /* AnimatableTableView.swift in Sources */,
-				5CC9BBCE1DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
-				5CC9BB7A1DE3AD75001B21DD /* PortalAnimator.swift in Sources */,
-				5CC9BB961DE3AD75001B21DD /* CornerDesignable.swift in Sources */,
-				5CC9BBD41DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulse.swift in Sources */,
-				5CC9BBAE1DE3AD75001B21DD /* AnimatableScrollView.swift in Sources */,
-				5CC9BB491DE3AD75001B21DD /* UIColorExtension.swift in Sources */,
-				5CC9BBA11DE3AD75001B21DD /* BarButtonItemDesignable.swift in Sources */,
-				5CC9BB901DE3AD75001B21DD /* ExplodeAnimator.swift in Sources */,
-				5CC9BB5D1DE3AD75001B21DD /* StatusBarDesignable.swift in Sources */,
-				5CC9BB641DE3AD75001B21DD /* PresentTurnWithDismissInteractionSegue.swift in Sources */,
-				5CC9BBBF1DE3AD75001B21DD /* ActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
-				5CC9BB531DE3AD75001B21DD /* SystemSuckEffectAnimator.swift in Sources */,
+				5C48137E1DF0C2B400473AA4 /* Utils.swift in Sources */,
+				5C48139A1DF0C2B400473AA4 /* RootWindowDesignable.swift in Sources */,
+				5C4813AB1DF0C2B500473AA4 /* PresentationPresenter.swift in Sources */,
+				5C4813D61DF0C2B500473AA4 /* BlurEffectStyle.swift in Sources */,
+				5C48139B1DF0C2B400473AA4 /* PresentTurnWithDismissInteractionSegue.swift in Sources */,
+				5C4813C21DF0C2B500473AA4 /* GradientDesignable.swift in Sources */,
+				5C4813CC1DF0C2B500473AA4 /* CornerSide.swift in Sources */,
+				5C4813941DF0C2B400473AA4 /* StatusBarDesignable.swift in Sources */,
+				5C48139D1DF0C2B400473AA4 /* PresentSlideWithDismissInteractionSegue.swift in Sources */,
+				5C4813EB1DF0C2B500473AA4 /* AnimatableCollectionViewCell.swift in Sources */,
+				5C4813A61DF0C2B500473AA4 /* PresentFadeWithDismissInteractionSegue.swift in Sources */,
 				B41716C11DD1160B00999160 /* AirDrummer.xcdatamodeld in Sources */,
-				5CC9BB9F1DE3AD75001B21DD /* BlurEffectStyle.swift in Sources */,
-				5CC9BB441DE3AD75001B21DD /* ZoomAnimator.swift in Sources */,
 				5CC9B8191DE36BBB001B21DD /* SelectInstrumentsViewController.swift in Sources */,
-				5CC9BB521DE3AD75001B21DD /* TableViewCellDesignable.swift in Sources */,
-				5CC9BBBD1DE3AD75001B21DD /* ActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
-				5CC9BB951DE3AD75001B21DD /* CornerSide.swift in Sources */,
-				5CC9BB4B1DE3AD75001B21DD /* TurnAnimator.swift in Sources */,
-				5CC9BBA21DE3AD75001B21DD /* AnimatorFactory.swift in Sources */,
-				5CC9BBC71DE3AD75001B21DD /* ActivityIndicatorAnimationCubeTransition.swift in Sources */,
-				5CC9BBB51DE3AD75001B21DD /* AnimatableCheckBox.swift in Sources */,
-				5CC9BB971DE3AD75001B21DD /* ContainerTransition.swift in Sources */,
-				5CC9BB861DE3AD75001B21DD /* InteractiveAnimator.swift in Sources */,
-				5CC9BB781DE3AD75001B21DD /* PresentationDesignable.swift in Sources */,
-				5CC9BB461DE3AD75001B21DD /* ViewControllerAnimatedTransitioning.swift in Sources */,
-				5CC9BB831DE3AD75001B21DD /* MaskDesignable.swift in Sources */,
+				5C4813981DF0C2B400473AA4 /* ScreenEdgePanInteractiveAnimator.swift in Sources */,
+				5C4813961DF0C2B400473AA4 /* SideImageDesignable.swift in Sources */,
+				5C4814021DF0C2B500473AA4 /* ActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				5C48138D1DF0C2B400473AA4 /* SystemRevealAnimator.swift in Sources */,
+				5C48140A1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				5C4813E41DF0C2B500473AA4 /* AnimatableSlider.swift in Sources */,
+				5C4813F41DF0C2B500473AA4 /* ActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				5C48138F1DF0C2B400473AA4 /* SystemPageAnimator.swift in Sources */,
+				5C4814121DF0C2B500473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
+				5C48140D1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				5C4813B51DF0C2B500473AA4 /* PaddingDesignable.swift in Sources */,
+				5C4814111DF0C2B500473AA4 /* ActivityIndicatorAnimationBallBeat.swift in Sources */,
 				B41716F31DD116BE00999160 /* RingBuffer.m in Sources */,
-				5CC9BB851DE3AD75001B21DD /* InteractiveAnimatorFactory.swift in Sources */,
-				5CC9BB6F1DE3AD75001B21DD /* PresentFadeWithDismissInteractionSegue.swift in Sources */,
+				5C4813EA1DF0C2B500473AA4 /* AnimatableImageView.swift in Sources */,
+				5C4813B41DF0C2B500473AA4 /* PanInteractiveAnimator.swift in Sources */,
 				5CC9BBE51DE8DD8E001B21DD /* ItemCollectionViewCell.swift in Sources */,
-				5CC9BB691DE3AD75001B21DD /* PresentPortalSegue.swift in Sources */,
+				5C4813911DF0C2B400473AA4 /* SystemFlipAnimator.swift in Sources */,
+				5C4813FE1DF0C2B500473AA4 /* ActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				5C48139E1DF0C2B400473AA4 /* PresentSlideSegue.swift in Sources */,
+				5C48139F1DF0C2B500473AA4 /* PresentPortalWithDismissInteractionSegue.swift in Sources */,
+				5C4813D21DF0C2B500473AA4 /* CardsAnimator.swift in Sources */,
+				5C4813FC1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				5C48138B1DF0C2B400473AA4 /* SystemRotateAnimator.swift in Sources */,
 				5CC9BAA51DE3A9BB001B21DD /* RAMAnimatedTabBarController.swift in Sources */,
-				5CC9BBBE1DE3AD75001B21DD /* ActivityIndicatorAnimationSquareSpin.swift in Sources */,
-				5CC9BB611DE3AD75001B21DD /* ScreenEdgePanInteractiveAnimator.swift in Sources */,
+				5C48137F1DF0C2B400473AA4 /* UIViewControllerExtension.swift in Sources */,
 				5C4812DF1DE930E000473AA4 /* HomeTableViewController.swift in Sources */,
-				5CC9BB6D1DE3AD75001B21DD /* PresentFlipWithDismissInteractionSegue.swift in Sources */,
-				5CC9BB7B1DE3AD75001B21DD /* PlaceholderDesignable.swift in Sources */,
-				5CC9BB5B1DE3AD75001B21DD /* SystemCubeAnimator.swift in Sources */,
+				5C4813DC1DF0C2B500473AA4 /* AnimatedPresenting.swift in Sources */,
+				5C48137B1DF0C2B400473AA4 /* ZoomAnimator.swift in Sources */,
+				5C4814031DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
+				5C4813D91DF0C2B500473AA4 /* AnimatorFactory.swift in Sources */,
+				5C4813E61DF0C2B500473AA4 /* AnimatablePresentationController.swift in Sources */,
+				5C4813CD1DF0C2B500473AA4 /* CornerDesignable.swift in Sources */,
+				5C4813C91DF0C2B500473AA4 /* DismissSegue.swift in Sources */,
 				B41716FD1DD1808E00999160 /* SpriteScene.swift in Sources */,
-				5CC9BB7E1DE3AD75001B21DD /* PaddingDesignable.swift in Sources */,
-				5CC9BBD01DE3AD75001B21DD /* ActivityIndicatorAnimationBallRotateChase.swift in Sources */,
-				5CC9BBCD1DE3AD75001B21DD /* ActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
-				5CC9BBA61DE3AD75001B21DD /* AnimatableViewController.swift in Sources */,
-				5CC9BB931DE3AD75001B21DD /* DesignableNavigationBar.swift in Sources */,
-				5CC9BBD11DE3AD75001B21DD /* ActivityIndicatorAnimationBallRotate.swift in Sources */,
-				5CC9BBB01DE3AD75001B21DD /* AnimatableNavigationController.swift in Sources */,
+				5C4813B01DF0C2B500473AA4 /* PresentationAnimationType.swift in Sources */,
+				5C4813CB1DF0C2B500473AA4 /* CoverAnimator.swift in Sources */,
+				5C4813AE1DF0C2B500473AA4 /* PresentationKeyboardTranslation.swift in Sources */,
+				5C4813A41DF0C2B500473AA4 /* PresentFlipWithDismissInteractionSegue.swift in Sources */,
+				5C4814091DF0C2B500473AA4 /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				5C4813EC1DF0C2B500473AA4 /* AnimatableCheckBox.swift in Sources */,
+				5C4813951DF0C2B400473AA4 /* SlideAnimator.swift in Sources */,
+				5C4813A31DF0C2B500473AA4 /* PresentFoldSegue.swift in Sources */,
+				5C4813D71DF0C2B500473AA4 /* BlurDesignable.swift in Sources */,
+				5C4813811DF0C2B400473AA4 /* Typealias.swift in Sources */,
+				5C4813A51DF0C2B500473AA4 /* PresentFlipSegue.swift in Sources */,
+				5C4813F61DF0C2B500473AA4 /* ActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
+				5C4813D51DF0C2B500473AA4 /* BorderDesignable.swift in Sources */,
+				5C4813931DF0C2B400473AA4 /* SystemCameraIrisAnimator.swift in Sources */,
+				5C4813FF1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				5C4813E11DF0C2B500473AA4 /* AnimatableTableViewCell.swift in Sources */,
+				5C4813B81DF0C2B500473AA4 /* NatGeoAnimator.swift in Sources */,
+				5C4813E71DF0C2B500473AA4 /* AnimatableNavigationController.swift in Sources */,
+				5C4813FA1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
+				5C4813D01DF0C2B500473AA4 /* ColorType.swift in Sources */,
+				5C4813841DF0C2B400473AA4 /* TransitionPresenterManager.swift in Sources */,
+				5C4813AD1DF0C2B500473AA4 /* PresentationModalPosition.swift in Sources */,
+				5C4813D31DF0C2B500473AA4 /* CALayerExtension.swift in Sources */,
+				5C4813F81DF0C2B500473AA4 /* ActivityIndicatorAnimationOrbit.swift in Sources */,
+				5C4813B71DF0C2B500473AA4 /* NavigationBarDesginable.swift in Sources */,
+				5C4813ED1DF0C2B500473AA4 /* AnimatableButton.swift in Sources */,
+				5C4813F01DF0C2B500473AA4 /* Animatable.swift in Sources */,
+				5C4813991DF0C2B400473AA4 /* RotationDesignable.swift in Sources */,
+				5C4813CE1DF0C2B500473AA4 /* ContainerTransition.swift in Sources */,
+				5C4813FB1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
+				5C4813B11DF0C2B500473AA4 /* PortalAnimator.swift in Sources */,
+				5C4813881DF0C2B400473AA4 /* TintDesignable.swift in Sources */,
+				5C4813AF1DF0C2B500473AA4 /* PresentationDesignable.swift in Sources */,
+				5C4813801DF0C2B400473AA4 /* UIColorExtension.swift in Sources */,
+				5C4813AC1DF0C2B500473AA4 /* PresentationModalSize.swift in Sources */,
 				B41716F91DD116D400999160 /* HttpCommHandler.m in Sources */,
-				5CC9BBB21DE3AD75001B21DD /* AnimatableLabel.swift in Sources */,
-				5CC9BBCB1DE3AD75001B21DD /* ActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
-				5CC9BBA81DE3AD75001B21DD /* AnimatableTextView.swift in Sources */,
+				5C4813BC1DF0C2B500473AA4 /* InteractiveAnimatorFactory.swift in Sources */,
+				5C48137C1DF0C2B400473AA4 /* ViewControllerDesignable.swift in Sources */,
+				5C4814101DF0C2B500473AA4 /* ActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				5C4813C51DF0C2B500473AA4 /* FillDesignable.swift in Sources */,
+				5C4813DA1DF0C2B500473AA4 /* AnimationType.swift in Sources */,
+				5C4813D11DF0C2B500473AA4 /* CheckBoxDesignable.swift in Sources */,
+				5C4813871DF0C2B400473AA4 /* TransitionAnimatable.swift in Sources */,
+				5C4813861DF0C2B400473AA4 /* TransitionAnimationType.swift in Sources */,
+				5C48138E1DF0C2B400473AA4 /* SystemPushAnimator.swift in Sources */,
+				5C4813BF1DF0C2B500473AA4 /* IBEnum.swift in Sources */,
 				B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */,
-				5CC9BB991DE3AD75001B21DD /* ColorType.swift in Sources */,
-				5CC9BB8C1DE3AD75001B21DD /* FoldAnimator.swift in Sources */,
-				5CC9BBD51DE3AD75001B21DD /* ActivityIndicatorAnimationBallGridPulse.swift in Sources */,
-				5CC9BB6E1DE3AD75001B21DD /* PresentFlipSegue.swift in Sources */,
-				5CC9BBC21DE3AD75001B21DD /* ActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
-				5CC9BB5A1DE3AD75001B21DD /* SystemFlipAnimator.swift in Sources */,
-				5CC9BB4E1DE3AD75001B21DD /* TransitionPresenter.swift in Sources */,
-				5CC9BB891DE3AD75001B21DD /* GradientType.swift in Sources */,
-				5CC9BB9A1DE3AD75001B21DD /* CheckBoxDesignable.swift in Sources */,
-				5CC9BBC91DE3AD75001B21DD /* ActivityIndicatorAnimationBallZigZag.swift in Sources */,
-				5CC9BB4D1DE3AD75001B21DD /* TransitionPresenterManager.swift in Sources */,
-				5CC9BBAA1DE3AD75001B21DD /* AnimatableTableViewCell.swift in Sources */,
-				5CC9BB501DE3AD75001B21DD /* TransitionAnimatable.swift in Sources */,
-				5CC9BB5F1DE3AD75001B21DD /* SideImageDesignable.swift in Sources */,
-				5CC9BB751DE3AD75001B21DD /* PresentationModalSize.swift in Sources */,
 				5CC9BAA41DE3A9BB001B21DD /* RAMItemAnimationProtocol.swift in Sources */,
+				5C4813BA1DF0C2B500473AA4 /* MaskDesignable.swift in Sources */,
+				5C4813B21DF0C2B500473AA4 /* PlaceholderDesignable.swift in Sources */,
+				5C4814001DF0C2B500473AA4 /* ActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				5C4813C61DF0C2B500473AA4 /* FadeAnimator.swift in Sources */,
+				5C48137D1DF0C2B400473AA4 /* ViewControllerAnimatedTransitioning.swift in Sources */,
+				5C4813E31DF0C2B500473AA4 /* AnimatableStackView.swift in Sources */,
+				5C4814011DF0C2B500473AA4 /* ActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				5CC9BBE71DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift in Sources */,
-				5CC9BBDD1DE3AD75001B21DD /* ActivityIndicatorAnimatable.swift in Sources */,
-				5CC9BB771DE3AD75001B21DD /* PresentationKeyboardTranslation.swift in Sources */,
-				5CC9BBD81DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
-				5CC9BB541DE3AD75001B21DD /* SystemRotateAnimator.swift in Sources */,
-				5CC9BB661DE3AD75001B21DD /* PresentSlideWithDismissInteractionSegue.swift in Sources */,
-				5CC9BB8B1DE3AD75001B21DD /* GradientDesignable.swift in Sources */,
-				5CC9BB7F1DE3AD75001B21DD /* Navigator.swift in Sources */,
-				5CC9BBAF1DE3AD75001B21DD /* AnimatablePresentationController.swift in Sources */,
-				5CC9BB621DE3AD75001B21DD /* RotationDesignable.swift in Sources */,
-				5CC9BB801DE3AD75001B21DD /* NavigationBarDesginable.swift in Sources */,
-				5CC9BB731DE3AD75001B21DD /* PresentationPresenterManager.swift in Sources */,
-				5CC9BB671DE3AD75001B21DD /* PresentSlideSegue.swift in Sources */,
+				5C4814131DF0C2B500473AA4 /* ActivityIndicatorAnimating.swift in Sources */,
+				5C48138C1DF0C2B400473AA4 /* SystemRippleEffectAnimator.swift in Sources */,
+				5C4813971DF0C2B400473AA4 /* ShadowDesignable.swift in Sources */,
 				5CC9BA971DE3A963001B21DD /* RAMBounceAnimation.swift in Sources */,
-				5CC9BBBA1DE3AD75001B21DD /* ActivityIndicatorType.swift in Sources */,
-				5CC9BBC01DE3AD75001B21DD /* ActivityIndicatorAnimationPacman.swift in Sources */,
-				5CC9BB911DE3AD75001B21DD /* DropDownAnimator.swift in Sources */,
-				5CC9BB941DE3AD75001B21DD /* CoverAnimator.swift in Sources */,
-				5CC9BBC61DE3AD75001B21DD /* ActivityIndicatorAnimationLineScale.swift in Sources */,
-				5CC9BB821DE3AD75001B21DD /* MaskType.swift in Sources */,
-				5CC9BBA91DE3AD75001B21DD /* AnimatableTextField.swift in Sources */,
-				5CC9BB9C1DE3AD75001B21DD /* CALayerExtension.swift in Sources */,
-				5CC9BBC11DE3AD75001B21DD /* ActivityIndicatorAnimationOrbit.swift in Sources */,
-				5CC9BBA31DE3AD75001B21DD /* AnimationType.swift in Sources */,
 				91516AF71DD683230019FC06 /* FFTHelper.m in Sources */,
-				5CC9BB511DE3AD75001B21DD /* TintDesignable.swift in Sources */,
-				5CC9BBB31DE3AD75001B21DD /* AnimatableImageView.swift in Sources */,
-				5CC9BBD61DE3AD75001B21DD /* ActivityIndicatorAnimationBallGridBeat.swift in Sources */,
-				5CC9BBC51DE3AD75001B21DD /* ActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				5C4813921DF0C2B400473AA4 /* SystemCubeAnimator.swift in Sources */,
+				5C4813E91DF0C2B500473AA4 /* AnimatableLabel.swift in Sources */,
+				5C4814051DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
+				5C4813F31DF0C2B500473AA4 /* ActivityIndicatorFactory.swift in Sources */,
+				5C4813F11DF0C2B500473AA4 /* ActivityIndicatorType.swift in Sources */,
+				5C4813F51DF0C2B500473AA4 /* ActivityIndicatorAnimationSquareSpin.swift in Sources */,
+				5C4813DD1DF0C2B500473AA4 /* AnimatableViewController.swift in Sources */,
 				5CC9BA9B1DE3A984001B21DD /* RAMFumeAnimation.swift in Sources */,
-				5CC9BBA01DE3AD75001B21DD /* BlurDesignable.swift in Sources */,
-				5CC9BB791DE3AD75001B21DD /* PresentationAnimationType.swift in Sources */,
-				5CC9BB551DE3AD75001B21DD /* SystemRippleEffectAnimator.swift in Sources */,
-				5CC9BBAC1DE3AD75001B21DD /* AnimatableStackView.swift in Sources */,
-				5CC9BB471DE3AD75001B21DD /* Utils.swift in Sources */,
-				5CC9BBDC1DE3AD75001B21DD /* ActivityIndicatorAnimating.swift in Sources */,
-				5CC9BBD21DE3AD75001B21DD /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */,
-				5CC9BB451DE3AD75001B21DD /* ViewControllerDesignable.swift in Sources */,
-				5CC9BB741DE3AD75001B21DD /* PresentationPresenter.swift in Sources */,
-				5CC9BB711DE3AD75001B21DD /* PresentExplodeSegue.swift in Sources */,
+				5C4814141DF0C2B500473AA4 /* ActivityIndicatorAnimatable.swift in Sources */,
+				5C4813E51DF0C2B500473AA4 /* AnimatableScrollView.swift in Sources */,
 				5CC9BA9D1DE3A990001B21DD /* RAMRotationAnimation.swift in Sources */,
-				5CC9BB481DE3AD75001B21DD /* UIViewControllerExtension.swift in Sources */,
-				5CC9BB681DE3AD75001B21DD /* PresentPortalWithDismissInteractionSegue.swift in Sources */,
-				5CC9BB4A1DE3AD75001B21DD /* Typealias.swift in Sources */,
-				5CC9BB701DE3AD75001B21DD /* PresentFadeSegue.swift in Sources */,
-				5CC9BB6B1DE3AD75001B21DD /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
-				5CC9BBB91DE3AD75001B21DD /* Animatable.swift in Sources */,
-				5CC9BB8D1DE3AD75001B21DD /* FlipAnimator.swift in Sources */,
-				5CC9BB811DE3AD75001B21DD /* NatGeoAnimator.swift in Sources */,
-				5CC9BB8E1DE3AD75001B21DD /* FillDesignable.swift in Sources */,
-				5CC9BBDB1DE3AD75001B21DD /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
-				5CC9BB981DE3AD75001B21DD /* Constants.swift in Sources */,
-				5CC9BB4C1DE3AD75001B21DD /* TransitionType.swift in Sources */,
-				5CC9BB721DE3AD75001B21DD /* PresentCardsSegue.swift in Sources */,
-				5CC9BB6A1DE3AD75001B21DD /* PresentNatGeoSegue.swift in Sources */,
-				5CC9BB631DE3AD75001B21DD /* RootWindowDesignable.swift in Sources */,
-				5CC9BB601DE3AD75001B21DD /* ShadowDesignable.swift in Sources */,
-				5CC9BB5E1DE3AD75001B21DD /* SlideAnimator.swift in Sources */,
+				5C48140E1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
+				5C4813891DF0C2B400473AA4 /* TableViewCellDesignable.swift in Sources */,
+				5C48140F1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
+				5C4813B91DF0C2B500473AA4 /* MaskType.swift in Sources */,
+				5C4813AA1DF0C2B500473AA4 /* PresentationPresenterManager.swift in Sources */,
+				5C4813C01DF0C2B500473AA4 /* GradientType.swift in Sources */,
+				5C4813C41DF0C2B500473AA4 /* FlipAnimator.swift in Sources */,
+				5C4813BD1DF0C2B500473AA4 /* InteractiveAnimator.swift in Sources */,
+				5C4813DE1DF0C2B500473AA4 /* AnimatableView.swift in Sources */,
+				5C4813D81DF0C2B500473AA4 /* BarButtonItemDesignable.swift in Sources */,
 				5CC9BBE31DE8D639001B21DD /* KDDragAndDropManager.swift in Sources */,
-				5CC9BB921DE3AD75001B21DD /* DismissSegue.swift in Sources */,
-				5CC9BBBB1DE3AD75001B21DD /* ActivityIndicatorShape.swift in Sources */,
-				5CC9BB6C1DE3AD75001B21DD /* PresentFoldSegue.swift in Sources */,
+				5C4813C71DF0C2B500473AA4 /* ExplodeAnimator.swift in Sources */,
+				5C4813F91DF0C2B500473AA4 /* ActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				5C4813C81DF0C2B500473AA4 /* DropDownAnimator.swift in Sources */,
 				B41716FB1DD178FC00999160 /* PlayingViewController.swift in Sources */,
-				5CC9BBD91DE3AD75001B21DD /* ActivityIndicatorAnimationBallClipRotate.swift in Sources */,
-				5CC9BBC31DE3AD75001B21DD /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
-				5CC9BBA51DE3AD75001B21DD /* AnimatedPresenting.swift in Sources */,
-				5CC9BB881DE3AD75001B21DD /* IBEnum.swift in Sources */,
-				5CC9BB9E1DE3AD75001B21DD /* BorderDesignable.swift in Sources */,
+				5C4814061DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScale.swift in Sources */,
+				5C4814041DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				5C4813DB1DF0C2B500473AA4 /* AnimatedTransitioning.swift in Sources */,
+				5C4813E21DF0C2B500473AA4 /* AnimatableTableView.swift in Sources */,
+				5C48140B1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallPulse.swift in Sources */,
+				5C4813CF1DF0C2B500473AA4 /* Constants.swift in Sources */,
+				5C4813A81DF0C2B500473AA4 /* PresentExplodeSegue.swift in Sources */,
+				5C4813C31DF0C2B500473AA4 /* FoldAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
