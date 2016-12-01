@@ -35,8 +35,13 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
         
         let drums: [String] = [
             "Hi-Hat",
+<<<<<<< HEAD
             "Symbal",
             "Base",
+=======
+            "Cymbal",
+            "Bass",
+>>>>>>> 79ee8d4e6ee3e250305f8fdc11795dc16d7e4fbd
             "Snare",
             "Toms"
         ]
