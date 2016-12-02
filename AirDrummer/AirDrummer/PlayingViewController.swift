@@ -20,6 +20,18 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
     let magValue = 1.0
     var numDataPoints = 0
     
+    
+    
+//    var players = [String: [String: Any]]()
+//    players["Hi-Hat"] = ["index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]
+    //
+    var players = [
+        "Hi-Hat":["filename":"hihat","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
+        "Snare":["filename":"snare","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
+        "Kickdrum":["filename":"kickdrum","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]]]
+    
+    
+    
     var hihatPlayer = AVAudioPlayer()
     var snarePlayer = AVAudioPlayer()
     var kickdrumPlayer = AVAudioPlayer()
@@ -35,42 +47,84 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
         sessionConfig.timeoutIntervalForResource = 8.0
         sessionConfig.httpMaximumConnectionsPerHost = 1
         
-        // set up sound
-        let hihatSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "hihat", ofType: "wav")!)
         
-        do {
-            self.hihatPlayer = try AVAudioPlayer(contentsOf: hihatSound as URL)
-            self.hihatPlayer.prepareToPlay()
-        }
-        catch {
-            //
+        // set up sounds
+        for key in self.players.keys {
+            
+            let dict = self.players[key]!
+            
+            let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: dict["filename"] as! String?, ofType: "wav")!)
+            
+            do {
+                if var playersArray = dict["players"]! as? Array<AVAudioPlayer> {
+                    
+                    var i:Int = 0
+                    while i < (playersArray.count as Int)  {
+                        playersArray[i] = try AVAudioPlayer(contentsOf: sound as URL)
+                        playersArray[i].prepareToPlay()
+                        i += 1
+                    }
+                    
+                    self.players[key]!["players"] = playersArray
+                }
+            }
+            catch {
+                //
+            }
         }
         
-        let kickdrumSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "kickdrum", ofType: "wav")!)
         
-        do {
-            self.kickdrumPlayer = try AVAudioPlayer(contentsOf: kickdrumSound as URL)
-            self.kickdrumPlayer.prepareToPlay()
-        }
-        catch {
-            //
-        }
-
         
-        let snareSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "snare", ofType: "wav")!)
-        
-        do {
-            self.snarePlayer = try AVAudioPlayer(contentsOf: snareSound as URL)
-            self.snarePlayer.prepareToPlay()
-        }
-        catch {
-            //
-        }
+//        // set up sound
+//        let hihatSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "hihat", ofType: "wav")!)
+//        
+//        do {
+//            let hihatDict = self.players["Hi-Hat"]!
+//            
+//            if var playerArray = hihatDict["players"]! as? Array<AVAudioPlayer> {
+//
+//                var i:Int = 0
+//                while (i < (playerArray.count as Int) ) {
+//                    playerArray[i] = try AVAudioPlayer(contentsOf: hihatSound as URL)
+//                    playerArray[i].prepareToPlay()
+//                    i += 1
+//                }
+//            }
+//            
+//            self.hihatPlayer = try AVAudioPlayer(contentsOf: hihatSound as URL)
+//            self.hihatPlayer.prepareToPlay()
+//        }
+//        catch {
+//            //
+//        }
+//        
+//        let kickdrumSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "kickdrum", ofType: "wav")!)
+//        
+//        do {
+//            self.kickdrumPlayer = try AVAudioPlayer(contentsOf: kickdrumSound as URL)
+//            self.kickdrumPlayer.prepareToPlay()
+//        }
+//        catch {
+//            //
+//        }
+//
+//        
+//        let snareSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "snare", ofType: "wav")!)
+//        
+//        do {
+//            self.snarePlayer = try AVAudioPlayer(contentsOf: snareSound as URL)
+//            self.snarePlayer.prepareToPlay()
+//        }
+//        catch {
+//            //
+//        }
 
         
 //        self.hihatPlayer.play()
 //        self.snarePlayer.play()
 //        self.kickdrumPlayer.play()
+        
+        
         
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         self.startCMMonitoring()
@@ -130,16 +184,19 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
                 print(responseData)
                 
                 if let prediction = responseData["prediction"] as? String {
+                    var instrument="Hi-Hat"
                     switch prediction {
                     case "['Play Hi-Hat']":
-                        self.hihatPlayer.play()
+                        instrument="Hi-Hat"
                     case "['Play Snare']":
-                        self.snarePlayer.play()
+                        instrument="Snare"
                     case "['Play Kick Drum']":
-                        self.kickdrumPlayer.play()
+                        instrument="KickDrum"
                     default:
                         print("UNKNOWN")
                     }
+                    
+                    (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int].play()
                 }
                 else {
                     print("could not convert prediction to string")
