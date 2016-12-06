@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="odr-8i-46W">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="kXN-lf-vfJ">
+            <objects>
+                <viewController id="odr-8i-46W" customClass="ViewController" customModule="DrumTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oBI-Hd-Qef"/>
+                        <viewControllerLayoutGuide type="bottom" id="O0T-kP-ztR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WHS-Rz-7C9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nre-As-JJd">
+                                <rect key="frame" x="126" y="319" width="123" height="30"/>
+                                <state key="normal" title="Update the Model">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendUpdate:" destination="odr-8i-46W" eventType="touchUpInside" id="gbl-j6-pJv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbz-Ps-a7I">
+                                <rect key="frame" x="126" y="84" width="124" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="MvH-iX-1Uw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRD-wt-3Pu">
+                                <rect key="frame" x="36" y="164" width="303" height="50"/>
+                                <color key="backgroundColor" red="0.8541227669" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tDy-LV-vHl"/>
+                                </constraints>
+                                <state key="normal" title="Snare">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="trainSnare:" destination="odr-8i-46W" eventType="touchUpInside" id="zRZ-Oo-Weu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGr-PN-zWf">
+                                <rect key="frame" x="36" y="229" width="303" height="50"/>
+                                <color key="backgroundColor" red="0.8541227669" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TZO-0E-jes"/>
+                                </constraints>
+                                <state key="normal" title="Hi Hat">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="trainHiHat:" destination="odr-8i-46W" eventType="touchUpInside" id="OYt-ED-dq9"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DSID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-9R-DdS">
+                                <rect key="frame" x="36" y="118" width="226" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWv-xa-JNz">
+                                <rect key="frame" x="287" y="117" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="AT9-HY-iK1"/>
+                                </constraints>
+                                <state key="normal" title="SET">
+                                    <color key="titleColor" red="0.8541227669" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateDSID:" destination="odr-8i-46W" eventType="touchUpInside" id="oMJ-2Z-9JE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rbz-Ps-a7I" firstAttribute="centerX" secondItem="WHS-Rz-7C9" secondAttribute="centerX" id="2jv-CE-AnH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MGr-PN-zWf" secondAttribute="trailing" constant="20" id="Ar7-pw-ua1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uRD-wt-3Pu" secondAttribute="trailing" constant="20" id="CFe-Ws-WBA"/>
+                            <constraint firstItem="aWv-xa-JNz" firstAttribute="leading" secondItem="W4v-9R-DdS" secondAttribute="trailing" constant="25" id="CZq-gR-cxi"/>
+                            <constraint firstItem="Nre-As-JJd" firstAttribute="centerX" secondItem="WHS-Rz-7C9" secondAttribute="centerX" id="CiD-jm-QLi"/>
+                            <constraint firstItem="uRD-wt-3Pu" firstAttribute="top" secondItem="W4v-9R-DdS" secondAttribute="bottom" constant="16" id="JCb-dp-stl"/>
+                            <constraint firstItem="uRD-wt-3Pu" firstAttribute="leading" secondItem="WHS-Rz-7C9" secondAttribute="leadingMargin" constant="20" id="OLb-gy-rwv"/>
+                            <constraint firstItem="MGr-PN-zWf" firstAttribute="top" secondItem="uRD-wt-3Pu" secondAttribute="bottom" constant="15" id="Q1p-Dt-vxz"/>
+                            <constraint firstItem="uRD-wt-3Pu" firstAttribute="top" secondItem="aWv-xa-JNz" secondAttribute="bottom" constant="17" id="Vqc-kP-RHH"/>
+                            <constraint firstItem="W4v-9R-DdS" firstAttribute="leading" secondItem="WHS-Rz-7C9" secondAttribute="leadingMargin" constant="20" id="Xer-YF-Rdk"/>
+                            <constraint firstItem="aWv-xa-JNz" firstAttribute="leading" secondItem="W4v-9R-DdS" secondAttribute="trailing" constant="25" id="Y12-IQ-k45"/>
+                            <constraint firstItem="Rbz-Ps-a7I" firstAttribute="top" secondItem="oBI-Hd-Qef" secondAttribute="bottom" constant="20" id="YRk-HM-ao1"/>
+                            <constraint firstItem="Nre-As-JJd" firstAttribute="centerY" secondItem="WHS-Rz-7C9" secondAttribute="centerY" id="aGd-Ga-lNd"/>
+                            <constraint firstItem="MGr-PN-zWf" firstAttribute="leading" secondItem="WHS-Rz-7C9" secondAttribute="leadingMargin" constant="20" id="bP5-nJ-97t"/>
+                            <constraint firstItem="W4v-9R-DdS" firstAttribute="top" secondItem="Rbz-Ps-a7I" secondAttribute="bottom" constant="8" id="erN-kS-MBH"/>
+                            <constraint firstItem="uRD-wt-3Pu" firstAttribute="top" secondItem="oBI-Hd-Qef" secondAttribute="bottom" constant="100" id="hUR-mh-rN5"/>
+                            <constraint firstItem="aWv-xa-JNz" firstAttribute="top" secondItem="oBI-Hd-Qef" secondAttribute="bottom" constant="53" id="k8Q-58-3B6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aWv-xa-JNz" secondAttribute="trailing" constant="42" id="ues-9s-Yix"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="InstrumentLabel" destination="Rbz-Ps-a7I" id="Ya1-Qq-5kx"/>
+                        <outlet property="dsidLabel" destination="W4v-9R-DdS" id="M0T-eh-Rb9"/>
+                        <outlet property="hihatbutton" destination="MGr-PN-zWf" id="FMf-75-J08"/>
+                        <outlet property="snareButton" destination="uRD-wt-3Pu" id="5Xe-F1-QB7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zow-0X-AN2" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="139"/>
+        </scene>
+    </scenes>
+</document>
