@@ -554,6 +554,7 @@
 				B455FB721DF6A5F90002363A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B455FB731DF6A5F90002363A /* Build configuration list for PBXNativeTarget "DrumTrainerTests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +563,7 @@
 				B455FB751DF6A5F90002363A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B455FB761DF6A5F90002363A /* Build configuration list for PBXNativeTarget "DrumTrainerUITests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +572,7 @@
 				B455FB781DF6A5F90002363A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

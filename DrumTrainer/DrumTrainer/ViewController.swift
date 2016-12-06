@@ -14,6 +14,9 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     @IBOutlet weak var instrumentLabel: UILabel!
     @IBOutlet weak var snareButton: UIButton!
     @IBOutlet weak var hihatbutton: UIButton!
+    @IBOutlet weak var cymbalButton: UIButton!
+    @IBOutlet weak var tomsButton: UIButton!
+    @IBOutlet weak var bassButton: UIButton!
     @IBOutlet weak var dsidLabel: UITextField!
     
     var session = URLSession()
@@ -26,7 +29,7 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     var timer = Timer()
     var bufferChanged:Bool = false
     var counterVal = 0
-    let instruments = ["Hi-Hat", "Snare"]
+    let instruments = ["Hi-Hat", "Snare", "Cymbal", "Toms", "Bass"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -187,13 +190,46 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     @IBAction func trainSnare(_ sender: Any) {
         self.hihatbutton.isEnabled = true
         self.snareButton.isEnabled = false
+        self.bassButton.isEnabled = false
+        self.tomsButton.isEnabled = false
+        self.cymbalButton.isEnabled = false
         prepareForSample(instrumentName: "Snare")
     }
     
     @IBAction func trainHiHat(_ sender: Any) {
         self.hihatbutton.isEnabled = false
         self.snareButton.isEnabled = true
+        self.bassButton.isEnabled = true
+        self.tomsButton.isEnabled = true
+        self.cymbalButton.isEnabled = true
         prepareForSample(instrumentName: "Hi-Hat")
+    }
+    
+    @IBAction func trainCymbal(_ sender: Any) {
+        self.hihatbutton.isEnabled = true
+        self.snareButton.isEnabled = true
+        self.bassButton.isEnabled = true
+        self.tomsButton.isEnabled = true
+        self.cymbalButton.isEnabled = false
+        prepareForSample(instrumentName: "Cymbal")
+    }
+    
+    @IBAction func trainToms(_ sender: Any) {
+        self.hihatbutton.isEnabled = true
+        self.snareButton.isEnabled = true
+        self.bassButton.isEnabled = true
+        self.tomsButton.isEnabled = false
+        self.cymbalButton.isEnabled = true
+        prepareForSample(instrumentName: "Toms")
+    }
+    
+    @IBAction func trainBass(_ sender: Any) {
+        self.hihatbutton.isEnabled = true
+        self.snareButton.isEnabled = true
+        self.bassButton.isEnabled = false
+        self.tomsButton.isEnabled = true
+        self.cymbalButton.isEnabled = true
+        prepareForSample(instrumentName: "Bass")
     }
     
     @IBAction func updateDSID(_ sender: Any) {
