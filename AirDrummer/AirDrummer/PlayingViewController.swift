@@ -20,6 +20,8 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
     let magValue = 1.0
     var numDataPoints = 0
     
+    let TIME_DELAY = 0.2
+    
     
     
 //    var players = [String: [String: Any]]()
@@ -28,17 +30,21 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
     var players = [
         "Hi-Hat":["filename":"hihat","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
         "Snare":["filename":"snare","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
-        "Kickdrum":["filename":"kickdrum","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]]]
-    
-    
-    
-    var hihatPlayer = AVAudioPlayer()
-    var snarePlayer = AVAudioPlayer()
-    var kickdrumPlayer = AVAudioPlayer()
+        "Cymbal":["filename":"crash","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
+        "Toms":["filename":"tom_002b","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
+        "Bass":["filename":"bassdrum","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]]
+    ]
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        players["Hi-Hat"]!["time"] = Date()
+        players["Snare"]!["time"] = Date()
+        players["Cymbal"]!["time"] = Date()
+        players["Toms"]!["time"] = Date()
+        players["Bass"]!["time"] = Date()
+
 
         // Do any additional setup after loading the view.
         // setup URLSession
@@ -73,64 +79,8 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
             }
         }
         
-        
-        
-//        // set up sound
-//        let hihatSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "hihat", ofType: "wav")!)
-//        
-//        do {
-//            let hihatDict = self.players["Hi-Hat"]!
-//            
-//            if var playerArray = hihatDict["players"]! as? Array<AVAudioPlayer> {
-//
-//                var i:Int = 0
-//                while (i < (playerArray.count as Int) ) {
-//                    playerArray[i] = try AVAudioPlayer(contentsOf: hihatSound as URL)
-//                    playerArray[i].prepareToPlay()
-//                    i += 1
-//                }
-//            }
-//            
-//            self.hihatPlayer = try AVAudioPlayer(contentsOf: hihatSound as URL)
-//            self.hihatPlayer.prepareToPlay()
-//        }
-//        catch {
-//            //
-//        }
-//        
-//        let kickdrumSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "kickdrum", ofType: "wav")!)
-//        
-//        do {
-//            self.kickdrumPlayer = try AVAudioPlayer(contentsOf: kickdrumSound as URL)
-//            self.kickdrumPlayer.prepareToPlay()
-//        }
-//        catch {
-//            //
-//        }
-//
-//        
-//        let snareSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "snare", ofType: "wav")!)
-//        
-//        do {
-//            self.snarePlayer = try AVAudioPlayer(contentsOf: snareSound as URL)
-//            self.snarePlayer.prepareToPlay()
-//        }
-//        catch {
-//            //
-//        }
-
-        
-//        self.hihatPlayer.play()
-//        self.snarePlayer.play()
-//        self.kickdrumPlayer.play()
-        
-        
-        
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         self.startCMMonitoring()
-        
-    
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -190,13 +140,29 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
                         instrument="Hi-Hat"
                     case "['Play Snare']":
                         instrument="Snare"
-                    case "['Play Kick Drum']":
-                        instrument="KickDrum"
+                    case "['Play Bass']":
+                        instrument="Bass"
+                    case "['Play Toms']":
+                        instrument="Toms"
+                    case "['Play Cymbal']":
+                        instrument="Cymbal"
                     default:
                         print("UNKNOWN")
                     }
                     
+                    let date = self.players[instrument]!["time"] as! Date
+                    let now = Date()
+                    let seconds = now.timeIntervalSince(date)
+                    print("Seconds: ",seconds)
+                    
+                    if seconds > TIME_DELAY {
+                        self.players[instrument]!["time"] = now
+                        self.players[instrument]!["index"] = ((self.players[instrument]!["index"] as! Int)+1)%3
+                    }
+                    
                     (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int].play()
+                    
+                    
                 }
                 else {
                     print("could not convert prediction to string")
@@ -209,8 +175,12 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
         } else{
             print(error!)
         }
-        
     }
+    
+    func incrementIndex() {
+        print("Increment the index")
+    }
+    
     
     func getPredictionData(data:NSArray) {
         let baseUrl = "\(SERVER_URL)/PredictOne"
