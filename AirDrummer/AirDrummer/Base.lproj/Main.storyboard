@@ -840,7 +840,7 @@
             </objects>
             <point key="canvasLocation" x="3429.5999999999999" y="3224.4377811094455"/>
         </scene>
-        <!--Title-->
+        <!--Drum Kits-->
         <scene sceneID="MHa-qz-gVF">
             <objects>
                 <tableViewController id="tri-KV-lPx" customClass="DrumKitSelectTableViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
@@ -864,7 +864,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="DMY-7U-Us2">
+                    <navigationItem key="navigationItem" title="Drum Kits" id="DMY-7U-Us2">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="F2L-X1-zdL">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="FYg-Dh-06p">
                                 <rect key="frame" x="337" y="11" width="22" height="22"/>
@@ -1294,7 +1294,7 @@
             </objects>
             <point key="canvasLocation" x="6072.8000000000002" y="3223.5382308845578"/>
         </scene>
-        <!--Title-->
+        <!--Choose Gestures-->
         <scene sceneID="lKs-oR-043">
             <objects>
                 <tableViewController id="qcB-Og-Ora" customClass="SelectGestureTableViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
@@ -1318,7 +1318,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="ovW-eC-xov">
+                    <navigationItem key="navigationItem" title="Choose Gestures" id="ovW-eC-xov">
                         <barButtonItem key="rightBarButtonItem" title="Done!" id="Dnn-UQ-X7y">
                             <connections>
                                 <action selector="dismissView:" destination="qcB-Og-Ora" id="9wJ-yw-o51"/>
