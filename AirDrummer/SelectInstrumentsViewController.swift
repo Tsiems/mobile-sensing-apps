@@ -175,5 +175,8 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
             
         }
     }
+    @IBAction func dismissView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }

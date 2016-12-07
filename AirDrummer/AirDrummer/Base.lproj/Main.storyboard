@@ -871,7 +871,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="V8c-tz-i9g" kind="show" id="rHP-a7-kec"/>
+                                    <segue destination="9g9-uI-CWV" kind="presentation" id="rHP-a7-kec"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1021,7 +1021,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iku-Cj-lzw">
-                                <rect key="frame" x="0.0" y="122" width="375" height="501"/>
+                                <rect key="frame" x="0.0" y="122" width="375" height="545"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Your Drum Set!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNu-Ro-vF2">
                                         <rect key="frame" x="8" y="5" width="367" height="20"/>
@@ -1269,7 +1269,13 @@
                             <constraint firstItem="Ja5-qh-cJG" firstAttribute="leading" secondItem="70o-bd-MFQ" secondAttribute="leading" id="yfU-wx-87E"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="dLc-iK-WkW"/>
+                    <navigationItem key="navigationItem" title="Title" id="dLc-iK-WkW">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="PHg-lQ-9nq">
+                            <connections>
+                                <action selector="dismissView:" destination="V8c-tz-i9g" id="j2k-zA-RFI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="firstCollectionViewController" destination="6w3-kc-hHS" id="caF-yA-fta"/>
                         <outlet property="secondCollectionViewController" destination="Ja5-qh-cJG" id="R73-lR-Jzd"/>
@@ -1279,7 +1285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRb-ma-fm0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5134" y="3224"/>
+            <point key="canvasLocation" x="6072.8000000000002" y="3223.5382308845578"/>
         </scene>
         <!--Title-->
         <scene sceneID="lKs-oR-043">
@@ -1306,12 +1312,16 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="ovW-eC-xov">
-                        <barButtonItem key="rightBarButtonItem" title="Done!" id="Dnn-UQ-X7y"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done!" id="Dnn-UQ-X7y">
+                            <connections>
+                                <action selector="dismissView:" destination="qcB-Og-Ora" id="9wJ-yw-o51"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nyu-71-Smp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5938" y="3224"/>
+            <point key="canvasLocation" x="6876" y="3223.5382308845578"/>
         </scene>
         <!--Recordings-->
         <scene sceneID="sla-aG-ytv">
@@ -1390,6 +1400,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgL-8i-toh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3430" y="3913"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E4B-m7-xf0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9g9-uI-CWV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lio-mp-hpp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="V8c-tz-i9g" kind="relationship" relationship="rootViewController" id="aG9-Vu-UAy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mbd-Nh-L9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5133.6000000000004" y="3223.5382308845578"/>
         </scene>
     </scenes>
     <resources>
