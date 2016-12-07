@@ -22,26 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbz-Ps-a7I">
-                                <rect key="frame" x="126" y="40" width="124" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="124" id="MvH-iX-1Uw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRD-wt-3Pu">
                                 <rect key="frame" x="36" y="120" width="303" height="50"/>
                                 <color key="backgroundColor" red="0.8541227669" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tDy-LV-vHl"/>
                                 </constraints>
-                                <state key="normal" title="Snare">
+                                <state key="normal" title="Gesture 1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="trainSnare:" destination="odr-8i-46W" eventType="touchUpInside" id="zRZ-Oo-Weu"/>
+                                    <action selector="trainFirst:" destination="odr-8i-46W" eventType="touchUpInside" id="BUZ-Hg-2yc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGr-PN-zWf">
@@ -50,11 +41,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="TZO-0E-jes"/>
                                 </constraints>
-                                <state key="normal" title="Hi Hat">
+                                <state key="normal" title="Gesture 2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="trainHiHat:" destination="odr-8i-46W" eventType="touchUpInside" id="OYt-ED-dq9"/>
+                                    <action selector="trainSecond:" destination="odr-8i-46W" eventType="touchUpInside" id="I9m-NL-Ixx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKG-CL-N7F">
@@ -63,11 +54,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bY9-Yy-7bb"/>
                                 </constraints>
-                                <state key="normal" title="Cymbal">
+                                <state key="normal" title="Gesture 3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="trainCymbal:" destination="odr-8i-46W" eventType="touchUpInside" id="qyf-fZ-9QH"/>
+                                    <action selector="trainThird:" destination="odr-8i-46W" eventType="touchUpInside" id="lBB-Ep-ucD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-by-JOk">
@@ -76,11 +67,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="u2e-0B-6ky"/>
                                 </constraints>
-                                <state key="normal" title="Toms">
+                                <state key="normal" title="Gesture 4">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="trainToms:" destination="odr-8i-46W" eventType="touchUpInside" id="7tk-n9-rbe"/>
+                                    <action selector="trainFourth:" destination="odr-8i-46W" eventType="touchUpInside" id="857-wH-8fW"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DSID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W4v-9R-DdS">
@@ -116,13 +107,22 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JZq-4p-eyt"/>
                                 </constraints>
-                                <state key="normal" title="Bass">
+                                <state key="normal" title="Gesture 5">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="trainBass:" destination="odr-8i-46W" eventType="touchUpInside" id="oyu-10-4BT"/>
+                                    <action selector="trainFifth:" destination="odr-8i-46W" eventType="touchUpInside" id="Tuj-mv-YNn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select A Gesture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbz-Ps-a7I">
+                                <rect key="frame" x="94" y="40" width="187" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="MvH-iX-1Uw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -156,18 +156,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="InstrumentLabel" destination="Rbz-Ps-a7I" id="Ya1-Qq-5kx"/>
-                        <outlet property="bassButton" destination="FnE-dX-QE4" id="Aoc-Xr-OEL"/>
-                        <outlet property="cymbalButton" destination="pKG-CL-N7F" id="r54-UM-X08"/>
                         <outlet property="dsidLabel" destination="W4v-9R-DdS" id="M0T-eh-Rb9"/>
-                        <outlet property="hihatbutton" destination="MGr-PN-zWf" id="FMf-75-J08"/>
-                        <outlet property="snareButton" destination="uRD-wt-3Pu" id="5Xe-F1-QB7"/>
-                        <outlet property="tomsButton" destination="cqP-by-JOk" id="tce-ff-2xK"/>
+                        <outlet property="fifthButton" destination="FnE-dX-QE4" id="fSQ-lH-yxo"/>
+                        <outlet property="firstButton" destination="uRD-wt-3Pu" id="L2z-QU-VX6"/>
+                        <outlet property="fourthButton" destination="cqP-by-JOk" id="0Eo-Gu-5uQ"/>
+                        <outlet property="gestureLabel" destination="Rbz-Ps-a7I" id="eA1-KR-pGQ"/>
+                        <outlet property="secondButton" destination="MGr-PN-zWf" id="JIH-74-oDu"/>
+                        <outlet property="thirdButton" destination="pKG-CL-N7F" id="m2t-fV-100"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zow-0X-AN2" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="139"/>
+            <point key="canvasLocation" x="1116" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

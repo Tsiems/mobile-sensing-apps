@@ -11,12 +11,12 @@ import CoreMotion
 
 class ViewController: UIViewController, URLSessionTaskDelegate {
     
-    @IBOutlet weak var instrumentLabel: UILabel!
-    @IBOutlet weak var snareButton: UIButton!
-    @IBOutlet weak var hihatbutton: UIButton!
-    @IBOutlet weak var cymbalButton: UIButton!
-    @IBOutlet weak var tomsButton: UIButton!
-    @IBOutlet weak var bassButton: UIButton!
+    @IBOutlet weak var gestureLabel: UILabel!
+    @IBOutlet weak var firstButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
+    @IBOutlet weak var thirdButton: UIButton!
+    @IBOutlet weak var fourthButton: UIButton!
+    @IBOutlet weak var fifthButton: UIButton!
     @IBOutlet weak var dsidLabel: UITextField!
     
     var session = URLSession()
@@ -26,10 +26,8 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     var orientationBuffer = RingBuffer()
     let magValue = 1.0
     var numDataPoints = 0
-    var timer = Timer()
-    var bufferChanged:Bool = false
-    var counterVal = 0
-    let instruments = ["Hi-Hat", "Snare", "Cymbal", "Toms", "Bass"]
+    
+    let gestures = ["Gesture 1", "Gesture 2", "Gesture 3", "Gesture 4", "Gesture 5"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,45 +42,15 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         self.startCMMonitoring()
         
-        //        self.timer = Timer.scheduledTimer(timeInterval: 1,
-        //                             target: self,
-        //                             selector: #selector(self.updateTime),
-        //                             userInfo: nil,
-        //                             repeats: true)
-        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        /// stop timer when leave screen
-        self.timer.invalidate()
         self.cmMotionManager.stopDeviceMotionUpdates()
         super.viewWillDisappear(animated)
     }
-    
-    func updateTime() {
-        //        print("Sup")
-        //        if self.bufferChanged {
-        //            self.counterVal = 0
-        //            self.bufferChanged = false
-        //            print("buffer changed")
-        //        } else {
-        //            self.counterVal += 1
-        //            if counterVal >= 2 {
-        //                self.ringBuffer = RingBuffer()
-        //                self.orientationBuffer = RingBuffer()
-        //                print("emptied ring buffer")
-        //                self.counterVal = 0
-        //                prepareForSample(instrumentName: instruments[self.currentInstrument])
-        //            }
-        //        }
-    }
-    
     
     
     override func didReceiveMemoryWarning() {
@@ -90,8 +58,8 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func prepareForSample(instrumentName:String) {
-        self.instrumentLabel.text = "Play \(instrumentName)"
+    func prepareForSample(gestureName:String) {
+        self.gestureLabel.text = "\(gestureName)"
     }
     
     
@@ -104,7 +72,6 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         
         if(mag > self.magValue) {
             print(mag)
-            bufferChanged = true
             self.backQueue.addOperation({() -> Void in self.motionEventOccurred()})
         }
     }
@@ -127,8 +94,8 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
             //get the FFT of both buffers and add them up for feature data
             let fftVector = (self.ringBuffer.getDataAsVector()+self.orientationBuffer.getDataAsVector()) as NSArray
             
-            self.sendFeatureArray(data: fftVector, label: self.instrumentLabel.text!)
-            //self.sendFeatureArray(data: data, label: self.instrumentLabel.text!)
+            self.sendFeatureArray(data: fftVector, label: self.gestureLabel.text!)
+            //self.sendFeatureArray(data: data, label: self.gestureLabel.text!)
         }
     }
     
@@ -187,49 +154,49 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
         postTask.resume()
     }
     
-    @IBAction func trainSnare(_ sender: Any) {
-        self.hihatbutton.isEnabled = true
-        self.snareButton.isEnabled = false
-        self.bassButton.isEnabled = false
-        self.tomsButton.isEnabled = false
-        self.cymbalButton.isEnabled = false
-        prepareForSample(instrumentName: "Snare")
+    @IBAction func trainFirst(_ sender: Any) {
+        self.firstButton.isEnabled = false
+        self.secondButton.isEnabled = true
+        self.thirdButton.isEnabled = true
+        self.fourthButton.isEnabled = true
+        self.fifthButton.isEnabled = true
+        prepareForSample(gestureName: gestures[0])
     }
     
-    @IBAction func trainHiHat(_ sender: Any) {
-        self.hihatbutton.isEnabled = false
-        self.snareButton.isEnabled = true
-        self.bassButton.isEnabled = true
-        self.tomsButton.isEnabled = true
-        self.cymbalButton.isEnabled = true
-        prepareForSample(instrumentName: "Hi-Hat")
+    @IBAction func trainSecond(_ sender: Any) {
+        self.firstButton.isEnabled = true
+        self.secondButton.isEnabled = false
+        self.thirdButton.isEnabled = true
+        self.fourthButton.isEnabled = true
+        self.fifthButton.isEnabled = true
+        prepareForSample(gestureName: gestures[1])
     }
     
-    @IBAction func trainCymbal(_ sender: Any) {
-        self.hihatbutton.isEnabled = true
-        self.snareButton.isEnabled = true
-        self.bassButton.isEnabled = true
-        self.tomsButton.isEnabled = true
-        self.cymbalButton.isEnabled = false
-        prepareForSample(instrumentName: "Cymbal")
+    @IBAction func trainThird(_ sender: Any) {
+        self.firstButton.isEnabled = true
+        self.secondButton.isEnabled = true
+        self.thirdButton.isEnabled = false
+        self.fourthButton.isEnabled = true
+        self.fifthButton.isEnabled = true
+        prepareForSample(gestureName: gestures[2])
     }
-    
-    @IBAction func trainToms(_ sender: Any) {
-        self.hihatbutton.isEnabled = true
-        self.snareButton.isEnabled = true
-        self.bassButton.isEnabled = true
-        self.tomsButton.isEnabled = false
-        self.cymbalButton.isEnabled = true
-        prepareForSample(instrumentName: "Toms")
+
+    @IBAction func trainFourth(_ sender: Any) {
+        self.firstButton.isEnabled = true
+        self.secondButton.isEnabled = true
+        self.thirdButton.isEnabled = true
+        self.fourthButton.isEnabled = false
+        self.fifthButton.isEnabled = true
+        prepareForSample(gestureName: gestures[3])
     }
-    
-    @IBAction func trainBass(_ sender: Any) {
-        self.hihatbutton.isEnabled = true
-        self.snareButton.isEnabled = true
-        self.bassButton.isEnabled = false
-        self.tomsButton.isEnabled = true
-        self.cymbalButton.isEnabled = true
-        prepareForSample(instrumentName: "Bass")
+
+    @IBAction func trainFifth(_ sender: Any) {
+        self.firstButton.isEnabled = true
+        self.secondButton.isEnabled = true
+        self.thirdButton.isEnabled = true
+        self.fourthButton.isEnabled = true
+        self.fifthButton.isEnabled = false
+        prepareForSample(gestureName: gestures[4])
     }
     
     @IBAction func updateDSID(_ sender: Any) {
