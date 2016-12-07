@@ -786,33 +786,21 @@
             </objects>
             <point key="canvasLocation" x="2732" y="2245.7271364317844"/>
         </scene>
-        <!--Play Table View Controller-->
+        <!--Play-->
         <scene sceneID="R0e-77-IM7">
             <objects>
                 <tableViewController id="ZuS-O4-QT6" customClass="PlayTableViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="5kP-Nl-8s9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="205" sectionHeaderHeight="28" sectionFooterHeight="28" id="5kP-Nl-8s9">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="icP-hh-fxg">
-                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="205" id="icP-hh-fxg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="205"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="icP-hh-fxg" id="JTs-vp-e6j">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gW-8U-WDf">
-                                            <rect key="frame" x="171.5" y="8" width="32" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="3gW-8U-WDf" firstAttribute="centerX" secondItem="JTs-vp-e6j" secondAttribute="centerX" id="DiQ-5L-xpP"/>
-                                        <constraint firstItem="3gW-8U-WDf" firstAttribute="top" secondItem="JTs-vp-e6j" secondAttribute="topMargin" id="gp7-CX-YGo"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -822,13 +810,13 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Uvq-qZ-TqF">
-                        <barButtonItem key="leftBarButtonItem" title="Recordings" id="D0Y-sB-r6c">
+                    <navigationItem key="navigationItem" title="Play" id="Uvq-qZ-TqF">
+                        <barButtonItem key="leftBarButtonItem" title="•" id="D0Y-sB-r6c">
                             <connections>
                                 <segue destination="hmR-vI-DZh" kind="show" id="3v4-aP-Fqe"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Select Instrument" id="VDe-0g-ICA">
+                        <barButtonItem key="rightBarButtonItem" title="Select" id="VDe-0g-ICA">
                             <connections>
                                 <segue destination="tri-KV-lPx" kind="show" id="9TJ-tY-j0a"/>
                             </connections>
