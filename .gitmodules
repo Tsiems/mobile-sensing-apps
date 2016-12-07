@@ -7,3 +7,6 @@
 [submodule "AudioSeer/AudioDSPUtils"]
 	path = AudioSeer/AudioDSPUtils
 	url = https://github.com/SMU-MSLC-2016/AudioDSPUtils.git
+[submodule "AirDrummer/IBAnimatable"]
+	path = AirDrummer/IBAnimatable
+	url = https://github.com/IBAnimatable/IBAnimatable.git
