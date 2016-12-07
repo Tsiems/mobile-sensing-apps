@@ -163,7 +163,12 @@
 		5C4814121DF0C2B500473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813781DF0C2B400473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift */; };
 		5C4814131DF0C2B500473AA4 /* ActivityIndicatorAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4813791DF0C2B400473AA4 /* ActivityIndicatorAnimating.swift */; };
 		5C4814141DF0C2B500473AA4 /* ActivityIndicatorAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48137A1DF0C2B400473AA4 /* ActivityIndicatorAnimatable.swift */; };
-		5CA78A021DF0C81900198113 /* AssignTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA78A011DF0C81900198113 /* AssignTableViewController.swift */; };
+		5C7A08031DF744C500C2607D /* RecordingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08021DF744C500C2607D /* RecordingsTableViewController.swift */; };
+		5C7A08051DF7455A00C2607D /* RecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08041DF7455900C2607D /* RecordingTableViewCell.swift */; };
+		5C7A08071DF7471500C2607D /* RecordingHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08061DF7471500C2607D /* RecordingHeaderCell.swift */; };
+		5C7A080B1DF8AD0300C2607D /* PlayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A080A1DF8AD0300C2607D /* PlayTableViewController.swift */; };
+		5C7A080D1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A080C1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift */; };
+		5C7A080F1DF8AD9E00C2607D /* SelectGestureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */; };
 		5CC9B8191DE36BBB001B21DD /* SelectInstrumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */; };
 		5CC9BA971DE3A963001B21DD /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */; };
 		5CC9BA991DE3A975001B21DD /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */; };
@@ -369,7 +374,12 @@
 		5C4813781DF0C2B400473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimationAudioEqualizer.swift; path = IBAnimatable2/ActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = SOURCE_ROOT; };
 		5C4813791DF0C2B400473AA4 /* ActivityIndicatorAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimating.swift; path = IBAnimatable2/ActivityIndicatorAnimating.swift; sourceTree = SOURCE_ROOT; };
 		5C48137A1DF0C2B400473AA4 /* ActivityIndicatorAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorAnimatable.swift; path = IBAnimatable2/ActivityIndicatorAnimatable.swift; sourceTree = SOURCE_ROOT; };
-		5CA78A011DF0C81900198113 /* AssignTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignTableViewController.swift; sourceTree = "<group>"; };
+		5C7A08021DF744C500C2607D /* RecordingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsTableViewController.swift; sourceTree = "<group>"; };
+		5C7A08041DF7455900C2607D /* RecordingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingTableViewCell.swift; sourceTree = "<group>"; };
+		5C7A08061DF7471500C2607D /* RecordingHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingHeaderCell.swift; sourceTree = "<group>"; };
+		5C7A080A1DF8AD0300C2607D /* PlayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayTableViewController.swift; sourceTree = "<group>"; };
+		5C7A080C1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrumKitSelectTableViewController.swift; sourceTree = "<group>"; };
+		5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGestureTableViewController.swift; sourceTree = "<group>"; };
 		5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInstrumentsViewController.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMBounceAnimation.swift; path = RAMAnimatedTabBarController/Animations/BounceAnimation/RAMBounceAnimation.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMFrameItemAnimation.swift; path = RAMAnimatedTabBarController/Animations/FrameAnimation/RAMFrameItemAnimation.swift; sourceTree = SOURCE_ROOT; };
@@ -641,7 +651,12 @@
 				B41716B81DD1160B00999160 /* AppDelegate.swift */,
 				B41716BA1DD1160B00999160 /* ViewController.swift */,
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
-				5CA78A011DF0C81900198113 /* AssignTableViewController.swift */,
+				5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */,
+				5C7A080C1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift */,
+				5C7A080A1DF8AD0300C2607D /* PlayTableViewController.swift */,
+				5C7A08061DF7471500C2607D /* RecordingHeaderCell.swift */,
+				5C7A08041DF7455900C2607D /* RecordingTableViewCell.swift */,
+				5C7A08021DF744C500C2607D /* RecordingsTableViewController.swift */,
 				5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */,
 				5CC9BBDE1DE8D38E001B21DD /* DataItem.swift */,
 				5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */,
@@ -852,6 +867,7 @@
 				5C4813F21DF0C2B500473AA4 /* ActivityIndicatorShape.swift in Sources */,
 				5C4813A11DF0C2B500473AA4 /* PresentNatGeoSegue.swift in Sources */,
 				5C4813C11DF0C2B500473AA4 /* GradientStartPoint.swift in Sources */,
+				5C7A080B1DF8AD0300C2607D /* PlayTableViewController.swift in Sources */,
 				5C4813A91DF0C2B500473AA4 /* PresentCardsSegue.swift in Sources */,
 				5C4813B61DF0C2B500473AA4 /* Navigator.swift in Sources */,
 				5C4813B31DF0C2B500473AA4 /* PinchInteractiveAnimator.swift in Sources */,
@@ -909,7 +925,6 @@
 				5C4813FC1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				5C48138B1DF0C2B400473AA4 /* SystemRotateAnimator.swift in Sources */,
 				5CC9BAA51DE3A9BB001B21DD /* RAMAnimatedTabBarController.swift in Sources */,
-				5CA78A021DF0C81900198113 /* AssignTableViewController.swift in Sources */,
 				5C48137F1DF0C2B400473AA4 /* UIViewControllerExtension.swift in Sources */,
 				5C4812DF1DE930E000473AA4 /* HomeTableViewController.swift in Sources */,
 				5C4813DC1DF0C2B500473AA4 /* AnimatedPresenting.swift in Sources */,
@@ -940,6 +955,7 @@
 				5C4813E71DF0C2B500473AA4 /* AnimatableNavigationController.swift in Sources */,
 				5C4813FA1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				5C4813D01DF0C2B500473AA4 /* ColorType.swift in Sources */,
+				5C7A08051DF7455A00C2607D /* RecordingTableViewCell.swift in Sources */,
 				5C4813841DF0C2B400473AA4 /* TransitionPresenterManager.swift in Sources */,
 				5C4813AD1DF0C2B500473AA4 /* PresentationModalPosition.swift in Sources */,
 				5C4813D31DF0C2B500473AA4 /* CALayerExtension.swift in Sources */,
@@ -947,6 +963,7 @@
 				5C4813B71DF0C2B500473AA4 /* NavigationBarDesginable.swift in Sources */,
 				5C4813ED1DF0C2B500473AA4 /* AnimatableButton.swift in Sources */,
 				5C4813F01DF0C2B500473AA4 /* Animatable.swift in Sources */,
+				5C7A08071DF7471500C2607D /* RecordingHeaderCell.swift in Sources */,
 				5C4813991DF0C2B400473AA4 /* RotationDesignable.swift in Sources */,
 				5C4813CE1DF0C2B500473AA4 /* ContainerTransition.swift in Sources */,
 				5C4813FB1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -997,6 +1014,7 @@
 				5C48140F1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				5C4813B91DF0C2B500473AA4 /* MaskType.swift in Sources */,
 				5C4813AA1DF0C2B500473AA4 /* PresentationPresenterManager.swift in Sources */,
+				5C7A08031DF744C500C2607D /* RecordingsTableViewController.swift in Sources */,
 				5C4813C01DF0C2B500473AA4 /* GradientType.swift in Sources */,
 				5C4813C41DF0C2B500473AA4 /* FlipAnimator.swift in Sources */,
 				5C4813BD1DF0C2B500473AA4 /* InteractiveAnimator.swift in Sources */,
@@ -1007,11 +1025,13 @@
 				5C4813F91DF0C2B500473AA4 /* ActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				5C4813C81DF0C2B500473AA4 /* DropDownAnimator.swift in Sources */,
 				B41716FB1DD178FC00999160 /* PlayingViewController.swift in Sources */,
+				5C7A080F1DF8AD9E00C2607D /* SelectGestureTableViewController.swift in Sources */,
 				5C4814061DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScale.swift in Sources */,
 				5C4814041DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				5C4813DB1DF0C2B500473AA4 /* AnimatedTransitioning.swift in Sources */,
 				5C4813E21DF0C2B500473AA4 /* AnimatableTableView.swift in Sources */,
 				5C48140B1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallPulse.swift in Sources */,
+				5C7A080D1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift in Sources */,
 				5C4813CF1DF0C2B500473AA4 /* Constants.swift in Sources */,
 				5C4813A81DF0C2B500473AA4 /* PresentExplodeSegue.swift in Sources */,
 				5C4813C31DF0C2B500473AA4 /* FoldAnimator.swift in Sources */,

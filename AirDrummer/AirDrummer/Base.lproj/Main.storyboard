@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TDu-lC-3mP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NKH-OY-sfp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -138,7 +138,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c4q-rv-YrP" id="g43-ml-Mcq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drum Training" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkY-1J-nRi">
@@ -162,7 +162,7 @@
                                         <rect key="frame" x="0.0" y="75" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DQR-Sm-GEB" id="I3o-E8-VQu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play the Drums" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmA-7D-VDT">
@@ -247,7 +247,7 @@
             </objects>
             <point key="canvasLocation" x="-159" y="395"/>
         </scene>
-        <!--Title-->
+        <!--Air Drummer-->
         <scene sceneID="dLu-Gl-xsa">
             <objects>
                 <tableViewController id="ZvF-Y6-ROw" customClass="HomeTableViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
@@ -332,159 +332,94 @@
                             <outlet property="delegate" destination="ZvF-Y6-ROw" id="YYo-Ub-14s"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Home" image="drum-1" id="kfB-sz-wbs" customClass="RAMAnimatedTabBarItem" customModule="AirDrummer" customModuleProvider="target">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <outlet property="animation" destination="gYk-jx-brg" id="uVn-gQ-OKV"/>
-                        </connections>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" title="Title" id="Azq-Xn-mGE"/>
+                    <navigationItem key="navigationItem" title="Air Drummer" id="Azq-Xn-mGE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGB-5L-osb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="gYk-jx-brg" customClass="RAMBounceAnimation" customModule="AirDrummer" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
-                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
-                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
             </objects>
-            <point key="canvasLocation" x="1794.4000000000001" y="1524.2878560719641"/>
+            <point key="canvasLocation" x="2733.5999999999999" y="1524.2878560719641"/>
         </scene>
-        <!--History-->
+        <!--Recordings-->
         <scene sceneID="k9u-qh-OhY">
             <objects>
-                <tableViewController id="QDb-E0-h2C" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="singleLineEtched" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="2NL-1z-HbB">
+                <tableViewController id="QDb-E0-h2C" customClass="RecordingsTableViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="2NL-1z-HbB">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="1YC-84-OVb">
-                            <rect key="frame" x="0.0" y="216" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="200" width="375" height="111"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <sections>
-                            <tableViewSection id="Q63-sG-ehW">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="history-cell" rowHeight="72" id="a6M-Lc-QEW">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a6M-Lc-QEW" id="CtE-3B-j43">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rV6-fj-wmn">
-                                                    <rect key="frame" x="8" y="25" width="140" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordingHeader" rowHeight="100" id="a6M-Lc-QEW" customClass="RecordingHeaderCell" customModule="AirDrummer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a6M-Lc-QEW" id="CtE-3B-j43">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Soundwave" translatesAutoresizingMaskIntoConstraints="NO" id="wCR-AR-hJr">
+                                            <rect key="frame" x="0.0" y="15" width="375" height="70"/>
                                             <constraints>
-                                                <constraint firstItem="rV6-fj-wmn" firstAttribute="leading" secondItem="CtE-3B-j43" secondAttribute="leadingMargin" id="Q0M-Fg-GwY"/>
-                                                <constraint firstItem="rV6-fj-wmn" firstAttribute="centerY" secondItem="CtE-3B-j43" secondAttribute="centerY" id="Z2H-2Z-SKD"/>
+                                                <constraint firstAttribute="height" constant="70" id="Lkp-KQ-9BD"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="history-cell" rowHeight="72" id="aOl-gU-shu">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aOl-gU-shu" id="zcJ-2t-hgi">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUg-eF-jHN">
-                                                    <rect key="frame" x="8" y="25" width="140" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="rUg-eF-jHN" firstAttribute="centerY" secondItem="zcJ-2t-hgi" secondAttribute="centerY" id="GE1-f3-eeT"/>
-                                                <constraint firstItem="rUg-eF-jHN" firstAttribute="leading" secondItem="zcJ-2t-hgi" secondAttribute="leadingMargin" id="bWa-MR-ry3"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="history-cell" rowHeight="72" id="ebl-kd-pbF">
-                                        <rect key="frame" x="0.0" y="144" width="375" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebl-kd-pbF" id="V9T-wF-NBm">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lee-Xj-1NF">
-                                                    <rect key="frame" x="8" y="25" width="140" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Lee-Xj-1NF" firstAttribute="centerY" secondItem="V9T-wF-NBm" secondAttribute="centerY" id="Ac3-mi-K4Y"/>
-                                                <constraint firstItem="Lee-Xj-1NF" firstAttribute="leading" secondItem="V9T-wF-NBm" secondAttribute="leadingMargin" id="VFL-d2-zSR"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="wCR-AR-hJr" secondAttribute="trailing" id="8cw-RP-Orv"/>
+                                        <constraint firstItem="wCR-AR-hJr" firstAttribute="leading" secondItem="CtE-3B-j43" secondAttribute="leading" id="D1I-Ob-2Zb"/>
+                                        <constraint firstItem="wCR-AR-hJr" firstAttribute="top" secondItem="CtE-3B-j43" secondAttribute="top" constant="15" id="yq2-dz-zRa"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recording" rowHeight="72" id="aMV-L3-MJF" customClass="RecordingTableViewCell" customModule="AirDrummer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="375" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aMV-L3-MJF" id="Vyz-xf-96T">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="71"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oL-w1-VQp">
+                                            <rect key="frame" x="8" y="25.5" width="151.5" height="20"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4oL-w1-VQp" firstAttribute="centerY" secondItem="Vyz-xf-96T" secondAttribute="centerY" id="EH9-rZ-Mjs"/>
+                                        <constraint firstItem="4oL-w1-VQp" firstAttribute="leading" secondItem="Vyz-xf-96T" secondAttribute="leadingMargin" id="aWk-pJ-aLC"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="recordingTitle" destination="4oL-w1-VQp" id="KLI-DU-hhQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="QDb-E0-h2C" id="w75-GK-NEq"/>
                             <outlet property="delegate" destination="QDb-E0-h2C" id="pfA-KK-pab"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="History" image="drum-1" id="iMK-bM-zFW" customClass="RAMAnimatedTabBarItem" customModule="AirDrummer" customModuleProvider="target">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <outlet property="animation" destination="YvD-Fo-FId" id="s1t-jj-LGU"/>
-                        </connections>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Recordings" id="8AZ-yg-ckr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hg-65-tlW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="YvD-Fo-FId" customClass="RAMBounceAnimation" customModule="AirDrummer" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
-                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
-                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
             </objects>
-            <point key="canvasLocation" x="853.60000000000002" y="2312.2938530734637"/>
+            <point key="canvasLocation" x="1794" y="2472"/>
         </scene>
-        <!--Play-->
+        <!--Drum Set-->
         <scene sceneID="hTo-Fg-lzu">
             <objects>
-                <viewController id="xTb-aU-ogu" customClass="SelectInstrumentsViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Drum Set" id="xTb-aU-ogu" customClass="SelectInstrumentsViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S1o-2j-CMv"/>
                         <viewControllerLayoutGuide type="bottom" id="Bzk-fU-cEF"/>
@@ -512,8 +447,8 @@
                                 <rect key="frame" x="0.0" y="58" width="375" height="496"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Your Drum Set!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVS-sF-Imk">
-                                        <rect key="frame" x="8" y="5" width="367" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <rect key="frame" x="8" y="5" width="367" height="20"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <color key="textColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -546,11 +481,11 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-gn-cEu">
-                                                            <rect key="frame" x="26" y="80" width="26" height="12"/>
+                                                            <rect key="frame" x="26" y="80" width="27" height="12"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="12" id="3BV-u0-1CP"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="10"/>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="10"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -634,18 +569,18 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="wIB-Nb-dWT" customClass="ItemCollectionViewCell" customModule="AirDrummer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="5" width="78" height="101"/>
+                                        <rect key="frame" x="0.0" y="4.5" width="78" height="101"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvg-ei-LV7">
-                                                    <rect key="frame" x="26" y="81" width="26" height="12"/>
+                                                    <rect key="frame" x="26" y="81" width="27" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="ZBa-BS-twP"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="10"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -708,7 +643,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="Xnp-Gr-cGb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <size key="titleShadowOffset" width="2" height="2"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -757,92 +692,25 @@
                             <constraint firstItem="8IL-Hl-F3m" firstAttribute="leading" secondItem="KcW-3k-Fqr" secondAttribute="leading" id="xkH-HU-t8Q"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Play" image="play-button-white" id="Ipt-JL-OH3" customClass="RAMAnimatedTabBarItem" customModule="AirDrummer" customModuleProvider="target">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <outlet property="animation" destination="JXc-Vf-L5Y" id="qjs-iy-tuY"/>
-                        </connections>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="lfE-5e-bVb"/>
                     <connections>
                         <outlet property="firstCollectionViewController" destination="77L-9z-JSs" id="SlC-Po-uAD"/>
                         <outlet property="secondCollectionViewController" destination="8IL-Hl-F3m" id="fmr-Gt-WuD"/>
                         <outlet property="titleView" destination="Ua7-qY-XY2" id="PHh-m8-6g1"/>
-                        <segue destination="rTL-0o-ZV6" kind="show" identifier="playSegue" id="9o0-GS-zY2"/>
+                        <segue destination="Pr7-k3-fyK" kind="show" identifier="playSegue" id="TTv-X6-hbI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h18-Sj-arL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="JXc-Vf-L5Y" customClass="RAMBounceAnimation" customModule="AirDrummer" customModuleProvider="target">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
-                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
-                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
             </objects>
-            <point key="canvasLocation" x="1792.8" y="2245.7271364317844"/>
+            <point key="canvasLocation" x="3671.1999999999998" y="2245.7271364317844"/>
         </scene>
-        <!--Assign Table View Controller-->
-        <scene sceneID="zw2-9x-ZC6">
+        <!--View Controller-->
+        <scene sceneID="fEj-Vn-oIh">
             <objects>
-                <tableViewController id="rTL-0o-ZV6" customClass="AssignTableViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" id="9dl-fG-cuW">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="v23-hw-eOU">
-                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v23-hw-eOU" id="a94-aj-bRT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="rTL-0o-ZV6" id="d3f-DS-drV"/>
-                            <outlet property="delegate" destination="rTL-0o-ZV6" id="Gcz-6T-xe0"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7DQ-Ie-DLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Pr7-k3-fyK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkg-aI-XSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2693.5999999999999" y="2245.7271364317844"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dje-YN-pdC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TDu-lC-3mP" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1da-MZ-gpI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="textShadowColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <offsetWrapper key="textShadowOffset" horizontal="2" vertical="2"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="kJQ-8x-DHP" kind="relationship" relationship="rootViewController" id="UAL-pb-vpR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CaC-Cf-T7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-84" y="1524.2878560719641"/>
+            <point key="canvasLocation" x="4497" y="2246"/>
         </scene>
         <!--Air Drummer-->
         <scene sceneID="4Pl-Ur-S2u">
@@ -861,18 +729,672 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ZvF-Y6-ROw" kind="relationship" relationship="viewControllers" id="eRo-yx-6MF"/>
-                        <segue destination="xTb-aU-ogu" kind="relationship" relationship="viewControllers" id="AW6-uu-BTf"/>
-                        <segue destination="QDb-E0-h2C" kind="relationship" relationship="viewControllers" id="mNT-W3-uhH"/>
+                        <segue destination="ZgX-nS-WB8" kind="relationship" relationship="viewControllers" id="eRo-yx-6MF"/>
+                        <segue destination="4Th-ra-uxc" kind="relationship" relationship="viewControllers" id="AW6-uu-BTf"/>
+                        <segue destination="3UK-J5-lP7" kind="relationship" relationship="viewControllers" id="mNT-W3-uhH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdD-Vx-ywG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="855.20000000000005" y="1524.2878560719641"/>
         </scene>
+        <!--Play-->
+        <scene sceneID="G6i-PJ-dTO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Th-ra-uxc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Play" image="play-button-white" id="Ipt-JL-OH3" customClass="RAMAnimatedTabBarItem" customModule="AirDrummer" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="JXc-Vf-L5Y" id="AzF-vT-064"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Ei6-Sq-Enq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="1" vertical="1"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xTb-aU-ogu" kind="relationship" relationship="rootViewController" id="raw-K9-k0b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P3u-oD-c0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="JXc-Vf-L5Y" customClass="RAMBounceAnimation" customModule="AirDrummer" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2732" y="2245.7271364317844"/>
+        </scene>
+        <!--Play Table View Controller-->
+        <scene sceneID="R0e-77-IM7">
+            <objects>
+                <tableViewController id="ZuS-O4-QT6" customClass="PlayTableViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="5kP-Nl-8s9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="icP-hh-fxg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="icP-hh-fxg" id="JTs-vp-e6j">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gW-8U-WDf">
+                                            <rect key="frame" x="171.5" y="8" width="32" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3gW-8U-WDf" firstAttribute="centerX" secondItem="JTs-vp-e6j" secondAttribute="centerX" id="DiQ-5L-xpP"/>
+                                        <constraint firstItem="3gW-8U-WDf" firstAttribute="top" secondItem="JTs-vp-e6j" secondAttribute="topMargin" id="gp7-CX-YGo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZuS-O4-QT6" id="LEG-kl-aLM"/>
+                            <outlet property="delegate" destination="ZuS-O4-QT6" id="CYH-iT-zIQ"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Uvq-qZ-TqF">
+                        <barButtonItem key="leftBarButtonItem" title="Recordings" id="D0Y-sB-r6c">
+                            <connections>
+                                <segue destination="hmR-vI-DZh" kind="show" id="3v4-aP-Fqe"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Select Instrument" id="VDe-0g-ICA">
+                            <connections>
+                                <segue destination="tri-KV-lPx" kind="show" id="9TJ-tY-j0a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TqA-ab-8WJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3429.5999999999999" y="3224.4377811094455"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="MHa-qz-gVF">
+            <objects>
+                <tableViewController id="tri-KV-lPx" customClass="DrumKitSelectTableViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ds6-i1-GdW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Dwc-iC-uIB">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dwc-iC-uIB" id="7IN-4y-Bl1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tri-KV-lPx" id="rnM-E1-5I3"/>
+                            <outlet property="delegate" destination="tri-KV-lPx" id="fmh-CH-e7B"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="DMY-7U-Us2">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="F2L-X1-zdL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="FYg-Dh-06p">
+                                <rect key="frame" x="337" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="V8c-tz-i9g" kind="show" id="rHP-a7-kec"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7yq-fh-sVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4369" y="3224"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="ahr-Zr-HBd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZgX-nS-WB8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="drum-1" id="kfB-sz-wbs" customClass="RAMAnimatedTabBarItem" customModule="AirDrummer" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="gYk-jx-brg" id="GEF-iN-Fn7"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="C3H-lb-Scg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="1" vertical="1"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZvF-Y6-ROw" kind="relationship" relationship="rootViewController" id="D1l-l2-IcE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kR9-kb-Jah" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="gYk-jx-brg" customClass="RAMBounceAnimation" customModule="AirDrummer" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1794.4000000000001" y="1524.2878560719641"/>
+        </scene>
+        <!--Recordings-->
+        <scene sceneID="B1i-J0-EAl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3UK-J5-lP7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recordings" image="drum-1" id="iMK-bM-zFW" customClass="RAMAnimatedTabBarItem" customModule="AirDrummer" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="0d8-ru-GG8" id="BUG-57-j49"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Cmp-1J-PBL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="1" vertical="1"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QDb-E0-h2C" kind="relationship" relationship="rootViewController" id="bUz-ib-eD5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmj-qU-5IB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="0d8-ru-GG8" customClass="RAMBounceAnimation" customModule="AirDrummer" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="853.60000000000002" y="2312.2938530734637"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vVd-Xg-m4Q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NKH-OY-sfp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pYa-la-KLa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZuS-O4-QT6" kind="relationship" relationship="rootViewController" id="77o-dU-mUr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FIE-pd-nh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2637.5999999999999" y="3224.4377811094455"/>
+        </scene>
+        <!--Drum Set-->
+        <scene sceneID="acR-5j-dGk">
+            <objects>
+                <viewController title="Drum Set" id="V8c-tz-i9g" customClass="SelectInstrumentsViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6wx-ED-WUW"/>
+                        <viewControllerLayoutGuide type="bottom" id="oqg-RG-7JO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="70o-bd-MFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQ0-K8-LWA" customClass="AnimatableView" customModule="AirDrummer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="dp5-jN-292"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="-1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iku-Cj-lzw">
+                                <rect key="frame" x="0.0" y="122" width="375" height="501"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Your Drum Set!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNu-Ro-vF2">
+                                        <rect key="frame" x="8" y="5" width="367" height="20"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                        <color key="textColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pNu-Ro-vF2" firstAttribute="leading" secondItem="iku-Cj-lzw" secondAttribute="leading" constant="8" id="2Um-jB-hvK"/>
+                                    <constraint firstItem="pNu-Ro-vF2" firstAttribute="top" secondItem="iku-Cj-lzw" secondAttribute="top" constant="5" id="KDk-YN-fEH"/>
+                                    <constraint firstAttribute="trailing" secondItem="pNu-Ro-vF2" secondAttribute="trailing" id="j3h-OV-Mza"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfF-54-Mlx">
+                                <rect key="frame" x="5" y="154" width="365" height="150"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6w3-kc-hHS" customClass="KDDragAndDropCollectionView" customModule="AirDrummer" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="2" width="361" height="146"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="3" id="L10-us-WvV">
+                                            <size key="itemSize" width="79" height="100"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="QEP-R4-lkc" customClass="ItemCollectionViewCell" customModule="AirDrummer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="23" width="79" height="100"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="79" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0M-Zw-R44">
+                                                            <rect key="frame" x="26" y="80" width="27" height="12"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="12" id="Nm9-aK-HUk"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="10"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIU-eY-O8O" customClass="AnimatableView" customModule="AirDrummer" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="8" width="63" height="67"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="band" translatesAutoresizingMaskIntoConstraints="NO" id="B6F-lg-R7V">
+                                                                    <rect key="frame" x="4" y="4" width="55" height="59"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="B6F-lg-R7V" firstAttribute="top" secondItem="GIU-eY-O8O" secondAttribute="top" constant="4" id="6kd-NB-OAW"/>
+                                                                <constraint firstAttribute="bottom" secondItem="B6F-lg-R7V" secondAttribute="bottom" constant="4" id="Vfb-iw-izP"/>
+                                                                <constraint firstItem="B6F-lg-R7V" firstAttribute="leading" secondItem="GIU-eY-O8O" secondAttribute="leading" constant="4" id="Yu1-pX-TOS"/>
+                                                                <constraint firstAttribute="trailing" secondItem="B6F-lg-R7V" secondAttribute="trailing" constant="4" id="idl-hy-KtR"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                    <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rotate">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="fade(in)"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="GIU-eY-O8O" firstAttribute="leading" secondItem="QEP-R4-lkc" secondAttribute="leadingMargin" id="CXT-71-Dmd"/>
+                                                    <constraint firstItem="I0M-Zw-R44" firstAttribute="top" secondItem="GIU-eY-O8O" secondAttribute="bottom" constant="5" id="L0B-i7-ABD"/>
+                                                    <constraint firstItem="GIU-eY-O8O" firstAttribute="trailing" secondItem="QEP-R4-lkc" secondAttribute="trailingMargin" id="Zeb-bI-dsh"/>
+                                                    <constraint firstItem="GIU-eY-O8O" firstAttribute="top" secondItem="QEP-R4-lkc" secondAttribute="topMargin" id="dec-jQ-drl"/>
+                                                    <constraint firstItem="I0M-Zw-R44" firstAttribute="bottom" secondItem="QEP-R4-lkc" secondAttribute="bottomMargin" id="gjp-KH-fNG"/>
+                                                    <constraint firstItem="I0M-Zw-R44" firstAttribute="centerX" secondItem="QEP-R4-lkc" secondAttribute="centerX" id="h1K-eT-b9A"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="label" destination="I0M-Zw-R44" id="yG4-SZ-vPg"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="V8c-tz-i9g" id="FTn-Kc-L61"/>
+                                            <outlet property="delegate" destination="V8c-tz-i9g" id="Q8s-28-sOj"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6w3-kc-hHS" firstAttribute="top" secondItem="nfF-54-Mlx" secondAttribute="top" constant="2" id="8wV-hg-WNy"/>
+                                    <constraint firstItem="6w3-kc-hHS" firstAttribute="leading" secondItem="nfF-54-Mlx" secondAttribute="leading" constant="2" id="L7y-9c-9Fj"/>
+                                    <constraint firstAttribute="height" constant="150" id="aIe-Mq-Kot"/>
+                                    <constraint firstAttribute="bottom" secondItem="6w3-kc-hHS" secondAttribute="bottom" constant="2" id="uSC-GS-dTj"/>
+                                    <constraint firstAttribute="trailing" secondItem="6w3-kc-hHS" secondAttribute="trailing" constant="2" id="xNs-5L-tFH"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ja5-qh-cJG" customClass="KDDragAndDropCollectionView" customModule="AirDrummer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="312" width="375" height="110"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="xxd-yo-wk1"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="MOM-5p-E14">
+                                    <size key="itemSize" width="78" height="101"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Mgs-gw-eyM" customClass="ItemCollectionViewCell" customModule="AirDrummer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="5" width="78" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="78" height="101"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gB-S4-EeW">
+                                                    <rect key="frame" x="26" y="81" width="27" height="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="12" id="AUu-lb-pGM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCh-zm-0c8" customClass="AnimatableView" customModule="AirDrummer" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="62" height="93"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jdd-hr-CBR">
+                                                            <rect key="frame" x="4" y="4" width="54" height="69"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="jdd-hr-CBR" firstAttribute="top" secondItem="qCh-zm-0c8" secondAttribute="top" constant="4" id="13u-dM-vqZ"/>
+                                                        <constraint firstItem="jdd-hr-CBR" firstAttribute="leading" secondItem="qCh-zm-0c8" secondAttribute="leading" constant="4" id="6eQ-Po-p0S"/>
+                                                        <constraint firstAttribute="trailing" secondItem="jdd-hr-CBR" secondAttribute="trailing" constant="4" id="Fep-Mz-kGq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="jdd-hr-CBR" secondAttribute="bottom" constant="20" id="Gis-dV-tf2"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rotate">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="qCh-zm-0c8" firstAttribute="top" secondItem="Mgs-gw-eyM" secondAttribute="topMargin" id="02O-sv-CWB"/>
+                                            <constraint firstItem="9gB-S4-EeW" firstAttribute="bottom" secondItem="Mgs-gw-eyM" secondAttribute="bottomMargin" id="O4p-Ew-MvG"/>
+                                            <constraint firstItem="qCh-zm-0c8" firstAttribute="trailing" secondItem="Mgs-gw-eyM" secondAttribute="trailingMargin" id="PqR-og-xv0"/>
+                                            <constraint firstItem="9gB-S4-EeW" firstAttribute="centerX" secondItem="Mgs-gw-eyM" secondAttribute="centerX" id="QGh-zU-23q"/>
+                                            <constraint firstItem="qCh-zm-0c8" firstAttribute="leading" secondItem="Mgs-gw-eyM" secondAttribute="leadingMargin" id="SyC-Wf-qeE"/>
+                                            <constraint firstAttribute="bottom" secondItem="qCh-zm-0c8" secondAttribute="bottom" id="hYJ-wO-W5c"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="label" destination="9gB-S4-EeW" id="PMD-PV-LYa"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="V8c-tz-i9g" id="1ab-t3-bnm"/>
+                                    <outlet property="delegate" destination="V8c-tz-i9g" id="Q8N-Dv-s4p"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Se-FT-zT5" customClass="AnimatableButton" customModule="AirDrummer" customModuleProvider="target">
+                                <rect key="frame" x="30" y="452" width="315" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="rQG-Hv-jNa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continue:" destination="V8c-tz-i9g" eventType="touchUpInside" id="zXP-Db-Qk0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eQ0-K8-LWA" firstAttribute="leading" secondItem="70o-bd-MFQ" secondAttribute="leading" id="1T9-Oh-wIN"/>
+                            <constraint firstAttribute="trailing" secondItem="Ja5-qh-cJG" secondAttribute="trailing" id="2QV-F0-7Nc"/>
+                            <constraint firstItem="iku-Cj-lzw" firstAttribute="leading" secondItem="70o-bd-MFQ" secondAttribute="leading" id="4NM-6A-Qu6"/>
+                            <constraint firstItem="nfF-54-Mlx" firstAttribute="leading" secondItem="70o-bd-MFQ" secondAttribute="leading" constant="5" id="54H-PS-noC"/>
+                            <constraint firstItem="1Se-FT-zT5" firstAttribute="leading" secondItem="70o-bd-MFQ" secondAttribute="leadingMargin" constant="14" id="Dw4-ur-bde"/>
+                            <constraint firstAttribute="trailing" secondItem="nfF-54-Mlx" secondAttribute="trailing" constant="5" id="HPa-Qf-DCO"/>
+                            <constraint firstItem="1Se-FT-zT5" firstAttribute="top" secondItem="Ja5-qh-cJG" secondAttribute="bottom" constant="30" id="M4c-hT-B8L"/>
+                            <constraint firstItem="eQ0-K8-LWA" firstAttribute="top" secondItem="6wx-ED-WUW" secondAttribute="bottom" id="Nvd-sW-5Jl"/>
+                            <constraint firstItem="Ja5-qh-cJG" firstAttribute="leading" secondItem="70o-bd-MFQ" secondAttribute="leading" id="QuW-Fb-NjY"/>
+                            <constraint firstItem="oqg-RG-7JO" firstAttribute="top" secondItem="iku-Cj-lzw" secondAttribute="bottom" id="Ufe-xP-KAg"/>
+                            <constraint firstAttribute="trailing" secondItem="eQ0-K8-LWA" secondAttribute="trailing" id="XpZ-Kn-dQm"/>
+                            <constraint firstAttribute="trailing" secondItem="iku-Cj-lzw" secondAttribute="trailing" id="YYy-dG-LoQ"/>
+                            <constraint firstItem="iku-Cj-lzw" firstAttribute="top" secondItem="6wx-ED-WUW" secondAttribute="bottom" constant="58" id="hNU-GU-ibY"/>
+                            <constraint firstItem="Ja5-qh-cJG" firstAttribute="top" secondItem="nfF-54-Mlx" secondAttribute="bottom" constant="8" id="nER-CG-6Mf"/>
+                            <constraint firstItem="nfF-54-Mlx" firstAttribute="top" secondItem="eQ0-K8-LWA" secondAttribute="bottom" constant="30" id="rO5-1s-3CK"/>
+                            <constraint firstAttribute="trailing" secondItem="Ja5-qh-cJG" secondAttribute="trailing" id="vD3-XZ-IjC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Se-FT-zT5" secondAttribute="trailing" constant="14" id="weR-PF-O5v"/>
+                            <constraint firstItem="Ja5-qh-cJG" firstAttribute="leading" secondItem="70o-bd-MFQ" secondAttribute="leading" id="yfU-wx-87E"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="dLc-iK-WkW"/>
+                    <connections>
+                        <outlet property="firstCollectionViewController" destination="6w3-kc-hHS" id="caF-yA-fta"/>
+                        <outlet property="secondCollectionViewController" destination="Ja5-qh-cJG" id="R73-lR-Jzd"/>
+                        <outlet property="titleView" destination="eQ0-K8-LWA" id="iQb-Kv-uzW"/>
+                        <segue destination="qcB-Og-Ora" kind="show" identifier="playSegue" id="c3L-Zq-Ycf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRb-ma-fm0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5134" y="3224"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="lKs-oR-043">
+            <objects>
+                <tableViewController id="qcB-Og-Ora" customClass="SelectGestureTableViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IWt-zu-Hqo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KD8-A2-98g">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KD8-A2-98g" id="DD9-qh-V5W">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qcB-Og-Ora" id="buU-Qb-Qoy"/>
+                            <outlet property="delegate" destination="qcB-Og-Ora" id="k5E-a8-PgY"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="ovW-eC-xov">
+                        <barButtonItem key="rightBarButtonItem" title="Done!" id="Dnn-UQ-X7y"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nyu-71-Smp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5938" y="3224"/>
+        </scene>
+        <!--Recordings-->
+        <scene sceneID="sla-aG-ytv">
+            <objects>
+                <tableViewController id="hmR-vI-DZh" customClass="RecordingsTableViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="dXp-lk-PC3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="0Lb-RV-CMR">
+                            <rect key="frame" x="0.0" y="264" width="375" height="111"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordingHeader" rowHeight="100" id="tf5-Fx-X9e" customClass="RecordingHeaderCell" customModule="AirDrummer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tf5-Fx-X9e" id="WHo-Lb-HaQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Soundwave" translatesAutoresizingMaskIntoConstraints="NO" id="ddq-eI-Ony">
+                                            <rect key="frame" x="0.0" y="15" width="375" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="UeX-UP-ALe"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="ddq-eI-Ony" firstAttribute="top" secondItem="WHo-Lb-HaQ" secondAttribute="top" constant="15" id="14a-7Z-BdN"/>
+                                        <constraint firstAttribute="trailing" secondItem="ddq-eI-Ony" secondAttribute="trailing" id="ZLz-bm-ubH"/>
+                                        <constraint firstItem="ddq-eI-Ony" firstAttribute="leading" secondItem="WHo-Lb-HaQ" secondAttribute="leading" id="tQL-jv-jRC"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="recording" rowHeight="72" id="z6f-Vj-gt3" customClass="RecordingTableViewCell" customModule="AirDrummer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="375" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z6f-Vj-gt3" id="N1m-B0-1p6">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="71"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ht7-0u-d8Q">
+                                            <rect key="frame" x="8" y="26" width="152" height="20"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ht7-0u-d8Q" firstAttribute="leading" secondItem="N1m-B0-1p6" secondAttribute="leadingMargin" id="Zmu-fD-Fub"/>
+                                        <constraint firstItem="Ht7-0u-d8Q" firstAttribute="centerY" secondItem="N1m-B0-1p6" secondAttribute="centerY" id="s7G-nL-psD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="recordingTitle" destination="Ht7-0u-d8Q" id="0TA-y8-Lrc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="hmR-vI-DZh" id="WQ9-eB-hSw"/>
+                            <outlet property="delegate" destination="hmR-vI-DZh" id="Z9p-0h-kqs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Recordings" id="ejo-18-e5f"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgL-8i-toh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3430" y="3913"/>
+        </scene>
     </scenes>
     <resources>
         <image name="10.jpg" width="1920" height="1200"/>
+        <image name="Soundwave" width="2400" height="684"/>
         <image name="band" width="675" height="257"/>
         <image name="drum-1" width="25" height="25"/>
         <image name="play-button-white" width="25" height="25"/>

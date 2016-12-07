@@ -1,14 +1,14 @@
 //
-//  AssignTableViewController.swift
+//  DrumKitSelectTableViewController.swift
 //  AirDrummer
 //
-//  Created by Erik Gabrielsen on 12/1/16.
+//  Created by Erik Gabrielsen on 12/7/16.
 //  Copyright © 2016 Danh Nguyen. All rights reserved.
 //
 
 import UIKit
 
-class AssignTableViewController: UITableViewController {
+class DrumKitSelectTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

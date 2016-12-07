@@ -62,6 +62,7 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
         self.navigationController?.navigationBar.topItem?.title = "Play"
         self.navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "?", style: .plain, target: self, action: #selector(addTapped))
 
+        UITabBar.appearance().barTintColor = UIColor.black
         
 
     }
