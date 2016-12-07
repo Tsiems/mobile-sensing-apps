@@ -59,18 +59,10 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.navigationController?.navigationBar.topItem?.title = "Play"
-        self.navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "?", style: .plain, target: self, action: #selector(addTapped))
-
         UITabBar.appearance().barTintColor = UIColor.black
         
 
     }
-    
-    func addTapped() {
-        
-    }
-
     
     
     // MARK : UICollectionViewDataSource
