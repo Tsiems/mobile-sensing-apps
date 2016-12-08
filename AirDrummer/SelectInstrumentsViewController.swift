@@ -141,6 +141,7 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
         return nil
         
     }
+    
     @IBAction func `continue`(_ sender: Any) {
         if data[0].count > 3 {
             let alert = UIAlertController(title: "Uh Oh!",
