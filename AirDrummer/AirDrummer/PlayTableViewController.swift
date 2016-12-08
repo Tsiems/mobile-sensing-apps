@@ -55,7 +55,6 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         
         
         
-        
         // Do any additional setup after loading the view.
         // setup URLSession
         let sessionConfig = URLSessionConfiguration.ephemeral
