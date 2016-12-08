@@ -170,6 +170,7 @@
 		5C7A080D1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A080C1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift */; };
 		5C7A080F1DF8AD9E00C2607D /* SelectGestureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */; };
 		5C7A08111DF8BACE00C2607D /* PlayTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */; };
+		5C7A08131DF9B37B00C2607D /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */; };
 		5CC9B8191DE36BBB001B21DD /* SelectInstrumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */; };
 		5CC9BA971DE3A963001B21DD /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */; };
 		5CC9BA991DE3A975001B21DD /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */; };
@@ -385,6 +386,7 @@
 		5C7A080C1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrumKitSelectTableViewController.swift; sourceTree = "<group>"; };
 		5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGestureTableViewController.swift; sourceTree = "<group>"; };
 		5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayTitleCell.swift; sourceTree = "<group>"; };
+		5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInstrumentsViewController.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMBounceAnimation.swift; path = RAMAnimatedTabBarController/Animations/BounceAnimation/RAMBounceAnimation.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMFrameItemAnimation.swift; path = RAMAnimatedTabBarController/Animations/FrameAnimation/RAMFrameItemAnimation.swift; sourceTree = SOURCE_ROOT; };
@@ -659,6 +661,7 @@
 				B41716B81DD1160B00999160 /* AppDelegate.swift */,
 				B41716BA1DD1160B00999160 /* ViewController.swift */,
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
+				5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */,
 				5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */,
 				5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */,
 				5C7A080C1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift */,
@@ -791,7 +794,7 @@
 				TargetAttributes = {
 					B41716B41DD1160B00999160 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = F69WJ27LN4;
+						DevelopmentTeam = 26Y78VEH49;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -1041,6 +1044,7 @@
 				5C4813F91DF0C2B500473AA4 /* ActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				5C4813C81DF0C2B500473AA4 /* DropDownAnimator.swift in Sources */,
 				B41716FB1DD178FC00999160 /* PlayingViewController.swift in Sources */,
+				5C7A08131DF9B37B00C2607D /* MainTableViewCell.swift in Sources */,
 				5C7A080F1DF8AD9E00C2607D /* SelectGestureTableViewController.swift in Sources */,
 				5C4814061DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScale.swift in Sources */,
 				5C4814041DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
@@ -1205,7 +1209,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1222,7 +1226,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

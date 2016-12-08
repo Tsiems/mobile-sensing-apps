@@ -1,15 +1,14 @@
 //
-//  PlayTitleCell.swift
+//  MainTableViewCell.swift
 //  AirDrummer
 //
-//  Created by Erik Gabrielsen on 12/7/16.
+//  Created by Erik Gabrielsen on 12/8/16.
 //  Copyright © 2016 Danh Nguyen. All rights reserved.
 //
 
 import UIKit
 
-class PlayTitleCell: UITableViewCell {
-    @IBOutlet weak var recordButton: AnimatableButton!
+class MainTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
