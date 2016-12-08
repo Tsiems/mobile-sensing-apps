@@ -13,6 +13,23 @@ class RecordingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        
+//        let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+//        
+//        do {
+//            // Get the directory contents urls (including subfolders urls)
+//            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
+//            print(directoryContents)
+//            
+//            // if you want to filter the directory contents you can do like this:
+//            let m4aFiles = directoryContents.filter{ $0.pathExtension == "m4a" }
+//            print("m4a urls:",m4aFiles)
+//            let m4aFileNames = m4aFiles.map{ $0.deletingPathExtension().lastPathComponent }
+//            print("m4a list:", m4aFileNames)
+//            
+//        } catch let error as NSError {
+//            print(error.localizedDescription)
+//        }
         
         recordings = ["One", "Two", "Three"]
         // Uncomment the following line to preserve selection between presentations
