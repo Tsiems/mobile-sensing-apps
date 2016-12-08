@@ -9,8 +9,10 @@
 import UIKit
 import CoreMotion
 import AVFoundation
+import AVFoundation
 
-class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
+
+class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, AVAudioRecorderDelegate{
     
     var session = URLSession()
     let cmMotionManager = CMMotionManager()
@@ -20,6 +22,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
     let magValue = 1.0
     var numDataPoints = 0
     var recording = false;
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!
     
     let TIME_DELAY = 0.2
         
@@ -77,6 +81,25 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
             catch {
                 //
             }
+        }
+        
+        recordingSession = AVAudioSession.sharedInstance()
+        
+        do {
+            try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        print("allowed")
+                    } else {
+                        print("failed to record 1")
+                    }
+                }
+            }
+        }
+        catch {
+            print("failed to record 2")
         }
         
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
@@ -355,6 +378,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
     func toggleRecording(sender: AnimatableButton) {
         print("touched")
         if (recording) {
+            finishRecording()
             // save recording
             sender.setTitle("Record",for: .normal)
             sender.backgroundColor = UIColor.black
@@ -379,8 +403,44 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
             sender.setTitleColor(UIColor.black, for: .normal)
             recording = true
             
+            startRecording()
+            
+            
         }
     }
     
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    
+    func startRecording() {
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording1.m4a")
+        
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+        
+        do {
+            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.record()
+            
+        }
+        catch {
+            finishRecording()
+        }
+    }
+    
+    func finishRecording() {
+        audioRecorder.stop()
+        audioRecorder = nil
+        
+    }
 
 }
