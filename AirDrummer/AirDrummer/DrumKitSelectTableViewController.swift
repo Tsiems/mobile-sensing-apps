@@ -36,6 +36,17 @@ class DrumKitSelectTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 5
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell:DrumKitTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! DrumKitTableViewCell
+        selectedCell.animatedView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+        selectedCell.contentView.backgroundColor = UIColor.white
+        selectedCell.kitLabel.textColor = UIColor.black
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        var cellToDeSelect:DrumKitTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! DrumKitTableViewCell
+        cellToDeSelect.kitLabel.textColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,9 +54,12 @@ class DrumKitSelectTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.kitLabel.text = "DrumKit \(indexPath.row)"
+        
 
         return cell
     }
+    
+    
     
 
     /*
@@ -56,7 +70,7 @@ class DrumKitSelectTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -66,7 +80,7 @@ class DrumKitSelectTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

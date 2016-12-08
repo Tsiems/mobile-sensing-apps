@@ -10,6 +10,7 @@ import UIKit
 
 class DrumKitTableViewCell: UITableViewCell {
     @IBOutlet weak var kitLabel: UILabel!
+    @IBOutlet weak var animatedView: AnimatableView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,8 +19,9 @@ class DrumKitTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
+        
     }
 
 }
