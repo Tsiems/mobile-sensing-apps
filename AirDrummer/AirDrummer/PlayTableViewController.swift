@@ -27,14 +27,10 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, AV
     
     let TIME_DELAY = 0.2
     
-    var gestures = ["['Gesture 1']":Gesture(id: "['Gesture 1']",gesture_name: "Low Hit", gif_name: "ohsnap",instrument: "Snare"),
-                    "['Gesture 2']":Gesture(id: "['Gesture 2']",gesture_name: "High Hit",gif_name:"cool",instrument: "Hi-Hat"),
-                    "['Gesture 3']":Gesture(id: "['Gesture 3']",gesture_name: "Flipped Hit",gif_name:"cool",instrument: "Toms")]
-        
+    var gestures = ["['Gesture 1']":Gesture(id: "['Gesture 1']",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare"),
+                    "['Gesture 2']":Gesture(id: "['Gesture 2']",gesture_name: "High Hit",gif_name:"popcorn",instrument: "Hi-Hat"),
+                    "['Gesture 3']":Gesture(id: "['Gesture 3']",gesture_name: "Flipped Hit",gif_name:"popcorn",instrument: "Toms")]
     
-    //    var players = [String: [String: Any]]()
-    //    players["Hi-Hat"] = ["index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]
-    //
     var players = [
         "Hi-Hat":["filename":"hihat","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
         "Snare":["filename":"snare","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
@@ -249,20 +245,6 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, AV
                 
                 if let prediction = responseData["prediction"] as? String {
                     
-//                    switch prediction {
-//                    case "['Play Hi-Hat']":
-//                        instrument="Hi-Hat"
-//                    case "['Play Snare']":
-//                        instrument="Snare"
-//                    case "['Play Bass']":
-//                        instrument="Bass"
-//                    case "['Play Toms']":
-//                        instrument="Toms"
-//                    case "['Play Cymbal']":
-//                        instrument="Cymbal"
-//                    default:
-//                        print("UNKNOWN")
-//                    }
                     if let gesture = self.gestures[prediction] {
                         let instrument = gesture.instrument
                         
@@ -278,11 +260,9 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, AV
                         
                         (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int].play()
                     }
-                    
-                    
-                    
-                    
-                    
+                    else {
+                        print("Gesture not in use.")
+                    }
                 }
                 else {
                     print("could not convert prediction to string")
