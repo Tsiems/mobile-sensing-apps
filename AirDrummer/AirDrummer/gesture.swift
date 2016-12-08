@@ -10,12 +10,16 @@ import Foundation
 import UIKit
 
 class Gesture{
-    let MLID : String
-    let Name : String
-    let Gif : UIImage
-    init(id: String, name: String?) {
-        self.MLID = id
-        self.Name = name ?? ""
-        self.Gif = UIImage(named: self.Name + ".gif")!
+    let id : String
+    let gesture_name : String
+    let gif_name : String
+    let instrument : String
+    let gif : UIImage
+    init(id: String, gesture_name:String,gif_name: String,instrument: String) {
+        self.id = id
+        self.gesture_name = gesture_name
+        self.gif_name = gif_name 
+        self.instrument = instrument
+        self.gif = UIImage(named: self.gif_name + ".gif")!
     }
 }

@@ -29,11 +29,11 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     var audioRecorder: AVAudioRecorder!
     
     let TIME_DELAY = 0.2
-        
     
-    //    var players = [String: [String: Any]]()
-    //    players["Hi-Hat"] = ["index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]
-    //
+    var gestures = ["['Gesture 1']":Gesture(id: "['Gesture 1']",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare"),
+                    "['Gesture 2']":Gesture(id: "['Gesture 2']",gesture_name: "High Hit",gif_name:"popcorn",instrument: "Hi-Hat"),
+                    "['Gesture 3']":Gesture(id: "['Gesture 3']",gesture_name: "Flipped Hit",gif_name:"popcorn",instrument: "Toms")]
+    
     var players = [
         "Hi-Hat":["filename":"hihat","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
         "Snare":["filename":"snare","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
@@ -46,11 +46,14 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set the time to "now" for all instruments
         players["Hi-Hat"]!["time"] = Date()
         players["Snare"]!["time"] = Date()
         players["Cymbal"]!["time"] = Date()
         players["Toms"]!["time"] = Date()
         players["Bass"]!["time"] = Date()
+        
+        
         
         
         // Do any additional setup after loading the view.
@@ -251,35 +254,25 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
                 print(responseData)
                 
                 if let prediction = responseData["prediction"] as? String {
-                    var instrument="Hi-Hat"
-                    switch prediction {
-                    case "['Play Hi-Hat']":
-                        instrument="Hi-Hat"
-                    case "['Play Snare']":
-                        instrument="Snare"
-                    case "['Play Bass']":
-                        instrument="Bass"
-                    case "['Play Toms']":
-                        instrument="Toms"
-                    case "['Play Cymbal']":
-                        instrument="Cymbal"
-                    default:
-                        print("UNKNOWN")
+                    
+                    if let gesture = self.gestures[prediction] {
+                        let instrument = gesture.instrument
+                        
+                        let date = self.players[instrument]!["time"] as! Date
+                        let now = Date()
+                        let seconds = now.timeIntervalSince(date)
+                        print("Seconds: ",seconds)
+                        
+                        if seconds > TIME_DELAY {
+                            self.players[instrument]!["time"] = now
+                            self.players[instrument]!["index"] = ((self.players[instrument]!["index"] as! Int)+1)%3
+                        }
+                        
+                        (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int].play()
                     }
-                    
-                    let date = self.players[instrument]!["time"] as! Date
-                    let now = Date()
-                    let seconds = now.timeIntervalSince(date)
-                    print("Seconds: ",seconds)
-                    
-                    if seconds > TIME_DELAY {
-                        self.players[instrument]!["time"] = now
-                        self.players[instrument]!["index"] = ((self.players[instrument]!["index"] as! Int)+1)%3
+                    else {
+                        print("Gesture not in use.")
                     }
-                    
-                    (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int].play()
-                    
-                    
                 }
                 else {
                     print("could not convert prediction to string")
