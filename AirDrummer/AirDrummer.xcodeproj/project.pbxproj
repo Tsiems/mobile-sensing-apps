@@ -174,6 +174,8 @@
 		5C7A08131DF9B37B00C2607D /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */; };
 		5C7A08181DF9C0A700C2607D /* ESTMusicIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08161DF9C0A700C2607D /* ESTMusicIndicatorView.swift */; };
 		5C7A08191DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08171DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift */; };
+		5C7A081B1DF9D0BA00C2607D /* DrumKitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A081A1DF9D0BA00C2607D /* DrumKitTableViewCell.swift */; };
+		5C7A081D1DF9D28900C2607D /* DrumKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A081C1DF9D28900C2607D /* DrumKit.swift */; };
 		5CC9B8191DE36BBB001B21DD /* SelectInstrumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */; };
 		5CC9BA971DE3A963001B21DD /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */; };
 		5CC9BA991DE3A975001B21DD /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */; };
@@ -189,6 +191,7 @@
 		5CC9BBE71DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE61DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift */; };
 		91516AF71DD683230019FC06 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91516AF61DD683230019FC06 /* FFTHelper.m */; };
 		91D685291DF9C01300C0B2CD /* gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D685281DF9C01300C0B2CD /* gesture.swift */; };
+		91D6852B1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */; };
 		B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716B81DD1160B00999160 /* AppDelegate.swift */; };
 		B41716BB1DD1160B00999160 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716BA1DD1160B00999160 /* ViewController.swift */; };
 		B41716BE1DD1160B00999160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41716BC1DD1160B00999160 /* Main.storyboard */; };
@@ -394,6 +397,8 @@
 		5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		5C7A08161DF9C0A700C2607D /* ESTMusicIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ESTMusicIndicatorView.swift; path = Classes/ESTMusicIndicatorView.swift; sourceTree = "<group>"; };
 		5C7A08171DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ESTMusicIndicatorContentView.swift; path = Classes/ESTMusicIndicatorContentView.swift; sourceTree = "<group>"; };
+		5C7A081A1DF9D0BA00C2607D /* DrumKitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrumKitTableViewCell.swift; sourceTree = "<group>"; };
+		5C7A081C1DF9D28900C2607D /* DrumKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrumKit.swift; sourceTree = SOURCE_ROOT; };
 		5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInstrumentsViewController.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMBounceAnimation.swift; path = RAMAnimatedTabBarController/Animations/BounceAnimation/RAMBounceAnimation.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMFrameItemAnimation.swift; path = RAMAnimatedTabBarController/Animations/FrameAnimation/RAMFrameItemAnimation.swift; sourceTree = SOURCE_ROOT; };
@@ -410,6 +415,7 @@
 		91516AF51DD683230019FC06 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		91516AF61DD683230019FC06 /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
 		91D685281DF9C01300C0B2CD /* gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gesture.swift; sourceTree = "<group>"; };
+		91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters%2BGIF.swift"; sourceTree = "<group>"; };
 		B41716B51DD1160B00999160 /* AirDrummer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirDrummer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41716B81DD1160B00999160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B41716BA1DD1160B00999160 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -670,8 +676,11 @@
 				B41716B81DD1160B00999160 /* AppDelegate.swift */,
 				B41716BA1DD1160B00999160 /* ViewController.swift */,
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
+				5C7A081A1DF9D0BA00C2607D /* DrumKitTableViewCell.swift */,
+				5C7A081C1DF9D28900C2607D /* DrumKit.swift */,
 				5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */,
 				91D685281DF9C01300C0B2CD /* gesture.swift */,
+				91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */,
 				5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */,
 				5C7A08161DF9C0A700C2607D /* ESTMusicIndicatorView.swift */,
 				5C7A08171DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift */,
@@ -915,6 +924,7 @@
 				5C7A08181DF9C0A700C2607D /* ESTMusicIndicatorView.swift in Sources */,
 				5C4813A71DF0C2B500473AA4 /* PresentFadeSegue.swift in Sources */,
 				5CC9BAA11DE3A9AD001B21DD /* RAMBadge.swift in Sources */,
+				5C7A081B1DF9D0BA00C2607D /* DrumKitTableViewCell.swift in Sources */,
 				5C4813821DF0C2B400473AA4 /* TurnAnimator.swift in Sources */,
 				16B2FDA41DF9DB0100B34D6D /* DrumKit.swift in Sources */,
 				5C4813F71DF0C2B500473AA4 /* ActivityIndicatorAnimationPacman.swift in Sources */,
@@ -964,6 +974,7 @@
 				5C48137B1DF0C2B400473AA4 /* ZoomAnimator.swift in Sources */,
 				5C4814031DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				5C4813D91DF0C2B500473AA4 /* AnimatorFactory.swift in Sources */,
+				91D6852B1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift in Sources */,
 				5C4813E61DF0C2B500473AA4 /* AnimatablePresentationController.swift in Sources */,
 				5C4813CD1DF0C2B500473AA4 /* CornerDesignable.swift in Sources */,
 				5C4813C91DF0C2B500473AA4 /* DismissSegue.swift in Sources */,
@@ -976,6 +987,7 @@
 				5C7A08111DF8BACE00C2607D /* PlayTitleCell.swift in Sources */,
 				5C4813EC1DF0C2B500473AA4 /* AnimatableCheckBox.swift in Sources */,
 				5C4813951DF0C2B400473AA4 /* SlideAnimator.swift in Sources */,
+				5C7A081D1DF9D28900C2607D /* DrumKit.swift in Sources */,
 				5C4813A31DF0C2B500473AA4 /* PresentFoldSegue.swift in Sources */,
 				5C4813D71DF0C2B500473AA4 /* BlurDesignable.swift in Sources */,
 				5C4813811DF0C2B400473AA4 /* Typealias.swift in Sources */,

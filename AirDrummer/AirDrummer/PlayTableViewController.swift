@@ -62,7 +62,6 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         
         
         
-        
         // Do any additional setup after loading the view.
         // setup URLSession
         let sessionConfig = URLSessionConfiguration.ephemeral
@@ -439,7 +438,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     
     
     func startRecording() {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording1.m4a")
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("\(Date()).m4a")
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
