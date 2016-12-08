@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 import CoreMotion
 
-let SERVER_URL = "http://10.8.108.88:8000"
+let SERVER_URL = "http://10.8.100.113:8000"
 let UPDATE_INTERVAL = 1/10.0
-var DSID = 9
+var DSID = 103
 let screenSize: CGRect = UIScreen.main.bounds
 
 
