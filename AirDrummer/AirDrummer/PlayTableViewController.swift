@@ -10,7 +10,7 @@ import UIKit
 import CoreMotion
 import AVFoundation
 
-class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
+class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UIGestureRecognizerDelegate {
     
     var session = URLSession()
     let cmMotionManager = CMMotionManager()
@@ -20,6 +20,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
     let magValue = 1.0
     var numDataPoints = 0
     var recording = false;
+    var indicatorView: ESTMusicIndicatorView!
+     var startAnimating: Bool = false
     
     let TIME_DELAY = 0.2
         
@@ -84,6 +86,10 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -359,6 +365,12 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
             sender.setTitle("Record",for: .normal)
             sender.backgroundColor = UIColor.black
             sender.setTitleColor(UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0), for: .normal)
+            
+            if let viewWithTag = sender.viewWithTag(100) {
+                print("Tag 100")
+                viewWithTag.removeFromSuperview()
+            }
+            
             let refreshAlert = UIAlertController(title: "Recorded!", message: "Your jam session has been recorded!", preferredStyle: UIAlertControllerStyle.alert)
             
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -378,9 +390,20 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
             sender.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
             sender.setTitleColor(UIColor.black, for: .normal)
             recording = true
-            
+            let screenSize: CGRect = UIScreen.main.bounds
+            indicatorView = ESTMusicIndicatorView.init(frame: CGRect(origin: CGPoint(x: (screenSize.width - 100), y: 0), size: CGSize(width: 50, height: 44)))
+            indicatorView.hidesWhenStopped = false
+            indicatorView.tintColor = UIColor.black
+            indicatorView.state = .ESTMusicIndicatorViewStatePlaying
+            indicatorView.tag = 100
+            sender.addSubview(indicatorView)
         }
     }
     
+    func createIndicatorView() {
+        
+        
+        
+    }
 
 }

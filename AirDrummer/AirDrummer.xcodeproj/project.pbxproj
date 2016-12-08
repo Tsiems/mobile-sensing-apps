@@ -171,6 +171,8 @@
 		5C7A080F1DF8AD9E00C2607D /* SelectGestureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */; };
 		5C7A08111DF8BACE00C2607D /* PlayTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */; };
 		5C7A08131DF9B37B00C2607D /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */; };
+		5C7A08181DF9C0A700C2607D /* ESTMusicIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08161DF9C0A700C2607D /* ESTMusicIndicatorView.swift */; };
+		5C7A08191DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08171DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift */; };
 		5CC9B8191DE36BBB001B21DD /* SelectInstrumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */; };
 		5CC9BA971DE3A963001B21DD /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */; };
 		5CC9BA991DE3A975001B21DD /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */; };
@@ -387,6 +389,8 @@
 		5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGestureTableViewController.swift; sourceTree = "<group>"; };
 		5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayTitleCell.swift; sourceTree = "<group>"; };
 		5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		5C7A08161DF9C0A700C2607D /* ESTMusicIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ESTMusicIndicatorView.swift; path = Classes/ESTMusicIndicatorView.swift; sourceTree = "<group>"; };
+		5C7A08171DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ESTMusicIndicatorContentView.swift; path = Classes/ESTMusicIndicatorContentView.swift; sourceTree = "<group>"; };
 		5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInstrumentsViewController.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMBounceAnimation.swift; path = RAMAnimatedTabBarController/Animations/BounceAnimation/RAMBounceAnimation.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMFrameItemAnimation.swift; path = RAMAnimatedTabBarController/Animations/FrameAnimation/RAMFrameItemAnimation.swift; sourceTree = SOURCE_ROOT; };
@@ -663,6 +667,8 @@
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
 				5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */,
 				5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */,
+				5C7A08161DF9C0A700C2607D /* ESTMusicIndicatorView.swift */,
+				5C7A08171DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift */,
 				5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */,
 				5C7A080C1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift */,
 				5C7A080A1DF8AD0300C2607D /* PlayTableViewController.swift */,
@@ -896,9 +902,11 @@
 				5C4813A21DF0C2B500473AA4 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
 				5C4813851DF0C2B400473AA4 /* TransitionPresenter.swift in Sources */,
 				5C48138A1DF0C2B400473AA4 /* SystemSuckEffectAnimator.swift in Sources */,
+				5C7A08191DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift in Sources */,
 				5C48140C1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				5C4813A01DF0C2B500473AA4 /* PresentPortalSegue.swift in Sources */,
 				5C4813EE1DF0C2B500473AA4 /* AnimatableBarButtonItem.swift in Sources */,
+				5C7A08181DF9C0A700C2607D /* ESTMusicIndicatorView.swift in Sources */,
 				5C4813A71DF0C2B500473AA4 /* PresentFadeSegue.swift in Sources */,
 				5CC9BAA11DE3A9AD001B21DD /* RAMBadge.swift in Sources */,
 				5C4813821DF0C2B400473AA4 /* TurnAnimator.swift in Sources */,
