@@ -185,6 +185,7 @@
 		5CC9BBE51DE8DD8E001B21DD /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE41DE8DD8E001B21DD /* ItemCollectionViewCell.swift */; };
 		5CC9BBE71DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE61DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift */; };
 		91516AF71DD683230019FC06 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91516AF61DD683230019FC06 /* FFTHelper.m */; };
+		91D685291DF9C01300C0B2CD /* gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D685281DF9C01300C0B2CD /* gesture.swift */; };
 		B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716B81DD1160B00999160 /* AppDelegate.swift */; };
 		B41716BB1DD1160B00999160 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716BA1DD1160B00999160 /* ViewController.swift */; };
 		B41716BE1DD1160B00999160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41716BC1DD1160B00999160 /* Main.storyboard */; };
@@ -402,6 +403,7 @@
 		5CC9BBE61DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDDragAndDropCollectionView.swift; sourceTree = "<group>"; };
 		91516AF51DD683230019FC06 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		91516AF61DD683230019FC06 /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
+		91D685281DF9C01300C0B2CD /* gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gesture.swift; sourceTree = "<group>"; };
 		B41716B51DD1160B00999160 /* AirDrummer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirDrummer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41716B81DD1160B00999160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B41716BA1DD1160B00999160 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 				B41716BA1DD1160B00999160 /* ViewController.swift */,
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
 				5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */,
+				91D685281DF9C01300C0B2CD /* gesture.swift */,
 				5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */,
 				5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */,
 				5C7A080C1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift */,
@@ -983,6 +986,7 @@
 				5C4813ED1DF0C2B500473AA4 /* AnimatableButton.swift in Sources */,
 				5C4813F01DF0C2B500473AA4 /* Animatable.swift in Sources */,
 				5C7A08071DF7471500C2607D /* RecordingHeaderCell.swift in Sources */,
+				91D685291DF9C01300C0B2CD /* gesture.swift in Sources */,
 				5C4813991DF0C2B400473AA4 /* RotationDesignable.swift in Sources */,
 				5C4813CE1DF0C2B500473AA4 /* ContainerTransition.swift in Sources */,
 				5C4813FB1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
