@@ -90,6 +90,9 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if (startAnimating) {
+            indicatorView.state = .ESTMusicIndicatorViewStatePlaying
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -369,6 +372,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
             if let viewWithTag = sender.viewWithTag(100) {
                 print("Tag 100")
                 viewWithTag.removeFromSuperview()
+                startAnimating = false
             }
             
             let refreshAlert = UIAlertController(title: "Recorded!", message: "Your jam session has been recorded!", preferredStyle: UIAlertControllerStyle.alert)
@@ -396,6 +400,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
             indicatorView.tintColor = UIColor.black
             indicatorView.state = .ESTMusicIndicatorViewStatePlaying
             indicatorView.tag = 100
+            startAnimating = true
             sender.addSubview(indicatorView)
         }
     }
