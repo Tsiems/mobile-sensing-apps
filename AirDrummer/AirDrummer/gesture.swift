@@ -20,6 +20,7 @@ class Gesture{
         self.gesture_name = gesture_name
         self.gif_name = gif_name 
         self.instrument = instrument
-        self.gif = UIImage(named: self.gif_name + ".gif")!
+        //self.gif = UIImage(named: self.gif_name + ".gif")!
+        self.gif = UIImage.gifImageWithName(name: self.gif_name)!
     }
 }
