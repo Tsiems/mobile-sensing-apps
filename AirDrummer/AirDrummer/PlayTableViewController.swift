@@ -21,7 +21,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     var orientationBuffer = RingBuffer()
     let magValue = 1.0
     var numDataPoints = 0
-    var recording = false;
+    var recording = false
 
     var indicatorView: ESTMusicIndicatorView!
     var startAnimating: Bool = false
@@ -34,6 +34,10 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
                     "['Gesture 2']":Gesture(id: "['Gesture 2']",gesture_name: "High Hit",gif_name:"popcorn",instrument: "Hi-Hat"),
                     "['Gesture 3']":Gesture(id: "['Gesture 3']",gesture_name: "Flipped Hit",gif_name:"popcorn",instrument: "Toms")]
     
+    var selectedDrumKit = 0
+    var drumKits = [DrumKit(name:"default",gestures:["['Gesture 1']":Gesture(id: "['Gesture 1']",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare")])]
+    
+    
     var players = [
         "Hi-Hat":["filename":"hihat","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
         "Snare":["filename":"snare","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
@@ -45,6 +49,9 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let loaded_data = loadDrumKits()
+        drumKits = loaded_data.0
+        selectedDrumKit = loaded_data.1
         
         //set the time to "now" for all instruments
         players["Hi-Hat"]!["time"] = Date()
@@ -255,7 +262,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
                 
                 if let prediction = responseData["prediction"] as? String {
                     
-                    if let gesture = self.gestures[prediction] {
+                    if let gesture = self.drumKits[selectedDrumKit].gestures[prediction] {
                         let instrument = gesture.instrument
                         
                         let date = self.players[instrument]!["time"] as! Date
@@ -457,5 +464,40 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         audioRecorder = nil
         
     }
+    
+    
+    func saveDrumKits(data: [DrumKit],index:Int) {
+        let drumKitData = NSKeyedArchiver.archivedData(withRootObject: data)
+        UserDefaults.standard.set(drumKitData, forKey: "drumKits")
+        UserDefaults.standard.set(index, forKey: "selectedDrumKitIndex")
+    }
+    
+    func loadDrumKits() -> ([DrumKit],Int) {
+        let drumkits = UserDefaults.standard.object(forKey: "drumKits")
+        
+        if let drumkits = drumkits as? Data {
+            let drumkits = NSKeyedUnarchiver.unarchiveObject(with: drumkits)
+            
+            
+            if let drumkits = drumkits as? [DrumKit] {
+                let index = UserDefaults.standard.object(forKey: "selectedDrumKitIndex")
+                if let index = index as? Int {
+                    return (drumkits,index)
+                }
+                else {
+                    return ([DrumKit(name: "Default", gestures: gestures)],0) //use default kit
+                }
+            } else {
+                return ([DrumKit(name: "Default", gestures: gestures)],0) //use default kit
+            }
+            
+        } else {
+            return ([DrumKit(name: "Default", gestures: gestures)],0) //use default kit
+        }
+    }
+    
+    
+    
+    
 
 }
