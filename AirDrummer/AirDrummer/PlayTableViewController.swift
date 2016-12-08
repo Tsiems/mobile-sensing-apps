@@ -20,66 +20,69 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
     let magValue = 1.0
     var numDataPoints = 0
     
-    var hihatPlayer = AVAudioPlayer()
-    var snarePlayer = AVAudioPlayer()
-    var kickdrumPlayer = AVAudioPlayer()
-
-
+    let TIME_DELAY = 0.2
+    
+    
+    
+    //    var players = [String: [String: Any]]()
+    //    players["Hi-Hat"] = ["index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]
+    //
+    var players = [
+        "Hi-Hat":["filename":"hihat","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
+        "Snare":["filename":"snare","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
+        "Cymbal":["filename":"crash","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
+        "Toms":["filename":"tom_002b","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
+        "Bass":["filename":"bassdrum","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]]
+    ]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        players["Hi-Hat"]!["time"] = Date()
+        players["Snare"]!["time"] = Date()
+        players["Cymbal"]!["time"] = Date()
+        players["Toms"]!["time"] = Date()
+        players["Bass"]!["time"] = Date()
+        
+        
+        // Do any additional setup after loading the view.
+        // setup URLSession
         let sessionConfig = URLSessionConfiguration.ephemeral
         sessionConfig.timeoutIntervalForRequest = 5.0
         sessionConfig.timeoutIntervalForResource = 8.0
         sessionConfig.httpMaximumConnectionsPerHost = 1
         
-        // set up sound
-        let hihatSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "hihat", ofType: "wav")!)
         
-        do {
-            self.hihatPlayer = try AVAudioPlayer(contentsOf: hihatSound as URL)
-            self.hihatPlayer.prepareToPlay()
+        // set up sounds
+        for key in self.players.keys {
+            
+            let dict = self.players[key]!
+            
+            let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: dict["filename"] as! String?, ofType: "wav")!)
+            
+            do {
+                if var playersArray = dict["players"]! as? Array<AVAudioPlayer> {
+                    
+                    var i:Int = 0
+                    while i < (playersArray.count as Int)  {
+                        playersArray[i] = try AVAudioPlayer(contentsOf: sound as URL)
+                        playersArray[i].prepareToPlay()
+                        i += 1
+                    }
+                    
+                    self.players[key]!["players"] = playersArray
+                }
+            }
+            catch {
+                //
+            }
         }
-        catch {
-            //
-        }
-        
-        let kickdrumSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "kickdrum", ofType: "wav")!)
-        
-        do {
-            self.kickdrumPlayer = try AVAudioPlayer(contentsOf: kickdrumSound as URL)
-            self.kickdrumPlayer.prepareToPlay()
-        }
-        catch {
-            //
-        }
-        
-        
-        let snareSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "snare", ofType: "wav")!)
-        
-        do {
-            self.snarePlayer = try AVAudioPlayer(contentsOf: snareSound as URL)
-            self.snarePlayer.prepareToPlay()
-        }
-        catch {
-            //
-        }
-        
-        
-        //        self.hihatPlayer.play()
-        //        self.snarePlayer.play()
-        //        self.kickdrumPlayer.play()
         
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         self.startCMMonitoring()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -198,16 +201,35 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
                 print(responseData)
                 
                 if let prediction = responseData["prediction"] as? String {
+                    var instrument="Hi-Hat"
                     switch prediction {
                     case "['Play Hi-Hat']":
-                        self.hihatPlayer.play()
+                        instrument="Hi-Hat"
                     case "['Play Snare']":
-                        self.snarePlayer.play()
-                    case "['Play Kick Drum']":
-                        self.kickdrumPlayer.play()
+                        instrument="Snare"
+                    case "['Play Bass']":
+                        instrument="Bass"
+                    case "['Play Toms']":
+                        instrument="Toms"
+                    case "['Play Cymbal']":
+                        instrument="Cymbal"
                     default:
                         print("UNKNOWN")
                     }
+                    
+                    let date = self.players[instrument]!["time"] as! Date
+                    let now = Date()
+                    let seconds = now.timeIntervalSince(date)
+                    print("Seconds: ",seconds)
+                    
+                    if seconds > TIME_DELAY {
+                        self.players[instrument]!["time"] = now
+                        self.players[instrument]!["index"] = ((self.players[instrument]!["index"] as! Int)+1)%3
+                    }
+                    
+                    (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int].play()
+                    
+                    
                 }
                 else {
                     print("could not convert prediction to string")
@@ -220,8 +242,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
         } else{
             print(error!)
         }
-        
     }
+    
     
     func getPredictionData(data:NSArray) {
         let baseUrl = "\(SERVER_URL)/PredictOne"
@@ -245,5 +267,72 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate {
         print(self.numDataPoints)
     }
 
+
+    // MARK: - Table view data source
+
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 1
+//    }
+
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    */
+
+    /*
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
+    */
+
+    /*
+    // Override to support rearranging the table view.
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+
+    }
+    */
+
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+    */
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
