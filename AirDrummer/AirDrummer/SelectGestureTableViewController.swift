@@ -8,8 +8,14 @@
 
 import UIKit
 
-class SelectGestureTableViewController: UITableViewController {
-    var items:[String] = []
+class SelectGestureTableViewController: UITableViewController, SelectGestureDelegate {
+    var items:[String] = ["Instrument 1", "Instrument 2", "Instrument 3"]
+    var selectedRow:Int = 0
+    var gestures:[Gesture] = [
+        Gesture(id: "['Gesture 1']",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare"),
+        Gesture(id: "['Gesture 2']",gesture_name: "High Hit",gif_name:"popcorn",instrument: "Hi-Hat"),
+        Gesture(id: "['Gesture 3']",gesture_name: "Flipped Hit",gif_name:"popcorn",instrument: "Toms")
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +25,14 @@ class SelectGestureTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        items = ["Instrument 1", "Instrument 2", "Instrument 3"]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
+    func saveGestures(gestures:[Gesture]) {
+        self.gestures = gestures
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +57,23 @@ class SelectGestureTableViewController: UITableViewController {
         
         cell.instrumentLabel.text = items[indexPath.row]
         
+        var instrumentHasGesture = false
+        var index = 0
+        for gesture in gestures {
+            if gesture.instrument == items[indexPath.row] && gesture.inUse {
+                instrumentHasGesture = true
+                break
+            }
+            index += 1
+        }
+        if instrumentHasGesture {
+            //change image here (at index)
+            cell.gestureView.backgroundColor = UIColor.darkGray
+        }
+        else {
+            cell.gestureView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+        }
+        
         return cell
     }
 
@@ -51,6 +81,8 @@ class SelectGestureTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell:GestureTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! GestureTableViewCell
         selectedCell.gestureView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+        
+        selectedRow = indexPath.row
         self.performSegue(withIdentifier: "showGestures", sender: self)
     }
     /*
@@ -88,16 +120,37 @@ class SelectGestureTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showGestures" {
+            if let destinationNav = segue.destination as? UINavigationController {
+                if let target = destinationNav.topViewController as? MatchGesturesTableViewController {
+                    target.gestures = self.gestures
+                    target.instrument = self.items[self.selectedRow]
+                    target.delegate = self
+                }
+            }
+            
+        }
     }
-    */
+    
+    
     @IBAction func dismissView(_ sender: Any) {
+        
+        //convert gestures into gestureDict
+        var gestureDict:[String:Gesture] = [:]
+        for gesture in gestures {
+            gestureDict[gesture.id] = gesture
+        }
+        
+        //save new drum kit
+        let newDrumKit:DrumKit = DrumKit(name: "New Drum Kit!", gestures: gestureDict)
+        drumKits.append(newDrumKit)
+        saveDrumKits(data: drumKits, index: (drumKits.count-1))
         self.dismiss(animated: true, completion: nil)
     }
 

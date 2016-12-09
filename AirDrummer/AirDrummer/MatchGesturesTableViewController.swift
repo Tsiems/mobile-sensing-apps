@@ -8,8 +8,16 @@
 
 import UIKit
 
+
+protocol SelectGestureDelegate {
+    func saveGestures(gestures: [Gesture])
+}
+
 class MatchGesturesTableViewController: UITableViewController {
-    var gestures:[String] = ["Gesture 1", "Gesture 2", "Gesture 3", "Gesture 4", "Gesture 5"]
+    var gestures:[Gesture] = Array(defaultGestures.values)
+    var instrument:String = ""
+    var selectedGesture:Int = -1
+    var delegate : SelectGestureDelegate?
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -41,9 +49,10 @@ class MatchGesturesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell:Gesture2TableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! Gesture2TableViewCell
+        
+        self.selectedGesture = indexPath.row
         // save this as the object gesture and return
-        print(gestures[indexPath.row])
-        if (indexPath.row == 1) {
+        if (gestures[indexPath.row].inUse) {
             selectedCell.inUse.isHidden = true
         }
         selectedCell.gestureView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
@@ -53,7 +62,7 @@ class MatchGesturesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let deselectedCell:Gesture2TableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! Gesture2TableViewCell
         
-        if (indexPath.row == 1) {
+        if (gestures[indexPath.row].inUse) {
             deselectedCell.inUse.isHidden = false
         }
         
@@ -65,8 +74,8 @@ class MatchGesturesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gesture2Cell", for: indexPath) as! Gesture2TableViewCell
 
         // Configure the cell...
-        cell.gestureLabel.text = gestures[indexPath.row]
-        if (indexPath.row != 1) {
+        cell.gestureLabel.text = gestures[indexPath.row].gesture_name
+        if (!gestures[indexPath.row].inUse) {
             cell.inUse.isHidden = true
         }
 
@@ -109,20 +118,26 @@ class MatchGesturesTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        print(segue.identifier ?? "No identifier :(")
     }
-    */
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func save(_ sender: Any) {
+        if let del = delegate {
+            gestures[selectedGesture].instrument = self.instrument
+            gestures[selectedGesture].inUse = true
+            
+            print(gestures[selectedGesture].gesture_name,gestures[selectedGesture].instrument,gestures[selectedGesture].inUse)
+            del.saveGestures(gestures: self.gestures)
+        }
         self.dismiss(animated: true, completion: nil)
     }
 }

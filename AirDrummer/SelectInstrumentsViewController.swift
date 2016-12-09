@@ -156,6 +156,8 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
+            
+            
             self.performSegue(withIdentifier: "playSegue", sender: self)
         }
     }
@@ -163,8 +165,16 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "playSegue" {
+            if let destination = segue.destination as? SelectGestureTableViewController {
+                print("Play!")
+                var items:[String] = []
+                for item in data[0] {
+                    items.append(item.indexes)
+                }
+                
+                destination.items = items
+            }
             
-            print("Play!")
             
         }
     }
