@@ -148,5 +148,8 @@ class RecordingsTableViewController: UITableViewController, AVAudioPlayerDelegat
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func done(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }
