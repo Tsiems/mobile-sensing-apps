@@ -21,7 +21,7 @@ class DrumKit: NSObject,NSCoding {
     
     required convenience init(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObject(forKey: "kitName") as! String
-        let gestures = aDecoder.decodeObject(forKey: "gesture_name") as! Dictionary<String, Gesture>
+        let gestures = aDecoder.decodeObject(forKey: "gestures") as! Dictionary<String, Gesture>
 
         self.init(name:name,gestures:gestures)
     }
@@ -44,30 +44,37 @@ var selectedDrumKit = 0
 var drumKits = [DrumKit(name:"Default Kit",gestures:["['Gesture 1']":Gesture(id: "['Gesture 1']",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare")])]
 
 
-func saveDrumKits(data: [DrumKit],index:Int) {
+func saveDrumKits(data: [DrumKit]) {
     let drumKitData = NSKeyedArchiver.archivedData(withRootObject: data)
     UserDefaults.standard.set(drumKitData, forKey: "drumKits")
+    
+}
+
+func saveSelectedKit(index:Int) {
     UserDefaults.standard.set(index, forKey: "selectedDrumKitIndex")
 }
 
-func loadDrumKits() -> ([DrumKit],Int) {
+func loadDrumKits() -> [DrumKit] {
     
     if let drumkits = UserDefaults.standard.object(forKey: "drumKits") as? Data {
         
         if let drumkits = NSKeyedUnarchiver.unarchiveObject(with: drumkits) as? [DrumKit] {
-            
-            if let index = UserDefaults.standard.object(forKey: "selectedDrumKitIndex") as? Int {
-                return (drumkits,index)
-            }
-            else {
-                return ([DrumKit(name: "Default Kit", gestures: defaultGestures)],0) //use default kit
-            }
+            return drumkits
         } else {
-            return ([DrumKit(name: "Default Kit", gestures: defaultGestures)],0) //use default kit
+            return [DrumKit(name: "Default Kit", gestures: defaultGestures)] //use default kit
         }
         
     } else {
-        return ([DrumKit(name: "Default Kit", gestures: defaultGestures)],0) //use default kit
+        return [DrumKit(name: "Default Kit", gestures: defaultGestures)] //use default kit
+    }
+}
+
+func loadSelectedKit() -> Int {
+    if let index = UserDefaults.standard.object(forKey: "selectedDrumKitIndex") as? Int {
+        return index
+    }
+    else {
+        return 0
     }
 }
 

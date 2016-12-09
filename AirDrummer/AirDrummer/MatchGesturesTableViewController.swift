@@ -14,10 +14,13 @@ protocol SelectGestureDelegate {
 }
 
 class MatchGesturesTableViewController: UITableViewController {
+
     var gestures:[Gesture] = Array(defaultGestures.values)
     var instrument:String = ""
-    var selectedGesture:Int = -1
     var delegate : SelectGestureDelegate?
+
+    var selected = -1
+
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -50,8 +53,9 @@ class MatchGesturesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell:Gesture2TableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! Gesture2TableViewCell
         
-        self.selectedGesture = indexPath.row
+        self.selected = indexPath.row
         // save this as the object gesture and return
+
         if (gestures[indexPath.row].inUse) {
             selectedCell.inUse.isHidden = true
         }
@@ -60,23 +64,33 @@ class MatchGesturesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let deselectedCell:Gesture2TableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! Gesture2TableViewCell
-        
-        if (gestures[indexPath.row].inUse) {
-            deselectedCell.inUse.isHidden = false
+        if tableView.cellForRow(at: indexPath as IndexPath) != nil {
+            let deselectedCell:Gesture2TableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! Gesture2TableViewCell
+            
+            if (gestures[indexPath.row].inUse) {
+                deselectedCell.inUse.isHidden = false
+            }
+            
+            deselectedCell.gestureView.backgroundColor = UIColor.black
         }
-        
-        deselectedCell.gestureView.backgroundColor = UIColor.black
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gesture2Cell", for: indexPath) as! Gesture2TableViewCell
-
+        
+        cell.layer.shouldRasterize = true;
+        cell.layer.rasterizationScale = UIScreen.main.scale
         // Configure the cell...
         cell.gestureLabel.text = gestures[indexPath.row].gesture_name
         if (!gestures[indexPath.row].inUse) {
             cell.inUse.isHidden = true
+        }
+        
+        if (selected != indexPath.row) {
+            cell.gestureView.backgroundColor = UIColor.black
+        } else {
+            cell.gestureView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
         }
 
         return cell
@@ -132,10 +146,10 @@ class MatchGesturesTableViewController: UITableViewController {
 
     @IBAction func save(_ sender: Any) {
         if let del = delegate {
-            gestures[selectedGesture].instrument = self.instrument
-            gestures[selectedGesture].inUse = true
+            gestures[selected].instrument = self.instrument
+            gestures[selected].inUse = true
             
-            print(gestures[selectedGesture].gesture_name,gestures[selectedGesture].instrument,gestures[selectedGesture].inUse)
+            print(gestures[selected].gesture_name,gestures[selected].instrument,gestures[selected].inUse)
             del.saveGestures(gestures: self.gestures)
         }
         self.dismiss(animated: true, completion: nil)

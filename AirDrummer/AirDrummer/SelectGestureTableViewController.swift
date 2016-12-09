@@ -16,6 +16,8 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
         Gesture(id: "['Gesture 2']",gesture_name: "High Hit",gif_name:"popcorn",instrument: "Hi-Hat"),
         Gesture(id: "['Gesture 3']",gesture_name: "Flipped Hit",gif_name:"popcorn",instrument: "Toms")
     ]
+    
+    var kitName:String = "Instrument 1"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,7 +79,6 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
         
         return cell
     }
-
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell:GestureTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! GestureTableViewCell
@@ -148,9 +150,10 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
         }
         
         //save new drum kit
-        let newDrumKit:DrumKit = DrumKit(name: "New Drum Kit!", gestures: gestureDict)
+        let newDrumKit:DrumKit = DrumKit(name: kitName, gestures: gestureDict)
         drumKits.append(newDrumKit)
-        saveDrumKits(data: drumKits, index: (drumKits.count-1))
+        saveDrumKits(data: drumKits)
+        saveSelectedKit(index: (drumKits.count-1))
         self.dismiss(animated: true, completion: nil)
     }
 

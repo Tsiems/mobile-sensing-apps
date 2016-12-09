@@ -44,7 +44,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        (drumKits,selectedDrumKit) = loadDrumKits()
+        drumKits = loadDrumKits()
+        selectedDrumKit = loadSelectedKit()
         
         //set the time to "now" for all instruments
         players["Hi-Hat"]!["time"] = Date()
@@ -88,6 +89,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
             }
         }
         
+        //set up recorder
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -371,7 +373,13 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     
     
     func startRecording() {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("\(Date()).m4a")
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "MM-dd-yy h:mm a"
+        
+        let dateStamp = dateFormatter.string(from: Date()) + ".m4a"
+        
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(dateStamp)
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
