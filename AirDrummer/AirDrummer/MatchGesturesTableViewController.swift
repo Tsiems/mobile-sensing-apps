@@ -10,6 +10,7 @@ import UIKit
 
 class MatchGesturesTableViewController: UITableViewController {
     var gestures:[String] = ["Gesture 1", "Gesture 2", "Gesture 3", "Gesture 4", "Gesture 5"]
+    var selected = -1;
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -43,6 +44,8 @@ class MatchGesturesTableViewController: UITableViewController {
         let selectedCell:Gesture2TableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! Gesture2TableViewCell
         // save this as the object gesture and return
         print(gestures[indexPath.row])
+        self.selected = indexPath.row
+        print(selected)
         if (indexPath.row == 1) {
             selectedCell.inUse.isHidden = true
         }
@@ -51,23 +54,33 @@ class MatchGesturesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let deselectedCell:Gesture2TableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! Gesture2TableViewCell
-        
-        if (indexPath.row == 1) {
-            deselectedCell.inUse.isHidden = false
+        if tableView.cellForRow(at: indexPath as IndexPath) != nil {
+            let deselectedCell:Gesture2TableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! Gesture2TableViewCell
+            
+            if (indexPath.row == 1) {
+                deselectedCell.inUse.isHidden = false
+            }
+            
+            deselectedCell.gestureView.backgroundColor = UIColor.black
         }
-        
-        deselectedCell.gestureView.backgroundColor = UIColor.black
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gesture2Cell", for: indexPath) as! Gesture2TableViewCell
-
+        
+        cell.layer.shouldRasterize = true;
+        cell.layer.rasterizationScale = UIScreen.main.scale
         // Configure the cell...
         cell.gestureLabel.text = gestures[indexPath.row]
-        if (indexPath.row != 1) {
+        if (indexPath.row != 1 ) {
             cell.inUse.isHidden = true
+        }
+        
+        if (selected != indexPath.row) {
+            cell.gestureView.backgroundColor = UIColor.black
+        } else {
+            cell.gestureView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
         }
 
         return cell
