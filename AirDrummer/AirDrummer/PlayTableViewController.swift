@@ -128,6 +128,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
             }
         }
         
+        //set up recorder
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -146,6 +147,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         catch {
             print("failed to record 2")
         }
+        
+        print("\(Date())") 
         
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         self.startCMMonitoring()
