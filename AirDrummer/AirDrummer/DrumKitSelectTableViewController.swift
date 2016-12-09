@@ -12,6 +12,8 @@ class DrumKitSelectTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        (drumKits,selectedDrumKit) = loadDrumKits()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,17 +36,19 @@ class DrumKitSelectTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return drumKits.count
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell:DrumKitTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! DrumKitTableViewCell
         selectedCell.animatedView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
         selectedCell.contentView.backgroundColor = UIColor.white
         selectedCell.kitLabel.textColor = UIColor.black
+        
+        selectedDrumKit = indexPath.row
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        var cellToDeSelect:DrumKitTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! DrumKitTableViewCell
+        let cellToDeSelect:DrumKitTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! DrumKitTableViewCell
         cellToDeSelect.kitLabel.textColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
     }
 
@@ -53,9 +57,14 @@ class DrumKitSelectTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drumKitCell", for: indexPath) as! DrumKitTableViewCell
 
         // Configure the cell...
-        cell.kitLabel.text = "DrumKit \(indexPath.row)"
+        cell.kitLabel.text = drumKits[indexPath.row].name
         
-
+        if indexPath.row == selectedDrumKit {
+            cell.animatedView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+            cell.contentView.backgroundColor = UIColor.white
+            cell.kitLabel.textColor = UIColor.black
+        }
+        
         return cell
     }
     
