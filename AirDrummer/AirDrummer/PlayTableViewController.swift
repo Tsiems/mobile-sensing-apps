@@ -147,8 +147,6 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
             print("failed to record 2")
         }
         
-        print("\(Date())") 
-        
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         self.startCMMonitoring()
         
@@ -410,7 +408,13 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     
     
     func startRecording() {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("\(Date()).m4a")
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "MM-dd-yy h:mm a"
+        
+        let dateStamp = dateFormatter.string(from: Date()) + ".m4a"
+        
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(dateStamp)
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
