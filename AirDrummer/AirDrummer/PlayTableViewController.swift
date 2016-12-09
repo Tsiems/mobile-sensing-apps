@@ -110,7 +110,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         }
         
         self.session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
-        self.startCMMonitoring()
+        
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -118,6 +118,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.tableView.reloadData()
+        self.startCMMonitoring()
         if (startAnimating) {
             indicatorView.state = .ESTMusicIndicatorViewStatePlaying
         }
