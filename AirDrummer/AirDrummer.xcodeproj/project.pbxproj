@@ -821,7 +821,7 @@
 				TargetAttributes = {
 					B41716B41DD1160B00999160 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 788J8M5NBX;
+						DevelopmentTeam = 26Y78VEH49;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -1245,7 +1245,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 788J8M5NBX;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1262,7 +1262,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 788J8M5NBX;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
