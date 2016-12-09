@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163E8EEB1DFB129000F9EAD5 /* DrumKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E8EEA1DFB129000F9EAD5 /* DrumKit.swift */; };
 		5C136E5D1DE3511500EE9B30 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C136E5C1DE3511500EE9B30 /* 10.jpg */; };
 		5C4812DF1DE930E000473AA4 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */; };
 		5C48137B1DF0C2B400473AA4 /* ZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812E11DF0C2B400473AA4 /* ZoomAnimator.swift */; };
@@ -231,6 +232,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		163E8EEA1DFB129000F9EAD5 /* DrumKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrumKit.swift; path = ../DrumKit.swift; sourceTree = "<group>"; };
 		5C136E5C1DE3511500EE9B30 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		5C4812E11DF0C2B400473AA4 /* ZoomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZoomAnimator.swift; path = IBAnimatable2/ZoomAnimator.swift; sourceTree = SOURCE_ROOT; };
@@ -675,6 +677,7 @@
 			isa = PBXGroup;
 			children = (
 				B41716B81DD1160B00999160 /* AppDelegate.swift */,
+				163E8EEA1DFB129000F9EAD5 /* DrumKit.swift */,
 				B41716BA1DD1160B00999160 /* ViewController.swift */,
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
 				5C7A08221DFB00AB00C2607D /* Gesture2TableViewCell.swift */,
@@ -818,7 +821,7 @@
 				TargetAttributes = {
 					B41716B41DD1160B00999160 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 26Y78VEH49;
+						DevelopmentTeam = 788J8M5NBX;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -1000,6 +1003,7 @@
 				5C4813FF1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				5C4813E11DF0C2B500473AA4 /* AnimatableTableViewCell.swift in Sources */,
 				5C4813B81DF0C2B500473AA4 /* NatGeoAnimator.swift in Sources */,
+				163E8EEB1DFB129000F9EAD5 /* DrumKit.swift in Sources */,
 				5C4813E71DF0C2B500473AA4 /* AnimatableNavigationController.swift in Sources */,
 				5C4813FA1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				5C4813D01DF0C2B500473AA4 /* ColorType.swift in Sources */,
@@ -1241,7 +1245,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 26Y78VEH49;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1258,7 +1262,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 26Y78VEH49;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
