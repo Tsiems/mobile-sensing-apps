@@ -64,6 +64,12 @@ class RecordingsTableViewController: UITableViewController, AVAudioPlayerDelegat
         // #warning Incomplete implementation, return the number of rows
         return recordings.count
     }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let deselectedCell:RecordingTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! RecordingTableViewCell
+        deselectedCell.recordingView.backgroundColor = UIColor.black
+        deselectedCell.recordingTitle.textColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,6 +92,10 @@ class RecordingsTableViewController: UITableViewController, AVAudioPlayerDelegat
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell:RecordingTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! RecordingTableViewCell
+        selectedCell.recordingView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+        selectedCell.recordingTitle.textColor = UIColor.black
+        
         let recordingURL = directoryContents.filter{ $0.deletingPathExtension().lastPathComponent == recordings[indexPath.row] }[0]
         audioPlayer = try! AVAudioPlayer(contentsOf: recordingURL)
         audioPlayer.prepareToPlay()

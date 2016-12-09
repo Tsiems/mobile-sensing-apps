@@ -10,6 +10,7 @@ import UIKit
 
 class RecordingTableViewCell: UITableViewCell {
     @IBOutlet weak var recordingTitle: UILabel!
+    @IBOutlet weak var recordingView: AnimatableView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

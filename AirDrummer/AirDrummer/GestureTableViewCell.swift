@@ -1,16 +1,16 @@
 //
-//  MainTableViewCell.swift
+//  GestureTableViewCell.swift
 //  AirDrummer
 //
-//  Created by Erik Gabrielsen on 12/8/16.
+//  Created by Erik Gabrielsen on 12/9/16.
 //  Copyright © 2016 Danh Nguyen. All rights reserved.
 //
 
 import UIKit
 
-class MainTableViewCell: UITableViewCell {
+class GestureTableViewCell: UITableViewCell {
     @IBOutlet weak var instrumentLabel: UILabel!
-    @IBOutlet weak var gestureLabel: UILabel!
+    @IBOutlet weak var gestureView: AnimatableView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

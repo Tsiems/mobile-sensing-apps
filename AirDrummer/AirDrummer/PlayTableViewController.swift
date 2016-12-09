@@ -37,6 +37,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     var selectedDrumKit = 0
     var drumKits = [DrumKit(name:"default",gestures:["['Gesture 1']":Gesture(id: "['Gesture 1']",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare")])]
     
+    var currentDrumKit:[String] = ["","",""]
+    
     
     var players = [
         "Hi-Hat":["filename":"hihat","index":0,"players":[AVAudioPlayer(),AVAudioPlayer(),AVAudioPlayer()]],
@@ -142,7 +144,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return currentDrumKit.count
     }
 
     
@@ -150,10 +152,15 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as! MainTableViewCell
 
         // Configure the cell...
+        cell.instrumentLabel.text = "Instrument"
+        cell.gestureLabel.text = "Some Gesture"
 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 230
@@ -319,25 +326,6 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
 
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 1
-//    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.
