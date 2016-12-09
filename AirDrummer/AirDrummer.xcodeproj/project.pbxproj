@@ -178,6 +178,7 @@
 		5C7A081F1DFAFCEF00C2607D /* MatchGesturesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A081E1DFAFCEF00C2607D /* MatchGesturesTableViewController.swift */; };
 		5C7A08211DFAFD3E00C2607D /* GestureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08201DFAFD3E00C2607D /* GestureTableViewCell.swift */; };
 		5C7A08231DFB00AB00C2607D /* Gesture2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08221DFB00AB00C2607D /* Gesture2TableViewCell.swift */; };
+		5C7A08251DFB1E7A00C2607D /* GestureTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08241DFB1E7A00C2607D /* GestureTitleTableViewCell.swift */; };
 		5CC9B8191DE36BBB001B21DD /* SelectInstrumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */; };
 		5CC9BA971DE3A963001B21DD /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */; };
 		5CC9BA991DE3A975001B21DD /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */; };
@@ -403,6 +404,7 @@
 		5C7A081E1DFAFCEF00C2607D /* MatchGesturesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchGesturesTableViewController.swift; sourceTree = "<group>"; };
 		5C7A08201DFAFD3E00C2607D /* GestureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureTableViewCell.swift; sourceTree = "<group>"; };
 		5C7A08221DFB00AB00C2607D /* Gesture2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gesture2TableViewCell.swift; sourceTree = "<group>"; };
+		5C7A08241DFB1E7A00C2607D /* GestureTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureTitleTableViewCell.swift; sourceTree = "<group>"; };
 		5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInstrumentsViewController.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMBounceAnimation.swift; path = RAMAnimatedTabBarController/Animations/BounceAnimation/RAMBounceAnimation.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMFrameItemAnimation.swift; path = RAMAnimatedTabBarController/Animations/FrameAnimation/RAMFrameItemAnimation.swift; sourceTree = SOURCE_ROOT; };
@@ -653,6 +655,7 @@
 		B41716AC1DD1160B00999160 = {
 			isa = PBXGroup;
 			children = (
+				5C7A08241DFB1E7A00C2607D /* GestureTitleTableViewCell.swift */,
 				5CC9BBE41DE8DD8E001B21DD /* ItemCollectionViewCell.swift */,
 				5CC9BBE21DE8D639001B21DD /* KDDragAndDropManager.swift */,
 				B41716E91DD116AB00999160 /* HTTPExample */,
@@ -1020,6 +1023,7 @@
 				5C7A081F1DFAFCEF00C2607D /* MatchGesturesTableViewController.swift in Sources */,
 				5C4813991DF0C2B400473AA4 /* RotationDesignable.swift in Sources */,
 				5C4813CE1DF0C2B500473AA4 /* ContainerTransition.swift in Sources */,
+				5C7A08251DFB1E7A00C2607D /* GestureTitleTableViewCell.swift in Sources */,
 				5C4813FB1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				5C4813B11DF0C2B500473AA4 /* PortalAnimator.swift in Sources */,
 				5C4813881DF0C2B400473AA4 /* TintDesignable.swift in Sources */,

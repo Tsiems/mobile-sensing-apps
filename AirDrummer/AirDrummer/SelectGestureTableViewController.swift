@@ -20,6 +20,7 @@ class SelectGestureTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         items = ["Instrument 1", "Instrument 2", "Instrument 3"]
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +47,6 @@ class SelectGestureTableViewController: UITableViewController {
         
         return cell
     }
-
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell:GestureTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! GestureTableViewCell

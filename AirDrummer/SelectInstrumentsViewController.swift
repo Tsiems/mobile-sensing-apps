@@ -10,9 +10,10 @@ import UIKit
 
 
 
-class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollectionViewDataSource {
+class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollectionViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var titleView: AnimatableView!
+    @IBOutlet weak var kitNameField: UITextField!
     
     @IBOutlet weak var firstCollectionViewController: UICollectionView!
     
@@ -21,6 +22,7 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
     var data : [[DataItem]] = [[DataItem]]()
     
     var dragAndDropManager : KDDragAndDropManager?
+    let numberToolbar: UIToolbar = UIToolbar()
     
     override func viewDidLoad() {
         
@@ -54,6 +56,22 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
         
         self.dragAndDropManager = KDDragAndDropManager(canvas: self.view, collectionViews: [firstCollectionViewController, secondCollectionViewController])
         
+        self.kitNameField.delegate = self
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        numberToolbar.barStyle = UIBarStyle.blackTranslucent
+        numberToolbar.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+        numberToolbar.tintColor = UIColor.white
+        numberToolbar.items=[
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.dismissKeyboard))
+        ]
+        
+        numberToolbar.sizeToFit()
+        self.kitNameField.inputAccessoryView = numberToolbar
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,6 +80,10 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
         UITabBar.appearance().barTintColor = UIColor.black
         
 
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     

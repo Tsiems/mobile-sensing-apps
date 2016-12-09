@@ -407,7 +407,7 @@
                                 <segue destination="Loq-9g-hgY" kind="presentation" identifier="goToRecordings" modalTransitionStyle="flipHorizontal" id="3v4-aP-Fqe"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="DrumKits" id="VDe-0g-ICA">
+                        <barButtonItem key="rightBarButtonItem" image="drum-1" id="VDe-0g-ICA">
                             <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="tri-KV-lPx" kind="show" id="9TJ-tY-j0a"/>
@@ -445,12 +445,33 @@
                                                     <color key="textColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drum-1" translatesAutoresizingMaskIntoConstraints="NO" id="agb-xz-epn">
+                                                    <rect key="frame" x="301" y="15" width="30" height="30"/>
+                                                    <color key="backgroundColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Nv0-mO-axk"/>
+                                                        <constraint firstAttribute="width" constant="30" id="Upd-wH-2gl"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drum-1" translatesAutoresizingMaskIntoConstraints="NO" id="djz-4E-yRO">
+                                                    <rect key="frame" x="231" y="15" width="30" height="30"/>
+                                                    <color key="backgroundColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="4P0-fK-E8G"/>
+                                                        <constraint firstAttribute="height" constant="30" id="DSZ-zX-Iv0"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="3rt-l8-LbD"/>
+                                                <constraint firstAttribute="trailing" secondItem="agb-xz-epn" secondAttribute="trailing" constant="8" id="9UK-Xs-dt6"/>
                                                 <constraint firstItem="rKk-E2-HNP" firstAttribute="centerY" secondItem="g8j-wD-Npa" secondAttribute="centerY" id="Qgt-7C-Enm"/>
                                                 <constraint firstItem="rKk-E2-HNP" firstAttribute="leading" secondItem="g8j-wD-Npa" secondAttribute="leading" constant="8" id="ctX-5Y-lQi"/>
+                                                <constraint firstItem="agb-xz-epn" firstAttribute="centerY" secondItem="g8j-wD-Npa" secondAttribute="centerY" id="eb3-gA-fIk"/>
+                                                <constraint firstItem="djz-4E-yRO" firstAttribute="centerY" secondItem="g8j-wD-Npa" secondAttribute="centerY" id="lxi-c6-p5F"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
@@ -479,15 +500,30 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drum-1" translatesAutoresizingMaskIntoConstraints="NO" id="0Xv-bY-wNX">
+                                            <rect key="frame" x="284" y="33" width="30" height="30"/>
+                                            <color key="backgroundColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="W9O-1d-brw"/>
+                                                <constraint firstAttribute="width" constant="30" id="jjT-JS-tIV"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="g8j-wD-Npa" firstAttribute="centerY" secondItem="7IN-4y-Bl1" secondAttribute="centerY" id="F41-Qg-068"/>
+                                        <constraint firstItem="0Xv-bY-wNX" firstAttribute="leading" secondItem="djz-4E-yRO" secondAttribute="trailing" constant="5" id="MFC-Dp-IMb"/>
                                         <constraint firstItem="g8j-wD-Npa" firstAttribute="leading" secondItem="7IN-4y-Bl1" secondAttribute="leadingMargin" constant="10" id="bB6-6k-g6f"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="g8j-wD-Npa" secondAttribute="trailing" constant="10" id="dzw-wu-vTa"/>
+                                        <constraint firstItem="agb-xz-epn" firstAttribute="leading" secondItem="0Xv-bY-wNX" secondAttribute="trailing" constant="5" id="eIV-TB-Z1l"/>
+                                        <constraint firstItem="0Xv-bY-wNX" firstAttribute="centerY" secondItem="7IN-4y-Bl1" secondAttribute="centerY" id="h6h-VO-lTx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="animatedView" destination="g8j-wD-Npa" id="SYW-zQ-jAm"/>
+                                    <outlet property="imageView1" destination="agb-xz-epn" id="oj9-0M-FOn"/>
+                                    <outlet property="imageView2" destination="0Xv-bY-wNX" id="tYq-Qb-iEo"/>
+                                    <outlet property="imageView3" destination="djz-4E-yRO" id="bfq-xa-oud"/>
                                     <outlet property="kitLabel" destination="rKk-E2-HNP" id="kDX-jA-TbT"/>
                                 </connections>
                             </tableViewCell>
@@ -499,17 +535,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Drum Kits" id="DMY-7U-Us2">
-                        <barButtonItem key="backBarButtonItem" title="Play" id="H6B-zr-EjB"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="F2L-X1-zdL">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="FYg-Dh-06p">
-                                <rect key="frame" x="337" y="11" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="9g9-uI-CWV" kind="presentation" id="rHP-a7-kec"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="F2L-X1-zdL">
                             <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="9g9-uI-CWV" kind="presentation" id="5BI-1q-pM0"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -522,7 +552,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NKH-OY-sfp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="pYa-la-KLa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pYa-la-KLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -572,22 +602,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iku-Cj-lzw">
                                 <rect key="frame" x="0.0" y="58" width="375" height="545"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Your Drum Set!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNu-Ro-vF2">
-                                        <rect key="frame" x="8" y="5" width="367" height="20"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <color key="textColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Drum Kit Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="0N0-lT-BpU">
+                                        <rect key="frame" x="8" y="10" width="359" height="40"/>
+                                        <color key="backgroundColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Pid-Ki-yQF"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="pNu-Ro-vF2" firstAttribute="leading" secondItem="iku-Cj-lzw" secondAttribute="leading" constant="8" id="2Um-jB-hvK"/>
-                                    <constraint firstItem="pNu-Ro-vF2" firstAttribute="top" secondItem="iku-Cj-lzw" secondAttribute="top" constant="5" id="KDk-YN-fEH"/>
-                                    <constraint firstAttribute="trailing" secondItem="pNu-Ro-vF2" secondAttribute="trailing" id="j3h-OV-Mza"/>
+                                    <constraint firstItem="0N0-lT-BpU" firstAttribute="leading" secondItem="iku-Cj-lzw" secondAttribute="leading" constant="8" id="C60-Gk-IEK"/>
+                                    <constraint firstAttribute="trailing" secondItem="0N0-lT-BpU" secondAttribute="trailing" constant="8" id="VHp-y8-i6d"/>
+                                    <constraint firstItem="0N0-lT-BpU" firstAttribute="top" secondItem="iku-Cj-lzw" secondAttribute="top" constant="10" id="Xsa-E1-bjS"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfF-54-Mlx">
-                                <rect key="frame" x="5" y="90" width="365" height="150"/>
+                                <rect key="frame" x="5" y="120" width="365" height="150"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6w3-kc-hHS" customClass="KDDragAndDropCollectionView" customModule="AirDrummer" customModuleProvider="target">
                                         <rect key="frame" x="2" y="2" width="361" height="146"/>
@@ -682,7 +717,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ja5-qh-cJG" customClass="KDDragAndDropCollectionView" customModule="AirDrummer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="248" width="375" height="110"/>
+                                <rect key="frame" x="0.0" y="278" width="375" height="110"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="xxd-yo-wk1"/>
@@ -764,7 +799,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Se-FT-zT5" customClass="AnimatableButton" customModule="AirDrummer" customModuleProvider="target">
-                                <rect key="frame" x="30" y="388" width="315" height="38"/>
+                                <rect key="frame" x="30" y="418" width="315" height="38"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="rQG-Hv-jNa"/>
@@ -812,14 +847,14 @@
                             <constraint firstAttribute="trailing" secondItem="iku-Cj-lzw" secondAttribute="trailing" id="YYy-dG-LoQ"/>
                             <constraint firstItem="iku-Cj-lzw" firstAttribute="top" secondItem="6wx-ED-WUW" secondAttribute="bottom" constant="58" id="hNU-GU-ibY"/>
                             <constraint firstItem="Ja5-qh-cJG" firstAttribute="top" secondItem="nfF-54-Mlx" secondAttribute="bottom" constant="8" id="nER-CG-6Mf"/>
-                            <constraint firstItem="nfF-54-Mlx" firstAttribute="top" secondItem="eQ0-K8-LWA" secondAttribute="bottom" constant="30" id="rO5-1s-3CK"/>
+                            <constraint firstItem="nfF-54-Mlx" firstAttribute="top" secondItem="eQ0-K8-LWA" secondAttribute="bottom" constant="60" id="rO5-1s-3CK"/>
                             <constraint firstAttribute="trailing" secondItem="Ja5-qh-cJG" secondAttribute="trailing" id="vD3-XZ-IjC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Se-FT-zT5" secondAttribute="trailing" constant="14" id="weR-PF-O5v"/>
                             <constraint firstItem="Ja5-qh-cJG" firstAttribute="leading" secondItem="70o-bd-MFQ" secondAttribute="leading" id="yfU-wx-87E"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Customize Your DrumSet!" id="dLc-iK-WkW">
-                        <barButtonItem key="leftBarButtonItem" title="X" id="PHg-lQ-9nq">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="stop" id="PHg-lQ-9nq">
                             <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="dismissView:" destination="V8c-tz-i9g" id="j2k-zA-RFI"/>
@@ -828,6 +863,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="firstCollectionViewController" destination="6w3-kc-hHS" id="caF-yA-fta"/>
+                        <outlet property="kitNameField" destination="0N0-lT-BpU" id="6Ua-DJ-tSe"/>
                         <outlet property="secondCollectionViewController" destination="Ja5-qh-cJG" id="R73-lR-Jzd"/>
                         <outlet property="titleView" destination="eQ0-K8-LWA" id="iQb-Kv-uzW"/>
                         <segue destination="qcB-Og-Ora" kind="show" identifier="playSegue" id="c3L-Zq-Ycf"/>
@@ -851,24 +887,24 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="gestureCell" rowHeight="89" id="KD8-A2-98g" customClass="GestureTableViewCell" customModule="AirDrummer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="gestureCell" rowHeight="89" id="Gh4-cm-0Vp" customClass="GestureTableViewCell" customModule="AirDrummer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KD8-A2-98g" id="DD9-qh-V5W">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gh4-cm-0Vp" id="5hf-Vh-sCJ">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfS-Xp-LkW">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufk-Bv-pJa">
                                             <rect key="frame" x="8" y="35" width="90" height="20"/>
                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-F1-Gi8" customClass="AnimatableView" customModule="AirDrummer" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLO-a7-szs" customClass="AnimatableView" customModule="AirDrummer" customModuleProvider="target">
                                             <rect key="frame" x="234" y="8" width="100" height="72"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="fCy-rg-c5E"/>
+                                                <constraint firstAttribute="width" constant="100" id="Lr7-w6-9hD"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -887,16 +923,16 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Yoh-F1-Gi8" firstAttribute="top" secondItem="DD9-qh-V5W" secondAttribute="topMargin" id="AQy-2Z-ZvU"/>
-                                        <constraint firstItem="Yoh-F1-Gi8" firstAttribute="trailing" secondItem="DD9-qh-V5W" secondAttribute="trailingMargin" id="bNt-rT-lec"/>
-                                        <constraint firstItem="ZfS-Xp-LkW" firstAttribute="centerY" secondItem="DD9-qh-V5W" secondAttribute="centerY" id="eIa-w5-krJ"/>
-                                        <constraint firstItem="Yoh-F1-Gi8" firstAttribute="bottom" secondItem="DD9-qh-V5W" secondAttribute="bottomMargin" id="fVW-GY-bHM"/>
-                                        <constraint firstItem="ZfS-Xp-LkW" firstAttribute="leading" secondItem="DD9-qh-V5W" secondAttribute="leadingMargin" id="jOn-ky-0UQ"/>
+                                        <constraint firstItem="zLO-a7-szs" firstAttribute="trailing" secondItem="5hf-Vh-sCJ" secondAttribute="trailingMargin" id="Gc4-WS-O7r"/>
+                                        <constraint firstItem="ufk-Bv-pJa" firstAttribute="centerY" secondItem="5hf-Vh-sCJ" secondAttribute="centerY" id="Kzh-yn-EXs"/>
+                                        <constraint firstItem="ufk-Bv-pJa" firstAttribute="leading" secondItem="5hf-Vh-sCJ" secondAttribute="leadingMargin" id="O1B-K4-Kwe"/>
+                                        <constraint firstItem="zLO-a7-szs" firstAttribute="top" secondItem="5hf-Vh-sCJ" secondAttribute="topMargin" id="e5W-O8-iSV"/>
+                                        <constraint firstItem="zLO-a7-szs" firstAttribute="bottom" secondItem="5hf-Vh-sCJ" secondAttribute="bottomMargin" id="nLh-wI-cb6"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="gestureView" destination="Yoh-F1-Gi8" id="1eg-gS-fnn"/>
-                                    <outlet property="instrumentLabel" destination="ZfS-Xp-LkW" id="2pw-nr-hhP"/>
+                                    <outlet property="gestureView" destination="zLO-a7-szs" id="Rxu-bZ-PD9"/>
+                                    <outlet property="instrumentLabel" destination="ufk-Bv-pJa" id="Jkn-iO-lBQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1005,13 +1041,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Choose Gesture" id="VlA-4z-S88">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="LOI-BG-oPS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="LOI-BG-oPS">
                             <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancel:" destination="8fe-vD-VRN" id="xyE-I1-BVU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="R9i-jv-DRa">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="R9i-jv-DRa">
                             <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="save:" destination="8fe-vD-VRN" id="xnt-X5-sVU"/>
@@ -1115,7 +1151,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recordings" id="ejo-18-e5f">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="dEE-uo-Nfb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="dEE-uo-Nfb">
                             <connections>
                                 <action selector="done:" destination="hmR-vI-DZh" id="1dG-8f-90J"/>
                             </connections>
@@ -1156,7 +1192,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E4d-rj-crx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="5cX-gl-zn6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5cX-gl-zn6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1181,7 +1217,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Loq-9g-hgY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="YYC-ba-PfW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="YYC-ba-PfW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1206,5 +1242,6 @@
         <image name="10.jpg" width="1920" height="1200"/>
         <image name="Soundwave" width="2400" height="684"/>
         <image name="band" width="675" height="257"/>
+        <image name="drum-1" width="25" height="25"/>
     </resources>
 </document>
