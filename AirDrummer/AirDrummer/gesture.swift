@@ -14,14 +14,15 @@ class Gesture: NSObject, NSCoding{
     let id : String
     let gesture_name : String
     let gif_name : String
-    let instrument : String
+    var instrument : String
+    var inUse : Bool
 //    let gif : UIImage
-    init(id: String, gesture_name:String,gif_name: String,instrument: String) {
+    init(id: String, gesture_name:String,gif_name: String,instrument: String,inUse:Bool=false) {
         self.id = id
         self.gesture_name = gesture_name
         self.gif_name = gif_name 
         self.instrument = instrument
-
+        self.inUse = inUse
         //self.gif = UIImage(named: self.gif_name + ".gif")!
 //        self.gif = UIImage.gifImageWithName(name: self.gif_name)!
     }

@@ -13,13 +13,26 @@ class DrumKitSelectTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        (drumKits,selectedDrumKit) = loadDrumKits()
-
+        drumKits = loadDrumKits()
+        selectedDrumKit = loadSelectedKit()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        drumKits = loadDrumKits()
+        selectedDrumKit = loadSelectedKit()
+        
+        self.tableView.reloadData()
+        self.tableView.selectRow(at: IndexPath(row: selectedDrumKit,section: 0), animated: false, scrollPosition: UITableViewScrollPosition.middle)
+        
+        let selectedCell:DrumKitTableViewCell = tableView.cellForRow(at: IndexPath(row: selectedDrumKit,section: 0)) as! DrumKitTableViewCell
+        selectedCell.animatedView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+        selectedCell.contentView.backgroundColor = UIColor.white
+        selectedCell.kitLabel.textColor = UIColor.black
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,11 +58,14 @@ class DrumKitSelectTableViewController: UITableViewController {
         selectedCell.kitLabel.textColor = UIColor.black
         
         selectedDrumKit = indexPath.row
+        saveSelectedKit(index: selectedDrumKit)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cellToDeSelect:DrumKitTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! DrumKitTableViewCell
         cellToDeSelect.kitLabel.textColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+//        cellToDeSelect.contentView.backgroundColor = UIColor.black
+        cellToDeSelect.animatedView.backgroundColor = UIColor.black
     }
 
     
@@ -63,6 +79,9 @@ class DrumKitSelectTableViewController: UITableViewController {
             cell.animatedView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
             cell.contentView.backgroundColor = UIColor.white
             cell.kitLabel.textColor = UIColor.black
+        }
+        else {
+            cell.kitLabel.textColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
         }
         
         return cell
