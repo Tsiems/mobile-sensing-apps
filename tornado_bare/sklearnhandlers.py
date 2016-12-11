@@ -12,6 +12,8 @@ from basehandler import BaseHandler
 
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
+
+from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 import pickle
 from bson.binary import Binary
@@ -70,7 +72,7 @@ class UpdateModelForDatasetId(BaseHandler):
 
         # fit the model to the data
         # c1 = KNeighborsClassifier(n_neighbors=10);
-        c1 = RandomForestClassifier(n_estimators=25);
+        c1 = GaussianNB()
         # c1 = SVC(gamma=0.001)
         acc = -1;
         if l:
@@ -82,6 +84,7 @@ class UpdateModelForDatasetId(BaseHandler):
             self.db.models.update({"dsid":dsid},
                 {  "$set": {"model":Binary(bytes)}  },
                 upsert=True)
+            print(f,l)
 
         # send back the resubstitution accuracy
         # if training takes a while, we are blocking tornado!! No!!

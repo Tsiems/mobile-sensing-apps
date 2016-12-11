@@ -60,20 +60,23 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     
     func prepareForSample(gestureName:String) {
         self.gestureLabel.text = "\(gestureName)"
+        
+        let fftVector = (self.orientationBuffer.getDataAsVector()) as NSArray
+        self.sendFeatureArray(data: fftVector, label: self.gestureLabel.text!)
     }
     
     
     func handleMotion(motion:CMDeviceMotion?, error:Error?)->Void{
         self.ringBuffer.addNewData(Float((motion?.userAcceleration.x)!), withY: Float((motion?.userAcceleration.y)!), withZ: Float((motion?.userAcceleration.z)!))
-        
+//
         self.orientationBuffer.addNewData(Float((motion?.attitude.pitch)!), withY: Float((motion?.attitude.roll)!), withZ: Float((motion?.attitude.yaw)!))
         
-        let mag = fabs((motion?.userAcceleration.x)!)+fabs((motion?.userAcceleration.y)!)+fabs((motion?.userAcceleration.z)!)
-        
-        if(mag > self.magValue) {
-            print(mag)
-            self.backQueue.addOperation({() -> Void in self.motionEventOccurred()})
-        }
+//        let mag = fabs((motion?.userAcceleration.x)!)+fabs((motion?.userAcceleration.y)!)+fabs((motion?.userAcceleration.z)!)
+//        
+//        if(mag > self.magValue) {
+//            print(mag)
+//            self.backQueue.addOperation({() -> Void in self.motionEventOccurred()})
+//        }
     }
     
     func startCMMonitoring(){
@@ -85,18 +88,18 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     }
     
     func motionEventOccurred() {
-        let data = self.ringBuffer.getDataAsVector() as NSArray
-        
-        if data[0] as! Double == 0.0 {
-            print("not full full")
-        } else {
-            
-            //get the FFT of both buffers and add them up for feature data
-            let fftVector = (self.ringBuffer.getDataAsVector()+self.orientationBuffer.getDataAsVector()) as NSArray
-            
-            self.sendFeatureArray(data: fftVector, label: self.gestureLabel.text!)
-            //self.sendFeatureArray(data: data, label: self.gestureLabel.text!)
-        }
+//        let data = self.ringBuffer.getDataAsVector() as NSArray
+//        
+//        if data[0] as! Double == 0.0 {
+//            print("not full full")
+//        } else {
+//            
+//            //get the FFT of both buffers and add them up for feature data
+//            let fftVector = (self.orientationBuffer.getDataAsVector()) as NSArray
+//            
+//            self.sendFeatureArray(data: fftVector, label: self.gestureLabel.text!)
+//            //self.sendFeatureArray(data: data, label: self.gestureLabel.text!)
+//        }
     }
     
     func postFeatureHandler(data:Data?, urlResponse:URLResponse?, error:Error?) -> Void{
@@ -155,47 +158,47 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
     }
     
     @IBAction func trainFirst(_ sender: Any) {
-        self.firstButton.isEnabled = false
-        self.secondButton.isEnabled = true
-        self.thirdButton.isEnabled = true
-        self.fourthButton.isEnabled = true
-        self.fifthButton.isEnabled = true
+//        self.firstButton.isEnabled = false
+//        self.secondButton.isEnabled = true
+//        self.thirdButton.isEnabled = true
+//        self.fourthButton.isEnabled = true
+//        self.fifthButton.isEnabled = true
         prepareForSample(gestureName: gestures[0])
     }
     
     @IBAction func trainSecond(_ sender: Any) {
-        self.firstButton.isEnabled = true
-        self.secondButton.isEnabled = false
-        self.thirdButton.isEnabled = true
-        self.fourthButton.isEnabled = true
-        self.fifthButton.isEnabled = true
+//        self.firstButton.isEnabled = true
+//        self.secondButton.isEnabled = false
+//        self.thirdButton.isEnabled = true
+//        self.fourthButton.isEnabled = true
+//        self.fifthButton.isEnabled = true
         prepareForSample(gestureName: gestures[1])
     }
     
     @IBAction func trainThird(_ sender: Any) {
-        self.firstButton.isEnabled = true
-        self.secondButton.isEnabled = true
-        self.thirdButton.isEnabled = false
-        self.fourthButton.isEnabled = true
-        self.fifthButton.isEnabled = true
+//        self.firstButton.isEnabled = true
+//        self.secondButton.isEnabled = true
+//        self.thirdButton.isEnabled = false
+//        self.fourthButton.isEnabled = true
+//        self.fifthButton.isEnabled = true
         prepareForSample(gestureName: gestures[2])
     }
 
     @IBAction func trainFourth(_ sender: Any) {
-        self.firstButton.isEnabled = true
-        self.secondButton.isEnabled = true
-        self.thirdButton.isEnabled = true
-        self.fourthButton.isEnabled = false
-        self.fifthButton.isEnabled = true
+//        self.firstButton.isEnabled = true
+//        self.secondButton.isEnabled = true
+//        self.thirdButton.isEnabled = true
+//        self.fourthButton.isEnabled = false
+//        self.fifthButton.isEnabled = true
         prepareForSample(gestureName: gestures[3])
     }
 
     @IBAction func trainFifth(_ sender: Any) {
-        self.firstButton.isEnabled = true
-        self.secondButton.isEnabled = true
-        self.thirdButton.isEnabled = true
-        self.fourthButton.isEnabled = true
-        self.fifthButton.isEnabled = false
+//        self.firstButton.isEnabled = true
+//        self.secondButton.isEnabled = true
+//        self.thirdButton.isEnabled = true
+//        self.fourthButton.isEnabled = true
+//        self.fifthButton.isEnabled = false
         prepareForSample(gestureName: gestures[4])
     }
     
