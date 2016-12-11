@@ -697,6 +697,7 @@
                                                     <constraint firstItem="I0M-Zw-R44" firstAttribute="centerX" secondItem="QEP-R4-lkc" secondAttribute="centerX" id="h1K-eT-b9A"/>
                                                 </constraints>
                                                 <connections>
+                                                    <outlet property="drumImage" destination="B6F-lg-R7V" id="C6C-v4-o0M"/>
                                                     <outlet property="label" destination="I0M-Zw-R44" id="yG4-SZ-vPg"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -789,6 +790,7 @@
                                             <constraint firstAttribute="bottom" secondItem="qCh-zm-0c8" secondAttribute="bottom" id="hYJ-wO-W5c"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="drumImage" destination="jdd-hr-CBR" id="mWS-hK-bXi"/>
                                             <outlet property="label" destination="9gB-S4-EeW" id="PMD-PV-LYa"/>
                                         </connections>
                                     </collectionViewCell>
