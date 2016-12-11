@@ -95,6 +95,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         do {
             try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
             try recordingSession.setActive(true)
+            try recordingSession.overrideOutputAudioPort(.speaker )
             recordingSession.requestRecordPermission() { [unowned self] allowed in
                 DispatchQueue.main.async {
                     if allowed {

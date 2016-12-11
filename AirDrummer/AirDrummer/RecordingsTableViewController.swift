@@ -36,6 +36,10 @@ class RecordingsTableViewController: UITableViewController, AVAudioPlayerDelegat
             print(error.localizedDescription)
         }
         
+        if (recordings.count == 0) {
+            recordings.append("No Recordings Saved")
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -90,14 +94,16 @@ class RecordingsTableViewController: UITableViewController, AVAudioPlayerDelegat
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCell:RecordingTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! RecordingTableViewCell
-        selectedCell.recordingView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
-        selectedCell.recordingTitle.textColor = UIColor.black
-        
-        let recordingURL = directoryContents.filter{ $0.deletingPathExtension().lastPathComponent == recordings[indexPath.row] }[0]
-        audioPlayer = try! AVAudioPlayer(contentsOf: recordingURL)
-        audioPlayer.prepareToPlay()
-        audioPlayer.play()
+        if (recordings[indexPath.row] != "No Recordings Saved") {
+            let selectedCell:RecordingTableViewCell = tableView.cellForRow(at: indexPath as IndexPath)! as! RecordingTableViewCell
+            selectedCell.recordingView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+            selectedCell.recordingTitle.textColor = UIColor.black
+            
+            let recordingURL = directoryContents.filter{ $0.deletingPathExtension().lastPathComponent == recordings[indexPath.row] }[0]
+            audioPlayer = try! AVAudioPlayer(contentsOf: recordingURL)
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        }
     }
 
     /*
@@ -111,16 +117,18 @@ class RecordingsTableViewController: UITableViewController, AVAudioPlayerDelegat
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            let recordingURL = directoryContents.filter{ $0.deletingPathExtension().lastPathComponent == recordings[indexPath.row] }[0]
-            recordings.remove(at: indexPath.row)
-            try! FileManager.default.removeItem(at: recordingURL)
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        if (recordings[indexPath.row] != "No Recordings Saved") {
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                let recordingURL = directoryContents.filter{ $0.deletingPathExtension().lastPathComponent == recordings[indexPath.row] }[0]
+                recordings.remove(at: indexPath.row)
+                try! FileManager.default.removeItem(at: recordingURL)
+                
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        }
     }
     
 
