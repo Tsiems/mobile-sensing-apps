@@ -146,7 +146,10 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
         //convert gestures into gestureDict
         var gestureDict:[String:Gesture] = [:]
         for gesture in gestures {
-            gestureDict[gesture.id] = gesture
+            if gesture.inUse == true {
+                gestureDict[gesture.id] = gesture
+            }
+            
         }
         
         //save new drum kit

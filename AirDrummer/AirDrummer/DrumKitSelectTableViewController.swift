@@ -125,7 +125,24 @@ class DrumKitSelectTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if drumKits.count == 1 {
+                let alert = UIAlertController(title: "Sorry!",
+                                              message:"You must have at least 1 drumKit",
+                                              preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+
+            } else {
+                drumKits.remove(at: indexPath.row)
+                saveDrumKits(data: drumKits)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                self.tableView.selectRow(at: IndexPath(row: 0,section: 0), animated: false, scrollPosition: UITableViewScrollPosition.middle)
+                
+                let selectedCell:DrumKitTableViewCell = tableView.cellForRow(at: IndexPath(row: 0,section: 0)) as! DrumKitTableViewCell
+                selectedCell.animatedView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+                selectedCell.contentView.backgroundColor = UIColor.white
+                selectedCell.kitLabel.textColor = UIColor.black
+            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
