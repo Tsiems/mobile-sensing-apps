@@ -10,5 +10,6 @@ import UIKit
 
 class ItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var drumImage: UIImageView!
     
 }

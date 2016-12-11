@@ -101,6 +101,8 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
         let dataItem = data[collectionView.tag][indexPath.item]
         
         cell.label.text = "\(dataItem.indexes)"
+        let image: UIImage = UIImage(named:"\(dataItem.indexes)")!
+        cell.drumImage.image = image
         
         cell.backgroundColor = dataItem.colour
         
@@ -165,22 +167,30 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
     }
     
     @IBAction func `continue`(_ sender: Any) {
-        if data[0].count > 3 {
+        if self.kitNameField.text == "" {
             let alert = UIAlertController(title: "Uh Oh!",
-                                          message:"You have too many instruments! Please only pick at most 3 drums",
-                preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } else if data[0].count == 0 {
-            let alert = UIAlertController(title: "Missing a Drum!",
-                                          message:"Please add a drum instrument by dragging it into your drum set!",
+                                          message:"Please give your Drum Kit a Title!",
                                           preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            
-            
-            self.performSegue(withIdentifier: "playSegue", sender: self)
+            if data[0].count > 3 {
+                let alert = UIAlertController(title: "Uh Oh!",
+                                              message:"You have too many instruments! Please only pick at most 3 drums",
+                    preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else if data[0].count == 0 {
+                let alert = UIAlertController(title: "Missing a Drum!",
+                                              message:"Please add a drum instrument by dragging it into your drum set!",
+                                              preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                
+                
+                self.performSegue(withIdentifier: "playSegue", sender: self)
+            }
         }
     }
     

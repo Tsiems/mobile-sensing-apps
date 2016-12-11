@@ -44,6 +44,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         drumKits = loadDrumKits()
         selectedDrumKit = loadSelectedKit()
         

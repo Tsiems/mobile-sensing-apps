@@ -72,8 +72,30 @@ class DrumKitSelectTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drumKitCell", for: indexPath) as! DrumKitTableViewCell
 
+        let gestures = drumKits[indexPath.row].gestures
+        let gestureValues = Array(gestures.values)
         // Configure the cell...
         cell.kitLabel.text = drumKits[indexPath.row].name
+        if gestureValues.count >= 1 {
+            let image: UIImage = UIImage(named:"\(gestureValues[0].instrument)")!
+            cell.imageView1.image = image
+        }
+        if gestureValues.count >= 2 {
+            let image: UIImage = UIImage(named:"\(gestureValues[1].instrument)")!
+            cell.imageView2.image = image
+        }
+        if gestureValues.count >= 3 {
+            let image: UIImage = UIImage(named:"\(gestureValues[2].instrument)")!
+            cell.imageView3.image = image
+        }
+        
+        if gestureValues.count == 1 {
+            cell.imageView2.isHidden = true
+            cell.imageView3.isHidden = true
+        } else if gestureValues.count == 2 {
+            cell.imageView3.isHidden = true
+        }
+        
         
         if indexPath.row == selectedDrumKit {
             cell.animatedView.backgroundColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
