@@ -255,7 +255,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         } else {
             
             //get the FFT of both buffers and add them up for prediction data
-            self.getPredictionData(data: (self.ringBuffer.getDataAsVector()+self.orientationBuffer.getDataAsVector()) as NSArray )
+//            self.getPredictionData(data: (self.ringBuffer.getDataAsVector()+self.orientationBuffer.getDataAsVector()) as NSArray )
+            self.getPredictionData(data: (self.orientationBuffer.getDataAsVector()) as NSArray )
             
         }
     }
