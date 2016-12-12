@@ -22,7 +22,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     
     
     var ringBuffer = RingBuffer()
-    var orientationBuffer = RingBuffer()
+    var orientationBuffer:[Double] = []
     let magValue = 1.5
     let maxMagValue = 6.0
     
@@ -34,7 +34,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
-    let TIME_DELAY = 0.25
+    let TIME_DELAY = 0.35
     
     
     
@@ -199,7 +199,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     func handleMotion(motion:CMDeviceMotion?, error:Error?)->Void{
         self.ringBuffer.addNewData(Float((motion?.userAcceleration.x)!), withY: Float((motion?.userAcceleration.y)!), withZ: Float((motion?.userAcceleration.z)!))
         
-        self.orientationBuffer.addNewData(Float((motion?.attitude.pitch)!), withY: Float((motion?.attitude.roll)!), withZ: Float((motion?.attitude.yaw)!))
+//        self.orientationBuffer.addNewData(Float((motion?.attitude.pitch)!), withY: Float((motion?.attitude.roll)!), withZ: Float((motion?.attitude.yaw)!))
+        self.orientationBuffer = [(motion?.attitude.pitch)!, (motion?.attitude.roll)!, (motion?.attitude.yaw)!]
         
         let mag = fabs((motion?.userAcceleration.x)!)+fabs((motion?.userAcceleration.y)!)+fabs((motion?.userAcceleration.z)!)
         
@@ -223,7 +224,16 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
             print("not full full")
         } else {
 //            self.getPredictionData(data: (self.orientationBuffer.getDataAsVector()) as NSArray ) // OLD PREDICTION
-            self.predictUsingModel(data: (self.orientationBuffer.getDataAsVector()) as! [Double],mag:mag)
+            print(data)
+            var i = 0
+            var cummulativeMag = 0.0
+            while i < data.count {
+                cummulativeMag += fabs(data[i] as! Double)+fabs(data[i+1] as! Double)+fabs(data[i+2] as! Double)
+                i += 3
+            }
+            cummulativeMag /= (Double(data.count/3))
+
+            self.predictUsingModel(data: self.orientationBuffer,mag:cummulativeMag)
             
         }
     }
@@ -256,6 +266,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
             }
             
             let player = (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int]
+            
+            
             
             var adjustedMag = mag
             if mag >= self.maxMagValue {
