@@ -17,8 +17,14 @@ class FeatureData: Hashable {
     // required var for the Hashable protocol
     var hashValue: Int {
         // DJB hash function
-        return Int(self.data[0]*100 + self.data[1]*10000 + self.data[2]*1000000)
+        return self.data.reduce(5381) {
+            ($0 << 5) &+ $0 &+ Int($1)
+        }
     }
+//    var hashValue: Int {
+//        // DJB hash function
+//        return Int(self.data[0]*100 + self.data[1]*10000 + self.data[2]*1000000)
+//    }
 
 }
 
