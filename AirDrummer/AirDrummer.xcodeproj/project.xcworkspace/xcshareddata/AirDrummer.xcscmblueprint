@@ -4,11 +4,13 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6AB161CB95A524A3E3A05331D0CDC2D6123C1811" : 9223372036854775807,
     "7C1A75D220FB596AAD13328BECB58CC0A1589D4A" : 9223372036854775807,
     "83290F0FED4422340C421EA1D932E68B0541D558" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EFE23E98-CB23-4C45-9611-8A413A88A39E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6AB161CB95A524A3E3A05331D0CDC2D6123C1811" : "AIToolbox\/",
     "7C1A75D220FB596AAD13328BECB58CC0A1589D4A" : "mobile-sensing-apps\/",
     "83290F0FED4422340C421EA1D932E68B0541D558" : "mobile-sensing-apps\/AirDrummer\/IBAnimatable\/"
   },
@@ -16,6 +18,11 @@
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AirDrummer\/AirDrummer.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KevinCoble\/AIToolbox.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6AB161CB95A524A3E3A05331D0CDC2D6123C1811"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Tsiems\/mobile-sensing-apps.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
