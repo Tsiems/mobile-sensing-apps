@@ -179,7 +179,6 @@
 		5C7A08211DFAFD3E00C2607D /* GestureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08201DFAFD3E00C2607D /* GestureTableViewCell.swift */; };
 		5C7A08231DFB00AB00C2607D /* Gesture2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08221DFB00AB00C2607D /* Gesture2TableViewCell.swift */; };
 		5C7A08251DFB1E7A00C2607D /* GestureTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08241DFB1E7A00C2607D /* GestureTitleTableViewCell.swift */; };
-		5C7A08271DFE036D00C2607D /* SwiftNaiveBayes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A08261DFE036D00C2607D /* SwiftNaiveBayes.swift */; };
 		5CC9B8191DE36BBB001B21DD /* SelectInstrumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */; };
 		5CC9BA971DE3A963001B21DD /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */; };
 		5CC9BA991DE3A975001B21DD /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */; };
@@ -193,6 +192,11 @@
 		5CC9BBE31DE8D639001B21DD /* KDDragAndDropManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE21DE8D639001B21DD /* KDDragAndDropManager.swift */; };
 		5CC9BBE51DE8DD8E001B21DD /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE41DE8DD8E001B21DD /* ItemCollectionViewCell.swift */; };
 		5CC9BBE71DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE61DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift */; };
+		5CE97E9C1DFF2BAF008C92F7 /* BayesianClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E971DFF2BAF008C92F7 /* BayesianClassifier.swift */; };
+		5CE97E9D1DFF2BAF008C92F7 /* EventSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E981DFF2BAF008C92F7 /* EventSpace.swift */; };
+		5CE97E9E1DFF2BAF008C92F7 /* HashableTouple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E991DFF2BAF008C92F7 /* HashableTouple.swift */; };
+		5CE97E9F1DFF2BAF008C92F7 /* IncrementingBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E9A1DFF2BAF008C92F7 /* IncrementingBag.swift */; };
+		5CE97EA01DFF2BAF008C92F7 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E9B1DFF2BAF008C92F7 /* Math.swift */; };
 		91516AF71DD683230019FC06 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91516AF61DD683230019FC06 /* FFTHelper.m */; };
 		91D685291DF9C01300C0B2CD /* gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D685281DF9C01300C0B2CD /* gesture.swift */; };
 		91D6852B1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */; };
@@ -406,7 +410,6 @@
 		5C7A08201DFAFD3E00C2607D /* GestureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureTableViewCell.swift; sourceTree = "<group>"; };
 		5C7A08221DFB00AB00C2607D /* Gesture2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gesture2TableViewCell.swift; sourceTree = "<group>"; };
 		5C7A08241DFB1E7A00C2607D /* GestureTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureTitleTableViewCell.swift; sourceTree = "<group>"; };
-		5C7A08261DFE036D00C2607D /* SwiftNaiveBayes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNaiveBayes.swift; sourceTree = "<group>"; };
 		5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInstrumentsViewController.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA961DE3A963001B21DD /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMBounceAnimation.swift; path = RAMAnimatedTabBarController/Animations/BounceAnimation/RAMBounceAnimation.swift; sourceTree = SOURCE_ROOT; };
 		5CC9BA981DE3A975001B21DD /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMFrameItemAnimation.swift; path = RAMAnimatedTabBarController/Animations/FrameAnimation/RAMFrameItemAnimation.swift; sourceTree = SOURCE_ROOT; };
@@ -420,6 +423,12 @@
 		5CC9BBE21DE8D639001B21DD /* KDDragAndDropManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDDragAndDropManager.swift; sourceTree = "<group>"; };
 		5CC9BBE41DE8DD8E001B21DD /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		5CC9BBE61DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDDragAndDropCollectionView.swift; sourceTree = "<group>"; };
+		5CE97E961DFF2BAF008C92F7 /* Bayes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bayes.h; sourceTree = "<group>"; };
+		5CE97E971DFF2BAF008C92F7 /* BayesianClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesianClassifier.swift; sourceTree = "<group>"; };
+		5CE97E981DFF2BAF008C92F7 /* EventSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSpace.swift; sourceTree = "<group>"; };
+		5CE97E991DFF2BAF008C92F7 /* HashableTouple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashableTouple.swift; sourceTree = "<group>"; };
+		5CE97E9A1DFF2BAF008C92F7 /* IncrementingBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementingBag.swift; sourceTree = "<group>"; };
+		5CE97E9B1DFF2BAF008C92F7 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		91516AF51DD683230019FC06 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		91516AF61DD683230019FC06 /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
 		91D685281DF9C01300C0B2CD /* gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gesture.swift; sourceTree = "<group>"; };
@@ -654,6 +663,19 @@
 			name = RAMAnimatedTabController;
 			sourceTree = "<group>";
 		};
+		5CE97E951DFF2B9C008C92F7 /* Bayes */ = {
+			isa = PBXGroup;
+			children = (
+				5CE97E961DFF2BAF008C92F7 /* Bayes.h */,
+				5CE97E971DFF2BAF008C92F7 /* BayesianClassifier.swift */,
+				5CE97E981DFF2BAF008C92F7 /* EventSpace.swift */,
+				5CE97E991DFF2BAF008C92F7 /* HashableTouple.swift */,
+				5CE97E9A1DFF2BAF008C92F7 /* IncrementingBag.swift */,
+				5CE97E9B1DFF2BAF008C92F7 /* Math.swift */,
+			);
+			name = Bayes;
+			sourceTree = "<group>";
+		};
 		B41716AC1DD1160B00999160 = {
 			isa = PBXGroup;
 			children = (
@@ -694,10 +716,10 @@
 				91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */,
 				5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */,
 				5C7A08161DF9C0A700C2607D /* ESTMusicIndicatorView.swift */,
+				5CE97E951DFF2B9C008C92F7 /* Bayes */,
 				5C7A08171DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift */,
 				5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */,
 				5C7A080C1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift */,
-				5C7A08261DFE036D00C2607D /* SwiftNaiveBayes.swift */,
 				5C7A080A1DF8AD0300C2607D /* PlayTableViewController.swift */,
 				5C7A08061DF7471500C2607D /* RecordingHeaderCell.swift */,
 				5C7A08041DF7455900C2607D /* RecordingTableViewCell.swift */,
@@ -924,6 +946,7 @@
 				5C4813B31DF0C2B500473AA4 /* PinchInteractiveAnimator.swift in Sources */,
 				5C4813901DF0C2B400473AA4 /* SystemMoveInAnimator.swift in Sources */,
 				5C4813D41DF0C2B500473AA4 /* BorderSide.swift in Sources */,
+				5CE97E9F1DFF2BAF008C92F7 /* IncrementingBag.swift in Sources */,
 				5C48139C1DF0C2B400473AA4 /* PresentTurnSegue.swift in Sources */,
 				5C4813CA1DF0C2B500473AA4 /* DesignableNavigationBar.swift in Sources */,
 				5C4813A21DF0C2B500473AA4 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
@@ -950,6 +973,7 @@
 				5C48139B1DF0C2B400473AA4 /* PresentTurnWithDismissInteractionSegue.swift in Sources */,
 				5C4813C21DF0C2B500473AA4 /* GradientDesignable.swift in Sources */,
 				5C4813CC1DF0C2B500473AA4 /* CornerSide.swift in Sources */,
+				5CE97E9D1DFF2BAF008C92F7 /* EventSpace.swift in Sources */,
 				5C4813941DF0C2B400473AA4 /* StatusBarDesignable.swift in Sources */,
 				5C48139D1DF0C2B400473AA4 /* PresentSlideWithDismissInteractionSegue.swift in Sources */,
 				5C4813EB1DF0C2B500473AA4 /* AnimatableCollectionViewCell.swift in Sources */,
@@ -997,7 +1021,6 @@
 				5C4813A41DF0C2B500473AA4 /* PresentFlipWithDismissInteractionSegue.swift in Sources */,
 				5C4814091DF0C2B500473AA4 /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				5C7A08111DF8BACE00C2607D /* PlayTitleCell.swift in Sources */,
-				5C7A08271DFE036D00C2607D /* SwiftNaiveBayes.swift in Sources */,
 				5C4813EC1DF0C2B500473AA4 /* AnimatableCheckBox.swift in Sources */,
 				5C4813951DF0C2B400473AA4 /* SlideAnimator.swift in Sources */,
 				5C4813A31DF0C2B500473AA4 /* PresentFoldSegue.swift in Sources */,
@@ -1005,6 +1028,7 @@
 				5C4813811DF0C2B400473AA4 /* Typealias.swift in Sources */,
 				5C4813A51DF0C2B500473AA4 /* PresentFlipSegue.swift in Sources */,
 				5C4813F61DF0C2B500473AA4 /* ActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
+				5CE97EA01DFF2BAF008C92F7 /* Math.swift in Sources */,
 				5C4813D51DF0C2B500473AA4 /* BorderDesignable.swift in Sources */,
 				5C4813931DF0C2B400473AA4 /* SystemCameraIrisAnimator.swift in Sources */,
 				5C4813FF1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
@@ -1020,6 +1044,7 @@
 				5C4813D31DF0C2B500473AA4 /* CALayerExtension.swift in Sources */,
 				5C4813F81DF0C2B500473AA4 /* ActivityIndicatorAnimationOrbit.swift in Sources */,
 				5C4813B71DF0C2B500473AA4 /* NavigationBarDesginable.swift in Sources */,
+				5CE97E9C1DFF2BAF008C92F7 /* BayesianClassifier.swift in Sources */,
 				5C4813ED1DF0C2B500473AA4 /* AnimatableButton.swift in Sources */,
 				5C4813F01DF0C2B500473AA4 /* Animatable.swift in Sources */,
 				5C7A08071DF7471500C2607D /* RecordingHeaderCell.swift in Sources */,
@@ -1032,6 +1057,7 @@
 				5C4813B11DF0C2B500473AA4 /* PortalAnimator.swift in Sources */,
 				5C4813881DF0C2B400473AA4 /* TintDesignable.swift in Sources */,
 				5C4813AF1DF0C2B500473AA4 /* PresentationDesignable.swift in Sources */,
+				5CE97E9E1DFF2BAF008C92F7 /* HashableTouple.swift in Sources */,
 				5C4813801DF0C2B400473AA4 /* UIColorExtension.swift in Sources */,
 				5C4813AC1DF0C2B500473AA4 /* PresentationModalSize.swift in Sources */,
 				B41716F91DD116D400999160 /* HttpCommHandler.m in Sources */,
@@ -1257,7 +1283,7 @@
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = danhn.AirDrummer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.edtc.airdrummer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AirDrummer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1274,7 +1300,7 @@
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = danhn.AirDrummer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.edtc.airdrummer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AirDrummer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
