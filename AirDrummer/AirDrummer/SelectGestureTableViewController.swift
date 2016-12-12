@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SelectGestureTableViewController: UITableViewController, SelectGestureDelegate {
     var items:[String] = ["Instrument 1", "Instrument 2", "Instrument 3"]
     var selectedRow:Int = 0
@@ -19,20 +20,10 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
     
     var kitName:String = "Instrument 1"
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
+    
     
     func saveGestures(gestures:[Gesture]) {
         self.gestures = gestures
