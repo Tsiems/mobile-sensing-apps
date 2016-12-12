@@ -7,7 +7,7 @@
 
 #import "RingBuffer.h"
 #import "FFTHelper.h"
-#define BUFFER_SIZE 1
+#define BUFFER_SIZE 4
 
 @interface RingBuffer()
 {
