@@ -24,6 +24,8 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     var ringBuffer = RingBuffer()
     var orientationBuffer = RingBuffer()
     let magValue = 1.5
+    let maxMagValue = 6.0
+    
     var numDataPoints = 0
     var recording = false
 
@@ -186,50 +188,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     }
 
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -246,7 +205,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         
         if(mag > self.magValue) {
             print(mag)
-            self.backQueue.addOperation({() -> Void in self.motionEventOccurred()})
+            self.backQueue.addOperation({() -> Void in self.motionEventOccurred(mag:mag)})
         }
     }
     
@@ -258,23 +217,18 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         }
     }
     
-    func motionEventOccurred() {
+    func motionEventOccurred(mag:Double) {
         let data = self.ringBuffer.getDataAsVector() as NSArray
         if data[0] as! Double == 0.0 {
             print("not full full")
         } else {
-            
-            //get the FFT of both buffers and add them up for prediction data
-//            self.getPredictionData(data: (self.ringBuffer.getDataAsVector()+self.orientationBuffer.getDataAsVector()) as NSArray )
-//            self.getPredictionData(data: (self.orientationBuffer.getDataAsVector()) as NSArray )
-            self.predictUsingModel(data: (self.orientationBuffer.getDataAsVector()) as! [Double])
-            
-            
+//            self.getPredictionData(data: (self.orientationBuffer.getDataAsVector()) as NSArray ) // OLD PREDICTION
+            self.predictUsingModel(data: (self.orientationBuffer.getDataAsVector()) as! [Double],mag:mag)
             
         }
     }
     
-    func predictUsingModel(data:[Double]) {
+    func predictUsingModel(data:[Double],mag:Double) {
         
         let pred = svm.classifyOne(data)
         var prediction = ""
@@ -295,14 +249,23 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
             let date = self.players[instrument]!["time"] as! Date
             let now = Date()
             let seconds = now.timeIntervalSince(date)
-            //                        print("Seconds: ",seconds)
             
             if seconds > TIME_DELAY {
                 self.players[instrument]!["time"] = now
                 self.players[instrument]!["index"] = ((self.players[instrument]!["index"] as! Int)+1)%3
             }
             
-            (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int].play()
+            let player = (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int]
+            
+            var adjustedMag = mag
+            if mag >= self.maxMagValue {
+                adjustedMag = self.maxMagValue-0.1
+            }
+            
+            //adjust for volume
+            player.volume = log2(Float(adjustedMag) / Float(self.maxMagValue))/log2(10)+1
+            
+            player.play()
         }
         else {
             print("Gesture not in use.")
@@ -310,68 +273,70 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
 
     }
     
-    func postFeatureHandler(data:Data?, urlResponse:URLResponse?, error:Error?) -> Void{
-        if(!(error != nil)){
-//            print(urlResponse!)
-            if let responseData = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, Any> {
-//                print(responseData)
-                
-                if let prediction = responseData["prediction"] as? String {
-                    
-                    if let gesture = drumKits[selectedDrumKit].gestures[prediction] {
-                        let instrument = gesture.instrument
-                        
-                        let date = self.players[instrument]!["time"] as! Date
-                        let now = Date()
-                        let seconds = now.timeIntervalSince(date)
-//                        print("Seconds: ",seconds)
-                        
-                        if seconds > TIME_DELAY {
-                            self.players[instrument]!["time"] = now
-                            self.players[instrument]!["index"] = ((self.players[instrument]!["index"] as! Int)+1)%3
-                        }
-                        
-                        (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int].play()
-                    }
-                    else {
-                        print("Gesture not in use.", prediction)
-                    }
-                }
-                else {
-                    print("could not convert prediction to string")
-                }
-            }
-            else {
-                print("Could not convert to dict")
-            }
-            
-        } else{
-            print(error!)
-        }
-    }
     
+    //OLD POST REQUEST
+//    func postFeatureHandler(data:Data?, urlResponse:URLResponse?, error:Error?) -> Void{
+//        if(!(error != nil)){
+////            print(urlResponse!)
+//            if let responseData = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, Any> {
+////                print(responseData)
+//                
+//                if let prediction = responseData["prediction"] as? String {
+//                    
+//                    if let gesture = drumKits[selectedDrumKit].gestures[prediction] {
+//                        let instrument = gesture.instrument
+//                        
+//                        let date = self.players[instrument]!["time"] as! Date
+//                        let now = Date()
+//                        let seconds = now.timeIntervalSince(date)
+////                        print("Seconds: ",seconds)
+//                        
+//                        if seconds > TIME_DELAY {
+//                            self.players[instrument]!["time"] = now
+//                            self.players[instrument]!["index"] = ((self.players[instrument]!["index"] as! Int)+1)%3
+//                        }
+//                        
+//                        (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int].play()
+//                    }
+//                    else {
+//                        print("Gesture not in use.", prediction)
+//                    }
+//                }
+//                else {
+//                    print("could not convert prediction to string")
+//                }
+//            }
+//            else {
+//                print("Could not convert to dict")
+//            }
+//            
+//        } else{
+//            print(error!)
+//        }
+//    }
     
-    func getPredictionData(data:NSArray) {
-        let baseUrl = "\(SERVER_URL)/PredictOne"
-        let postUrl = NSURL(string: baseUrl)
-        self.numDataPoints = self.numDataPoints + 1
-        
-        
-        let jsonUpload:NSDictionary = ["feature": data, "dsid": DSID]
-        
-        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
-        var request = URLRequest(url: postUrl as! URL)
-        request.httpBody = requestBody
-        request.httpMethod = "POST"
-        
-        
-        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
-        
-        
-        
-        postTask.resume()
-//        print(self.numDataPoints)
-    }
+    //OLD MACHINE LEARNING
+//    func getPredictionData(data:NSArray) {
+//        let baseUrl = "\(SERVER_URL)/PredictOne"
+//        let postUrl = NSURL(string: baseUrl)
+//        self.numDataPoints = self.numDataPoints + 1
+//        
+//        
+//        let jsonUpload:NSDictionary = ["feature": data, "dsid": DSID]
+//        
+//        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
+//        var request = URLRequest(url: postUrl as! URL)
+//        request.httpBody = requestBody
+//        request.httpMethod = "POST"
+//        
+//        
+//        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
+//        
+//        
+//        
+//        postTask.resume()
+////        print(self.numDataPoints)
+//    }
 
     func toggleRecording(sender: AnimatableButton) {
         print("touched")
@@ -471,7 +436,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
             "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3", "Gesture 3"]
 
 
-
+        //TEST FEATURES AND LABELS
 //        let labels = ["Gesture 1", "Gesture 2", "Gesture 3"]
 //        let features = [[0.03490489,-0.02601342, 0.936972],[0.2710942, -2.89515, 1.256121],[-0.09389891, -3.128638, 1.631254]]
 
