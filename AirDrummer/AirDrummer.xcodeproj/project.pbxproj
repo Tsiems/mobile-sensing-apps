@@ -232,12 +232,13 @@
 		5CE97F2B1DFF437D008C92F7 /* SVMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F091DFF437C008C92F7 /* SVMExtensions.swift */; };
 		5CE97F2C1DFF437D008C92F7 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F0A1DFF437C008C92F7 /* Tree.swift */; };
 		5CE97F2D1DFF437D008C92F7 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F0B1DFF437C008C92F7 /* Validation.swift */; };
-		5CE97F2F1DFF4B17008C92F7 /* popcorn.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CE97F2E1DFF4B17008C92F7 /* popcorn.gif */; };
+		5CE97F2F1DFF4B17008C92F7 /* Face Up.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CE97F2E1DFF4B17008C92F7 /* Face Up.gif */; };
 		5CE97F311DFF4BAF008C92F7 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F301DFF4BAF008C92F7 /* SwiftyGifManager.swift */; };
 		5CE97F331DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F321DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift */; };
 		5CE97F351DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F341DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift */; };
-		5CE97F391DFF5423008C92F7 /* High Hit.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CE97F371DFF5422008C92F7 /* High Hit.gif */; };
-		5CE97F3A1DFF5423008C92F7 /* Flipped Hit.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CE97F381DFF5423008C92F7 /* Flipped Hit.gif */; };
+		5CE97F391DFF5423008C92F7 /* Up High.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CE97F371DFF5422008C92F7 /* Up High.gif */; };
+		5CE97F3A1DFF5423008C92F7 /* Face Down.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CE97F381DFF5423008C92F7 /* Face Down.gif */; };
+		5CE97F3C1DFF5EC2008C92F7 /* GesturePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F3B1DFF5EC2008C92F7 /* GesturePopUpViewController.swift */; };
 		91516AF71DD683230019FC06 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91516AF61DD683230019FC06 /* FFTHelper.m */; };
 		91D685291DF9C01300C0B2CD /* gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D685281DF9C01300C0B2CD /* gesture.swift */; };
 		B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716B81DD1160B00999160 /* AppDelegate.swift */; };
@@ -505,12 +506,13 @@
 		5CE97F091DFF437C008C92F7 /* SVMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVMExtensions.swift; path = AIToolbox/SVMExtensions.swift; sourceTree = SOURCE_ROOT; };
 		5CE97F0A1DFF437C008C92F7 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tree.swift; path = AIToolbox/Tree.swift; sourceTree = SOURCE_ROOT; };
 		5CE97F0B1DFF437C008C92F7 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = AIToolbox/Validation.swift; sourceTree = SOURCE_ROOT; };
-		5CE97F2E1DFF4B17008C92F7 /* popcorn.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = popcorn.gif; sourceTree = "<group>"; };
+		5CE97F2E1DFF4B17008C92F7 /* Face Up.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Face Up.gif"; sourceTree = "<group>"; };
 		5CE97F301DFF4BAF008C92F7 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
 		5CE97F321DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
 		5CE97F341DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
-		5CE97F371DFF5422008C92F7 /* High Hit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "High Hit.gif"; sourceTree = "<group>"; };
-		5CE97F381DFF5423008C92F7 /* Flipped Hit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Flipped Hit.gif"; sourceTree = "<group>"; };
+		5CE97F371DFF5422008C92F7 /* Up High.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Up High.gif"; sourceTree = "<group>"; };
+		5CE97F381DFF5423008C92F7 /* Face Down.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Face Down.gif"; sourceTree = "<group>"; };
+		5CE97F3B1DFF5EC2008C92F7 /* GesturePopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePopUpViewController.swift; sourceTree = "<group>"; };
 		91516AF51DD683230019FC06 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		91516AF61DD683230019FC06 /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
 		91D685281DF9C01300C0B2CD /* gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gesture.swift; sourceTree = "<group>"; };
@@ -840,6 +842,7 @@
 				163E8EEA1DFB129000F9EAD5 /* DrumKit.swift */,
 				B41716BA1DD1160B00999160 /* ViewController.swift */,
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
+				5CE97F3B1DFF5EC2008C92F7 /* GesturePopUpViewController.swift */,
 				5C7A08221DFB00AB00C2607D /* Gesture2TableViewCell.swift */,
 				5C7A08201DFAFD3E00C2607D /* GestureTableViewCell.swift */,
 				5C7A081E1DFAFCEF00C2607D /* MatchGesturesTableViewController.swift */,
@@ -856,8 +859,8 @@
 				5C7A080A1DF8AD0300C2607D /* PlayTableViewController.swift */,
 				5C7A08061DF7471500C2607D /* RecordingHeaderCell.swift */,
 				5C7A08041DF7455900C2607D /* RecordingTableViewCell.swift */,
-				5CE97F371DFF5422008C92F7 /* High Hit.gif */,
-				5CE97F381DFF5423008C92F7 /* Flipped Hit.gif */,
+				5CE97F371DFF5422008C92F7 /* Up High.gif */,
+				5CE97F381DFF5423008C92F7 /* Face Down.gif */,
 				5C7A08021DF744C500C2607D /* RecordingsTableViewController.swift */,
 				5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */,
 				5CE97F361DFF4CEF008C92F7 /* gifManager */,
@@ -870,7 +873,7 @@
 				5CC9BAA61DE3A9CF001B21DD /* RAMAnimatedTabController */,
 				B4D5297D1DD3F3A200A62BF0 /* hihat.wav */,
 				B482BB781DF944D700701CD1 /* crash.wav */,
-				5CE97F2E1DFF4B17008C92F7 /* popcorn.gif */,
+				5CE97F2E1DFF4B17008C92F7 /* Face Up.gif */,
 				B482BB7A1DF944E800701CD1 /* bassdrum.wav */,
 				B482BB7B1DF944E800701CD1 /* tom_002b.wav */,
 				B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */,
@@ -1030,13 +1033,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CE97F2F1DFF4B17008C92F7 /* popcorn.gif in Resources */,
+				5CE97F2F1DFF4B17008C92F7 /* Face Up.gif in Resources */,
 				B482BB791DF944D700701CD1 /* crash.wav in Resources */,
 				5C4813BE1DF0C2B500473AA4 /* Info.plist in Resources */,
 				B41716C61DD1160B00999160 /* LaunchScreen.storyboard in Resources */,
-				5CE97F391DFF5423008C92F7 /* High Hit.gif in Resources */,
+				5CE97F391DFF5423008C92F7 /* Up High.gif in Resources */,
 				5C136E5D1DE3511500EE9B30 /* 10.jpg in Resources */,
-				5CE97F3A1DFF5423008C92F7 /* Flipped Hit.gif in Resources */,
+				5CE97F3A1DFF5423008C92F7 /* Face Down.gif in Resources */,
 				B41716C31DD1160B00999160 /* Assets.xcassets in Resources */,
 				B482BB7C1DF944E800701CD1 /* bassdrum.wav in Resources */,
 				B41716BE1DD1160B00999160 /* Main.storyboard in Resources */,
@@ -1114,6 +1117,7 @@
 				B41716BB1DD1160B00999160 /* ViewController.swift in Sources */,
 				5C48137E1DF0C2B400473AA4 /* Utils.swift in Sources */,
 				5C48139A1DF0C2B400473AA4 /* RootWindowDesignable.swift in Sources */,
+				5CE97F3C1DFF5EC2008C92F7 /* GesturePopUpViewController.swift in Sources */,
 				5C4813AB1DF0C2B500473AA4 /* PresentationPresenter.swift in Sources */,
 				5C4813D61DF0C2B500473AA4 /* BlurEffectStyle.swift in Sources */,
 				5CE97F2A1DFF437D008C92F7 /* SVM.swift in Sources */,

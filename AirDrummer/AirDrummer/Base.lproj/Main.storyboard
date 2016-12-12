@@ -178,10 +178,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="Ovy-Sn-Y8M" kind="presentation" identifier="showGesture" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="rHh-Rh-F9S"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqA-ab-8WJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3429.5999999999999" y="3224.4377811094455"/>
+            <point key="canvasLocation" x="3452" y="3224"/>
         </scene>
         <!--Drum Kits-->
         <scene sceneID="MHa-qz-gVF">
@@ -949,10 +952,10 @@
             </objects>
             <point key="canvasLocation" x="4167" y="3913"/>
         </scene>
-        <!--View Controller-->
+        <!--Gesture Pop Up View Controller-->
         <scene sceneID="ypa-WY-vCh">
             <objects>
-                <viewController id="Ovy-Sn-Y8M" sceneMemberID="viewController">
+                <viewController id="Ovy-Sn-Y8M" customClass="GesturePopUpViewController" customModule="AirDrummer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pFO-4e-JZ9"/>
                         <viewControllerLayoutGuide type="bottom" id="6Ms-me-Faq"/>
@@ -960,12 +963,72 @@
                     <view key="view" contentMode="scaleToFill" id="w5j-OT-rvk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0YH-AD-biL" customClass="AnimatableView" customModule="AirDrummer" customModuleProvider="target">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xEP-3f-dfy">
+                                        <rect key="frame" x="5" y="5" width="190" height="190"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="4py-p0-Dfj"/>
+                                    <constraint firstItem="xEP-3f-dfy" firstAttribute="top" secondItem="0YH-AD-biL" secondAttribute="top" constant="5" id="EYc-gk-kzO"/>
+                                    <constraint firstItem="xEP-3f-dfy" firstAttribute="leading" secondItem="0YH-AD-biL" secondAttribute="leading" constant="5" id="O4Q-Su-G90"/>
+                                    <constraint firstAttribute="width" constant="200" id="WaH-Ju-Ppx"/>
+                                    <constraint firstAttribute="trailing" secondItem="xEP-3f-dfy" secondAttribute="trailing" constant="5" id="eCG-2d-vjB"/>
+                                    <constraint firstAttribute="bottom" secondItem="xEP-3f-dfy" secondAttribute="bottom" constant="5" id="rh0-Mh-iF0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqm-DP-vpY" customClass="AnimatableButton" customModule="AirDrummer" customModuleProvider="target">
+                                <rect key="frame" x="257" y="215" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="XWv-eR-Oev"/>
+                                    <constraint firstAttribute="width" constant="25" id="nhG-TL-2NL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="dismissView:" destination="Ovy-Sn-Y8M" eventType="touchUpInside" id="I2f-1u-gtV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0YH-AD-biL" firstAttribute="centerY" secondItem="w5j-OT-rvk" secondAttribute="centerY" id="6Ap-DE-C7C"/>
+                            <constraint firstItem="Vqm-DP-vpY" firstAttribute="trailing" secondItem="xEP-3f-dfy" secondAttribute="trailing" id="Ams-TM-vhS"/>
+                            <constraint firstItem="xEP-3f-dfy" firstAttribute="top" secondItem="Vqm-DP-vpY" secondAttribute="bottom" constant="-2" id="OOD-8j-ihL"/>
+                            <constraint firstItem="0YH-AD-biL" firstAttribute="centerX" secondItem="w5j-OT-rvk" secondAttribute="centerX" id="kFB-tV-xWx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gestureView" destination="xEP-3f-dfy" id="pbn-KM-Jez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hgk-qe-0ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3430" y="2381"/>
+            <point key="canvasLocation" x="3429.5999999999999" y="2380.6596701649178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E4B-m7-xf0">
