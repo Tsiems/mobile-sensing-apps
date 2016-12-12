@@ -12,9 +12,9 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
     var items:[String] = ["Instrument 1", "Instrument 2", "Instrument 3"]
     var selectedRow:Int = 0
     var gestures:[Gesture] = [
-        Gesture(id: "['Gesture 1']",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare"),
-        Gesture(id: "['Gesture 2']",gesture_name: "High Hit",gif_name:"popcorn",instrument: "Hi-Hat"),
-        Gesture(id: "['Gesture 3']",gesture_name: "Flipped Hit",gif_name:"popcorn",instrument: "Toms")
+        Gesture(id: "Gesture 1",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare"),
+        Gesture(id: "Gesture 2",gesture_name: "High Hit",gif_name:"popcorn",instrument: "Hi-Hat"),
+        Gesture(id: "Gesture 3",gesture_name: "Flipped Hit",gif_name:"popcorn",instrument: "Toms")
     ]
     
     var kitName:String = "Instrument 1"
