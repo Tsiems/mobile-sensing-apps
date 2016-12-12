@@ -198,6 +198,40 @@
 		5CE97E9E1DFF2BAF008C92F7 /* HashableTouple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E991DFF2BAF008C92F7 /* HashableTouple.swift */; };
 		5CE97E9F1DFF2BAF008C92F7 /* IncrementingBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E9A1DFF2BAF008C92F7 /* IncrementingBag.swift */; };
 		5CE97EA01DFF2BAF008C92F7 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E9B1DFF2BAF008C92F7 /* Math.swift */; };
+		5CE97EC61DFF4017008C92F7 /* SVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EA21DFF4017008C92F7 /* SVM.swift */; };
+		5CE97EC71DFF4017008C92F7 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EA31DFF4017008C92F7 /* NeuralNetwork.swift */; };
+		5CE97EC91DFF4017008C92F7 /* LSTMNeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EA51DFF4017008C92F7 /* LSTMNeuralNetwork.swift */; };
+		5CE97ECA1DFF4017008C92F7 /* RecurrentNeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EA61DFF4017008C92F7 /* RecurrentNeuralNetwork.swift */; };
+		5CE97ECB1DFF4017008C92F7 /* MarkovDecisionProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EA71DFF4017008C92F7 /* MarkovDecisionProcess.swift */; };
+		5CE97ECC1DFF4017008C92F7 /* MetalNeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EA81DFF4017008C92F7 /* MetalNeuralNetwork.swift */; };
+		5CE97ECD1DFF4017008C92F7 /* NonLinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EA91DFF4017008C92F7 /* NonLinearRegression.swift */; };
+		5CE97ECE1DFF4017008C92F7 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EAA1DFF4017008C92F7 /* Graph.swift */; };
+		5CE97ECF1DFF4017008C92F7 /* ConstraintPropogation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EAB1DFF4017008C92F7 /* ConstraintPropogation.swift */; };
+		5CE97ED01DFF4017008C92F7 /* MixtureOfGaussians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EAC1DFF4017008C92F7 /* MixtureOfGaussians.swift */; };
+		5CE97ED11DFF4017008C92F7 /* DeepNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EAD1DFF4017008C92F7 /* DeepNetwork.swift */; };
+		5CE97ED21DFF4017008C92F7 /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EAE1DFF4017008C92F7 /* DataSet.swift */; };
+		5CE97ED31DFF4017008C92F7 /* LinearRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EAF1DFF4017008C92F7 /* LinearRegression.swift */; };
+		5CE97ED41DFF4017008C92F7 /* MetalNeuralNetworkShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EB01DFF4017008C92F7 /* MetalNeuralNetworkShaders.metal */; };
+		5CE97ED51DFF4017008C92F7 /* Gaussian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EB11DFF4017008C92F7 /* Gaussian.swift */; };
+		5CE97ED61DFF4017008C92F7 /* GeneticAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EB21DFF4017008C92F7 /* GeneticAlgorithm.swift */; };
+		5CE97ED71DFF4017008C92F7 /* LogisticRegression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EB31DFF4017008C92F7 /* LogisticRegression.swift */; };
+		5CE97ED81DFF4017008C92F7 /* Pooling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EB41DFF4017008C92F7 /* Pooling.swift */; };
+		5CE97ED91DFF4017008C92F7 /* MachineLearningProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EB51DFF4017008C92F7 /* MachineLearningProtocols.swift */; };
+		5CE97EDA1DFF4017008C92F7 /* MetalNeuralNetworkShaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EB61DFF4017008C92F7 /* MetalNeuralNetworkShaders.swift */; };
+		5CE97EDB1DFF4017008C92F7 /* DeepNeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EB71DFF4017008C92F7 /* DeepNeuralNetwork.swift */; };
+		5CE97EDC1DFF4017008C92F7 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EB81DFF4017008C92F7 /* Validation.swift */; };
+		5CE97EDD1DFF4017008C92F7 /* Convolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EB91DFF4017008C92F7 /* Convolution.swift */; };
+		5CE97EDE1DFF4017008C92F7 /* DeepLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EBA1DFF4017008C92F7 /* DeepLayer.swift */; };
+		5CE97EDF1DFF4017008C92F7 /* AlphaBeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EBB1DFF4017008C92F7 /* AlphaBeta.swift */; };
+		5CE97EE01DFF4017008C92F7 /* DeepChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EBC1DFF4017008C92F7 /* DeepChannel.swift */; };
+		5CE97EE11DFF4017008C92F7 /* PrincipalComponantAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EBD1DFF4017008C92F7 /* PrincipalComponantAnalysis.swift */; };
+		5CE97EE21DFF4017008C92F7 /* KMeans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EBE1DFF4017008C92F7 /* KMeans.swift */; };
+		5CE97EE31DFF4017008C92F7 /* Kernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EBF1DFF4017008C92F7 /* Kernel.swift */; };
+		5CE97EE41DFF4017008C92F7 /* SVMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EC01DFF4017008C92F7 /* SVMExtensions.swift */; };
+		5CE97EE51DFF4017008C92F7 /* DeepNetworkOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EC11DFF4017008C92F7 /* DeepNetworkOperator.swift */; };
+		5CE97EE61DFF4017008C92F7 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EC21DFF4017008C92F7 /* Tree.swift */; };
+		5CE97EE71DFF4017008C92F7 /* MLPersistenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EC31DFF4017008C92F7 /* MLPersistenceProtocol.swift */; };
+		5CE97EE81DFF4017008C92F7 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EC41DFF4017008C92F7 /* Queue.swift */; };
 		91516AF71DD683230019FC06 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91516AF61DD683230019FC06 /* FFTHelper.m */; };
 		91D685291DF9C01300C0B2CD /* gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D685281DF9C01300C0B2CD /* gesture.swift */; };
 		91D6852B1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */; };
@@ -431,6 +465,41 @@
 		5CE97E991DFF2BAF008C92F7 /* HashableTouple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashableTouple.swift; sourceTree = "<group>"; };
 		5CE97E9A1DFF2BAF008C92F7 /* IncrementingBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementingBag.swift; sourceTree = "<group>"; };
 		5CE97E9B1DFF2BAF008C92F7 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		5CE97EA21DFF4017008C92F7 /* SVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVM.swift; path = ../../../AIToolbox/AIToolbox/SVM.swift; sourceTree = "<group>"; };
+		5CE97EA31DFF4017008C92F7 /* NeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeuralNetwork.swift; path = ../../../AIToolbox/AIToolbox/NeuralNetwork.swift; sourceTree = "<group>"; };
+		5CE97EA51DFF4017008C92F7 /* LSTMNeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LSTMNeuralNetwork.swift; path = ../../../AIToolbox/AIToolbox/LSTMNeuralNetwork.swift; sourceTree = "<group>"; };
+		5CE97EA61DFF4017008C92F7 /* RecurrentNeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecurrentNeuralNetwork.swift; path = ../../../AIToolbox/AIToolbox/RecurrentNeuralNetwork.swift; sourceTree = "<group>"; };
+		5CE97EA71DFF4017008C92F7 /* MarkovDecisionProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarkovDecisionProcess.swift; path = ../../../AIToolbox/AIToolbox/MarkovDecisionProcess.swift; sourceTree = "<group>"; };
+		5CE97EA81DFF4017008C92F7 /* MetalNeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetalNeuralNetwork.swift; path = ../../../AIToolbox/AIToolbox/MetalNeuralNetwork.swift; sourceTree = "<group>"; };
+		5CE97EA91DFF4017008C92F7 /* NonLinearRegression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NonLinearRegression.swift; path = ../../../AIToolbox/AIToolbox/NonLinearRegression.swift; sourceTree = "<group>"; };
+		5CE97EAA1DFF4017008C92F7 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = ../../../AIToolbox/AIToolbox/Graph.swift; sourceTree = "<group>"; };
+		5CE97EAB1DFF4017008C92F7 /* ConstraintPropogation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConstraintPropogation.swift; path = ../../../AIToolbox/AIToolbox/ConstraintPropogation.swift; sourceTree = "<group>"; };
+		5CE97EAC1DFF4017008C92F7 /* MixtureOfGaussians.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MixtureOfGaussians.swift; path = ../../../AIToolbox/AIToolbox/MixtureOfGaussians.swift; sourceTree = "<group>"; };
+		5CE97EAD1DFF4017008C92F7 /* DeepNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeepNetwork.swift; path = ../../../AIToolbox/AIToolbox/DeepNetwork.swift; sourceTree = "<group>"; };
+		5CE97EAE1DFF4017008C92F7 /* DataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSet.swift; path = ../../../AIToolbox/AIToolbox/DataSet.swift; sourceTree = "<group>"; };
+		5CE97EAF1DFF4017008C92F7 /* LinearRegression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinearRegression.swift; path = ../../../AIToolbox/AIToolbox/LinearRegression.swift; sourceTree = "<group>"; };
+		5CE97EB01DFF4017008C92F7 /* MetalNeuralNetworkShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = MetalNeuralNetworkShaders.metal; path = ../../../AIToolbox/AIToolbox/MetalNeuralNetworkShaders.metal; sourceTree = "<group>"; };
+		5CE97EB11DFF4017008C92F7 /* Gaussian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gaussian.swift; path = ../../../AIToolbox/AIToolbox/Gaussian.swift; sourceTree = "<group>"; };
+		5CE97EB21DFF4017008C92F7 /* GeneticAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneticAlgorithm.swift; path = ../../../AIToolbox/AIToolbox/GeneticAlgorithm.swift; sourceTree = "<group>"; };
+		5CE97EB31DFF4017008C92F7 /* LogisticRegression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogisticRegression.swift; path = ../../../AIToolbox/AIToolbox/LogisticRegression.swift; sourceTree = "<group>"; };
+		5CE97EB41DFF4017008C92F7 /* Pooling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pooling.swift; path = ../../../AIToolbox/AIToolbox/Pooling.swift; sourceTree = "<group>"; };
+		5CE97EB51DFF4017008C92F7 /* MachineLearningProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MachineLearningProtocols.swift; path = ../../../AIToolbox/AIToolbox/MachineLearningProtocols.swift; sourceTree = "<group>"; };
+		5CE97EB61DFF4017008C92F7 /* MetalNeuralNetworkShaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetalNeuralNetworkShaders.swift; path = ../../../AIToolbox/AIToolbox/MetalNeuralNetworkShaders.swift; sourceTree = "<group>"; };
+		5CE97EB71DFF4017008C92F7 /* DeepNeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeepNeuralNetwork.swift; path = ../../../AIToolbox/AIToolbox/DeepNeuralNetwork.swift; sourceTree = "<group>"; };
+		5CE97EB81DFF4017008C92F7 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = ../../../AIToolbox/AIToolbox/Validation.swift; sourceTree = "<group>"; };
+		5CE97EB91DFF4017008C92F7 /* Convolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Convolution.swift; path = ../../../AIToolbox/AIToolbox/Convolution.swift; sourceTree = "<group>"; };
+		5CE97EBA1DFF4017008C92F7 /* DeepLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeepLayer.swift; path = ../../../AIToolbox/AIToolbox/DeepLayer.swift; sourceTree = "<group>"; };
+		5CE97EBB1DFF4017008C92F7 /* AlphaBeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlphaBeta.swift; path = ../../../AIToolbox/AIToolbox/AlphaBeta.swift; sourceTree = "<group>"; };
+		5CE97EBC1DFF4017008C92F7 /* DeepChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeepChannel.swift; path = ../../../AIToolbox/AIToolbox/DeepChannel.swift; sourceTree = "<group>"; };
+		5CE97EBD1DFF4017008C92F7 /* PrincipalComponantAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrincipalComponantAnalysis.swift; path = ../../../AIToolbox/AIToolbox/PrincipalComponantAnalysis.swift; sourceTree = "<group>"; };
+		5CE97EBE1DFF4017008C92F7 /* KMeans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KMeans.swift; path = ../../../AIToolbox/AIToolbox/KMeans.swift; sourceTree = "<group>"; };
+		5CE97EBF1DFF4017008C92F7 /* Kernel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Kernel.swift; path = ../../../AIToolbox/AIToolbox/Kernel.swift; sourceTree = "<group>"; };
+		5CE97EC01DFF4017008C92F7 /* SVMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVMExtensions.swift; path = ../../../AIToolbox/AIToolbox/SVMExtensions.swift; sourceTree = "<group>"; };
+		5CE97EC11DFF4017008C92F7 /* DeepNetworkOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeepNetworkOperator.swift; path = ../../../AIToolbox/AIToolbox/DeepNetworkOperator.swift; sourceTree = "<group>"; };
+		5CE97EC21DFF4017008C92F7 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tree.swift; path = ../../../AIToolbox/AIToolbox/Tree.swift; sourceTree = "<group>"; };
+		5CE97EC31DFF4017008C92F7 /* MLPersistenceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MLPersistenceProtocol.swift; path = ../../../AIToolbox/AIToolbox/MLPersistenceProtocol.swift; sourceTree = "<group>"; };
+		5CE97EC41DFF4017008C92F7 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = ../../../AIToolbox/AIToolbox/Queue.swift; sourceTree = "<group>"; };
+		5CE97EC51DFF4017008C92F7 /* AIToolbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIToolbox.h; path = ../../../AIToolbox/AIToolbox/AIToolbox.h; sourceTree = "<group>"; };
 		91516AF51DD683230019FC06 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		91516AF61DD683230019FC06 /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
 		91D685281DF9C01300C0B2CD /* gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gesture.swift; sourceTree = "<group>"; };
@@ -678,6 +747,48 @@
 			name = Bayes;
 			sourceTree = "<group>";
 		};
+		5CE97EA11DFF3FB2008C92F7 /* AIToolbox */ = {
+			isa = PBXGroup;
+			children = (
+				5CE97EA21DFF4017008C92F7 /* SVM.swift */,
+				5CE97EA31DFF4017008C92F7 /* NeuralNetwork.swift */,
+				5CE97EA51DFF4017008C92F7 /* LSTMNeuralNetwork.swift */,
+				5CE97EA61DFF4017008C92F7 /* RecurrentNeuralNetwork.swift */,
+				5CE97EA71DFF4017008C92F7 /* MarkovDecisionProcess.swift */,
+				5CE97EA81DFF4017008C92F7 /* MetalNeuralNetwork.swift */,
+				5CE97EA91DFF4017008C92F7 /* NonLinearRegression.swift */,
+				5CE97EAA1DFF4017008C92F7 /* Graph.swift */,
+				5CE97EAB1DFF4017008C92F7 /* ConstraintPropogation.swift */,
+				5CE97EAC1DFF4017008C92F7 /* MixtureOfGaussians.swift */,
+				5CE97EAD1DFF4017008C92F7 /* DeepNetwork.swift */,
+				5CE97EAE1DFF4017008C92F7 /* DataSet.swift */,
+				5CE97EAF1DFF4017008C92F7 /* LinearRegression.swift */,
+				5CE97EB01DFF4017008C92F7 /* MetalNeuralNetworkShaders.metal */,
+				5CE97EB11DFF4017008C92F7 /* Gaussian.swift */,
+				5CE97EB21DFF4017008C92F7 /* GeneticAlgorithm.swift */,
+				5CE97EB31DFF4017008C92F7 /* LogisticRegression.swift */,
+				5CE97EB41DFF4017008C92F7 /* Pooling.swift */,
+				5CE97EB51DFF4017008C92F7 /* MachineLearningProtocols.swift */,
+				5CE97EB61DFF4017008C92F7 /* MetalNeuralNetworkShaders.swift */,
+				5CE97EB71DFF4017008C92F7 /* DeepNeuralNetwork.swift */,
+				5CE97EB81DFF4017008C92F7 /* Validation.swift */,
+				5CE97EB91DFF4017008C92F7 /* Convolution.swift */,
+				5CE97EBA1DFF4017008C92F7 /* DeepLayer.swift */,
+				5CE97EBB1DFF4017008C92F7 /* AlphaBeta.swift */,
+				5CE97EBC1DFF4017008C92F7 /* DeepChannel.swift */,
+				5CE97EBD1DFF4017008C92F7 /* PrincipalComponantAnalysis.swift */,
+				5CE97EBE1DFF4017008C92F7 /* KMeans.swift */,
+				5CE97EBF1DFF4017008C92F7 /* Kernel.swift */,
+				5CE97EC01DFF4017008C92F7 /* SVMExtensions.swift */,
+				5CE97EC11DFF4017008C92F7 /* DeepNetworkOperator.swift */,
+				5CE97EC21DFF4017008C92F7 /* Tree.swift */,
+				5CE97EC31DFF4017008C92F7 /* MLPersistenceProtocol.swift */,
+				5CE97EC41DFF4017008C92F7 /* Queue.swift */,
+				5CE97EC51DFF4017008C92F7 /* AIToolbox.h */,
+			);
+			name = AIToolbox;
+			sourceTree = "<group>";
+		};
 		B41716AC1DD1160B00999160 = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +828,7 @@
 				91D685281DF9C01300C0B2CD /* gesture.swift */,
 				91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */,
 				5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */,
+				5CE97EA11DFF3FB2008C92F7 /* AIToolbox */,
 				5C7A08161DF9C0A700C2607D /* ESTMusicIndicatorView.swift */,
 				5CE97E951DFF2B9C008C92F7 /* Bayes */,
 				5C7A08171DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift */,
@@ -852,7 +964,7 @@
 				TargetAttributes = {
 					B41716B41DD1160B00999160 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 788J8M5NBX;
+						DevelopmentTeam = 26Y78VEH49;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -935,6 +1047,7 @@
 				5C4814081DF0C2B500473AA4 /* ActivityIndicatorAnimationBallRotate.swift in Sources */,
 				5CC9BBDF1DE8D38E001B21DD /* DataItem.swift in Sources */,
 				5C4813EF1DF0C2B500473AA4 /* AnimatableActivityIndicatorView.swift in Sources */,
+				5CE97EE61DFF4017008C92F7 /* Tree.swift in Sources */,
 				5C4814071DF0C2B500473AA4 /* ActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				5CC9BA991DE3A975001B21DD /* RAMFrameItemAnimation.swift in Sources */,
 				5C4813831DF0C2B400473AA4 /* TransitionType.swift in Sources */,
@@ -945,6 +1058,7 @@
 				5C4813C11DF0C2B500473AA4 /* GradientStartPoint.swift in Sources */,
 				5C7A080B1DF8AD0300C2607D /* PlayTableViewController.swift in Sources */,
 				5C4813A91DF0C2B500473AA4 /* PresentCardsSegue.swift in Sources */,
+				5CE97ED91DFF4017008C92F7 /* MachineLearningProtocols.swift in Sources */,
 				5C4813B61DF0C2B500473AA4 /* Navigator.swift in Sources */,
 				5C4813B31DF0C2B500473AA4 /* PinchInteractiveAnimator.swift in Sources */,
 				5C4813901DF0C2B400473AA4 /* SystemMoveInAnimator.swift in Sources */,
@@ -956,9 +1070,11 @@
 				5C4813851DF0C2B400473AA4 /* TransitionPresenter.swift in Sources */,
 				5C7A08211DFAFD3E00C2607D /* GestureTableViewCell.swift in Sources */,
 				5C48138A1DF0C2B400473AA4 /* SystemSuckEffectAnimator.swift in Sources */,
+				5CE97ECF1DFF4017008C92F7 /* ConstraintPropogation.swift in Sources */,
 				5C7A08191DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift in Sources */,
 				5C48140C1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				5C4813A01DF0C2B500473AA4 /* PresentPortalSegue.swift in Sources */,
+				5CE97EC71DFF4017008C92F7 /* NeuralNetwork.swift in Sources */,
 				5C4813EE1DF0C2B500473AA4 /* AnimatableBarButtonItem.swift in Sources */,
 				5C7A08181DF9C0A700C2607D /* ESTMusicIndicatorView.swift in Sources */,
 				5C4813A71DF0C2B500473AA4 /* PresentFadeSegue.swift in Sources */,
@@ -969,6 +1085,9 @@
 				5CC9BA9F1DE3A99B001B21DD /* RAMTransitionItemAnimations.swift in Sources */,
 				5C4813DF1DF0C2B500473AA4 /* AnimatableTextView.swift in Sources */,
 				B41716BB1DD1160B00999160 /* ViewController.swift in Sources */,
+				5CE97EE81DFF4017008C92F7 /* Queue.swift in Sources */,
+				5CE97ECE1DFF4017008C92F7 /* Graph.swift in Sources */,
+				5CE97EDD1DFF4017008C92F7 /* Convolution.swift in Sources */,
 				5C48137E1DF0C2B400473AA4 /* Utils.swift in Sources */,
 				5C48139A1DF0C2B400473AA4 /* RootWindowDesignable.swift in Sources */,
 				5C4813AB1DF0C2B500473AA4 /* PresentationPresenter.swift in Sources */,
@@ -983,6 +1102,7 @@
 				5C4813A61DF0C2B500473AA4 /* PresentFadeWithDismissInteractionSegue.swift in Sources */,
 				B41716C11DD1160B00999160 /* AirDrummer.xcdatamodeld in Sources */,
 				5CC9B8191DE36BBB001B21DD /* SelectInstrumentsViewController.swift in Sources */,
+				5CE97ECC1DFF4017008C92F7 /* MetalNeuralNetwork.swift in Sources */,
 				5C4813981DF0C2B400473AA4 /* ScreenEdgePanInteractiveAnimator.swift in Sources */,
 				5C4813961DF0C2B400473AA4 /* SideImageDesignable.swift in Sources */,
 				5C4814021DF0C2B500473AA4 /* ActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
@@ -994,23 +1114,29 @@
 				5C4814121DF0C2B500473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				5C48140D1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				5C4813B51DF0C2B500473AA4 /* PaddingDesignable.swift in Sources */,
+				5CE97ED71DFF4017008C92F7 /* LogisticRegression.swift in Sources */,
 				1637F80B1DFF330900102EFE /* FeatureData.swift in Sources */,
 				5C4814111DF0C2B500473AA4 /* ActivityIndicatorAnimationBallBeat.swift in Sources */,
+				5CE97EE31DFF4017008C92F7 /* Kernel.swift in Sources */,
 				B41716F31DD116BE00999160 /* RingBuffer.m in Sources */,
 				5C4813EA1DF0C2B500473AA4 /* AnimatableImageView.swift in Sources */,
 				5C4813B41DF0C2B500473AA4 /* PanInteractiveAnimator.swift in Sources */,
 				5CC9BBE51DE8DD8E001B21DD /* ItemCollectionViewCell.swift in Sources */,
+				5CE97EE71DFF4017008C92F7 /* MLPersistenceProtocol.swift in Sources */,
 				5C4813911DF0C2B400473AA4 /* SystemFlipAnimator.swift in Sources */,
+				5CE97EDF1DFF4017008C92F7 /* AlphaBeta.swift in Sources */,
 				5C4813FE1DF0C2B500473AA4 /* ActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				5C48139E1DF0C2B400473AA4 /* PresentSlideSegue.swift in Sources */,
 				5C48139F1DF0C2B500473AA4 /* PresentPortalWithDismissInteractionSegue.swift in Sources */,
 				5C4813D21DF0C2B500473AA4 /* CardsAnimator.swift in Sources */,
 				5C4813FC1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				5CE97EE41DFF4017008C92F7 /* SVMExtensions.swift in Sources */,
 				5C48138B1DF0C2B400473AA4 /* SystemRotateAnimator.swift in Sources */,
 				5CC9BAA51DE3A9BB001B21DD /* RAMAnimatedTabBarController.swift in Sources */,
 				5C48137F1DF0C2B400473AA4 /* UIViewControllerExtension.swift in Sources */,
 				5C4812DF1DE930E000473AA4 /* HomeTableViewController.swift in Sources */,
 				5C4813DC1DF0C2B500473AA4 /* AnimatedPresenting.swift in Sources */,
+				5CE97EDC1DFF4017008C92F7 /* Validation.swift in Sources */,
 				5C48137B1DF0C2B400473AA4 /* ZoomAnimator.swift in Sources */,
 				5C4814031DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				5C4813D91DF0C2B500473AA4 /* AnimatorFactory.swift in Sources */,
@@ -1020,22 +1146,27 @@
 				5C4813C91DF0C2B500473AA4 /* DismissSegue.swift in Sources */,
 				B41716FD1DD1808E00999160 /* SpriteScene.swift in Sources */,
 				5C4813B01DF0C2B500473AA4 /* PresentationAnimationType.swift in Sources */,
+				5CE97ECD1DFF4017008C92F7 /* NonLinearRegression.swift in Sources */,
 				5C4813CB1DF0C2B500473AA4 /* CoverAnimator.swift in Sources */,
 				5C4813AE1DF0C2B500473AA4 /* PresentationKeyboardTranslation.swift in Sources */,
 				5C4813A41DF0C2B500473AA4 /* PresentFlipWithDismissInteractionSegue.swift in Sources */,
 				5C4814091DF0C2B500473AA4 /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				5C7A08111DF8BACE00C2607D /* PlayTitleCell.swift in Sources */,
+				5CE97ECB1DFF4017008C92F7 /* MarkovDecisionProcess.swift in Sources */,
 				5C4813EC1DF0C2B500473AA4 /* AnimatableCheckBox.swift in Sources */,
 				5C4813951DF0C2B400473AA4 /* SlideAnimator.swift in Sources */,
+				5CE97ED41DFF4017008C92F7 /* MetalNeuralNetworkShaders.metal in Sources */,
 				5C4813A31DF0C2B500473AA4 /* PresentFoldSegue.swift in Sources */,
 				5C4813D71DF0C2B500473AA4 /* BlurDesignable.swift in Sources */,
 				5C4813811DF0C2B400473AA4 /* Typealias.swift in Sources */,
 				5C4813A51DF0C2B500473AA4 /* PresentFlipSegue.swift in Sources */,
 				5C4813F61DF0C2B500473AA4 /* ActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				5CE97EA01DFF2BAF008C92F7 /* Math.swift in Sources */,
+				5CE97ED61DFF4017008C92F7 /* GeneticAlgorithm.swift in Sources */,
 				5C4813D51DF0C2B500473AA4 /* BorderDesignable.swift in Sources */,
 				5C4813931DF0C2B400473AA4 /* SystemCameraIrisAnimator.swift in Sources */,
 				5C4813FF1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				5CE97EC61DFF4017008C92F7 /* SVM.swift in Sources */,
 				5C4813E11DF0C2B500473AA4 /* AnimatableTableViewCell.swift in Sources */,
 				5C4813B81DF0C2B500473AA4 /* NatGeoAnimator.swift in Sources */,
 				163E8EEB1DFB129000F9EAD5 /* DrumKit.swift in Sources */,
@@ -1049,6 +1180,8 @@
 				5C4813F81DF0C2B500473AA4 /* ActivityIndicatorAnimationOrbit.swift in Sources */,
 				5C4813B71DF0C2B500473AA4 /* NavigationBarDesginable.swift in Sources */,
 				5CE97E9C1DFF2BAF008C92F7 /* BayesianClassifier.swift in Sources */,
+				5CE97EE21DFF4017008C92F7 /* KMeans.swift in Sources */,
+				5CE97EDE1DFF4017008C92F7 /* DeepLayer.swift in Sources */,
 				5C4813ED1DF0C2B500473AA4 /* AnimatableButton.swift in Sources */,
 				5C4813F01DF0C2B500473AA4 /* Animatable.swift in Sources */,
 				5C7A08071DF7471500C2607D /* RecordingHeaderCell.swift in Sources */,
@@ -1068,34 +1201,42 @@
 				5C4813BC1DF0C2B500473AA4 /* InteractiveAnimatorFactory.swift in Sources */,
 				5C48137C1DF0C2B400473AA4 /* ViewControllerDesignable.swift in Sources */,
 				5C4814101DF0C2B500473AA4 /* ActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				5CE97ED01DFF4017008C92F7 /* MixtureOfGaussians.swift in Sources */,
+				5CE97EC91DFF4017008C92F7 /* LSTMNeuralNetwork.swift in Sources */,
 				5C4813C51DF0C2B500473AA4 /* FillDesignable.swift in Sources */,
 				5C4813DA1DF0C2B500473AA4 /* AnimationType.swift in Sources */,
 				5C4813D11DF0C2B500473AA4 /* CheckBoxDesignable.swift in Sources */,
 				5C4813871DF0C2B400473AA4 /* TransitionAnimatable.swift in Sources */,
 				5C4813861DF0C2B400473AA4 /* TransitionAnimationType.swift in Sources */,
 				5C48138E1DF0C2B400473AA4 /* SystemPushAnimator.swift in Sources */,
+				5CE97ED51DFF4017008C92F7 /* Gaussian.swift in Sources */,
 				5C4813BF1DF0C2B500473AA4 /* IBEnum.swift in Sources */,
 				5C7A08231DFB00AB00C2607D /* Gesture2TableViewCell.swift in Sources */,
+				5CE97EE01DFF4017008C92F7 /* DeepChannel.swift in Sources */,
 				B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */,
 				5CC9BAA41DE3A9BB001B21DD /* RAMItemAnimationProtocol.swift in Sources */,
 				5C4813BA1DF0C2B500473AA4 /* MaskDesignable.swift in Sources */,
 				5C4813B21DF0C2B500473AA4 /* PlaceholderDesignable.swift in Sources */,
 				5C4814001DF0C2B500473AA4 /* ActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				5C4813C61DF0C2B500473AA4 /* FadeAnimator.swift in Sources */,
+				5CE97EE51DFF4017008C92F7 /* DeepNetworkOperator.swift in Sources */,
 				5C48137D1DF0C2B400473AA4 /* ViewControllerAnimatedTransitioning.swift in Sources */,
 				5C4813E31DF0C2B500473AA4 /* AnimatableStackView.swift in Sources */,
 				5C4814011DF0C2B500473AA4 /* ActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				5CC9BBE71DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift in Sources */,
+				5CE97ED21DFF4017008C92F7 /* DataSet.swift in Sources */,
 				5C4814131DF0C2B500473AA4 /* ActivityIndicatorAnimating.swift in Sources */,
 				5C48138C1DF0C2B400473AA4 /* SystemRippleEffectAnimator.swift in Sources */,
 				5C4813971DF0C2B400473AA4 /* ShadowDesignable.swift in Sources */,
 				5CC9BA971DE3A963001B21DD /* RAMBounceAnimation.swift in Sources */,
+				5CE97ED11DFF4017008C92F7 /* DeepNetwork.swift in Sources */,
 				91516AF71DD683230019FC06 /* FFTHelper.m in Sources */,
 				5C4813921DF0C2B400473AA4 /* SystemCubeAnimator.swift in Sources */,
 				5C4813E91DF0C2B500473AA4 /* AnimatableLabel.swift in Sources */,
 				5C4814051DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				5C4813F31DF0C2B500473AA4 /* ActivityIndicatorFactory.swift in Sources */,
 				5C4813F11DF0C2B500473AA4 /* ActivityIndicatorType.swift in Sources */,
+				5CE97ECA1DFF4017008C92F7 /* RecurrentNeuralNetwork.swift in Sources */,
 				5C4813F51DF0C2B500473AA4 /* ActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				5C4813DD1DF0C2B500473AA4 /* AnimatableViewController.swift in Sources */,
 				5CC9BA9B1DE3A984001B21DD /* RAMFumeAnimation.swift in Sources */,
@@ -1109,9 +1250,11 @@
 				5C4813AA1DF0C2B500473AA4 /* PresentationPresenterManager.swift in Sources */,
 				5C7A08031DF744C500C2607D /* RecordingsTableViewController.swift in Sources */,
 				5C4813C01DF0C2B500473AA4 /* GradientType.swift in Sources */,
+				5CE97ED81DFF4017008C92F7 /* Pooling.swift in Sources */,
 				5C4813C41DF0C2B500473AA4 /* FlipAnimator.swift in Sources */,
 				5C4813BD1DF0C2B500473AA4 /* InteractiveAnimator.swift in Sources */,
 				5C4813DE1DF0C2B500473AA4 /* AnimatableView.swift in Sources */,
+				5CE97EDB1DFF4017008C92F7 /* DeepNeuralNetwork.swift in Sources */,
 				5C4813D81DF0C2B500473AA4 /* BarButtonItemDesignable.swift in Sources */,
 				5CC9BBE31DE8D639001B21DD /* KDDragAndDropManager.swift in Sources */,
 				5C4813C71DF0C2B500473AA4 /* ExplodeAnimator.swift in Sources */,
@@ -1123,12 +1266,15 @@
 				5C4814061DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScale.swift in Sources */,
 				5C4814041DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				5C4813DB1DF0C2B500473AA4 /* AnimatedTransitioning.swift in Sources */,
+				5CE97EDA1DFF4017008C92F7 /* MetalNeuralNetworkShaders.swift in Sources */,
 				5C4813E21DF0C2B500473AA4 /* AnimatableTableView.swift in Sources */,
 				5C48140B1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallPulse.swift in Sources */,
 				5C7A080D1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift in Sources */,
 				5C4813CF1DF0C2B500473AA4 /* Constants.swift in Sources */,
+				5CE97EE11DFF4017008C92F7 /* PrincipalComponantAnalysis.swift in Sources */,
 				5C4813A81DF0C2B500473AA4 /* PresentExplodeSegue.swift in Sources */,
 				5C4813C31DF0C2B500473AA4 /* FoldAnimator.swift in Sources */,
+				5CE97ED31DFF4017008C92F7 /* LinearRegression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1283,7 +1429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 788J8M5NBX;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1300,7 +1446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 788J8M5NBX;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

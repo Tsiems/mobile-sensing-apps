@@ -483,6 +483,17 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
 //        catch {
 //            print("Loading session failed.")
 //        }
+        
+        let data = DataSet(dataType: .classification, inputDimension: 2, outputDimension: 1)
+        try! data.addDataPoint(input: [0.2, 0.9], dataClass:0)
+        try! data.addDataPoint(input: [0.8, 0.3], dataClass:0)
+        try! data.addDataPoint(input: [0.5, 0.6], dataClass:0)
+        try! data.addDataPoint(input: [0.2, 0.7], dataClass:1)
+        try! data.addDataPoint(input: [0.2, 0.3], dataClass:1)
+        try! data.addDataPoint(input: [0.4, 0.5], dataClass:1)
+        try! data.addDataPoint(input: [0.5, 0.4], dataClass:2)
+        try! data.addDataPoint(input: [0.3, 0.2], dataClass:2)
+        try! data.addDataPoint(input: [0.7, 0.2], dataClass:2)
     }
     
     
