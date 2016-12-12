@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1637F80B1DFF330900102EFE /* FeatureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1637F80A1DFF330900102EFE /* FeatureData.swift */; };
 		163E8EEB1DFB129000F9EAD5 /* DrumKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E8EEA1DFB129000F9EAD5 /* DrumKit.swift */; };
 		5C136E5D1DE3511500EE9B30 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C136E5C1DE3511500EE9B30 /* 10.jpg */; };
 		5C4812DF1DE930E000473AA4 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */; };
@@ -238,6 +239,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1637F80A1DFF330900102EFE /* FeatureData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureData.swift; sourceTree = "<group>"; };
 		163E8EEA1DFB129000F9EAD5 /* DrumKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrumKit.swift; path = ../DrumKit.swift; sourceTree = "<group>"; };
 		5C136E5C1DE3511500EE9B30 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 				5C7A08021DF744C500C2607D /* RecordingsTableViewController.swift */,
 				5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */,
 				5CC9BBDE1DE8D38E001B21DD /* DataItem.swift */,
+				1637F80A1DFF330900102EFE /* FeatureData.swift */,
 				5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */,
 				5CC9BBE61DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift */,
 				5CC9BAA01DE3A9AD001B21DD /* RAMBadge.swift */,
@@ -849,7 +852,7 @@
 				TargetAttributes = {
 					B41716B41DD1160B00999160 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 26Y78VEH49;
+						DevelopmentTeam = 788J8M5NBX;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -991,6 +994,7 @@
 				5C4814121DF0C2B500473AA4 /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				5C48140D1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				5C4813B51DF0C2B500473AA4 /* PaddingDesignable.swift in Sources */,
+				1637F80B1DFF330900102EFE /* FeatureData.swift in Sources */,
 				5C4814111DF0C2B500473AA4 /* ActivityIndicatorAnimationBallBeat.swift in Sources */,
 				B41716F31DD116BE00999160 /* RingBuffer.m in Sources */,
 				5C4813EA1DF0C2B500473AA4 /* AnimatableImageView.swift in Sources */,
@@ -1279,7 +1283,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 26Y78VEH49;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1296,7 +1300,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 26Y78VEH49;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
