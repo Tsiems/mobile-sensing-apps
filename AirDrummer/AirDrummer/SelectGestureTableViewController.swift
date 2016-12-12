@@ -53,15 +53,23 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
         
         var instrumentHasGesture = false
         var index = 0
+        var gestureName = ""
         for gesture in gestures {
             if gesture.instrument == items[indexPath.row] && gesture.inUse {
                 instrumentHasGesture = true
+                gestureName = gesture.gesture_name
                 break
             }
             index += 1
         }
         if instrumentHasGesture {
             //change image here (at index)
+            let gifmanager = SwiftyGifManager(memoryLimit:20)
+            if gestureName == "" || gestureName == "Low Hit" {
+                gestureName = "popcorn"
+            }
+            let gif = UIImage(gifName: "\(gestureName).gif")
+            cell.gestureImage.setGifImage(gif, manager: gifmanager)
             cell.gestureView.backgroundColor = UIColor.darkGray
         }
         else {

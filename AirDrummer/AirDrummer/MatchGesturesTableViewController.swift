@@ -85,11 +85,19 @@ class MatchGesturesTableViewController: UITableViewController {
         cell.gestureLabel.text = gestures[indexPath.row].gesture_name
         
         let gifmanager = SwiftyGifManager(memoryLimit:20)
-        let gif = UIImage(gifName: "popcorn.gif")
-        let imageview = UIImageView(gifImage: gif, manager: gifmanager)
+        if gestures[indexPath.row].gesture_name == "Low Hit" {
+            let gif = UIImage(gifName: "popcorn.gif")
+            let imageview = UIImageView(gifImage: gif, manager: gifmanager)
+            cell.gestureImage.setGifImage(gif, manager: gifmanager)
+        } else {
+            let gif = UIImage(gifName: "\(gestures[indexPath.row].gesture_name).gif")
+            let imageview = UIImageView(gifImage: gif, manager: gifmanager)
+            cell.gestureImage.setGifImage(gif, manager: gifmanager)
+        }
         
         
-        cell.gestureImage.setGifImage(gif, manager: gifmanager)
+        
+       
         
         
         if (!gestures[indexPath.row].inUse) {

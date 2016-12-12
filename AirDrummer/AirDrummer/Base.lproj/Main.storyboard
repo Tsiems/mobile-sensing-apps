@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NKH-OY-sfp">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NKH-OY-sfp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -679,9 +679,18 @@
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLO-a7-szs" customClass="AnimatableView" customModule="AirDrummer" customModuleProvider="target">
                                             <rect key="frame" x="234" y="8" width="100" height="72"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AC9-AZ-kq6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="72"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="AC9-AZ-kq6" secondAttribute="trailing" id="5M8-t8-CnW"/>
                                                 <constraint firstAttribute="width" constant="100" id="Lr7-w6-9hD"/>
+                                                <constraint firstItem="AC9-AZ-kq6" firstAttribute="leading" secondItem="zLO-a7-szs" secondAttribute="leading" id="THj-i9-tnv"/>
+                                                <constraint firstItem="AC9-AZ-kq6" firstAttribute="top" secondItem="zLO-a7-szs" secondAttribute="top" id="XNI-El-OGB"/>
+                                                <constraint firstAttribute="bottom" secondItem="AC9-AZ-kq6" secondAttribute="bottom" id="kjv-zI-lm0"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -708,6 +717,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="gestureImage" destination="AC9-AZ-kq6" id="sM5-AT-wd7"/>
                                     <outlet property="gestureView" destination="zLO-a7-szs" id="Rxu-bZ-PD9"/>
                                     <outlet property="instrumentLabel" destination="ufk-Bv-pJa" id="Jkn-iO-lBQ"/>
                                 </connections>

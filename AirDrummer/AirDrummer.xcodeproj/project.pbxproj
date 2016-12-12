@@ -236,6 +236,8 @@
 		5CE97F311DFF4BAF008C92F7 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F301DFF4BAF008C92F7 /* SwiftyGifManager.swift */; };
 		5CE97F331DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F321DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift */; };
 		5CE97F351DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F341DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift */; };
+		5CE97F391DFF5423008C92F7 /* High Hit.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CE97F371DFF5422008C92F7 /* High Hit.gif */; };
+		5CE97F3A1DFF5423008C92F7 /* Flipped Hit.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CE97F381DFF5423008C92F7 /* Flipped Hit.gif */; };
 		91516AF71DD683230019FC06 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91516AF61DD683230019FC06 /* FFTHelper.m */; };
 		91D685291DF9C01300C0B2CD /* gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D685281DF9C01300C0B2CD /* gesture.swift */; };
 		B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716B81DD1160B00999160 /* AppDelegate.swift */; };
@@ -507,6 +509,8 @@
 		5CE97F301DFF4BAF008C92F7 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
 		5CE97F321DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
 		5CE97F341DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
+		5CE97F371DFF5422008C92F7 /* High Hit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "High Hit.gif"; sourceTree = "<group>"; };
+		5CE97F381DFF5423008C92F7 /* Flipped Hit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Flipped Hit.gif"; sourceTree = "<group>"; };
 		91516AF51DD683230019FC06 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		91516AF61DD683230019FC06 /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
 		91D685281DF9C01300C0B2CD /* gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gesture.swift; sourceTree = "<group>"; };
@@ -852,6 +856,8 @@
 				5C7A080A1DF8AD0300C2607D /* PlayTableViewController.swift */,
 				5C7A08061DF7471500C2607D /* RecordingHeaderCell.swift */,
 				5C7A08041DF7455900C2607D /* RecordingTableViewCell.swift */,
+				5CE97F371DFF5422008C92F7 /* High Hit.gif */,
+				5CE97F381DFF5423008C92F7 /* Flipped Hit.gif */,
 				5C7A08021DF744C500C2607D /* RecordingsTableViewController.swift */,
 				5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */,
 				5CE97F361DFF4CEF008C92F7 /* gifManager */,
@@ -981,7 +987,7 @@
 				TargetAttributes = {
 					B41716B41DD1160B00999160 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = F69WJ27LN4;
+						DevelopmentTeam = 26Y78VEH49;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -1028,7 +1034,9 @@
 				B482BB791DF944D700701CD1 /* crash.wav in Resources */,
 				5C4813BE1DF0C2B500473AA4 /* Info.plist in Resources */,
 				B41716C61DD1160B00999160 /* LaunchScreen.storyboard in Resources */,
+				5CE97F391DFF5423008C92F7 /* High Hit.gif in Resources */,
 				5C136E5D1DE3511500EE9B30 /* 10.jpg in Resources */,
+				5CE97F3A1DFF5423008C92F7 /* Flipped Hit.gif in Resources */,
 				B41716C31DD1160B00999160 /* Assets.xcassets in Resources */,
 				B482BB7C1DF944E800701CD1 /* bassdrum.wav in Resources */,
 				B41716BE1DD1160B00999160 /* Main.storyboard in Resources */,
@@ -1449,7 +1457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1466,7 +1474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = F69WJ27LN4;
+				DEVELOPMENT_TEAM = 26Y78VEH49;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
