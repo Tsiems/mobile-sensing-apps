@@ -116,6 +116,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
