@@ -238,7 +238,6 @@
 		5CE97F351DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F341DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift */; };
 		91516AF71DD683230019FC06 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91516AF61DD683230019FC06 /* FFTHelper.m */; };
 		91D685291DF9C01300C0B2CD /* gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D685281DF9C01300C0B2CD /* gesture.swift */; };
-		91D6852B1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */; };
 		B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716B81DD1160B00999160 /* AppDelegate.swift */; };
 		B41716BB1DD1160B00999160 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716BA1DD1160B00999160 /* ViewController.swift */; };
 		B41716BE1DD1160B00999160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41716BC1DD1160B00999160 /* Main.storyboard */; };
@@ -511,7 +510,6 @@
 		91516AF51DD683230019FC06 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		91516AF61DD683230019FC06 /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
 		91D685281DF9C01300C0B2CD /* gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gesture.swift; sourceTree = "<group>"; };
-		91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters%2BGIF.swift"; sourceTree = "<group>"; };
 		B41716B51DD1160B00999160 /* AirDrummer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirDrummer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41716B81DD1160B00999160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B41716BA1DD1160B00999160 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -844,7 +842,6 @@
 				5C7A081A1DF9D0BA00C2607D /* DrumKitTableViewCell.swift */,
 				5C7A08121DF9B37B00C2607D /* MainTableViewCell.swift */,
 				91D685281DF9C01300C0B2CD /* gesture.swift */,
-				91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */,
 				5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */,
 				5CE97EA11DFF3FB2008C92F7 /* AIToolbox */,
 				5C7A08161DF9C0A700C2607D /* ESTMusicIndicatorView.swift */,
@@ -984,7 +981,7 @@
 				TargetAttributes = {
 					B41716B41DD1160B00999160 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 26Y78VEH49;
+						DevelopmentTeam = F69WJ27LN4;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -1159,7 +1156,6 @@
 				5C48137B1DF0C2B400473AA4 /* ZoomAnimator.swift in Sources */,
 				5C4814031DF0C2B500473AA4 /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				5C4813D91DF0C2B500473AA4 /* AnimatorFactory.swift in Sources */,
-				91D6852B1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift in Sources */,
 				5C4813E61DF0C2B500473AA4 /* AnimatablePresentationController.swift in Sources */,
 				5C4813CD1DF0C2B500473AA4 /* CornerDesignable.swift in Sources */,
 				5C4813C91DF0C2B500473AA4 /* DismissSegue.swift in Sources */,
@@ -1453,7 +1449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 26Y78VEH49;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1470,7 +1466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 26Y78VEH49;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				INFOPLIST_FILE = AirDrummer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
