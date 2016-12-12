@@ -18,7 +18,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     let backQueue = OperationQueue()
     
     //used for machine learning
-    let nb = NaiveBayes()
+//    let nb = NaiveBayes()
     
     var ringBuffer = RingBuffer()
     var orientationBuffer = RingBuffer()
@@ -425,16 +425,33 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
 
         let labels = ["Gesture 1", "Gesture 2", "Gesture 3"]
         let features = [[0.03490489,-0.02601342, 0.936972],[0.2710942, -2.89515, 1.256121],[-0.09389891, -3.128638, 1.631254]]
-        var labeledFeatures:[String:Array<[Double]>] = [:]
-        for (f,l) in zip(features,labels) {
-            if labeledFeatures[l] != nil {
-                labeledFeatures[l]?.append(f)
-            }
-            else {
-                labeledFeatures[l] = [f]
-            }
-        }
+        var labeledFeatures:[String:[FeatureData]] = [:]
+//        for (f,l) in zip(features,labels) {
+//            if labeledFeatures[l] != nil {
+//                labeledFeatures[l]?.append(FeatureData(data: f))
+//            }
+//            else {
+//                labeledFeatures[l] = [FeatureData(data: f)]
+//            }
+//        }
         
+        
+        var eventSpace = EventSpace<String, FeatureData >()
+        
+        for (f,l) in zip(features,labels) {
+            eventSpace.observe(category: l, features: [FeatureData(data: f)])
+        }
+//        for key in labeledFeatures {
+//            eventSpace.observe(category: key, features: labeledFeatures[key])
+//        }
+        
+        var classifier = BayesianClassifier(eventSpace: eventSpace)
+//
+//        XCTAssertEqual(classifier.classify(["claw", "tail"])!, "Cat", "Should categorize as Cat, due to claw")
+//        XCTAssertEqual(classifier.classify(["bark", "tail"])!, "Dog", "Should categorize as Dog, due to bark")
+//        XCTAssertEqual(classifier.classify(["tail"])!, "Cat", "Should categorize as Cat, due to base rate")
+//        XCTAssertEqual(classifier.classify(["paw", "tail"])!, "Dog", "Should categorize as Dog, due to prevalence of paw")
+//        
         
         
         // Positive tokens and the frequencies ["token A": Frequency of token A, ...]
