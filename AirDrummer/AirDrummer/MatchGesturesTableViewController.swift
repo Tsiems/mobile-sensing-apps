@@ -83,6 +83,15 @@ class MatchGesturesTableViewController: UITableViewController {
         cell.layer.rasterizationScale = UIScreen.main.scale
         // Configure the cell...
         cell.gestureLabel.text = gestures[indexPath.row].gesture_name
+        
+        let gifmanager = SwiftyGifManager(memoryLimit:20)
+        let gif = UIImage(gifName: "popcorn.gif")
+        let imageview = UIImageView(gifImage: gif, manager: gifmanager)
+        
+        
+        cell.gestureImage.setGifImage(gif, manager: gifmanager)
+        
+        
         if (!gestures[indexPath.row].inUse) {
             cell.inUse.isHidden = true
         }

@@ -232,6 +232,10 @@
 		5CE97F2B1DFF437D008C92F7 /* SVMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F091DFF437C008C92F7 /* SVMExtensions.swift */; };
 		5CE97F2C1DFF437D008C92F7 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F0A1DFF437C008C92F7 /* Tree.swift */; };
 		5CE97F2D1DFF437D008C92F7 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F0B1DFF437C008C92F7 /* Validation.swift */; };
+		5CE97F2F1DFF4B17008C92F7 /* popcorn.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5CE97F2E1DFF4B17008C92F7 /* popcorn.gif */; };
+		5CE97F311DFF4BAF008C92F7 /* SwiftyGifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F301DFF4BAF008C92F7 /* SwiftyGifManager.swift */; };
+		5CE97F331DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F321DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift */; };
+		5CE97F351DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97F341DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift */; };
 		91516AF71DD683230019FC06 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91516AF61DD683230019FC06 /* FFTHelper.m */; };
 		91D685291DF9C01300C0B2CD /* gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D685281DF9C01300C0B2CD /* gesture.swift */; };
 		91D6852B1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6852A1DF9D2F300C0B2CD /* iOSDevCenters%2BGIF.swift */; };
@@ -500,6 +504,10 @@
 		5CE97F091DFF437C008C92F7 /* SVMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVMExtensions.swift; path = AIToolbox/SVMExtensions.swift; sourceTree = SOURCE_ROOT; };
 		5CE97F0A1DFF437C008C92F7 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tree.swift; path = AIToolbox/Tree.swift; sourceTree = SOURCE_ROOT; };
 		5CE97F0B1DFF437C008C92F7 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = AIToolbox/Validation.swift; sourceTree = SOURCE_ROOT; };
+		5CE97F2E1DFF4B17008C92F7 /* popcorn.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = popcorn.gif; sourceTree = "<group>"; };
+		5CE97F301DFF4BAF008C92F7 /* SwiftyGifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyGifManager.swift; sourceTree = "<group>"; };
+		5CE97F321DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SwiftyGif.swift"; sourceTree = "<group>"; };
+		5CE97F341DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SwiftyGif.swift"; sourceTree = "<group>"; };
 		91516AF51DD683230019FC06 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
 		91516AF61DD683230019FC06 /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
 		91D685281DF9C01300C0B2CD /* gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gesture.swift; sourceTree = "<group>"; };
@@ -789,6 +797,16 @@
 			name = AIToolbox;
 			sourceTree = "<group>";
 		};
+		5CE97F361DFF4CEF008C92F7 /* gifManager */ = {
+			isa = PBXGroup;
+			children = (
+				5CE97F341DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift */,
+				5CE97F321DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift */,
+				5CE97F301DFF4BAF008C92F7 /* SwiftyGifManager.swift */,
+			);
+			name = gifManager;
+			sourceTree = "<group>";
+		};
 		B41716AC1DD1160B00999160 = {
 			isa = PBXGroup;
 			children = (
@@ -839,6 +857,7 @@
 				5C7A08041DF7455900C2607D /* RecordingTableViewCell.swift */,
 				5C7A08021DF744C500C2607D /* RecordingsTableViewController.swift */,
 				5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */,
+				5CE97F361DFF4CEF008C92F7 /* gifManager */,
 				5CC9BBDE1DE8D38E001B21DD /* DataItem.swift */,
 				1637F80A1DFF330900102EFE /* FeatureData.swift */,
 				5CC9B8181DE36BBB001B21DD /* SelectInstrumentsViewController.swift */,
@@ -848,6 +867,7 @@
 				5CC9BAA61DE3A9CF001B21DD /* RAMAnimatedTabController */,
 				B4D5297D1DD3F3A200A62BF0 /* hihat.wav */,
 				B482BB781DF944D700701CD1 /* crash.wav */,
+				5CE97F2E1DFF4B17008C92F7 /* popcorn.gif */,
 				B482BB7A1DF944E800701CD1 /* bassdrum.wav */,
 				B482BB7B1DF944E800701CD1 /* tom_002b.wav */,
 				B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */,
@@ -1007,6 +1027,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE97F2F1DFF4B17008C92F7 /* popcorn.gif in Resources */,
 				B482BB791DF944D700701CD1 /* crash.wav in Resources */,
 				5C4813BE1DF0C2B500473AA4 /* Info.plist in Resources */,
 				B41716C61DD1160B00999160 /* LaunchScreen.storyboard in Resources */,
@@ -1055,6 +1076,7 @@
 				5C4813FD1DF0C2B500473AA4 /* ActivityIndicatorAnimationLineScale.swift in Sources */,
 				5C4813E81DF0C2B500473AA4 /* AnimatableModalViewController.swift in Sources */,
 				5C4813F21DF0C2B500473AA4 /* ActivityIndicatorShape.swift in Sources */,
+				5CE97F351DFF4BDF008C92F7 /* UIImageView+SwiftyGif.swift in Sources */,
 				5C4813A11DF0C2B500473AA4 /* PresentNatGeoSegue.swift in Sources */,
 				5C4813C11DF0C2B500473AA4 /* GradientStartPoint.swift in Sources */,
 				5C7A080B1DF8AD0300C2607D /* PlayTableViewController.swift in Sources */,
@@ -1196,8 +1218,10 @@
 				5C4813801DF0C2B400473AA4 /* UIColorExtension.swift in Sources */,
 				5C4813AC1DF0C2B500473AA4 /* PresentationModalSize.swift in Sources */,
 				5CE97F1E1DFF437C008C92F7 /* MarkovDecisionProcess.swift in Sources */,
+				5CE97F331DFF4BB5008C92F7 /* UIImage+SwiftyGif.swift in Sources */,
 				B41716F91DD116D400999160 /* HttpCommHandler.m in Sources */,
 				5C4813BC1DF0C2B500473AA4 /* InteractiveAnimatorFactory.swift in Sources */,
+				5CE97F311DFF4BAF008C92F7 /* SwiftyGifManager.swift in Sources */,
 				5C48137C1DF0C2B400473AA4 /* ViewControllerDesignable.swift in Sources */,
 				5C4814101DF0C2B500473AA4 /* ActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				5C4813C51DF0C2B500473AA4 /* FillDesignable.swift in Sources */,
