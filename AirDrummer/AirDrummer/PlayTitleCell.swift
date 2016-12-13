@@ -10,6 +10,7 @@ import UIKit
 
 class PlayTitleCell: UITableViewCell {
     @IBOutlet weak var recordButton: AnimatableButton!
+    @IBOutlet weak var drumKitTitle: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

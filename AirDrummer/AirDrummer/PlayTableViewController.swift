@@ -189,7 +189,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 230
+        return 250
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -197,6 +197,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         
         headerCell.recordButton.tag = section
         headerCell.recordButton.addTarget(self, action: #selector(toggleRecording), for: .touchUpInside)
+        headerCell.drumKitTitle.text = drumKits[selectedDrumKit].name
         
         return headerCell
     }
