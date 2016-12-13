@@ -10,8 +10,11 @@ import UIKit
 
 class GesturePopUpViewController: UIViewController {
     @IBOutlet weak var gestureView: UIImageView!
+    @IBOutlet weak var gestureLabel: UILabel!
+    @IBOutlet weak var instrumentLabel: UILabel!
     var gifName = ""
-
+    var instrument = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +22,12 @@ class GesturePopUpViewController: UIViewController {
         view.isOpaque = false
 
         // Do any additional setup after loading the view.
+        let gifmanager = SwiftyGifManager(memoryLimit:20)
+        
+        let gif = UIImage(gifName: "\(gifName).gif")
+        self.gestureView.setGifImage(gif, manager: gifmanager)
+        self.gestureLabel.text = gifName
+        self.instrumentLabel.text = instrument
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,10 +38,6 @@ class GesturePopUpViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let gifmanager = SwiftyGifManager(memoryLimit:20)
-        
-        let gif = UIImage(gifName: "\(gifName).gif")
-        self.gestureView.setGifImage(gif, manager: gifmanager)
         
     }
     

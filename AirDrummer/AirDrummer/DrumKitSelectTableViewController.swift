@@ -14,7 +14,7 @@ class DrumKitSelectTableViewController: UITableViewController {
         super.viewDidLoad()
         
         drumKits = loadDrumKits()
-        selectedDrumKit = loadSelectedKit()
+//        selectedDrumKit = loadSelectedKit()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -59,6 +59,7 @@ class DrumKitSelectTableViewController: UITableViewController {
         
         selectedDrumKit = indexPath.row
         saveSelectedKit(index: selectedDrumKit)
+        navigationController?.popViewController(animated: true)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

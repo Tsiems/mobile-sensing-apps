@@ -193,11 +193,6 @@
 		5CC9BBE31DE8D639001B21DD /* KDDragAndDropManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE21DE8D639001B21DD /* KDDragAndDropManager.swift */; };
 		5CC9BBE51DE8DD8E001B21DD /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE41DE8DD8E001B21DD /* ItemCollectionViewCell.swift */; };
 		5CC9BBE71DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9BBE61DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift */; };
-		5CE97E9C1DFF2BAF008C92F7 /* BayesianClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E971DFF2BAF008C92F7 /* BayesianClassifier.swift */; };
-		5CE97E9D1DFF2BAF008C92F7 /* EventSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E981DFF2BAF008C92F7 /* EventSpace.swift */; };
-		5CE97E9E1DFF2BAF008C92F7 /* HashableTouple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E991DFF2BAF008C92F7 /* HashableTouple.swift */; };
-		5CE97E9F1DFF2BAF008C92F7 /* IncrementingBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E9A1DFF2BAF008C92F7 /* IncrementingBag.swift */; };
-		5CE97EA01DFF2BAF008C92F7 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97E9B1DFF2BAF008C92F7 /* Math.swift */; };
 		5CE97F0C1DFF437C008C92F7 /* AlphaBeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EEA1DFF437C008C92F7 /* AlphaBeta.swift */; };
 		5CE97F0D1DFF437C008C92F7 /* ConstraintPropogation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EEB1DFF437C008C92F7 /* ConstraintPropogation.swift */; };
 		5CE97F0E1DFF437C008C92F7 /* Convolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE97EEC1DFF437C008C92F7 /* Convolution.swift */; };
@@ -242,7 +237,6 @@
 		91516AF71DD683230019FC06 /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91516AF61DD683230019FC06 /* FFTHelper.m */; };
 		91D685291DF9C01300C0B2CD /* gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D685281DF9C01300C0B2CD /* gesture.swift */; };
 		B41716B91DD1160B00999160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716B81DD1160B00999160 /* AppDelegate.swift */; };
-		B41716BB1DD1160B00999160 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716BA1DD1160B00999160 /* ViewController.swift */; };
 		B41716BE1DD1160B00999160 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41716BC1DD1160B00999160 /* Main.storyboard */; };
 		B41716C11DD1160B00999160 /* AirDrummer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B41716BF1DD1160B00999160 /* AirDrummer.xcdatamodeld */; };
 		B41716C31DD1160B00999160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41716C21DD1160B00999160 /* Assets.xcassets */; };
@@ -251,7 +245,6 @@
 		B41716DC1DD1160C00999160 /* AirDrummerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716DB1DD1160C00999160 /* AirDrummerUITests.swift */; };
 		B41716F31DD116BE00999160 /* RingBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716ED1DD116BE00999160 /* RingBuffer.m */; };
 		B41716F91DD116D400999160 /* HttpCommHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B41716F71DD116D400999160 /* HttpCommHandler.m */; };
-		B41716FB1DD178FC00999160 /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716FA1DD178FC00999160 /* PlayingViewController.swift */; };
 		B41716FD1DD1808E00999160 /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41716FC1DD1808E00999160 /* SpriteScene.swift */; };
 		B482BB791DF944D700701CD1 /* crash.wav in Resources */ = {isa = PBXBuildFile; fileRef = B482BB781DF944D700701CD1 /* crash.wav */; };
 		B482BB7C1DF944E800701CD1 /* bassdrum.wav in Resources */ = {isa = PBXBuildFile; fileRef = B482BB7A1DF944E800701CD1 /* bassdrum.wav */; };
@@ -465,12 +458,6 @@
 		5CC9BBE21DE8D639001B21DD /* KDDragAndDropManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDDragAndDropManager.swift; sourceTree = "<group>"; };
 		5CC9BBE41DE8DD8E001B21DD /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		5CC9BBE61DE8FDA1001B21DD /* KDDragAndDropCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDDragAndDropCollectionView.swift; sourceTree = "<group>"; };
-		5CE97E961DFF2BAF008C92F7 /* Bayes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bayes.h; sourceTree = "<group>"; };
-		5CE97E971DFF2BAF008C92F7 /* BayesianClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BayesianClassifier.swift; sourceTree = "<group>"; };
-		5CE97E981DFF2BAF008C92F7 /* EventSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSpace.swift; sourceTree = "<group>"; };
-		5CE97E991DFF2BAF008C92F7 /* HashableTouple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashableTouple.swift; sourceTree = "<group>"; };
-		5CE97E9A1DFF2BAF008C92F7 /* IncrementingBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementingBag.swift; sourceTree = "<group>"; };
-		5CE97E9B1DFF2BAF008C92F7 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		5CE97EE91DFF437C008C92F7 /* AIToolbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIToolbox.h; path = AIToolbox/AIToolbox.h; sourceTree = SOURCE_ROOT; };
 		5CE97EEA1DFF437C008C92F7 /* AlphaBeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlphaBeta.swift; path = AIToolbox/AlphaBeta.swift; sourceTree = SOURCE_ROOT; };
 		5CE97EEB1DFF437C008C92F7 /* ConstraintPropogation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConstraintPropogation.swift; path = AIToolbox/ConstraintPropogation.swift; sourceTree = SOURCE_ROOT; };
@@ -518,7 +505,6 @@
 		91D685281DF9C01300C0B2CD /* gesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gesture.swift; sourceTree = "<group>"; };
 		B41716B51DD1160B00999160 /* AirDrummer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirDrummer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41716B81DD1160B00999160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B41716BA1DD1160B00999160 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B41716BD1DD1160B00999160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B41716C01DD1160B00999160 /* AirDrummer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AirDrummer.xcdatamodel; sourceTree = "<group>"; };
 		B41716C21DD1160B00999160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -536,7 +522,6 @@
 		B41716F61DD116D400999160 /* HttpCommHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpCommHandler.h; sourceTree = "<group>"; };
 		B41716F71DD116D400999160 /* HttpCommHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpCommHandler.m; sourceTree = "<group>"; };
 		B41716F81DD116D400999160 /* HTTPExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPExample-Prefix.pch"; sourceTree = "<group>"; };
-		B41716FA1DD178FC00999160 /* PlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
 		B41716FC1DD1808E00999160 /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		B482BB781DF944D700701CD1 /* crash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = crash.wav; path = Assets.xcassets/crash.wav; sourceTree = "<group>"; };
 		B482BB7A1DF944E800701CD1 /* bassdrum.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bassdrum.wav; path = Assets.xcassets/bassdrum.wav; sourceTree = "<group>"; };
@@ -746,19 +731,6 @@
 			name = RAMAnimatedTabController;
 			sourceTree = "<group>";
 		};
-		5CE97E951DFF2B9C008C92F7 /* Bayes */ = {
-			isa = PBXGroup;
-			children = (
-				5CE97E961DFF2BAF008C92F7 /* Bayes.h */,
-				5CE97E971DFF2BAF008C92F7 /* BayesianClassifier.swift */,
-				5CE97E981DFF2BAF008C92F7 /* EventSpace.swift */,
-				5CE97E991DFF2BAF008C92F7 /* HashableTouple.swift */,
-				5CE97E9A1DFF2BAF008C92F7 /* IncrementingBag.swift */,
-				5CE97E9B1DFF2BAF008C92F7 /* Math.swift */,
-			);
-			name = Bayes;
-			sourceTree = "<group>";
-		};
 		5CE97EA11DFF3FB2008C92F7 /* AIToolbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,6 +783,28 @@
 			name = gifManager;
 			sourceTree = "<group>";
 		};
+		5CE97F3D1DFFABDA008C92F7 /* gestureGifs */ = {
+			isa = PBXGroup;
+			children = (
+				5CE97F2E1DFF4B17008C92F7 /* Face Up.gif */,
+				5CE97F371DFF5422008C92F7 /* Up High.gif */,
+				5CE97F381DFF5423008C92F7 /* Face Down.gif */,
+			);
+			name = gestureGifs;
+			sourceTree = "<group>";
+		};
+		5CE97F3E1DFFABED008C92F7 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B482BB781DF944D700701CD1 /* crash.wav */,
+				B482BB7A1DF944E800701CD1 /* bassdrum.wav */,
+				B482BB7B1DF944E800701CD1 /* tom_002b.wav */,
+				B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */,
+				B4D5297F1DD3F3A200A62BF0 /* snare.wav */,
+			);
+			name = sounds;
+			sourceTree = "<group>";
+		};
 		B41716AC1DD1160B00999160 = {
 			isa = PBXGroup;
 			children = (
@@ -840,7 +834,6 @@
 			children = (
 				B41716B81DD1160B00999160 /* AppDelegate.swift */,
 				163E8EEA1DFB129000F9EAD5 /* DrumKit.swift */,
-				B41716BA1DD1160B00999160 /* ViewController.swift */,
 				B41716BC1DD1160B00999160 /* Main.storyboard */,
 				5CE97F3B1DFF5EC2008C92F7 /* GesturePopUpViewController.swift */,
 				5C7A08221DFB00AB00C2607D /* Gesture2TableViewCell.swift */,
@@ -852,16 +845,14 @@
 				5C7A08101DF8BACE00C2607D /* PlayTitleCell.swift */,
 				5CE97EA11DFF3FB2008C92F7 /* AIToolbox */,
 				5C7A08161DF9C0A700C2607D /* ESTMusicIndicatorView.swift */,
-				5CE97E951DFF2B9C008C92F7 /* Bayes */,
 				5C7A08171DF9C0A700C2607D /* ESTMusicIndicatorContentView.swift */,
 				5C7A080E1DF8AD9E00C2607D /* SelectGestureTableViewController.swift */,
 				5C7A080C1DF8AD2A00C2607D /* DrumKitSelectTableViewController.swift */,
 				5C7A080A1DF8AD0300C2607D /* PlayTableViewController.swift */,
 				5C7A08061DF7471500C2607D /* RecordingHeaderCell.swift */,
 				5C7A08041DF7455900C2607D /* RecordingTableViewCell.swift */,
-				5CE97F371DFF5422008C92F7 /* Up High.gif */,
-				5CE97F381DFF5423008C92F7 /* Face Down.gif */,
 				5C7A08021DF744C500C2607D /* RecordingsTableViewController.swift */,
+				5CE97F3D1DFFABDA008C92F7 /* gestureGifs */,
 				5C4812DE1DE930E000473AA4 /* HomeTableViewController.swift */,
 				5CE97F361DFF4CEF008C92F7 /* gifManager */,
 				5CC9BBDE1DE8D38E001B21DD /* DataItem.swift */,
@@ -872,18 +863,12 @@
 				B41716C21DD1160B00999160 /* Assets.xcassets */,
 				5CC9BAA61DE3A9CF001B21DD /* RAMAnimatedTabController */,
 				B4D5297D1DD3F3A200A62BF0 /* hihat.wav */,
-				B482BB781DF944D700701CD1 /* crash.wav */,
-				5CE97F2E1DFF4B17008C92F7 /* Face Up.gif */,
-				B482BB7A1DF944E800701CD1 /* bassdrum.wav */,
-				B482BB7B1DF944E800701CD1 /* tom_002b.wav */,
-				B4D5297E1DD3F3A200A62BF0 /* kickdrum.wav */,
-				B4D5297F1DD3F3A200A62BF0 /* snare.wav */,
+				5CE97F3E1DFFABED008C92F7 /* sounds */,
 				5C4812E01DF0C29900473AA4 /* IBAnimatable */,
 				B41716C41DD1160B00999160 /* LaunchScreen.storyboard */,
 				B41716C71DD1160B00999160 /* Info.plist */,
 				5C136E5C1DE3511500EE9B30 /* 10.jpg */,
 				B41716BF1DD1160B00999160 /* AirDrummer.xcdatamodeld */,
-				B41716FA1DD178FC00999160 /* PlayingViewController.swift */,
 				B41716FC1DD1808E00999160 /* SpriteScene.swift */,
 			);
 			path = AirDrummer;
@@ -1094,7 +1079,6 @@
 				5C4813901DF0C2B400473AA4 /* SystemMoveInAnimator.swift in Sources */,
 				5CE97F131DFF437C008C92F7 /* DeepNetworkOperator.swift in Sources */,
 				5C4813D41DF0C2B500473AA4 /* BorderSide.swift in Sources */,
-				5CE97E9F1DFF2BAF008C92F7 /* IncrementingBag.swift in Sources */,
 				5C48139C1DF0C2B400473AA4 /* PresentTurnSegue.swift in Sources */,
 				5C4813CA1DF0C2B500473AA4 /* DesignableNavigationBar.swift in Sources */,
 				5C4813A21DF0C2B500473AA4 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
@@ -1114,7 +1098,6 @@
 				5C4813F71DF0C2B500473AA4 /* ActivityIndicatorAnimationPacman.swift in Sources */,
 				5CC9BA9F1DE3A99B001B21DD /* RAMTransitionItemAnimations.swift in Sources */,
 				5C4813DF1DF0C2B500473AA4 /* AnimatableTextView.swift in Sources */,
-				B41716BB1DD1160B00999160 /* ViewController.swift in Sources */,
 				5C48137E1DF0C2B400473AA4 /* Utils.swift in Sources */,
 				5C48139A1DF0C2B400473AA4 /* RootWindowDesignable.swift in Sources */,
 				5CE97F3C1DFF5EC2008C92F7 /* GesturePopUpViewController.swift in Sources */,
@@ -1125,7 +1108,6 @@
 				5C4813C21DF0C2B500473AA4 /* GradientDesignable.swift in Sources */,
 				5CE97F251DFF437D008C92F7 /* NonLinearRegression.swift in Sources */,
 				5C4813CC1DF0C2B500473AA4 /* CornerSide.swift in Sources */,
-				5CE97E9D1DFF2BAF008C92F7 /* EventSpace.swift in Sources */,
 				5C4813941DF0C2B400473AA4 /* StatusBarDesignable.swift in Sources */,
 				5C48139D1DF0C2B400473AA4 /* PresentSlideWithDismissInteractionSegue.swift in Sources */,
 				5C4813EB1DF0C2B500473AA4 /* AnimatableCollectionViewCell.swift in Sources */,
@@ -1190,7 +1172,6 @@
 				5C4813811DF0C2B400473AA4 /* Typealias.swift in Sources */,
 				5C4813A51DF0C2B500473AA4 /* PresentFlipSegue.swift in Sources */,
 				5C4813F61DF0C2B500473AA4 /* ActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
-				5CE97EA01DFF2BAF008C92F7 /* Math.swift in Sources */,
 				5C4813D51DF0C2B500473AA4 /* BorderDesignable.swift in Sources */,
 				5C4813931DF0C2B400473AA4 /* SystemCameraIrisAnimator.swift in Sources */,
 				5C4813FF1DF0C2B500473AA4 /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
@@ -1208,7 +1189,6 @@
 				5C4813D31DF0C2B500473AA4 /* CALayerExtension.swift in Sources */,
 				5C4813F81DF0C2B500473AA4 /* ActivityIndicatorAnimationOrbit.swift in Sources */,
 				5C4813B71DF0C2B500473AA4 /* NavigationBarDesginable.swift in Sources */,
-				5CE97E9C1DFF2BAF008C92F7 /* BayesianClassifier.swift in Sources */,
 				5C4813ED1DF0C2B500473AA4 /* AnimatableButton.swift in Sources */,
 				5C4813F01DF0C2B500473AA4 /* Animatable.swift in Sources */,
 				5C7A08071DF7471500C2607D /* RecordingHeaderCell.swift in Sources */,
@@ -1222,7 +1202,6 @@
 				5C4813B11DF0C2B500473AA4 /* PortalAnimator.swift in Sources */,
 				5C4813881DF0C2B400473AA4 /* TintDesignable.swift in Sources */,
 				5C4813AF1DF0C2B500473AA4 /* PresentationDesignable.swift in Sources */,
-				5CE97E9E1DFF2BAF008C92F7 /* HashableTouple.swift in Sources */,
 				5C4813801DF0C2B400473AA4 /* UIColorExtension.swift in Sources */,
 				5C4813AC1DF0C2B500473AA4 /* PresentationModalSize.swift in Sources */,
 				5CE97F1E1DFF437C008C92F7 /* MarkovDecisionProcess.swift in Sources */,
@@ -1289,7 +1268,6 @@
 				5C4813F91DF0C2B500473AA4 /* ActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				5CE97F211DFF437D008C92F7 /* MetalNeuralNetworkShaders.swift in Sources */,
 				5C4813C81DF0C2B500473AA4 /* DropDownAnimator.swift in Sources */,
-				B41716FB1DD178FC00999160 /* PlayingViewController.swift in Sources */,
 				5C7A08131DF9B37B00C2607D /* MainTableViewCell.swift in Sources */,
 				5CE97F171DFF437C008C92F7 /* Graph.swift in Sources */,
 				5C7A080F1DF8AD9E00C2607D /* SelectGestureTableViewController.swift in Sources */,

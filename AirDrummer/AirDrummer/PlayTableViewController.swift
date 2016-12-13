@@ -17,6 +17,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     let cmMotionManager = CMMotionManager()
     let backQueue = OperationQueue()
     var currentGifName = ""
+    var currentInstrumentName = ""
     
     //used for machine learning
     let svm = SVMModel(problemType: .c_SVM_Classification, kernelSettings: KernelParameters(type: .radialBasisFunction, degree: 0, gamma: 0.5, coef0: 0.0))
@@ -175,6 +176,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         let gestures = drumKits[selectedDrumKit].gestures
         let gestureValues = Array(gestures.values)
         self.currentGifName = gestureValues[indexPath.row].gesture_name
+        self.currentInstrumentName = gestureValues[indexPath.row].instrument
         self.performSegue(withIdentifier: "showGesture", sender: self)
     }
 
@@ -203,6 +205,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
             
             let target = segue.destination as! GesturePopUpViewController
             target.gifName = self.currentGifName
+            target.instrument = self.currentInstrumentName
             
         }
     }
@@ -302,71 +305,6 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
 
     }
     
-    
-    //OLD POST REQUEST
-//    func postFeatureHandler(data:Data?, urlResponse:URLResponse?, error:Error?) -> Void{
-//        if(!(error != nil)){
-////            print(urlResponse!)
-//            if let responseData = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, Any> {
-////                print(responseData)
-//                
-//                if let prediction = responseData["prediction"] as? String {
-//                    
-//                    if let gesture = drumKits[selectedDrumKit].gestures[prediction] {
-//                        let instrument = gesture.instrument
-//                        
-//                        let date = self.players[instrument]!["time"] as! Date
-//                        let now = Date()
-//                        let seconds = now.timeIntervalSince(date)
-////                        print("Seconds: ",seconds)
-//                        
-//                        if seconds > TIME_DELAY {
-//                            self.players[instrument]!["time"] = now
-//                            self.players[instrument]!["index"] = ((self.players[instrument]!["index"] as! Int)+1)%3
-//                        }
-//                        
-//                        (self.players[instrument]!["players"] as! Array<AVAudioPlayer>)[self.players[instrument]!["index"] as! Int].play()
-//                    }
-//                    else {
-//                        print("Gesture not in use.", prediction)
-//                    }
-//                }
-//                else {
-//                    print("could not convert prediction to string")
-//                }
-//            }
-//            else {
-//                print("Could not convert to dict")
-//            }
-//            
-//        } else{
-//            print(error!)
-//        }
-//    }
-    
-    //OLD MACHINE LEARNING
-//    func getPredictionData(data:NSArray) {
-//        let baseUrl = "\(SERVER_URL)/PredictOne"
-//        let postUrl = NSURL(string: baseUrl)
-//        self.numDataPoints = self.numDataPoints + 1
-//        
-//        
-//        let jsonUpload:NSDictionary = ["feature": data, "dsid": DSID]
-//        
-//        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
-//        var request = URLRequest(url: postUrl as! URL)
-//        request.httpBody = requestBody
-//        request.httpMethod = "POST"
-//        
-//        
-//        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
-//        
-//        
-//        
-//        postTask.resume()
-////        print(self.numDataPoints)
-//    }
-
     func toggleRecording(sender: AnimatableButton) {
         print("touched")
         if (recording) {

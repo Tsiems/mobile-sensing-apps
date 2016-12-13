@@ -152,7 +152,7 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
         let newDrumKit:DrumKit = DrumKit(name: kitName, gestures: gestureDict)
         drumKits.append(newDrumKit)
         saveDrumKits(data: drumKits)
-        saveSelectedKit(index: (drumKits.count-1))
+//        saveSelectedKit(index: (drumKits.count-1))
         self.dismiss(animated: true, completion: nil)
     }
 
