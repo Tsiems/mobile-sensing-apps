@@ -134,6 +134,10 @@ class DrumKitSelectTableViewController: UITableViewController {
                 self.present(alert, animated: true, completion: nil)
 
             } else {
+                if selectedDrumKit == indexPath.row {
+                    selectedDrumKit = 0
+                    saveSelectedKit(index: 0)
+                }
                 drumKits.remove(at: indexPath.row)
                 saveDrumKits(data: drumKits)
                 tableView.deleteRows(at: [indexPath], with: .fade)

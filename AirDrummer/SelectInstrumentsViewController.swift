@@ -27,6 +27,9 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        self.title = "Customize Your Drum Kit"
+        
         let width = Double(screenSize.width)
         
         titleView.maskType = MaskType.wave(direction: MaskType.WaveDirection.up, width: width, offset: 0)
@@ -44,6 +47,7 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
         ]
         
         kitNameField.text = "Drum Kit " + String(drumKits.count+1)
+        
         
         data.append([])
         var items = [DataItem]()
