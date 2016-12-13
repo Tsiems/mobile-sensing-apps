@@ -150,7 +150,7 @@ final class MetalNeuralLayer {
         computeCommandEncoder.setBuffer(σBuffer, offset: 0, at: 3)
         
         //  Create the sizing array
-        let sizeArray : [Int32] = [Int32(numNodes), Int32(numWeights)]
+        let sizeArray : [__CLPK_integer] = [__CLPK_integer(numNodes), __CLPK_integer(numWeights)]
         let sizeArrayByteLength = sizeArray.count * MemoryLayout<Int32>.size
         let sizeBuffer = device.makeBuffer(bytes: sizeArray, length: sizeArrayByteLength, options: MTLResourceOptions(rawValue: 0))
         computeCommandEncoder.setBuffer(sizeBuffer, offset: 0, at: 4)
@@ -324,7 +324,7 @@ final class MetalNeuralLayer {
         computeCommandEncoder.setBuffer(deltaBuffer, offset: 0, at: 1)
         
         //  Create a MTLBuffer for the sizing array from the next layer and assign to buffer 2
-        let sizeArray : [Int32] = [Int32(nextLayer.numNodes), Int32(numNodes)]
+        let sizeArray : [__CLPK_integer] = [__CLPK_integer(nextLayer.numNodes), __CLPK_integer(numNodes)]
         let sizeArrayByteLength = sizeArray.count * MemoryLayout<Int32>.size
         let sizeBuffer = device.makeBuffer(bytes: sizeArray, length: sizeArrayByteLength, options: MTLResourceOptions(rawValue: 0))
         computeCommandEncoder.setBuffer(sizeBuffer, offset: 0, at: 2)
@@ -392,7 +392,7 @@ final class MetalNeuralLayer {
         computeCommandEncoder.setBuffer(paramBuffer, offset: 0, at: 2)
         
         //  Create the sizing array
-        let sizeArray : [Int32] = [Int32(numNodes), Int32(numWeights)]
+        let sizeArray : [__CLPK_integer] = [__CLPK_integer(numNodes), __CLPK_integer(numWeights)]
         let sizeArrayByteLength = sizeArray.count * MemoryLayout<Int32>.size
         let sizeBuffer = device.makeBuffer(bytes: sizeArray, length: sizeArrayByteLength, options: MTLResourceOptions(rawValue: 0))
         computeCommandEncoder.setBuffer(sizeBuffer, offset: 0, at: 3)
