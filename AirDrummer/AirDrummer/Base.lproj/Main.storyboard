@@ -38,10 +38,10 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSd-dd-429" customClass="AnimatableView" customModule="AirDrummer" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="140" width="375" height="110"/>
+                                            <rect key="frame" x="0.0" y="140" width="375" height="112"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huS-2k-P0l" customClass="AnimatableButton" customModule="AirDrummer" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="15" width="335" height="40"/>
+                                                    <rect key="frame" x="20" y="16" width="335" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="khj-DD-msW"/>
                                                     </constraints>
@@ -77,7 +77,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Drum Kit:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVD-Bz-zbo">
-                                                    <rect key="frame" x="114.5" y="80" width="145.5" height="20"/>
+                                                    <rect key="frame" x="114.5" y="82" width="145.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                     <color key="textColor" red="0.79607843140000001" green="0.63529411759999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                                                 <constraint firstItem="huS-2k-P0l" firstAttribute="leading" secondItem="oSd-dd-429" secondAttribute="leading" constant="20" id="DJ0-qg-9ig"/>
                                                 <constraint firstItem="SVD-Bz-zbo" firstAttribute="centerX" secondItem="oSd-dd-429" secondAttribute="centerX" id="S5J-4P-8AU"/>
                                                 <constraint firstAttribute="bottom" secondItem="SVD-Bz-zbo" secondAttribute="bottom" constant="10" id="TdT-m7-b8i"/>
-                                                <constraint firstAttribute="height" constant="110" id="gGb-pr-wFu"/>
+                                                <constraint firstAttribute="height" constant="112" id="gGb-pr-wFu"/>
                                                 <constraint firstItem="huS-2k-P0l" firstAttribute="centerY" secondItem="oSd-dd-429" secondAttribute="centerY" constant="-20" id="z9D-hX-FHU"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -101,7 +101,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="qMi-hv-MwU" secondAttribute="trailing" id="6b2-xy-DcD"/>
-                                        <constraint firstAttribute="bottom" secondItem="oSd-dd-429" secondAttribute="bottom" id="NGJ-XZ-e0I"/>
+                                        <constraint firstAttribute="bottom" secondItem="oSd-dd-429" secondAttribute="bottom" constant="-2" id="NGJ-XZ-e0I"/>
                                         <constraint firstItem="qMi-hv-MwU" firstAttribute="leading" secondItem="JTs-vp-e6j" secondAttribute="leading" id="b2m-uS-qgA"/>
                                         <constraint firstAttribute="trailing" secondItem="oSd-dd-429" secondAttribute="trailing" id="c4Y-O8-wTd"/>
                                         <constraint firstItem="oSd-dd-429" firstAttribute="leading" secondItem="JTs-vp-e6j" secondAttribute="leading" id="w2z-Fr-vdx"/>
@@ -503,7 +503,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Mgs-gw-eyM" customClass="ItemCollectionViewCell" customModule="AirDrummer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4.5" width="78" height="101"/>
+                                        <rect key="frame" x="0.0" y="5" width="78" height="101"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="101"/>
@@ -677,7 +677,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gh4-cm-0Vp" id="5hf-Vh-sCJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufk-Bv-pJa">
