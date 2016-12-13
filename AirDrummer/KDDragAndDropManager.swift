@@ -49,7 +49,7 @@ class KDDragAndDropManager: NSObject, UIGestureRecognizerDelegate {
         self.canvas = canvas
         
         self.longPressGestureRecogniser.delegate = self
-        self.longPressGestureRecogniser.minimumPressDuration = 0.3
+        self.longPressGestureRecogniser.minimumPressDuration = 0.1
         self.longPressGestureRecogniser.addTarget(self, action: #selector(KDDragAndDropManager.updateForLongPress))
         
         self.canvas.addGestureRecognizer(self.longPressGestureRecogniser)
