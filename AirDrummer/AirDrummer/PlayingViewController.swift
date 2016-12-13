@@ -118,7 +118,7 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
         } else {
             
             //get the FFT of both buffers and add them up for prediction data
-            self.getPredictionData(data: (self.ringBuffer.getDataAsVector()+self.orientationBuffer.getDataAsVector()) as NSArray )
+//            self.getPredictionData(data: (self.ringBuffer.getDataAsVector()+self.orientationBuffer.getDataAsVector()) as NSArray )
             
         }
     }
@@ -155,27 +155,27 @@ class PlayingViewController: UIViewController, URLSessionTaskDelegate {
         
     }
     
-    func getPredictionData(data:NSArray) {
-        let baseUrl = "\(SERVER_URL)/PredictOne"
-        let postUrl = NSURL(string: baseUrl)
-        self.numDataPoints = self.numDataPoints + 1
-        
-        
-        let jsonUpload:NSDictionary = ["feature": data, "dsid": DSID]
-        
-        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
-        var request = URLRequest(url: postUrl as! URL)
-        request.httpBody = requestBody
-        request.httpMethod = "POST"
-        
-        
-        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
-        
-        
-        
-        postTask.resume()
-        print(self.numDataPoints)
-    }
+//    func getPredictionData(data:NSArray) {
+//        let baseUrl = "\(SERVER_URL)/PredictOne"
+//        let postUrl = NSURL(string: baseUrl)
+//        self.numDataPoints = self.numDataPoints + 1
+//        
+//        
+//        let jsonUpload:NSDictionary = ["feature": data, "dsid": DSID]
+//        
+//        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
+//        var request = URLRequest(url: postUrl as! URL)
+//        request.httpBody = requestBody
+//        request.httpMethod = "POST"
+//        
+//        
+//        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
+//        
+//        
+//        
+//        postTask.resume()
+//        print(self.numDataPoints)
+//    }
 
 
 }

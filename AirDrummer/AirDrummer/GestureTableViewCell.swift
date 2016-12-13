@@ -11,6 +11,7 @@ import UIKit
 class GestureTableViewCell: UITableViewCell {
     @IBOutlet weak var instrumentLabel: UILabel!
     @IBOutlet weak var gestureView: AnimatableView!
+    @IBOutlet weak var gestureImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

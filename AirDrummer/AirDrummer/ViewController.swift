@@ -124,7 +124,7 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
             //get the FFT of both buffers and add them up for feature data
             let fftVector = (self.ringBuffer.getDataAsVector()+self.orientationBuffer.getDataAsVector()) as NSArray
             
-            self.sendFeatureArray(data: fftVector, label: self.instrumentLabel.text!)
+//            self.sendFeatureArray(data: fftVector, label: self.instrumentLabel.text!)
             //self.sendFeatureArray(data: data, label: self.instrumentLabel.text!)
         }
     }
@@ -141,66 +141,66 @@ class ViewController: UIViewController, URLSessionTaskDelegate {
 
     }
     
-    func sendFeatureArray(data:NSArray, label:String) {
-        let baseUrl = "\(SERVER_URL)/AddDataPoint"
-        let postUrl = NSURL(string: baseUrl)
-        self.numDataPoints = self.numDataPoints + 1
-        
-        
-        let jsonUpload:NSDictionary = ["feature": data, "label": label, "dsid": DSID]
-        
-        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
-        var request = URLRequest(url: postUrl as! URL)
-        request.httpBody = requestBody
-        request.httpMethod = "POST"
-        
-        
-        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
-        
-        
-        
-        postTask.resume()
-        print(self.numDataPoints)
-    }
+//    func sendFeatureArray(data:NSArray, label:String) {
+//        let baseUrl = "\(SERVER_URL)/AddDataPoint"
+//        let postUrl = NSURL(string: baseUrl)
+//        self.numDataPoints = self.numDataPoints + 1
+//        
+//        
+//        let jsonUpload:NSDictionary = ["feature": data, "label": label, "dsid": DSID]
+//        
+//        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
+//        var request = URLRequest(url: postUrl as! URL)
+//        request.httpBody = requestBody
+//        request.httpMethod = "POST"
+//        
+//        
+//        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
+//        
+//        
+//        
+//        postTask.resume()
+//        print(self.numDataPoints)
+//    }
+//    
+//    @IBAction func sendUpdate(_ sender: Any) {
+//        let baseUrl = "\(SERVER_URL)/UpdateModel"
+//        let postUrl = NSURL(string: baseUrl)
+//        self.numDataPoints = self.numDataPoints + 1
+//        
+//        
+//        let jsonUpload:NSDictionary = ["dsid": DSID]
+//        
+//        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
+//        var request = URLRequest(url: postUrl as! URL)
+//        request.httpBody = requestBody
+//        request.httpMethod = "POST"
+//        
+//        
+//        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
+//        
+//        
+//        
+//        postTask.resume()
+//    }
     
-    @IBAction func sendUpdate(_ sender: Any) {
-        let baseUrl = "\(SERVER_URL)/UpdateModel"
-        let postUrl = NSURL(string: baseUrl)
-        self.numDataPoints = self.numDataPoints + 1
-        
-        
-        let jsonUpload:NSDictionary = ["dsid": DSID]
-        
-        let requestBody = try! JSONSerialization.data(withJSONObject: jsonUpload, options: JSONSerialization.WritingOptions.prettyPrinted)
-        var request = URLRequest(url: postUrl as! URL)
-        request.httpBody = requestBody
-        request.httpMethod = "POST"
-        
-        
-        let postTask = self.session.dataTask(with: request, completionHandler: postFeatureHandler)
-        
-        
-        
-        postTask.resume()
-    }
-    
-    @IBAction func trainSnare(_ sender: Any) {
-        self.hihatbutton.isEnabled = true
-        self.snareButton.isEnabled = false
-        prepareForSample(instrumentName: "Snare")
-    }
-    
-    @IBAction func trainHiHat(_ sender: Any) {
-        self.hihatbutton.isEnabled = false
-        self.snareButton.isEnabled = true
-        prepareForSample(instrumentName: "Hi-Hat")
-    }
-    
-    @IBAction func updateDSID(_ sender: Any) {
-        DSID = Int(self.dsidLabel.text!)!
-        view.endEditing(true)
-    }
-    
+//    @IBAction func trainSnare(_ sender: Any) {
+//        self.hihatbutton.isEnabled = true
+//        self.snareButton.isEnabled = false
+//        prepareForSample(instrumentName: "Snare")
+//    }
+//    
+//    @IBAction func trainHiHat(_ sender: Any) {
+//        self.hihatbutton.isEnabled = false
+//        self.snareButton.isEnabled = true
+//        prepareForSample(instrumentName: "Hi-Hat")
+//    }
+//    
+//    @IBAction func updateDSID(_ sender: Any) {
+//        DSID = Int(self.dsidLabel.text!)!
+//        view.endEditing(true)
+//    }
+//    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)

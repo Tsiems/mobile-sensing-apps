@@ -16,6 +16,7 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
     var session = URLSession()
     let cmMotionManager = CMMotionManager()
     let backQueue = OperationQueue()
+    var currentGifName = ""
     
     //used for machine learning
     let svm = SVMModel(problemType: .c_SVM_Classification, kernelSettings: KernelParameters(type: .radialBasisFunction, degree: 0, gamma: 0.5, coef0: 0.0))
@@ -170,6 +171,14 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let gestures = drumKits[selectedDrumKit].gestures
+        let gestureValues = Array(gestures.values)
+        self.currentGifName = gestureValues[indexPath.row].gesture_name
+        self.performSegue(withIdentifier: "showGesture", sender: self)
+    }
+
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
@@ -187,8 +196,16 @@ class PlayTableViewController: UITableViewController, URLSessionTaskDelegate, UI
         return headerCell
     }
 
-
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "showGesture" {
+            
+            let target = segue.destination as! GesturePopUpViewController
+            target.gifName = self.currentGifName
+            
+        }
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

@@ -13,9 +13,9 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
     var items:[String] = ["Instrument 1", "Instrument 2", "Instrument 3"]
     var selectedRow:Int = 0
     var gestures:[Gesture] = [
-        Gesture(id: "Gesture 1",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare"),
-        Gesture(id: "Gesture 2",gesture_name: "High Hit",gif_name:"popcorn",instrument: "Hi-Hat"),
-        Gesture(id: "Gesture 3",gesture_name: "Flipped Hit",gif_name:"popcorn",instrument: "Toms")
+        Gesture(id: "Gesture 1",gesture_name: "Face Up", gif_name: "popcorn",instrument: "Snare"),
+        Gesture(id: "Gesture 2",gesture_name: "Up High",gif_name:"popcorn",instrument: "Hi-Hat"),
+        Gesture(id: "Gesture 3",gesture_name: "Face Down",gif_name:"popcorn",instrument: "Toms")
     ]
     
     var kitName:String = "Instrument 1"
@@ -53,15 +53,20 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
         
         var instrumentHasGesture = false
         var index = 0
+        var gestureName = ""
         for gesture in gestures {
             if gesture.instrument == items[indexPath.row] && gesture.inUse {
                 instrumentHasGesture = true
+                gestureName = gesture.gesture_name
                 break
             }
             index += 1
         }
         if instrumentHasGesture {
             //change image here (at index)
+            let gifmanager = SwiftyGifManager(memoryLimit:20)
+            let gif = UIImage(gifName: "\(gestureName).gif")
+            cell.gestureImage.setGifImage(gif, manager: gifmanager)
             cell.gestureView.backgroundColor = UIColor.darkGray
         }
         else {
