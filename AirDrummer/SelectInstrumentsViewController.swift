@@ -43,6 +43,8 @@ class SelectInstrumentsViewController: UIViewController, KDDragAndDropCollection
             "Toms"
         ]
         
+        kitNameField.text = "Drum Kit " + String(drumKits.count+1)
+        
         data.append([])
         var items = [DataItem]()
         for i in 0...drums.count-1 {

@@ -130,6 +130,7 @@ class SelectGestureTableViewController: UITableViewController, SelectGestureDele
                     target.gestures = self.gestures
                     target.instrument = self.items[self.selectedRow]
                     target.delegate = self
+                    target.titleName = "Choose Gesture For " + self.items[self.selectedRow]
                 }
             }
             
