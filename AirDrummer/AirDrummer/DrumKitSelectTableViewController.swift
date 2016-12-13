@@ -105,6 +105,7 @@ class DrumKitSelectTableViewController: UITableViewController {
         }
         else {
             cell.kitLabel.textColor = UIColor.init(red: 203/255, green: 162/255, blue: 111/255, alpha: 1.0)
+            cell.animatedView.backgroundColor = UIColor.black
         }
         
         return cell
@@ -134,6 +135,10 @@ class DrumKitSelectTableViewController: UITableViewController {
                 self.present(alert, animated: true, completion: nil)
 
             } else {
+                if selectedDrumKit == indexPath.row {
+                    selectedDrumKit = 0
+                    saveSelectedKit(index: 0)
+                }
                 drumKits.remove(at: indexPath.row)
                 saveDrumKits(data: drumKits)
                 tableView.deleteRows(at: [indexPath], with: .fade)

@@ -18,6 +18,7 @@ class MatchGesturesTableViewController: UITableViewController {
     var gestures:[Gesture] = Array(defaultGestures.values)
     var instrument:String = ""
     var delegate : SelectGestureDelegate?
+    var titleName : String = "Choose Gesture"
 
     var selected = -1
 
@@ -25,7 +26,8 @@ class MatchGesturesTableViewController: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.title = self.titleName
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
