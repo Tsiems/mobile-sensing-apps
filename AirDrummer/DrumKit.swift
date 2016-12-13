@@ -35,13 +35,13 @@ class DrumKit: NSObject,NSCoding {
 
 
 //global constant for default gestures in case no saved data is found
-let defaultGestures = ["Gesture 1":Gesture(id: "Gesture 1",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare"),
-                       "Gesture 2":Gesture(id: "Gesture 2",gesture_name: "High Hit",gif_name:"popcorn",instrument: "Hi-Hat"),
-                       "Gesture 3":Gesture(id: "Gesture 3",gesture_name: "Flipped Hit",gif_name:"popcorn",instrument: "Toms")]
+let defaultGestures = ["Gesture 1":Gesture(id: "Gesture 1",gesture_name: "Face Up", gif_name: "popcorn",instrument: "Snare"),
+                       "Gesture 2":Gesture(id: "Gesture 2",gesture_name: "Up High",gif_name:"popcorn",instrument: "Hi-Hat"),
+                       "Gesture 3":Gesture(id: "Gesture 3",gesture_name: "Face Down",gif_name:"popcorn",instrument: "Toms")]
 
 //global variables for selecting and managing drum kits
 var selectedDrumKit = 0
-var drumKits = [DrumKit(name:"Default Kit",gestures:["Gesture 1":Gesture(id: "Gesture 1",gesture_name: "Low Hit", gif_name: "popcorn",instrument: "Snare")])]
+var drumKits = [DrumKit(name:"Default Kit",gestures:["Gesture 1":Gesture(id: "Gesture 1",gesture_name: "Face Up", gif_name: "popcorn",instrument: "Snare")])]
 
 
 func saveDrumKits(data: [DrumKit]) {

@@ -18,6 +18,7 @@ class MatchGesturesTableViewController: UITableViewController {
     var gestures:[Gesture] = Array(defaultGestures.values)
     var instrument:String = ""
     var delegate : SelectGestureDelegate?
+    var titleName : String = "Choose Gesture"
 
     var selected = -1
 
@@ -25,7 +26,8 @@ class MatchGesturesTableViewController: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.title = self.titleName
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -83,6 +85,19 @@ class MatchGesturesTableViewController: UITableViewController {
         cell.layer.rasterizationScale = UIScreen.main.scale
         // Configure the cell...
         cell.gestureLabel.text = gestures[indexPath.row].gesture_name
+        
+        let gifmanager = SwiftyGifManager(memoryLimit:20)
+        
+        let gif = UIImage(gifName: "\(gestures[indexPath.row].gesture_name).gif")
+        let imageview = UIImageView(gifImage: gif, manager: gifmanager)
+        cell.gestureImage.setGifImage(gif, manager: gifmanager)
+        
+        
+        
+        
+       
+        
+        
         if (!gestures[indexPath.row].inUse) {
             cell.inUse.isHidden = true
         }

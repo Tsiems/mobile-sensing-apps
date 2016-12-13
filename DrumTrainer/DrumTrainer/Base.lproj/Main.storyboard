@@ -35,8 +35,8 @@
                                     <action selector="trainFirst:" destination="odr-8i-46W" eventType="touchUpInside" id="BUZ-Hg-2yc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGr-PN-zWf">
-                                <rect key="frame" x="36" y="185" width="303" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGr-PN-zWf">
+                                <rect key="frame" x="36" y="192" width="303" height="50"/>
                                 <color key="backgroundColor" red="0.8541227669" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="TZO-0E-jes"/>
@@ -48,21 +48,8 @@
                                     <action selector="trainSecond:" destination="odr-8i-46W" eventType="touchUpInside" id="I9m-NL-Ixx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKG-CL-N7F">
-                                <rect key="frame" x="36" y="252" width="303" height="50"/>
-                                <color key="backgroundColor" red="0.8541227669" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bY9-Yy-7bb"/>
-                                </constraints>
-                                <state key="normal" title="Gesture 3">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="trainThird:" destination="odr-8i-46W" eventType="touchUpInside" id="lBB-Ep-ucD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-by-JOk">
-                                <rect key="frame" x="36" y="319" width="303" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-by-JOk">
+                                <rect key="frame" x="36" y="415" width="303" height="50"/>
                                 <color key="backgroundColor" red="0.8541227669" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="u2e-0B-6ky"/>
@@ -101,8 +88,8 @@
                                     <action selector="sendUpdate:" destination="odr-8i-46W" eventType="touchUpInside" id="gbl-j6-pJv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnE-dX-QE4">
-                                <rect key="frame" x="36" y="383" width="303" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnE-dX-QE4">
+                                <rect key="frame" x="36" y="494" width="303" height="50"/>
                                 <color key="backgroundColor" red="0.8541227669" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JZq-4p-eyt"/>
@@ -123,6 +110,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKG-CL-N7F">
+                                <rect key="frame" x="36" y="280" width="303" height="92"/>
+                                <color key="backgroundColor" red="0.8541227669" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="bY9-Yy-7bb"/>
+                                </constraints>
+                                <state key="normal" title="Gesture 3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="trainThird:" destination="odr-8i-46W" eventType="touchUpInside" id="lBB-Ep-ucD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -134,18 +134,18 @@
                             <constraint firstItem="uRD-wt-3Pu" firstAttribute="top" secondItem="W4v-9R-DdS" secondAttribute="bottom" constant="16" id="JCb-dp-stl"/>
                             <constraint firstItem="uRD-wt-3Pu" firstAttribute="leading" secondItem="WHS-Rz-7C9" secondAttribute="leadingMargin" constant="20" id="OLb-gy-rwv"/>
                             <constraint firstItem="MGr-PN-zWf" firstAttribute="top" secondItem="uRD-wt-3Pu" secondAttribute="bottom" constant="15" id="Q1p-Dt-vxz"/>
-                            <constraint firstItem="cqP-by-JOk" firstAttribute="top" secondItem="pKG-CL-N7F" secondAttribute="bottom" constant="17" id="Qes-Ql-ZQj"/>
+                            <constraint firstItem="cqP-by-JOk" firstAttribute="top" secondItem="pKG-CL-N7F" secondAttribute="bottom" constant="43" id="Qes-Ql-ZQj"/>
                             <constraint firstItem="uRD-wt-3Pu" firstAttribute="top" secondItem="aWv-xa-JNz" secondAttribute="bottom" constant="17" id="Vqc-kP-RHH"/>
                             <constraint firstItem="W4v-9R-DdS" firstAttribute="leading" secondItem="WHS-Rz-7C9" secondAttribute="leadingMargin" constant="20" id="Xer-YF-Rdk"/>
                             <constraint firstItem="aWv-xa-JNz" firstAttribute="leading" secondItem="W4v-9R-DdS" secondAttribute="trailing" constant="25" id="Y12-IQ-k45"/>
                             <constraint firstItem="Rbz-Ps-a7I" firstAttribute="top" secondItem="oBI-Hd-Qef" secondAttribute="bottom" constant="20" id="YRk-HM-ao1"/>
                             <constraint firstItem="Nre-As-JJd" firstAttribute="centerY" secondItem="WHS-Rz-7C9" secondAttribute="centerY" constant="242.5" id="aGd-Ga-lNd"/>
                             <constraint firstItem="MGr-PN-zWf" firstAttribute="leading" secondItem="WHS-Rz-7C9" secondAttribute="leadingMargin" constant="20" id="bP5-nJ-97t"/>
-                            <constraint firstItem="pKG-CL-N7F" firstAttribute="top" secondItem="MGr-PN-zWf" secondAttribute="bottom" constant="17" id="dEA-2d-U88"/>
+                            <constraint firstItem="pKG-CL-N7F" firstAttribute="top" secondItem="MGr-PN-zWf" secondAttribute="bottom" constant="38" id="dEA-2d-U88"/>
                             <constraint firstItem="FnE-dX-QE4" firstAttribute="trailing" secondItem="cqP-by-JOk" secondAttribute="trailing" id="ehx-60-KFk"/>
                             <constraint firstItem="W4v-9R-DdS" firstAttribute="top" secondItem="Rbz-Ps-a7I" secondAttribute="bottom" constant="8" id="erN-kS-MBH"/>
                             <constraint firstItem="uRD-wt-3Pu" firstAttribute="top" secondItem="oBI-Hd-Qef" secondAttribute="bottom" constant="100" id="hUR-mh-rN5"/>
-                            <constraint firstItem="FnE-dX-QE4" firstAttribute="top" secondItem="cqP-by-JOk" secondAttribute="bottom" constant="14" id="irE-Gf-auF"/>
+                            <constraint firstItem="FnE-dX-QE4" firstAttribute="top" secondItem="cqP-by-JOk" secondAttribute="bottom" constant="29" id="irE-Gf-auF"/>
                             <constraint firstItem="aWv-xa-JNz" firstAttribute="top" secondItem="oBI-Hd-Qef" secondAttribute="bottom" constant="53" id="k8Q-58-3B6"/>
                             <constraint firstItem="pKG-CL-N7F" firstAttribute="leading" secondItem="MGr-PN-zWf" secondAttribute="leading" id="lIo-l1-9Y1"/>
                             <constraint firstItem="pKG-CL-N7F" firstAttribute="trailing" secondItem="MGr-PN-zWf" secondAttribute="trailing" id="lkv-A9-k3s"/>
